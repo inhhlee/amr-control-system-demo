@@ -1,0 +1,5 @@
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+다음 테스트를 사용할 수 있습니다.
+파일에 Vstest Diagnostics 로깅 중: C:\amr-control-system-demo\evidence\setup\20261007-setup-01\test-discovery-diagnostic.log
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll에서 테스트를 사용할 수 없습니다. 테스트 Discoverer 및 Executor가 등록되고 플랫폼 및 프레임워크 버전 설정이 적절한지 확인하고 다시 시도하세요.
+ExitCode: 0

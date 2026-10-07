@@ -1,0 +1,62 @@
+[
+  {
+    "Path": "AGENTS.md",
+    "PreviousSHA256": "2e9f9878d327b9f71d4b9744b132f0c05e903992c487449a5ed44446d668735d",
+    "CurrentSHA256": "a10cec636f416e132cf0c9fe4fc16c5268133914724c0b69a9d84de2beb96b95",
+    "Unchanged": false
+  },
+  {
+    "Path": "README.md",
+    "PreviousSHA256": "a6371767d8bdb66f545c78dad40e19b55dfba92a918260bc4d3490a635546492",
+    "CurrentSHA256": "302190b9383c22ea93c83362ebe6ba9a7692fbe08d5086195954450d200f6dbd",
+    "Unchanged": false
+  },
+  {
+    "Path": ".gitignore",
+    "PreviousSHA256": "be91781818393d43c2e8715f5e4889ee024f0f1141a8ca22dafc67234e162302",
+    "CurrentSHA256": "be91781818393d43c2e8715f5e4889ee024f0f1141a8ca22dafc67234e162302",
+    "Unchanged": true
+  },
+  {
+    "Path": ".github/pull_request_template.md",
+    "PreviousSHA256": "1dc758953cd233e66483e7717d39d753ab78380e43b72027d545240f211d9358",
+    "CurrentSHA256": "9896a42f1883f9cbeb787ecab1e66a2e9f4fa8bd9a723e6d844042638501629b",
+    "Unchanged": false
+  },
+  {
+    "Path": "global.json",
+    "PreviousSHA256": "ce61f5ae207d33d00594c77c5999c7f0dc66434e85a85f38090335d588438974",
+    "CurrentSHA256": "ce61f5ae207d33d00594c77c5999c7f0dc66434e85a85f38090335d588438974",
+    "Unchanged": true
+  },
+  {
+    "Path": "AmrControlSystem.slnx",
+    "PreviousSHA256": "698695fe8a09e721b87f1cdc3b80a545102ebf455c65ac86780c2130b352fa1c",
+    "CurrentSHA256": "698695fe8a09e721b87f1cdc3b80a545102ebf455c65ac86780c2130b352fa1c",
+    "Unchanged": true
+  },
+  {
+    "Path": "src/Amr.Communication/Amr.Communication.csproj",
+    "PreviousSHA256": "314fbabb75a426e9dfda4623bb16aba50190902105f1091ccfbee7613e38f648",
+    "CurrentSHA256": "314fbabb75a426e9dfda4623bb16aba50190902105f1091ccfbee7613e38f648",
+    "Unchanged": true
+  },
+  {
+    "Path": "src/Amr.Communication.Console/Amr.Communication.Console.csproj",
+    "PreviousSHA256": "34e3fe9324fe1e0030bf69712e18004382833add9e6bf7edd5caefb9bb7dd382",
+    "CurrentSHA256": "34e3fe9324fe1e0030bf69712e18004382833add9e6bf7edd5caefb9bb7dd382",
+    "Unchanged": true
+  },
+  {
+    "Path": "src/Amr.Communication.Console/Program.cs",
+    "PreviousSHA256": "662a2efd6a1c82220368ec0a36b6a229c412618377aca397bd830486c04da0ef",
+    "CurrentSHA256": "662a2efd6a1c82220368ec0a36b6a229c412618377aca397bd830486c04da0ef",
+    "Unchanged": true
+  },
+  {
+    "Path": "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj",
+    "PreviousSHA256": "a26c5be8d5611dceb8d2751ba77374c080bb91d45e3cfedea1f2ee19ca402f03",
+    "CurrentSHA256": "a26c5be8d5611dceb8d2751ba77374c080bb91d45e3cfedea1f2ee19ca402f03",
+    "Unchanged": true
+  }
+]

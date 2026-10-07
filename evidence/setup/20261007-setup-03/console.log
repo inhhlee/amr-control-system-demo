@@ -1,0 +1,11 @@
+Run ID: 20261007-setup-03
+StartedAt: 2026-10-07T16:04:43.3133986+09:00
+FinishedAt: 2026-10-07T16:04:43.8831032+09:00
+WorkingDirectory: C:\amr-control-system-demo
+Command: dotnet run --project src/Amr.Communication.Console --no-build
+--- Actual output ---
+AMR 관제시스템 개발 준비가 완료되었습니다.
+--- End output ---
+ExitCode: 0
+ExpectedExitCode: 0
+Verdict: passed

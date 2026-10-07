@@ -1,0 +1,25 @@
+# .NET 빌드 생성물
+[Bb]in/
+[Oo]bj/
+
+# 자동 시험의 임시 결과 (검토할 증거는 evidence/에 보관)
+/TestResults/
+/tests/**/TestResults/
+
+# Visual Studio 개인 설정과 캐시
+.vs/
+*.user
+*.suo
+
+# 로컬 환경·인증 설정 (값을 비운 공유 예시는 추적)
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# 프로젝트 전용 Mosquitto 실행 데이터·로그
+/docker/mosquitto/data/
+/docker/mosquitto/log/
+
+# 소스·프로젝트 정의·공유 설정·시험 입력·evidence/는 추적 대상이다.
+# 실행 증거를 숨기는 *.log, *.json 또는 evidence/ 전체 제외는 추가하지 않는다.

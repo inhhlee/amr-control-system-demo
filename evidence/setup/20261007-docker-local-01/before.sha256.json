@@ -1,0 +1,392 @@
+[
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": ".github/pull_request_template.md",
+    "SHA256": "9896A42F1883F9CBEB787ECAB1E66A2E9F4FA8BD9A723E6D844042638501629B"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": ".gitignore",
+    "SHA256": "BE91781818393D43C2E8715F5E4889EE024F0F1141A8CA22DAFC67234E162302"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "AmrControlSystem.slnx",
+    "SHA256": "698695FE8A09E721B87F1CDC3B80A545102EBF455C65AC86780C2130B352FA1C"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/README.md",
+    "SHA256": "175A28860C14800C9B25D16610EDF13CE5077BAA67FD54350A715E9232DE1F1D"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/build.log",
+    "SHA256": "8687E1D8F0820CA234A83E05EF8E7B409B22380E64D7E14413E1E051B84F7CD0"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/code-integrity.log",
+    "SHA256": "33C428AFDEC360E60C0E5C4703527B5B59F8BED8474826FBAF8B4ABC85A797A8"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/console-retry.log",
+    "SHA256": "3EAAB8DBD870B3749B98A9C1391B72C8DA99A3A7159496405EA90667B8571D92"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/console.log",
+    "SHA256": "3EAAB8DBD870B3749B98A9C1391B72C8DA99A3A7159496405EA90667B8571D92"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/dotnet-info.log",
+    "SHA256": "616525219683115D54021491BEBB5D21C6C582BE10CBD1783E397E1003F7AF8F"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/environment.log",
+    "SHA256": "3893D7DD1738CE4840C0016415FE693780CFE6B2FD4D203B7299C14164260B5B"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/repository-checks.log",
+    "SHA256": "DF8CADC32DFF0107DBAC59BA223D87507D52BF7814B74859243A34EFE6DC09C7"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/restore.log",
+    "SHA256": "82E697595A83DD602F0BF1F679B22A69409F949702DB6ABDED6EA6D322F7984C"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/source-files.sha256",
+    "SHA256": "E6B5135372B2A163E8ACEE0C007CA387793C0E1A76931CB0B0B4BBDE6E1C8870"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/test-discovery-diagnostic.host.26-10-07_13-57-52_17413_5.log",
+    "SHA256": "9616CBB47319B9EA8A1A909AABCB60140ACDED96BB5982FB728836095F2AC481"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/test-discovery-diagnostic.log",
+    "SHA256": "6E6E6D4111C08530BD9C3685A712BD422105A19FDA89FE222DD5874ABE45D792"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/test-discovery-retry.log",
+    "SHA256": "3392650691E7133F1DF25EA1559C4DA22F6A5ECDCAEC349CD2CBEA122AB3A967"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/test-discovery.log",
+    "SHA256": "6016B127F42B21E31B1DAFA036CCC5DF3FDBB0FA1F4A4C13A20E9E9D95574259"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-02/README.md",
+    "SHA256": "8B4D54ACD8BC0F449AA7281719219B65CFAAFB0F88EDD03EE35FBAAE05DCFE7B"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-02/baseline.log",
+    "SHA256": "8C4BBA127414F2DC396D4C82D5B67C705B430595BF2EA691AADE8A2C17C02D62"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-02/broker-config.json",
+    "SHA256": "B9CF4608E982BF107DDA7C2532F835947D4B6657C53F8FB421D391AA0E2A01D4"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-02/code-integrity.json",
+    "SHA256": "C2AE3F5A58175F5B4695AE31C0584DB89041FFA571777D465139391D38F4D815"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-02/console.log",
+    "SHA256": "CA80F161EE8E7806051BEA41AE0CF2A4774BA127DE51F2FA8417727A7EE7614F"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-02/docker-broker.log",
+    "SHA256": "A7CFAD5A6E095B9A1A67B097298E93C3EEFF38E579EE63B47E90833ABD0B1B14"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-02/document-search.json",
+    "SHA256": "B968CB4E9E27EC5F193FF2387ABF0E5E300669E28EBAFA7C867BC4B2E49ED7AC"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-02/repository-checks.log",
+    "SHA256": "44E124882794342B292742D428067121F5C2DB9EA9AA56341F2C81BFD95D04C2"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-02/source-comparison.json",
+    "SHA256": "601AC8FE5874295D669FF7337EFC789DD71298A46D3A04B7BCDE4AFC2998824C"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-02/source-files.sha256",
+    "SHA256": "339A18A3050CB0F736DA193795F5BED0B0C55E1BBB684212AD958982A39292D1"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "global.json",
+    "SHA256": "CE61F5AE207D33D00594C77C5999C7F0DC66434E85A85F38090335D588438974"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "src/Amr.Communication.Console/Amr.Communication.Console.csproj",
+    "SHA256": "34E3FE9324FE1E0030BF69712E18004382833ADD9E6BF7EDD5CAEFB9BB7DD382"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "src/Amr.Communication.Console/Program.cs",
+    "SHA256": "662A2EFD6A1C82220368EC0A36B6A229C412618377ACA397BD830486C04DA0EF"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "src/Amr.Communication/Amr.Communication.csproj",
+    "SHA256": "314FBABB75A426E9DFDA4623BB16ABA50190902105F1091CCFBEE7613E38F648"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj",
+    "SHA256": "A26C5BE8D5611DCEB8D2751BA77374C080BB91D45E3CFEDEA1F2EE19CA402F03"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "AGENTS.md",
+    "SHA256": "A10CEC636F416E132CF0C9FE4FC16C5268133914724C0B69A9D84DE2BEB96B95"
+  },
+  {
+    "Root": "C:\\amr-control-system-demo",
+    "Path": "README.md",
+    "SHA256": "1E68B0A996ADE8C644D54B309FC34769E286DFEEA2BC6E3DD112181EB4698906"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": ".github/pull_request_template.md",
+    "SHA256": "9896A42F1883F9CBEB787ECAB1E66A2E9F4FA8BD9A723E6D844042638501629B"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": ".gitignore",
+    "SHA256": "2DFFB3C28498CE48E51CFF541C11E74A028E124E14C32774D2684CB3951CBF41"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "AmrControlSystem.slnx",
+    "SHA256": "698695FE8A09E721B87F1CDC3B80A545102EBF455C65AC86780C2130B352FA1C"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "docker/compose.yaml",
+    "SHA256": "14A255D5E4B675C8685AEC910033DC8A22BB5E278CC14A9837386E09ABDEFC7F"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "docker/mosquitto/config/mosquitto.conf",
+    "SHA256": "92F78AEBFABC1D8D3954BE4601F73CE5160732231F669330CFA5346F40614847"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-docker-01/README.md",
+    "SHA256": "DF6EAB4C2BB72FC23D63E64794FA6FFEF0CF6DB585CDCC36065B539E5F312841"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-docker-01/baseline.log",
+    "SHA256": "CF70EA11AA19036461378D7E2882A6AEC972CFD5DD2B6976985A13A2FAE614A5"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-docker-01/before.sha256.json",
+    "SHA256": "0CEB6051EB5EF9A87F6D188220237E8F88CFB1390546817A5A76A82DB88D2A5E"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-docker-01/compose-check.log",
+    "SHA256": "B6547D42F9EE2AF658D209B53266650028AF50539D561C6D9AA209E669CD9B26"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-docker-01/compose-resolved.json",
+    "SHA256": "DC1FAEB6642DB916433068028726B3F6BCDADF0A0B27CAF808FF0E28A1157987"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-docker-01/listeners.json",
+    "SHA256": "1C287445390A6F8131104215B34F5C171259AFDF67567242A4F0D4C6BDFC0152"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-docker-01/repository-checks.log",
+    "SHA256": "672C4C1D77481EFA30ACDB9E3CF3D2A7D7C0C08DC6DBDF7B25332173BCC334A3"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-docker-01/source-files.sha256",
+    "SHA256": "DF75F20D83B2DB9AE31C4BBD57A6D602157884E1663852EE5DFEAB2588320CDC"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/README.md",
+    "SHA256": "175A28860C14800C9B25D16610EDF13CE5077BAA67FD54350A715E9232DE1F1D"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/build.log",
+    "SHA256": "8687E1D8F0820CA234A83E05EF8E7B409B22380E64D7E14413E1E051B84F7CD0"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/code-integrity.log",
+    "SHA256": "33C428AFDEC360E60C0E5C4703527B5B59F8BED8474826FBAF8B4ABC85A797A8"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/console-retry.log",
+    "SHA256": "3EAAB8DBD870B3749B98A9C1391B72C8DA99A3A7159496405EA90667B8571D92"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/console.log",
+    "SHA256": "3EAAB8DBD870B3749B98A9C1391B72C8DA99A3A7159496405EA90667B8571D92"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/dotnet-info.log",
+    "SHA256": "616525219683115D54021491BEBB5D21C6C582BE10CBD1783E397E1003F7AF8F"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/environment.log",
+    "SHA256": "3893D7DD1738CE4840C0016415FE693780CFE6B2FD4D203B7299C14164260B5B"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/repository-checks.log",
+    "SHA256": "DF8CADC32DFF0107DBAC59BA223D87507D52BF7814B74859243A34EFE6DC09C7"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/restore.log",
+    "SHA256": "82E697595A83DD602F0BF1F679B22A69409F949702DB6ABDED6EA6D322F7984C"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/source-files.sha256",
+    "SHA256": "E6B5135372B2A163E8ACEE0C007CA387793C0E1A76931CB0B0B4BBDE6E1C8870"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/test-discovery-diagnostic.host.26-10-07_13-57-52_17413_5.log",
+    "SHA256": "9616CBB47319B9EA8A1A909AABCB60140ACDED96BB5982FB728836095F2AC481"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/test-discovery-diagnostic.log",
+    "SHA256": "6E6E6D4111C08530BD9C3685A712BD422105A19FDA89FE222DD5874ABE45D792"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/test-discovery-retry.log",
+    "SHA256": "3392650691E7133F1DF25EA1559C4DA22F6A5ECDCAEC349CD2CBEA122AB3A967"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-01/test-discovery.log",
+    "SHA256": "6016B127F42B21E31B1DAFA036CCC5DF3FDBB0FA1F4A4C13A20E9E9D95574259"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-02/README.md",
+    "SHA256": "8B4D54ACD8BC0F449AA7281719219B65CFAAFB0F88EDD03EE35FBAAE05DCFE7B"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-02/baseline.log",
+    "SHA256": "8C4BBA127414F2DC396D4C82D5B67C705B430595BF2EA691AADE8A2C17C02D62"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-02/broker-config.json",
+    "SHA256": "B9CF4608E982BF107DDA7C2532F835947D4B6657C53F8FB421D391AA0E2A01D4"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-02/code-integrity.json",
+    "SHA256": "C2AE3F5A58175F5B4695AE31C0584DB89041FFA571777D465139391D38F4D815"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-02/console.log",
+    "SHA256": "CA80F161EE8E7806051BEA41AE0CF2A4774BA127DE51F2FA8417727A7EE7614F"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-02/docker-broker.log",
+    "SHA256": "A7CFAD5A6E095B9A1A67B097298E93C3EEFF38E579EE63B47E90833ABD0B1B14"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-02/document-search.json",
+    "SHA256": "B968CB4E9E27EC5F193FF2387ABF0E5E300669E28EBAFA7C867BC4B2E49ED7AC"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-02/repository-checks.log",
+    "SHA256": "44E124882794342B292742D428067121F5C2DB9EA9AA56341F2C81BFD95D04C2"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-02/source-comparison.json",
+    "SHA256": "601AC8FE5874295D669FF7337EFC789DD71298A46D3A04B7BCDE4AFC2998824C"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "evidence/setup/20261007-setup-02/source-files.sha256",
+    "SHA256": "339A18A3050CB0F736DA193795F5BED0B0C55E1BBB684212AD958982A39292D1"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "global.json",
+    "SHA256": "CE61F5AE207D33D00594C77C5999C7F0DC66434E85A85F38090335D588438974"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "src/Amr.Communication.Console/Amr.Communication.Console.csproj",
+    "SHA256": "34E3FE9324FE1E0030BF69712E18004382833ADD9E6BF7EDD5CAEFB9BB7DD382"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "src/Amr.Communication.Console/Program.cs",
+    "SHA256": "662A2EFD6A1C82220368EC0A36B6A229C412618377ACA397BD830486C04DA0EF"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "src/Amr.Communication/Amr.Communication.csproj",
+    "SHA256": "314FBABB75A426E9DFDA4623BB16ABA50190902105F1091CCFBEE7613E38F648"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj",
+    "SHA256": "A26C5BE8D5611DCEB8D2751BA77374C080BB91D45E3CFEDEA1F2EE19CA402F03"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "AGENTS.md",
+    "SHA256": "84D02B48466E00698134791097CD8CAB508B58BD7E7EFBCEB39BD5DD31C2EECF"
+  },
+  {
+    "Root": "C:\\Users\\Admin\\.codex\\worktrees\\2144\\amr-control-system-demo",
+    "Path": "README.md",
+    "SHA256": "E4D5CF1A472CE2DF33151DD8BC65083A3D313E5E2BE32BA275D2EEE0D7D12393"
+  }
+]

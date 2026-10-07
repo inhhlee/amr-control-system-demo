@@ -1,0 +1,15 @@
+Checked: 2026-10-07T15:16:36.0168970+09:00
+Working directory: C:\Users\Admin\.codex\worktrees\2144\amr-control-system-demo
+CLI: C:\Users\Admin\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe
+Scope: read-only Compose model validation; no container start/stop.
+Docker Compose version v5.5.1
+Command: docker compose -f docker/compose.yaml config --quiet
+Exit code: 0
+PASS: amr-demo, pinned image, loopback 1884 -> 1883, all three bind mounts inside current worktree, existing config mounted read-only without implicit directory creation.
+PASS: identical resolved model from repository root and docker directory.
+Command: docker ps --all --filter label=com.docker.compose.project=amr-demo --format {{json .}}
+Existing amr-demo containers: 0
+Existing Broker (read-only query):
+{"Id":"5d8473f92851c5614b82161e1b129488f2780eb9b9647c78d45359bd239e1820","Status":"running","StartedAt":"2026-10-07T04:57:14.036059926Z","Ports":{"1883/tcp":[{"HostIp":"127.0.0.1","HostPort":"1883"}]}}
+Existing Broker query exit code: 0
+Finished: 2026-10-07T15:16:37.5028879+09:00

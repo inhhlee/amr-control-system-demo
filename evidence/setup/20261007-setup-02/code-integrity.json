@@ -1,0 +1,22 @@
+[
+  {
+    "TimeCreated": "2026-10-07T14:47:22.1961571+09:00",
+    "Id": 3077,
+    "Message": "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\amr-control-system-demo\\src\\Amr.Communication.Console\\bin\\Debug\\net10.0\\Amr.Communication.Console.exe) attempted to load \\Device\\HarddiskVolume3\\amr-control-system-demo\\src\\Amr.Communication.Console\\bin\\Debug\\net10.0\\Amr.Communication.Console.dll that did not meet the Enterprise signing level requirements or violated code integrity policy (Policy ID:{0283ac0f-fff1-49ae-ada1-8a933130cad6})."
+  },
+  {
+    "TimeCreated": "2026-10-07T14:47:22.1960851+09:00",
+    "Id": 3033,
+    "Message": "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\amr-control-system-demo\\src\\Amr.Communication.Console\\bin\\Debug\\net10.0\\Amr.Communication.Console.exe) attempted to load \\Device\\HarddiskVolume3\\amr-control-system-demo\\src\\Amr.Communication.Console\\bin\\Debug\\net10.0\\Amr.Communication.Console.dll that did not meet the Enterprise signing level requirements."
+  },
+  {
+    "TimeCreated": "2026-10-07T14:47:22.1924091+09:00",
+    "Id": 3077,
+    "Message": "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\amr-control-system-demo\\src\\Amr.Communication.Console\\bin\\Debug\\net10.0\\Amr.Communication.Console.exe) attempted to load \\Device\\HarddiskVolume3\\amr-control-system-demo\\src\\Amr.Communication.Console\\bin\\Debug\\net10.0\\Amr.Communication.Console.dll that did not meet the Enterprise signing level requirements or violated code integrity policy (Policy ID:{0283ac0f-fff1-49ae-ada1-8a933130cad6})."
+  },
+  {
+    "TimeCreated": "2026-10-07T14:47:22.1923287+09:00",
+    "Id": 3033,
+    "Message": "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\amr-control-system-demo\\src\\Amr.Communication.Console\\bin\\Debug\\net10.0\\Amr.Communication.Console.exe) attempted to load \\Device\\HarddiskVolume3\\amr-control-system-demo\\src\\Amr.Communication.Console\\bin\\Debug\\net10.0\\Amr.Communication.Console.dll that did not meet the Enterprise signing level requirements."
+  }
+]

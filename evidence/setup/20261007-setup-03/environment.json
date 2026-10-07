@@ -1,0 +1,43 @@
+{
+  "OS": "Microsoft Windows NT 10.0.26200.0",
+  "PowerShell": "7.6.5",
+  "SDK": "10.0.401",
+  "Runtimes": [
+    "Microsoft.AspNetCore.App 10.0.12 [C:\\Program Files\\dotnet\\shared\\Microsoft.AspNetCore.App]",
+    "Microsoft.NETCore.App 10.0.12 [C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App]",
+    "Microsoft.WindowsDesktop.App 10.0.12 [C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App]"
+  ],
+  "CodePath": "C:\\amr-control-system-demo",
+  "Branch": "codex/2-dev-foundation",
+  "Head": "7f89908c4f1b4a0d73c8a9475ad84aa5825cbf84",
+  "Origin": "https://github.com/inhhlee/amr-control-system-demo.git",
+  "BinaryFiles": [
+    {
+      "Path": "src/Amr.Communication.Console/bin/Debug/net10.0/Amr.Communication.Console.dll",
+      "SHA256": "8E826591D2DB045866A94C4A405A337DFD707C6D264C296677E2565AC99DF909",
+      "LastWriteTime": "2026-10-07T13:56:35.4238804+09:00"
+    },
+    {
+      "Path": "src/Amr.Communication.Console/bin/Debug/net10.0/Amr.Communication.dll",
+      "SHA256": "FDFA0877C3F9CD1FFD1EBF97256A2E7D974B53EEF015E60A58DF85967182FF1A",
+      "LastWriteTime": "2026-10-07T13:56:35.0881402+09:00"
+    },
+    {
+      "Path": "src/Amr.Communication.Console/bin/Debug/net10.0/Amr.Communication.Console.runtimeconfig.json",
+      "SHA256": "256DDA2706E1151BB95987B6B5BE610BF68D64E058285B19E7E958222FC90414",
+      "LastWriteTime": "2026-10-07T13:56:35.512882+09:00"
+    }
+  ],
+  "DocumentRepository": {
+    "Status": [
+      " M \"\\352\\264\\200\\354\\240\\234\\354\\213\\234\\354\\212\\244\\355\\205\\234 \\352\\263\\274\\354\\240\\234 \\354\\247\\204\\355\\226\\211/\\352\\260\\234\\353\\260\\234\\355\\231\\230\\352\\262\\275.md\"",
+      " M \"\\352\\270\\260\\354\\244\\200/\\352\\260\\234\\353\\260\\234 \\354\\247\\204\\355\\226\\211 \\354\\240\\210\\354\\260\\250.md\"",
+      "?? \"\\354\\235\\274\\354\\235\\274\\354\\227\\205\\353\\254\\264/2026-10-07.md\""
+    ],
+    "Branch": "main",
+    "Origin": "https://github.com/inhhlee/process-plan.git"
+  },
+  "SecuritySettingChangesByCodex": false,
+  "UserReportedResolution": true,
+  "ResolutionMethod": "미확인"
+}

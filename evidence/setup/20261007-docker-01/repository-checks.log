@@ -1,0 +1,11 @@
+Started: 2026-10-07T15:17:44.8715484+09:00
+Scope: Git ignore pattern examples, changed document links, whitespace and preservation; no product tests.
+Generated path examples ignored: 2
+Config/evidence path examples kept: 6
+Pre-existing files preserved outside intended edits: 31
+Local document links resolved: 57
+Whitespace check: PASS
+Overall: PASS
+Finished: 2026-10-07T15:17:45.0437874+09:00
+Final current-file hashes refreshed; appended daily record links verified.
+Final check: 2026-10-07T15:18:57.0552618+09:00

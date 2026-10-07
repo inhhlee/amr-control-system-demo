@@ -1,0 +1,36 @@
+Run: 20261007-setup-02
+Started: 2026-10-07T14:46:54.8808977+09:00
+Working directory: C:\amr-control-system-demo
+Branch: codex/2-dev-foundation
+HEAD: 7f89908c4f1b4a0d73c8a9475ad84aa5825cbf84
+Origin: https://github.com/inhhlee/amr-control-system-demo.git
+PowerShell: 7.6.5
+OS: Microsoft Windows NT 10.0.26200.0
+SDK: 10.0.401
+Git: git version 2.55.0.windows.5
+Existing working-tree changes (preserved):
+ M AGENTS.md
+ M README.md
+?? .github/pull_request_template.md
+?? .gitignore
+?? AmrControlSystem.slnx
+?? evidence/setup/20261007-setup-01/README.md
+?? evidence/setup/20261007-setup-01/build.log
+?? evidence/setup/20261007-setup-01/code-integrity.log
+?? evidence/setup/20261007-setup-01/console-retry.log
+?? evidence/setup/20261007-setup-01/console.log
+?? evidence/setup/20261007-setup-01/dotnet-info.log
+?? evidence/setup/20261007-setup-01/environment.log
+?? evidence/setup/20261007-setup-01/repository-checks.log
+?? evidence/setup/20261007-setup-01/restore.log
+?? evidence/setup/20261007-setup-01/source-files.sha256
+?? evidence/setup/20261007-setup-01/test-discovery-diagnostic.host.26-10-07_13-57-52_17413_5.log
+?? evidence/setup/20261007-setup-01/test-discovery-diagnostic.log
+?? evidence/setup/20261007-setup-01/test-discovery-retry.log
+?? evidence/setup/20261007-setup-01/test-discovery.log
+?? global.json
+?? src/Amr.Communication.Console/Amr.Communication.Console.csproj
+?? src/Amr.Communication.Console/Program.cs
+?? src/Amr.Communication/Amr.Communication.csproj
+?? tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj
+Staged files:

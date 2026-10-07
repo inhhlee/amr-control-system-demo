@@ -1,0 +1,41 @@
+Started: 2026-10-07T15:13:36.9571555+09:00
+Working directory: C:\Users\Admin\.codex\worktrees\2144\amr-control-system-demo
+Branch: codex/2-dev-foundation
+HEAD: 7f89908c4f1b4a0d73c8a9475ad84aa5825cbf84
+Scope: new project-local Docker configuration; config validation only; do not start/stop services.
+Branch attachment: reused codex/2-dev-foundation in this worktree; original checkout detached at same HEAD; both checkout file SHA-256 values preserved (68 files).
+Existing changes:
+ M AGENTS.md
+ M README.md
+?? .github/pull_request_template.md
+?? .gitignore
+?? AmrControlSystem.slnx
+?? evidence/setup/20261007-setup-01/README.md
+?? evidence/setup/20261007-setup-01/build.log
+?? evidence/setup/20261007-setup-01/code-integrity.log
+?? evidence/setup/20261007-setup-01/console-retry.log
+?? evidence/setup/20261007-setup-01/console.log
+?? evidence/setup/20261007-setup-01/dotnet-info.log
+?? evidence/setup/20261007-setup-01/environment.log
+?? evidence/setup/20261007-setup-01/repository-checks.log
+?? evidence/setup/20261007-setup-01/restore.log
+?? evidence/setup/20261007-setup-01/source-files.sha256
+?? evidence/setup/20261007-setup-01/test-discovery-diagnostic.host.26-10-07_13-57-52_17413_5.log
+?? evidence/setup/20261007-setup-01/test-discovery-diagnostic.log
+?? evidence/setup/20261007-setup-01/test-discovery-retry.log
+?? evidence/setup/20261007-setup-01/test-discovery.log
+?? evidence/setup/20261007-setup-02/README.md
+?? evidence/setup/20261007-setup-02/baseline.log
+?? evidence/setup/20261007-setup-02/broker-config.json
+?? evidence/setup/20261007-setup-02/code-integrity.json
+?? evidence/setup/20261007-setup-02/console.log
+?? evidence/setup/20261007-setup-02/docker-broker.log
+?? evidence/setup/20261007-setup-02/document-search.json
+?? evidence/setup/20261007-setup-02/repository-checks.log
+?? evidence/setup/20261007-setup-02/source-comparison.json
+?? evidence/setup/20261007-setup-02/source-files.sha256
+?? global.json
+?? src/Amr.Communication.Console/Amr.Communication.Console.csproj
+?? src/Amr.Communication.Console/Program.cs
+?? src/Amr.Communication/Amr.Communication.csproj
+?? tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj

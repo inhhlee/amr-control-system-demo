@@ -1,0 +1,13 @@
+Started: 2026-10-07T14:51:06.0160592+09:00
+Checks: ignore rules, authored text whitespace, changed document links, source references; no product test execution.
+Generated output files ignored: 162/162
+Source/evidence/shared example paths kept: 37
+Private/generated pattern examples ignored: 6/6
+Local links resolved in changed documents: 35
+Authored files checked for whitespace: 11
+PASS
+Finished: 2026-10-07T14:51:06.2222964+09:00
+Final document links resolved: 44
+Existing code/rules preserved unchanged during this verification: 9 files
+Final documentation check: PASS
+Final check finished: 2026-10-07T14:52:49.3330249+09:00
