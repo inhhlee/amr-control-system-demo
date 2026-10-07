@@ -1,0 +1,54 @@
+
+TimeCreated      : 2026-10-07 오후 1:57:20
+Id               : 3077
+LevelDisplayName : 오류
+Message          : Code Integrity determined that a process (\Device\HarddiskVolume3\amr-control-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.exe) attempted to load \Device\HarddiskVolume3\amr-contro
+                   l-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.dll that did not meet the Enterprise signing level requirements or violated code integrity policy (Policy ID:{0283ac0f-fff1-49ae-ada1
+                   -8a933130cad6}).
+
+TimeCreated      : 2026-10-07 오후 1:57:20
+Id               : 3033
+LevelDisplayName : 오류
+Message          : Code Integrity determined that a process (\Device\HarddiskVolume3\amr-control-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.exe) attempted to load \Device\HarddiskVolume3\amr-contro
+                   l-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.dll that did not meet the Enterprise signing level requirements.
+
+TimeCreated      : 2026-10-07 오후 1:57:20
+Id               : 3077
+LevelDisplayName : 오류
+Message          : Code Integrity determined that a process (\Device\HarddiskVolume3\amr-control-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.exe) attempted to load \Device\HarddiskVolume3\amr-contro
+                   l-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.dll that did not meet the Enterprise signing level requirements or violated code integrity policy (Policy ID:{0283ac0f-fff1-49ae-ada1
+                   -8a933130cad6}).
+
+TimeCreated      : 2026-10-07 오후 1:57:20
+Id               : 3033
+LevelDisplayName : 오류
+Message          : Code Integrity determined that a process (\Device\HarddiskVolume3\amr-control-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.exe) attempted to load \Device\HarddiskVolume3\amr-contro
+                   l-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.dll that did not meet the Enterprise signing level requirements.
+
+TimeCreated      : 2026-10-07 오후 1:56:58
+Id               : 3077
+LevelDisplayName : 오류
+Message          : Code Integrity determined that a process (\Device\HarddiskVolume3\amr-control-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.exe) attempted to load \Device\HarddiskVolume3\amr-contro
+                   l-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.dll that did not meet the Enterprise signing level requirements or violated code integrity policy (Policy ID:{0283ac0f-fff1-49ae-ada1
+                   -8a933130cad6}).
+
+TimeCreated      : 2026-10-07 오후 1:56:58
+Id               : 3033
+LevelDisplayName : 오류
+Message          : Code Integrity determined that a process (\Device\HarddiskVolume3\amr-control-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.exe) attempted to load \Device\HarddiskVolume3\amr-contro
+                   l-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.dll that did not meet the Enterprise signing level requirements.
+
+TimeCreated      : 2026-10-07 오후 1:56:58
+Id               : 3077
+LevelDisplayName : 오류
+Message          : Code Integrity determined that a process (\Device\HarddiskVolume3\amr-control-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.exe) attempted to load \Device\HarddiskVolume3\amr-contro
+                   l-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.dll that did not meet the Enterprise signing level requirements or violated code integrity policy (Policy ID:{0283ac0f-fff1-49ae-ada1
+                   -8a933130cad6}).
+
+TimeCreated      : 2026-10-07 오후 1:56:58
+Id               : 3033
+LevelDisplayName : 오류
+Message          : Code Integrity determined that a process (\Device\HarddiskVolume3\amr-control-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.exe) attempted to load \Device\HarddiskVolume3\amr-contro
+                   l-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.dll that did not meet the Enterprise signing level requirements.
+
+

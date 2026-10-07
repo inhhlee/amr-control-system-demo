@@ -1,0 +1,35 @@
+Run ID: 20261007-setup-01
+Checker retry: initial PowerShell stdin pipeline supplied CRLF to git check-ignore and produced quoted paths ending in \r. Retried with actual paths as arguments; no source or ignore rule change.
+PASS: actual bin/obj files ignored: 162
+PASS: source/evidence and sample patterns remain trackable: 27
+PASS: local settings and temporary test result patterns ignored: 6
+Checker note: disabling core.autocrlf classified existing CRLF endings as whitespace. Final checks respect CRLF and check horizontal whitespace in authored files.
+PASS: git diff --check and horizontal whitespace checks for 11 authored files
+PASS: requested external code repository references removed from setup guidance
+PASS: local Markdown link targets: 43
+PASS: expected work branch; staging is empty
+ M AGENTS.md
+ M README.md
+?? .github/pull_request_template.md
+?? .gitignore
+?? AmrControlSystem.slnx
+?? evidence/setup/20261007-setup-01/README.md
+?? evidence/setup/20261007-setup-01/build.log
+?? evidence/setup/20261007-setup-01/code-integrity.log
+?? evidence/setup/20261007-setup-01/console-retry.log
+?? evidence/setup/20261007-setup-01/console.log
+?? evidence/setup/20261007-setup-01/dotnet-info.log
+?? evidence/setup/20261007-setup-01/environment.log
+?? evidence/setup/20261007-setup-01/repository-checks.log
+?? evidence/setup/20261007-setup-01/restore.log
+?? evidence/setup/20261007-setup-01/source-files.sha256
+?? evidence/setup/20261007-setup-01/test-discovery-diagnostic.host.26-10-07_13-57-52_17413_5.log
+?? evidence/setup/20261007-setup-01/test-discovery-diagnostic.log
+?? evidence/setup/20261007-setup-01/test-discovery-retry.log
+?? evidence/setup/20261007-setup-01/test-discovery.log
+?? global.json
+?? src/Amr.Communication.Console/Amr.Communication.Console.csproj
+?? src/Amr.Communication.Console/Program.cs
+?? src/Amr.Communication/Amr.Communication.csproj
+?? tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj
+Checked: 2026-10-07T14:01:29.4292884+09:00

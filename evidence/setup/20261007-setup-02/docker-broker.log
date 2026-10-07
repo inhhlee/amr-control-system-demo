@@ -1,0 +1,26 @@
+Checked: 2026-10-07T14:47:13.0936889+09:00 CLI: C:\Users\Admin\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe Read-only inspection; no service/container/configuration changes.
+Command: docker version --format {{json .}}
+{"Client":{"Version":"29.7.2","ApiVersion":"1.55","DefaultAPIVersion":"1.55","GitCommit":"a7dcaa6","GoVersion":"go1.26.5","Os":"windows","Arch":"amd64","BuildTime":"Wed Aug  5 18:31:33 2026","Context":"desktop-linux"},"Server":{"Platform":{"Name":"Docker Desktop 4.90.0 (238679)"},"Version":"29.7.2","ApiVersion":"1.55","MinAPIVersion":"1.40","Os":"linux","Arch":"amd64","Components":[{"Name":"Engine","Version":"29.7.2","Details":{"ApiVersion":"1.55","Arch":"amd64","BuildTime":"Wed Aug  5 18:28:36 2026","Experimental":"false","GitCommit":"6a43e3d","GoVersion":"go1.26.5","KernelVersion":"6.18.33.2-microsoft-standard-WSL2","MinAPIVersion":"1.40","Module":"github.com/moby/moby/v2","ModuleVersion":"v2.0.0+unknown","Os":"linux"}},{"Name":"containerd","Version":"v2.3.3","Details":{"GitCommit":"aad11006b869517fcd3009450b6f82da282e1a9b"}},{"Name":"runc","Version":"1.4.3","Details":{"GitCommit":"v1.4.3-0-gbb14dabe"}},{"Name":"docker-init","Version":"0.19.0","Details":{"GitCommit":"de40ad0"}}],"GitCommit":"6a43e3d","GoVersion":"go1.26.5","KernelVersion":"6.18.33.2-microsoft-standard-WSL2","BuildTime":"2026-08-05T18:28:36.000000000+00:00"}}
+Exit code: 0
+Command: docker context show
+desktop-linux
+Exit code: 0
+Command: docker inspect amr-mosquitto (selected non-secret fields)
+{"Name":"/amr-mosquitto","Image":"eclipse-mosquitto:2.1.2-alpine","State":{"Status":"running","Running":true,"Paused":false,"Restarting":false,"OOMKilled":false,"Dead":false,"Pid":448,"ExitCode":0,"Error":"","StartedAt":"2026-10-07T04:57:14.036059926Z","FinishedAt":"2026-10-06T10:20:07.390912504Z"},"Ports":{"1883/tcp":[{"HostIp":"127.0.0.1","HostPort":"1883"}]},"Mounts":[{"Type":"bind","Source":"C:\\Monit\\docker\\mosquitto\\config","Destination":"/mosquitto/config","Mode":"ro","RW":false,"Propagation":"rprivate"},{"Type":"bind","Source":"C:\\Monit\\docker\\mosquitto\\data","Destination":"/mosquitto/data","Mode":"rw","RW":true,"Propagation":"rprivate"},{"Type":"bind","Source":"C:\\Monit\\docker\\mosquitto\\log","Destination":"/mosquitto/log","Mode":"rw","RW":true,"Propagation":"rprivate"}],"ComposeWorkingDirectory":"C:\\Monit\\docker","ComposeFile":"C:\\Monit\\docker\\docker-compose.yml"}
+Exit code: 0
+Host listening endpoints (port 1883):
+{
+  "Address": "127.0.0.1",
+  "Port": 1883
+}
+Compose/config file access:
+[
+  {
+    "Path": "C:\\Monit\\docker\\docker-compose.yml",
+    "Exists": true
+  },
+  {
+    "Path": "C:\\Monit\\docker\\mosquitto\\config\\mosquitto.conf",
+    "Exists": true
+  }
+]

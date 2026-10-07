@@ -1,0 +1,138 @@
+[
+  {
+    "Path": ".github/pull_request_template.md",
+    "SHA256": "9896a42f1883f9cbeb787ecab1e66a2e9f4fa8bd9a723e6d844042638501629b"
+  },
+  {
+    "Path": ".gitignore",
+    "SHA256": "be91781818393d43c2e8715f5e4889ee024f0f1141a8ca22dafc67234e162302"
+  },
+  {
+    "Path": "AmrControlSystem.slnx",
+    "SHA256": "698695fe8a09e721b87f1cdc3b80a545102ebf455c65ac86780c2130b352fa1c"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-01/README.md",
+    "SHA256": "175a28860c14800c9b25d16610edf13ce5077baa67fd54350a715e9232de1f1d"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-01/build.log",
+    "SHA256": "8687e1d8f0820ca234a83e05ef8e7b409b22380e64d7e14413e1e051b84f7cd0"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-01/code-integrity.log",
+    "SHA256": "33c428afdec360e60c0e5c4703527b5b59f8bed8474826fbaf8b4abc85a797a8"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-01/console-retry.log",
+    "SHA256": "3eaab8dbd870b3749b98a9c1391b72c8da99a3a7159496405ea90667b8571d92"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-01/console.log",
+    "SHA256": "3eaab8dbd870b3749b98a9c1391b72c8da99a3a7159496405ea90667b8571d92"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-01/dotnet-info.log",
+    "SHA256": "616525219683115d54021491bebb5d21c6c582be10cbd1783e397e1003f7af8f"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-01/environment.log",
+    "SHA256": "3893d7dd1738ce4840c0016415fe693780cfe6b2fd4d203b7299c14164260b5b"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-01/repository-checks.log",
+    "SHA256": "df8cadc32dff0107dbac59ba223d87507d52bf7814b74859243a34efe6dc09c7"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-01/restore.log",
+    "SHA256": "82e697595a83dd602f0bf1f679b22a69409f949702db6abded6ea6d322f7984c"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-01/source-files.sha256",
+    "SHA256": "e6b5135372b2a163e8acee0c007ca387793c0e1a76931cb0b0b4bbde6e1c8870"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-01/test-discovery-diagnostic.host.26-10-07_13-57-52_17413_5.log",
+    "SHA256": "9616cbb47319b9ea8a1a909aabcb60140acded96bb5982fb728836095f2ac481"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-01/test-discovery-diagnostic.log",
+    "SHA256": "6e6e6d4111c08530bd9c3685a712bd422105a19fda89fe222dd5874abe45d792"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-01/test-discovery-retry.log",
+    "SHA256": "3392650691e7133f1df25ea1559c4da22f6a5ecdcaec349cd2cbea122ab3a967"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-01/test-discovery.log",
+    "SHA256": "6016b127f42b21e31b1dafa036ccc5df3fdbb0fa1f4a4c13a20e9e9d95574259"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-02/README.md",
+    "SHA256": "8b4d54acd8bc0f449aa7281719219b65cfaafb0f88edd03ee35fbaae05dcfe7b"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-02/baseline.log",
+    "SHA256": "8c4bba127414f2dc396d4c82d5b67c705b430595bf2ea691aade8a2c17c02d62"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-02/broker-config.json",
+    "SHA256": "b9cf4608e982bf107dda7c2532f835947d4b6657c53f8fb421d391aa0e2a01d4"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-02/code-integrity.json",
+    "SHA256": "c2ae3f5a58175f5b4695ae31c0584db89041ffa571777d465139391d38f4d815"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-02/console.log",
+    "SHA256": "ca80f161ee8e7806051bea41ae0cf2a4774ba127de51f2fa8417727a7ee7614f"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-02/docker-broker.log",
+    "SHA256": "a7cfad5a6e095b9a1a67b097298e93c3eeff38e579ee63b47e90833abd0b1b14"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-02/document-search.json",
+    "SHA256": "b968cb4e9e27ec5f193ff2387abf0e5e300669e28ebafa7c867bc4b2e49ed7ac"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-02/repository-checks.log",
+    "SHA256": "44e124882794342b292742d428067121f5c2db9ea9aa56341f2c81bfd95d04c2"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-02/source-comparison.json",
+    "SHA256": "601ac8fe5874295d669ff7337efc789dd71298a46d3a04b7bcde4afc2998824c"
+  },
+  {
+    "Path": "evidence/setup/20261007-setup-02/source-files.sha256",
+    "SHA256": "339a18a3050cb0f736da193795f5bed0b0c55e1bbb684212ad958982a39292d1"
+  },
+  {
+    "Path": "global.json",
+    "SHA256": "ce61f5ae207d33d00594c77c5999c7f0dc66434e85a85f38090335d588438974"
+  },
+  {
+    "Path": "src/Amr.Communication.Console/Amr.Communication.Console.csproj",
+    "SHA256": "34e3fe9324fe1e0030bf69712e18004382833add9e6bf7edd5caefb9bb7dd382"
+  },
+  {
+    "Path": "src/Amr.Communication.Console/Program.cs",
+    "SHA256": "662a2efd6a1c82220368ec0a36b6a229c412618377aca397bd830486c04da0ef"
+  },
+  {
+    "Path": "src/Amr.Communication/Amr.Communication.csproj",
+    "SHA256": "314fbabb75a426e9dfda4623bb16aba50190902105f1091ccfbee7613e38f648"
+  },
+  {
+    "Path": "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj",
+    "SHA256": "a26c5be8d5611dceb8d2751ba77374c080bb91d45e3cfedea1f2ee19ca402f03"
+  },
+  {
+    "Path": "AGENTS.md",
+    "SHA256": "0335cdf1da677061476653df107220d789cf85028b51fabaec4f3ea743c3fbd7"
+  },
+  {
+    "Path": "README.md",
+    "SHA256": "cc13d91889d258682dc86f9937a638e094123415eafbba2a855d7afb69989c5d"
+  }
+]

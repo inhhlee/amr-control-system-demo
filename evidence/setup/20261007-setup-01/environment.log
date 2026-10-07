@@ -1,0 +1,13 @@
+Run ID: 20261007-setup-01
+Started: 2026-10-07T13:55:33.5317502+09:00
+OS: Microsoft Windows NT 10.0.26200.0
+Process architecture: X64
+PowerShell: 7.6.5
+Workspace: C:\amr-control-system-demo
+Issue: https://github.com/inhhlee/amr-control-system-demo/issues/2
+Scope: current repository setup; no commits, push, PR, service changes
+Docker: docker command unavailable; default Docker Desktop CLI path absent
+Broker: status, address and management location unverified
+7f89908c4f1b4a0d73c8a9475ad84aa5825cbf84
+codex/2-dev-foundation
+git version 2.55.0.windows.5

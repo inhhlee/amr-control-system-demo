@@ -1,0 +1,8 @@
+Started: 2026-10-07T14:47:21.6703025+09:00
+Working directory: C:\amr-control-system-demo
+Command: dotnet run --project src/Amr.Communication.Console --no-build
+Expected: AMR 관제시스템 개발 준비가 완료되었습니다. / exit 0
+Unhandled exception. System.IO.FileLoadException: Could not load file or assembly 'C:\amr-control-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.dll'. 애플리케이션 제어 정책에서 이 파일을 차단했습니다. (0x800711C7)
+File name: 'C:\amr-control-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.dll'
+Actual exit code: -532462766
+Finished: 2026-10-07T14:47:42.7750340+09:00
