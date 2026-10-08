@@ -14,6 +14,7 @@
 
 1. 이 README에서 프로젝트 목적과 작업 위치를 확인한다.
 2. [AGENTS.md](AGENTS.md)의 에이전트 작업 규칙을 읽고 따른다.
+   팀원의 담당·인계, Issue 분할, 브랜치·시험·PR 진행은 [팀 협업 규칙](CONTRIBUTING.md)을 함께 확인한다.
 3. [계획·명세·업무 문서 안내](C:/process-plan/README.md)에서 필요한 담당 문서를 찾고, 문서 작업에는 [문서 저장소 지침](C:/process-plan/AGENTS.md)과 [관제 프로젝트 지침](<C:/process-plan/관제시스템 과제 진행/AGENTS.md>)을 함께 적용한다.
 4. [개발 진행 절차](<C:/process-plan/기준/개발 진행 절차.md>)와 사용자가 요청한 단계에 맞춰 진행한다. 작업별 원본 스킬은 [AGENTS.md의 안내](AGENTS.md#작업별-스킬)를 따른다.
 
