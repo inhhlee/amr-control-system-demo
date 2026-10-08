@@ -1,0 +1,12 @@
+mosquitto-1  | 2026-10-08T07:12:45.024529912Z 1791443565: Info: running mosquitto as user: mosquitto.
+mosquitto-1  | 2026-10-08T07:12:45.025940748Z 1791443565: mosquitto version 2.1.2 starting
+mosquitto-1  | 2026-10-08T07:12:45.026245812Z 1791443565: Config loaded from /mosquitto/config/mosquitto.conf.
+mosquitto-1  | 2026-10-08T07:12:45.026528962Z 1791443565: Bridge support available.
+mosquitto-1  | 2026-10-08T07:12:45.026788787Z 1791443565: Persistence support available.
+mosquitto-1  | 2026-10-08T07:12:45.027097705Z 1791443565: TLS support available.
+mosquitto-1  | 2026-10-08T07:12:45.027494297Z 1791443565: TLS-PSK support available.
+mosquitto-1  | 2026-10-08T07:12:45.027883399Z 1791443565: Websockets support available.
+mosquitto-1  | 2026-10-08T07:12:45.028341719Z 1791443565: Opening ipv4 listen socket on port 1883.
+mosquitto-1  | 2026-10-08T07:12:45.028723874Z 1791443565: mosquitto version 2.1.2 running
+mosquitto-1  | 2026-10-08T07:13:12.495410933Z 1791443592: mosquitto version 2.1.2 terminating
+mosquitto-1  | 2026-10-08T07:13:12.496230749Z 1791443592: Saving in-memory database to /mosquitto/data//mosquitto.db.

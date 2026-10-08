@@ -1,0 +1,394 @@
+{
+  "checkedKst": "2026-10-08T16:26:28.7075061+09:00",
+  "kind": "Saved-evidence and document consistency checks; not an MQTT or new Broker execution test",
+  "head": "ebaf54641040b97f81cdda0142ab5c7e498fa454",
+  "stagedFiles": [],
+  "gitStatus": [
+    " M README.md",
+    " M docker/mosquitto/config/mosquitto.conf",
+    "?? evidence/COM-03/20261008-a1-broker-01/01-engine-before.log",
+    "?? evidence/COM-03/20261008-a1-broker-01/02-compose-version.log",
+    "?? evidence/COM-03/20261008-a1-broker-01/03-compose-config.log",
+    "?? evidence/COM-03/20261008-a1-broker-01/04-compose-resolved.json",
+    "?? evidence/COM-03/20261008-a1-broker-01/05-desktop-start.log",
+    "?? evidence/COM-03/20261008-a1-broker-01/06-containers-before.jsonl",
+    "?? evidence/COM-03/20261008-a1-broker-01/07-context.json",
+    "?? evidence/COM-03/20261008-a1-broker-01/08-image.json",
+    "?? evidence/COM-03/20261008-a1-broker-01/09-listeners-before.json",
+    "?? evidence/COM-03/20261008-a1-broker-01/10-project-before.jsonl",
+    "?? evidence/COM-03/20261008-a1-broker-01/11-others-before.jsonl",
+    "?? evidence/COM-03/20261008-a1-broker-01/12-up.log",
+    "?? evidence/COM-03/20261008-a1-broker-01/13-ps-started.jsonl",
+    "?? evidence/COM-03/20261008-a1-broker-01/14-logs-started.log",
+    "?? evidence/COM-03/20261008-a1-broker-01/15-inspect-started.json",
+    "?? evidence/COM-03/20261008-a1-broker-01/16-listeners-started.json",
+    "?? evidence/COM-03/20261008-a1-broker-01/17-stop.log",
+    "?? evidence/COM-03/20261008-a1-broker-01/18-ps-stopped.jsonl",
+    "?? evidence/COM-03/20261008-a1-broker-01/19-inspect-stopped.json",
+    "?? evidence/COM-03/20261008-a1-broker-01/20-logs-stopped.log",
+    "?? evidence/COM-03/20261008-a1-broker-01/21-listeners-stopped.json",
+    "?? evidence/COM-03/20261008-a1-broker-01/22-up-again.log",
+    "?? evidence/COM-03/20261008-a1-broker-01/23-ps-restarted.jsonl",
+    "?? evidence/COM-03/20261008-a1-broker-01/24-logs-restarted.log",
+    "?? evidence/COM-03/20261008-a1-broker-01/25-inspect-restarted.json",
+    "?? evidence/COM-03/20261008-a1-broker-01/26-others-after.jsonl",
+    "?? evidence/COM-03/20261008-a1-broker-01/27-listeners-restarted.json",
+    "?? evidence/COM-03/20261008-a1-broker-01/28-mosquitto-file.log",
+    "?? evidence/COM-03/20261008-a1-broker-01/29-comparison.json",
+    "?? evidence/COM-03/20261008-a1-broker-01/30-preservation-check.json",
+    "?? evidence/COM-03/20261008-a1-broker-01/31-document-sources.json",
+    "?? evidence/COM-03/20261008-a1-broker-01/32-git-baseline.log",
+    "?? evidence/COM-03/20261008-a1-broker-01/33-base-ancestor.log",
+    "?? evidence/COM-03/20261008-a1-broker-01/README.md",
+    "?? evidence/COM-03/20261008-a1-broker-01/commands.jsonl",
+    "?? evidence/COM-03/20261008-a1-broker-01/environment.json",
+    "?? evidence/COM-03/20261008-a1-broker-01/render-report.ps1",
+    "?? evidence/COM-03/20261008-a1-broker-01/report.html",
+    "?? evidence/COM-03/20261008-a1-broker-01/repository-checks.json"
+  ],
+  "currentMosquittoConfigContentReadOrModified": false,
+  "separateConfigChange": "User requested preservation of another task change after the execution. Current configuration remains unverified.",
+  "capturedCommandCount": 25,
+  "allCapturedNativeExitCodesZero": true,
+  "emptyCommandOutputFilesMaterialized": [
+    "03-compose-config.log",
+    "10-project-before.jsonl",
+    "33-base-ancestor.log"
+  ],
+  "savedResults": {
+    "startedRunning": true,
+    "stoppedNormally": true,
+    "sameContainerRestarted": true,
+    "configMountReadOnly": true,
+    "otherContainersPreserved": true
+  },
+  "localLinks": [
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "AGENTS.md",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "CONTRIBUTING.md",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "AGENTS.md#작업별-스킬",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "global.json",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "AmrControlSystem.slnx",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "src/Amr.Communication/Amr.Communication.csproj",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "src/Amr.Communication.Console/Amr.Communication.Console.csproj",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "evidence/setup/",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "evidence/setup/20261007-docker-local-01/README.md",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "evidence/setup/20261007-setup-02/README.md#1-목표와-적용-기준",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "evidence/setup/20261007-setup-03/README.md",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "evidence/setup/20261007-setup-03/console.log",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "evidence/setup/20261007-setup-02/console.log",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "evidence/setup/20261007-setup-02/code-integrity.json",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "docker/compose.yaml",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "docker/mosquitto/config/mosquitto.conf",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "evidence/COM-03/20261008-a1-broker-01/README.md",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "evidence/COM-03/20261008-a1-broker-01/commands.jsonl",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "evidence/COM-03/20261008-a1-broker-01/24-logs-restarted.log",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "evidence/COM-03/20261008-a1-broker-01/report.html",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "evidence/setup/20261007-setup-02/docker-broker.log",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "evidence/setup/20261007-docker-local-01/README.md",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "evidence/setup/20261007-setup-01/README.md",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "evidence/setup/20261007-setup-02/README.md",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "evidence/setup/20261007-setup-03/README.md",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "target": "evidence/COM-03/20261008-a1-broker-01/README.md",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "report.html",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "33-base-ancestor.log",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "commands.jsonl",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "31-document-sources.json",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "32-git-baseline.log",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "08-image.json",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "environment.json",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "01-engine-before.log",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "04-compose-resolved.json",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "08-image.json",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "15-inspect-started.json",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "commands.jsonl",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "03-compose-config.log",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "12-up.log",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "13-ps-started.jsonl",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "14-logs-started.log",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "15-inspect-started.json",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "16-listeners-started.json",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "17-stop.log",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "18-ps-stopped.jsonl",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "19-inspect-stopped.json",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "20-logs-stopped.log",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "22-up-again.log",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "24-logs-restarted.log",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "25-inspect-restarted.json",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "27-listeners-restarted.json",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "../../../README.md",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "29-comparison.json",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "repository-checks.json",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "11-others-before.jsonl",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "26-others-after.jsonl",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "30-preservation-check.json",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "28-mosquitto-file.log",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "05-desktop-start.log",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "29-comparison.json",
+      "exists": true
+    },
+    {
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "target": "30-preservation-check.json",
+      "exists": true
+    }
+  ],
+  "brokenLocalLinkCount": 0,
+  "runtimeIgnoreExit": 0,
+  "runtimeIgnored": [
+    ".gitignore:21:/docker/mosquitto/data/\tdocker/mosquitto/data/mosquitto.db",
+    ".gitignore:22:/docker/mosquitto/log/\tdocker/mosquitto/log/mosquitto.log"
+  ],
+  "evidenceIgnoreExit": 1,
+  "evidenceIgnored": [],
+  "rootReadmeWhitespaceExit": 0,
+  "rootReadmeWhitespaceOutput": [],
+  "browserPreview": "Not run: browser tool process exited twice. Open report.html locally with Ctrl+O.",
+  "brokenEvidenceAnchors": []
+}

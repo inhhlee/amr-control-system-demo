@@ -1,0 +1,25 @@
+{
+  "checkedKst": "2026-10-08T16:13:40.3105417+09:00",
+  "otherContainerIds": [
+    "5d8473f92851c5614b82161e1b129488f2780eb9b9647c78d45359bd239e1820",
+    "0e71fc5e933de38044bd84f9b054ea0db27efcfbabe4e36e740cbb80e4f5d3e8",
+    "d4d3d8362358e6a28aa39bf54e22d0cb5e99877b336e1aa6b22b0b6c017ca963",
+    "ec2d2ff7542136414cfb33efc67f90b64927b6bf1462844acb82f0712befb06b"
+  ],
+  "otherContainerSnapshotsIdentical": false,
+  "sameTargetContainer": true,
+  "targetRunning": true,
+  "targetError": "",
+  "originalStartedAt": "2026-10-08T07:12:44.880852372Z",
+  "restartedAt": "2026-10-08T07:13:37.985792189Z",
+  "configHashes": [
+    {
+      "Path": "C:\\amr-control-system-demo\\docker\\compose.yaml",
+      "Hash": "EAFD232C385B04D7BFD1158F4E1B46C45DE2D0887708DD80FD357F4279721FA0"
+    },
+    {
+      "Path": "C:\\amr-control-system-demo\\docker\\mosquitto\\config\\mosquitto.conf",
+      "Hash": "5301574582866D6C346FE29FF2F994EA8C025F27503EA09143E887E0D2B826B8"
+    }
+  ]
+}

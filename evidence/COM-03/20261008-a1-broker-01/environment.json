@@ -1,0 +1,26 @@
+{
+  "runId": "20261008-a1-broker-01",
+  "startedKst": "2026-10-08T16:11:17.4890064+09:00",
+  "cwd": "C:\\amr-control-system-demo",
+  "branch": "feature/7-broker-check",
+  "head": "ebaf54641040b97f81cdda0142ab5c7e498fa454",
+  "initialGitStatus": [],
+  "origin": "https://github.com/inhhlee/amr-control-system-demo.git",
+  "os": "Microsoft Windows 10.0.26200",
+  "architecture": "X64",
+  "powershell": "7.6.5",
+  "dockerCli": "C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+  "dockerOnPath": "C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+  "desktopExecutable": "C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\Docker Desktop.exe",
+  "desktopVersion": "4.90.0.238679",
+  "configHashes": [
+    {
+      "Path": "C:\\amr-control-system-demo\\docker\\compose.yaml",
+      "Hash": "EAFD232C385B04D7BFD1158F4E1B46C45DE2D0887708DD80FD357F4279721FA0"
+    },
+    {
+      "Path": "C:\\amr-control-system-demo\\docker\\mosquitto\\config\\mosquitto.conf",
+      "Hash": "5301574582866D6C346FE29FF2F994EA8C025F27503EA09143E887E0D2B826B8"
+    }
+  ]
+}
