@@ -1,0 +1,38 @@
+{
+  "checkedKst": "2026-10-08T16:16:36.7466729+09:00",
+  "method": "Compare Id, State, RestartCount, ImageId and Mounts sorted by Destination. Raw snapshot difference in 29-comparison.json is mount array ordering only.",
+  "containers": [
+    {
+      "name": "/amr-mosquitto",
+      "id": "5d8473f92851c5614b82161e1b129488f2780eb9b9647c78d45359bd239e1820",
+      "stateIdentical": true,
+      "restartCountIdentical": true,
+      "imageIdentical": true,
+      "mountsIdenticalAfterSorting": true
+    },
+    {
+      "name": "/amr-seq",
+      "id": "0e71fc5e933de38044bd84f9b054ea0db27efcfbabe4e36e740cbb80e4f5d3e8",
+      "stateIdentical": true,
+      "restartCountIdentical": true,
+      "imageIdentical": true,
+      "mountsIdenticalAfterSorting": true
+    },
+    {
+      "name": "/unruffled_herschel",
+      "id": "d4d3d8362358e6a28aa39bf54e22d0cb5e99877b336e1aa6b22b0b6c017ca963",
+      "stateIdentical": true,
+      "restartCountIdentical": true,
+      "imageIdentical": true,
+      "mountsIdenticalAfterSorting": true
+    },
+    {
+      "name": "/cool_lumiere",
+      "id": "ec2d2ff7542136414cfb33efc67f90b64927b6bf1462844acb82f0712befb06b",
+      "stateIdentical": true,
+      "restartCountIdentical": true,
+      "imageIdentical": true,
+      "mountsIdenticalAfterSorting": true
+    }
+  ]
+}

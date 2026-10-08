@@ -1,0 +1,52 @@
+{
+  "name": "amr-demo",
+  "networks": {
+    "default": {
+      "name": "amr-demo_default",
+      "ipam": {}
+    }
+  },
+  "services": {
+    "mosquitto": {
+      "command": null,
+      "entrypoint": null,
+      "image": "eclipse-mosquitto:2.1.2-alpine",
+      "networks": {
+        "default": null
+      },
+      "ports": [
+        {
+          "mode": "ingress",
+          "host_ip": "127.0.0.1",
+          "target": 1883,
+          "published": "1884",
+          "protocol": "tcp"
+        }
+      ],
+      "restart": "no",
+      "volumes": [
+        {
+          "type": "bind",
+          "source": "C:\\amr-control-system-demo\\docker\\mosquitto\\config\\mosquitto.conf",
+          "target": "/mosquitto/config/mosquitto.conf",
+          "read_only": true,
+          "bind": {
+            "create_host_path": false
+          }
+        },
+        {
+          "type": "bind",
+          "source": "C:\\amr-control-system-demo\\docker\\mosquitto\\data",
+          "target": "/mosquitto/data",
+          "bind": {}
+        },
+        {
+          "type": "bind",
+          "source": "C:\\amr-control-system-demo\\docker\\mosquitto\\log",
+          "target": "/mosquitto/log",
+          "bind": {}
+        }
+      ]
+    }
+  }
+}

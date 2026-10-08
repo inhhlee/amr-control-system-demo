@@ -1,0 +1,1524 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COM-03 A1 · Broker 실행 검증</title>
+<style>
+:root{color-scheme:light;font-family:Segoe UI,Malgun Gothic,sans-serif;color:#192c38;background:#eef2f5}
+body{margin:0;line-height:1.7}main{max-width:1180px;margin:32px auto;padding:40px;background:white;border:1px solid #dce3e8;border-radius:12px}
+h1{font-size:30px;line-height:1.3;color:#123d48}h2{font-size:23px;margin-top:42px;border-top:1px solid #dce3e8;padding-top:24px}
+a{color:#006c86;text-underline-offset:3px}code{background:#edf3f6;padding:2px 4px;border-radius:3px;overflow-wrap:anywhere}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0;display:block;overflow-x:auto}
+th,td{border:1px solid #cedae0;padding:10px 12px;min-width:110px;text-align:left;vertical-align:top}th{background:#e7f1f3}
+pre{font:13px/1.6 Consolas,monospace;background:#f3f6f8;padding:16px;white-space:pre-wrap;overflow-wrap:anywhere;border-radius:6px}
+pre code{padding:0}details{border:1px solid #d5e0e6;border-radius:6px;margin:10px 0;padding:12px}summary{cursor:pointer;color:#075667;font-weight:600}
+.notice{background:#fff5da;border-left:4px solid #bd8e29;padding:14px 18px}.bar{font-size:13px;letter-spacing:.05em;color:#496570}
+@media(max-width:720px){main{margin:0;padding:20px;border:0;border-radius:0}h1{font-size:25px}}
+@media print{body{background:white}main{margin:0;border:0;padding:0}details{break-inside:avoid}}
+</style></head><body><main>
+<p class="bar">AMR CONTROL SYSTEM DEMO · ISSUE #7 · 2026-10-08</p>
+<p class="notice">시험 당시 설정의 로컬 실행 증거입니다. 이후 다른 작업의 설정 변경은 미검증입니다. MQTT 접속은 미실행이며 커밋·PR은 미생성입니다. 현재 컨테이너 상태를 실시간 조회하지 않습니다.</p><h1 id="com-03-a1-broker">COM-03 A1 Broker 기동·관리 검증결과</h1>
+<ul>
+<li>실행 ID: <code>20261008-a1-broker-01</code></li>
+<li>실행자: Codex, 사용자 요청에 따른 로컬 실행</li>
+<li>관련 Issue: <a href="https://github.com/inhhlee/amr-control-system-demo/issues/7">#7 · 전용 Broker 기동·관리 확인</a>. 총괄 <a href="https://github.com/inhhlee/amr-control-system-demo/issues/4">#4</a>.</li>
+<li>판정: <strong>시험 당시 설정의 A1 로컬 실행 검증 통과. 이후 별도 설정 변경은 미검증이며 커밋·푸시·PR 게시 연결도 미진행.</strong> MQTT 접속 성공이나 총괄 완료를 뜻하지 않는다.</li>
+<li>브라우저 보기: 같은 폴더의 <a href="report.html">report.html</a>을 로컬 브라우저로 연다. 아래 결과와 원본 로그를 함께 담은 정적 보기본이며 실시간 상태 화면이 아니다.</li>
+</ul>
+<h2 id="section">1. 목표와 적용 기준</h2>
+<p>준비된 Compose 정의로 프로젝트 Broker만 기동·중단·재기동하고, 상태·설정 로딩·포트·로그를 대조한다. 기존 파일은 루트 <code>README.md</code>, <code>docker/compose.yaml</code>, <code>docker/mosquitto/config/mosquitto.conf</code>다. 이번 생성 경로는 이 실행 증거 폴더다. Docker 설정은 기존 동작이 조건을 충족하여 변경하지 않았다.</p>
+<p>선행 #2·PR #3의 main 병합 커밋 <code>963a1fa8d48f432aaa87f07f15a61db57e22db88</code>이 현재 HEAD의 조상임을 확인했다(<a href="#evidence-33-base-ancestor.log">33-base-ancestor.log</a>, 종료 0은 <a href="#evidence-commands.jsonl">commands.jsonl</a>). GitHub 조회에서도 PR #3의 <code>merged=true</code>와 같은 병합 SHA를 확인했다.</p>
+<table>
+<thead>
+<tr>
+<th>기준</th>
+<th>실제 읽은 버전·항목</th>
+<th>적용·차이</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기능명세</td>
+<td>v0.7 초안 COM-03</td>
+<td>Broker 연결 상태 감시 중 이번 A1 실행 환경 범위</td>
+</tr>
+<tr>
+<td>요구사항정의</td>
+<td>v0.5 초안 R-04</td>
+<td>통신 계층의 접속 관리</td>
+</tr>
+<tr>
+<td>공통규칙</td>
+<td>v0.4 초안 C-04·C-09</td>
+<td>운행·Broker·AMR Heartbeat 상태를 구분</td>
+</tr>
+<tr>
+<td>공통데이터명세 / 검토 및 결정사항</td>
+<td>v0.4 / v0.5, D-08·D-09</td>
+<td>이번 A1에는 메시지 계약·재접속 정책 적용 없음</td>
+</tr>
+<tr>
+<td>과제1 과제계획</td>
+<td>현재 v0.16 초안, 새 저장소 실습·A1 #7</td>
+<td>Issue 참조 v0.15와 차이: A1~A3 실제 게시·총괄 연결 반영</td>
+</tr>
+<tr>
+<td>COM03-A / COM03-A1 원본</td>
+<td>현재 v0.7 / v0.4</td>
+<td>Issue 참조 COM03-A v0.6과 차이: #4 총괄, #7~9 별도 작업으로 연결</td>
+</tr>
+<tr>
+<td>개발 진행 절차 / 개발환경</td>
+<td>v0.6 / v0.7</td>
+<td>실행값은 과거 환경표 대신 현재 PC에서 조회</td>
+</tr>
+<tr>
+<td>코드 저장소 규칙</td>
+<td>AGENTS.md, CONTRIBUTING.md v0.3, PR 양식</td>
+<td>기존 feature 브랜치 유지, PR base develop, 이번에는 커밋 금지</td>
+</tr>
+</tbody>
+</table>
+<p>원본 경로는 <code>C:\process-plan\관제시스템 과제 진행\명세\{기능명세,요구사항정의,공통규칙,공통데이터명세,검토 및 결정사항}.md</code>, 같은 프로젝트의 <code>과제1\과제계획.md</code>, <code>과제1\이슈\02_COM-03_접속과_정상종료.md</code>, <code>05_COM-03_Broker_기동확인.md</code>, <code>개발환경.md</code> 및 <code>C:\process-plan\기준\개발 진행 절차.md</code>다. 정확한 파일별 절대 경로·버전 행·SHA-256은 <a href="#evidence-31-document-sources.json">31-document-sources.json</a>에 있다. 공유 URL은 확인되지 않아 로컬 경로를 웹 링크로 사용하지 않는다.</p>
+<p>과제계획 v0.15·COM03-A v0.6의 과거 본문을 별도로 읽은 것으로 표시하지 않는다. 이번 적용 범위는 사용자가 전달한 본문과 실제 #7이며, 현재 원본의 분리·연결 변경은 범위를 넓히지 않는다. 문서 원본 읽기는 가능했지만 <code>C:\process-plan</code>은 이번 코드 프로젝트의 등록된 쓰기 루트가 아니다. 기존 문서 저장소 변경은 별도로 보존한다.</p>
+<p>학습 답변에서 호스트→컨테이너 연결 이해를 확인하고 프로젝트·서비스 구분 및 Mosquitto의 Broker 역할을 설명한 뒤 실행했다. 학습 이해는 제품 검증 근거에 포함하지 않는다. 별도 제품 추적기 spec_revision·verification_index는 이 저장소에 없어 해당 없음이다.</p>
+<h2 id="section-1">2. 실행 환경과 코드</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>실제 값·근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>실행 구간</td>
+<td>2026-10-08 16:11:17~16:13:40 KST, 뒤에 문서·증거 대조 수행. 명령별 시각은 commands.jsonl</td>
+</tr>
+<tr>
+<td>코드 위치 / 브랜치</td>
+<td><code>C:\amr-control-system-demo</code> / <code>feature/7-broker-check</code></td>
+</tr>
+<tr>
+<td>기준 코드</td>
+<td><code>ebaf54641040b97f81cdda0142ab5c7e498fa454</code></td>
+</tr>
+<tr>
+<td>기준 브랜치</td>
+<td>조회한 원격 develop도 같은 SHA. 기존 작업 브랜치 재사용, 새 브랜치 생성 없음 (<a href="#evidence-32-git-baseline.log">32-git-baseline.log</a>)</td>
+</tr>
+<tr>
+<td>기존 변경 / 원격 PR</td>
+<td>시작 시 Git 상태 빈 목록. 같은 head의 PR 검색 결과 없음. 원격 작업 브랜치도 조회되지 않음</td>
+</tr>
+<tr>
+<td>이번 미커밋 변경</td>
+<td>README와 이 실행 증거. 이 작업에서 C#·프로젝트·Docker 설정은 수정하지 않음. 시험 뒤 생긴 다른 작업의 mosquitto.conf 변경은 보존·미검증</td>
+</tr>
+<tr>
+<td>OS / PowerShell</td>
+<td>Windows 10.0.26200 x64 / 7.6.5</td>
+</tr>
+<tr>
+<td>Docker</td>
+<td>Desktop 4.90.0 (238679), Client·Engine 29.7.2, Compose v5.5.1, context desktop-linux</td>
+</tr>
+<tr>
+<td>Docker CLI</td>
+<td><code>C:\Users\Admin\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe</code> (현재 PATH에서도 조회됨)</td>
+</tr>
+<tr>
+<td>엔진 주소</td>
+<td><code>npipe:////./pipe/dockerDesktopLinuxEngine</code></td>
+</tr>
+<tr>
+<td>이미지</td>
+<td>기존 <code>eclipse-mosquitto:2.1.2-alpine</code>, Linux amd64. 다운로드·설치 없음. digest는 <a href="#evidence-08-image.json">08-image.json</a></td>
+</tr>
+<tr>
+<td>프로젝트 / 서비스 / 컨테이너</td>
+<td><code>amr-demo</code> / <code>mosquitto</code> / <code>amr-demo-mosquitto-1</code>, ID <code>039102e4775ccc99cb74d4e08e9c50d689289a6aca5ae39788048b69d7d88a1c</code></td>
+</tr>
+<tr>
+<td>관리 정의</td>
+<td><code>C:\amr-control-system-demo\docker\compose.yaml</code>, Compose working_dir는 같은 <code>docker</code> 폴더</td>
+</tr>
+<tr>
+<td>후속 클라이언트 접속 주소</td>
+<td>이 Windows PC의 <code>127.0.0.1:1884</code> → 컨테이너 <code>1883/tcp</code></td>
+</tr>
+<tr>
+<td>마운트</td>
+<td>config 파일 read-only, data·log 폴더 read-write. 모두 이 저장소의 docker/mosquitto 아래</td>
+</tr>
+<tr>
+<td>Broker 정책</td>
+<td>로컬 개발용 익명 접속, persistence true, stdout 및 파일 로그, restart no</td>
+</tr>
+<tr>
+<td>기존 다른 Broker</td>
+<td><code>amr-mosquitto</code>, 프로젝트 docker, 관리 정의 <code>C:\Monit\docker\docker-compose.yml</code>. 작업 전후 exited(0) 유지</td>
+</tr>
+<tr>
+<td>SDK / MQTTnet / Topic·QoS·Retain</td>
+<td>.NET 실행·MQTT 클라이언트 시험에 해당하지 않아 이번에 측정·사용하지 않음</td>
+</tr>
+</tbody>
+</table>
+<p>환경·최초 Git 상태·설정 SHA-256은 <a href="#evidence-environment.json">environment.json</a>, 엔진·이미지·해석된 모델은 <a href="#evidence-01-engine-before.log">01-engine-before.log</a>·<a href="#evidence-04-compose-resolved.json">04-compose-resolved.json</a>·<a href="#evidence-08-image.json">08-image.json</a>, 실제 적용값은 <a href="#evidence-15-inspect-started.json">15-inspect-started.json</a>과 대조한다. 초기 모델의 예상값만으로 실제 적용을 판정하지 않았다.</p>
+<h2 id="section-2">3. 입력·예상·실제 결과</h2>
+<p>모든 Compose 명령은 코드 루트에서 같은 <code>compose -f docker/compose.yaml</code> 정의로 실행했다. 정확한 실행 파일·인자 배열·시작/종료 시각·종료 코드를 <a href="#evidence-commands.jsonl">commands.jsonl</a>에 기록했다.</p>
+<table>
+<thead>
+<tr>
+<th>시험</th>
+<th>입력·예상</th>
+<th>실제 결과·판정</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1-01 모델 검사</td>
+<td><code>config --quiet</code>, 종료 0</td>
+<td>종료 0, 출력 없음. <strong>통과(모델 검사만)</strong></td>
+<td><a href="#evidence-03-compose-config.log">03-compose-config.log</a>, commands.jsonl</td>
+</tr>
+<tr>
+<td>A1-02 기동·관리 확인</td>
+<td>기존 이미지·빈 1884 포트에서 <code>up -d mosquitto</code> → ps·logs·inspect, running·설정 로딩·루프백 포트·정상 마운트 예상</td>
+<td>기동 종료 0. 16:12:44 KST 기동, 2.1.2 설정 로딩·running. Windows 127.0.0.1:1884 listener 확인. <strong>통과</strong></td>
+<td><a href="#evidence-12-up.log">12-up.log</a>, <a href="#evidence-13-ps-started.jsonl">13-ps-started.jsonl</a>, <a href="#evidence-14-logs-started.log">14-logs-started.log</a>, <a href="#evidence-15-inspect-started.json">15-inspect-started.json</a>, <a href="#evidence-16-listeners-started.json">16-listeners-started.json</a></td>
+</tr>
+<tr>
+<td>A1-03 중단·재기동</td>
+<td>같은 서비스 <code>stop mosquitto</code>, exited(0)·정상 종료 예상. 다시 <code>up -d mosquitto</code>, running·재로딩·포트 공개 예상</td>
+<td>stop 종료 0, 컨테이너도 exited(0). 16:13:12 terminating·DB 저장. 16:13:37 같은 ID 재기동, 설정 재로딩·running·1884 공개. <strong>통과</strong></td>
+<td><a href="#evidence-17-stop.log">17-stop.log</a>, <a href="#evidence-18-ps-stopped.jsonl">18-ps-stopped.jsonl</a>, <a href="#evidence-19-inspect-stopped.json">19-inspect-stopped.json</a>, <a href="#evidence-20-logs-stopped.log">20-logs-stopped.log</a>, <a href="#evidence-22-up-again.log">22-up-again.log</a>, <a href="#evidence-24-logs-restarted.log">24-logs-restarted.log</a>, <a href="#evidence-25-inspect-restarted.json">25-inspect-restarted.json</a>, <a href="#evidence-27-listeners-restarted.json">27-listeners-restarted.json</a></td>
+</tr>
+<tr>
+<td>A1-04 문서·증거 대조</td>
+<td>README의 경로·주소·명령이 실제 기록과 같고 필요한 파일 추적 가능</td>
+<td>재현 명령과 이번 증거 연결. 실행 구간의 전후 Docker 설정 SHA-256 동일. 이후 별도 변경은 미검증. 로컬 문서 검사 결과는 repository-checks.json. <strong>문서 검증, MQTT 시험 아님</strong></td>
+<td><a href="#reproduce">루트 README</a>, <a href="#evidence-29-comparison.json">29-comparison.json</a>, <a href="#evidence-repository-checks.json">repository-checks.json</a></td>
+</tr>
+<tr>
+<td>보존 확인</td>
+<td>기존 다른 컨테이너를 시작·중단·삭제·초기화하지 않음</td>
+<td>기존 4개 ID·State·이미지·재시작 횟수·마운트 내용 동일. <strong>통과</strong></td>
+<td><a href="#evidence-11-others-before.jsonl">11-others-before.jsonl</a>, <a href="#evidence-26-others-after.jsonl">26-others-after.jsonl</a>, <a href="#evidence-30-preservation-check.json">30-preservation-check.json</a></td>
+</tr>
+</tbody>
+</table>
+<p>추가 기록: <a href="#evidence-28-mosquitto-file.log">28-mosquitto-file.log</a>는 실제 마운트된 <code>docker/mosquitto/log/mosquitto.log</code>의 복사본이다. 중단 시 <code>docker/mosquitto/data/mosquitto.db</code>가 생성됐으며 데이터를 삭제·초기화하지 않았다. Git 제외 대상인 실행 데이터·로그와 검토용 evidence 로그를 구분한다.</p>
+<h2 id="section-3">4. 완료조건과 브라우저 확인</h2>
+<p>로컬 <code>report.html</code>을 열고 아래 완료조건 표를 확인한다. 브라우저에서 Ctrl+O로 이 파일을 선택할 수 있다. 하단 원본 증거에서 해당 파일명을 펼치면 외부 서비스 없이 확인할 수 있다. GitHub에는 아직 미게시이므로 현재 저장소 웹페이지에 이번 변경이 표시되지는 않는다. 보기본 재생성은 PowerShell 7에서 같은 폴더의 <code>render-report.ps1</code>을 실행한다.</p>
+<table>
+<thead>
+<tr>
+<th>#7 완료조건</th>
+<th>상태</th>
+<th>브라우저에서 확인할 내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 기준 브랜치·문서·기존 변경·관리 위치·구성 기록</td>
+<td>충족</td>
+<td>1~2절, environment.json, 31-document-sources.json, 04-compose-resolved.json, 15-inspect-started.json</td>
+</tr>
+<tr>
+<td>2. Compose 검사 종료 0</td>
+<td>충족</td>
+<td>commands.jsonl의 03-compose-config.log 항목 exitCode=0. 빈 로그만으로 판정하지 않음</td>
+</tr>
+<tr>
+<td>3. 실제 기동·설정 로딩·포트 공개</td>
+<td>시험본 충족 / 이후 설정 변경 미검증</td>
+<td>13의 running·1884, 14의 Config loaded 및 running, 15의 읽기 전용 설정 마운트, 16의 호스트 listener</td>
+</tr>
+<tr>
+<td>4. 해당 프로젝트만 중단·재기동</td>
+<td>시험본 충족 / 이후 설정 변경 미검증</td>
+<td>19의 exited·ExitCode 0, 24의 종료→재로딩, 25의 같은 ID·새 StartedAt·Running true, 30의 다른 컨테이너 전 항목 true</td>
+</tr>
+<tr>
+<td>5. README·실행 ID·코드·로그·판정을 Issue·PR에 연결</td>
+<td><strong>일부 충족 / 게시 단계 남음</strong></td>
+<td>README와 증거의 상호 연결·#7 참조는 완료. 사용자 지시로 커밋·푸시·PR·Issue 게시 갱신 미수행. PR base develop, 관련 Issue #7로 연결할 예정</td>
+</tr>
+<tr>
+<td>6. MQTT 미실행·환경 제한·남은 항목 기록</td>
+<td>충족</td>
+<td>아래 5~6절. A2·A3 및 총괄 #4 완료 표시 없음</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-4">5. 환경 문제·미실행·해석 제한</h2>
+<ul>
+<li>실행 구간이 끝나고 기록을 정리하는 동안 Git diff 통계에 <code>docker/mosquitto/config/mosquitto.conf</code> 5줄 추가가 나타났다. 내용 읽기 명령이 거절됐고, 사용자는 “다른 작업의 변경이므로 그대로 두세요”라고 답했다. 변경을 되돌리거나 수정·재시험하지 않았고 현재 내용·동작 영향은 미확인이다. 2~3절과 모델·실행 통과 기록은 environment.json 및 29-comparison.json의 시험 당시 설정 해시에 한정한다. 다른 작업이 끝난 뒤 최종 설정과 증거의 유효성을 대조해야 하며 이번 Issue 전체를 완료 처리하지 않는다.</li>
+<li>기록 시작 전 읽기 전용 조회에서 Docker Linux 엔진 파이프가 없어 version의 Server가 null이고 ps·image 조회가 실패했다. <code>desktop status</code>도 실행 여부를 확인하지 못했다. 실행 증거 수집 시에는 엔진이 응답했으며 <a href="#evidence-05-desktop-start.log">05-desktop-start.log</a>는 이미 실행 중과 종료 0을 반환했다. 누가·어떤 동작으로 엔진을 시작했는지는 확인하지 않았다. 이 이전 조회에는 별도 종료 코드를 저장하지 않았으므로 이번 명령 기록으로 꾸미지 않는다.</li>
+<li>명령 실행 도구의 샌드박스 초기화 오류로 필요한 명령은 승인된 실행 경로에서 수행했다. Docker 설정이나 Windows 보안 정책을 변경하지 않았다.</li>
+<li>HTML 생성과 로컬 링크 검사는 수행했다. 브라우저 자동 열기 도구는 두 번 모두 프로세스가 종료되어 화면 검증은 미실행이다. 파일 생성 성공을 브라우저 표시 검증으로 집계하지 않는다. 사용자는 브라우저 Ctrl+O로 <code>report.html</code>을 열어 확인할 수 있다.</li>
+<li><a href="#evidence-29-comparison.json">29-comparison.json</a>의 <code>otherContainerSnapshotsIdentical=false</code>는 원문 문자열 대조 결과다. 기존 amr-mosquitto의 Mounts 배열 순서만 달랐고, Destination으로 정렬하여 필드별 비교한 <a href="#evidence-30-preservation-check.json">30-preservation-check.json</a>은 모두 true다. 원문 결과를 덮어쓰지 않았다.</li>
+<li>호스트 listener·컨테이너 상태·로그는 실행 준비 근거다. MQTT CONNECT/CONNACK, 메시지 구독·발행, C# 클라이언트·Ctrl+C 수명주기·자동 재접속·GUI 시험은 <strong>미실행 / 이번 범위 제외</strong>다. TCP 접속 프로브도 수행하지 않았다.</li>
+<li>.NET 소스·패키지를 수정하지 않아 복원·빌드·기능 자동 시험을 실행하지 않았다. 과거 시험이나 시험 0건을 이번 제품 통과 근거로 사용하지 않았다.</li>
+<li><code>restart: no</code>이므로 Docker/PC 재시작 뒤 자동 복구는 이번 보장 범위가 아니다. 후속 A2 전에 <code>version</code>, <code>ps -a</code>, <code>logs</code>를 조회하고, 필요하면 같은 서비스의 <code>up -d mosquitto</code>를 실행한다. 엔진·이미지·포트·마운트 오류가 있으면 해당 환경 원인을 해결한 뒤 새 실행 ID로 기록한다.</li>
+</ul>
+<h2 id="section-5">6. 종합 결과와 남은 단계</h2>
+<p>시험 당시 설정의 Broker 실행 준비 검증은 통과했고 16:13 KST 실행 조회에서 <code>amr-demo-mosquitto-1</code>은 running이었다. 이번 작업에서 설정 수정은 필요하지 않았다. 이후 다른 작업의 설정 변경은 보존하며 미검증으로 구분한다. 실행한 단계는 기준 확인 → 모델 검사 → 기동 → 상태·로그·포트·마운트 확인 → 중단 → 재기동 → 증거·README 정리다.</p>
+<p>커밋·푸시·PR 생성·리뷰·병합·Issue 종료는 미수행이다. #7 완료조건 5의 게시 연결과 develop 반영은 후속 요청 단계에 남는다. #4의 원래 완료조건은 유지하며 자동 종료하지 않는다. #7 PR 반영·환경 증거 확인 뒤 A2 #8에 착수하고 이번에 A2·A3 코드는 만들지 않았다.</p>
+<p>업무 기록 위치는 <code>C:\process-plan\일일업무\2026-10-08.md</code>다. 같은 날짜 기존 파일이 없어 새 날짜 기록에 이번 결과와 이 경로를 연결한다. 상세 로그는 코드 저장소에서 관리하며 별도 문서 저장소의 기존 변경과 커밋을 섞지 않는다.</p>
+<h2 id="reproduce">재현 명령 — 루트 README 보기</h2><details><summary>README.md 펼치기</summary><h1 id="amr-control-system-demo">amr-control-system-demo</h1>
+<p>가상 AMR 기반 관제시스템 구현 및 Issue·PR 개발 절차 실습</p>
+<h2 id="section">작업 위치</h2>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>위치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>구현·빌드·시험·실행 증거</td>
+<td><code>C:\amr-control-system-demo</code></td>
+</tr>
+<tr>
+<td>계획·명세·결정사항·업무 기록</td>
+<td><code>C:\process-plan</code></td>
+</tr>
+</tbody>
+</table>
+<p>개발 구성과 소스는 이 저장소에서 관리한다. 구현·Issue·PR 대상은 <a href="https://github.com/inhhlee/amr-control-system-demo">amr-control-system-demo</a>이며, 계획·명세 원본은 <code>C:\process-plan</code>에서 관리한다.</p>
+<h2 id="section-1">작업을 시작할 때</h2>
+<ol>
+<li>이 README에서 프로젝트 목적과 작업 위치를 확인한다.</li>
+<li><a href="../../../AGENTS.md">AGENTS.md</a>의 에이전트 작업 규칙을 읽고 따른다.
+팀원의 담당·인계, Issue 분할, 브랜치·시험·PR 진행은 <a href="../../../CONTRIBUTING.md">팀 협업 규칙</a>을 함께 확인한다.</li>
+<li><a href="C:/process-plan/README.md">계획·명세·업무 문서 안내</a>에서 필요한 담당 문서를 찾고, 문서 작업에는 <a href="C:/process-plan/AGENTS.md">문서 저장소 지침</a>과 <a href="C:/process-plan/%EA%B4%80%EC%A0%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B3%BC%EC%A0%9C%20%EC%A7%84%ED%96%89/AGENTS.md">관제 프로젝트 지침</a>을 함께 적용한다.</li>
+<li><a href="C:/process-plan/%EA%B8%B0%EC%A4%80/%EA%B0%9C%EB%B0%9C%20%EC%A7%84%ED%96%89%20%EC%A0%88%EC%B0%A8.md">개발 진행 절차</a>와 사용자가 요청한 단계에 맞춰 진행한다. 작업별 원본 스킬은 <a href="../../../AGENTS.md#%EC%9E%91%EC%97%85%EB%B3%84-%EC%8A%A4%ED%82%AC">AGENTS.md의 안내</a>를 따른다.</li>
+</ol>
+<h2 id="section-2">개발 구성</h2>
+<p><a href="https://github.com/inhhlee/amr-control-system-demo/issues/2">Issue #2</a>의 최소 구성을 이 프로젝트에 만들었다. 아래 프로젝트는 모두 <code>net10.0</code>을 사용한다.</p>
+<table>
+<thead>
+<tr>
+<th>파일·프로젝트</th>
+<th>역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../../global.json">global.json</a></td>
+<td>SDK 10.0.401, <code>latestPatch</code>, 시험판 SDK 사용 안 함</td>
+</tr>
+<tr>
+<td><a href="../../../AmrControlSystem.slnx">AmrControlSystem.slnx</a></td>
+<td>Visual Studio에서 열 솔루션</td>
+</tr>
+<tr>
+<td><a href="../../../src/Amr.Communication/Amr.Communication.csproj">Amr.Communication</a></td>
+<td>통신 라이브러리와 MQTTnet 5.2.0.1603 참조. 통신 기능은 아직 없음</td>
+</tr>
+<tr>
+<td><a href="../../../src/Amr.Communication.Console/Amr.Communication.Console.csproj">Amr.Communication.Console</a></td>
+<td>통신 라이브러리를 참조하고 준비 안내 한 줄을 출력하는 콘솔</td>
+</tr>
+<tr>
+<td><a href="../../../tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj">Amr.Communication.Tests</a></td>
+<td>통신 라이브러리 참조와 xUnit 시험 탐색 구성. 기능 시험은 아직 0건</td>
+</tr>
+<tr>
+<td><a href="../../../evidence/setup/">evidence/setup</a></td>
+<td>실행별 환경·복원·빌드·실행·시험 탐색 증거</td>
+</tr>
+</tbody>
+</table>
+<p>시험 패키지는 <code>Microsoft.NET.Test.Sdk 17.14.1</code>, <code>xunit 2.9.3</code>, <code>xunit.runner.visualstudio 3.1.4</code>다.</p>
+<p><strong>이번 준비 Issue의 범위:</strong> 도구·기존 Broker 환경 조회, 최소 프로젝트·참조 구성, 복원·빌드·준비 콘솔 실행·시험 탐색, 협업 규칙과 증거 기록이다. Issue #2의 제외 범위는 MQTT 연결 로직·메시지 송수신·Heartbeat·자동 재접속, GUI·Core·DB·다른 COM 기능, 기존 완성 소스·추적기·과거 통과 기록의 복사, 실제 Broker 연결 시험과 COM-03 완료 판정이다. 사용자가 추가 요청한 Docker 파일 준비와 Compose 모델 검사까지 수행했으며, 새 Broker 실제 기동·MQTT 연결 시험은 후속 범위다. 제외된 시험을 이번 Issue의 미충족 완료조건으로 표시하지 않는다.</p>
+<p>최소 .NET 구성은 Issue #2에 명시된 대상 파일·버전·완료조건을 따른다. 사용자의 추가 요청으로 프로젝트 전용 Docker 설정을 준비했고, 작업·실행 기준은 <code>C:\amr-control-system-demo</code>로 확정했다. 기존 Broker 재사용을 전제로 한 Issue 본문과의 범위 차이 및 로컬 검사 결과는 <a href="../../../evidence/setup/20261007-docker-local-01/README.md">Docker 로컬 검증결과</a>에 기록한다. 현재 문서 원본은 <code>C:\process-plan</code>이며, 읽은 문서의 버전과 Issue 참조 사이의 차이는 <a href="../../../evidence/setup/20261007-setup-02/README.md#1-%EB%AA%A9%ED%91%9C%EC%99%80-%EC%A0%81%EC%9A%A9-%EA%B8%B0%EC%A4%80">적용 기준</a>에 기록했다. Issue가 참조한 과제계획 v0.10과 DEMO-SETUP v0.1은 현재 문서 폴더에서 확인하지 못했다.</p>
+<h2 id="section-3">복원·빌드·실행</h2>
+<p>PowerShell에서 아래 명령을 순서대로 실행한다. .NET SDK 10.0.401과 NuGet 패키지 소스·캐시에 대한 접근이 필요하다.</p>
+<pre><code class="language-powershell">Set-Location C:\amr-control-system-demo
+dotnet restore AmrControlSystem.slnx
+dotnet build AmrControlSystem.slnx --no-restore
+dotnet run --project src/Amr.Communication.Console --no-build
+dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj --no-build --list-tests
+</code></pre>
+<p>콘솔의 예상 출력은 <code>AMR 관제시스템 개발 준비가 완료되었습니다.</code>이고 예상 종료 코드는 0이다. Broker 접속 설정이나 실행 중인 Broker는 이 준비 콘솔에 필요하지 않다.</p>
+<p><strong>콘솔 재시험 통과:</strong> 2026-10-07 16:04에 같은 명령으로 준비 안내 한 줄과 종료 코드 <code>0</code>을 확인했다. <a href="../../../evidence/setup/20261007-setup-03/README.md">재시험 결과</a>와 <a href="../../../evidence/setup/20261007-setup-03/console.log">콘솔 로그</a>를 확인한다. 이전 <code>0x800711C7</code> 실패는 <a href="../../../evidence/setup/20261007-setup-02/console.log">당시 실행 로그</a>와 <a href="../../../evidence/setup/20261007-setup-02/code-integrity.json">정책 차단 이벤트</a>에 보존한다. 사용자가 차단을 해결했다고 보고한 뒤 재시험했으며, 구체적인 해결 방법·정책 변경 내용은 확인하지 않았다.</p>
+<p><code>--list-tests</code>는 시험을 실행하지 않고 탐색한다. xUnit 어댑터가 로드되어 탐색을 마쳤으며 현재 결과는 0건이다. 제품 기능 시험의 통과를 의미하지 않는다.</p>
+<h2 id="docker">프로젝트 전용 Docker 설정</h2>
+<p>설정은 <a href="../../../docker/compose.yaml">docker/compose.yaml</a>과 <a href="../../../docker/mosquitto/config/mosquitto.conf">mosquitto.conf</a>에서 관리한다. 설치된 Docker Desktop을 사용하며 새 Broker를 위한 설정·데이터·로그 경로는 <code>C:\amr-control-system-demo\docker\</code> 안에 둔다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>A1 시험 당시 설정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compose 프로젝트 / 서비스</td>
+<td><code>amr-demo</code> / <code>mosquitto</code></td>
+</tr>
+<tr>
+<td>이미지</td>
+<td><code>eclipse-mosquitto:2.1.2-alpine</code></td>
+</tr>
+<tr>
+<td>Windows 호스트에서 접속할 주소</td>
+<td><code>127.0.0.1:1884</code> → 컨테이너 <code>1883/tcp</code></td>
+</tr>
+<tr>
+<td>인증 범위</td>
+<td>로컬 개발용 익명 접속. 호스트 공개 주소는 <code>127.0.0.1</code></td>
+</tr>
+<tr>
+<td>설정 파일</td>
+<td><code>docker/mosquitto/config/mosquitto.conf</code>, 읽기 전용 마운트·Git 추적</td>
+</tr>
+<tr>
+<td>실행 데이터 / 로그</td>
+<td><code>docker/mosquitto/data/</code>, <code>docker/mosquitto/log/</code>, 최초 기동 시 생성·Git 제외</td>
+</tr>
+<tr>
+<td>자동 재시작</td>
+<td>사용 안 함. 명시적으로 실행할 때만 기동</td>
+</tr>
+</tbody>
+</table>
+<p>모든 마운트의 호스트 경로는 Compose 파일 기준 상대 경로다. 설정 파일이 없으면 디렉터리를 대신 만들지 않도록 구성했다. <code>amr-demo</code>라는 이름으로 기존 Compose 프로젝트와 구분하며, 기존 <code>amr-mosquitto</code>의 1883 포트와 겹치지 않는다. <a href="https://docs.docker.com/reference/compose-file/services/">Compose 경로·포트 규칙</a> · <a href="https://docs.docker.com/compose/how-tos/project-name/">프로젝트 이름</a></p>
+<p>2026-10-08 현재 PC에서는 <code>docker</code>가 PATH에서 확인된다. 아래 명령은 확인한 절대 경로를 사용한다. 다른 PC에서는 실제 Docker CLI 경로나 PATH에 등록된 <code>docker</code>를 사용한다.</p>
+<pre><code class="language-powershell">Set-Location C:\amr-control-system-demo
+$dockerCli = 'C:\Users\Admin\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe'
+&amp; $dockerCli version
+&amp; $dockerCli context show
+&amp; $dockerCli compose version
+&amp; $dockerCli compose -f docker/compose.yaml config --quiet
+$LASTEXITCODE
+</code></pre>
+<p>위 설정 검사의 예상 종료 코드는 <code>0</code>이다. <code>compose config</code>는 Compose 모델을 검사하며 Broker를 시작하거나 Mosquitto 설정의 실제 로딩·MQTT 통신을 시험하지 않는다. <a href="https://docs.docker.com/reference/cli/docker/compose/config/">명령 설명</a></p>
+<p>Docker 엔진에 연결되지 않으면 설치된 Docker Desktop을 시작하고 <code>version</code>에 Server가 표시되는지 확인한다. 이번 기록 시작 전에는 엔진 파이프 연결 오류가 있었으나, 실행 증거 수집 시에는 이미 응답했다. <code>&amp; $dockerCli desktop start --timeout 45</code>는 <code>Docker Desktop is already running</code>과 종료 0을 반환했다. 새 도구·이미지를 설치하거나 내려받지 않았다.</p>
+<p>다음은 <a href="https://github.com/inhhlee/amr-control-system-demo/issues/7">Issue #7 · A1</a>에서 실제 수행한 기동·상태·로그·중단·재기동 순서다. 각 명령의 종료 코드는 바로 뒤에 <code>$LASTEXITCODE</code>로 확인한다. 명령이 실패하면 원인을 확인하기 전 다음 단계로 진행하지 않는다. <code>ps -a</code>는 중단된 컨테이너도 표시한다.</p>
+<pre><code class="language-powershell">&amp; $dockerCli compose -f docker/compose.yaml up -d mosquitto
+&amp; $dockerCli compose -f docker/compose.yaml ps -a
+&amp; $dockerCli compose -f docker/compose.yaml logs --no-color --timestamps --tail 100 mosquitto
+
+# 이 프로젝트의 Broker만 중단한다.
+&amp; $dockerCli compose -f docker/compose.yaml stop mosquitto
+&amp; $dockerCli compose -f docker/compose.yaml ps -a
+&amp; $dockerCli compose -f docker/compose.yaml logs --no-color --timestamps --tail 100 mosquitto
+
+# 같은 컨테이너를 다시 기동한다.
+&amp; $dockerCli compose -f docker/compose.yaml up -d mosquitto
+&amp; $dockerCli compose -f docker/compose.yaml ps -a
+&amp; $dockerCli compose -f docker/compose.yaml logs --no-color --timestamps --tail 100 mosquitto
+</code></pre>
+<p>예상 결과는 기동 시 <code>running</code>과 <code>127.0.0.1:1884-&gt;1883/tcp</code>, 로그의 <code>Config loaded from /mosquitto/config/mosquitto.conf.</code> 및 <code>mosquitto version 2.1.2 running</code>이다. 중단 시 <code>exited (0)</code>·<code>terminating</code>·데이터 저장 로그, 재기동 시 설정 재로딩·실행·포트 공개를 확인한다. 기존 사용자 Broker와 다른 서비스는 이 명령의 대상이 아니다.</p>
+<p><strong>2026-10-08 실제 결과:</strong> 시험 당시 설정에서 Compose 검사 종료 0, 기동 → 중단(exit 0) → 같은 컨테이너 재기동을 확인했다. 설정·마운트·포트 오류가 없었고 이번 A1 작업에서 Docker 설정을 수정하지 않았다. 다른 컨테이너 4개의 상태·이미지·마운트도 보존됐다. 16:13 KST 조회 시 프로젝트 Broker는 실행 중이었다.</p>
+<p>실행 ID는 <strong><code>20261008-a1-broker-01</code></strong>, 기준 코드는 <code>ebaf54641040b97f81cdda0142ab5c7e498fa454</code> (<code>feature/7-broker-check</code>)다. 시험 당시 소스·Docker 설정은 기준 커밋 그대로였으며 README·증거는 이번 미커밋 변경이다. <a href="../../../evidence/COM-03/20261008-a1-broker-01/README.md">검증결과와 완료조건</a>, <a href="../../../evidence/COM-03/20261008-a1-broker-01/commands.jsonl">명령·시각·종료 코드</a>, <a href="../../../evidence/COM-03/20261008-a1-broker-01/24-logs-restarted.log">재기동 로그</a>를 연결한다. 커밋·푸시·PR 생성과 Issue 종료는 수행하지 않았다.</p>
+<p><strong>시험 후 별도 변경:</strong> 기록 정리 중 <code>mosquitto.conf</code>에 다른 작업의 변경이 추가됐다. 사용자 요청으로 그대로 보존했으며 내용 검사·재기동·재시험 대상에 포함하지 않았다. 위 표와 통과 기록은 저장된 SHA-256의 시험본에 대한 결과다. 현재 설정 전체의 통과로 확대하지 않으며, 설정 담당 작업이 끝난 뒤 현재 설정과 적용 상태를 확인해야 한다. 후속 A2 착수 시에도 <code>ps -a</code>·<code>logs</code>로 현재 상태를 재확인한다.</p>
+<p>브라우저 확인은 로컬 <a href="../../../evidence/COM-03/20261008-a1-broker-01/report.html">검증 보고서 HTML</a>을 열어 완료조건 표와 펼칠 수 있는 원본 증거를 확인한다. GitHub에서 HTML을 클릭하면 소스가 표시되므로, 게시 후에는 위 Markdown 검증결과를 사용한다. <code>127.0.0.1:1884</code>는 MQTT 포트이며 HTTP 웹페이지 주소가 아니다. 이 보고서는 저장된 실행 기록으로, 실시간 상태 화면이 아니다.</p>
+<p><strong>범위 구분:</strong> A1의 Broker 실행 준비 검증이며 MQTT 접속·메시지 송수신·C# 연결·Ctrl+C 종료는 미실행이다. A2(#8)·A3(#9)의 기능을 미리 구현하지 않았으며 총괄 #4나 COM-03 전체 완료로 표시하지 않는다.</p>
+<p>이 프로젝트의 관리·실행 위치는 <code>C:\amr-control-system-demo</code>다. 설정의 상대 경로는 이 로컬 폴더의 <code>docker/compose.yaml</code>을 기준으로 해석된다. 데이터·로그도 이 폴더에 생성되며, 검토할 로그는 필요한 부분을 <code>evidence/</code>로 옮겨 보관한다.</p>
+<h2 id="section-4">준비 단계에서 확인한 환경과 결과 (2026-10-07)</h2>
+<p>2026-10-07, Windows 10.0.26200 / x64, PowerShell 7.6.5에서 확인했다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>실제 확인 결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SDK / 런타임</td>
+<td>.NET SDK 10.0.401 / .NET 10.0.12</td>
+</tr>
+<tr>
+<td>Git</td>
+<td>2.55.0.windows.5</td>
+</tr>
+<tr>
+<td>의존성 복원</td>
+<td>세 프로젝트 성공</td>
+</tr>
+<tr>
+<td>솔루션 빌드</td>
+<td>성공, 경고 0개·오류 0개</td>
+</tr>
+<tr>
+<td>콘솔 실행</td>
+<td>16:04 재시험 통과. 준비 안내 한 줄 출력, 종료 코드 0</td>
+</tr>
+<tr>
+<td>xUnit 탐색</td>
+<td>어댑터 3.1.4 로드·탐색 완료, 시험 0건</td>
+</tr>
+<tr>
+<td>Docker</td>
+<td>사용자 폴더에서 CLI 확인. Desktop 4.90.0 (238679), Client·Engine 29.7.2, context <code>desktop-linux</code></td>
+</tr>
+<tr>
+<td>기존 Broker 조회 기록</td>
+<td><code>amr-mosquitto</code>, 호스트 <code>127.0.0.1:1883</code>. 당시 상태는 <a href="../../../evidence/setup/20261007-setup-02/docker-broker.log">이전 환경 조회</a>에 보존</td>
+</tr>
+<tr>
+<td>새 Broker 설정</td>
+<td><code>C:\amr-control-system-demo\docker\compose.yaml</code>, 접속 주소 <code>127.0.0.1:1884</code>. 파일 준비·Compose 모델 검사 통과. 실제 기동·연결은 후속 범위</td>
+</tr>
+</tbody>
+</table>
+<p>이전 검증은 기존 Broker의 환경 조회 결과다. 현재 프로젝트의 설정·관리 경로는 위 로컬 폴더이며, 새 Broker 실행과 MQTT 통신은 이번 준비 Issue에서 제외된 후속 시험이다. 실제 로컬 경로 해석과 검사 근거는 <a href="../../../evidence/setup/20261007-docker-local-01/README.md">Docker 로컬 검증결과</a>에 기록한다.</p>
+<p>복원·빌드·탐색은 <a href="../../../evidence/setup/20261007-setup-01/README.md">첫 검증 기록</a>의 실제 결과다. 이번 확인에서 SDK·패키지·솔루션·프로젝트·소스의 SHA-256이 같음을 대조했으므로 성공한 검증을 반복하지 않았다. 당시 환경·정책 차단과 완료조건별 상태는 <a href="../../../evidence/setup/20261007-setup-02/README.md">추가 검증결과</a>에 보존하고, 최신 콘솔 정상 실행은 <a href="../../../evidence/setup/20261007-setup-03/README.md">콘솔 재시험 결과</a>에 기록했다.</p>
+<h2 id="section-5">직접 확인할 절차</h2>
+<ol>
+<li><p>위 복원·빌드 명령으로 세 프로젝트가 경고·오류 없이 빌드되는지 확인한다.</p>
+</li>
+<li><p>다음 명령으로 준비 안내 한 줄과 종료 코드 <code>0</code>을 확인한다. 16:04 재시험에서 두 조건을 충족했다. 이후 정책 차단이 발생하면 이벤트 뷰어의 <code>Microsoft-Windows-CodeIntegrity/Operational</code>에서 해당 DLL의 이벤트 3033·3077을 확인하고 기기 관리 담당자에게 허용된 개발 실행 방법을 확인한다.</p>
+<pre><code class="language-powershell">dotnet run --project src/Amr.Communication.Console --no-build
+$LASTEXITCODE
+</code></pre>
+</li>
+<li><p>위 <code>--list-tests</code> 명령이 탐색을 마치는지 확인한다. 시험 0건은 현재 빈 시험 프로젝트의 예상 결과이며 기능 시험 통과가 아니다.</p>
+</li>
+<li><p>Docker 파일은 위 <a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%A0%84%EC%9A%A9-docker-%EC%84%A4%EC%A0%95">프로젝트 전용 Docker 설정</a>의 명령으로 모델 검사·기동·상태·로그·중단·재기동을 확인한다. A1 실제 결과는 <a href="../../../evidence/COM-03/20261008-a1-broker-01/README.md">2026-10-08 검증결과</a>와 대조한다. 관리 폴더는 <code>C:\amr-control-system-demo</code>, 후속 MQTT 접속 주소는 <code>127.0.0.1:1884</code>다. MQTT 접속 시험은 별도 A2 범위다.</p>
+</li>
+</ol>
+<p>Issue #2는 <a href="https://github.com/inhhlee/amr-control-system-demo/pull/3">PR #3</a>의 main 병합(<code>963a1fa8d48f432aaa87f07f15a61db57e22db88</code>)으로 반영됐다. 이번 A1은 시험 당시 설정의 Broker 기동·관리를 검증했으며 이후 별도 설정 변경의 검증과 커밋·푸시·PR 연결은 남아 있다. A1 PR의 develop 반영·근거 확인 후 A2를 진행한다. COM-03 또는 과제1 전체 완료를 뜻하지 않는다.</p>
+</details><h2>원본 증거</h2><p>파일명을 클릭해 저장된 기록을 펼치세요. 날짜는 명시된 시간대를 따릅니다.</p><details id="evidence-01-engine-before.log"><summary>01-engine-before.log</summary><pre>{&quot;Client&quot;:{&quot;Version&quot;:&quot;29.7.2&quot;,&quot;ApiVersion&quot;:&quot;1.55&quot;,&quot;DefaultAPIVersion&quot;:&quot;1.55&quot;,&quot;GitCommit&quot;:&quot;a7dcaa6&quot;,&quot;GoVersion&quot;:&quot;go1.26.5&quot;,&quot;Os&quot;:&quot;windows&quot;,&quot;Arch&quot;:&quot;amd64&quot;,&quot;BuildTime&quot;:&quot;Wed Aug  5 18:31:33 2026&quot;,&quot;Context&quot;:&quot;desktop-linux&quot;},&quot;Server&quot;:{&quot;Platform&quot;:{&quot;Name&quot;:&quot;Docker Desktop 4.90.0 (238679)&quot;},&quot;Version&quot;:&quot;29.7.2&quot;,&quot;ApiVersion&quot;:&quot;1.55&quot;,&quot;MinAPIVersion&quot;:&quot;1.40&quot;,&quot;Os&quot;:&quot;linux&quot;,&quot;Arch&quot;:&quot;amd64&quot;,&quot;Components&quot;:[{&quot;Name&quot;:&quot;Engine&quot;,&quot;Version&quot;:&quot;29.7.2&quot;,&quot;Details&quot;:{&quot;ApiVersion&quot;:&quot;1.55&quot;,&quot;Arch&quot;:&quot;amd64&quot;,&quot;BuildTime&quot;:&quot;Wed Aug  5 18:28:36 2026&quot;,&quot;Experimental&quot;:&quot;false&quot;,&quot;GitCommit&quot;:&quot;6a43e3d&quot;,&quot;GoVersion&quot;:&quot;go1.26.5&quot;,&quot;KernelVersion&quot;:&quot;6.18.33.2-microsoft-standard-WSL2&quot;,&quot;MinAPIVersion&quot;:&quot;1.40&quot;,&quot;Module&quot;:&quot;github.com/moby/moby/v2&quot;,&quot;ModuleVersion&quot;:&quot;v2.0.0+unknown&quot;,&quot;Os&quot;:&quot;linux&quot;}},{&quot;Name&quot;:&quot;containerd&quot;,&quot;Version&quot;:&quot;v2.3.3&quot;,&quot;Details&quot;:{&quot;GitCommit&quot;:&quot;aad11006b869517fcd3009450b6f82da282e1a9b&quot;}},{&quot;Name&quot;:&quot;runc&quot;,&quot;Version&quot;:&quot;1.4.3&quot;,&quot;Details&quot;:{&quot;GitCommit&quot;:&quot;v1.4.3-0-gbb14dabe&quot;}},{&quot;Name&quot;:&quot;docker-init&quot;,&quot;Version&quot;:&quot;0.19.0&quot;,&quot;Details&quot;:{&quot;GitCommit&quot;:&quot;de40ad0&quot;}}],&quot;GitCommit&quot;:&quot;6a43e3d&quot;,&quot;GoVersion&quot;:&quot;go1.26.5&quot;,&quot;KernelVersion&quot;:&quot;6.18.33.2-microsoft-standard-WSL2&quot;,&quot;BuildTime&quot;:&quot;2026-08-05T18:28:36.000000000+00:00&quot;}}
+</pre></details>
+<details id="evidence-02-compose-version.log"><summary>02-compose-version.log</summary><pre>Docker Compose version v5.5.1
+</pre></details>
+<details id="evidence-03-compose-config.log"><summary>03-compose-config.log</summary><pre>(출력 없음 — 종료 코드는 commands.jsonl에서 확인)</pre></details>
+<details id="evidence-04-compose-resolved.json"><summary>04-compose-resolved.json</summary><pre>{
+  &quot;name&quot;: &quot;amr-demo&quot;,
+  &quot;networks&quot;: {
+    &quot;default&quot;: {
+      &quot;name&quot;: &quot;amr-demo_default&quot;,
+      &quot;ipam&quot;: {}
+    }
+  },
+  &quot;services&quot;: {
+    &quot;mosquitto&quot;: {
+      &quot;command&quot;: null,
+      &quot;entrypoint&quot;: null,
+      &quot;image&quot;: &quot;eclipse-mosquitto:2.1.2-alpine&quot;,
+      &quot;networks&quot;: {
+        &quot;default&quot;: null
+      },
+      &quot;ports&quot;: [
+        {
+          &quot;mode&quot;: &quot;ingress&quot;,
+          &quot;host_ip&quot;: &quot;127.0.0.1&quot;,
+          &quot;target&quot;: 1883,
+          &quot;published&quot;: &quot;1884&quot;,
+          &quot;protocol&quot;: &quot;tcp&quot;
+        }
+      ],
+      &quot;restart&quot;: &quot;no&quot;,
+      &quot;volumes&quot;: [
+        {
+          &quot;type&quot;: &quot;bind&quot;,
+          &quot;source&quot;: &quot;C:\\amr-control-system-demo\\docker\\mosquitto\\config\\mosquitto.conf&quot;,
+          &quot;target&quot;: &quot;/mosquitto/config/mosquitto.conf&quot;,
+          &quot;read_only&quot;: true,
+          &quot;bind&quot;: {
+            &quot;create_host_path&quot;: false
+          }
+        },
+        {
+          &quot;type&quot;: &quot;bind&quot;,
+          &quot;source&quot;: &quot;C:\\amr-control-system-demo\\docker\\mosquitto\\data&quot;,
+          &quot;target&quot;: &quot;/mosquitto/data&quot;,
+          &quot;bind&quot;: {}
+        },
+        {
+          &quot;type&quot;: &quot;bind&quot;,
+          &quot;source&quot;: &quot;C:\\amr-control-system-demo\\docker\\mosquitto\\log&quot;,
+          &quot;target&quot;: &quot;/mosquitto/log&quot;,
+          &quot;bind&quot;: {}
+        }
+      ]
+    }
+  }
+}</pre></details>
+<details id="evidence-05-desktop-start.log"><summary>05-desktop-start.log</summary><pre>Docker Desktop is already running
+</pre></details>
+<details id="evidence-06-containers-before.jsonl"><summary>06-containers-before.jsonl</summary><pre>{&quot;Command&quot;:&quot;\&quot;/docker-entrypoint.sh /usr/sbin/mosquitto -c /mosquitto/config/mosquitto.conf\&quot;&quot;,&quot;CreatedAt&quot;:&quot;2026-10-02 19:34:23 +0900 KST&quot;,&quot;HealthStatus&quot;:&quot;none&quot;,&quot;ID&quot;:&quot;5d8473f92851c5614b82161e1b129488f2780eb9b9647c78d45359bd239e1820&quot;,&quot;Image&quot;:&quot;eclipse-mosquitto:2.1.2-alpine&quot;,&quot;Labels&quot;:&quot;com.docker.compose.config-hash=c19528b26117ee0df1e7d24c22fe5cc093af93593c9576d563190b8fc510ddc5,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:12436df85d6b2b91e63c71184da35ec89400a98abdc688a78b1403a11ecf44b4,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=C:\\Monit\\docker\\docker-compose.yml,com.docker.compose.project.working_dir=C:\\Monit\\docker,com.docker.compose.project=docker,com.docker.compose.replace=amr-mosquitto,com.docker.compose.service=mosquitto,com.docker.compose.version=5.5.1,desktop.docker.io/binds/0/Source=C:\\Monit\\docker\\mosquitto\\config,desktop.docker.io/binds/0/SourceKind=hostFile,desktop.docker.io/binds/0/Target=/mosquitto/config,desktop.docker.io/binds/1/Source=C:\\Monit\\docker\\mosquitto\\data,desktop.docker.io/binds/1/SourceKind=hostFile,desktop.docker.io/binds/1/Target=/mosquitto/data,desktop.docker.io/binds/2/Source=C:\\Monit\\docker\\mosquitto\\log,desktop.docker.io/binds/2/SourceKind=hostFile,desktop.docker.io/binds/2/Target=/mosquitto/log,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/1883/tcp=127.0.0.1:1883,org.opencontainers.image.authors=Roger Light \u003croger@atchoo.org\u003e,org.opencontainers.image.description=Eclipse Mosquitto MQTT Broker,org.opencontainers.image.documentation=https://mosquitto.org/documentation/,org.opencontainers.image.licenses=EPL-2.0 OR BSD-3-Clause,org.opencontainers.image.source=https://github.com/eclipse-mosquitto/mosquitto,org.opencontainers.image.title=eclipse-mosquitto,org.opencontainers.image.url=https://mosquitto.org/,org.opencontainers.image.version=2.1.2&quot;,&quot;LocalVolumes&quot;:&quot;0&quot;,&quot;Mounts&quot;:&quot;/run/desktop/mnt/host/c/Monit/docker/mosquitto/config,/run/desktop/mnt/host/c/Monit/docker/mosquitto/data,/run/desktop/mnt/host/c/Monit/docker/mosquitto/log&quot;,&quot;Names&quot;:&quot;amr-mosquitto&quot;,&quot;Networks&quot;:&quot;docker_default&quot;,&quot;Platform&quot;:{&quot;architecture&quot;:&quot;amd64&quot;,&quot;os&quot;:&quot;linux&quot;},&quot;Ports&quot;:&quot;&quot;,&quot;RunningFor&quot;:&quot;5 days ago&quot;,&quot;Size&quot;:&quot;4.1kB (virtual 28.3MB)&quot;,&quot;State&quot;:&quot;exited&quot;,&quot;Status&quot;:&quot;Exited (0) 25 hours ago&quot;}
+{&quot;Command&quot;:&quot;\&quot;/bin/seqentry\&quot;&quot;,&quot;CreatedAt&quot;:&quot;2026-09-22 19:24:25 +0900 KST&quot;,&quot;HealthStatus&quot;:&quot;none&quot;,&quot;ID&quot;:&quot;0e71fc5e933de38044bd84f9b054ea0db27efcfbabe4e36e740cbb80e4f5d3e8&quot;,&quot;Image&quot;:&quot;datalust/seq:2026.1&quot;,&quot;Labels&quot;:&quot;Description=Seq,Vendor=Datalust Pty Ltd,com.docker.compose.config-hash=51c05076d1ce041261886f7a57dc8146d0811052905acaec09b5b3ab219e3351,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:a26be7548926a3728622fe73943de878184b97b478a3ba89cebd1269903a5f36,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=C:\\practice\\docker\\docker-compose.yml,com.docker.compose.project.working_dir=C:\\practice\\docker,com.docker.compose.project=docker,com.docker.compose.service=seq,com.docker.compose.version=5.5.1,desktop.docker.io/binds/0/Source=C:\\practice\\docker\\seq\\data,desktop.docker.io/binds/0/SourceKind=hostFile,desktop.docker.io/binds/0/Target=/data,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/80/tcp=127.0.0.1:5341,org.opencontainers.image.version=24.04&quot;,&quot;LocalVolumes&quot;:&quot;0&quot;,&quot;Mounts&quot;:&quot;/run/desktop/mnt/host/c/practice/docker/seq/data&quot;,&quot;Names&quot;:&quot;amr-seq&quot;,&quot;Networks&quot;:&quot;docker_default&quot;,&quot;Platform&quot;:{&quot;architecture&quot;:&quot;amd64&quot;,&quot;os&quot;:&quot;linux&quot;},&quot;Ports&quot;:&quot;&quot;,&quot;RunningFor&quot;:&quot;2 weeks ago&quot;,&quot;Size&quot;:&quot;8.19kB (virtual 691MB)&quot;,&quot;State&quot;:&quot;exited&quot;,&quot;Status&quot;:&quot;Exited (143) 25 hours ago&quot;}
+{&quot;Command&quot;:&quot;\&quot;/bin/seqentry\&quot;&quot;,&quot;CreatedAt&quot;:&quot;2026-09-18 19:04:34 +0900 KST&quot;,&quot;HealthStatus&quot;:&quot;none&quot;,&quot;ID&quot;:&quot;d4d3d8362358e6a28aa39bf54e22d0cb5e99877b336e1aa6b22b0b6c017ca963&quot;,&quot;Image&quot;:&quot;datalust/seq:2026.1&quot;,&quot;Labels&quot;:&quot;Description=Seq,Vendor=Datalust Pty Ltd,desktop.docker.io/ports.scheme=v2,org.opencontainers.image.version=24.04&quot;,&quot;LocalVolumes&quot;:&quot;1&quot;,&quot;Mounts&quot;:&quot;b8504218220a1bdb1a6b7a534f9cf31275ddcaa68eeed834c565c418211eae0c&quot;,&quot;Names&quot;:&quot;unruffled_herschel&quot;,&quot;Networks&quot;:&quot;bridge&quot;,&quot;Platform&quot;:{&quot;architecture&quot;:&quot;amd64&quot;,&quot;os&quot;:&quot;linux&quot;},&quot;Ports&quot;:&quot;&quot;,&quot;RunningFor&quot;:&quot;2 weeks ago&quot;,&quot;Size&quot;:&quot;8.19kB (virtual 691MB)&quot;,&quot;State&quot;:&quot;exited&quot;,&quot;Status&quot;:&quot;Exited (1) 2 weeks ago&quot;}
+{&quot;Command&quot;:&quot;\&quot;/hello\&quot;&quot;,&quot;CreatedAt&quot;:&quot;2026-09-10 17:23:17 +0900 KST&quot;,&quot;HealthStatus&quot;:&quot;none&quot;,&quot;ID&quot;:&quot;ec2d2ff7542136414cfb33efc67f90b64927b6bf1462844acb82f0712befb06b&quot;,&quot;Image&quot;:&quot;hello-world&quot;,&quot;Labels&quot;:&quot;desktop.docker.io/ports.scheme=v2&quot;,&quot;LocalVolumes&quot;:&quot;0&quot;,&quot;Mounts&quot;:&quot;&quot;,&quot;Names&quot;:&quot;cool_lumiere&quot;,&quot;Networks&quot;:&quot;bridge&quot;,&quot;Platform&quot;:{&quot;architecture&quot;:&quot;amd64&quot;,&quot;os&quot;:&quot;linux&quot;},&quot;Ports&quot;:&quot;&quot;,&quot;RunningFor&quot;:&quot;3 weeks ago&quot;,&quot;Size&quot;:&quot;4.1kB (virtual 49.2kB)&quot;,&quot;State&quot;:&quot;exited&quot;,&quot;Status&quot;:&quot;Exited (0) 2 weeks ago&quot;}
+</pre></details>
+<details id="evidence-07-context.json"><summary>07-context.json</summary><pre>{
+  &quot;Host&quot;: &quot;npipe:////./pipe/dockerDesktopLinuxEngine&quot;,
+  &quot;SkipTLSVerify&quot;: false
+}</pre></details>
+<details id="evidence-08-image.json"><summary>08-image.json</summary><pre>{
+  &quot;Id&quot;: &quot;sha256:38c0da4f2ef84284d47b3b3eeea1cb3bdeabe81ee10caf0cd5c5ff61ee3ea408&quot;,
+  &quot;RepoTags&quot;: [
+    &quot;eclipse-mosquitto:2.1.2-alpine&quot;
+  ],
+  &quot;RepoDigests&quot;: [
+    &quot;eclipse-mosquitto@sha256:38c0da4f2ef84284d47b3b3eeea1cb3bdeabe81ee10caf0cd5c5ff61ee3ea408&quot;
+  ],
+  &quot;Created&quot;: &quot;2026-09-17T21:15:37.386397403Z&quot;,
+  &quot;Architecture&quot;: &quot;amd64&quot;,
+  &quot;Os&quot;: &quot;linux&quot;
+}</pre></details>
+<details id="evidence-09-listeners-before.json"><summary>09-listeners-before.json</summary><pre></pre></details>
+<details id="evidence-10-project-before.jsonl"><summary>10-project-before.jsonl</summary><pre>(출력 없음 — 종료 코드는 commands.jsonl에서 확인)</pre></details>
+<details id="evidence-11-others-before.jsonl"><summary>11-others-before.jsonl</summary><pre>{&quot;Id&quot;:&quot;5d8473f92851c5614b82161e1b129488f2780eb9b9647c78d45359bd239e1820&quot;,&quot;Name&quot;:&quot;/amr-mosquitto&quot;,&quot;State&quot;:{&quot;Dead&quot;:false,&quot;Error&quot;:&quot;&quot;,&quot;ExitCode&quot;:0,&quot;FinishedAt&quot;:&quot;2026-10-07T06:17:12.405924585Z&quot;,&quot;OOMKilled&quot;:false,&quot;Paused&quot;:false,&quot;Pid&quot;:0,&quot;Restarting&quot;:false,&quot;Running&quot;:false,&quot;StartedAt&quot;:&quot;2026-10-07T04:57:14.036059926Z&quot;,&quot;Status&quot;:&quot;exited&quot;},&quot;RestartCount&quot;:0,&quot;ImageId&quot;:&quot;sha256:38c0da4f2ef84284d47b3b3eeea1cb3bdeabe81ee10caf0cd5c5ff61ee3ea408&quot;,&quot;Mounts&quot;:[{&quot;Destination&quot;:&quot;/mosquitto/config&quot;,&quot;Mode&quot;:&quot;ro&quot;,&quot;Propagation&quot;:&quot;rprivate&quot;,&quot;RW&quot;:false,&quot;Source&quot;:&quot;C:\\Monit\\docker\\mosquitto\\config&quot;,&quot;Type&quot;:&quot;bind&quot;},{&quot;Destination&quot;:&quot;/mosquitto/data&quot;,&quot;Mode&quot;:&quot;rw&quot;,&quot;Propagation&quot;:&quot;rprivate&quot;,&quot;RW&quot;:true,&quot;Source&quot;:&quot;C:\\Monit\\docker\\mosquitto\\data&quot;,&quot;Type&quot;:&quot;bind&quot;},{&quot;Destination&quot;:&quot;/mosquitto/log&quot;,&quot;Mode&quot;:&quot;rw&quot;,&quot;Propagation&quot;:&quot;rprivate&quot;,&quot;RW&quot;:true,&quot;Source&quot;:&quot;C:\\Monit\\docker\\mosquitto\\log&quot;,&quot;Type&quot;:&quot;bind&quot;}]}
+{&quot;Id&quot;:&quot;0e71fc5e933de38044bd84f9b054ea0db27efcfbabe4e36e740cbb80e4f5d3e8&quot;,&quot;Name&quot;:&quot;/amr-seq&quot;,&quot;State&quot;:{&quot;Dead&quot;:false,&quot;Error&quot;:&quot;&quot;,&quot;ExitCode&quot;:143,&quot;FinishedAt&quot;:&quot;2026-10-07T06:17:12.407238784Z&quot;,&quot;OOMKilled&quot;:false,&quot;Paused&quot;:false,&quot;Pid&quot;:0,&quot;Restarting&quot;:false,&quot;Running&quot;:false,&quot;StartedAt&quot;:&quot;2026-10-07T04:57:14.215827117Z&quot;,&quot;Status&quot;:&quot;exited&quot;},&quot;RestartCount&quot;:0,&quot;ImageId&quot;:&quot;sha256:fa405502a3c57884c88477b78b55ca76c5a3fb1a4d20c6a185c24e750db34056&quot;,&quot;Mounts&quot;:[{&quot;Destination&quot;:&quot;/data&quot;,&quot;Mode&quot;:&quot;rw&quot;,&quot;Propagation&quot;:&quot;rprivate&quot;,&quot;RW&quot;:true,&quot;Source&quot;:&quot;C:\\practice\\docker\\seq\\data&quot;,&quot;Type&quot;:&quot;bind&quot;}]}
+{&quot;Id&quot;:&quot;d4d3d8362358e6a28aa39bf54e22d0cb5e99877b336e1aa6b22b0b6c017ca963&quot;,&quot;Name&quot;:&quot;/unruffled_herschel&quot;,&quot;State&quot;:{&quot;Dead&quot;:false,&quot;Error&quot;:&quot;&quot;,&quot;ExitCode&quot;:1,&quot;FinishedAt&quot;:&quot;2026-09-18T10:04:35.99438357Z&quot;,&quot;OOMKilled&quot;:false,&quot;Paused&quot;:false,&quot;Pid&quot;:0,&quot;Restarting&quot;:false,&quot;Running&quot;:false,&quot;StartedAt&quot;:&quot;2026-09-18T10:04:34.94567882Z&quot;,&quot;Status&quot;:&quot;exited&quot;},&quot;RestartCount&quot;:0,&quot;ImageId&quot;:&quot;sha256:fa405502a3c57884c88477b78b55ca76c5a3fb1a4d20c6a185c24e750db34056&quot;,&quot;Mounts&quot;:[{&quot;Destination&quot;:&quot;/data&quot;,&quot;Driver&quot;:&quot;local&quot;,&quot;Mode&quot;:&quot;&quot;,&quot;Name&quot;:&quot;b8504218220a1bdb1a6b7a534f9cf31275ddcaa68eeed834c565c418211eae0c&quot;,&quot;Propagation&quot;:&quot;&quot;,&quot;RW&quot;:true,&quot;Source&quot;:&quot;/var/lib/docker/volumes/b8504218220a1bdb1a6b7a534f9cf31275ddcaa68eeed834c565c418211eae0c/_data&quot;,&quot;Type&quot;:&quot;volume&quot;}]}
+{&quot;Id&quot;:&quot;ec2d2ff7542136414cfb33efc67f90b64927b6bf1462844acb82f0712befb06b&quot;,&quot;Name&quot;:&quot;/cool_lumiere&quot;,&quot;State&quot;:{&quot;Dead&quot;:false,&quot;Error&quot;:&quot;&quot;,&quot;ExitCode&quot;:0,&quot;FinishedAt&quot;:&quot;2026-09-18T10:03:55.760912699Z&quot;,&quot;OOMKilled&quot;:false,&quot;Paused&quot;:false,&quot;Pid&quot;:0,&quot;Restarting&quot;:false,&quot;Running&quot;:false,&quot;StartedAt&quot;:&quot;2026-09-18T10:03:55.674865663Z&quot;,&quot;Status&quot;:&quot;exited&quot;},&quot;RestartCount&quot;:0,&quot;ImageId&quot;:&quot;sha256:5e23090353324d887c48ad5e5c56d294eab81588df9605b07d1afe895f9cc8f8&quot;,&quot;Mounts&quot;:[]}
+</pre></details>
+<details id="evidence-12-up.log"><summary>12-up.log</summary><pre> Network amr-demo_default Creating 
+ Network amr-demo_default Creating 
+ Network amr-demo_default Created 
+ Network amr-demo_default Created 
+ Container amr-demo-mosquitto-1 Creating 
+ Container amr-demo-mosquitto-1 Created 
+ Container amr-demo-mosquitto-1 Starting 
+ Container amr-demo-mosquitto-1 Started 
+</pre></details>
+<details id="evidence-13-ps-started.jsonl"><summary>13-ps-started.jsonl</summary><pre>{&quot;Command&quot;:&quot;\&quot;/docker-entrypoint.…\&quot;&quot;,&quot;CreatedAt&quot;:&quot;2026-10-08 16:12:44 +0900 KST&quot;,&quot;Engine&quot;:&quot;&quot;,&quot;ExitCode&quot;:0,&quot;Health&quot;:&quot;&quot;,&quot;ID&quot;:&quot;039102e4775c&quot;,&quot;Image&quot;:&quot;eclipse-mosquitto:2.1.2-alpine&quot;,&quot;Labels&quot;:&quot;com.docker.compose.config-hash=e1656f10e09c4fe60648b68f84176a49775e40ec717c1baef65d7e799ae6a7b6,com.docker.compose.container-number=1,com.docker.compose.depends_on=,desktop.docker.io/binds/0/Target=/mosquitto/data,org.opencontainers.image.licenses=EPL-2.0 OR BSD-3-Clause,com.docker.compose.oneoff=False,desktop.docker.io/binds/1/Source=C:\\amr-control-system-demo\\docker\\mosquitto\\log,desktop.docker.io/mounts/0/SourceKind=hostFile,desktop.docker.io/ports/1883/tcp=127.0.0.1:1884,com.docker.compose.project=amr-demo,com.docker.compose.version=5.5.1,desktop.docker.io/binds/0/SourceKind=hostFile,desktop.docker.io/binds/1/Target=/mosquitto/log,desktop.docker.io/mounts/0/Source=C:\\amr-control-system-demo\\docker\\mosquitto\\config\\mosquitto.conf,org.opencontainers.image.documentation=https://mosquitto.org/documentation/,org.opencontainers.image.url=https://mosquitto.org/,org.opencontainers.image.source=https://github.com/eclipse-mosquitto/mosquitto,com.docker.compose.image=sha256:12436df85d6b2b91e63c71184da35ec89400a98abdc688a78b1403a11ecf44b4,desktop.docker.io/mounts/0/Target=/mosquitto/config/mosquitto.conf,desktop.docker.io/binds/0/Source=C:\\amr-control-system-demo\\docker\\mosquitto\\data,desktop.docker.io/binds/1/SourceKind=hostFile,org.opencontainers.image.description=Eclipse Mosquitto MQTT Broker,org.opencontainers.image.title=eclipse-mosquitto,com.docker.compose.service=mosquitto,desktop.docker.io/ports.scheme=v2,org.opencontainers.image.authors=Roger Light \u003croger@atchoo.org\u003e,org.opencontainers.image.version=2.1.2,com.docker.compose.project.config_files=C:\\amr-control-system-demo\\docker\\compose.yaml,com.docker.compose.project.working_dir=C:\\amr-control-system-demo\\docker&quot;,&quot;LocalVolumes&quot;:&quot;0&quot;,&quot;Mounts&quot;:&quot;/run/desktop/m…,/run/desktop/m…,/run/desktop/m…&quot;,&quot;Name&quot;:&quot;amr-demo-mosquitto-1&quot;,&quot;Names&quot;:&quot;amr-demo-mosquitto-1&quot;,&quot;Networks&quot;:&quot;amr-demo_default&quot;,&quot;Ports&quot;:&quot;127.0.0.1:1884-\u003e1883/tcp&quot;,&quot;Project&quot;:&quot;amr-demo&quot;,&quot;Publishers&quot;:[{&quot;URL&quot;:&quot;127.0.0.1&quot;,&quot;TargetPort&quot;:1883,&quot;PublishedPort&quot;:1884,&quot;Protocol&quot;:&quot;tcp&quot;}],&quot;RunningFor&quot;:&quot;1 second ago&quot;,&quot;Service&quot;:&quot;mosquitto&quot;,&quot;Size&quot;:&quot;0B&quot;,&quot;State&quot;:&quot;running&quot;,&quot;Status&quot;:&quot;Up Less than a second&quot;}
+</pre></details>
+<details id="evidence-14-logs-started.log"><summary>14-logs-started.log</summary><pre>mosquitto-1  | 2026-10-08T07:12:45.024529912Z 1791443565: Info: running mosquitto as user: mosquitto.
+mosquitto-1  | 2026-10-08T07:12:45.025940748Z 1791443565: mosquitto version 2.1.2 starting
+mosquitto-1  | 2026-10-08T07:12:45.026245812Z 1791443565: Config loaded from /mosquitto/config/mosquitto.conf.
+mosquitto-1  | 2026-10-08T07:12:45.026528962Z 1791443565: Bridge support available.
+mosquitto-1  | 2026-10-08T07:12:45.026788787Z 1791443565: Persistence support available.
+mosquitto-1  | 2026-10-08T07:12:45.027097705Z 1791443565: TLS support available.
+mosquitto-1  | 2026-10-08T07:12:45.027494297Z 1791443565: TLS-PSK support available.
+mosquitto-1  | 2026-10-08T07:12:45.027883399Z 1791443565: Websockets support available.
+mosquitto-1  | 2026-10-08T07:12:45.028341719Z 1791443565: Opening ipv4 listen socket on port 1883.
+mosquitto-1  | 2026-10-08T07:12:45.028723874Z 1791443565: mosquitto version 2.1.2 running
+</pre></details>
+<details id="evidence-15-inspect-started.json"><summary>15-inspect-started.json</summary><pre>{
+  &quot;Id&quot;: &quot;039102e4775ccc99cb74d4e08e9c50d689289a6aca5ae39788048b69d7d88a1c&quot;,
+  &quot;Name&quot;: &quot;/amr-demo-mosquitto-1&quot;,
+  &quot;ImageId&quot;: &quot;sha256:38c0da4f2ef84284d47b3b3eeea1cb3bdeabe81ee10caf0cd5c5ff61ee3ea408&quot;,
+  &quot;ImageTag&quot;: &quot;eclipse-mosquitto:2.1.2-alpine&quot;,
+  &quot;State&quot;: {
+    &quot;Dead&quot;: false,
+    &quot;Error&quot;: &quot;&quot;,
+    &quot;ExitCode&quot;: 0,
+    &quot;FinishedAt&quot;: &quot;0001-01-01T00:00:00Z&quot;,
+    &quot;OOMKilled&quot;: false,
+    &quot;Paused&quot;: false,
+    &quot;Pid&quot;: 494,
+    &quot;Restarting&quot;: false,
+    &quot;Running&quot;: true,
+    &quot;StartedAt&quot;: &quot;2026-10-08T07:12:44.880852372Z&quot;,
+    &quot;Status&quot;: &quot;running&quot;
+  },
+  &quot;RestartCount&quot;: 0,
+  &quot;RestartPolicy&quot;: {
+    &quot;MaximumRetryCount&quot;: 0,
+    &quot;Name&quot;: &quot;no&quot;
+  },
+  &quot;PortBindings&quot;: {
+    &quot;1883/tcp&quot;: [
+      {
+        &quot;HostIp&quot;: &quot;127.0.0.1&quot;,
+        &quot;HostPort&quot;: &quot;1884&quot;
+      }
+    ]
+  },
+  &quot;PublishedPorts&quot;: {
+    &quot;1883/tcp&quot;: [
+      {
+        &quot;HostIp&quot;: &quot;127.0.0.1&quot;,
+        &quot;HostPort&quot;: &quot;1884&quot;
+      }
+    ]
+  },
+  &quot;Mounts&quot;: [
+    {
+      &quot;Destination&quot;: &quot;/mosquitto/data&quot;,
+      &quot;Mode&quot;: &quot;rw&quot;,
+      &quot;Propagation&quot;: &quot;rprivate&quot;,
+      &quot;RW&quot;: true,
+      &quot;Source&quot;: &quot;C:\\amr-control-system-demo\\docker\\mosquitto\\data&quot;,
+      &quot;Type&quot;: &quot;bind&quot;
+    },
+    {
+      &quot;Destination&quot;: &quot;/mosquitto/log&quot;,
+      &quot;Mode&quot;: &quot;rw&quot;,
+      &quot;Propagation&quot;: &quot;rprivate&quot;,
+      &quot;RW&quot;: true,
+      &quot;Source&quot;: &quot;C:\\amr-control-system-demo\\docker\\mosquitto\\log&quot;,
+      &quot;Type&quot;: &quot;bind&quot;
+    },
+    {
+      &quot;Destination&quot;: &quot;/mosquitto/config/mosquitto.conf&quot;,
+      &quot;Mode&quot;: &quot;&quot;,
+      &quot;Propagation&quot;: &quot;rprivate&quot;,
+      &quot;RW&quot;: false,
+      &quot;Source&quot;: &quot;C:\\amr-control-system-demo\\docker\\mosquitto\\config\\mosquitto.conf&quot;,
+      &quot;Type&quot;: &quot;bind&quot;
+    }
+  ],
+  &quot;Labels&quot;: {
+    &quot;com.docker.compose.config-hash&quot;: &quot;e1656f10e09c4fe60648b68f84176a49775e40ec717c1baef65d7e799ae6a7b6&quot;,
+    &quot;com.docker.compose.container-number&quot;: &quot;1&quot;,
+    &quot;com.docker.compose.depends_on&quot;: &quot;&quot;,
+    &quot;com.docker.compose.image&quot;: &quot;sha256:12436df85d6b2b91e63c71184da35ec89400a98abdc688a78b1403a11ecf44b4&quot;,
+    &quot;com.docker.compose.oneoff&quot;: &quot;False&quot;,
+    &quot;com.docker.compose.project&quot;: &quot;amr-demo&quot;,
+    &quot;com.docker.compose.project.config_files&quot;: &quot;C:\\amr-control-system-demo\\docker\\compose.yaml&quot;,
+    &quot;com.docker.compose.project.working_dir&quot;: &quot;C:\\amr-control-system-demo\\docker&quot;,
+    &quot;com.docker.compose.service&quot;: &quot;mosquitto&quot;,
+    &quot;com.docker.compose.version&quot;: &quot;5.5.1&quot;,
+    &quot;org.opencontainers.image.authors&quot;: &quot;Roger Light &lt;roger@atchoo.org&gt;&quot;,
+    &quot;org.opencontainers.image.description&quot;: &quot;Eclipse Mosquitto MQTT Broker&quot;,
+    &quot;org.opencontainers.image.documentation&quot;: &quot;https://mosquitto.org/documentation/&quot;,
+    &quot;org.opencontainers.image.licenses&quot;: &quot;EPL-2.0 OR BSD-3-Clause&quot;,
+    &quot;org.opencontainers.image.source&quot;: &quot;https://github.com/eclipse-mosquitto/mosquitto&quot;,
+    &quot;org.opencontainers.image.title&quot;: &quot;eclipse-mosquitto&quot;,
+    &quot;org.opencontainers.image.url&quot;: &quot;https://mosquitto.org/&quot;,
+    &quot;org.opencontainers.image.version&quot;: &quot;2.1.2&quot;
+  }
+}</pre></details>
+<details id="evidence-16-listeners-started.json"><summary>16-listeners-started.json</summary><pre>{
+  &quot;LocalAddress&quot;: &quot;127.0.0.1&quot;,
+  &quot;LocalPort&quot;: 1884,
+  &quot;OwningProcess&quot;: 42124
+}</pre></details>
+<details id="evidence-17-stop.log"><summary>17-stop.log</summary><pre> Container amr-demo-mosquitto-1 Stopping 
+ Container amr-demo-mosquitto-1 Stopped 
+</pre></details>
+<details id="evidence-18-ps-stopped.jsonl"><summary>18-ps-stopped.jsonl</summary><pre>{&quot;Command&quot;:&quot;\&quot;/docker-entrypoint.…\&quot;&quot;,&quot;CreatedAt&quot;:&quot;2026-10-08 16:12:44 +0900 KST&quot;,&quot;Engine&quot;:&quot;&quot;,&quot;ExitCode&quot;:0,&quot;Health&quot;:&quot;&quot;,&quot;ID&quot;:&quot;039102e4775c&quot;,&quot;Image&quot;:&quot;eclipse-mosquitto:2.1.2-alpine&quot;,&quot;Labels&quot;:&quot;com.docker.compose.project.working_dir=C:\\amr-control-system-demo\\docker,desktop.docker.io/ports.scheme=v2,com.docker.compose.project=amr-demo,desktop.docker.io/binds/0/Source=C:\\amr-control-system-demo\\docker\\mosquitto\\data,desktop.docker.io/binds/0/SourceKind=hostFile,desktop.docker.io/binds/0/Target=/mosquitto/data,com.docker.compose.oneoff=False,desktop.docker.io/binds/1/Source=C:\\amr-control-system-demo\\docker\\mosquitto\\log,desktop.docker.io/ports/1883/tcp=127.0.0.1:1884,org.opencontainers.image.authors=Roger Light \u003croger@atchoo.org\u003e,org.opencontainers.image.description=Eclipse Mosquitto MQTT Broker,org.opencontainers.image.version=2.1.2,com.docker.compose.container-number=1,com.docker.compose.image=sha256:12436df85d6b2b91e63c71184da35ec89400a98abdc688a78b1403a11ecf44b4,com.docker.compose.service=mosquitto,com.docker.compose.version=5.5.1,desktop.docker.io/mounts/0/SourceKind=hostFile,org.opencontainers.image.licenses=EPL-2.0 OR BSD-3-Clause,desktop.docker.io/binds/1/SourceKind=hostFile,org.opencontainers.image.documentation=https://mosquitto.org/documentation/,org.opencontainers.image.url=https://mosquitto.org/,com.docker.compose.project.config_files=C:\\amr-control-system-demo\\docker\\compose.yaml,desktop.docker.io/binds/1/Target=/mosquitto/log,desktop.docker.io/mounts/0/Source=C:\\amr-control-system-demo\\docker\\mosquitto\\config\\mosquitto.conf,org.opencontainers.image.title=eclipse-mosquitto,com.docker.compose.depends_on=,desktop.docker.io/mounts/0/Target=/mosquitto/config/mosquitto.conf,org.opencontainers.image.source=https://github.com/eclipse-mosquitto/mosquitto,com.docker.compose.config-hash=e1656f10e09c4fe60648b68f84176a49775e40ec717c1baef65d7e799ae6a7b6&quot;,&quot;LocalVolumes&quot;:&quot;0&quot;,&quot;Mounts&quot;:&quot;/run/desktop/m…,/run/desktop/m…,/run/desktop/m…&quot;,&quot;Name&quot;:&quot;amr-demo-mosquitto-1&quot;,&quot;Names&quot;:&quot;amr-demo-mosquitto-1&quot;,&quot;Networks&quot;:&quot;amr-demo_default&quot;,&quot;Ports&quot;:&quot;&quot;,&quot;Project&quot;:&quot;amr-demo&quot;,&quot;Publishers&quot;:[],&quot;RunningFor&quot;:&quot;29 seconds ago&quot;,&quot;Service&quot;:&quot;mosquitto&quot;,&quot;Size&quot;:&quot;0B&quot;,&quot;State&quot;:&quot;exited&quot;,&quot;Status&quot;:&quot;Exited (0) Less than a second ago&quot;}
+</pre></details>
+<details id="evidence-19-inspect-stopped.json"><summary>19-inspect-stopped.json</summary><pre>{
+  &quot;Id&quot;: &quot;039102e4775ccc99cb74d4e08e9c50d689289a6aca5ae39788048b69d7d88a1c&quot;,
+  &quot;Name&quot;: &quot;/amr-demo-mosquitto-1&quot;,
+  &quot;ImageId&quot;: &quot;sha256:38c0da4f2ef84284d47b3b3eeea1cb3bdeabe81ee10caf0cd5c5ff61ee3ea408&quot;,
+  &quot;ImageTag&quot;: &quot;eclipse-mosquitto:2.1.2-alpine&quot;,
+  &quot;State&quot;: {
+    &quot;Dead&quot;: false,
+    &quot;Error&quot;: &quot;&quot;,
+    &quot;ExitCode&quot;: 0,
+    &quot;FinishedAt&quot;: &quot;2026-10-08T07:13:12.503806268Z&quot;,
+    &quot;OOMKilled&quot;: false,
+    &quot;Paused&quot;: false,
+    &quot;Pid&quot;: 0,
+    &quot;Restarting&quot;: false,
+    &quot;Running&quot;: false,
+    &quot;StartedAt&quot;: &quot;2026-10-08T07:12:44.880852372Z&quot;,
+    &quot;Status&quot;: &quot;exited&quot;
+  },
+  &quot;RestartCount&quot;: 0,
+  &quot;RestartPolicy&quot;: {
+    &quot;MaximumRetryCount&quot;: 0,
+    &quot;Name&quot;: &quot;no&quot;
+  },
+  &quot;PortBindings&quot;: {
+    &quot;1883/tcp&quot;: [
+      {
+        &quot;HostIp&quot;: &quot;127.0.0.1&quot;,
+        &quot;HostPort&quot;: &quot;1884&quot;
+      }
+    ]
+  },
+  &quot;PublishedPorts&quot;: {},
+  &quot;Mounts&quot;: [
+    {
+      &quot;Destination&quot;: &quot;/mosquitto/log&quot;,
+      &quot;Mode&quot;: &quot;rw&quot;,
+      &quot;Propagation&quot;: &quot;rprivate&quot;,
+      &quot;RW&quot;: true,
+      &quot;Source&quot;: &quot;C:\\amr-control-system-demo\\docker\\mosquitto\\log&quot;,
+      &quot;Type&quot;: &quot;bind&quot;
+    },
+    {
+      &quot;Destination&quot;: &quot;/mosquitto/config/mosquitto.conf&quot;,
+      &quot;Mode&quot;: &quot;&quot;,
+      &quot;Propagation&quot;: &quot;rprivate&quot;,
+      &quot;RW&quot;: false,
+      &quot;Source&quot;: &quot;C:\\amr-control-system-demo\\docker\\mosquitto\\config\\mosquitto.conf&quot;,
+      &quot;Type&quot;: &quot;bind&quot;
+    },
+    {
+      &quot;Destination&quot;: &quot;/mosquitto/data&quot;,
+      &quot;Mode&quot;: &quot;rw&quot;,
+      &quot;Propagation&quot;: &quot;rprivate&quot;,
+      &quot;RW&quot;: true,
+      &quot;Source&quot;: &quot;C:\\amr-control-system-demo\\docker\\mosquitto\\data&quot;,
+      &quot;Type&quot;: &quot;bind&quot;
+    }
+  ],
+  &quot;Labels&quot;: {
+    &quot;com.docker.compose.config-hash&quot;: &quot;e1656f10e09c4fe60648b68f84176a49775e40ec717c1baef65d7e799ae6a7b6&quot;,
+    &quot;com.docker.compose.container-number&quot;: &quot;1&quot;,
+    &quot;com.docker.compose.depends_on&quot;: &quot;&quot;,
+    &quot;com.docker.compose.image&quot;: &quot;sha256:12436df85d6b2b91e63c71184da35ec89400a98abdc688a78b1403a11ecf44b4&quot;,
+    &quot;com.docker.compose.oneoff&quot;: &quot;False&quot;,
+    &quot;com.docker.compose.project&quot;: &quot;amr-demo&quot;,
+    &quot;com.docker.compose.project.config_files&quot;: &quot;C:\\amr-control-system-demo\\docker\\compose.yaml&quot;,
+    &quot;com.docker.compose.project.working_dir&quot;: &quot;C:\\amr-control-system-demo\\docker&quot;,
+    &quot;com.docker.compose.service&quot;: &quot;mosquitto&quot;,
+    &quot;com.docker.compose.version&quot;: &quot;5.5.1&quot;,
+    &quot;org.opencontainers.image.authors&quot;: &quot;Roger Light &lt;roger@atchoo.org&gt;&quot;,
+    &quot;org.opencontainers.image.description&quot;: &quot;Eclipse Mosquitto MQTT Broker&quot;,
+    &quot;org.opencontainers.image.documentation&quot;: &quot;https://mosquitto.org/documentation/&quot;,
+    &quot;org.opencontainers.image.licenses&quot;: &quot;EPL-2.0 OR BSD-3-Clause&quot;,
+    &quot;org.opencontainers.image.source&quot;: &quot;https://github.com/eclipse-mosquitto/mosquitto&quot;,
+    &quot;org.opencontainers.image.title&quot;: &quot;eclipse-mosquitto&quot;,
+    &quot;org.opencontainers.image.url&quot;: &quot;https://mosquitto.org/&quot;,
+    &quot;org.opencontainers.image.version&quot;: &quot;2.1.2&quot;
+  }
+}</pre></details>
+<details id="evidence-20-logs-stopped.log"><summary>20-logs-stopped.log</summary><pre>mosquitto-1  | 2026-10-08T07:12:45.024529912Z 1791443565: Info: running mosquitto as user: mosquitto.
+mosquitto-1  | 2026-10-08T07:12:45.025940748Z 1791443565: mosquitto version 2.1.2 starting
+mosquitto-1  | 2026-10-08T07:12:45.026245812Z 1791443565: Config loaded from /mosquitto/config/mosquitto.conf.
+mosquitto-1  | 2026-10-08T07:12:45.026528962Z 1791443565: Bridge support available.
+mosquitto-1  | 2026-10-08T07:12:45.026788787Z 1791443565: Persistence support available.
+mosquitto-1  | 2026-10-08T07:12:45.027097705Z 1791443565: TLS support available.
+mosquitto-1  | 2026-10-08T07:12:45.027494297Z 1791443565: TLS-PSK support available.
+mosquitto-1  | 2026-10-08T07:12:45.027883399Z 1791443565: Websockets support available.
+mosquitto-1  | 2026-10-08T07:12:45.028341719Z 1791443565: Opening ipv4 listen socket on port 1883.
+mosquitto-1  | 2026-10-08T07:12:45.028723874Z 1791443565: mosquitto version 2.1.2 running
+mosquitto-1  | 2026-10-08T07:13:12.495410933Z 1791443592: mosquitto version 2.1.2 terminating
+mosquitto-1  | 2026-10-08T07:13:12.496230749Z 1791443592: Saving in-memory database to /mosquitto/data//mosquitto.db.
+</pre></details>
+<details id="evidence-21-listeners-stopped.json"><summary>21-listeners-stopped.json</summary><pre></pre></details>
+<details id="evidence-22-up-again.log"><summary>22-up-again.log</summary><pre> Container amr-demo-mosquitto-1 Starting 
+ Container amr-demo-mosquitto-1 Started 
+</pre></details>
+<details id="evidence-23-ps-restarted.jsonl"><summary>23-ps-restarted.jsonl</summary><pre>{&quot;Command&quot;:&quot;\&quot;/docker-entrypoint.…\&quot;&quot;,&quot;CreatedAt&quot;:&quot;2026-10-08 16:12:44 +0900 KST&quot;,&quot;Engine&quot;:&quot;&quot;,&quot;ExitCode&quot;:0,&quot;Health&quot;:&quot;&quot;,&quot;ID&quot;:&quot;039102e4775c&quot;,&quot;Image&quot;:&quot;eclipse-mosquitto:2.1.2-alpine&quot;,&quot;Labels&quot;:&quot;com.docker.compose.image=sha256:12436df85d6b2b91e63c71184da35ec89400a98abdc688a78b1403a11ecf44b4,org.opencontainers.image.version=2.1.2,com.docker.compose.container-number=1,com.docker.compose.project=amr-demo,desktop.docker.io/binds/1/SourceKind=hostFile,desktop.docker.io/ports/1883/tcp=127.0.0.1:1884,com.docker.compose.depends_on=,desktop.docker.io/binds/0/Source=C:\\amr-control-system-demo\\docker\\mosquitto\\data,org.opencontainers.image.authors=Roger Light \u003croger@atchoo.org\u003e,org.opencontainers.image.licenses=EPL-2.0 OR BSD-3-Clause,com.docker.compose.service=mosquitto,desktop.docker.io/binds/0/SourceKind=hostFile,desktop.docker.io/binds/1/Source=C:\\amr-control-system-demo\\docker\\mosquitto\\log,desktop.docker.io/ports.scheme=v2,com.docker.compose.config-hash=e1656f10e09c4fe60648b68f84176a49775e40ec717c1baef65d7e799ae6a7b6,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=C:\\amr-control-system-demo\\docker\\compose.yaml,com.docker.compose.project.working_dir=C:\\amr-control-system-demo\\docker,com.docker.compose.version=5.5.1,desktop.docker.io/binds/0/Target=/mosquitto/data,desktop.docker.io/mounts/0/SourceKind=hostFile,desktop.docker.io/mounts/0/Target=/mosquitto/config/mosquitto.conf,desktop.docker.io/binds/1/Target=/mosquitto/log,desktop.docker.io/mounts/0/Source=C:\\amr-control-system-demo\\docker\\mosquitto\\config\\mosquitto.conf,org.opencontainers.image.description=Eclipse Mosquitto MQTT Broker,org.opencontainers.image.documentation=https://mosquitto.org/documentation/,org.opencontainers.image.source=https://github.com/eclipse-mosquitto/mosquitto,org.opencontainers.image.title=eclipse-mosquitto,org.opencontainers.image.url=https://mosquitto.org/&quot;,&quot;LocalVolumes&quot;:&quot;0&quot;,&quot;Mounts&quot;:&quot;/run/desktop/m…,/run/desktop/m…,/run/desktop/m…&quot;,&quot;Name&quot;:&quot;amr-demo-mosquitto-1&quot;,&quot;Names&quot;:&quot;amr-demo-mosquitto-1&quot;,&quot;Networks&quot;:&quot;amr-demo_default&quot;,&quot;Ports&quot;:&quot;127.0.0.1:1884-\u003e1883/tcp&quot;,&quot;Project&quot;:&quot;amr-demo&quot;,&quot;Publishers&quot;:[{&quot;URL&quot;:&quot;127.0.0.1&quot;,&quot;TargetPort&quot;:1883,&quot;PublishedPort&quot;:1884,&quot;Protocol&quot;:&quot;tcp&quot;}],&quot;RunningFor&quot;:&quot;54 seconds ago&quot;,&quot;Service&quot;:&quot;mosquitto&quot;,&quot;Size&quot;:&quot;0B&quot;,&quot;State&quot;:&quot;running&quot;,&quot;Status&quot;:&quot;Up Less than a second&quot;}
+</pre></details>
+<details id="evidence-24-logs-restarted.log"><summary>24-logs-restarted.log</summary><pre>mosquitto-1  | 2026-10-08T07:12:45.024529912Z 1791443565: Info: running mosquitto as user: mosquitto.
+mosquitto-1  | 2026-10-08T07:12:45.025940748Z 1791443565: mosquitto version 2.1.2 starting
+mosquitto-1  | 2026-10-08T07:12:45.026245812Z 1791443565: Config loaded from /mosquitto/config/mosquitto.conf.
+mosquitto-1  | 2026-10-08T07:12:45.026528962Z 1791443565: Bridge support available.
+mosquitto-1  | 2026-10-08T07:12:45.026788787Z 1791443565: Persistence support available.
+mosquitto-1  | 2026-10-08T07:12:45.027097705Z 1791443565: TLS support available.
+mosquitto-1  | 2026-10-08T07:12:45.027494297Z 1791443565: TLS-PSK support available.
+mosquitto-1  | 2026-10-08T07:12:45.027883399Z 1791443565: Websockets support available.
+mosquitto-1  | 2026-10-08T07:12:45.028341719Z 1791443565: Opening ipv4 listen socket on port 1883.
+mosquitto-1  | 2026-10-08T07:12:45.028723874Z 1791443565: mosquitto version 2.1.2 running
+mosquitto-1  | 2026-10-08T07:13:12.495410933Z 1791443592: mosquitto version 2.1.2 terminating
+mosquitto-1  | 2026-10-08T07:13:12.496230749Z 1791443592: Saving in-memory database to /mosquitto/data//mosquitto.db.
+mosquitto-1  | 2026-10-08T07:13:38.088227694Z 1791443618: Info: running mosquitto as user: mosquitto.
+mosquitto-1  | 2026-10-08T07:13:38.089111473Z 1791443618: Restored 0 base messages
+mosquitto-1  | 2026-10-08T07:13:38.089119799Z 1791443618: Restored 0 retained messages
+mosquitto-1  | 2026-10-08T07:13:38.089121344Z 1791443618: Restored 0 clients
+mosquitto-1  | 2026-10-08T07:13:38.089122373Z 1791443618: Restored 0 subscriptions
+mosquitto-1  | 2026-10-08T07:13:38.089123260Z 1791443618: Restored 0 client messages
+mosquitto-1  | 2026-10-08T07:13:38.089655315Z 1791443618: mosquitto version 2.1.2 starting
+mosquitto-1  | 2026-10-08T07:13:38.089881596Z 1791443618: Config loaded from /mosquitto/config/mosquitto.conf.
+mosquitto-1  | 2026-10-08T07:13:38.090190176Z 1791443618: Bridge support available.
+mosquitto-1  | 2026-10-08T07:13:38.090462037Z 1791443618: Persistence support available.
+mosquitto-1  | 2026-10-08T07:13:38.090762200Z 1791443618: TLS support available.
+mosquitto-1  | 2026-10-08T07:13:38.091038582Z 1791443618: TLS-PSK support available.
+mosquitto-1  | 2026-10-08T07:13:38.091713111Z 1791443618: Websockets support available.
+mosquitto-1  | 2026-10-08T07:13:38.092662120Z 1791443618: Opening ipv4 listen socket on port 1883.
+mosquitto-1  | 2026-10-08T07:13:38.093076718Z 1791443618: mosquitto version 2.1.2 running
+</pre></details>
+<details id="evidence-25-inspect-restarted.json"><summary>25-inspect-restarted.json</summary><pre>{
+  &quot;Id&quot;: &quot;039102e4775ccc99cb74d4e08e9c50d689289a6aca5ae39788048b69d7d88a1c&quot;,
+  &quot;Name&quot;: &quot;/amr-demo-mosquitto-1&quot;,
+  &quot;ImageId&quot;: &quot;sha256:38c0da4f2ef84284d47b3b3eeea1cb3bdeabe81ee10caf0cd5c5ff61ee3ea408&quot;,
+  &quot;ImageTag&quot;: &quot;eclipse-mosquitto:2.1.2-alpine&quot;,
+  &quot;State&quot;: {
+    &quot;Dead&quot;: false,
+    &quot;Error&quot;: &quot;&quot;,
+    &quot;ExitCode&quot;: 0,
+    &quot;FinishedAt&quot;: &quot;2026-10-08T07:13:12.503806268Z&quot;,
+    &quot;OOMKilled&quot;: false,
+    &quot;Paused&quot;: false,
+    &quot;Pid&quot;: 599,
+    &quot;Restarting&quot;: false,
+    &quot;Running&quot;: true,
+    &quot;StartedAt&quot;: &quot;2026-10-08T07:13:37.985792189Z&quot;,
+    &quot;Status&quot;: &quot;running&quot;
+  },
+  &quot;RestartCount&quot;: 0,
+  &quot;RestartPolicy&quot;: {
+    &quot;MaximumRetryCount&quot;: 0,
+    &quot;Name&quot;: &quot;no&quot;
+  },
+  &quot;PortBindings&quot;: {
+    &quot;1883/tcp&quot;: [
+      {
+        &quot;HostIp&quot;: &quot;127.0.0.1&quot;,
+        &quot;HostPort&quot;: &quot;1884&quot;
+      }
+    ]
+  },
+  &quot;PublishedPorts&quot;: {
+    &quot;1883/tcp&quot;: [
+      {
+        &quot;HostIp&quot;: &quot;127.0.0.1&quot;,
+        &quot;HostPort&quot;: &quot;1884&quot;
+      }
+    ]
+  },
+  &quot;Mounts&quot;: [
+    {
+      &quot;Destination&quot;: &quot;/mosquitto/data&quot;,
+      &quot;Mode&quot;: &quot;rw&quot;,
+      &quot;Propagation&quot;: &quot;rprivate&quot;,
+      &quot;RW&quot;: true,
+      &quot;Source&quot;: &quot;C:\\amr-control-system-demo\\docker\\mosquitto\\data&quot;,
+      &quot;Type&quot;: &quot;bind&quot;
+    },
+    {
+      &quot;Destination&quot;: &quot;/mosquitto/log&quot;,
+      &quot;Mode&quot;: &quot;rw&quot;,
+      &quot;Propagation&quot;: &quot;rprivate&quot;,
+      &quot;RW&quot;: true,
+      &quot;Source&quot;: &quot;C:\\amr-control-system-demo\\docker\\mosquitto\\log&quot;,
+      &quot;Type&quot;: &quot;bind&quot;
+    },
+    {
+      &quot;Destination&quot;: &quot;/mosquitto/config/mosquitto.conf&quot;,
+      &quot;Mode&quot;: &quot;&quot;,
+      &quot;Propagation&quot;: &quot;rprivate&quot;,
+      &quot;RW&quot;: false,
+      &quot;Source&quot;: &quot;C:\\amr-control-system-demo\\docker\\mosquitto\\config\\mosquitto.conf&quot;,
+      &quot;Type&quot;: &quot;bind&quot;
+    }
+  ],
+  &quot;Labels&quot;: {
+    &quot;com.docker.compose.config-hash&quot;: &quot;e1656f10e09c4fe60648b68f84176a49775e40ec717c1baef65d7e799ae6a7b6&quot;,
+    &quot;com.docker.compose.container-number&quot;: &quot;1&quot;,
+    &quot;com.docker.compose.depends_on&quot;: &quot;&quot;,
+    &quot;com.docker.compose.image&quot;: &quot;sha256:12436df85d6b2b91e63c71184da35ec89400a98abdc688a78b1403a11ecf44b4&quot;,
+    &quot;com.docker.compose.oneoff&quot;: &quot;False&quot;,
+    &quot;com.docker.compose.project&quot;: &quot;amr-demo&quot;,
+    &quot;com.docker.compose.project.config_files&quot;: &quot;C:\\amr-control-system-demo\\docker\\compose.yaml&quot;,
+    &quot;com.docker.compose.project.working_dir&quot;: &quot;C:\\amr-control-system-demo\\docker&quot;,
+    &quot;com.docker.compose.service&quot;: &quot;mosquitto&quot;,
+    &quot;com.docker.compose.version&quot;: &quot;5.5.1&quot;,
+    &quot;org.opencontainers.image.authors&quot;: &quot;Roger Light &lt;roger@atchoo.org&gt;&quot;,
+    &quot;org.opencontainers.image.description&quot;: &quot;Eclipse Mosquitto MQTT Broker&quot;,
+    &quot;org.opencontainers.image.documentation&quot;: &quot;https://mosquitto.org/documentation/&quot;,
+    &quot;org.opencontainers.image.licenses&quot;: &quot;EPL-2.0 OR BSD-3-Clause&quot;,
+    &quot;org.opencontainers.image.source&quot;: &quot;https://github.com/eclipse-mosquitto/mosquitto&quot;,
+    &quot;org.opencontainers.image.title&quot;: &quot;eclipse-mosquitto&quot;,
+    &quot;org.opencontainers.image.url&quot;: &quot;https://mosquitto.org/&quot;,
+    &quot;org.opencontainers.image.version&quot;: &quot;2.1.2&quot;
+  }
+}</pre></details>
+<details id="evidence-26-others-after.jsonl"><summary>26-others-after.jsonl</summary><pre>{&quot;Id&quot;:&quot;5d8473f92851c5614b82161e1b129488f2780eb9b9647c78d45359bd239e1820&quot;,&quot;Name&quot;:&quot;/amr-mosquitto&quot;,&quot;State&quot;:{&quot;Dead&quot;:false,&quot;Error&quot;:&quot;&quot;,&quot;ExitCode&quot;:0,&quot;FinishedAt&quot;:&quot;2026-10-07T06:17:12.405924585Z&quot;,&quot;OOMKilled&quot;:false,&quot;Paused&quot;:false,&quot;Pid&quot;:0,&quot;Restarting&quot;:false,&quot;Running&quot;:false,&quot;StartedAt&quot;:&quot;2026-10-07T04:57:14.036059926Z&quot;,&quot;Status&quot;:&quot;exited&quot;},&quot;RestartCount&quot;:0,&quot;ImageId&quot;:&quot;sha256:38c0da4f2ef84284d47b3b3eeea1cb3bdeabe81ee10caf0cd5c5ff61ee3ea408&quot;,&quot;Mounts&quot;:[{&quot;Destination&quot;:&quot;/mosquitto/data&quot;,&quot;Mode&quot;:&quot;rw&quot;,&quot;Propagation&quot;:&quot;rprivate&quot;,&quot;RW&quot;:true,&quot;Source&quot;:&quot;C:\\Monit\\docker\\mosquitto\\data&quot;,&quot;Type&quot;:&quot;bind&quot;},{&quot;Destination&quot;:&quot;/mosquitto/log&quot;,&quot;Mode&quot;:&quot;rw&quot;,&quot;Propagation&quot;:&quot;rprivate&quot;,&quot;RW&quot;:true,&quot;Source&quot;:&quot;C:\\Monit\\docker\\mosquitto\\log&quot;,&quot;Type&quot;:&quot;bind&quot;},{&quot;Destination&quot;:&quot;/mosquitto/config&quot;,&quot;Mode&quot;:&quot;ro&quot;,&quot;Propagation&quot;:&quot;rprivate&quot;,&quot;RW&quot;:false,&quot;Source&quot;:&quot;C:\\Monit\\docker\\mosquitto\\config&quot;,&quot;Type&quot;:&quot;bind&quot;}]}
+{&quot;Id&quot;:&quot;0e71fc5e933de38044bd84f9b054ea0db27efcfbabe4e36e740cbb80e4f5d3e8&quot;,&quot;Name&quot;:&quot;/amr-seq&quot;,&quot;State&quot;:{&quot;Dead&quot;:false,&quot;Error&quot;:&quot;&quot;,&quot;ExitCode&quot;:143,&quot;FinishedAt&quot;:&quot;2026-10-07T06:17:12.407238784Z&quot;,&quot;OOMKilled&quot;:false,&quot;Paused&quot;:false,&quot;Pid&quot;:0,&quot;Restarting&quot;:false,&quot;Running&quot;:false,&quot;StartedAt&quot;:&quot;2026-10-07T04:57:14.215827117Z&quot;,&quot;Status&quot;:&quot;exited&quot;},&quot;RestartCount&quot;:0,&quot;ImageId&quot;:&quot;sha256:fa405502a3c57884c88477b78b55ca76c5a3fb1a4d20c6a185c24e750db34056&quot;,&quot;Mounts&quot;:[{&quot;Destination&quot;:&quot;/data&quot;,&quot;Mode&quot;:&quot;rw&quot;,&quot;Propagation&quot;:&quot;rprivate&quot;,&quot;RW&quot;:true,&quot;Source&quot;:&quot;C:\\practice\\docker\\seq\\data&quot;,&quot;Type&quot;:&quot;bind&quot;}]}
+{&quot;Id&quot;:&quot;d4d3d8362358e6a28aa39bf54e22d0cb5e99877b336e1aa6b22b0b6c017ca963&quot;,&quot;Name&quot;:&quot;/unruffled_herschel&quot;,&quot;State&quot;:{&quot;Dead&quot;:false,&quot;Error&quot;:&quot;&quot;,&quot;ExitCode&quot;:1,&quot;FinishedAt&quot;:&quot;2026-09-18T10:04:35.99438357Z&quot;,&quot;OOMKilled&quot;:false,&quot;Paused&quot;:false,&quot;Pid&quot;:0,&quot;Restarting&quot;:false,&quot;Running&quot;:false,&quot;StartedAt&quot;:&quot;2026-09-18T10:04:34.94567882Z&quot;,&quot;Status&quot;:&quot;exited&quot;},&quot;RestartCount&quot;:0,&quot;ImageId&quot;:&quot;sha256:fa405502a3c57884c88477b78b55ca76c5a3fb1a4d20c6a185c24e750db34056&quot;,&quot;Mounts&quot;:[{&quot;Destination&quot;:&quot;/data&quot;,&quot;Driver&quot;:&quot;local&quot;,&quot;Mode&quot;:&quot;&quot;,&quot;Name&quot;:&quot;b8504218220a1bdb1a6b7a534f9cf31275ddcaa68eeed834c565c418211eae0c&quot;,&quot;Propagation&quot;:&quot;&quot;,&quot;RW&quot;:true,&quot;Source&quot;:&quot;/var/lib/docker/volumes/b8504218220a1bdb1a6b7a534f9cf31275ddcaa68eeed834c565c418211eae0c/_data&quot;,&quot;Type&quot;:&quot;volume&quot;}]}
+{&quot;Id&quot;:&quot;ec2d2ff7542136414cfb33efc67f90b64927b6bf1462844acb82f0712befb06b&quot;,&quot;Name&quot;:&quot;/cool_lumiere&quot;,&quot;State&quot;:{&quot;Dead&quot;:false,&quot;Error&quot;:&quot;&quot;,&quot;ExitCode&quot;:0,&quot;FinishedAt&quot;:&quot;2026-09-18T10:03:55.760912699Z&quot;,&quot;OOMKilled&quot;:false,&quot;Paused&quot;:false,&quot;Pid&quot;:0,&quot;Restarting&quot;:false,&quot;Running&quot;:false,&quot;StartedAt&quot;:&quot;2026-09-18T10:03:55.674865663Z&quot;,&quot;Status&quot;:&quot;exited&quot;},&quot;RestartCount&quot;:0,&quot;ImageId&quot;:&quot;sha256:5e23090353324d887c48ad5e5c56d294eab81588df9605b07d1afe895f9cc8f8&quot;,&quot;Mounts&quot;:[]}
+</pre></details>
+<details id="evidence-27-listeners-restarted.json"><summary>27-listeners-restarted.json</summary><pre>{
+  &quot;LocalAddress&quot;: &quot;127.0.0.1&quot;,
+  &quot;LocalPort&quot;: 1884,
+  &quot;OwningProcess&quot;: 42124
+}</pre></details>
+<details id="evidence-28-mosquitto-file.log"><summary>28-mosquitto-file.log</summary><pre>1791443565: mosquitto version 2.1.2 starting
+1791443565: Config loaded from /mosquitto/config/mosquitto.conf.
+1791443565: Bridge support available.
+1791443565: Persistence support available.
+1791443565: TLS support available.
+1791443565: TLS-PSK support available.
+1791443565: Websockets support available.
+1791443565: Opening ipv4 listen socket on port 1883.
+1791443565: mosquitto version 2.1.2 running
+1791443592: mosquitto version 2.1.2 terminating
+1791443592: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1791443618: mosquitto version 2.1.2 starting
+1791443618: Config loaded from /mosquitto/config/mosquitto.conf.
+1791443618: Bridge support available.
+1791443618: Persistence support available.
+1791443618: TLS support available.
+1791443618: TLS-PSK support available.
+1791443618: Websockets support available.
+1791443618: Opening ipv4 listen socket on port 1883.
+1791443618: mosquitto version 2.1.2 running
+</pre></details>
+<details id="evidence-29-comparison.json"><summary>29-comparison.json</summary><pre>{
+  &quot;checkedKst&quot;: &quot;2026-10-08T16:13:40.3105417+09:00&quot;,
+  &quot;otherContainerIds&quot;: [
+    &quot;5d8473f92851c5614b82161e1b129488f2780eb9b9647c78d45359bd239e1820&quot;,
+    &quot;0e71fc5e933de38044bd84f9b054ea0db27efcfbabe4e36e740cbb80e4f5d3e8&quot;,
+    &quot;d4d3d8362358e6a28aa39bf54e22d0cb5e99877b336e1aa6b22b0b6c017ca963&quot;,
+    &quot;ec2d2ff7542136414cfb33efc67f90b64927b6bf1462844acb82f0712befb06b&quot;
+  ],
+  &quot;otherContainerSnapshotsIdentical&quot;: false,
+  &quot;sameTargetContainer&quot;: true,
+  &quot;targetRunning&quot;: true,
+  &quot;targetError&quot;: &quot;&quot;,
+  &quot;originalStartedAt&quot;: &quot;2026-10-08T07:12:44.880852372Z&quot;,
+  &quot;restartedAt&quot;: &quot;2026-10-08T07:13:37.985792189Z&quot;,
+  &quot;configHashes&quot;: [
+    {
+      &quot;Path&quot;: &quot;C:\\amr-control-system-demo\\docker\\compose.yaml&quot;,
+      &quot;Hash&quot;: &quot;EAFD232C385B04D7BFD1158F4E1B46C45DE2D0887708DD80FD357F4279721FA0&quot;
+    },
+    {
+      &quot;Path&quot;: &quot;C:\\amr-control-system-demo\\docker\\mosquitto\\config\\mosquitto.conf&quot;,
+      &quot;Hash&quot;: &quot;5301574582866D6C346FE29FF2F994EA8C025F27503EA09143E887E0D2B826B8&quot;
+    }
+  ]
+}</pre></details>
+<details id="evidence-30-preservation-check.json"><summary>30-preservation-check.json</summary><pre>{
+  &quot;checkedKst&quot;: &quot;2026-10-08T16:16:36.7466729+09:00&quot;,
+  &quot;method&quot;: &quot;Compare Id, State, RestartCount, ImageId and Mounts sorted by Destination. Raw snapshot difference in 29-comparison.json is mount array ordering only.&quot;,
+  &quot;containers&quot;: [
+    {
+      &quot;name&quot;: &quot;/amr-mosquitto&quot;,
+      &quot;id&quot;: &quot;5d8473f92851c5614b82161e1b129488f2780eb9b9647c78d45359bd239e1820&quot;,
+      &quot;stateIdentical&quot;: true,
+      &quot;restartCountIdentical&quot;: true,
+      &quot;imageIdentical&quot;: true,
+      &quot;mountsIdenticalAfterSorting&quot;: true
+    },
+    {
+      &quot;name&quot;: &quot;/amr-seq&quot;,
+      &quot;id&quot;: &quot;0e71fc5e933de38044bd84f9b054ea0db27efcfbabe4e36e740cbb80e4f5d3e8&quot;,
+      &quot;stateIdentical&quot;: true,
+      &quot;restartCountIdentical&quot;: true,
+      &quot;imageIdentical&quot;: true,
+      &quot;mountsIdenticalAfterSorting&quot;: true
+    },
+    {
+      &quot;name&quot;: &quot;/unruffled_herschel&quot;,
+      &quot;id&quot;: &quot;d4d3d8362358e6a28aa39bf54e22d0cb5e99877b336e1aa6b22b0b6c017ca963&quot;,
+      &quot;stateIdentical&quot;: true,
+      &quot;restartCountIdentical&quot;: true,
+      &quot;imageIdentical&quot;: true,
+      &quot;mountsIdenticalAfterSorting&quot;: true
+    },
+    {
+      &quot;name&quot;: &quot;/cool_lumiere&quot;,
+      &quot;id&quot;: &quot;ec2d2ff7542136414cfb33efc67f90b64927b6bf1462844acb82f0712befb06b&quot;,
+      &quot;stateIdentical&quot;: true,
+      &quot;restartCountIdentical&quot;: true,
+      &quot;imageIdentical&quot;: true,
+      &quot;mountsIdenticalAfterSorting&quot;: true
+    }
+  ]
+}</pre></details>
+<details id="evidence-31-document-sources.json"><summary>31-document-sources.json</summary><pre>[
+  {
+    &quot;path&quot;: &quot;C:\\process-plan\\관제시스템 과제 진행\\명세\\기능명세.md&quot;,
+    &quot;sha256&quot;: &quot;FD41F0609AA0AFBC9ADA48D1C453A9853E09064E9B200781F2F62B935F5F5561&quot;,
+    &quot;versionLines&quot;: [
+      &quot;- 버전: v0.7 초안&quot;
+    ]
+  },
+  {
+    &quot;path&quot;: &quot;C:\\process-plan\\관제시스템 과제 진행\\명세\\요구사항정의.md&quot;,
+    &quot;sha256&quot;: &quot;25A0B55DEADD98E0AC5A9B494CDE74878B07962CEA469BA3FA9A933E070230E6&quot;,
+    &quot;versionLines&quot;: [
+      &quot;- 버전: v0.5 초안&quot;
+    ]
+  },
+  {
+    &quot;path&quot;: &quot;C:\\process-plan\\관제시스템 과제 진행\\명세\\공통규칙.md&quot;,
+    &quot;sha256&quot;: &quot;8BBE53874DF47A5C5D34EF4D1B86A79EA2D6455043001490DCA128D62A2F108C&quot;,
+    &quot;versionLines&quot;: [
+      &quot;- 버전: v0.4 초안&quot;
+    ]
+  },
+  {
+    &quot;path&quot;: &quot;C:\\process-plan\\관제시스템 과제 진행\\명세\\공통데이터명세.md&quot;,
+    &quot;sha256&quot;: &quot;E1B2CFE4AAFFEB56C6A9FDA7D2DF08C1FBDBC268CEEC5D74C7E3C807C79DE195&quot;,
+    &quot;versionLines&quot;: [
+      &quot;- 버전: v0.4 초안&quot;
+    ]
+  },
+  {
+    &quot;path&quot;: &quot;C:\\process-plan\\관제시스템 과제 진행\\명세\\검토 및 결정사항.md&quot;,
+    &quot;sha256&quot;: &quot;165977BEB047FF3CF49AFA120524A1A776E3ACE91F30A5EFE713EC4E9463A166&quot;,
+    &quot;versionLines&quot;: [
+      &quot;- 버전: v0.5 초안&quot;
+    ]
+  },
+  {
+    &quot;path&quot;: &quot;C:\\process-plan\\관제시스템 과제 진행\\과제1\\과제계획.md&quot;,
+    &quot;sha256&quot;: &quot;BBDE3500347375AA05151A7DD140E63F0A656122FC779D87AB3F23B9DC652946&quot;,
+    &quot;versionLines&quot;: [
+      &quot;| 버전 | v0.16 초안 |&quot;,
+      &quot;| 양식 버전 | v1.1 |&quot;
+    ]
+  },
+  {
+    &quot;path&quot;: &quot;C:\\process-plan\\관제시스템 과제 진행\\과제1\\이슈\\02_COM-03_접속과_정상종료.md&quot;,
+    &quot;sha256&quot;: &quot;D449D02450D8F0C81366879FC50199576F5E8D6AD7D17F84C8484296B03EFB2E&quot;,
+    &quot;versionLines&quot;: [
+      &quot;- 초안 ID: COM03-A / 작성일: 2026-10-07 / 수정일: 2026-10-08 / 버전: v0.7&quot;
+    ]
+  },
+  {
+    &quot;path&quot;: &quot;C:\\process-plan\\관제시스템 과제 진행\\과제1\\이슈\\05_COM-03_Broker_기동확인.md&quot;,
+    &quot;sha256&quot;: &quot;F3CA9ADEC20F3CC960075854CF0ABD0546B2AE1102E18C1990A2A5031479AE67&quot;,
+    &quot;versionLines&quot;: [
+      &quot;- 초안 ID: COM03-A1 / 작성일: 2026-10-07 / 수정일: 2026-10-08 / 버전: v0.4&quot;
+    ]
+  },
+  {
+    &quot;path&quot;: &quot;C:\\process-plan\\관제시스템 과제 진행\\개발환경.md&quot;,
+    &quot;sha256&quot;: &quot;962B37D8DA23FC71E6F9905F747BB4B6AB44AFF6958258330032CED17B2CD945&quot;,
+    &quot;versionLines&quot;: [
+      &quot;- 버전: v0.7 — 현재 문서 원본과 실습 코드 위치 명시&quot;
+    ]
+  },
+  {
+    &quot;path&quot;: &quot;C:\\process-plan\\기준\\개발 진행 절차.md&quot;,
+    &quot;sha256&quot;: &quot;605A9E1344D2D243487F5E4B4251D52874F8ECC55D0B04544346B1F8BC6E83F4&quot;,
+    &quot;versionLines&quot;: [
+      &quot;- 버전: v0.6 — 문서 원본 위치를 C:\\process-plan으로 명시&quot;
+    ]
+  }
+]</pre></details>
+<details id="evidence-32-git-baseline.log"><summary>32-git-baseline.log</summary><pre>ebaf54641040b97f81cdda0142ab5c7e498fa454	refs/heads/develop
+</pre></details>
+<details id="evidence-33-base-ancestor.log"><summary>33-base-ancestor.log</summary><pre>(출력 없음 — 종료 코드는 commands.jsonl에서 확인)</pre></details>
+<details id="evidence-commands.jsonl"><summary>commands.jsonl</summary><pre>{&quot;log&quot;:&quot;01-engine-before.log&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;version&quot;,&quot;--format&quot;,&quot;{{json .}}&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:11:17.6334104+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:11:17.8155907+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;02-compose-version.log&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;compose&quot;,&quot;version&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:11:17.8264412+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:11:17.9927480+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;03-compose-config.log&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;compose&quot;,&quot;-f&quot;,&quot;docker/compose.yaml&quot;,&quot;config&quot;,&quot;--quiet&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:11:17.9962897+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:11:18.3208776+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;04-compose-resolved.json&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;compose&quot;,&quot;-f&quot;,&quot;docker/compose.yaml&quot;,&quot;config&quot;,&quot;--format&quot;,&quot;json&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:11:18.3250441+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:11:18.6523167+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;05-desktop-start.log&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;desktop&quot;,&quot;start&quot;,&quot;--timeout&quot;,&quot;45&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:11:18.6552331+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:11:18.9987105+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;06-containers-before.jsonl&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;ps&quot;,&quot;-a&quot;,&quot;--no-trunc&quot;,&quot;--format&quot;,&quot;{{json .}}&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:12:12.3540498+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:12:12.5416183+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;07-context.json&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;context&quot;,&quot;inspect&quot;,&quot;desktop-linux&quot;,&quot;--format&quot;,&quot;{{json .Endpoints.docker}}&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:12:12.5725556+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:12:12.7181359+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;08-image.json&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;image&quot;,&quot;inspect&quot;,&quot;eclipse-mosquitto:2.1.2-alpine&quot;,&quot;--format&quot;,&quot;{\&quot;Id\&quot;:{{json .Id}},\&quot;RepoTags\&quot;:{{json .RepoTags}},\&quot;RepoDigests\&quot;:{{json .RepoDigests}},\&quot;Created\&quot;:{{json .Created}},\&quot;Architecture\&quot;:{{json .Architecture}},\&quot;Os\&quot;:{{json .Os}}}&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:12:12.7206703+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:12:12.8854069+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;10-project-before.jsonl&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;compose&quot;,&quot;-f&quot;,&quot;docker/compose.yaml&quot;,&quot;ps&quot;,&quot;-a&quot;,&quot;--format&quot;,&quot;json&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:12:13.8389240+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:12:14.1660942+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;11-others-before.jsonl&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;inspect&quot;,&quot;--format&quot;,&quot;{\&quot;Id\&quot;:{{json .Id}},\&quot;Name\&quot;:{{json .Name}},\&quot;State\&quot;:{{json .State}},\&quot;RestartCount\&quot;:{{json .RestartCount}},\&quot;ImageId\&quot;:{{json .Image}},\&quot;Mounts\&quot;:{{json .Mounts}}}&quot;,&quot;5d8473f92851c5614b82161e1b129488f2780eb9b9647c78d45359bd239e1820&quot;,&quot;0e71fc5e933de38044bd84f9b054ea0db27efcfbabe4e36e740cbb80e4f5d3e8&quot;,&quot;d4d3d8362358e6a28aa39bf54e22d0cb5e99877b336e1aa6b22b0b6c017ca963&quot;,&quot;ec2d2ff7542136414cfb33efc67f90b64927b6bf1462844acb82f0712befb06b&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:12:44.3762372+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:12:44.5464688+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;12-up.log&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;compose&quot;,&quot;-f&quot;,&quot;docker/compose.yaml&quot;,&quot;up&quot;,&quot;-d&quot;,&quot;mosquitto&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:12:44.5628572+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:12:45.2124906+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;13-ps-started.jsonl&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;compose&quot;,&quot;-f&quot;,&quot;docker/compose.yaml&quot;,&quot;ps&quot;,&quot;-a&quot;,&quot;--format&quot;,&quot;json&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:12:45.2177708+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:12:45.5644261+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;14-logs-started.log&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;compose&quot;,&quot;-f&quot;,&quot;docker/compose.yaml&quot;,&quot;logs&quot;,&quot;--no-color&quot;,&quot;--timestamps&quot;,&quot;--tail&quot;,&quot;100&quot;,&quot;mosquitto&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:12:45.5679788+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:12:45.9264011+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;15-inspect-started.json&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;inspect&quot;,&quot;amr-demo-mosquitto-1&quot;,&quot;--format&quot;,&quot;{\&quot;Id\&quot;:{{json .Id}},\&quot;Name\&quot;:{{json .Name}},\&quot;ImageId\&quot;:{{json .Image}},\&quot;ImageTag\&quot;:{{json .Config.Image}},\&quot;State\&quot;:{{json .State}},\&quot;RestartCount\&quot;:{{json .RestartCount}},\&quot;RestartPolicy\&quot;:{{json .HostConfig.RestartPolicy}},\&quot;PortBindings\&quot;:{{json .HostConfig.PortBindings}},\&quot;PublishedPorts\&quot;:{{json .NetworkSettings.Ports}},\&quot;Mounts\&quot;:{{json .Mounts}},\&quot;Labels\&quot;:{{json .Config.Labels}}}&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:12:45.9300730+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:12:46.0784802+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;17-stop.log&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;compose&quot;,&quot;-f&quot;,&quot;docker/compose.yaml&quot;,&quot;stop&quot;,&quot;mosquitto&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:13:12.3463884+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:13:12.9540755+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;18-ps-stopped.jsonl&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;compose&quot;,&quot;-f&quot;,&quot;docker/compose.yaml&quot;,&quot;ps&quot;,&quot;-a&quot;,&quot;--format&quot;,&quot;json&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:13:12.9666687+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:13:13.3190617+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;19-inspect-stopped.json&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;inspect&quot;,&quot;amr-demo-mosquitto-1&quot;,&quot;--format&quot;,&quot;{\&quot;Id\&quot;:{{json .Id}},\&quot;Name\&quot;:{{json .Name}},\&quot;ImageId\&quot;:{{json .Image}},\&quot;ImageTag\&quot;:{{json .Config.Image}},\&quot;State\&quot;:{{json .State}},\&quot;RestartCount\&quot;:{{json .RestartCount}},\&quot;RestartPolicy\&quot;:{{json .HostConfig.RestartPolicy}},\&quot;PortBindings\&quot;:{{json .HostConfig.PortBindings}},\&quot;PublishedPorts\&quot;:{{json .NetworkSettings.Ports}},\&quot;Mounts\&quot;:{{json .Mounts}},\&quot;Labels\&quot;:{{json .Config.Labels}}}&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:13:13.3220094+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:13:13.4778398+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;20-logs-stopped.log&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;compose&quot;,&quot;-f&quot;,&quot;docker/compose.yaml&quot;,&quot;logs&quot;,&quot;--no-color&quot;,&quot;--timestamps&quot;,&quot;--tail&quot;,&quot;100&quot;,&quot;mosquitto&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:13:13.4856272+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:13:13.8383968+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;22-up-again.log&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;compose&quot;,&quot;-f&quot;,&quot;docker/compose.yaml&quot;,&quot;up&quot;,&quot;-d&quot;,&quot;mosquitto&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:13:37.7994954+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:13:38.3060857+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;23-ps-restarted.jsonl&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;compose&quot;,&quot;-f&quot;,&quot;docker/compose.yaml&quot;,&quot;ps&quot;,&quot;-a&quot;,&quot;--format&quot;,&quot;json&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:13:38.3417520+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:13:38.6907035+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;24-logs-restarted.log&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;compose&quot;,&quot;-f&quot;,&quot;docker/compose.yaml&quot;,&quot;logs&quot;,&quot;--no-color&quot;,&quot;--timestamps&quot;,&quot;--tail&quot;,&quot;100&quot;,&quot;mosquitto&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:13:38.6938943+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:13:39.0405891+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;25-inspect-restarted.json&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;inspect&quot;,&quot;amr-demo-mosquitto-1&quot;,&quot;--format&quot;,&quot;{\&quot;Id\&quot;:{{json .Id}},\&quot;Name\&quot;:{{json .Name}},\&quot;ImageId\&quot;:{{json .Image}},\&quot;ImageTag\&quot;:{{json .Config.Image}},\&quot;State\&quot;:{{json .State}},\&quot;RestartCount\&quot;:{{json .RestartCount}},\&quot;RestartPolicy\&quot;:{{json .HostConfig.RestartPolicy}},\&quot;PortBindings\&quot;:{{json .HostConfig.PortBindings}},\&quot;PublishedPorts\&quot;:{{json .NetworkSettings.Ports}},\&quot;Mounts\&quot;:{{json .Mounts}},\&quot;Labels\&quot;:{{json .Config.Labels}}}&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:13:39.0460031+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:13:39.1973261+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;26-others-after.jsonl&quot;,&quot;program&quot;:&quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,&quot;arguments&quot;:[&quot;inspect&quot;,&quot;--format&quot;,&quot;{\&quot;Id\&quot;:{{json .Id}},\&quot;Name\&quot;:{{json .Name}},\&quot;State\&quot;:{{json .State}},\&quot;RestartCount\&quot;:{{json .RestartCount}},\&quot;ImageId\&quot;:{{json .Image}},\&quot;Mounts\&quot;:{{json .Mounts}}}&quot;,&quot;5d8473f92851c5614b82161e1b129488f2780eb9b9647c78d45359bd239e1820&quot;,&quot;0e71fc5e933de38044bd84f9b054ea0db27efcfbabe4e36e740cbb80e4f5d3e8&quot;,&quot;d4d3d8362358e6a28aa39bf54e22d0cb5e99877b336e1aa6b22b0b6c017ca963&quot;,&quot;ec2d2ff7542136414cfb33efc67f90b64927b6bf1462844acb82f0712befb06b&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:13:39.2118589+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:13:39.3685765+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;32-git-baseline.log&quot;,&quot;program&quot;:&quot;git&quot;,&quot;arguments&quot;:[&quot;ls-remote&quot;,&quot;--heads&quot;,&quot;origin&quot;,&quot;develop&quot;,&quot;feature/7-broker-check&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:16:36.7894524+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:16:37.3241259+09:00&quot;,&quot;exitCode&quot;:0}
+{&quot;log&quot;:&quot;33-base-ancestor.log&quot;,&quot;program&quot;:&quot;git&quot;,&quot;arguments&quot;:[&quot;merge-base&quot;,&quot;--is-ancestor&quot;,&quot;963a1fa8d48f432aaa87f07f15a61db57e22db88&quot;,&quot;HEAD&quot;],&quot;cwd&quot;:&quot;C:\\amr-control-system-demo&quot;,&quot;startedKst&quot;:&quot;2026-10-08T16:16:37.3334646+09:00&quot;,&quot;endedKst&quot;:&quot;2026-10-08T16:16:37.3678385+09:00&quot;,&quot;exitCode&quot;:0}
+</pre></details>
+<details id="evidence-environment.json"><summary>environment.json</summary><pre>{
+  &quot;runId&quot;: &quot;20261008-a1-broker-01&quot;,
+  &quot;startedKst&quot;: &quot;2026-10-08T16:11:17.4890064+09:00&quot;,
+  &quot;cwd&quot;: &quot;C:\\amr-control-system-demo&quot;,
+  &quot;branch&quot;: &quot;feature/7-broker-check&quot;,
+  &quot;head&quot;: &quot;ebaf54641040b97f81cdda0142ab5c7e498fa454&quot;,
+  &quot;initialGitStatus&quot;: [],
+  &quot;origin&quot;: &quot;https://github.com/inhhlee/amr-control-system-demo.git&quot;,
+  &quot;os&quot;: &quot;Microsoft Windows 10.0.26200&quot;,
+  &quot;architecture&quot;: &quot;X64&quot;,
+  &quot;powershell&quot;: &quot;7.6.5&quot;,
+  &quot;dockerCli&quot;: &quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,
+  &quot;dockerOnPath&quot;: &quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe&quot;,
+  &quot;desktopExecutable&quot;: &quot;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\Docker Desktop.exe&quot;,
+  &quot;desktopVersion&quot;: &quot;4.90.0.238679&quot;,
+  &quot;configHashes&quot;: [
+    {
+      &quot;Path&quot;: &quot;C:\\amr-control-system-demo\\docker\\compose.yaml&quot;,
+      &quot;Hash&quot;: &quot;EAFD232C385B04D7BFD1158F4E1B46C45DE2D0887708DD80FD357F4279721FA0&quot;
+    },
+    {
+      &quot;Path&quot;: &quot;C:\\amr-control-system-demo\\docker\\mosquitto\\config\\mosquitto.conf&quot;,
+      &quot;Hash&quot;: &quot;5301574582866D6C346FE29FF2F994EA8C025F27503EA09143E887E0D2B826B8&quot;
+    }
+  ]
+}</pre></details>
+<details id="evidence-repository-checks.json"><summary>repository-checks.json</summary><pre>{
+  &quot;checkedKst&quot;: &quot;2026-10-08T16:26:28.7075061+09:00&quot;,
+  &quot;kind&quot;: &quot;Saved-evidence and document consistency checks; not an MQTT or new Broker execution test&quot;,
+  &quot;head&quot;: &quot;ebaf54641040b97f81cdda0142ab5c7e498fa454&quot;,
+  &quot;stagedFiles&quot;: [],
+  &quot;gitStatus&quot;: [
+    &quot; M README.md&quot;,
+    &quot; M docker/mosquitto/config/mosquitto.conf&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/01-engine-before.log&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/02-compose-version.log&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/03-compose-config.log&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/04-compose-resolved.json&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/05-desktop-start.log&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/06-containers-before.jsonl&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/07-context.json&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/08-image.json&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/09-listeners-before.json&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/10-project-before.jsonl&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/11-others-before.jsonl&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/12-up.log&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/13-ps-started.jsonl&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/14-logs-started.log&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/15-inspect-started.json&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/16-listeners-started.json&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/17-stop.log&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/18-ps-stopped.jsonl&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/19-inspect-stopped.json&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/20-logs-stopped.log&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/21-listeners-stopped.json&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/22-up-again.log&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/23-ps-restarted.jsonl&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/24-logs-restarted.log&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/25-inspect-restarted.json&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/26-others-after.jsonl&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/27-listeners-restarted.json&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/28-mosquitto-file.log&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/29-comparison.json&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/30-preservation-check.json&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/31-document-sources.json&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/32-git-baseline.log&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/33-base-ancestor.log&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/README.md&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/commands.jsonl&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/environment.json&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/render-report.ps1&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/report.html&quot;,
+    &quot;?? evidence/COM-03/20261008-a1-broker-01/repository-checks.json&quot;
+  ],
+  &quot;currentMosquittoConfigContentReadOrModified&quot;: false,
+  &quot;separateConfigChange&quot;: &quot;User requested preservation of another task change after the execution. Current configuration remains unverified.&quot;,
+  &quot;capturedCommandCount&quot;: 25,
+  &quot;allCapturedNativeExitCodesZero&quot;: true,
+  &quot;emptyCommandOutputFilesMaterialized&quot;: [
+    &quot;03-compose-config.log&quot;,
+    &quot;10-project-before.jsonl&quot;,
+    &quot;33-base-ancestor.log&quot;
+  ],
+  &quot;savedResults&quot;: {
+    &quot;startedRunning&quot;: true,
+    &quot;stoppedNormally&quot;: true,
+    &quot;sameContainerRestarted&quot;: true,
+    &quot;configMountReadOnly&quot;: true,
+    &quot;otherContainersPreserved&quot;: true
+  },
+  &quot;localLinks&quot;: [
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;AGENTS.md&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;CONTRIBUTING.md&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;AGENTS.md#작업별-스킬&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;global.json&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;AmrControlSystem.slnx&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;src/Amr.Communication/Amr.Communication.csproj&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;src/Amr.Communication.Console/Amr.Communication.Console.csproj&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;evidence/setup/&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;evidence/setup/20261007-docker-local-01/README.md&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;evidence/setup/20261007-setup-02/README.md#1-목표와-적용-기준&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;evidence/setup/20261007-setup-03/README.md&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;evidence/setup/20261007-setup-03/console.log&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;evidence/setup/20261007-setup-02/console.log&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;evidence/setup/20261007-setup-02/code-integrity.json&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;docker/compose.yaml&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;docker/mosquitto/config/mosquitto.conf&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;evidence/COM-03/20261008-a1-broker-01/README.md&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;evidence/COM-03/20261008-a1-broker-01/commands.jsonl&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;evidence/COM-03/20261008-a1-broker-01/24-logs-restarted.log&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;evidence/COM-03/20261008-a1-broker-01/report.html&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;evidence/setup/20261007-setup-02/docker-broker.log&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;evidence/setup/20261007-docker-local-01/README.md&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;evidence/setup/20261007-setup-01/README.md&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;evidence/setup/20261007-setup-02/README.md&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;evidence/setup/20261007-setup-03/README.md&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\README.md&quot;,
+      &quot;target&quot;: &quot;evidence/COM-03/20261008-a1-broker-01/README.md&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;report.html&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;33-base-ancestor.log&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;commands.jsonl&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;31-document-sources.json&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;32-git-baseline.log&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;08-image.json&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;environment.json&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;01-engine-before.log&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;04-compose-resolved.json&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;08-image.json&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;15-inspect-started.json&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;commands.jsonl&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;03-compose-config.log&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;12-up.log&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;13-ps-started.jsonl&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;14-logs-started.log&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;15-inspect-started.json&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;16-listeners-started.json&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;17-stop.log&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;18-ps-stopped.jsonl&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;19-inspect-stopped.json&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;20-logs-stopped.log&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;22-up-again.log&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;24-logs-restarted.log&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;25-inspect-restarted.json&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;27-listeners-restarted.json&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;../../../README.md&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;29-comparison.json&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;repository-checks.json&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;11-others-before.jsonl&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;26-others-after.jsonl&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;30-preservation-check.json&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;28-mosquitto-file.log&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;05-desktop-start.log&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;29-comparison.json&quot;,
+      &quot;exists&quot;: true
+    },
+    {
+      &quot;source&quot;: &quot;C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md&quot;,
+      &quot;target&quot;: &quot;30-preservation-check.json&quot;,
+      &quot;exists&quot;: true
+    }
+  ],
+  &quot;brokenLocalLinkCount&quot;: 0,
+  &quot;runtimeIgnoreExit&quot;: 0,
+  &quot;runtimeIgnored&quot;: [
+    &quot;.gitignore:21:/docker/mosquitto/data/\tdocker/mosquitto/data/mosquitto.db&quot;,
+    &quot;.gitignore:22:/docker/mosquitto/log/\tdocker/mosquitto/log/mosquitto.log&quot;
+  ],
+  &quot;evidenceIgnoreExit&quot;: 1,
+  &quot;evidenceIgnored&quot;: [],
+  &quot;rootReadmeWhitespaceExit&quot;: 0,
+  &quot;rootReadmeWhitespaceOutput&quot;: [],
+  &quot;browserPreview&quot;: &quot;Not run: browser tool process exited twice. Open report.html locally with Ctrl+O.&quot;,
+  &quot;brokenEvidenceAnchors&quot;: []
+}</pre></details><script>
+function reveal(){const id=decodeURIComponent(location.hash.slice(1));const item=document.getElementById(id);if(item&&item.tagName==='DETAILS'){item.open=true;item.scrollIntoView();}}
+addEventListener('hashchange',reveal);reveal();
+</script></main></body></html>

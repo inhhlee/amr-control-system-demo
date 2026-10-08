@@ -59,7 +59,7 @@ dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj --no-bu
 
 설정은 [docker/compose.yaml](docker/compose.yaml)과 [mosquitto.conf](docker/mosquitto/config/mosquitto.conf)에서 관리한다. 설치된 Docker Desktop을 사용하며 새 Broker를 위한 설정·데이터·로그 경로는 `C:\amr-control-system-demo\docker\` 안에 둔다.
 
-| 항목 | 설정 |
+| 항목 | A1 시험 당시 설정 |
 | --- | --- |
 | Compose 프로젝트 / 서비스 | `amr-demo` / `mosquitto` |
 | 이미지 | `eclipse-mosquitto:2.1.2-alpine` |
@@ -71,30 +71,55 @@ dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj --no-bu
 
 모든 마운트의 호스트 경로는 Compose 파일 기준 상대 경로다. 설정 파일이 없으면 디렉터리를 대신 만들지 않도록 구성했다. `amr-demo`라는 이름으로 기존 Compose 프로젝트와 구분하며, 기존 `amr-mosquitto`의 1883 포트와 겹치지 않는다. [Compose 경로·포트 규칙](https://docs.docker.com/reference/compose-file/services/) · [프로젝트 이름](https://docs.docker.com/compose/how-tos/project-name/)
 
-현재 PC의 CLI는 PATH에 없어 확인한 설치 경로를 사용한다. 다른 PC에서는 실제 Docker CLI 경로를 사용하거나 PATH에 등록된 `docker`를 사용한다.
+2026-10-08 현재 PC에서는 `docker`가 PATH에서 확인된다. 아래 명령은 확인한 절대 경로를 사용한다. 다른 PC에서는 실제 Docker CLI 경로나 PATH에 등록된 `docker`를 사용한다.
 
 ```powershell
 Set-Location C:\amr-control-system-demo
 $dockerCli = 'C:\Users\Admin\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe'
+& $dockerCli version
+& $dockerCli context show
+& $dockerCli compose version
 & $dockerCli compose -f docker/compose.yaml config --quiet
 $LASTEXITCODE
 ```
 
 위 설정 검사의 예상 종료 코드는 `0`이다. `compose config`는 Compose 모델을 검사하며 Broker를 시작하거나 Mosquitto 설정의 실제 로딩·MQTT 통신을 시험하지 않는다. [명령 설명](https://docs.docker.com/reference/cli/docker/compose/config/)
 
-다음 명령은 **후속 Broker 실행·연결 작업을 위한 안내**다. Issue #2의 완료 검증에는 새 Broker 기동이나 실제 MQTT 연결 시험이 포함되지 않는다.
+Docker 엔진에 연결되지 않으면 설치된 Docker Desktop을 시작하고 `version`에 Server가 표시되는지 확인한다. 이번 기록 시작 전에는 엔진 파이프 연결 오류가 있었으나, 실행 증거 수집 시에는 이미 응답했다. `& $dockerCli desktop start --timeout 45`는 `Docker Desktop is already running`과 종료 0을 반환했다. 새 도구·이미지를 설치하거나 내려받지 않았다.
+
+다음은 [Issue #7 · A1](https://github.com/inhhlee/amr-control-system-demo/issues/7)에서 실제 수행한 기동·상태·로그·중단·재기동 순서다. 각 명령의 종료 코드는 바로 뒤에 `$LASTEXITCODE`로 확인한다. 명령이 실패하면 원인을 확인하기 전 다음 단계로 진행하지 않는다. `ps -a`는 중단된 컨테이너도 표시한다.
 
 ```powershell
 & $dockerCli compose -f docker/compose.yaml up -d mosquitto
-& $dockerCli compose -f docker/compose.yaml ps
-& $dockerCli compose -f docker/compose.yaml logs --tail 50 mosquitto
+& $dockerCli compose -f docker/compose.yaml ps -a
+& $dockerCli compose -f docker/compose.yaml logs --no-color --timestamps --tail 100 mosquitto
+
+# 이 프로젝트의 Broker만 중단한다.
+& $dockerCli compose -f docker/compose.yaml stop mosquitto
+& $dockerCli compose -f docker/compose.yaml ps -a
+& $dockerCli compose -f docker/compose.yaml logs --no-color --timestamps --tail 100 mosquitto
+
+# 같은 컨테이너를 다시 기동한다.
+& $dockerCli compose -f docker/compose.yaml up -d mosquitto
+& $dockerCli compose -f docker/compose.yaml ps -a
+& $dockerCli compose -f docker/compose.yaml logs --no-color --timestamps --tail 100 mosquitto
 ```
 
-후속 실행의 예상 결과는 `mosquitto` 서비스가 실행되고 `127.0.0.1:1884`로 포트가 공개되며 설정·데이터·로그 경로 오류가 없는 것이다. 실제 기동과 호스트에서의 MQTT 연결·송수신은 미검증인 후속 범위이며 Issue #2의 완료조건에 포함되지 않는다. 새 프로젝트만 중단할 때는 `& $dockerCli compose -f docker/compose.yaml stop mosquitto`를 사용한다.
+예상 결과는 기동 시 `running`과 `127.0.0.1:1884->1883/tcp`, 로그의 `Config loaded from /mosquitto/config/mosquitto.conf.` 및 `mosquitto version 2.1.2 running`이다. 중단 시 `exited (0)`·`terminating`·데이터 저장 로그, 재기동 시 설정 재로딩·실행·포트 공개를 확인한다. 기존 사용자 Broker와 다른 서비스는 이 명령의 대상이 아니다.
+
+**2026-10-08 실제 결과:** 시험 당시 설정에서 Compose 검사 종료 0, 기동 → 중단(exit 0) → 같은 컨테이너 재기동을 확인했다. 설정·마운트·포트 오류가 없었고 이번 A1 작업에서 Docker 설정을 수정하지 않았다. 다른 컨테이너 4개의 상태·이미지·마운트도 보존됐다. 16:13 KST 조회 시 프로젝트 Broker는 실행 중이었다.
+
+실행 ID는 **`20261008-a1-broker-01`**, 기준 코드는 `ebaf54641040b97f81cdda0142ab5c7e498fa454` (`feature/7-broker-check`)다. 시험 당시 소스·Docker 설정은 기준 커밋 그대로였으며 README·증거는 이번 미커밋 변경이다. [검증결과와 완료조건](evidence/COM-03/20261008-a1-broker-01/README.md), [명령·시각·종료 코드](evidence/COM-03/20261008-a1-broker-01/commands.jsonl), [재기동 로그](evidence/COM-03/20261008-a1-broker-01/24-logs-restarted.log)를 연결한다. 커밋·푸시·PR 생성과 Issue 종료는 수행하지 않았다.
+
+**시험 후 별도 변경:** 기록 정리 중 `mosquitto.conf`에 다른 작업의 변경이 추가됐다. 사용자 요청으로 그대로 보존했으며 내용 검사·재기동·재시험 대상에 포함하지 않았다. 위 표와 통과 기록은 저장된 SHA-256의 시험본에 대한 결과다. 현재 설정 전체의 통과로 확대하지 않으며, 설정 담당 작업이 끝난 뒤 현재 설정과 적용 상태를 확인해야 한다. 후속 A2 착수 시에도 `ps -a`·`logs`로 현재 상태를 재확인한다.
+
+브라우저 확인은 로컬 [검증 보고서 HTML](evidence/COM-03/20261008-a1-broker-01/report.html)을 열어 완료조건 표와 펼칠 수 있는 원본 증거를 확인한다. GitHub에서 HTML을 클릭하면 소스가 표시되므로, 게시 후에는 위 Markdown 검증결과를 사용한다. `127.0.0.1:1884`는 MQTT 포트이며 HTTP 웹페이지 주소가 아니다. 이 보고서는 저장된 실행 기록으로, 실시간 상태 화면이 아니다.
+
+**범위 구분:** A1의 Broker 실행 준비 검증이며 MQTT 접속·메시지 송수신·C# 연결·Ctrl+C 종료는 미실행이다. A2(#8)·A3(#9)의 기능을 미리 구현하지 않았으며 총괄 #4나 COM-03 전체 완료로 표시하지 않는다.
 
 이 프로젝트의 관리·실행 위치는 `C:\amr-control-system-demo`다. 설정의 상대 경로는 이 로컬 폴더의 `docker/compose.yaml`을 기준으로 해석된다. 데이터·로그도 이 폴더에 생성되며, 검토할 로그는 필요한 부분을 `evidence/`로 옮겨 보관한다.
 
-## 확인한 환경과 결과
+## 준비 단계에서 확인한 환경과 결과 (2026-10-07)
 
 2026-10-07, Windows 10.0.26200 / x64, PowerShell 7.6.5에서 확인했다.
 
@@ -125,6 +150,6 @@ $LASTEXITCODE
    ```
 
 3. 위 `--list-tests` 명령이 탐색을 마치는지 확인한다. 시험 0건은 현재 빈 시험 프로젝트의 예상 결과이며 기능 시험 통과가 아니다.
-4. 추가 요청한 Docker 파일은 위 [프로젝트 전용 Docker 설정](#프로젝트-전용-docker-설정)의 `compose config --quiet`로 모델을 검사한다. 실제 기동·MQTT 연결 절차는 후속 연결 작업에서 사용한다. 관리 폴더는 `C:\amr-control-system-demo`, 접속 주소는 `127.0.0.1:1884`다.
+4. Docker 파일은 위 [프로젝트 전용 Docker 설정](#프로젝트-전용-docker-설정)의 명령으로 모델 검사·기동·상태·로그·중단·재기동을 확인한다. A1 실제 결과는 [2026-10-08 검증결과](evidence/COM-03/20261008-a1-broker-01/README.md)와 대조한다. 관리 폴더는 `C:\amr-control-system-demo`, 후속 MQTT 접속 주소는 `127.0.0.1:1884`다. MQTT 접속 시험은 별도 A2 범위다.
 
-Issue #2의 개발 구성·로컬 검증 범위는 완료했다. 실제 PR 연결과 리뷰·반영 확인이 남아 있다. 새 Broker 기동·MQTT 연결은 제외된 후속 범위이며 이번 Issue의 완료를 막는 항목이 아니다. 이 준비 결과를 COM-03 또는 과제1 전체 완료로 표시하지 않는다. 커밋·푸시·PR 생성은 결과 확인 후 별도 요청 단계에서 진행한다.
+Issue #2는 [PR #3](https://github.com/inhhlee/amr-control-system-demo/pull/3)의 main 병합(`963a1fa8d48f432aaa87f07f15a61db57e22db88`)으로 반영됐다. 이번 A1은 시험 당시 설정의 Broker 기동·관리를 검증했으며 이후 별도 설정 변경의 검증과 커밋·푸시·PR 연결은 남아 있다. A1 PR의 develop 반영·근거 확인 후 A2를 진행한다. COM-03 또는 과제1 전체 완료를 뜻하지 않는다.

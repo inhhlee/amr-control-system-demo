@@ -1,0 +1,27 @@
+mosquitto-1  | 2026-10-08T07:12:45.024529912Z 1791443565: Info: running mosquitto as user: mosquitto.
+mosquitto-1  | 2026-10-08T07:12:45.025940748Z 1791443565: mosquitto version 2.1.2 starting
+mosquitto-1  | 2026-10-08T07:12:45.026245812Z 1791443565: Config loaded from /mosquitto/config/mosquitto.conf.
+mosquitto-1  | 2026-10-08T07:12:45.026528962Z 1791443565: Bridge support available.
+mosquitto-1  | 2026-10-08T07:12:45.026788787Z 1791443565: Persistence support available.
+mosquitto-1  | 2026-10-08T07:12:45.027097705Z 1791443565: TLS support available.
+mosquitto-1  | 2026-10-08T07:12:45.027494297Z 1791443565: TLS-PSK support available.
+mosquitto-1  | 2026-10-08T07:12:45.027883399Z 1791443565: Websockets support available.
+mosquitto-1  | 2026-10-08T07:12:45.028341719Z 1791443565: Opening ipv4 listen socket on port 1883.
+mosquitto-1  | 2026-10-08T07:12:45.028723874Z 1791443565: mosquitto version 2.1.2 running
+mosquitto-1  | 2026-10-08T07:13:12.495410933Z 1791443592: mosquitto version 2.1.2 terminating
+mosquitto-1  | 2026-10-08T07:13:12.496230749Z 1791443592: Saving in-memory database to /mosquitto/data//mosquitto.db.
+mosquitto-1  | 2026-10-08T07:13:38.088227694Z 1791443618: Info: running mosquitto as user: mosquitto.
+mosquitto-1  | 2026-10-08T07:13:38.089111473Z 1791443618: Restored 0 base messages
+mosquitto-1  | 2026-10-08T07:13:38.089119799Z 1791443618: Restored 0 retained messages
+mosquitto-1  | 2026-10-08T07:13:38.089121344Z 1791443618: Restored 0 clients
+mosquitto-1  | 2026-10-08T07:13:38.089122373Z 1791443618: Restored 0 subscriptions
+mosquitto-1  | 2026-10-08T07:13:38.089123260Z 1791443618: Restored 0 client messages
+mosquitto-1  | 2026-10-08T07:13:38.089655315Z 1791443618: mosquitto version 2.1.2 starting
+mosquitto-1  | 2026-10-08T07:13:38.089881596Z 1791443618: Config loaded from /mosquitto/config/mosquitto.conf.
+mosquitto-1  | 2026-10-08T07:13:38.090190176Z 1791443618: Bridge support available.
+mosquitto-1  | 2026-10-08T07:13:38.090462037Z 1791443618: Persistence support available.
+mosquitto-1  | 2026-10-08T07:13:38.090762200Z 1791443618: TLS support available.
+mosquitto-1  | 2026-10-08T07:13:38.091038582Z 1791443618: TLS-PSK support available.
+mosquitto-1  | 2026-10-08T07:13:38.091713111Z 1791443618: Websockets support available.
+mosquitto-1  | 2026-10-08T07:13:38.092662120Z 1791443618: Opening ipv4 listen socket on port 1883.
+mosquitto-1  | 2026-10-08T07:13:38.093076718Z 1791443618: mosquitto version 2.1.2 running

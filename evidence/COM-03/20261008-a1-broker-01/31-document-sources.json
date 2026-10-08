@@ -1,0 +1,73 @@
+[
+  {
+    "path": "C:\\process-plan\\관제시스템 과제 진행\\명세\\기능명세.md",
+    "sha256": "FD41F0609AA0AFBC9ADA48D1C453A9853E09064E9B200781F2F62B935F5F5561",
+    "versionLines": [
+      "- 버전: v0.7 초안"
+    ]
+  },
+  {
+    "path": "C:\\process-plan\\관제시스템 과제 진행\\명세\\요구사항정의.md",
+    "sha256": "25A0B55DEADD98E0AC5A9B494CDE74878B07962CEA469BA3FA9A933E070230E6",
+    "versionLines": [
+      "- 버전: v0.5 초안"
+    ]
+  },
+  {
+    "path": "C:\\process-plan\\관제시스템 과제 진행\\명세\\공통규칙.md",
+    "sha256": "8BBE53874DF47A5C5D34EF4D1B86A79EA2D6455043001490DCA128D62A2F108C",
+    "versionLines": [
+      "- 버전: v0.4 초안"
+    ]
+  },
+  {
+    "path": "C:\\process-plan\\관제시스템 과제 진행\\명세\\공통데이터명세.md",
+    "sha256": "E1B2CFE4AAFFEB56C6A9FDA7D2DF08C1FBDBC268CEEC5D74C7E3C807C79DE195",
+    "versionLines": [
+      "- 버전: v0.4 초안"
+    ]
+  },
+  {
+    "path": "C:\\process-plan\\관제시스템 과제 진행\\명세\\검토 및 결정사항.md",
+    "sha256": "165977BEB047FF3CF49AFA120524A1A776E3ACE91F30A5EFE713EC4E9463A166",
+    "versionLines": [
+      "- 버전: v0.5 초안"
+    ]
+  },
+  {
+    "path": "C:\\process-plan\\관제시스템 과제 진행\\과제1\\과제계획.md",
+    "sha256": "BBDE3500347375AA05151A7DD140E63F0A656122FC779D87AB3F23B9DC652946",
+    "versionLines": [
+      "| 버전 | v0.16 초안 |",
+      "| 양식 버전 | v1.1 |"
+    ]
+  },
+  {
+    "path": "C:\\process-plan\\관제시스템 과제 진행\\과제1\\이슈\\02_COM-03_접속과_정상종료.md",
+    "sha256": "D449D02450D8F0C81366879FC50199576F5E8D6AD7D17F84C8484296B03EFB2E",
+    "versionLines": [
+      "- 초안 ID: COM03-A / 작성일: 2026-10-07 / 수정일: 2026-10-08 / 버전: v0.7"
+    ]
+  },
+  {
+    "path": "C:\\process-plan\\관제시스템 과제 진행\\과제1\\이슈\\05_COM-03_Broker_기동확인.md",
+    "sha256": "F3CA9ADEC20F3CC960075854CF0ABD0546B2AE1102E18C1990A2A5031479AE67",
+    "versionLines": [
+      "- 초안 ID: COM03-A1 / 작성일: 2026-10-07 / 수정일: 2026-10-08 / 버전: v0.4"
+    ]
+  },
+  {
+    "path": "C:\\process-plan\\관제시스템 과제 진행\\개발환경.md",
+    "sha256": "962B37D8DA23FC71E6F9905F747BB4B6AB44AFF6958258330032CED17B2CD945",
+    "versionLines": [
+      "- 버전: v0.7 — 현재 문서 원본과 실습 코드 위치 명시"
+    ]
+  },
+  {
+    "path": "C:\\process-plan\\기준\\개발 진행 절차.md",
+    "sha256": "605A9E1344D2D243487F5E4B4251D52874F8ECC55D0B04544346B1F8BC6E83F4",
+    "versionLines": [
+      "- 버전: v0.6 — 문서 원본 위치를 C:\\process-plan으로 명시"
+    ]
+  }
+]
