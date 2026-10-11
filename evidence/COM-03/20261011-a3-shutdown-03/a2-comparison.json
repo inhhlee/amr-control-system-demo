@@ -1,0 +1,42 @@
+[
+  {
+    "path": "global.json",
+    "sameAsA2": true
+  },
+  {
+    "path": "AmrControlSystem.slnx",
+    "sameAsA2": true
+  },
+  {
+    "path": "src/Amr.Communication/Amr.Communication.csproj",
+    "sameAsA2": true
+  },
+  {
+    "path": "src/Amr.Communication/Mqtt/MqttConnectionSettings.cs",
+    "sameAsA2": true
+  },
+  {
+    "path": "src/Amr.Communication/Mqtt/MqttConnection.cs",
+    "sameAsA2": true
+  },
+  {
+    "path": "src/Amr.Communication.Console/Amr.Communication.Console.csproj",
+    "sameAsA2": true
+  },
+  {
+    "path": "src/Amr.Communication.Console/Program.cs",
+    "sameAsA2": false
+  },
+  {
+    "path": "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj",
+    "sameAsA2": true
+  },
+  {
+    "path": "docker/compose.yaml",
+    "sameAsA2": true
+  },
+  {
+    "path": "docker/mosquitto/config/mosquitto.conf",
+    "sameAsA2": true
+  }
+]

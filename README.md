@@ -20,40 +20,70 @@
 
 ## 개발 구성
 
-[Issue #2](https://github.com/inhhlee/amr-control-system-demo/issues/2)의 최소 구성을 이 프로젝트에 만들었다. 아래 프로젝트는 모두 `net10.0`을 사용한다.
+[Issue #2](https://github.com/inhhlee/amr-control-system-demo/issues/2)에서 최소 구성을 만들었고, 현재 [Issue #8](https://github.com/inhhlee/amr-control-system-demo/issues/8)의 **A2 접속·해제와 A3 연결 유지·Ctrl+C 정상 종료**를 구현·검증했다. 아래 프로젝트는 모두 `net10.0`을 사용한다. 현재 변경은 `feature/8-mqtt-connect`의 미커밋 작업이며 PR 반영은 남아 있다.
 
 | 파일·프로젝트 | 역할 |
 | --- | --- |
 | [global.json](global.json) | SDK 10.0.401, `latestPatch`, 시험판 SDK 사용 안 함 |
 | [AmrControlSystem.slnx](AmrControlSystem.slnx) | Visual Studio에서 열 솔루션 |
-| [Amr.Communication](src/Amr.Communication/Amr.Communication.csproj) | 통신 라이브러리와 MQTTnet 5.2.0.1603 참조. 통신 기능은 아직 없음 |
-| [Amr.Communication.Console](src/Amr.Communication.Console/Amr.Communication.Console.csproj) | 통신 라이브러리를 참조하고 준비 안내 한 줄을 출력하는 콘솔 |
-| [Amr.Communication.Tests](tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj) | 통신 라이브러리 참조와 xUnit 시험 탐색 구성. 기능 시험은 아직 0건 |
+| [Amr.Communication](src/Amr.Communication/Amr.Communication.csproj) | MQTTnet 5.2.0.1603을 사용한 접속 설정·MQTT 승인 확인·명시적 해제·자원 정리 |
+| [Amr.Communication.Console](src/Amr.Communication.Console/Amr.Communication.Console.csproj) | 실제 Broker 접속 승인 후 Ctrl+C까지 유지하고 명시적 해제·정리를 기다리는 콘솔 |
+| [Amr.Communication.Tests](tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj) | 시험 대역을 사용하는 xUnit 수명주기 시험 6개 |
 | [evidence/setup](evidence/setup/) | 실행별 환경·복원·빌드·실행·시험 탐색 증거 |
 
 시험 패키지는 `Microsoft.NET.Test.Sdk 17.14.1`, `xunit 2.9.3`, `xunit.runner.visualstudio 3.1.4`다.
 
-**이번 준비 Issue의 범위:** 도구·기존 Broker 환경 조회, 최소 프로젝트·참조 구성, 복원·빌드·준비 콘솔 실행·시험 탐색, 협업 규칙과 증거 기록이다. Issue #2의 제외 범위는 MQTT 연결 로직·메시지 송수신·Heartbeat·자동 재접속, GUI·Core·DB·다른 COM 기능, 기존 완성 소스·추적기·과거 통과 기록의 복사, 실제 Broker 연결 시험과 COM-03 완료 판정이다. 사용자가 추가 요청한 Docker 파일 준비와 Compose 모델 검사까지 수행했으며, 새 Broker 실제 기동·MQTT 연결 시험은 후속 범위다. 제외된 시험을 이번 Issue의 미충족 완료조건으로 표시하지 않는다.
+**준비 Issue #2 당시 범위:** 도구·기존 Broker 환경 조회, 최소 프로젝트·참조 구성, 복원·빌드·준비 콘솔 실행·시험 탐색, 협업 규칙과 증거 기록이다. Issue #2의 제외 범위는 MQTT 연결 로직·메시지 송수신·Heartbeat·자동 재접속, GUI·Core·DB·다른 COM 기능, 기존 완성 소스·추적기·과거 통과 기록의 복사, 실제 Broker 연결 시험과 COM-03 완료 판정이다. 사용자가 추가 요청한 Docker 파일 준비와 Compose 모델 검사까지 수행했으며, 새 Broker 실제 기동·MQTT 연결 시험은 후속 범위다. 제외된 시험을 이번 Issue의 미충족 완료조건으로 표시하지 않는다.
 
 최소 .NET 구성은 Issue #2에 명시된 대상 파일·버전·완료조건을 따른다. 사용자의 추가 요청으로 프로젝트 전용 Docker 설정을 준비했고, 작업·실행 기준은 `C:\amr-control-system-demo`로 확정했다. 기존 Broker 재사용을 전제로 한 Issue 본문과의 범위 차이 및 로컬 검사 결과는 [Docker 로컬 검증결과](evidence/setup/20261007-docker-local-01/README.md)에 기록한다. 현재 문서 원본은 `C:\process-plan`이며, 읽은 문서의 버전과 Issue 참조 사이의 차이는 [적용 기준](evidence/setup/20261007-setup-02/README.md#1-목표와-적용-기준)에 기록했다. Issue가 참조한 과제계획 v0.10과 DEMO-SETUP v0.1은 현재 문서 폴더에서 확인하지 못했다.
 
 ## 복원·빌드·실행
 
-PowerShell에서 아래 명령을 순서대로 실행한다. .NET SDK 10.0.401과 NuGet 패키지 소스·캐시에 대한 접근이 필요하다.
+**Git Bash는 명령을 입력하는 터미널이다.** `git`은 버전 관리, `dotnet`은 C# 빌드·실행·자동시험, `docker`는 Broker 컨테이너 관리에 사용한다. 명령 앞에 `git`을 붙이지 않는다.
 
-```powershell
-Set-Location C:\amr-control-system-demo
+Git Bash에서 저장소로 이동한 뒤 다음 명령을 순서대로 실행한다. SDK 10.0.401과 NuGet 접근이 필요하다.
+
+```bash
+cd /c/amr-control-system-demo
 dotnet restore AmrControlSystem.slnx
 dotnet build AmrControlSystem.slnx --no-restore
-dotnet run --project src/Amr.Communication.Console --no-build
-dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj --no-build --list-tests
+dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj --no-build
 ```
 
-콘솔의 예상 출력은 `AMR 관제시스템 개발 준비가 완료되었습니다.`이고 예상 종료 코드는 0이다. Broker 접속 설정이나 실행 중인 Broker는 이 준비 콘솔에 필요하지 않다.
+`dotnet test`는 작성한 xUnit 자동시험 6개를 실행한다. 시험 대역(Fake)을 사용하므로 Broker 없이 실행할 수 있다. `--list-tests`를 붙이면 실행하지 않고 이름만 나열한다. `--no-build`는 빌드를 생략하므로 소스를 수정했다면 먼저 다시 빌드한다.
 
-**콘솔 재시험 통과:** 2026-10-07 16:04에 같은 명령으로 준비 안내 한 줄과 종료 코드 `0`을 확인했다. [재시험 결과](evidence/setup/20261007-setup-03/README.md)와 [콘솔 로그](evidence/setup/20261007-setup-03/console.log)를 확인한다. 이전 `0x800711C7` 실패는 [당시 실행 로그](evidence/setup/20261007-setup-02/console.log)와 [정책 차단 이벤트](evidence/setup/20261007-setup-02/code-integrity.json)에 보존한다. 사용자가 차단을 해결했다고 보고한 뒤 재시험했으며, 구체적인 해결 방법·정책 변경 내용은 확인하지 않았다.
+실제 MQTT·Ctrl+C 수동 시험은 프로젝트 Broker가 실행 중일 때 다음과 같이 한다.
 
-`--list-tests`는 시험을 실행하지 않고 탐색한다. xUnit 어댑터가 로드되어 탐색을 마쳤으며 현재 결과는 0건이다. 제품 기능 시험의 통과를 의미하지 않는다.
+```bash
+docker compose -f docker/compose.yaml ps -a
+dotnet run --project src/Amr.Communication.Console --no-build -- --host 127.0.0.1 --port 1884 --connect-timeout-seconds 3
+```
+
+`Connected → WaitingForShutdown`을 확인하고 잠시 기다린다. 이때 콘솔은 종료되지 않아야 한다. **키보드에서 Ctrl+C**를 누르면 `ShutdownRequested → Disconnecting → Disconnected → Disposed → ExitCode=0` 순서로 마친다. 프롬프트로 돌아오면 다른 명령보다 먼저 다음을 입력해 직전 명령의 종료 코드를 확인한다.
+
+```bash
+echo $?
+docker compose -f docker/compose.yaml logs --no-color --timestamps --tail 50 mosquitto
+```
+
+Broker 로그의 Client ID와 이번 콘솔의 ID를 대조한다. 다시 실행하면 다른 ID로 연결되어야 한다. Git Bash의 `$?`는 직전 명령의 결과이므로 Docker 조회 후 확인하면 콘솔 결과가 아니다. PowerShell에서는 이동에 `Set-Location C:\amr-control-system-demo`, 종료 코드 확인에 `$LASTEXITCODE`를 사용한다.
+
+인자는 생략 가능하며 기본값은 `--host 127.0.0.1 --port 1884 --connect-timeout-seconds 3`이다. 가운데 `--` 앞은 `dotnet run`의 옵션이고 뒤는 우리가 만든 프로그램에 전달할 인자다. MQTT 5, Clean Start, Session Expiry 0, KeepAlive 5초, 해제 제한 3초를 적용한다. Client ID는 실행마다 `amr-demo-<GUID>`로 생성하고 설정·UTC 시각을 출력한다. 최초 접속 제한과 KeepAlive는 별개다. `--help`로 사용법을 확인한다.
+
+**2026-10-11 실제 결과:** 복원·빌드 성공(경고 0·오류 0), 자동시험 6개 통과. 실제 Broker에 별도 프로세스 두 번을 연결해 Ctrl+C 이벤트 전 유지·명시적 해제·정리·네이티브 프로세스 종료 코드 0, 서로 다른 ID와 Broker 로그를 확인했다. 포트 1의 접속 실패는 `Connected` 없이 정리·종료 1이었다. [A3 최종 검증결과](evidence/COM-03/20261011-a3-shutdown-03/README.md)에 코드 버전과 증거를 연결한다. 도구의 외부 셸 종료 코드와 앱 종료 코드를 구분한 시험 한계도 기록했다.
+
+[A2 중간 검증결과](evidence/COM-03/20261011-a2-connect-02/README.md)에는 접속 직후 해제했던 당시 소스·해시·실제 실행을 보존한다. 현재 코드는 A3이므로 A2 동작을 재현하려면 그 스냅샷을 사용한다.
+
+먼저 읽을 파일은 [Program.cs](src/Amr.Communication.Console/Program.cs), [MqttConnection.cs](src/Amr.Communication/Mqtt/MqttConnection.cs), [MqttConnectionSettings.cs](src/Amr.Communication/Mqtt/MqttConnectionSettings.cs)다. 콘솔이 순서를 정하고 통신 객체가 MQTT 호출을 맡는다. `await` 뒤의 문장은 해당 작업이 끝나야 실행된다.
+
+A3에서는 `Console.CancelKeyPress` 처리기가 기본 즉시 종료를 막고 `shutdown.Cancel()`로 취소를 요청한다. `Task.Delay(Timeout.Infinite, shutdown.Token)` 대기가 취소되면 `catch`를 거쳐 `finally`에서 해제·정리를 수행한다. 이미 취소한 토큰을 `DisconnectAsync`에 넘기지 않아 해제 기회를 보장한다. `finally`는 이런 제어 흐름에서 정리를 수행하지만 강제 프로세스 종료·전원 차단까지 보장하지 않는다.
+
+
+현재 PC의 Docker CLI는 `C:\Program Files\Docker\Docker\resources\bin\docker.exe`이며 `docker`가 PATH에 등록돼 있다. `docker compose -f docker/compose.yaml ps -a`와 `docker compose -f docker/compose.yaml logs --tail 30 mosquitto`로 현재 상태를 조회한다. 아래 2026-10-07~08의 준비·A1 기록은 당시 코드·환경에 대한 이력이다.
+
+**준비 콘솔 재시험 이력:** 2026-10-07 16:04에 당시 준비 콘솔 명령으로 안내 한 줄과 종료 코드 `0`을 확인했다. [재시험 결과](evidence/setup/20261007-setup-03/README.md)와 [콘솔 로그](evidence/setup/20261007-setup-03/console.log)를 확인한다. 이전 `0x800711C7` 실패는 [당시 실행 로그](evidence/setup/20261007-setup-02/console.log)와 [정책 차단 이벤트](evidence/setup/20261007-setup-02/code-integrity.json)에 보존한다. 사용자가 차단을 해결했다고 보고한 뒤 재시험했으며, 구체적인 해결 방법·정책 변경 내용은 확인하지 않았다.
+
+준비 단계 당시 `--list-tests`의 탐색 결과는 0건이었다. 현재 A3의 자동시험 6개와 구분한다.
 
 ## 프로젝트 전용 Docker 설정
 
@@ -75,7 +105,7 @@ dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj --no-bu
 
 ```powershell
 Set-Location C:\amr-control-system-demo
-$dockerCli = 'C:\Users\Admin\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe'
+$dockerCli = 'C:\Program Files\Docker\Docker\resources\bin\docker.exe'
 & $dockerCli version
 & $dockerCli context show
 & $dockerCli compose version
@@ -139,7 +169,7 @@ Docker 엔진에 연결되지 않으면 설치된 Docker Desktop을 시작하고
 
 복원·빌드·탐색은 [첫 검증 기록](evidence/setup/20261007-setup-01/README.md)의 실제 결과다. 이번 확인에서 SDK·패키지·솔루션·프로젝트·소스의 SHA-256이 같음을 대조했으므로 성공한 검증을 반복하지 않았다. 당시 환경·정책 차단과 완료조건별 상태는 [추가 검증결과](evidence/setup/20261007-setup-02/README.md)에 보존하고, 최신 콘솔 정상 실행은 [콘솔 재시험 결과](evidence/setup/20261007-setup-03/README.md)에 기록했다.
 
-## 직접 확인할 절차
+## 준비 단계 당시 확인 절차 (현재 실행은 위 A3 안내 참조)
 
 1. 위 복원·빌드 명령으로 세 프로젝트가 경고·오류 없이 빌드되는지 확인한다.
 2. 다음 명령으로 준비 안내 한 줄과 종료 코드 `0`을 확인한다. 16:04 재시험에서 두 조건을 충족했다. 이후 정책 차단이 발생하면 이벤트 뷰어의 `Microsoft-Windows-CodeIntegrity/Operational`에서 해당 DLL의 이벤트 3033·3077을 확인하고 기기 관리 담당자에게 허용된 개발 실행 방법을 확인한다.

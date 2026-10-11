@@ -1,0 +1,51 @@
+{
+  "baseCommit": "855d76d28a8fd096f2328aefe306c3161c13eb26",
+  "branch": "feature/8-mqtt-connect",
+  "sourceState": "base commit plus uncommitted A2 changes",
+  "archive": "a2-source.zip",
+  "archiveSha256": "D0D67E0C52ACDCF6F0C75179D66BEB75D4E9E246889B5FEBC0138B2AB225627D",
+  "files": [
+    {
+      "path": "global.json",
+      "sha256": "6A8E9044030D136BD4C04FFF9684111A3478B27559BFB6D19E4D380F0DE91510"
+    },
+    {
+      "path": "AmrControlSystem.slnx",
+      "sha256": "CCD11FC15FF2A3A169DA6F6B0CA4B452AA5DC37AABC983C0DB668D4C7E0975A8"
+    },
+    {
+      "path": "src/Amr.Communication/Amr.Communication.csproj",
+      "sha256": "55C44F04AD1EC7D26873B8EAA14B8BFD2479BCDB46496D286C4CCA800F260767"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/MqttConnectionSettings.cs",
+      "sha256": "48AFB867D94752EC4C1AD35776211763F72EA94849113265F9C3A120F85FFD75"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/MqttConnection.cs",
+      "sha256": "F374CBD316ED455715A28A189AE34674C0B98ACB6AB22EC15B2257C7F30D870B"
+    },
+    {
+      "path": "src/Amr.Communication.Console/Amr.Communication.Console.csproj",
+      "sha256": "3D3C2FC9FDC8610438A96EEBA9C36C7CF395051C1C36F5DBB155C8930F061819"
+    },
+    {
+      "path": "src/Amr.Communication.Console/Program.cs",
+      "sha256": "6A18DDA8332986CD573EF9A72E59FD759EAF44A166567B450B8B207500A7C4F4"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj",
+      "sha256": "EB83BE1A7566189050881B542F3DBE2E8875DCE7068EBEBA73F8CC41E8F9F0CF"
+    },
+    {
+      "path": "docker/compose.yaml",
+      "sha256": "EAFD232C385B04D7BFD1158F4E1B46C45DE2D0887708DD80FD357F4279721FA0"
+    },
+    {
+      "path": "docker/mosquitto/config/mosquitto.conf",
+      "sha256": "26BBC86BE2CFC28B8CB88177E4C9003C03F6F4114B5DD621B62FEFAD8C44C053"
+    }
+  ],
+  "gitFlow": "AVH Edition 1.12.3; local init -d; feature start 8-mqtt-connect",
+  "capturedUtc": "2026-10-11T05:32:34.6366584+00:00"
+}

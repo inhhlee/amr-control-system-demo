@@ -1,0 +1,40 @@
+{
+  "id": "144fb936912c656f004a311a4fbb9c2d980fdf22b68d7e05f30f8caebf1e9857",
+  "startedAt": "2026-10-11T05:04:22.008898262Z",
+  "restartCount": 0,
+  "image": "eclipse-mosquitto:2.1.2-alpine",
+  "mounts": [
+    {
+      "Type": "bind",
+      "Source": "C:\\amr-control-system-demo\\docker\\mosquitto\\data",
+      "Destination": "/mosquitto/data",
+      "Mode": "rw",
+      "RW": true,
+      "Propagation": "rprivate"
+    },
+    {
+      "Type": "bind",
+      "Source": "C:\\amr-control-system-demo\\docker\\mosquitto\\log",
+      "Destination": "/mosquitto/log",
+      "Mode": "rw",
+      "RW": true,
+      "Propagation": "rprivate"
+    },
+    {
+      "Type": "bind",
+      "Source": "C:\\amr-control-system-demo\\docker\\mosquitto\\config\\mosquitto.conf",
+      "Destination": "/mosquitto/config/mosquitto.conf",
+      "Mode": "",
+      "RW": false,
+      "Propagation": "rprivate"
+    }
+  ],
+  "ports": {
+    "1883/tcp": [
+      {
+        "HostIp": "127.0.0.1",
+        "HostPort": "1884"
+      }
+    ]
+  }
+}

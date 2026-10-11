@@ -1,0 +1,18 @@
+{
+  "attempt": "Git Bash launched through tool PowerShell PTY; CTRL+C reached app; wrapper ended before echo",
+  "start": {
+    "chunk_id": "90b046",
+    "wall_time_seconds": 10.009964,
+    "session_id": 84777,
+    "original_token_count": 142,
+    "output": "\u001b[?9001h\u001b[?1004h\u001b[2J\u001b[m\u001b]0;C:\\Users\\north\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe\u0007\u001b[?25l\u001b[2;1H\u001b[?25h\u001b[?25l\u001b[?25h2026-10-11T07:53:33.6710277+00:00 Settings Host=127.0.0.1 Port=1884 ClientId=amr-demo-8dc0b571fb314d40a572ebb87ac4dc82 MQTT=5 CleanStart=true SessionExpiry=0 KeepAliveSeconds=5 ConnectTimeoutSeconds=3 DisconnectTimeoutSeconds=3\r\n2026-10-11T07:53:33.6822781+00:00 Connecting\r\n2026-10-11T07:53:33.7983316+00:00 Connected\r\n2026-10-11T07:53:33.7984573+00:00 WaitingForShutdown: Ctrl+C로 정상 종료합니다.\r\n"
+  },
+  "end": {
+    "chunk_id": "c54cc3",
+    "wall_time_seconds": 0.0693825,
+    "exit_code": 1,
+    "original_token_count": 64,
+    "output": "2026-10-11T07:55:21.3769848+00:00 ShutdownRequested\r\n2026-10-11T07:55:21.3773738+00:00 Disconnecting\r\n2026-10-11T07:55:21.3913671+00:00 Disconnected\r\n2026-10-11T07:55:21.3918115+00:00 Disposed\r\n2026-10-11T07:55:21.3921207+00:00 ExitCode=0\r\n\u001b[?9001l\u001b[?1004l"
+  },
+  "shellExitIsNotNativeExitProof": true
+}

@@ -1,0 +1,18 @@
+{
+  "run": 1,
+  "processId": 4144,
+  "clientId": "amr-demo-136a74dd6587439e9da6724a9d0128c8",
+  "startedUtc": "2026-10-11T07:52:19.3595887+00:00",
+  "signalUtc": "2026-10-11T07:52:22.8421796+00:00",
+  "finishedUtc": "2026-10-11T07:52:22.9113447+00:00",
+  "signal": "Windows CTRL_C_EVENT (0), isolated child console",
+  "consoleMembers": [
+    30812,
+    4144
+  ],
+  "heldAfterWaitStateSeconds": 3,
+  "exitCode": 0,
+  "stateOrder": "Connecting,Connected,WaitingForShutdown,ShutdownRequested,Disconnecting,Disconnected,Disposed,ExitCode=0",
+  "stderr": null,
+  "processExited": true
+}

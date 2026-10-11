@@ -1,0 +1,2 @@
+{"name":"restore","command":"dotnet","arguments":["restore","AmrControlSystem.slnx","--verbosity","minimal"],"startedUtc":"2026-10-11T07:39:23.1355583+00:00","finishedUtc":"2026-10-11T07:39:25.8645992+00:00","exitCode":0}
+{"name":"build","command":"dotnet","arguments":["build","AmrControlSystem.slnx","--no-restore","--verbosity","minimal"],"startedUtc":"2026-10-11T07:39:25.9138255+00:00","finishedUtc":"2026-10-11T07:39:33.9082169+00:00","exitCode":1}

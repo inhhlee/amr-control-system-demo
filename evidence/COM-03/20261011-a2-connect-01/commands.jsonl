@@ -1,0 +1,1 @@
+{"command":"dotnet restore AmrControlSystem.slnx --verbosity minimal","startedUtc":"2026-10-11T05:28:30.3703378+00:00","finishedUtc":"2026-10-11T05:28:56.0778834+00:00","exitCode":1}

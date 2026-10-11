@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="3f67f477-8ca1-4d33-a3cd-1f62bfa1fe1a" name="north@DESKTOP-K864S01 2026-10-11 16:40:32" runUser="DESKTOP-K864S01\CodexSandboxOffline" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-11T16:40:32.1213322+09:00" queuing="2026-10-11T16:40:32.1213326+09:00" start="2026-10-11T16:40:29.0344758+09:00" finish="2026-10-11T16:40:32.1369218+09:00" />
+  <TestSettings name="default" id="7204c0a2-3198-4e26-b6b1-b2035e7666dd">
+    <Deployment runDeploymentRoot="north_DESKTOP-K864S01_2026-10-11_16_40_32" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="f07e42cb-3f1c-4e4c-8328-5ab84b4b0833" testId="5f832dd9-6201-be13-5dc6-52df02a40906" testName="Amr.Communication.Tests.MqttConnectionTests.Disconnect_WaitsForCompletionAndRepeatedCleanupIsSafe" computerName="DESKTOP-K864S01" duration="00:00:00.0096095" startTime="2026-10-11T16:40:31.8596377+09:00" endTime="2026-10-11T16:40:31.8618856+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f07e42cb-3f1c-4e4c-8328-5ab84b4b0833" />
+    <UnitTestResult executionId="df58b69c-03ae-4aa9-a557-ee039a8ec25d" testId="02d49cdf-4606-a8af-bbef-2bd2e53f6364" testName="Amr.Communication.Tests.MqttConnectionTests.Connect_UsesRequestedEndpointAndDevelopmentSessionSettings" computerName="DESKTOP-K864S01" duration="00:00:00.0208734" startTime="2026-10-11T16:40:31.8622291+09:00" endTime="2026-10-11T16:40:31.8835790+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="df58b69c-03ae-4aa9-a557-ee039a8ec25d" />
+    <UnitTestResult executionId="6416921e-e396-486e-9b1f-98f53da6926e" testId="717146ec-4053-5681-e325-787c78d2e224" testName="Amr.Communication.Tests.MqttConnectionTests.Connect_PropagatesFailureAndAllowsCleanup" computerName="DESKTOP-K864S01" duration="00:00:00.2970453" startTime="2026-10-11T16:40:31.5162730+09:00" endTime="2026-10-11T16:40:31.8333222+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6416921e-e396-486e-9b1f-98f53da6926e" />
+    <UnitTestResult executionId="5acff6c8-973c-4385-a44b-722a7562b853" testId="6db1a74b-c4b2-b5b8-d84b-399a85941d18" testName="Amr.Communication.Tests.MqttConnectionTests.Cleanup_BeforeConnecting_IsSafeAndPreventsReuse" computerName="DESKTOP-K864S01" duration="00:00:00.0020672" startTime="2026-10-11T16:40:31.8588823+09:00" endTime="2026-10-11T16:40:31.8590036+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5acff6c8-973c-4385-a44b-722a7562b853" />
+    <UnitTestResult executionId="0f6e2320-d196-4ceb-a4b9-65d4bdd0a8ce" testId="5ea9b3de-e3b1-f66b-1b51-d9b447164eb2" testName="Amr.Communication.Tests.MqttConnectionTests.Connect_RejectsUnsuccessfulApprovalAndRemainsDisconnected" computerName="DESKTOP-K864S01" duration="00:00:00.0065732" startTime="2026-10-11T16:40:31.8574127+09:00" endTime="2026-10-11T16:40:31.8576170+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0f6e2320-d196-4ceb-a4b9-65d4bdd0a8ce" />
+    <UnitTestResult executionId="df556519-aee4-4d7f-a6f7-d389e23f6eb3" testId="76ee53be-3733-e406-1d72-c3879dea17e5" testName="Amr.Communication.Tests.MqttConnectionTests.Connect_WaitsForApprovalBeforeReportingConnected" computerName="DESKTOP-K864S01" duration="00:00:00.0029801" startTime="2026-10-11T16:40:31.8592698+09:00" endTime="2026-10-11T16:40:31.8593833+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="df556519-aee4-4d7f-a6f7-d389e23f6eb3" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Amr.Communication.Tests.MqttConnectionTests.Connect_RejectsUnsuccessfulApprovalAndRemainsDisconnected" storage="c:\amr-control-system-demo\tests\amr.communication.tests\bin\debug\net10.0\amr.communication.tests.dll" id="5ea9b3de-e3b1-f66b-1b51-d9b447164eb2">
+      <Execution id="0f6e2320-d196-4ceb-a4b9-65d4bdd0a8ce" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Communication.Tests.MqttConnectionTests" name="Connect_RejectsUnsuccessfulApprovalAndRemainsDisconnected" />
+    </UnitTest>
+    <UnitTest name="Amr.Communication.Tests.MqttConnectionTests.Connect_WaitsForApprovalBeforeReportingConnected" storage="c:\amr-control-system-demo\tests\amr.communication.tests\bin\debug\net10.0\amr.communication.tests.dll" id="76ee53be-3733-e406-1d72-c3879dea17e5">
+      <Execution id="df556519-aee4-4d7f-a6f7-d389e23f6eb3" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Communication.Tests.MqttConnectionTests" name="Connect_WaitsForApprovalBeforeReportingConnected" />
+    </UnitTest>
+    <UnitTest name="Amr.Communication.Tests.MqttConnectionTests.Cleanup_BeforeConnecting_IsSafeAndPreventsReuse" storage="c:\amr-control-system-demo\tests\amr.communication.tests\bin\debug\net10.0\amr.communication.tests.dll" id="6db1a74b-c4b2-b5b8-d84b-399a85941d18">
+      <Execution id="5acff6c8-973c-4385-a44b-722a7562b853" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Communication.Tests.MqttConnectionTests" name="Cleanup_BeforeConnecting_IsSafeAndPreventsReuse" />
+    </UnitTest>
+    <UnitTest name="Amr.Communication.Tests.MqttConnectionTests.Disconnect_WaitsForCompletionAndRepeatedCleanupIsSafe" storage="c:\amr-control-system-demo\tests\amr.communication.tests\bin\debug\net10.0\amr.communication.tests.dll" id="5f832dd9-6201-be13-5dc6-52df02a40906">
+      <Execution id="f07e42cb-3f1c-4e4c-8328-5ab84b4b0833" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Communication.Tests.MqttConnectionTests" name="Disconnect_WaitsForCompletionAndRepeatedCleanupIsSafe" />
+    </UnitTest>
+    <UnitTest name="Amr.Communication.Tests.MqttConnectionTests.Connect_PropagatesFailureAndAllowsCleanup" storage="c:\amr-control-system-demo\tests\amr.communication.tests\bin\debug\net10.0\amr.communication.tests.dll" id="717146ec-4053-5681-e325-787c78d2e224">
+      <Execution id="6416921e-e396-486e-9b1f-98f53da6926e" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Communication.Tests.MqttConnectionTests" name="Connect_PropagatesFailureAndAllowsCleanup" />
+    </UnitTest>
+    <UnitTest name="Amr.Communication.Tests.MqttConnectionTests.Connect_UsesRequestedEndpointAndDevelopmentSessionSettings" storage="c:\amr-control-system-demo\tests\amr.communication.tests\bin\debug\net10.0\amr.communication.tests.dll" id="02d49cdf-4606-a8af-bbef-2bd2e53f6364">
+      <Execution id="df58b69c-03ae-4aa9-a557-ee039a8ec25d" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Communication.Tests.MqttConnectionTests" name="Connect_UsesRequestedEndpointAndDevelopmentSessionSettings" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="5f832dd9-6201-be13-5dc6-52df02a40906" executionId="f07e42cb-3f1c-4e4c-8328-5ab84b4b0833" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="02d49cdf-4606-a8af-bbef-2bd2e53f6364" executionId="df58b69c-03ae-4aa9-a557-ee039a8ec25d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="717146ec-4053-5681-e325-787c78d2e224" executionId="6416921e-e396-486e-9b1f-98f53da6926e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6db1a74b-c4b2-b5b8-d84b-399a85941d18" executionId="5acff6c8-973c-4385-a44b-722a7562b853" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5ea9b3de-e3b1-f66b-1b51-d9b447164eb2" executionId="0f6e2320-d196-4ceb-a4b9-65d4bdd0a8ce" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="76ee53be-3733-e406-1d72-c3879dea17e5" executionId="df556519-aee4-4d7f-a6f7-d389e23f6eb3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="목록에 없는 결과" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="로드된 모든 결과" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="6" executed="6" passed="6" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.12)&#xD;
+[xUnit.net 00:00:00.80]   Discovering: Amr.Communication.Tests&#xD;
+[xUnit.net 00:00:00.89]   Discovered:  Amr.Communication.Tests&#xD;
+[xUnit.net 00:00:00.94]   Starting:    Amr.Communication.Tests&#xD;
+[xUnit.net 00:00:01.37]   Finished:    Amr.Communication.Tests&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

@@ -1,0 +1,13 @@
+{
+  "verifiedUtc": "2026-10-11T07:52:57.1352724+00:00",
+  "nativeRuns": 2,
+  "nativeExitCodes": [
+    0,
+    0
+  ],
+  "brokerConnectAndDisconnectMatched": true,
+  "testProcessesExited": true,
+  "failurePort": 1,
+  "failureExitCode": 1,
+  "failureConnectedReported": false
+}

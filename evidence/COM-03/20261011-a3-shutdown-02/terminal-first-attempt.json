@@ -1,0 +1,22 @@
+{
+  "command": "dotnet run --project src/Amr.Communication.Console --no-build -- --host 127.0.0.1 --port 1884 --connect-timeout-seconds 3",
+  "start": 1791704877063,
+  "parts": [
+    {
+      "chunk_id": "83925a",
+      "wall_time_seconds": 10.0126749,
+      "session_id": 81231,
+      "original_token_count": 142,
+      "output": "\u001b[?9001h\u001b[?1004h\u001b[2J\u001b[m\u001b]0;C:\\Users\\north\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe\u0007\u001b[?25l\u001b[2;1H\u001b[?25h\u001b[?25l\u001b[?25h2026-10-11T07:47:49.5970325+00:00 Settings Host=127.0.0.1 Port=1884 ClientId=amr-demo-32c53c859fe74179bbb0519314d825a8 MQTT=5 CleanStart=true SessionExpiry=0 KeepAliveSeconds=5 ConnectTimeoutSeconds=3 DisconnectTimeoutSeconds=3\r\n2026-10-11T07:47:49.6078271+00:00 Connecting\r\n2026-10-11T07:47:49.7153660+00:00 Connected\r\n2026-10-11T07:47:49.7155276+00:00 WaitingForShutdown: Ctrl+C로 정상 종료합니다.\r\n"
+    },
+    {
+      "chunk_id": "1a8c26",
+      "wall_time_seconds": 0.0097933,
+      "exit_code": 1,
+      "original_token_count": 64,
+      "output": "2026-10-11T07:48:07.3162026+00:00 ShutdownRequested\r\n2026-10-11T07:48:07.3165883+00:00 Disconnecting\r\n2026-10-11T07:48:07.3309198+00:00 Disconnected\r\n2026-10-11T07:48:07.3313214+00:00 Disposed\r\n2026-10-11T07:48:07.3315740+00:00 ExitCode=0\r\n\u001b[?9001l\u001b[?1004l"
+    }
+  ],
+  "ctrlCUtc": "2026-10-11T07:48:01.628Z",
+  "interpretation": "Real Ctrl+C delivered via PTY. Application printed graceful cleanup and ExitCode=0, but the outer PowerShell tool returned 1 after being interrupted. Native child process exit code must be measured independently."
+}
