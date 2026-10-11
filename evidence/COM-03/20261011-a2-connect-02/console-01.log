@@ -1,0 +1,7 @@
+2026-10-11T05:30:39.9720217+00:00 Settings Host=127.0.0.1 Port=1884 ClientId=amr-demo-28815b42212044f688868e5409371125 MQTT=5 CleanStart=true SessionExpiry=0 KeepAliveSeconds=5 ConnectTimeoutSeconds=3 DisconnectTimeoutSeconds=3
+2026-10-11T05:30:40.1036122+00:00 Connecting
+2026-10-11T05:30:40.2189749+00:00 Connected
+2026-10-11T05:30:40.2192829+00:00 Disconnecting
+2026-10-11T05:30:40.2468541+00:00 Disconnected
+2026-10-11T05:30:40.2473465+00:00 Disposed
+2026-10-11T05:30:40.2473831+00:00 ExitCode=0

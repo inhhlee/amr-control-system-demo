@@ -1,0 +1,9 @@
+{
+  "startedUtc": "2026-10-11T07:47:38.740938+00:00",
+  "composeConfigExitCode": 0,
+  "brokerStatusExitCode": 0,
+  "head": "855d76d28a8fd096f2328aefe306c3161c13eb26",
+  "branch": "feature/8-mqtt-connect",
+  "os": "Microsoft Windows NT 10.0.26200.0",
+  "sdk": "10.0.401"
+}

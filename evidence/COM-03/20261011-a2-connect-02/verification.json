@@ -1,0 +1,19 @@
+{
+  "checkedUtc": "2026-10-11T05:31:17.9677493+00:00",
+  "normalRuns": 2,
+  "clientIds": [
+    "amr-demo-28815b42212044f688868e5409371125",
+    "amr-demo-061352095bae49948bf945692748196b"
+  ],
+  "normalExitCodes": [
+    0,
+    0
+  ],
+  "brokerLogMatches": true,
+  "negativeInput": "127.0.0.1:1; no TCP listener before execution (verified by verify-initial.ps1)",
+  "negativeExitCode": 1,
+  "negativeConnectedOutput": false,
+  "negativeDisposedOutput": true,
+  "result": "passed",
+  "scope": "Existing A2 logs rechecked; no new MQTT execution, no A3 or unit tests"
+}

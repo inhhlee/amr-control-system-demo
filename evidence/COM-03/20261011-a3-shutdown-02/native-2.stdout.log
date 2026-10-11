@@ -1,0 +1,4 @@
+2026-10-11T07:49:43.7737979+00:00 Settings Host=127.0.0.1 Port=1884 ClientId=amr-demo-b9dfa9c444d6419caac5bc7290d590d2 MQTT=5 CleanStart=true SessionExpiry=0 KeepAliveSeconds=5 ConnectTimeoutSeconds=3 DisconnectTimeoutSeconds=3
+2026-10-11T07:49:43.7872444+00:00 Connecting
+2026-10-11T07:49:43.8984537+00:00 Connected
+2026-10-11T07:49:43.8991908+00:00 WaitingForShutdown: Ctrl+C로 정상 종료합니다.

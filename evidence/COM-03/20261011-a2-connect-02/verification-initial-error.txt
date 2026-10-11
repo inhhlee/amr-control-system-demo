@@ -1,0 +1,1 @@
+The original verifier exited 1 after recording all three console executions. Its disconnect-log regex expected Client <id> disconnected., but Mosquitto 2.1.2 emitted Client <id> [<address>:<port>] disconnected. Raw console and Broker logs are retained. check-logs.ps1 rechecks those same logs; no product test is repeated.

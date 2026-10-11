@@ -1,0 +1,15 @@
+mosquitto-1  | 2026-10-11T07:47:49.673307633Z 1791704869: New connection from 172.20.0.1:60578 on port 1883.
+mosquitto-1  | 2026-10-11T07:47:49.695839855Z 1791704869: New client connected from 172.20.0.1:60578 as amr-demo-32c53c859fe74179bbb0519314d825a8 (p5, c1, k5).
+mosquitto-1  | 2026-10-11T07:48:07.321740747Z 1791704887: Client amr-demo-32c53c859fe74179bbb0519314d825a8 [172.20.0.1:60578] disconnected.
+mosquitto-1  | 2026-10-11T07:49:40.171602138Z 1791704980: New connection from 172.20.0.1:32836 on port 1883.
+mosquitto-1  | 2026-10-11T07:49:40.195742905Z 1791704980: New client connected from 172.20.0.1:32836 as amr-demo-f2de94dff4d14dfaa9c10ad0050d1654 (p5, c1, k5).
+mosquitto-1  | 2026-10-11T07:49:43.434861862Z 1791704983: Client amr-demo-f2de94dff4d14dfaa9c10ad0050d1654 [172.20.0.1:32836] disconnected.
+mosquitto-1  | 2026-10-11T07:49:43.851913842Z 1791704983: New connection from 172.20.0.1:32850 on port 1883.
+mosquitto-1  | 2026-10-11T07:49:43.876598690Z 1791704983: New client connected from 172.20.0.1:32850 as amr-demo-b9dfa9c444d6419caac5bc7290d590d2 (p5, c1, k5).
+mosquitto-1  | 2026-10-11T07:49:56.975300042Z 1791704996: Client amr-demo-b9dfa9c444d6419caac5bc7290d590d2 [172.20.0.1:32850] disconnected: connection closed by client.
+mosquitto-1  | 2026-10-11T07:52:19.683726281Z 1791705139: New connection from 172.20.0.1:58414 on port 1883.
+mosquitto-1  | 2026-10-11T07:52:19.709057648Z 1791705139: New client connected from 172.20.0.1:58414 as amr-demo-136a74dd6587439e9da6724a9d0128c8 (p5, c1, k5).
+mosquitto-1  | 2026-10-11T07:52:22.865395816Z 1791705142: Client amr-demo-136a74dd6587439e9da6724a9d0128c8 [172.20.0.1:58414] disconnected.
+mosquitto-1  | 2026-10-11T07:52:23.276151513Z 1791705143: New connection from 172.20.0.1:58426 on port 1883.
+mosquitto-1  | 2026-10-11T07:52:23.301953231Z 1791705143: New client connected from 172.20.0.1:58426 as amr-demo-562c791e623a417099ec695a5ff5b638 (p5, c1, k5).
+mosquitto-1  | 2026-10-11T07:52:26.393490445Z 1791705146: Client amr-demo-562c791e623a417099ec695a5ff5b638 [172.20.0.1:58426] disconnected.

@@ -1,0 +1,19 @@
+  복원할 프로젝트를 확인하는 중...
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj : error NU1301: https://api.nuget.org/v3/index.json 소스에 대한 서비스 인덱스를 로드할 수 없습니다. [C:\amr-control-system-demo\AmrControlSystem.slnx]
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj : error NU1301:   액세스 권한에 의해 숨겨진 소켓에 액세스를 시도했습니다. (api.nuget.org:443) [C:\amr-control-system-demo\AmrControlSystem.slnx]
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj : error NU1301:   액세스 권한에 의해 숨겨진 소켓에 액세스를 시도했습니다. [C:\amr-control-system-demo\AmrControlSystem.slnx]
+C:\amr-control-system-demo\src\Amr.Communication\Amr.Communication.csproj : error NU1301: https://api.nuget.org/v3/index.json 소스에 대한 서비스 인덱스를 로드할 수 없습니다. [C:\amr-control-system-demo\AmrControlSystem.slnx]
+C:\amr-control-system-demo\src\Amr.Communication\Amr.Communication.csproj : error NU1301:   액세스 권한에 의해 숨겨진 소켓에 액세스를 시도했습니다. (api.nuget.org:443) [C:\amr-control-system-demo\AmrControlSystem.slnx]
+C:\amr-control-system-demo\src\Amr.Communication\Amr.Communication.csproj : error NU1301:   액세스 권한에 의해 숨겨진 소켓에 액세스를 시도했습니다. [C:\amr-control-system-demo\AmrControlSystem.slnx]
+C:\amr-control-system-demo\src\Amr.Communication.Console\Amr.Communication.Console.csproj : error NU1301: https://api.nuget.org/v3/index.json 소스에 대한 서비스 인덱스를 로드할 수 없습니다. [C:\amr-control-system-demo\AmrControlSystem.slnx]
+C:\amr-control-system-demo\src\Amr.Communication.Console\Amr.Communication.Console.csproj : error NU1301:   액세스 권한에 의해 숨겨진 소켓에 액세스를 시도했습니다. (api.nuget.org:443) [C:\amr-control-system-demo\AmrControlSystem.slnx]
+C:\amr-control-system-demo\src\Amr.Communication.Console\Amr.Communication.Console.csproj : error NU1301:   액세스 권한에 의해 숨겨진 소켓에 액세스를 시도했습니다. [C:\amr-control-system-demo\AmrControlSystem.slnx]
+  C:\amr-control-system-demo\src\Amr.Communication\Amr.Communication.csproj을(를) 11.6초 동안 복원하지 못했습니다.
+  C:\amr-control-system-demo\src\Amr.Communication.Console\Amr.Communication.Console.csproj을(를) 11.6초 동안 복원하지 못했습니다.
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj : error NU1301: https://api.nuget.org/v3/index.json 소스에 대한 서비스 인덱스를 로드할 수 없습니다. [C:\amr-control-system-demo\AmrControlSystem.slnx]
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj : error NU1301:   액세스 권한에 의해 숨겨진 소켓에 액세스를 시도했습니다. (api.nuget.org:443) [C:\amr-control-system-demo\AmrControlSystem.slnx]
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj : error NU1301:   액세스 권한에 의해 숨겨진 소켓에 액세스를 시도했습니다. [C:\amr-control-system-demo\AmrControlSystem.slnx]
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj : error NU1301: https://api.nuget.org/v3/index.json 소스에 대한 서비스 인덱스를 로드할 수 없습니다. [C:\amr-control-system-demo\AmrControlSystem.slnx]
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj : error NU1301:   액세스 권한에 의해 숨겨진 소켓에 액세스를 시도했습니다. (api.nuget.org:443) [C:\amr-control-system-demo\AmrControlSystem.slnx]
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj : error NU1301:   액세스 권한에 의해 숨겨진 소켓에 액세스를 시도했습니다. [C:\amr-control-system-demo\AmrControlSystem.slnx]
+  C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj을(를) 22.75초 동안 복원하지 못했습니다.
