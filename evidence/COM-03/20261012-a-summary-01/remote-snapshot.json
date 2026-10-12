@@ -1,0 +1,39 @@
+{
+  "capturedUtc": "2026-10-12 01:13:18 UTC",
+  "repository": "inhhlee/amr-control-system-demo",
+  "issue4": {
+    "url": "https://github.com/inhhlee/amr-control-system-demo/issues/4",
+    "state": "open",
+    "conditions": [
+      "준비 결과가 반영된 기준 브랜치·문서 버전·기존 변경과 실제 대상 경로를 확인한다.",
+      "프로젝트 전용 Broker가 실제로 기동되고 호스트에서 MQTT 접속 승인을 받은 뒤에만 Connected가 표시된다.",
+      "적용 주소·설정·고유 Client ID가 기록되어 같은 실행의 콘솔·Broker 접속 로그를 대조할 수 있다.",
+      "연결된 콘솔에서 Ctrl+C 후 연결·자원이 정리되고 미처리 예외 없이 종료 코드 0으로 끝난다.",
+      "콘솔을 다시 실행하면 새 Client ID로 정상 연결하며 이전 실행의 연결·자원이 남지 않는다.",
+      "정상 수명주기 자동 시험과 실제 Broker 시험의 범위·결과를 구분하고 의존성 복원·빌드·관련 시험이 성공한다.",
+      "README의 실제 명령·설정과 실행 ID·코드 버전·콘솔/Broker 로그·판정을 Issue·PR에 연결한다."
+    ]
+  },
+  "pullRequests": [
+    {
+      "number": 12,
+      "url": "https://github.com/inhhlee/amr-control-system-demo/pull/12",
+      "base": "develop",
+      "head": "feature/7-broker-check",
+      "state": "closed",
+      "merged": true,
+      "mergedAt": "2026-10-08T08:05:00Z",
+      "mergeCommit": "b91fc8e22ef56b208b3c2edeca99f5e2807474ef"
+    },
+    {
+      "number": 13,
+      "url": "https://github.com/inhhlee/amr-control-system-demo/pull/13",
+      "base": "develop",
+      "head": "feature/8-mqtt-connect",
+      "state": "closed",
+      "merged": true,
+      "mergedAt": "2026-10-11T08:15:54Z",
+      "mergeCommit": "c34f380728d914aed9d0fe5f3427d698493d2ab6"
+    }
+  ]
+}
