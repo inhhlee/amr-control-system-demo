@@ -1,0 +1,8 @@
+Client hb-observer-9d9cde94960a483b8b649d520e238124 sending CONNECT
+Client hb-observer-9d9cde94960a483b8b649d520e238124 received CONNACK (0)
+Client hb-observer-9d9cde94960a483b8b649d520e238124 sending SUBSCRIBE (Mid: 1, Topic: amr/#, QoS: 0, Options: 0x00)
+Client hb-observer-9d9cde94960a483b8b649d520e238124 received SUBACK
+Subscribed (mid: 1): 0
+Client hb-observer-9d9cde94960a483b8b649d520e238124 received PUBLISH (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+amr/AMR_001/heartbeat {"id":"AMR_001","ts":1791195767002,"status":"OK"}
+Client hb-observer-9d9cde94960a483b8b649d520e238124 sending DISCONNECT

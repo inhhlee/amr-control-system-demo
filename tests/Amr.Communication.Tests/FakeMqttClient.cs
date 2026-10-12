@@ -1,5 +1,6 @@
 using MQTTnet;
 using MQTTnet.Diagnostics.PacketInspection;
+using MQTTnet.Packets;
 
 namespace Amr.Communication.Tests;
 
@@ -16,6 +17,16 @@ internal sealed class FakeMqttClient : IMqttClient
     public MqttClientDisconnectOptions? DisconnectOptions { get; private set; }
     public int DisconnectCalls { get; private set; }
     public int DisposeCalls { get; private set; }
+    public TaskCompletionSource<MqttClientSubscribeResult> SubscribeResponse { get; } =
+        new(TaskCreationOptions.RunContinuationsAsynchronously);
+    public TaskCompletionSource<MqttClientUnsubscribeResult> UnsubscribeResponse { get; } =
+        new(TaskCreationOptions.RunContinuationsAsynchronously);
+    public MqttClientSubscribeOptions? SubscribeOptions { get; private set; }
+    public MqttClientUnsubscribeOptions? UnsubscribeOptions { get; private set; }
+    public int MessageHandlerCount => ApplicationMessageReceivedAsync?.GetInvocationList().Length ?? 0;
+
+    public Task ReceiveAsync(MqttApplicationMessage message) => ApplicationMessageReceivedAsync?.Invoke(
+        new MqttApplicationMessageReceivedEventArgs("test-client", message, new MqttPublishPacket(), null)) ?? Task.CompletedTask;
 
     public async Task<MqttClientConnectResult> ConnectAsync(MqttClientOptions options, CancellationToken cancellationToken)
     {
@@ -39,8 +50,8 @@ internal sealed class FakeMqttClient : IMqttClient
         IsConnected = false;
     }
 
-    // 이번 접속·종료 시험에서는 사용하지 않는 MQTTnet 인터페이스 멤버다.
-    public event Func<MqttApplicationMessageReceivedEventArgs, Task>? ApplicationMessageReceivedAsync { add { } remove { } }
+    public event Func<MqttApplicationMessageReceivedEventArgs, Task>? ApplicationMessageReceivedAsync;
+    // 이번 시험에서는 사용하지 않는 MQTTnet 인터페이스 멤버다.
     public event Func<MqttClientConnectedEventArgs, Task>? ConnectedAsync { add { } remove { } }
     public event Func<MqttClientConnectingEventArgs, Task>? ConnectingAsync { add { } remove { } }
     public event Func<MqttClientDisconnectedEventArgs, Task>? DisconnectedAsync { add { } remove { } }
@@ -48,7 +59,15 @@ internal sealed class FakeMqttClient : IMqttClient
 
     public Task PingAsync(CancellationToken cancellationToken) => throw new NotSupportedException();
     public Task<MqttClientPublishResult> PublishAsync(MqttApplicationMessage message, CancellationToken cancellationToken) => throw new NotSupportedException();
-    public Task<MqttClientSubscribeResult> SubscribeAsync(MqttClientSubscribeOptions options, CancellationToken cancellationToken) => throw new NotSupportedException();
-    public Task<MqttClientUnsubscribeResult> UnsubscribeAsync(MqttClientUnsubscribeOptions options, CancellationToken cancellationToken) => throw new NotSupportedException();
+    public Task<MqttClientSubscribeResult> SubscribeAsync(MqttClientSubscribeOptions options, CancellationToken cancellationToken)
+    {
+        SubscribeOptions = options;
+        return SubscribeResponse.Task.WaitAsync(cancellationToken);
+    }
+    public Task<MqttClientUnsubscribeResult> UnsubscribeAsync(MqttClientUnsubscribeOptions options, CancellationToken cancellationToken)
+    {
+        UnsubscribeOptions = options;
+        return UnsubscribeResponse.Task.WaitAsync(cancellationToken);
+    }
     public Task SendEnhancedAuthenticationExchangeDataAsync(MqttEnhancedAuthenticationExchangeData data, CancellationToken cancellationToken) => throw new NotSupportedException();
 }

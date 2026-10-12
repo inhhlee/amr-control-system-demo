@@ -1,0 +1,19 @@
+  Amr.Communication -> C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll
+  Amr.Communication.Console -> C:\amr-control-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.dll
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\HeartbeatSubscriptionTests.cs(128,83): error CS1061: 'MqttApplicationMessageBuilder'에는 'WithAtMostOnceQoS'에 대한 정의가 포함되어 있지 않고, 'MqttApplicationMessageBuilder' 형식의 첫 번째 인수를 허용하는 액세스 가능한 확장 메서드 'WithAtMostOnceQoS'이(가) 없습니다. using 지시문 또는 어셈블리 참조가 있는지 확인하세요. [C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj]
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\HeartbeatSubscriptionTests.cs(131,48): error CS7036: 'MqttClientSubscribeResult.MqttClientSubscribeResult(ushort, IReadOnlyCollection<MqttClientSubscribeResultItem>, string, IReadOnlyCollection<MqttUserProperty>)'의 필수 매개 변수 'packetIdentifier'에 해당하는 인수가 없습니다. [C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj]
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\HeartbeatSubscriptionTests.cs(133,13): error CS0200: 'MqttClientSubscribeResult.Items' 속성 또는 인덱서는 읽기 전용이므로 할당할 수 없습니다. [C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj]
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\HeartbeatSubscriptionTests.cs(137,50): error CS7036: 'MqttClientUnsubscribeResult.MqttClientUnsubscribeResult(ushort, IReadOnlyCollection<MqttClientUnsubscribeResultItem>, string, IReadOnlyCollection<MqttUserProperty>)'의 필수 매개 변수 'packetIdentifier'에 해당하는 인수가 없습니다. [C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj]
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\HeartbeatSubscriptionTests.cs(139,13): error CS0200: 'MqttClientUnsubscribeResult.Items' 속성 또는 인덱서는 읽기 전용이므로 할당할 수 없습니다. [C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj]
+
+빌드하지 못했습니다.
+
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\HeartbeatSubscriptionTests.cs(128,83): error CS1061: 'MqttApplicationMessageBuilder'에는 'WithAtMostOnceQoS'에 대한 정의가 포함되어 있지 않고, 'MqttApplicationMessageBuilder' 형식의 첫 번째 인수를 허용하는 액세스 가능한 확장 메서드 'WithAtMostOnceQoS'이(가) 없습니다. using 지시문 또는 어셈블리 참조가 있는지 확인하세요. [C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj]
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\HeartbeatSubscriptionTests.cs(131,48): error CS7036: 'MqttClientSubscribeResult.MqttClientSubscribeResult(ushort, IReadOnlyCollection<MqttClientSubscribeResultItem>, string, IReadOnlyCollection<MqttUserProperty>)'의 필수 매개 변수 'packetIdentifier'에 해당하는 인수가 없습니다. [C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj]
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\HeartbeatSubscriptionTests.cs(133,13): error CS0200: 'MqttClientSubscribeResult.Items' 속성 또는 인덱서는 읽기 전용이므로 할당할 수 없습니다. [C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj]
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\HeartbeatSubscriptionTests.cs(137,50): error CS7036: 'MqttClientUnsubscribeResult.MqttClientUnsubscribeResult(ushort, IReadOnlyCollection<MqttClientUnsubscribeResultItem>, string, IReadOnlyCollection<MqttUserProperty>)'의 필수 매개 변수 'packetIdentifier'에 해당하는 인수가 없습니다. [C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj]
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\HeartbeatSubscriptionTests.cs(139,13): error CS0200: 'MqttClientUnsubscribeResult.Items' 속성 또는 인덱서는 읽기 전용이므로 할당할 수 없습니다. [C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj]
+    경고 0개
+    오류 5개
+
+경과 시간: 00:00:01.95

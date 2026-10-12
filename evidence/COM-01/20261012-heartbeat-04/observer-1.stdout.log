@@ -1,0 +1,16 @@
+Client hb-observer-d63bf0cfc80f43d5b91d863f8b8ccd46 sending CONNECT
+Client hb-observer-d63bf0cfc80f43d5b91d863f8b8ccd46 received CONNACK (0)
+Client hb-observer-d63bf0cfc80f43d5b91d863f8b8ccd46 sending SUBSCRIBE (Mid: 1, Topic: amr/#, QoS: 0, Options: 0x00)
+Client hb-observer-d63bf0cfc80f43d5b91d863f8b8ccd46 received SUBACK
+Subscribed (mid: 1): 0
+Client hb-observer-d63bf0cfc80f43d5b91d863f8b8ccd46 received PUBLISH (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+amr/AMR_001/heartbeat {"id":"AMR_001","ts":1791195767000,"status":"OK"}
+Client hb-observer-d63bf0cfc80f43d5b91d863f8b8ccd46 received PUBLISH (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (26 bytes))
+amr/AMR_001/telemetry {"probe":"not-subscribed"}
+Client hb-observer-d63bf0cfc80f43d5b91d863f8b8ccd46 received PUBLISH (d0, q0, r0, m0, 'amr/AMR_001/heartbeat/extra', ... (26 bytes))
+amr/AMR_001/heartbeat/extra {"probe":"not-subscribed"}
+Client hb-observer-d63bf0cfc80f43d5b91d863f8b8ccd46 received PUBLISH (d0, q0, r0, m0, 'amr/area/AMR_001/heartbeat', ... (26 bytes))
+amr/area/AMR_001/heartbeat {"probe":"not-subscribed"}
+Client hb-observer-d63bf0cfc80f43d5b91d863f8b8ccd46 received PUBLISH (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+amr/AMR_001/heartbeat {"id":"AMR_001","ts":1791195767001,"status":"OK"}
+Client hb-observer-d63bf0cfc80f43d5b91d863f8b8ccd46 sending DISCONNECT

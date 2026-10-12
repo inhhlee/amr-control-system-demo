@@ -1,0 +1,27 @@
+{
+  "run": 1,
+  "arguments": [
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "1884",
+    "--connect-timeout-seconds",
+    "3",
+    "--show-payload"
+  ],
+  "clientId": "amr-demo-1d176712603b493fb1bd63531b6f5810",
+  "processId": 45516,
+  "signal": "Windows CTRL_C_EVENT",
+  "signalUtc": "2026-10-12T03:36:36.9310813+00:00",
+  "finishedUtc": "2026-10-12T03:36:36.9576804+00:00",
+  "consoleMembers": [
+    9760,
+    45516
+  ],
+  "diagnosticCount": 2,
+  "observedPublishCount": 5,
+  "negativeTopicCount": 3,
+  "exitCode": 0,
+  "stderr": null,
+  "observerExit": 0
+}
