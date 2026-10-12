@@ -20,7 +20,7 @@
 
 ## 개발 구성
 
-[Issue #2](https://github.com/inhhlee/amr-control-system-demo/issues/2)에서 최소 구성을 만들었고, 현재 [Issue #8](https://github.com/inhhlee/amr-control-system-demo/issues/8)의 **A2 접속·해제와 A3 연결 유지·Ctrl+C 정상 종료**를 구현·검증했다. 아래 프로젝트는 모두 `net10.0`을 사용한다. 현재 변경은 `feature/8-mqtt-connect`의 미커밋 작업이며 PR 반영은 남아 있다.
+[Issue #2](https://github.com/inhhlee/amr-control-system-demo/issues/2)에서 최소 구성을 만들었고, 현재 [Issue #8](https://github.com/inhhlee/amr-control-system-demo/issues/8)의 **A2 접속·해제와 A3 연결 유지·Ctrl+C 정상 종료**를 구현·검증했다. 아래 프로젝트는 모두 `net10.0`을 사용한다. [PR #13](https://github.com/inhhlee/amr-control-system-demo/pull/13)은 2026-10-11 develop에 병합됐다(코드 기준 `c34f380`). 총괄 [Issue #4](https://github.com/inhhlee/amr-control-system-demo/issues/4)의 원래 완료조건 7개와 기존 A1·A2·A3 시험 근거는 [통합 검증결과](evidence/COM-03/20261012-a-summary-01/README.md)에 연결한다. 이 결과는 기존 시험과 병합 코드의 대조이며 제품 재시험·COM-03 전체·과제1 전체 완료를 뜻하지 않는다.
 
 | 파일·프로젝트 | 역할 |
 | --- | --- |

@@ -31,7 +31,7 @@ Broker는 시작·중단·재기동하지 않았다. 현재 설정·포트·마�
 | --- | --- | --- | --- |
 | 복원 | 기존 솔루션 restore, 종료 0 | 세 프로젝트 복원, 종료 0 | 통과 — [restore.log](restore.log). 최초 권한 실패는 [이전 실행](../20261011-a2-connect-01/README.md)에 보존 |
 | 빌드 | `dotnet build AmrControlSystem.slnx --no-restore --verbosity minimal` | 경고 0·오류 0·종료 0 | 통과 — [build.log](build.log) |
-| 현재 Broker 구성 | Compose 검사·현재 상태·설정·마운트·포트 조회 | 모델 검사 0, running, 루프백 1884, 로컬 프로젝트 경로 | 조회·모델 검사 통과 — [검사](compose-config.log), [시작 전](broker-status-before.log), [종료 후](broker-status-after.log) |
+| 현재 Broker 구성 | Compose 검사·현재 상태·설정·마운트·포트 조회 | 모델 검사 0, running, 루프백 1884, 로컬 프로젝트 경로 | 조회·모델 검사 통과 — [검사 명령·시각·종료 코드](commands.jsonl), [시작 전](broker-status-before.log), [종료 후](broker-status-after.log) |
 | A2 첫 프로세스 | 접속 승인 → Connected → 명시적 해제 → 정리 → 종료 0 | 순서 일치, 종료 0 | 통과 — [console-01.log](console-01.log) |
 | A2 새 프로세스 | 다른 Client ID, 같은 정상 순서·종료 0 | 첫 실행과 다른 GUID, 순서 일치, 종료 0 | 통과 — [console-02.log](console-02.log) |
 | 양쪽 로그 대응 | 각 Client ID의 MQTT 5 접속·정상 해제 | 두 ID 모두 Broker 접속 및 disconnected 로그 확인 | 통과 — [broker-logs.log](broker-logs.log) |
