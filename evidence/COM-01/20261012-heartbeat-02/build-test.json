@@ -1,0 +1,9 @@
+{
+  "startedUtc": "2026-10-12T03:31:43.375957+00:00",
+  "buildFinishedUtc": "2026-10-12T03:31:44.1804761+00:00",
+  "finishedUtc": "2026-10-12T03:31:45.7609581+00:00",
+  "buildExit": 0,
+  "testExit": 0,
+  "buildCommand": "dotnet build AmrControlSystem.slnx --no-restore",
+  "testCommand": "dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj --no-build --logger trx;LogFileName=tests.trx --results-directory evidence/COM-01/20261012-heartbeat-02"
+}

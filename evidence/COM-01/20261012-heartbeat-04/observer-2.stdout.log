@@ -1,0 +1,5 @@
+Client hb-observer-1fe2ef4079d042d19d201088b545576b sending CONNECT
+Client hb-observer-1fe2ef4079d042d19d201088b545576b received CONNACK (0)
+Client hb-observer-1fe2ef4079d042d19d201088b545576b sending SUBSCRIBE (Mid: 1, Topic: amr/#, QoS: 0, Options: 0x00)
+Client hb-observer-1fe2ef4079d042d19d201088b545576b received SUBACK
+Subscribed (mid: 1): 0

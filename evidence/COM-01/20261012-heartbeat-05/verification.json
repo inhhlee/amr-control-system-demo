@@ -1,0 +1,60 @@
+{
+  "startedUtc": "2026-10-12T03:36:32.7692509+00:00",
+  "finishedUtc": "2026-10-12T03:36:40.0571168+00:00",
+  "result": "passed",
+  "runs": [
+    {
+      "run": 1,
+      "arguments": [
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "1884",
+        "--connect-timeout-seconds",
+        "3",
+        "--show-payload"
+      ],
+      "clientId": "amr-demo-1d176712603b493fb1bd63531b6f5810",
+      "processId": 45516,
+      "signal": "Windows CTRL_C_EVENT",
+      "signalUtc": "2026-10-12T12:36:36.9310813+09:00",
+      "finishedUtc": "2026-10-12T12:36:36.9576804+09:00",
+      "consoleMembers": [
+        9760,
+        45516
+      ],
+      "diagnosticCount": 2,
+      "observedPublishCount": 5,
+      "negativeTopicCount": 3,
+      "exitCode": 0,
+      "stderr": null,
+      "observerExit": 0
+    },
+    {
+      "run": 2,
+      "arguments": [
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "1884",
+        "--connect-timeout-seconds",
+        "3"
+      ],
+      "clientId": "amr-demo-dcd39df6e52d4e16832132b7facdb5bd",
+      "processId": 36960,
+      "signal": "Windows CTRL_C_EVENT",
+      "signalUtc": "2026-10-12T12:36:39.5711386+09:00",
+      "finishedUtc": "2026-10-12T12:36:39.604368+09:00",
+      "consoleMembers": [
+        34996,
+        36960
+      ],
+      "diagnosticCount": 1,
+      "observedPublishCount": 1,
+      "negativeTopicCount": 0,
+      "exitCode": 0,
+      "stderr": null,
+      "observerExit": 0
+    }
+  ]
+}

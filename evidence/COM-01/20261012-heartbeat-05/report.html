@@ -1,0 +1,155 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COM-01 · Heartbeat 수신 검증</title><style>
+:root{font-family:'Malgun Gothic',system-ui,sans-serif;color:#203047;background:#f3f6fa}body{margin:0}main{max-width:1120px;margin:0 auto;padding:38px 24px 60px}header{background:#142a43;color:#fff;padding:30px;border-radius:16px}h1{font-size:29px;margin:8px 0 12px}h2{font-size:21px;margin-top:32px}p,li{line-height:1.75}a{color:#125ba2}header a{color:#b9e2ff}.eyebrow{letter-spacing:.1em;color:#acc7e2;font-size:13px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0}.card{background:white;border:1px solid #d8e2ed;border-radius:12px;padding:19px}.value{font-size:29px;font-weight:700;color:#176743}.label{font-size:13px;margin-top:7px}.pending{color:#8f5708}table{border-collapse:collapse;width:100%;background:white;margin:18px 0}th,td{text-align:left;padding:14px;border-bottom:1px solid #dce4ed;vertical-align:top;line-height:1.6}th{background:#e7eef6;font-size:14px}.pass{color:#176743;font-weight:700}.note{padding:16px 20px;background:#fff5df;border-left:4px solid #d89a2d}code{font-family:Consolas,monospace;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#142338;color:#dce9f8;padding:18px;border-radius:8px;font-size:12px;line-height:1.7}details{background:white;border:1px solid #d8e2ed;border-radius:10px;padding:17px;margin:12px 0}summary{cursor:pointer;font-weight:700}nav{display:flex;gap:16px;flex-wrap:wrap;margin-top:18px}small{color:#55667b}.table-wrap{overflow-x:auto}@media(max-width:680px){main{padding:16px}.cards{grid-template-columns:repeat(2,1fr)}header{padding:22px}h1{font-size:24px}th,td{padding:10px}}
+</style></head><body><main>
+<header><div class="eyebrow">AMR CONTROL SYSTEM DEMO · ISSUE #15</div><h1>Heartbeat 한 종류 구독·수신</h1><p>2026-10-12 12:36 KST · 실제 Broker 검증 기록<br>실행 ID: <code>20261012-heartbeat-05</code> · 로컬 변경 / 미커밋</p><a href="https://github.com/inhhlee/amr-control-system-demo/issues/15">Issue #15 열기</a></header>
+<div class="cards"><div class="card"><div class="value">18 / 18</div><div class="label">자동시험 통과 · Fake</div></div><div class="card"><div class="value">3 건</div><div class="label">실제 Heartbeat 수신</div></div><div class="card"><div class="value">3 건</div><div class="label">비구독 Topic 제외</div></div><div class="card"><div class="value">0 / 0</div><div class="label">두 콘솔의 실제 종료 코드</div></div></div>
+<p class="note">저장된 실행 결과입니다. 실시간 관제 화면이 아닙니다. 수신 원문은 검사 전 진단이며 생존·정상 모델 판정을 하지 않습니다. MQTT 주소 <code>127.0.0.1:1884</code>는 웹페이지 주소가 아닙니다.</p>
+<nav><a href="#criteria">완료조건</a><a href="#sessions">두 실행 비교</a><a href="#logs">원본 로그</a><a href="#remaining">남은 범위</a><a href="README.md">상세 검증결과</a></nav>
+<h2 id="criteria">완료조건별 확인</h2><div class="table-wrap"><table><thead><tr><th>조건</th><th>판정</th><th>브라우저에서 확인할 내용</th></tr></thead><tbody>
+<tr id="c1"><td>1. 구독 성공 뒤 수신</td><td class="pass">통과</td><td>첫 실행 로그에서 <code>Subscribed</code> 다음 <code>HeartbeatDiagnostic</code>를 확인합니다. Topic·UTC 시각·49바이트 원문을 <a href="publications-1.json">발행 입력</a>과 대조합니다.</td></tr>
+<tr id="c2"><td>2. 비구독 Topic 제외</td><td class="pass">통과</td><td>독립 관찰자는 5건을 받았습니다. C# 콘솔에는 Heartbeat 2건만 있습니다. telemetry, heartbeat/extra, 추가 중간 level의 3건은 없습니다.</td></tr>
+<tr id="c3"><td>3. Ctrl+C 정리·재실행</td><td class="pass">통과</td><td>두 로그의 <code>SubscriptionStopped → Disconnected → Disposed → ExitCode=0</code>과 서로 다른 Client ID를 확인합니다. 새 실행에서도 Heartbeat 1건이 수신됩니다.</td></tr>
+<tr id="c4"><td>4. 결과·미검증 연결</td><td class="pending">부분 완료</td><td>README·로컬 증거·Issue 참조를 연결했습니다. 커밋·푸시·원격 Issue 결과 갱신·PR 연결은 사용자 요청에 따라 남아 있습니다.</td></tr>
+</tbody></table></div>
+<h2 id="sessions">두 실행 비교</h2><div class="table-wrap"><table><thead><tr><th>실행</th><th>Client ID</th><th>수신</th><th>종료 코드</th></tr></thead><tbody><tr><td>실행 1</td><td><code>amr-demo-1d176712603b493fb1bd63531b6f5810</code></td><td>2</td><td>0</td></tr><tr><td>실행 2</td><td><code>amr-demo-dcd39df6e52d4e16832132b7facdb5bd</code></td><td>1</td><td>0</td></tr></tbody></table></div>
+<p>첫 실행은 <code>--show-payload</code>로 통제된 시험 원문을 표시했습니다. 새 실행은 기본값 <code>Payload=&lt;hidden&gt;</code>을 확인했습니다. 실제 Windows CTRL_C_EVENT를 숨김 시험 콘솔에 전달했고, 제품 프로세스의 종료 코드를 직접 기록했습니다.</p>
+<h2 id="logs">원본 로그 펼쳐 보기</h2><details open><summary>첫 실행 &#183; 원문 진단 / Topic 경계 / Ctrl+C</summary><p><a href='console-1.stdout.log'>원본 파일 열기</a></p><pre>2026-10-12T03:36:34.1625548+00:00 Settings Host=127.0.0.1 Port=1884 ClientId=amr-demo-1d176712603b493fb1bd63531b6f5810 MQTT=5 CleanStart=true SessionExpiry=0 KeepAliveSeconds=5 ConnectTimeoutSeconds=3 DisconnectTimeoutSeconds=3
+2026-10-12T03:36:34.1676384+00:00 Connecting
+2026-10-12T03:36:34.2020112+00:00 Connected
+2026-10-12T03:36:34.2026812+00:00 Subscribing TopicFilter=amr/+/heartbeat QoS=0 PayloadPreview=True LimitBytes=256
+2026-10-12T03:36:34.2120727+00:00 Subscribed TopicFilter=amr/+/heartbeat QoS=0
+2026-10-12T03:36:34.2127393+00:00 WaitingForShutdown: Ctrl+C로 정상 종료합니다.
+2026-10-12T03:36:34.5047444+00:00 HeartbeatDiagnostic Topic=&quot;amr/AMR_001/heartbeat&quot; TopicTruncated=False PayloadBytes=49 Payload=&quot;{\&quot;id\&quot;:\&quot;AMR_001\&quot;,\&quot;ts\&quot;:1791195767000,\&quot;status\&quot;:\&quot;OK\&quot;}&quot; PayloadTruncated=False Validation=NotPerformed
+2026-10-12T03:36:35.9659388+00:00 HeartbeatDiagnostic Topic=&quot;amr/AMR_001/heartbeat&quot; TopicTruncated=False PayloadBytes=49 Payload=&quot;{\&quot;id\&quot;:\&quot;AMR_001\&quot;,\&quot;ts\&quot;:1791195767001,\&quot;status\&quot;:\&quot;OK\&quot;}&quot; PayloadTruncated=False Validation=NotPerformed
+2026-10-12T03:36:36.9342774+00:00 ShutdownRequested
+2026-10-12T03:36:36.9353991+00:00 Unsubscribing
+2026-10-12T03:36:36.9404950+00:00 SubscriptionStopped
+2026-10-12T03:36:36.9407184+00:00 Disconnecting
+2026-10-12T03:36:36.9447787+00:00 Disconnected
+2026-10-12T03:36:36.9450223+00:00 Disposed
+2026-10-12T03:36:36.9451800+00:00 ExitCode=0
+</pre></details><details ><summary>독립 관찰자 &#183; 첫 실행의 발행 5건</summary><p><a href='observer-1.stdout.log'>원본 파일 열기</a></p><pre>Client hb-observer-4ca8a8aef3274bd88cdb29adab06bbad sending CONNECT
+Client hb-observer-4ca8a8aef3274bd88cdb29adab06bbad received CONNACK (0)
+Client hb-observer-4ca8a8aef3274bd88cdb29adab06bbad sending SUBSCRIBE (Mid: 1, Topic: amr/#, QoS: 0, Options: 0x00)
+Client hb-observer-4ca8a8aef3274bd88cdb29adab06bbad received SUBACK
+Subscribed (mid: 1): 0
+Client hb-observer-4ca8a8aef3274bd88cdb29adab06bbad received PUBLISH (d0, q0, r0, m0, &#39;amr/AMR_001/heartbeat&#39;, ... (49 bytes))
+amr/AMR_001/heartbeat {&quot;id&quot;:&quot;AMR_001&quot;,&quot;ts&quot;:1791195767000,&quot;status&quot;:&quot;OK&quot;}
+Client hb-observer-4ca8a8aef3274bd88cdb29adab06bbad received PUBLISH (d0, q0, r0, m0, &#39;amr/AMR_001/telemetry&#39;, ... (26 bytes))
+amr/AMR_001/telemetry {&quot;probe&quot;:&quot;not-subscribed&quot;}
+Client hb-observer-4ca8a8aef3274bd88cdb29adab06bbad received PUBLISH (d0, q0, r0, m0, &#39;amr/AMR_001/heartbeat/extra&#39;, ... (26 bytes))
+amr/AMR_001/heartbeat/extra {&quot;probe&quot;:&quot;not-subscribed&quot;}
+Client hb-observer-4ca8a8aef3274bd88cdb29adab06bbad received PUBLISH (d0, q0, r0, m0, &#39;amr/area/AMR_001/heartbeat&#39;, ... (26 bytes))
+amr/area/AMR_001/heartbeat {&quot;probe&quot;:&quot;not-subscribed&quot;}
+Client hb-observer-4ca8a8aef3274bd88cdb29adab06bbad received PUBLISH (d0, q0, r0, m0, &#39;amr/AMR_001/heartbeat&#39;, ... (49 bytes))
+amr/AMR_001/heartbeat {&quot;id&quot;:&quot;AMR_001&quot;,&quot;ts&quot;:1791195767001,&quot;status&quot;:&quot;OK&quot;}
+Client hb-observer-4ca8a8aef3274bd88cdb29adab06bbad sending DISCONNECT
+</pre></details><details ><summary>새 실행 &#183; 새 Client ID / 기본 원문 숨김 / Ctrl+C</summary><p><a href='console-2.stdout.log'>원본 파일 열기</a></p><pre>2026-10-12T03:36:38.2514363+00:00 Settings Host=127.0.0.1 Port=1884 ClientId=amr-demo-dcd39df6e52d4e16832132b7facdb5bd MQTT=5 CleanStart=true SessionExpiry=0 KeepAliveSeconds=5 ConnectTimeoutSeconds=3 DisconnectTimeoutSeconds=3
+2026-10-12T03:36:38.2560032+00:00 Connecting
+2026-10-12T03:36:38.2888216+00:00 Connected
+2026-10-12T03:36:38.2908088+00:00 Subscribing TopicFilter=amr/+/heartbeat QoS=0 PayloadPreview=False LimitBytes=256
+2026-10-12T03:36:38.2991583+00:00 Subscribed TopicFilter=amr/+/heartbeat QoS=0
+2026-10-12T03:36:38.2997713+00:00 WaitingForShutdown: Ctrl+C로 정상 종료합니다.
+2026-10-12T03:36:38.6096090+00:00 HeartbeatDiagnostic Topic=&quot;amr/AMR_001/heartbeat&quot; TopicTruncated=False PayloadBytes=49 Payload=&lt;hidden&gt; PayloadTruncated=False Validation=NotPerformed
+2026-10-12T03:36:39.5740727+00:00 ShutdownRequested
+2026-10-12T03:36:39.5775821+00:00 Unsubscribing
+2026-10-12T03:36:39.5826388+00:00 SubscriptionStopped
+2026-10-12T03:36:39.5828054+00:00 Disconnecting
+2026-10-12T03:36:39.5865136+00:00 Disconnected
+2026-10-12T03:36:39.5867758+00:00 Disposed
+2026-10-12T03:36:39.5869429+00:00 ExitCode=0
+</pre></details><details ><summary>Broker &#183; 실제 연결과 정상 해제</summary><p><a href='broker.log'>원본 파일 열기</a></p><pre>mosquitto-1  | 2026-10-12T03:36:34.190441845Z 1791776194: New connection from 172.19.0.1:58238 on port 1883.
+mosquitto-1  | 2026-10-12T03:36:34.197450267Z 1791776194: New client connected from 172.19.0.1:58238 as amr-demo-1d176712603b493fb1bd63531b6f5810 (p5, c1, k5).
+mosquitto-1  | 2026-10-12T03:36:34.321187172Z 1791776194: New connection from 127.0.0.1:37876 on port 1883.
+mosquitto-1  | 2026-10-12T03:36:34.321844092Z 1791776194: New client connected from 127.0.0.1:37876 as hb-observer-4ca8a8aef3274bd88cdb29adab06bbad (p5, c1, k60).
+mosquitto-1  | 2026-10-12T03:36:34.500743759Z 1791776194: New connection from 127.0.0.1:37880 on port 1883.
+mosquitto-1  | 2026-10-12T03:36:34.501200429Z 1791776194: New client connected from 127.0.0.1:37880 as hb-pub-80b57e8583524b2e8ede0b417194f250 (p5, c1, k60).
+mosquitto-1  | 2026-10-12T03:36:34.501682024Z 1791776194: Client hb-pub-80b57e8583524b2e8ede0b417194f250 [127.0.0.1:37880] disconnected.
+mosquitto-1  | 2026-10-12T03:36:34.877633242Z 1791776194: New connection from 127.0.0.1:37884 on port 1883.
+mosquitto-1  | 2026-10-12T03:36:34.878141658Z 1791776194: New client connected from 127.0.0.1:37884 as hb-pub-925daf340fe6442586e1f43fc0a3ab68 (p5, c1, k60).
+mosquitto-1  | 2026-10-12T03:36:34.878465346Z 1791776194: Client hb-pub-925daf340fe6442586e1f43fc0a3ab68 [127.0.0.1:37884] disconnected.
+mosquitto-1  | 2026-10-12T03:36:35.238448646Z 1791776195: New connection from 127.0.0.1:37896 on port 1883.
+mosquitto-1  | 2026-10-12T03:36:35.238914113Z 1791776195: New client connected from 127.0.0.1:37896 as hb-pub-d271c501911e46d09a131998e94d077d (p5, c1, k60).
+mosquitto-1  | 2026-10-12T03:36:35.239267589Z 1791776195: Client hb-pub-d271c501911e46d09a131998e94d077d [127.0.0.1:37896] disconnected.
+mosquitto-1  | 2026-10-12T03:36:35.602321472Z 1791776195: New connection from 127.0.0.1:37908 on port 1883.
+mosquitto-1  | 2026-10-12T03:36:35.602751188Z 1791776195: New client connected from 127.0.0.1:37908 as hb-pub-7532a950d7b9449f871f5e24b7bfc1fe (p5, c1, k60).
+mosquitto-1  | 2026-10-12T03:36:35.603206219Z 1791776195: Client hb-pub-7532a950d7b9449f871f5e24b7bfc1fe [127.0.0.1:37908] disconnected.
+mosquitto-1  | 2026-10-12T03:36:35.965106471Z 1791776195: New connection from 127.0.0.1:37918 on port 1883.
+mosquitto-1  | 2026-10-12T03:36:35.965745689Z 1791776195: New client connected from 127.0.0.1:37918 as hb-pub-04f3a10af6f9424ba6a0afe1108102b8 (p5, c1, k60).
+mosquitto-1  | 2026-10-12T03:36:35.966253064Z 1791776195: Client hb-pub-04f3a10af6f9424ba6a0afe1108102b8 [127.0.0.1:37918] disconnected.
+mosquitto-1  | 2026-10-12T03:36:35.969942753Z 1791776195: Client hb-observer-4ca8a8aef3274bd88cdb29adab06bbad [127.0.0.1:37876] disconnected.
+mosquitto-1  | 2026-10-12T03:36:36.943678093Z 1791776196: Client amr-demo-1d176712603b493fb1bd63531b6f5810 [172.19.0.1:58238] disconnected.
+mosquitto-1  | 2026-10-12T03:36:38.278113774Z 1791776198: New connection from 172.19.0.1:55328 on port 1883.
+mosquitto-1  | 2026-10-12T03:36:38.284556689Z 1791776198: New client connected from 172.19.0.1:55328 as amr-demo-dcd39df6e52d4e16832132b7facdb5bd (p5, c1, k5).
+mosquitto-1  | 2026-10-12T03:36:38.408864148Z 1791776198: New connection from 127.0.0.1:57660 on port 1883.
+mosquitto-1  | 2026-10-12T03:36:38.409531242Z 1791776198: New client connected from 127.0.0.1:57660 as hb-observer-9d9cde94960a483b8b649d520e238124 (p5, c1, k60).
+mosquitto-1  | 2026-10-12T03:36:38.605143590Z 1791776198: New connection from 127.0.0.1:57668 on port 1883.
+mosquitto-1  | 2026-10-12T03:36:38.605547101Z 1791776198: New client connected from 127.0.0.1:57668 as hb-pub-790c7126324942f79134b0e729b8b6d8 (p5, c1, k60).
+mosquitto-1  | 2026-10-12T03:36:38.606230681Z 1791776198: Client hb-pub-790c7126324942f79134b0e729b8b6d8 [127.0.0.1:57668] disconnected.
+mosquitto-1  | 2026-10-12T03:36:38.610014472Z 1791776198: Client hb-observer-9d9cde94960a483b8b649d520e238124 [127.0.0.1:57660] disconnected.
+mosquitto-1  | 2026-10-12T03:36:39.583504576Z 1791776199: Client amr-demo-dcd39df6e52d4e16832132b7facdb5bd [172.19.0.1:55328] disconnected.
+</pre></details><details ><summary>최종 판정 &#183; 실제 프로세스 종료 코드</summary><p><a href='verification.json'>원본 파일 열기</a></p><pre>{
+  &quot;startedUtc&quot;: &quot;2026-10-12T03:36:32.7692509+00:00&quot;,
+  &quot;finishedUtc&quot;: &quot;2026-10-12T03:36:40.0571168+00:00&quot;,
+  &quot;result&quot;: &quot;passed&quot;,
+  &quot;runs&quot;: [
+    {
+      &quot;run&quot;: 1,
+      &quot;arguments&quot;: [
+        &quot;--host&quot;,
+        &quot;127.0.0.1&quot;,
+        &quot;--port&quot;,
+        &quot;1884&quot;,
+        &quot;--connect-timeout-seconds&quot;,
+        &quot;3&quot;,
+        &quot;--show-payload&quot;
+      ],
+      &quot;clientId&quot;: &quot;amr-demo-1d176712603b493fb1bd63531b6f5810&quot;,
+      &quot;processId&quot;: 45516,
+      &quot;signal&quot;: &quot;Windows CTRL_C_EVENT&quot;,
+      &quot;signalUtc&quot;: &quot;2026-10-12T12:36:36.9310813+09:00&quot;,
+      &quot;finishedUtc&quot;: &quot;2026-10-12T12:36:36.9576804+09:00&quot;,
+      &quot;consoleMembers&quot;: [
+        9760,
+        45516
+      ],
+      &quot;diagnosticCount&quot;: 2,
+      &quot;observedPublishCount&quot;: 5,
+      &quot;negativeTopicCount&quot;: 3,
+      &quot;exitCode&quot;: 0,
+      &quot;stderr&quot;: null,
+      &quot;observerExit&quot;: 0
+    },
+    {
+      &quot;run&quot;: 2,
+      &quot;arguments&quot;: [
+        &quot;--host&quot;,
+        &quot;127.0.0.1&quot;,
+        &quot;--port&quot;,
+        &quot;1884&quot;,
+        &quot;--connect-timeout-seconds&quot;,
+        &quot;3&quot;
+      ],
+      &quot;clientId&quot;: &quot;amr-demo-dcd39df6e52d4e16832132b7facdb5bd&quot;,
+      &quot;processId&quot;: 36960,
+      &quot;signal&quot;: &quot;Windows CTRL_C_EVENT&quot;,
+      &quot;signalUtc&quot;: &quot;2026-10-12T12:36:39.5711386+09:00&quot;,
+      &quot;finishedUtc&quot;: &quot;2026-10-12T12:36:39.604368+09:00&quot;,
+      &quot;consoleMembers&quot;: [
+        34996,
+        36960
+      ],
+      &quot;diagnosticCount&quot;: 1,
+      &quot;observedPublishCount&quot;: 1,
+      &quot;negativeTopicCount&quot;: 0,
+      &quot;exitCode&quot;: 0,
+      &quot;stderr&quot;: null,
+      &quot;observerExit&quot;: 0
+    }
+  ]
+}
+</pre></details>
+<h2 id="remaining">시험 범위와 남은 작업</h2><ul><li>빌드 경고·오류 0, 자동시험 18개 통과. <a href="../20261012-heartbeat-04/build.log">빌드</a> · <a href="../20261012-heartbeat-04/test.log">자동시험</a> · <a href="../20261012-heartbeat-04/tests.trx">TRX</a></li><li>구독 거부·Topic 경계·이벤트 해제·원문 기본 숨김·256바이트 제한은 자동시험으로 확인했습니다.</li><li>Telemetry·Alarm·ACK 처리, JSON 검사·정상 모델 전달, 생존 갱신·Timeout, 자동 재접속은 후속 범위입니다.</li><li>사람이 키보드로 누른 Ctrl+C 및 Broker 내부 세션 DB 직접 검사는 미실행입니다.</li><li>첫 빌드와 시험 도구의 실패 기록은 <a href="../20261012-heartbeat-01/README.md">01</a>, <a href="../20261012-heartbeat-02/harness-attempt.md">02</a>, <a href="../20261012-heartbeat-03/README.md">03</a>, <a href="../20261012-heartbeat-04/README.md">04</a>에 보존했습니다.</li></ul>
+<p><a href="../../../README.md#heartbeat-run">실행·발행·종료 재현 방법</a> · <a href="source-version.json">코드 버전·SHA-256</a> · <a href="environment.json">실행 환경</a></p><small>기준 HEAD 746c173 + 미커밋 변경. 이 보기본은 render-report.ps1로 저장된 JSON·로그·TRX에서 생성했습니다.</small>
+</main></body></html>

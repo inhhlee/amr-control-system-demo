@@ -1,0 +1,14 @@
+{
+  "os": "Microsoft Windows 10.0.26200",
+  "architecture": "X64",
+  "powershell": "7.6.5",
+  "dotnetSdk": "10.0.401",
+  "dockerVersion": "29.7.2 / 29.7.2",
+  "composeVersion": "5.5.1",
+  "mqttnet": "5.2.0.1603",
+  "brokerImage": "eclipse-mosquitto:2.1.2-alpine",
+  "brokerVersion": "mosquitto version 2.1.2",
+  "endpoint": "127.0.0.1:1884",
+  "composeCheckExit": 0,
+  "brokerRestarted": false
+}

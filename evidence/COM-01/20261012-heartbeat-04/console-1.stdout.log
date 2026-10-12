@@ -1,0 +1,15 @@
+2026-10-12T03:35:16.0426901+00:00 Settings Host=127.0.0.1 Port=1884 ClientId=amr-demo-977dda06904745ef9ab4dab3f6154693 MQTT=5 CleanStart=true SessionExpiry=0 KeepAliveSeconds=5 ConnectTimeoutSeconds=3 DisconnectTimeoutSeconds=3
+2026-10-12T03:35:16.0460942+00:00 Connecting
+2026-10-12T03:35:16.0787636+00:00 Connected
+2026-10-12T03:35:16.0806042+00:00 Subscribing TopicFilter=amr/+/heartbeat QoS=0 PayloadPreview=True LimitBytes=256
+2026-10-12T03:35:16.0895568+00:00 Subscribed TopicFilter=amr/+/heartbeat QoS=0
+2026-10-12T03:35:16.0902187+00:00 WaitingForShutdown: Ctrl+C로 정상 종료합니다.
+2026-10-12T03:35:16.3889872+00:00 HeartbeatDiagnostic Topic="amr/AMR_001/heartbeat" TopicTruncated=False PayloadBytes=49 Payload="{\"id\":\"AMR_001\",\"ts\":1791195767000,\"status\":\"OK\"}" PayloadTruncated=False Validation=NotPerformed
+2026-10-12T03:35:17.8509550+00:00 HeartbeatDiagnostic Topic="amr/AMR_001/heartbeat" TopicTruncated=False PayloadBytes=49 Payload="{\"id\":\"AMR_001\",\"ts\":1791195767001,\"status\":\"OK\"}" PayloadTruncated=False Validation=NotPerformed
+2026-10-12T03:35:18.8378563+00:00 ShutdownRequested
+2026-10-12T03:35:18.8390310+00:00 Unsubscribing
+2026-10-12T03:35:18.8444414+00:00 SubscriptionStopped
+2026-10-12T03:35:18.8446384+00:00 Disconnecting
+2026-10-12T03:35:18.8483407+00:00 Disconnected
+2026-10-12T03:35:18.8485793+00:00 Disposed
+2026-10-12T03:35:18.8487799+00:00 ExitCode=0

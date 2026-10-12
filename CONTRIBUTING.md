@@ -1,7 +1,7 @@
 # 팀 협업 규칙
 
 - 작성일: 2026-10-08
-- 버전: v0.3 초안 — feature/ 이름 규칙과 Git Flow 브랜치 역할 반영
+- 버전: v0.4 초안 — A2·A3 통합 #8의 한 브랜치·PR 반영
 - 대상: [inhhlee/amr-control-system-demo](https://github.com/inhhlee/amr-control-system-demo)의 Issue·코드·시험·PR 작업
 
 팀원이 작업을 나누고 결과를 인계할 때 사용하는 안내다. 기존 [AGENTS.md](AGENTS.md), [PR 양식](.github/pull_request_template.md), [.gitignore](.gitignore)를 바탕으로 작성했다. 전용 협업 규칙 빈 양식은 확인되지 않았으며, 아래 담당·검토·인계 항목은 이번 요청에 맞춰 추가한 제안이다. 사람별 담당과 검토자는 각 Issue에서 정한다.
@@ -41,7 +41,7 @@ git config --local --get-regexp '^gitflow\.'
 아래 초기화는 `main`·`develop`이 존재하고 기존 Git Flow 설정과 `.gitflow` 파일이 없음을 확인한 저장소에서 한 번만 실행한다. 기존 설정이 있으면 내용을 대조해 필요한 항목만 보완하며 강제로 덮어쓰지 않는다.
 
 ```powershell
-git flow init --preset=classic --defaults --main=main --develop=develop --feature=feature/ --release=release/ --hotfix=hotfix/ --shared --no-create-branches
+git flow init - d
 git flow config edit topic feature --downstream-strategy=merge --shared
 git flow config status
 git flow config list
@@ -71,13 +71,13 @@ git flow feature start 7-broker-check
 
 `fetch`는 원격 상태를 가져오고, `switch`는 기준 브랜치로 이동한다. `pull --ff-only`는 로컬 이력을 새로 병합하지 않고 `develop`을 갱신하며, 갈라진 이력이 있으면 중단한다. 마지막 `feature start`는 갱신한 `develop`에서 작업 브랜치를 만들고 이동한다.
 
-COM-03은 총괄 Issue #4 아래의 작업 Issue별로 진행한다. 다음은 브랜치를 만들 때 사용할 이름이며, 생성 완료를 뜻하지 않는다.
+COM-03은 총괄 Issue #4 아래의 작업 Issue별로 진행한다. 2026-10-08 사용자 승인으로 A2·A3를 #8 하나로 통합했다. 기존 작업 브랜치를 우선 사용하며 아래 이름으로 중복 생성하지 않는다.
 
 | 작업 Issue | 새 브랜치 이름 | 시작 시점 |
 | --- | --- | --- |
 | [#7 · A1 Broker 확인](https://github.com/inhhlee/amr-control-system-demo/issues/7) | `feature/7-broker-check` | 협업 설정 반영·선행 조건 확인 후 |
-| [#8 · A2 MQTT 접속·해제](https://github.com/inhhlee/amr-control-system-demo/issues/8) | `feature/8-mqtt-connect` | #7의 완료조건·develop 반영 확인 후 |
-| [#9 · A3 Ctrl+C 정상 종료](https://github.com/inhhlee/amr-control-system-demo/issues/9) | `feature/9-graceful-shutdown` | #8의 완료조건·develop 반영 확인 후 |
+| [#8 · A2·A3 MQTT 정상 접속·유지·종료](https://github.com/inhhlee/amr-control-system-demo/issues/8) | 기존 `feature/8-mqtt-connect` 사용 | #7의 완료조건·develop 반영 및 현재 Broker 확인 후, A2·A3는 같은 PR에서 진행 |
+| [#9 · #8로 통합 종료](https://github.com/inhhlee/amr-control-system-demo/issues/9) | 별도 브랜치·PR 없음 | A3를 #8 내부 학습 단계로 진행. 통합 종료는 구현 완료를 뜻하지 않음 |
 
 **전환 시 기존 작업:** `codex/4-collaboration-rules`는 이전 규칙으로 `develop`에서 만든 협업 설정 브랜치다. 이 작업은 기존 이름으로 마치고 이후 새 작업부터 `feature/`를 적용한다. 다시 `feature start 4-collaboration-rules`로 중복 생성하지 않는다. 생성 당시 명령은 `git switch -c`였으며 Git Flow로 생성한 것으로 기록하지 않는다. 새 접두사를 설정해도 기존 `codex/` 브랜치가 `feature/` 브랜치로 인식되거나 바뀌지는 않는다. 이 기존 브랜치를 게시하는 단계에서는 `git push -u origin codex/4-collaboration-rules`를 사용하고 PR base는 `develop`으로 지정한다.
 
@@ -223,3 +223,4 @@ release·hotfix도 PR을 통해 반영하므로 `git flow release finish`·`git 
 | 2026-10-08 | v0.1 초안 | 사용자 요청으로 기존 협업 기준을 팀원용 안내로 연결. 담당·검토·인계 항목과 상위/작업 Issue로 나눌 때의 관리 방식을 제안. 전용 빈 양식은 없어 이 문서를 새로 작성 |
 | 2026-10-08 | v0.2 초안 | 사용자 지정에 따라 develop 기반 Git Flow와 codex/ 접두사, 명령 설명, develop 대상 PR 및 Issue 종료 기준 반영. 원본 개발 진행 절차의 기본 브랜치 기준과 차이를 명시 |
 | 2026-10-08 | v0.3 초안 | 사용자가 제공한 Git Flow 자료와 feature/ 선택을 반영. main·develop·feature·release·hotfix 역할, 시작·반영 방향과 명령 설명 보완. 기존 codex/4 브랜치는 유지하며 PR 병합과 로컬 finish의 차이를 명시 |
+| 2026-10-08 | v0.4 초안 | 사용자 승인에 따라 A2·A3를 #8 한 Issue·기존 feature/8-mqtt-connect·develop 대상 PR 하나로 통합. #9 별도 브랜치 안내를 통합 종료 안내로 변경 |

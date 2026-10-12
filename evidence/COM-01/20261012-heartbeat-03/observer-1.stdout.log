@@ -1,0 +1,6 @@
+Client hb-observer-73ee6269adba4b9884e08b4e2b985a68 sending CONNECT
+Client hb-observer-73ee6269adba4b9884e08b4e2b985a68 received CONNACK (0)
+Client hb-observer-73ee6269adba4b9884e08b4e2b985a68 sending SUBSCRIBE (Mid: 1, Topic: amr/#, QoS: 0, Options: 0x00)
+Client hb-observer-73ee6269adba4b9884e08b4e2b985a68 received SUBACK
+Subscribed (mid: 1): 0
+Client hb-observer-73ee6269adba4b9884e08b4e2b985a68 sending DISCONNECT
