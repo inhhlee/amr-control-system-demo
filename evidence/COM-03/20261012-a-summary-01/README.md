@@ -50,18 +50,13 @@ A1의 시험 뒤 Docker 설정이 바뀐 이력을 보존한다. A1은 당시 �
 | 7. README·실행 ID·코드 버전·로그·판정을 Issue/PR에 연결 | 충족. [실행 안내](https://github.com/inhhlee/amr-control-system-demo/blob/c34f380728d914aed9d0fe5f3427d698493d2ab6/README.md), [A3 종합 증거](https://github.com/inhhlee/amr-control-system-demo/blob/c34f380728d914aed9d0fe5f3427d698493d2ab6/evidence/COM-03/20261011-a3-shutdown-03/README.md), 이 대응표와 PR #13의 조건별 근거 연결. A2의 깨진 Compose 링크는 아래의 실제 명령 기록으로 직접 연결한다. |
 
 
-## 4. 이번 근거 검사와 재현
+## 4. 기존 근거 확인 방법
 
-[verify-evidence.ps1](verify-evidence.ps1)은 저장된 근거·Git blob을 검사하고 [audit-results.json](audit-results.json)에 항목별 판정·시각·코드·환경을 기록한다. dotnet·Docker·제품 EXE를 실행하지 않는다. 이번 검사 59개는 모두 통과했으며 제품 자동시험 6개와는 별도의 근거 검사다.
+완료조건 대조는 위 표의 고정 코드 버전·시험 기록·콘솔/Broker 로그를 직접 확인한 결과다. 제품 동작의 근거는 2026-10-11 자동시험 6개와 실제 Ctrl+C 정상 종료 두 실행이며 이번 제품 재시험 결과가 아니다.
 
-검사 범위는 PR #12/#13 반영 이력, 제품 소스/설정 변경 없음, A2/A3 ZIP·파일 해시, A1 명령·설정 로딩, A2 접속/해제·ID, A3 상태 순서·설정·실제 종료 코드·ID/Broker 로그 대응·이전 프로세스 종료 기록, TRX·복원/빌드 명령, 기존 CONTRIBUTING.md 보존이다. 코드의 승인 후 출력 확인은 정적 대조이며 자동시험·실제 MQTT 시험을 대체하지 않는다.
+원본을 확인할 때는 TRX의 실행·통과·실패 수, 각 콘솔의 상태 순서·적용 설정·Client ID, Broker의 같은 ID 접속·해제, 실제 프로세스 종료 코드와 종료 여부를 함께 대조한다. 코드 버전은 최종 source-version.json과 시험 당시 소스 ZIP, PR #13 병합 코드에 연결한다.
 
-이번 실행 환경은 PowerShell 7.6.5이며 날짜 문자열을 원본 형식으로 유지한다. 출력 경로를 지정하면 이번 검사 결과도 보존할 수 있다.
-
-```powershell
-Set-Location C:\amr-control-system-demo
-pwsh -NoProfile -File evidence/COM-03/20261012-a-summary-01/verify-evidence.ps1 -OutputPath "$env:TEMP\com03-summary-audit.json"
-```
+2026-10-12 사용자 요청으로 추가 검증 도구와 도구 결과 파일을 PR에서 제거했다. 완료조건 대응표·원격 조회 스냅샷·기존 제품 시험 증거는 유지한다. 과거 도구 검사·리뷰는 Git/PR 이력에 남으며 현재 PR의 제품 시험 결과로 집계하지 않는다.
 
 제품 실행 명령·실제 Ctrl+C·재실행 절차는 [루트 README](../../../README.md#복원빌드실행)를 따른다. 해당 명령은 이번 통합 대조에서 재실행하지 않았다.
 
@@ -74,5 +69,5 @@ pwsh -NoProfile -File evidence/COM-03/20261012-a-summary-01/verify-evidence.ps1 
 - 상세 입력/접속 실패·시간 초과·접속 중 취소·늦은 승인은 #5, 비정상 단절·무응답·KeepAlive 감시·종료 경합은 #6이다. 메시지 송수신·자동 재접속·GUI·Core·DB도 이번 범위 밖이다. #4의 정상 접속·종료 조건 충족을 COM-03 전체 또는 과제1 전체 완료로 집계하지 않는다.
 
 - 초기 빌드·시험 도우미 실패는 [A3 01](../20261011-a3-shutdown-01/README.md)·[02](../20261011-a3-shutdown-02/README.md)에 보존했다. 수정 후 03의 두 번 성공을 최종 근거로 사용한다.
-- 이번 총괄 검증 PR의 리뷰·develop 병합은 아직 수행하지 않았다. 사용자 요청은 PR 생성까지다.
+- PR #14 리뷰에서 검증 도구의 P2/P3를 지적했으며 사용자 요청으로 해당 도구를 제거했다. develop 병합은 아직 수행하지 않았다.
 - main 반영은 미결정이며 이번 PR base는 develop이다. #4·#8은 open으로 유지하고 별도 종료 요청 단계에 남긴다.
