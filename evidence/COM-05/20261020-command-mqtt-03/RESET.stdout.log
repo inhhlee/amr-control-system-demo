@@ -1,0 +1,3 @@
+CommandRequested AmrId="COM05_20261020-command-mqtt-03_3" CommandId="CMD-1ef88cd845bd437c8066b926a0a00bf2" CommandType=RESET
+CommandPublished AmrId="COM05_20261020-command-mqtt-03_3" CommandId="CMD-1ef88cd845bd437c8066b926a0a00bf2" CommandType=RESET QoS=0 Retain=false Delivery=Unconfirmed Execution=NotTracked
+

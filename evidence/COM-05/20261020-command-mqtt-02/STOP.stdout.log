@@ -1,0 +1,3 @@
+CommandRequested AmrId="COM05_20261020-command-mqtt-02_2" CommandId="CMD-7ef19c6472804927addeebc9e34c9e5b" CommandType=STOP
+CommandPublished AmrId="COM05_20261020-command-mqtt-02_2" CommandId="CMD-7ef19c6472804927addeebc9e34c9e5b" CommandType=STOP QoS=0 Retain=false Delivery=Unconfirmed Execution=NotTracked
+

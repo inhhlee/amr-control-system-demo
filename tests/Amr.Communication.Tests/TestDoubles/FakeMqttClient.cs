@@ -74,7 +74,18 @@ internal sealed class FakeMqttClient : IMqttClient
     public event Func<InspectMqttPacketEventArgs, Task>? InspectPacketAsync { add { } remove { } }
 
     public Task PingAsync(CancellationToken cancellationToken) => throw new NotSupportedException();
-    public Task<MqttClientPublishResult> PublishAsync(MqttApplicationMessage message, CancellationToken cancellationToken) => throw new NotSupportedException();
+    public TaskCompletionSource PublishEntered { get; } = new(TaskCreationOptions.RunContinuationsAsynchronously);
+    public TaskCompletionSource<MqttClientPublishResult> PublishResponse { get; } = new(TaskCreationOptions.RunContinuationsAsynchronously);
+    public bool IgnorePublishCancellation { get; init; }
+    public int PublishCalls { get; private set; }
+    public MqttApplicationMessage? PublishedMessage { get; private set; }
+    public Task<MqttClientPublishResult> PublishAsync(MqttApplicationMessage message, CancellationToken cancellationToken)
+    {
+        PublishedMessage = message;
+        PublishCalls++;
+        PublishEntered.TrySetResult();
+        return PublishResponse.Task.WaitAsync(IgnorePublishCancellation ? CancellationToken.None : cancellationToken);
+    }
     public Task<MqttClientSubscribeResult> SubscribeAsync(MqttClientSubscribeOptions options, CancellationToken cancellationToken)
     {
         SubscribeOptions = options;

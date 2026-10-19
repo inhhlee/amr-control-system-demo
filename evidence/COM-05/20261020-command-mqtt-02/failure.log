@@ -1,0 +1,7 @@
+Exception: C:\amr-control-system-demo\tests\manual\COM05-A\Verify-Commands.ps1:103
+Line |
+ 103 |  … nt -ne 3) { throw 'Expected three structured publish events in Seq.'  …
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Expected three structured publish events in Seq.
+
+
