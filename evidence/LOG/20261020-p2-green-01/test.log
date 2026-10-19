@@ -1,0 +1,8 @@
+  Amr.Communication -> C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll
+  Amr.Communication.Console -> C:\amr-control-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.dll
+  Amr.Communication.Tests -> C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+결과 파일: C:\amr-control-system-demo\evidence\LOG\20261020-p2-green-01\tests.trx
+
+통과!  - 실패:     0, 통과:   591, 건너뜀:     0, 전체:   591, 기간: 3 s - Amr.Communication.Tests.dll (net10.0)

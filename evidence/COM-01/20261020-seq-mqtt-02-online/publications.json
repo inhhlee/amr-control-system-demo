@@ -1,0 +1,272 @@
+[
+  {
+    "session": 0,
+    "name": "heartbeat-AMR_001",
+    "topic": "amr/AMR_001/heartbeat",
+    "payload": "{\"id\":\"AMR_001\",\"ts\":100,\"status\":\"OK\"}",
+    "expected": "accepted",
+    "sentAtUtc": "2026-10-19T15:41:30.0384981+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 0,
+    "name": "heartbeat-AMR_002",
+    "topic": "amr/AMR_002/heartbeat",
+    "payload": "{\"id\":\"AMR_002\",\"ts\":200,\"status\":\"OK\"}",
+    "expected": "accepted",
+    "sentAtUtc": "2026-10-19T15:41:32.3511098+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 0,
+    "name": "telemetry-AMR_001",
+    "topic": "amr/AMR_001/telemetry",
+    "payload": "{\"id\":\"AMR_001\",\"ts\":101,\"pos\":{\"x\":1.25,\"y\":-2.5},\"sp\":0.25,\"state\":\"BUSY\"}",
+    "expected": "accepted",
+    "sentAtUtc": "2026-10-19T15:41:35.2192104+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 0,
+    "name": "telemetry-AMR_002",
+    "topic": "amr/AMR_002/telemetry",
+    "payload": "{\"id\":\"AMR_002\",\"ts\":201,\"pos\":{\"x\":2.5,\"y\":-5},\"sp\":0.5,\"state\":\"STOPPED\"}",
+    "expected": "accepted",
+    "sentAtUtc": "2026-10-19T15:41:36.3935955+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 0,
+    "name": "alarm-AMR_001",
+    "topic": "amr/AMR_001/alarm",
+    "payload": "{\"id\":\"AMR_001\",\"ts\":102,\"code\":\" A1 \",\"level\":\"WARN\",\"alarmState\":\"ACTIVE\",\"message\":\" 경보 원형 보존 \"}",
+    "expected": "accepted",
+    "sentAtUtc": "2026-10-19T15:41:38.9125241+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 0,
+    "name": "alarm-AMR_002",
+    "topic": "amr/AMR_002/alarm",
+    "payload": "{\"id\":\"AMR_002\",\"ts\":202,\"code\":\" A2 \",\"level\":\"ERR\",\"alarmState\":\"CLEARED\"}",
+    "expected": "accepted",
+    "sentAtUtc": "2026-10-19T15:41:40.3068815+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 0,
+    "name": "ack-AMR_001",
+    "topic": "amr/AMR_001/ack",
+    "payload": "{\"cmdId\":\" CMD_1 \",\"result\":\"FAILURE\",\"ts\":103}",
+    "expected": "accepted",
+    "sentAtUtc": "2026-10-19T15:41:42.9127560+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 0,
+    "name": "ack-AMR_002",
+    "topic": "amr/AMR_002/ack",
+    "payload": "{\"cmdId\":\" CMD_2 \",\"result\":\"SUCCESS\",\"ts\":203,\"id\":\"AMR_002\",\"reason\":\" 완료 \"}",
+    "expected": "accepted",
+    "sentAtUtc": "2026-10-19T15:41:44.5625835+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 0,
+    "name": "missing-ts",
+    "topic": "amr/AMR_001/heartbeat",
+    "payload": "{\"id\":\"AMR_001\",\"status\":\"OK\"}",
+    "expected": "rejected",
+    "sentAtUtc": "2026-10-19T15:41:46.1190925+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 0,
+    "name": "normal-after-missing-ts",
+    "topic": "amr/AMR_001/heartbeat",
+    "payload": "{\"id\":\"AMR_001\",\"ts\":100,\"status\":\"OK\"}",
+    "expected": "accepted",
+    "sentAtUtc": "2026-10-19T15:41:47.1349368+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 0,
+    "name": "negative-speed",
+    "topic": "amr/AMR_001/telemetry",
+    "payload": "{\"id\":\"AMR_001\",\"ts\":1,\"pos\":{\"x\":1,\"y\":2},\"sp\":-1,\"state\":\"IDLE\"}",
+    "expected": "rejected",
+    "sentAtUtc": "2026-10-19T15:41:49.4803673+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 0,
+    "name": "normal-after-negative-speed",
+    "topic": "amr/AMR_001/telemetry",
+    "payload": "{\"id\":\"AMR_001\",\"ts\":101,\"pos\":{\"x\":1.25,\"y\":-2.5},\"sp\":0.25,\"state\":\"BUSY\"}",
+    "expected": "accepted",
+    "sentAtUtc": "2026-10-19T15:41:50.7767732+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 0,
+    "name": "malformed-json",
+    "topic": "amr/AMR_001/alarm",
+    "payload": "PRIVATE_COM01B_INPUT",
+    "expected": "rejected",
+    "sentAtUtc": "2026-10-19T15:41:53.3248326+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 0,
+    "name": "normal-after-malformed-json",
+    "topic": "amr/AMR_001/alarm",
+    "payload": "{\"id\":\"AMR_001\",\"ts\":102,\"code\":\" A1 \",\"level\":\"WARN\",\"alarmState\":\"ACTIVE\",\"message\":\" 경보 원형 보존 \"}",
+    "expected": "accepted",
+    "sentAtUtc": "2026-10-19T15:41:54.7498955+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 0,
+    "name": "ack-id-mismatch",
+    "topic": "amr/AMR_001/ack",
+    "payload": "{\"cmdId\":\"cmd\",\"result\":\"FAILURE\",\"ts\":1,\"id\":\"AMR_002\"}",
+    "expected": "rejected",
+    "sentAtUtc": "2026-10-19T15:41:57.0938846+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 0,
+    "name": "normal-after-ack-id-mismatch",
+    "topic": "amr/AMR_001/ack",
+    "payload": "{\"cmdId\":\" CMD_1 \",\"result\":\"FAILURE\",\"ts\":103}",
+    "expected": "accepted",
+    "sentAtUtc": "2026-10-19T15:41:59.1877766+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 0,
+    "name": "outside-0",
+    "topic": "amr/AMR_001/command",
+    "payload": "PRIVATE_COM01B_INPUT",
+    "expected": "ignored",
+    "sentAtUtc": "2026-10-19T15:42:00.5483652+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 0,
+    "name": "outside-1",
+    "topic": "amr/AMR_001/unknown",
+    "payload": "PRIVATE_COM01B_INPUT",
+    "expected": "ignored",
+    "sentAtUtc": "2026-10-19T15:42:01.7783419+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 0,
+    "name": "outside-2",
+    "topic": "amr/AMR_001/ACK",
+    "payload": "PRIVATE_COM01B_INPUT",
+    "expected": "ignored",
+    "sentAtUtc": "2026-10-19T15:42:04.5878612+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 0,
+    "name": "outside-3",
+    "topic": "amr/AMR_001/alarm/extra",
+    "payload": "PRIVATE_COM01B_INPUT",
+    "expected": "ignored",
+    "sentAtUtc": "2026-10-19T15:42:07.1137867+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 1,
+    "name": "heartbeat-AMR_001",
+    "topic": "amr/AMR_001/heartbeat",
+    "payload": "{\"id\":\"AMR_001\",\"ts\":100,\"status\":\"OK\"}",
+    "expected": "accepted",
+    "sentAtUtc": "2026-10-19T15:42:09.8957041+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 1,
+    "name": "heartbeat-AMR_002",
+    "topic": "amr/AMR_002/heartbeat",
+    "payload": "{\"id\":\"AMR_002\",\"ts\":200,\"status\":\"OK\"}",
+    "expected": "accepted",
+    "sentAtUtc": "2026-10-19T15:42:11.2229895+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 1,
+    "name": "telemetry-AMR_001",
+    "topic": "amr/AMR_001/telemetry",
+    "payload": "{\"id\":\"AMR_001\",\"ts\":101,\"pos\":{\"x\":1.25,\"y\":-2.5},\"sp\":0.25,\"state\":\"BUSY\"}",
+    "expected": "accepted",
+    "sentAtUtc": "2026-10-19T15:42:12.6001211+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 1,
+    "name": "telemetry-AMR_002",
+    "topic": "amr/AMR_002/telemetry",
+    "payload": "{\"id\":\"AMR_002\",\"ts\":201,\"pos\":{\"x\":2.5,\"y\":-5},\"sp\":0.5,\"state\":\"STOPPED\"}",
+    "expected": "accepted",
+    "sentAtUtc": "2026-10-19T15:42:13.7115977+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 1,
+    "name": "alarm-AMR_001",
+    "topic": "amr/AMR_001/alarm",
+    "payload": "{\"id\":\"AMR_001\",\"ts\":102,\"code\":\" A1 \",\"level\":\"WARN\",\"alarmState\":\"ACTIVE\",\"message\":\" 경보 원형 보존 \"}",
+    "expected": "accepted",
+    "sentAtUtc": "2026-10-19T15:42:15.6689713+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 1,
+    "name": "alarm-AMR_002",
+    "topic": "amr/AMR_002/alarm",
+    "payload": "{\"id\":\"AMR_002\",\"ts\":202,\"code\":\" A2 \",\"level\":\"ERR\",\"alarmState\":\"CLEARED\"}",
+    "expected": "accepted",
+    "sentAtUtc": "2026-10-19T15:42:16.9446334+00:00",
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "session": 1,
+    "name": "ack-AMR_001",
+    "topic": "amr/AMR_001/ack",
+    "payload": "{\"cmdId\":\" CMD_1 \",\"result\":\"FAILURE\",\"ts\":103}",
+    "expected": "accepted",
+    "sentAtUtc": "2026-10-19T15:42:18.8355206+00:00",
+    "exitCode": 0,
+    "output": ""
+  }
+]

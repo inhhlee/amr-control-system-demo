@@ -24,6 +24,7 @@ internal sealed class FakeMqttClient : IMqttClient
     public TaskCompletionSource ConnectFinished { get; } = new(TaskCreationOptions.RunContinuationsAsynchronously);
     public TaskCompletionSource<MqttClientSubscribeResult> SubscribeResponse { get; } =
         new(TaskCreationOptions.RunContinuationsAsynchronously);
+    public TaskCompletionSource SubscribeEntered { get; } = new(TaskCreationOptions.RunContinuationsAsynchronously);
     public TaskCompletionSource<MqttClientUnsubscribeResult> UnsubscribeResponse { get; } =
         new(TaskCreationOptions.RunContinuationsAsynchronously);
     public MqttClientSubscribeOptions? SubscribeOptions { get; private set; }
@@ -77,6 +78,7 @@ internal sealed class FakeMqttClient : IMqttClient
     public Task<MqttClientSubscribeResult> SubscribeAsync(MqttClientSubscribeOptions options, CancellationToken cancellationToken)
     {
         SubscribeOptions = options;
+        SubscribeEntered.TrySetResult();
         return SubscribeResponse.Task.WaitAsync(cancellationToken);
     }
     public Task<MqttClientUnsubscribeResult> UnsubscribeAsync(MqttClientUnsubscribeOptions options, CancellationToken cancellationToken)

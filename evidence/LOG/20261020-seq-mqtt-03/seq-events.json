@@ -1,0 +1,4828 @@
+[
+  {
+    "Timestamp": "2026-10-19T15:44:40.5047407Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ExitCode"
+      },
+      {
+        "Name": "ExitCode",
+        "Value": 0
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ExitCode",
+    "Id": "event-e363e86f2df708df1d00000000000000",
+    "Links": {
+      "Self": "api/events/event-e363e86f2df708df1d00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:40.504279Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Disposed"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Disposed",
+    "Id": "event-e363d6662df708df1c00000000000000",
+    "Links": {
+      "Self": "api/events/event-e363d6662df708df1c00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:40.5036421Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Disconnected"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Disconnected",
+    "Id": "event-e363bd852df708df1b00000000000000",
+    "Links": {
+      "Self": "api/events/event-e363bd852df708df1b00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:40.4910451Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Disconnecting"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Disconnecting",
+    "Id": "event-e361d1732df708df1a00000000000000",
+    "Links": {
+      "Self": "api/events/event-e361d1732df708df1a00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:40.4906982Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "SubscriptionStopped"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR SubscriptionStopped",
+    "Id": "event-e361c3e62df708df1900000000000000",
+    "Links": {
+      "Self": "api/events/event-e361c3e62df708df1900000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:40.4770865Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Unsubscribing"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Unsubscribing",
+    "Id": "event-e35fb0312df708df1800000000000000",
+    "Links": {
+      "Self": "api/events/event-e35fb0312df708df1800000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:40.4768368Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueStopped"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueStopped",
+    "Id": "event-e35fa6702df708df1700000000000000",
+    "Links": {
+      "Self": "api/events/event-e35fa6702df708df1700000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:40.4765479Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": null
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "Code",
+        "Value": "Stopped"
+      },
+      {
+        "Name": "Count",
+        "Value": 0
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueEvent"
+      },
+      {
+        "Name": "ExceptionType",
+        "Value": null
+      },
+      {
+        "Name": "Kind",
+        "Value": null
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Warning",
+    "RenderedMessage": "AMR QueueEvent",
+    "Id": "event-e35f9b272df708df1600000000000000",
+    "Links": {
+      "Self": "api/events/event-e35f9b272df708df1600000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:40.467023Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ShutdownRequested"
+      },
+      {
+        "Name": "Reason",
+        "Value": "UserCanceled"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ShutdownRequested",
+    "Id": "event-e35e27162df708df1500000000000000",
+    "Links": {
+      "Self": "api/events/event-e35e27162df708df1500000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:39.9863983Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Received"
+      },
+      {
+        "Name": "Kind",
+        "Value": "ack"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:39.9828418+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Received",
+    "Id": "event-e314d0af2df708df1400000000000000",
+    "Links": {
+      "Self": "api/events/event-e314d0af2df708df1400000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:39.9855723Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ProcessingStarted"
+      },
+      {
+        "Name": "Kind",
+        "Value": "ack"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ProcessingStarted",
+    "Id": "event-e314b06b2df708df1300000000000000",
+    "Links": {
+      "Self": "api/events/event-e314b06b2df708df1300000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:39.984691Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueAdmission"
+      },
+      {
+        "Name": "Kind",
+        "Value": "ack"
+      },
+      {
+        "Name": "Result",
+        "Value": "Accepted"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueAdmission",
+    "Id": "event-e3148dfe2df708df1200000000000000",
+    "Links": {
+      "Self": "api/events/event-e3148dfe2df708df1200000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:39.9829872Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 82
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:39.9828418+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Accepted"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-e3144b702df708df1100000000000000",
+    "Links": {
+      "Self": "api/events/event-e3144b702df708df1100000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:37.2827642Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Received"
+      },
+      {
+        "Name": "Kind",
+        "Value": "ack"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:37.2746636+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Received",
+    "Id": "event-e17845fa2df708df1000000000000000",
+    "Links": {
+      "Self": "api/events/event-e17845fa2df708df1000000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:37.2780462Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ProcessingStarted"
+      },
+      {
+        "Name": "Kind",
+        "Value": "ack"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ProcessingStarted",
+    "Id": "event-e1778dae2df708df0f00000000000000",
+    "Links": {
+      "Self": "api/events/event-e1778dae2df708df0f00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:37.2779854Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueAdmission"
+      },
+      {
+        "Name": "Kind",
+        "Value": "ack"
+      },
+      {
+        "Name": "Result",
+        "Value": "Accepted"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueAdmission",
+    "Id": "event-e1778b4e2df708df0e00000000000000",
+    "Links": {
+      "Self": "api/events/event-e1778b4e2df708df0e00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:37.2769313Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 47
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:37.2746636+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Accepted"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-e17762212df708df0d00000000000000",
+    "Links": {
+      "Self": "api/events/event-e17762212df708df0d00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:34.9107139Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Received"
+      },
+      {
+        "Name": "Kind",
+        "Value": "alarm"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:34.9079841+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Received",
+    "Id": "event-e00e53c32df708df0c00000000000000",
+    "Links": {
+      "Self": "api/events/event-e00e53c32df708df0c00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:34.9100167Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ProcessingStarted"
+      },
+      {
+        "Name": "Kind",
+        "Value": "alarm"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ProcessingStarted",
+    "Id": "event-e00e38872df708df0b00000000000000",
+    "Links": {
+      "Self": "api/events/event-e00e38872df708df0b00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:34.9091345Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueAdmission"
+      },
+      {
+        "Name": "Kind",
+        "Value": "alarm"
+      },
+      {
+        "Name": "Result",
+        "Value": "Accepted"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueAdmission",
+    "Id": "event-e00e16112df708df0a00000000000000",
+    "Links": {
+      "Self": "api/events/event-e00e16112df708df0a00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:34.9082179Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 76
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:34.9079841+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Accepted"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-e00df2432df708df0900000000000000",
+    "Links": {
+      "Self": "api/events/event-e00df2432df708df0900000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:33.8546043Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Received"
+      },
+      {
+        "Name": "Kind",
+        "Value": "alarm"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:33.8453032+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Received",
+    "Id": "event-df6d2d7b2df708df0800000000000000",
+    "Links": {
+      "Self": "api/events/event-df6d2d7b2df708df0800000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:33.8497018Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ProcessingStarted"
+      },
+      {
+        "Name": "Kind",
+        "Value": "alarm"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ProcessingStarted",
+    "Id": "event-df6c6dfa2df708df0700000000000000",
+    "Links": {
+      "Self": "api/events/event-df6c6dfa2df708df0700000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:33.8495111Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueAdmission"
+      },
+      {
+        "Name": "Kind",
+        "Value": "alarm"
+      },
+      {
+        "Name": "Result",
+        "Value": "Accepted"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueAdmission",
+    "Id": "event-df6c66872df708df0600000000000000",
+    "Links": {
+      "Self": "api/events/event-df6c66872df708df0600000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:33.848019Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 111
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:33.8453032+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Accepted"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-df6c2c3e2df708df0500000000000000",
+    "Links": {
+      "Self": "api/events/event-df6c2c3e2df708df0500000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:31.1742935Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Received"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:31.1718385+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Received",
+    "Id": "event-ddd431d72df708df0400000000000000",
+    "Links": {
+      "Self": "api/events/event-ddd431d72df708df0400000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:31.1732416Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ProcessingStarted"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ProcessingStarted",
+    "Id": "event-ddd408c02df708df0200000000000000",
+    "Links": {
+      "Self": "api/events/event-ddd408c02df708df0200000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:31.1732337Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueAdmission"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "Result",
+        "Value": "Accepted"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueAdmission",
+    "Id": "event-ddd408712df708df0300000000000000",
+    "Links": {
+      "Self": "api/events/event-ddd408712df708df0300000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:31.1720617Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 75
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:31.1718385+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Accepted"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-ddd3daa92df708df0100000000000000",
+    "Links": {
+      "Self": "api/events/event-ddd3daa92df708df0100000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:29.9973829Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Received"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:29.986044+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Received",
+    "Id": "event-dd209cc52df708df4100000000000000",
+    "Links": {
+      "Self": "api/events/event-dd209cc52df708df4100000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:29.9924527Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ProcessingStarted"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ProcessingStarted",
+    "Id": "event-dd1fdc2f2df708df4000000000000000",
+    "Links": {
+      "Self": "api/events/event-dd1fdc2f2df708df4000000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:29.9923799Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueAdmission"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "Result",
+        "Value": "Accepted"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueAdmission",
+    "Id": "event-dd1fd9572df708df3f00000000000000",
+    "Links": {
+      "Self": "api/events/event-dd1fd9572df708df3f00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:29.990017Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 76
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:29.986044+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Accepted"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-dd1f7d0a2df708df3e00000000000000",
+    "Links": {
+      "Self": "api/events/event-dd1f7d0a2df708df3e00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:28.2476606Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Received"
+      },
+      {
+        "Name": "Kind",
+        "Value": "heartbeat"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:28.2456155+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Received",
+    "Id": "event-dc15a03e2df708df3d00000000000000",
+    "Links": {
+      "Self": "api/events/event-dc15a03e2df708df3d00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:28.2468308Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ProcessingStarted"
+      },
+      {
+        "Name": "Kind",
+        "Value": "heartbeat"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ProcessingStarted",
+    "Id": "event-dc157fd42df708df3c00000000000000",
+    "Links": {
+      "Self": "api/events/event-dc157fd42df708df3c00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:28.246802Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueAdmission"
+      },
+      {
+        "Name": "Kind",
+        "Value": "heartbeat"
+      },
+      {
+        "Name": "Result",
+        "Value": "Accepted"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueAdmission",
+    "Id": "event-dc157eb42df708df3b00000000000000",
+    "Links": {
+      "Self": "api/events/event-dc157eb42df708df3b00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:28.2460522Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 39
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:28.2456155+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Accepted"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-dc15616a2df708df3a00000000000000",
+    "Links": {
+      "Self": "api/events/event-dc15616a2df708df3a00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:27.4718113Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Received"
+      },
+      {
+        "Name": "Kind",
+        "Value": "heartbeat"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:27.4242426+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Received",
+    "Id": "event-db9f3da12df708df3900000000000000",
+    "Links": {
+      "Self": "api/events/event-db9f3da12df708df3900000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:27.4458685Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ProcessingStarted"
+      },
+      {
+        "Name": "Kind",
+        "Value": "heartbeat"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ProcessingStarted",
+    "Id": "event-db9b483d2df708df3800000000000000",
+    "Links": {
+      "Self": "api/events/event-db9b483d2df708df3800000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:27.4440502Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueAdmission"
+      },
+      {
+        "Name": "Kind",
+        "Value": "heartbeat"
+      },
+      {
+        "Name": "Result",
+        "Value": "Accepted"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueAdmission",
+    "Id": "event-db9b01362df708df3700000000000000",
+    "Links": {
+      "Self": "api/events/event-db9b01362df708df3700000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:27.4354797Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 39
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:27.4242426+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Accepted"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-db99b26d2df708df3600000000000000",
+    "Links": {
+      "Self": "api/events/event-db99b26d2df708df3600000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:26.0773336Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Subscribed"
+      },
+      {
+        "Name": "QoS",
+        "Value": 0
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Subscribed",
+    "Id": "event-daca75d82df708df3500000000000000",
+    "Links": {
+      "Self": "api/events/event-daca75d82df708df3500000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:26.0117075Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Connected"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Connected",
+    "Id": "event-dac072532df708df3400000000000000",
+    "Links": {
+      "Self": "api/events/event-dac072532df708df3400000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:25.9191821Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Connecting"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Connecting",
+    "Id": "event-dab2540d2df708df3300000000000000",
+    "Links": {
+      "Self": "api/events/event-dab2540d2df708df3300000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:25.8662839Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "ClientId",
+        "Value": "amr-demo-8afd9976657e48b48dc2ddb16982682a"
+      },
+      {
+        "Name": "ConnectTimeoutSeconds",
+        "Value": 3
+      },
+      {
+        "Name": "EventType",
+        "Value": "Settings"
+      },
+      {
+        "Name": "Port",
+        "Value": 1884
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Settings",
+    "Id": "event-daaa41b72df708df3200000000000000",
+    "Links": {
+      "Self": "api/events/event-daaa41b72df708df3200000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:24.6247816Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ExitCode"
+      },
+      {
+        "Name": "ExitCode",
+        "Value": 0
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ExitCode",
+    "Id": "event-d9ecd1882df708df3100000000000000",
+    "Links": {
+      "Self": "api/events/event-d9ecd1882df708df3100000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:24.6239303Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Disposed"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Disposed",
+    "Id": "event-d9ecb0472df708df3000000000000000",
+    "Links": {
+      "Self": "api/events/event-d9ecb0472df708df3000000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:24.6231179Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Disconnected"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Disconnected",
+    "Id": "event-d9ec908b2df708df2f00000000000000",
+    "Links": {
+      "Self": "api/events/event-d9ec908b2df708df2f00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:24.5861327Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Disconnecting"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Disconnecting",
+    "Id": "event-d9e6ebcf2df708df2e00000000000000",
+    "Links": {
+      "Self": "api/events/event-d9e6ebcf2df708df2e00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:24.5856494Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "SubscriptionStopped"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR SubscriptionStopped",
+    "Id": "event-d9e6d8ee2df708df2d00000000000000",
+    "Links": {
+      "Self": "api/events/event-d9e6d8ee2df708df2d00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:24.5454074Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Unsubscribing"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Unsubscribing",
+    "Id": "event-d9e0b4fa2df708df2c00000000000000",
+    "Links": {
+      "Self": "api/events/event-d9e0b4fa2df708df2c00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:24.5450676Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueStopped"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueStopped",
+    "Id": "event-d9e0a7b42df708df2b00000000000000",
+    "Links": {
+      "Self": "api/events/event-d9e0a7b42df708df2b00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:24.5446773Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": null
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "Code",
+        "Value": "Stopped"
+      },
+      {
+        "Name": "Count",
+        "Value": 0
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueEvent"
+      },
+      {
+        "Name": "ExceptionType",
+        "Value": null
+      },
+      {
+        "Name": "Kind",
+        "Value": null
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Warning",
+    "RenderedMessage": "AMR QueueEvent",
+    "Id": "event-d9e098752df708df2a00000000000000",
+    "Links": {
+      "Self": "api/events/event-d9e098752df708df2a00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:24.5321047Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ShutdownRequested"
+      },
+      {
+        "Name": "Reason",
+        "Value": "UserCanceled"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ShutdownRequested",
+    "Id": "event-d9dead572df708df2900000000000000",
+    "Links": {
+      "Self": "api/events/event-d9dead572df708df2900000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:18.2590504Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Received"
+      },
+      {
+        "Name": "Kind",
+        "Value": "ack"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:18.2560498+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Received",
+    "Id": "event-d6217c282df708df2800000000000000",
+    "Links": {
+      "Self": "api/events/event-d6217c282df708df2800000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:18.2580682Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ProcessingStarted"
+      },
+      {
+        "Name": "Kind",
+        "Value": "ack"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ProcessingStarted",
+    "Id": "event-d62155ca2df708df2700000000000000",
+    "Links": {
+      "Self": "api/events/event-d62155ca2df708df2700000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:18.2579097Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueAdmission"
+      },
+      {
+        "Name": "Kind",
+        "Value": "ack"
+      },
+      {
+        "Name": "Result",
+        "Value": "Accepted"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueAdmission",
+    "Id": "event-d6214f992df708df2600000000000000",
+    "Links": {
+      "Self": "api/events/event-d6214f992df708df2600000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:18.2561664Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 47
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:18.2560498+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Accepted"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-d6210b802df708df2500000000000000",
+    "Links": {
+      "Self": "api/events/event-d6210b802df708df2500000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:17.1904734Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "Code",
+        "Value": "IdMismatch"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Rejected"
+      },
+      {
+        "Name": "Field",
+        "Value": "$.id"
+      },
+      {
+        "Name": "Reason",
+        "Value": "Payload ID must exactly match Topic ID."
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Warning",
+    "RenderedMessage": "AMR Rejected",
+    "Id": "event-d57e6ede2df708df2400000000000000",
+    "Links": {
+      "Self": "api/events/event-d57e6ede2df708df2400000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:17.1893938Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 56
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:17.1887526+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Rejected"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-d57e44b22df708df2300000000000000",
+    "Links": {
+      "Self": "api/events/event-d57e44b22df708df2300000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:16.072783Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Received"
+      },
+      {
+        "Name": "Kind",
+        "Value": "alarm"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:16.0683885+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Received",
+    "Id": "event-d4d3e3162df708df2200000000000000",
+    "Links": {
+      "Self": "api/events/event-d4d3e3162df708df2200000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:16.0712816Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ProcessingStarted"
+      },
+      {
+        "Name": "Kind",
+        "Value": "alarm"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ProcessingStarted",
+    "Id": "event-d4d3a8702df708df2100000000000000",
+    "Links": {
+      "Self": "api/events/event-d4d3a8702df708df2100000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:16.0702999Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueAdmission"
+      },
+      {
+        "Name": "Kind",
+        "Value": "alarm"
+      },
+      {
+        "Name": "Result",
+        "Value": "Accepted"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueAdmission",
+    "Id": "event-d4d382172df708df2000000000000000",
+    "Links": {
+      "Self": "api/events/event-d4d382172df708df2000000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:16.068657Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 111
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:16.0683885+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Accepted"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-d4d341ea2df708df1f00000000000000",
+    "Links": {
+      "Self": "api/events/event-d4d341ea2df708df1f00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:13.2849539Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "Code",
+        "Value": "InvalidJson"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Rejected"
+      },
+      {
+        "Name": "Field",
+        "Value": "$"
+      },
+      {
+        "Name": "Reason",
+        "Value": "Invalid JSON or nesting exceeds depth 16."
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Warning",
+    "RenderedMessage": "AMR Rejected",
+    "Id": "event-d32a7f832df708df1e00000000000000",
+    "Links": {
+      "Self": "api/events/event-d32a7f832df708df1e00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:13.2827857Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 20
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:13.2700068+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Rejected"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-d32a2ad12df708df1d00000000000000",
+    "Links": {
+      "Self": "api/events/event-d32a2ad12df708df1d00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:12.0323272Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Received"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:12.0287635+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Received",
+    "Id": "event-d26b5cc82df708df1c00000000000000",
+    "Links": {
+      "Self": "api/events/event-d26b5cc82df708df1c00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:12.03122Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ProcessingStarted"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ProcessingStarted",
+    "Id": "event-d26b31882df708df1b00000000000000",
+    "Links": {
+      "Self": "api/events/event-d26b31882df708df1b00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:12.0309843Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueAdmission"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "Result",
+        "Value": "Accepted"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueAdmission",
+    "Id": "event-d26b28532df708df1a00000000000000",
+    "Links": {
+      "Self": "api/events/event-d26b28532df708df1a00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:12.0290474Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 76
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:12.0287635+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Accepted"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-d26adcaa2df708df1900000000000000",
+    "Links": {
+      "Self": "api/events/event-d26adcaa2df708df1900000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:10.5520025Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "Code",
+        "Value": "InvalidValue"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Rejected"
+      },
+      {
+        "Name": "Field",
+        "Value": "$.sp"
+      },
+      {
+        "Name": "Reason",
+        "Value": "Speed must be non-negative."
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Warning",
+    "RenderedMessage": "AMR Rejected",
+    "Id": "event-d1897b992df708df1800000000000000",
+    "Links": {
+      "Self": "api/events/event-d1897b992df708df1800000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:10.5506559Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 66
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:10.5500299+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Rejected"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-d18946ff2df708df1700000000000000",
+    "Links": {
+      "Self": "api/events/event-d18946ff2df708df1700000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:09.3211028Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Received"
+      },
+      {
+        "Name": "Kind",
+        "Value": "heartbeat"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:09.3195253+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Received",
+    "Id": "event-d0cda9942df708df1600000000000000",
+    "Links": {
+      "Self": "api/events/event-d0cda9942df708df1600000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:09.3206077Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ProcessingStarted"
+      },
+      {
+        "Name": "Kind",
+        "Value": "heartbeat"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ProcessingStarted",
+    "Id": "event-d0cd963d2df708df1500000000000000",
+    "Links": {
+      "Self": "api/events/event-d0cd963d2df708df1500000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:09.3201115Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueAdmission"
+      },
+      {
+        "Name": "Kind",
+        "Value": "heartbeat"
+      },
+      {
+        "Name": "Result",
+        "Value": "Accepted"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueAdmission",
+    "Id": "event-d0cd82db2df708df1400000000000000",
+    "Links": {
+      "Self": "api/events/event-d0cd82db2df708df1400000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:09.319651Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 39
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:09.3195253+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Accepted"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-d0cd70de2df708df1300000000000000",
+    "Links": {
+      "Self": "api/events/event-d0cd70de2df708df1300000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:06.6773799Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "Code",
+        "Value": "MissingField"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Rejected"
+      },
+      {
+        "Name": "Field",
+        "Value": "$.ts"
+      },
+      {
+        "Name": "Reason",
+        "Value": "Required field is missing."
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Warning",
+    "RenderedMessage": "AMR Rejected",
+    "Id": "event-cf3a43272df708df1200000000000000",
+    "Links": {
+      "Self": "api/events/event-cf3a43272df708df1200000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:06.6732588Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 30
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:06.6725286+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Rejected"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-cf39a22c2df708df1100000000000000",
+    "Links": {
+      "Self": "api/events/event-cf39a22c2df708df1100000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:04.5856155Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Received"
+      },
+      {
+        "Name": "Kind",
+        "Value": "ack"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:04.5833802+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Received",
+    "Id": "event-cdfb159b2df708df1000000000000000",
+    "Links": {
+      "Self": "api/events/event-cdfb159b2df708df1000000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:04.5846245Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ProcessingStarted"
+      },
+      {
+        "Name": "Kind",
+        "Value": "ack"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ProcessingStarted",
+    "Id": "event-cdfaeee52df708df0e00000000000000",
+    "Links": {
+      "Self": "api/events/event-cdfaeee52df708df0e00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:04.5846103Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueAdmission"
+      },
+      {
+        "Name": "Kind",
+        "Value": "ack"
+      },
+      {
+        "Name": "Result",
+        "Value": "Accepted"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueAdmission",
+    "Id": "event-cdfaee572df708df0f00000000000000",
+    "Links": {
+      "Self": "api/events/event-cdfaee572df708df0f00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:04.5836094Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 82
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:04.5833802+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Accepted"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-cdfac73e2df708df0d00000000000000",
+    "Links": {
+      "Self": "api/events/event-cdfac73e2df708df0d00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:03.5878613Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Received"
+      },
+      {
+        "Name": "Kind",
+        "Value": "ack"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:03.5779537+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Received",
+    "Id": "event-cd62d6d52df708df0c00000000000000",
+    "Links": {
+      "Self": "api/events/event-cd62d6d52df708df0c00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:03.5831579Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ProcessingStarted"
+      },
+      {
+        "Name": "Kind",
+        "Value": "ack"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ProcessingStarted",
+    "Id": "event-cd621f1b2df708df0b00000000000000",
+    "Links": {
+      "Self": "api/events/event-cd621f1b2df708df0b00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:03.5831276Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueAdmission"
+      },
+      {
+        "Name": "Kind",
+        "Value": "ack"
+      },
+      {
+        "Name": "Result",
+        "Value": "Accepted"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueAdmission",
+    "Id": "event-cd621dec2df708df0a00000000000000",
+    "Links": {
+      "Self": "api/events/event-cd621dec2df708df0a00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:03.5820313Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 47
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:03.5779537+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Accepted"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-cd61f3192df708df0900000000000000",
+    "Links": {
+      "Self": "api/events/event-cd61f3192df708df0900000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:02.3673763Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Received"
+      },
+      {
+        "Name": "Kind",
+        "Value": "alarm"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:02.364035+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Received",
+    "Id": "event-cca89ba32df708df0800000000000000",
+    "Links": {
+      "Self": "api/events/event-cca89ba32df708df0800000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:02.3661265Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ProcessingStarted"
+      },
+      {
+        "Name": "Kind",
+        "Value": "alarm"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ProcessingStarted",
+    "Id": "event-cca86ad12df708df0700000000000000",
+    "Links": {
+      "Self": "api/events/event-cca86ad12df708df0700000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:02.3660008Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueAdmission"
+      },
+      {
+        "Name": "Kind",
+        "Value": "alarm"
+      },
+      {
+        "Name": "Result",
+        "Value": "Accepted"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueAdmission",
+    "Id": "event-cca865e82df708df0600000000000000",
+    "Links": {
+      "Self": "api/events/event-cca865e82df708df0600000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:02.3642642Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 76
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:02.364035+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Accepted"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-cca822122df708df0500000000000000",
+    "Links": {
+      "Self": "api/events/event-cca822122df708df0500000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:00.8683961Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Received"
+      },
+      {
+        "Name": "Kind",
+        "Value": "alarm"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:00.8568761+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Received",
+    "Id": "event-cbc3e1b92df708df0400000000000000",
+    "Links": {
+      "Self": "api/events/event-cbc3e1b92df708df0400000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:00.8634176Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ProcessingStarted"
+      },
+      {
+        "Name": "Kind",
+        "Value": "alarm"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ProcessingStarted",
+    "Id": "event-cbc31f402df708df0300000000000000",
+    "Links": {
+      "Self": "api/events/event-cbc31f402df708df0300000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:00.8632633Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueAdmission"
+      },
+      {
+        "Name": "Kind",
+        "Value": "alarm"
+      },
+      {
+        "Name": "Result",
+        "Value": "Accepted"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueAdmission",
+    "Id": "event-cbc319392df708df0200000000000000",
+    "Links": {
+      "Self": "api/events/event-cbc319392df708df0200000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:44:00.859995Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 111
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:44:00.8568761+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Accepted"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-cbc2998e2df708df0100000000000000",
+    "Links": {
+      "Self": "api/events/event-cbc2998e2df708df0100000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:43:59.5971934Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Received"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:43:59.5947786+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Received",
+    "Id": "event-cb01e95e2df708df1400000000000000",
+    "Links": {
+      "Self": "api/events/event-cb01e95e2df708df1400000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:43:59.5961784Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ProcessingStarted"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ProcessingStarted",
+    "Id": "event-cb01c1b82df708df1300000000000000",
+    "Links": {
+      "Self": "api/events/event-cb01c1b82df708df1300000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:43:59.5961338Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueAdmission"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "Result",
+        "Value": "Accepted"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueAdmission",
+    "Id": "event-cb01bffa2df708df1200000000000000",
+    "Links": {
+      "Self": "api/events/event-cb01bffa2df708df1200000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:43:59.5949633Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 75
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:43:59.5947786+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Accepted"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-cb0192412df708df1100000000000000",
+    "Links": {
+      "Self": "api/events/event-cb0192412df708df1100000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:43:58.4640476Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Received"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:43:58.4459377+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Received",
+    "Id": "event-ca5501dc2df708df1000000000000000",
+    "Links": {
+      "Self": "api/events/event-ca5501dc2df708df1000000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:43:58.4507916Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ProcessingStarted"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ProcessingStarted",
+    "Id": "event-ca52fc0c2df708df0f00000000000000",
+    "Links": {
+      "Self": "api/events/event-ca52fc0c2df708df0f00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:43:58.4505849Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueAdmission"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "Result",
+        "Value": "Accepted"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueAdmission",
+    "Id": "event-ca52f3f92df708df0e00000000000000",
+    "Links": {
+      "Self": "api/events/event-ca52f3f92df708df0e00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:43:58.4490981Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 76
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:43:58.4459377+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Accepted"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-ca52b9e52df708df0d00000000000000",
+    "Links": {
+      "Self": "api/events/event-ca52b9e52df708df0d00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:43:56.621811Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Received"
+      },
+      {
+        "Name": "Kind",
+        "Value": "heartbeat"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:43:56.6195115+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Received",
+    "Id": "event-c93be77e2df708df0c00000000000000",
+    "Links": {
+      "Self": "api/events/event-c93be77e2df708df0c00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:43:56.6209225Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ProcessingStarted"
+      },
+      {
+        "Name": "Kind",
+        "Value": "heartbeat"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ProcessingStarted",
+    "Id": "event-c93bc4c92df708df0b00000000000000",
+    "Links": {
+      "Self": "api/events/event-c93bc4c92df708df0b00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:43:56.6208563Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_002"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueAdmission"
+      },
+      {
+        "Name": "Kind",
+        "Value": "heartbeat"
+      },
+      {
+        "Name": "Result",
+        "Value": "Accepted"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueAdmission",
+    "Id": "event-c93bc2332df708df0a00000000000000",
+    "Links": {
+      "Self": "api/events/event-c93bc2332df708df0a00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:43:56.6199136Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 39
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:43:56.6195115+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Accepted"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-c93b9d602df708df0900000000000000",
+    "Links": {
+      "Self": "api/events/event-c93b9d602df708df0900000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:43:54.9508183Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Received"
+      },
+      {
+        "Name": "Kind",
+        "Value": "heartbeat"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:43:54.8875607+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Received",
+    "Id": "event-c83cee572df708df0800000000000000",
+    "Links": {
+      "Self": "api/events/event-c83cee572df708df0800000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:43:54.9169286Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "ProcessingStarted"
+      },
+      {
+        "Name": "Kind",
+        "Value": "heartbeat"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR ProcessingStarted",
+    "Id": "event-c837c2862df708df0700000000000000",
+    "Links": {
+      "Self": "api/events/event-c837c2862df708df0700000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:43:54.9140883Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "QueueAdmission"
+      },
+      {
+        "Name": "Kind",
+        "Value": "heartbeat"
+      },
+      {
+        "Name": "Result",
+        "Value": "Accepted"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR QueueAdmission",
+    "Id": "event-c83753932df708df0600000000000000",
+    "Links": {
+      "Self": "api/events/event-c83753932df708df0600000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:43:54.9020515Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "MessageDiagnostic"
+      },
+      {
+        "Name": "PayloadBytes",
+        "Value": 39
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-10-20T00:43:54.8875607+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      },
+      {
+        "Name": "Validation",
+        "Value": "Accepted"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR MessageDiagnostic",
+    "Id": "event-c8357d632df708df0500000000000000",
+    "Links": {
+      "Self": "api/events/event-c8357d632df708df0500000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:43:52.1292584Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Subscribed"
+      },
+      {
+        "Name": "QoS",
+        "Value": 0
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Subscribed",
+    "Id": "event-c68e65282df708df0400000000000000",
+    "Links": {
+      "Self": "api/events/event-c68e65282df708df0400000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:43:52.082972Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Connected"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Connected",
+    "Id": "event-c68755182df708df0300000000000000",
+    "Links": {
+      "Self": "api/events/event-c68755182df708df0300000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:43:52.0095839Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "EventType",
+        "Value": "Connecting"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Connecting",
+    "Id": "event-c67c225f2df708df0200000000000000",
+    "Links": {
+      "Self": "api/events/event-c67c225f2df708df0200000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T15:43:51.9773749Z",
+    "Properties": [
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "ClientId",
+        "Value": "amr-demo-120a89b56abc4e10b5701a128b5e92ce"
+      },
+      {
+        "Name": "ConnectTimeoutSeconds",
+        "Value": 3
+      },
+      {
+        "Name": "EventType",
+        "Value": "Settings"
+      },
+      {
+        "Name": "Port",
+        "Value": 1884
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-seq-mqtt-03-online"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR Settings",
+    "Id": "event-c67738352df708df0100000000000000",
+    "Links": {
+      "Self": "api/events/event-c67738352df708df0100000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  }
+]

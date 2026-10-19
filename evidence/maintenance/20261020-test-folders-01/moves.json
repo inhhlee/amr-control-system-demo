@@ -1,0 +1,82 @@
+[
+  {
+    "source": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\MqttConnectionTests.cs",
+    "target": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Mqtt\\Connection\\MqttConnectionTests.cs",
+    "sha256": "56D70E386AEA42EB11F533A7D2313896BD89E7E68D88550AD23908390CD3D394"
+  },
+  {
+    "source": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\MqttConnectionFailureTests.cs",
+    "target": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Mqtt\\Connection\\MqttConnectionFailureTests.cs",
+    "sha256": "C90E243665956EE3267D7767A4DE94D86382322C7CC16EF8B1A5FC85CA200229"
+  },
+  {
+    "source": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\HeartbeatSubscriptionTests.cs",
+    "target": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Mqtt\\Subscriptions\\HeartbeatSubscriptionTests.cs",
+    "sha256": "F2C98E620E2EC01166A0D1D2A06EF324E9C75B0D298ED80434562F8E34871E07"
+  },
+  {
+    "source": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\MessageSubscriptionTests.cs",
+    "target": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Mqtt\\Subscriptions\\MessageSubscriptionTests.cs",
+    "sha256": "620D55AE24DAE636BC93137D498ECC2E5F5B6BB8460AB7B86FEA72F7523FE71C"
+  },
+  {
+    "source": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\AmrReceiveQueueTests.cs",
+    "target": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Mqtt\\Queues\\AmrReceiveQueueTests.cs",
+    "sha256": "D4BAEDD8ACA2F15660F2730FD3433AA75FCCF882EDF8E46F4C0D47E8D2A4DFFA"
+  },
+  {
+    "source": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\AmrReceiveQueueBoundaryTests.cs",
+    "target": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Mqtt\\Queues\\AmrReceiveQueueBoundaryTests.cs",
+    "sha256": "4DB676AB1C6ECBAF3D474C8201211F9243DBC9C4B57198792B3AE3E0758E38D9"
+  },
+  {
+    "source": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\AmrReceiveQueueShutdownTests.cs",
+    "target": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Mqtt\\Queues\\AmrReceiveQueueShutdownTests.cs",
+    "sha256": "F4D564CFC5E7D3A29A32F06EFB5D0FCB2929A710B632568878C2F17E88F60CCE"
+  },
+  {
+    "source": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\HeartbeatValidatorTests.cs",
+    "target": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Validation\\HeartbeatValidatorTests.cs",
+    "sha256": "FAA761D201B0A94778633B28EFFCE1FED4243689CA30DF2EA083AF9B813B842D"
+  },
+  {
+    "source": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\TelemetryValidatorTests.cs",
+    "target": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Validation\\TelemetryValidatorTests.cs",
+    "sha256": "7C09035A772D947ACF7C70802255F0911785DA7FFFCFF290E645FCF67A2793C1"
+  },
+  {
+    "source": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\AlarmValidatorTests.cs",
+    "target": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Validation\\AlarmValidatorTests.cs",
+    "sha256": "B7D1CF7A60639CE9427B791EC9ADB8CBB5E318F98741F5F70382BCA7417D9533"
+  },
+  {
+    "source": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\AckValidatorTests.cs",
+    "target": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Validation\\AckValidatorTests.cs",
+    "sha256": "BB727F21F3290D691053663CE44EA4D145E6E3DD243F844D9AB7E14DCF6ACA17"
+  },
+  {
+    "source": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\MessageFieldValidationTests.cs",
+    "target": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Validation\\MessageFieldValidationTests.cs",
+    "sha256": "6D9096C1AB067EB6833929CDD7EC05978A93E250B3A73518829C6AE879DC8205"
+  },
+  {
+    "source": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\MessageValidationRegressionTests.cs",
+    "target": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Validation\\MessageValidationRegressionTests.cs",
+    "sha256": "4C277CD69DEC818F0F0A876D661E37520DEC421F7BB9B7B76EA9B259A510D96A"
+  },
+  {
+    "source": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\ConsoleConnectionFailureTests.cs",
+    "target": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Console\\ConsoleConnectionFailureTests.cs",
+    "sha256": "350ED8A675D54A7960169F652BB1D99CFB31B9985CCD34E275F8FA4F18C825C8"
+  },
+  {
+    "source": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\SeqLoggingTests.cs",
+    "target": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Console\\Logging\\SeqLoggingTests.cs",
+    "sha256": "F175C9AFD678F338EB25939519C09CEE53A8FA34AF6713068CEFEA5C8E9B914C"
+  },
+  {
+    "source": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\FakeMqttClient.cs",
+    "target": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\TestDoubles\\FakeMqttClient.cs",
+    "sha256": "06B71425B7F7904DE027B4578CFAE44A0B2F2D3B0363A0903E3F5FC0D49D2056"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "result": "passed",
+  "completedAtUtc": "2026-10-19T15:45:48.8994723+00:00",
+  "seqEvents": 114,
+  "seqReceived": 20,
+  "seqRejected": 4,
+  "seqExitCodeZero": 2,
+  "amrIds": [
+    "AMR_001",
+    "AMR_002"
+  ],
+  "kinds": [
+    "ack",
+    "alarm",
+    "heartbeat",
+    "telemetry"
+  ],
+  "actualMqttOnline": "evidence/COM-01/20261020-seq-mqtt-03-online/verification.json",
+  "actualMqttUnavailableSeq": "evidence/COM-01/20261020-seq-mqtt-03-offline/verification.json",
+  "unavailableEndpoint": "http://127.0.0.1:61239",
+  "sharedSeqStopped": false
+}

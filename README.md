@@ -1,6 +1,49 @@
 # amr-control-system-demo
 가상 AMR 기반 관제시스템 구현 및 Issue·PR 개발 절차 실습
 
+## Seq 구조화 로그 (Issue #26)
+
+기존 콘솔 출력·stdout/stderr 구분·종료 코드를 유지하고, 선택적으로 Serilog 이벤트를 Seq에 전송한다.
+작업 브랜치는 `feature/26-serilog-seq`, 기준은 develop `b4265af`다. 구현·테스트 폴더 정리를 `76cb19f`로 커밋·푸시하고 [PR #27](https://github.com/inhhlee/amr-control-system-demo/pull/27)을 develop 대상으로 생성했다. [최초 AI 리뷰](https://github.com/inhhlee/amr-control-system-demo/pull/27#pullrequestreview-5574317537)의 P2에 따라 종료 원인을 분리했다. 먼저 접수한 사용자 취소는 `UserCanceled`, 연결 단절은 `ConnectionLost`로 유지하며 뒤늦은 신호는 원인을 덮어쓰지 않는다. [P2 수정 검증](evidence/LOG/20261020-p2-green-01/README.md): 신규 11건 포함 전체 591건 통과. 병합·Issue 종료는 하지 않았으며 최신 재리뷰는 PR에서 확인한다. 아래 실행 증거의 미커밋 표시는 당시 시험 시점의 기록이다.
+
+기존 Seq는 `C:\practice\docker\docker-compose.yml`의 `amr-seq`이며 `C:\practice\docker\seq\data`를 재사용한다.
+호스트 주소는 `http://127.0.0.1:5341`, 확인한 실행 버전은 2026.1.17114다. 이 저장소 Compose에는 Seq를 중복 정의하지 않는다.
+
+```powershell
+# 기존 컨테이너를 사용할 때만 실행. 새 인스턴스 생성·데이터 초기화는 하지 않는다.
+docker start amr-seq
+$env:AMR_SEQ_URL = 'http://127.0.0.1:5341'
+$env:AMR_LOG_RUN_ID = 'my-amr-test-001' # 선택. 생략하면 실행마다 새 GUID
+dotnet run --project src/Amr.Communication.Console -- --host 127.0.0.1 --port 1884
+```
+
+`AMR_SEQ_URL`을 지정하지 않으면 추가 출력·HTTP 전송 없이 기존처럼 실행한다. 선택 항목 `AMR_SEQ_API_KEY`는 환경 변수로만 제공하며 소스·명령 기록·증거에 실제 키를 넣지 않는다. URL의 사용자 정보·쿼리·fragment, 잘못된 RunId·제어문자 API 키는 값을 출력하지 않고 `SeqDisabled Reason=InvalidConfiguration`으로 로그 기능만 비활성화한다. RunId는 영문/숫자/하이픈/밑줄 1~128자다. 잘못된 로그 설정은 MQTT 설정 오류나 접속 실패와 구분한다.
+
+Seq에서 `RunId = 'my-amr-test-001'`, `AmrId = 'AMR_001' and EventType = 'Received'`, `EventType = 'ConnectFailed'`로 검색한다. `Application`, `EventType`, `RunId`는 공통 속성이고 AMR·메시지 유형·실패 이유는 해당 사건에만 포함된다. 원문 Payload·Model·자유 형식 예외 메시지는 전송하지 않는다. 문자열 속성은 512자 제한이며 잘린 경우 `<속성명>Truncated=true`가 붙으므로 긴 ID를 완전한 상관관계 키로 취급하지 않는다. 콘솔의 기존 `--show-payload` 시험용 동작은 유지한다.
+
+### 장애·종료 정책과 선택 이유
+
+- Serilog 4.4.0과 공식 `Serilog.Formatting.Compact` 3.0.0을 사용한다. 통신 라이브러리는 변경하지 않고 콘솔에서 기존 콜백을 구조화 이벤트로 연결한다.
+- 작은 `SeqLogSink`가 공식 CLEF formatter의 출력을 Seq `/ingest/clef`에 보낸다. 대안인 `Serilog.Sinks.Seq`는 일반적인 배치·재시도·디스크 버퍼 지원과 유지보수 비용에서 유리하다. 이번에는 종료 시 실제 HTTP 취소와 명확한 실패/폐기 계수를 제어하기 위해 제한된 전송기를 사용한다. 별도 전송 코드와 API 호환성을 시험할 책임이 추가된다.
+- 큐 최대 1,024건, 한 배치 최대 128건, 이벤트 최대 UTF-8 16KB. MQTT 콜백에서는 네트워크나 큐 공간을 기다리지 않고, 가득 찬 경우 새 로그를 폐기한다. 큐 크기는 이벤트 수 한도이며 관리 객체·UTF-16 문자열·배치 복사 비용도 발생한다.
+- HTTP 요청 1초, 실패 뒤 250ms 간격. 실패한 배치는 재전송하지 않으며 이후 새 이벤트에서 연결을 다시 시도한다. 로그 재전송 정책과 MQTT 자동 재접속은 별개다.
+- MQTT 정리와 `ExitCode` 기록 뒤 최대 3초간 남은 이벤트를 전송한다. 기한이 되면 진행 중 HTTP를 취소하고 전송 작업의 실제 종료·소켓 정리를 기다린다. 벽시계 3초의 실시간 보장이 아니며 런타임 스케줄링·정리 비용은 별도다.
+- 실패/폐기가 있으면 stderr에 `SeqDeliverySummary RunId=... Sent=... Failed=... Dropped=...` 한 줄을 추가한다. MQTT 종료 코드는 바꾸지 않는다. `Failed`는 응답으로 수집을 확인하지 못한 건수이며 실제 서버 유실 건수와 같지 않을 수 있다. 인증정보·서버 오류 본문을 출력하지 않는다.
+- 무손실·디스크 재생·정확히 한 번 전송은 보장하지 않는다. 업무 History는 별도의 SQLite 요구이며 Seq로 대체하지 않는다.
+
+### 검증 명령
+
+```powershell
+dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj
+# 기존 Seq 및 프로젝트 Broker가 실행 중이어야 한다. 테스트 자체는 서비스를 시작·중단하지 않는다.
+pwsh -NoProfile -File tests/manual/LOG/Verify-Seq.ps1 -RunId <새-실행ID>
+pwsh -NoProfile -File tests/manual/LOG/Verify-SeqShutdown.ps1 -RunId <새-실행ID>
+```
+
+실제 Seq 수집·검색, 실제 MQTT와 로그 서버 접속 불가, HTTP 무응답·소켓 EOF를 구분한다. 401/500·버퍼 포화·동시 기록은 자동시험 대역으로 검증한다. [#26 검증 근거](evidence/LOG/20261020-seq-unit-03/README.md)에 결과와 실패 이력·남은 범위를 기록한다.
+
+공식 참고: [Seq HTTP 수집](https://datalust.co/docs/posting-raw-events), [Compact formatter](https://github.com/serilog/serilog-formatting-compact), [기본 Seq sink](https://github.com/datalust/serilog-sinks-seq).
+
 ## 작업 위치
 
 | 구분 | 위치 |
@@ -162,7 +205,7 @@ var result = validator.Validate("amr/AMR_001/telemetry",
 // result.IsValid == true, result.Message에 정상 모델, result.Error == null.
 ```
 
-위 예에서 sp만 `-0.5`로 바꾸면 `InvalidValue / $.sp`, 정상 모델 없음이 예상 결과다. 비유한 숫자 범위, 필수 필드·자료형·허용값·ID·추가/중복 키 오류와 오류 후 정상 처리의 정확한 입력·예상값은 [Telemetry 시험](tests/Amr.Communication.Tests/TelemetryValidatorTests.cs), 기존 오류 이유·우선순위 대조는 [공통 회귀 시험](tests/Amr.Communication.Tests/MessageValidationRegressionTests.cs)을 따른다. 재현은 위 빌드·전체 자동시험 명령을 사용하며 TRX를 수집할 때는 기존 실행 ID를 덮어쓰지 않는다.
+위 예에서 sp만 `-0.5`로 바꾸면 `InvalidValue / $.sp`, 정상 모델 없음이 예상 결과다. 비유한 숫자 범위, 필수 필드·자료형·허용값·ID·추가/중복 키 오류와 오류 후 정상 처리의 정확한 입력·예상값은 [Telemetry 시험](tests/Amr.Communication.Tests/Validation/TelemetryValidatorTests.cs), 기존 오류 이유·우선순위 대조는 [공통 회귀 시험](tests/Amr.Communication.Tests/Validation/MessageValidationRegressionTests.cs)을 따른다. 재현은 위 빌드·전체 자동시험 명령을 사용하며 TRX를 수집할 때는 기존 실행 ID를 덮어쓰지 않는다.
 
 이번 결과는 검사기 직접 호출과 기존 Fake 회귀다. 콘솔 구독은 Heartbeat 한 종류로 유지되며 실제 Telemetry·Alarm·ACK 수신·다중 Topic 분기는 COM01-B에서 연결한다. 코드 구현·자동시험 완료를 실제 MQTT 연동·#18 전체 절차·COM-04 전체·과제1 완료로 확대하지 않는다. 커밋·푸시·PR은 아직 수행하지 않았다.
 
@@ -186,7 +229,7 @@ var result = validator.Validate("amr/AMR_001/alarm",
 // result.IsValid == true, result.Message.Message == " 진동 경고 ".
 ```
 
-`message` 키를 생략하면 정상 모델의 Message는 null이다. 키가 있는 상태에서 null을 넣으면 `InvalidType / $.message`, 공백 문자열이면 `InvalidValue / $.message`로 거부한다. [Alarm 시험](tests/Amr.Communication.Tests/AlarmValidatorTests.cs) 117건과 Alarm까지 확장한 [공통 회귀 시험](tests/Amr.Communication.Tests/MessageValidationRegressionTests.cs)을 포함해 전체 357건을 통과했다. [실행 근거](evidence/COM-04/20261019-alarm-01/README.md)에 환경·소스 해시·입력/예상·실제 결과를 연결했다.
+`message` 키를 생략하면 정상 모델의 Message는 null이다. 키가 있는 상태에서 null을 넣으면 `InvalidType / $.message`, 공백 문자열이면 `InvalidValue / $.message`로 거부한다. [Alarm 시험](tests/Amr.Communication.Tests/Validation/AlarmValidatorTests.cs) 117건과 Alarm까지 확장한 [공통 회귀 시험](tests/Amr.Communication.Tests/Validation/MessageValidationRegressionTests.cs)을 포함해 전체 357건을 통과했다. [실행 근거](evidence/COM-04/20261019-alarm-01/README.md)에 환경·소스 해시·입력/예상·실제 결과를 연결했다.
 
 정상 [AlarmMessage](src/Amr.Communication/Models/AlarmMessage.cs)는 알람 정보를 보존한다. 실제 AMR 주행 상태 변경·알람 업무 처리·큐 적재·MQTT 구독은 수행하지 않는다. 후속 ACK 결과는 아래 안내를 따른다.
 
@@ -213,7 +256,7 @@ var result = validator.Validate("amr/AMR_001/ack",
 
 `IsValid`는 수신 계약에 맞는다는 뜻이다. 유효한 FAILURE도 정상 [AckMessage](src/Amr.Communication/Models/AckMessage.cs)로 반환하며 SUCCESS로 바꾸거나 폐기하지 않는다. `cmdId`는 모델의 `CommandId`로, 선택 필드의 생략과 유효한 문자열의 공백·Unicode는 그대로 보존한다. 생략한 id를 Topic ID로 채우지 않는다. 실제 명령 대조·업무 결과 판단·재시도는 Core 및 후속 과제의 책임이다.
 
-[ACK 시험](tests/Amr.Communication.Tests/AckValidatorTests.cs) 106건과 네 유형의 [공통 오류 회귀](tests/Amr.Communication.Tests/MessageValidationRegressionTests.cs)를 포함한 전체 463건을 통과했다. [실행 근거](evidence/COM-04/20261019-ack-01/README.md)에 입력·예상·실제·환경·코드 해시를 연결했다. 다음 단계는 이번 변경 리뷰와 요청된 커밋·PR 절차다. 실제 MQTT·큐·Core·GUI 시험은 이번 결과에 포함하지 않는다.
+[ACK 시험](tests/Amr.Communication.Tests/Validation/AckValidatorTests.cs) 106건과 네 유형의 [공통 오류 회귀](tests/Amr.Communication.Tests/Validation/MessageValidationRegressionTests.cs)를 포함한 전체 463건을 통과했다. [실행 근거](evidence/COM-04/20261019-ack-01/README.md)에 입력·예상·실제·환경·코드 해시를 연결했다. 다음 단계는 이번 변경 리뷰와 요청된 커밋·PR 절차다. 실제 MQTT·큐·Core·GUI 시험은 이번 결과에 포함하지 않는다.
 
 <a id="com04-run"></a>
 
@@ -466,7 +509,7 @@ MessageSubscription → 기존 Validator → 정상 ReceivedMessage → TryEnque
 | 같은 파일의 ConsumeAsync | 비동기 작업. 한 AMR은 `await _handler(message)`가 끝나야 다음 건을 꺼낸다. 다른 AMR의 소비자는 별도 Task로 진행한다. |
 | 같은 파일의 CompleteAsync | 시험 정리용. 접수를 닫고 이미 넣은 메시지를 모두 처리할 때까지 기다린다. 취소·폐기하는 연결 종료 기능은 아직 아니다. |
 | [QueueAdmission](src/Amr.Communication/Mqtt/Queues/QueueAdmission.cs) | Accepted·QueueFull·AmrLimitReached·NotAccepting으로 접수 여부를 알려준다. JSON 검사 실패와 업무 처리 성공은 별개다. |
-| [AmrReceiveQueueTests](tests/Amr.Communication.Tests/AmrReceiveQueueTests.cs) | 첫 시험에서 001을 대기시킨 채 002 완료를 확인하고, 001을 풀어 네 유형 순서를 대조한다. |
+| [AmrReceiveQueueTests](tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueTests.cs) | 첫 시험에서 001을 대기시킨 채 002 완료를 확인하고, 001을 풀어 네 유형 순서를 대조한다. |
 
 `Task.Run`은 각 소비자를 공유 스레드 풀에서 시작하게 한다. AMR마다 전용 스레드를 만드는 것은 아니다. 처리자의 비동기 대기 중에는 스레드를 붙잡지 않는다. 처리자는 서로 다른 AMR에서 동시에 호출될 수 있으므로 함께 쓰는 값도 안전하게 다뤄야 한다.
 

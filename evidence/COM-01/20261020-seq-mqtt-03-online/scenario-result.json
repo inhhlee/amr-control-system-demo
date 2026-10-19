@@ -1,0 +1,40 @@
+{
+  "result": "passed",
+  "completedAtUtc": "2026-10-19T15:44:40.5640977+00:00",
+  "sessions": [
+    {
+      "session": 0,
+      "clientId": "amr-demo-120a89b56abc4e10b5701a128b5e92ce",
+      "publications": 20,
+      "delivered": 12,
+      "rejected": 4,
+      "ignored": 4,
+      "signal": "Windows CTRL_C_EVENT",
+      "exitCode": 0,
+      "modelFieldsPreserved": true,
+      "receptionTimePreserved": true,
+      "rejectedPayloadHidden": true,
+      "consoleMembers": [
+        30888,
+        48992
+      ]
+    },
+    {
+      "session": 1,
+      "clientId": "amr-demo-8afd9976657e48b48dc2ddb16982682a",
+      "publications": 8,
+      "delivered": 8,
+      "rejected": 0,
+      "ignored": 0,
+      "signal": "Windows CTRL_C_EVENT",
+      "exitCode": 0,
+      "modelFieldsPreserved": true,
+      "receptionTimePreserved": true,
+      "rejectedPayloadHidden": true,
+      "consoleMembers": [
+        30888,
+        42980
+      ]
+    }
+  ]
+}
