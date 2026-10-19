@@ -1,0 +1,6 @@
+ M src/Amr.Communication.Console/Program.cs
+?? evidence/COM-01/20261019-multi-01/
+?? src/Amr.Communication/Models/ReceivedMessage.cs
+?? src/Amr.Communication/Mqtt/MessageDiagnostic.cs
+?? src/Amr.Communication/Mqtt/MessageSubscription.cs
+?? tests/Amr.Communication.Tests/MessageSubscriptionTests.cs

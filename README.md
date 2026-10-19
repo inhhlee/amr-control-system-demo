@@ -20,9 +20,11 @@
 
 ## 개발 구성
 
-현재 변경은 [Issue #18 — COM04-B 검사 확장](https://github.com/inhhlee/amr-control-system-demo/issues/18)의 **Telemetry·Alarm·ACK 구현·자동시험 완료 단계**다. 네 수신 유형이 공통 입력 검사를 공유하고 정상 모델·실패 결과를 반환한다. 2026-10-19 빌드(경고·오류 0)와 자동시험 463개를 통과했다. [Telemetry](#telemetry-validation), [Alarm](#alarm-validation), [ACK](#ack-validation) 사용 안내와 [ACK·네 유형 회귀 검증결과](evidence/COM-04/20261019-ack-01/README.md)를 따른다. 커밋·푸시·PR·GitHub Issue 근거 연결·리뷰·병합은 남아 있다. 실제 세 유형의 구독은 COM01-B에서 연결한다.
+현재 변경은 [Issue #21 — COM01-B 네 유형 구독·전달](https://github.com/inhhlee/amr-control-system-demo/issues/21)의 구현·실행 검증 단계다. 2026-10-19 빌드 경고·오류 0, 자동시험 529건 통과. 실제 MQTT 두 세션에서 정상 20건 전달·불량 4건 거부·구독 밖 4건 미수신과 정상 종료를 확인했다. [실행 안내](#com01b-run)와 [브라우저 보고서](evidence/COM-01/20261019-multi-mqtt-03/report.html)를 따른다. 변경은 미커밋이며 GitHub 결과 게시·PR·리뷰·병합은 남아 있다.
 
-선행 [Issue #17 — COM04-A Heartbeat 검사와 정상 데이터 전달](https://github.com/inhhlee/amr-control-system-demo/issues/17)은 PR #19로 develop에 반영됐다. 당시 자동시험 113개와 실제 Broker의 오류 후 정상 전달·Ctrl+C 종료 근거는 [COM-04 실행 안내](#com04-run)와 [최종 검증결과](evidence/COM-04/20261019-final-06/README.md)에 보존한다. 이번 변경에서는 실제 Broker 시험을 재실행하지 않았다. 아래 COM-01·COM-03 기록도 선행 구현 당시 근거다.
+선행 [#18](https://github.com/inhhlee/amr-control-system-demo/issues/18)은 PR #20으로 develop에 병합됐다. [Telemetry](#telemetry-validation), [Alarm](#alarm-validation), [ACK](#ack-validation) 검사 API와 [당시 463건 검증결과](evidence/COM-04/20261019-ack-01/README.md)는 유지한다.
+
+선행 [Issue #17 — COM04-A Heartbeat 검사와 정상 데이터 전달](https://github.com/inhhlee/amr-control-system-demo/issues/17)은 PR #19로 develop에 반영됐다. 당시 자동시험 113개와 실제 Broker 근거는 [COM-04 실행 안내](#com04-run)와 [최종 검증결과](evidence/COM-04/20261019-final-06/README.md)에 보존한다. 아래 #15·#17·#18·COM-03 절의 결과와 출력 예는 해당 단계 당시 기록이며, 현재 콘솔 형식은 COM01-B 안내를 따른다.
 
 [Issue #15 — COM-01 Heartbeat 한 종류 수신](https://github.com/inhhlee/amr-control-system-demo/issues/15)의 구현·검증은 아래 [Heartbeat 실행 안내](#heartbeat-run)와 [완료조건별 결과](evidence/COM-01/20261012-heartbeat-05/README.md)에서 확인한다. 사용자의 후속 요청으로 기존 `feature/COM-01-heartbeat-subscribe` 브랜치를 게시하는 단계다. 연결된 PR은 Issue #15에서 확인하며 리뷰·develop 병합은 별도 단계다.
 
@@ -34,7 +36,7 @@
 | [AmrControlSystem.slnx](AmrControlSystem.slnx) | Visual Studio에서 열 솔루션 |
 | [Amr.Communication](src/Amr.Communication/Amr.Communication.csproj) | MQTTnet 5.2.0.1603을 사용한 접속 설정·MQTT 승인 확인·명시적 해제·자원 정리 |
 | [Amr.Communication.Console](src/Amr.Communication.Console/Amr.Communication.Console.csproj) | 실제 Broker 접속 승인 후 Ctrl+C까지 유지하고 명시적 해제·정리를 기다리는 콘솔 |
-| [Amr.Communication.Tests](tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj) | 기존 수명주기·Heartbeat 113개 + Telemetry 101개 + Alarm 117개 + ACK 106개 + 공통 오류 회귀 14개 + 필수/선택 필드 검사 12개, 총 463개 |
+| [Amr.Communication.Tests](tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj) | 기존 463개 + COM01-B 수신부 66개, 총 529개 |
 | [evidence/setup](evidence/setup/) | 실행별 환경·복원·빌드·실행·시험 탐색 증거 |
 
 시험 패키지는 `Microsoft.NET.Test.Sdk 17.14.1`, `xunit 2.9.3`, `xunit.runner.visualstudio 3.1.4`다.
@@ -56,7 +58,45 @@ dotnet build AmrControlSystem.slnx --no-restore
 dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj --no-build
 ```
 
-`dotnet test`는 작성한 xUnit 자동시험 463개를 실행한다. 검사기 직접 호출과 시험 대역(Fake)을 사용하므로 Broker 없이 실행할 수 있다. `--list-tests`를 붙이면 실행하지 않고 이름만 나열한다. `--no-build`는 빌드를 생략하므로 소스를 수정했다면 먼저 다시 빌드한다.
+`dotnet test`는 작성한 xUnit 자동시험 529개를 실행한다. 검사기 직접 호출과 시험 대역(Fake)을 사용하므로 Broker 없이 실행할 수 있다. `--list-tests`를 붙이면 실행하지 않고 이름만 나열한다. `--no-build`는 빌드를 생략하므로 소스를 수정했다면 먼저 다시 빌드한다.
+
+<a id="com01b-run"></a>
+
+## COM01-B 여러 AMR의 네 유형 구독·전달 (Issue #21)
+
+MQTT 파일은 `Mqtt/Connection`(접속·설정)과 `Mqtt/Subscriptions`(구독·진단)으로 나눈다. namespace는 `Amr.Communication.Mqtt`를 유지한다. [폴더 이동 검증결과](evidence/COM-01/20261019-mqtt-layout-02/README.md)에 내용 동일성과 이동 후 빌드·529건 회귀를 기록했다. 이전 실행 증거의 경로는 시험 당시 기록으로 보존한다.
+
+[MessageSubscription](src/Amr.Communication/Mqtt/Subscriptions/MessageSubscription.cs)은 한 MQTT Client에 한 번 연결한다. `amr/+/heartbeat`, `amr/+/telemetry`, `amr/+/alarm`, `amr/+/ack` 네 필터의 QoS 0 승인을 모두 확인한 뒤 전달을 시작한다. 기존 HeartbeatSubscription API는 유지하지만 현재 콘솔에서는 함께 연결하지 않는다.
+
+전체 원본 바이트를 기존 Validator에 전달한다. 정상 결과는 [ReceivedMessage](src/Amr.Communication/Models/ReceivedMessage.cs)의 `AmrId`(Topic 대상), `Kind`, `Model`(유형별 기존 모델), `ReceivedAtUtc`로 전달한다. id 없는 ACK는 대상 AmrId만 Topic에서 얻고 `AckMessage.Id == null`과 FAILURE·선택 reason을 그대로 보존한다.
+
+호출 순서는 **접속 → SubscribeAsync → 시험 발행 → StopAsync → 연결 해제·Client Dispose**다. 구독 실패·취소 때도 StopAsync로 시도한 네 필터와 이벤트를 정리한다. 수명주기를 동시에 호출하거나 객체를 재사용하지 않는다. 콜백은 짧은 동기 함수로 작성하고 async void·수명주기 재호출을 피한다. 느린 콜백의 다른 AMR 영향은 이번 범위에서 격리하지 않는다.
+
+검사 실패는 `Rejected Code=... Field=... Reason=...`, 수신·거부·진단 콜백 예외는 `CallbackError Stage=... ExceptionType=...`로 구분한다. 실패 Payload·예외 메시지는 이 오류 기록에 포함하지 않고 재전달하지 않는다. 오류 보고 콜백 자체의 예외는 밖으로 전파되므로 콜백에서 처리해야 한다. `MessageDiagnostic`는 기본 원문을 숨기며 `--show-payload`에서도 정상 시험 입력만 앞 256바이트를 보여 준다. `Received`에는 정상 모델 필드가 기록되므로 비밀정보 없는 시험 데이터를 사용한다.
+
+기존 개발 Broker가 실행 중인 상태에서 PowerShell로 수신 콘솔을 연다.
+
+```powershell
+dotnet run --project src/Amr.Communication.Console --no-build -- --host 127.0.0.1 --port 1884 --show-payload
+```
+
+`Subscribed TopicFilters=... QoS=0`을 확인한 뒤 다른 터미널에서 발행한다. 컨테이너 CLI는 1883, 호스트 콘솔은 1884다.
+
+```powershell
+docker compose -f docker/compose.yaml exec -T mosquitto mosquitto_pub -h 127.0.0.1 -p 1883 -V mqttv5 -q 0 -t amr/AMR_001/ack -m '{"cmdId":"CMD_1","result":"FAILURE","ts":123}'
+```
+
+콘솔 `Received` JSON에서 AmrId=AMR_001, Kind=ack, Model.Id=null, Result=FAILURE, Reason=null, Timestamp=123을 확인한다. JSON 안의 두 ReceivedAtUtc는 동일하고 앞선 MessageDiagnostic 시각과 일치한다. 줄 맨 앞은 별도 로그 작성 시각이다. Ctrl+C 후 SubscriptionStopped → Disconnected → Disposed → ExitCode=0을 확인한다.
+
+두 AMR·불량 입력·새 세션까지 자동 재현하려면 위 수신 콘솔을 종료하고 다음을 실행한다. PowerShell 7·Windows·Docker와 빌드된 Debug 실행 파일이 필요하며 도구는 Broker를 시작하거나 재시작하지 않는다.
+
+```powershell
+pwsh -NoProfile -File tests/manual/COM01-B/Verify-Mqtt.ps1 -RunId <새-실행ID>
+```
+
+[시험 입력](tests/manual/COM01-B/inputs.json)과 [검증 도구](tests/manual/COM01-B/Verify-Mqtt.ps1)를 사용한다. 기존 실행 ID를 거부하며 새 evidence/COM-01/실행ID에 기록한다. [완료조건별 상세 결과](evidence/COM-01/20261019-multi-mqtt-03/README.md)와 [브라우저 보고서](evidence/COM-01/20261019-multi-mqtt-03/report.html)를 확인한다. 브라우저 Ctrl+O로 report.html을 열면 ① 유형별 전달 ② ACK ③ 오류 경계 ④ 정리 ⑤ 회귀 ⑥ 남은 게시 절차를 각각 확인할 수 있다. 이 HTML은 이번 실행의 고정 보고서이며 실시간 GUI가 아니다.
+
+개발 시험 설정은 MQTT 5·QoS 0·Retain=false·구독 시 보관 메시지 재전송 안 함이다. 로컬 이벤트당 한 번 호출을 네트워크 무손실·exactly-once로 해석하지 않는다. AMR별 큐(COM01-C), Core 업무, Timeout·재접속·운영 QoS 정책은 이번에 추가하지 않았다.
 
 <a id="telemetry-validation"></a>
 
@@ -234,7 +274,7 @@ Broker 로그의 Client ID와 이번 콘솔의 ID를 대조한다. 다시 실행
 
 [A2 중간 검증결과](evidence/COM-03/20261011-a2-connect-02/README.md)에는 접속 직후 해제했던 당시 소스·해시·실제 실행을 보존한다. 현재 코드는 A3이므로 A2 동작을 재현하려면 그 스냅샷을 사용한다.
 
-먼저 읽을 파일은 [Program.cs](src/Amr.Communication.Console/Program.cs), [MqttConnection.cs](src/Amr.Communication/Mqtt/MqttConnection.cs), [MqttConnectionSettings.cs](src/Amr.Communication/Mqtt/MqttConnectionSettings.cs)다. 콘솔이 순서를 정하고 통신 객체가 MQTT 호출을 맡는다. `await` 뒤의 문장은 해당 작업이 끝나야 실행된다.
+먼저 읽을 파일은 [Program.cs](src/Amr.Communication.Console/Program.cs), [MqttConnection.cs](src/Amr.Communication/Mqtt/Connection/MqttConnection.cs), [MqttConnectionSettings.cs](src/Amr.Communication/Mqtt/Connection/MqttConnectionSettings.cs)다. 콘솔이 순서를 정하고 통신 객체가 MQTT 호출을 맡는다. `await` 뒤의 문장은 해당 작업이 끝나야 실행된다.
 
 A3에서는 `Console.CancelKeyPress` 처리기가 기본 즉시 종료를 막고 `shutdown.Cancel()`로 취소를 요청한다. `Task.Delay(Timeout.Infinite, shutdown.Token)` 대기가 취소되면 `catch`를 거쳐 `finally`에서 해제·정리를 수행한다. 이미 취소한 토큰을 `DisconnectAsync`에 넘기지 않아 해제 기회를 보장한다. `finally`는 이런 제어 흐름에서 정리를 수행하지만 강제 프로세스 종료·전원 차단까지 보장하지 않는다.
 

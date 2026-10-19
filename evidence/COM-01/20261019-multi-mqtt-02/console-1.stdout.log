@@ -1,0 +1,6 @@
+2026-10-19T07:01:14.4825905+00:00 Settings Host=127.0.0.1 Port=1884 ClientId=amr-demo-73bb4ecce9a04830a5c39d3b9f5dc879 MQTT=5 CleanStart=true SessionExpiry=0 KeepAliveSeconds=5 ConnectTimeoutSeconds=3 DisconnectTimeoutSeconds=3
+2026-10-19T07:01:14.4884747+00:00 Connecting
+2026-10-19T07:01:14.5268542+00:00 Connected
+2026-10-19T07:01:14.5291610+00:00 Subscribing TopicFilters=amr/+/heartbeat,amr/+/telemetry,amr/+/alarm,amr/+/ack QoS=0 PayloadPreview=True LimitBytes=256
+2026-10-19T07:01:14.5380530+00:00 Subscribed TopicFilters=amr/+/heartbeat,amr/+/telemetry,amr/+/alarm,amr/+/ack QoS=0
+2026-10-19T07:01:14.5382801+00:00 WaitingForShutdown: Ctrl+C로 정상 종료합니다.

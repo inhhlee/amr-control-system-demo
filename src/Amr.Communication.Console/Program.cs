@@ -10,13 +10,13 @@ Console.OutputEncoding = new System.Text.UTF8Encoding(false);
 if (args.Length == 1 && args[0] == "--help")
 {
     Console.WriteLine("사용법: --host 127.0.0.1 --port 1884 --connect-timeout-seconds 3 [--show-payload]");
-    Console.WriteLine("Heartbeat 검사 후 정상 모델만 전달합니다. --show-payload는 비밀정보 없는 정상 시험 입력의 앞 256바이트만 표시합니다. Ctrl+C로 종료합니다.");
+    Console.WriteLine("Heartbeat·Telemetry·Alarm·ACK 검사 후 대상 AMR과 정상 모델을 전달합니다. --show-payload는 비밀정보 없는 정상 시험 입력의 앞 256바이트만 표시합니다. Ctrl+C로 종료합니다.");
     return 0;
 }
 
 int exitCode = 0;
 MqttConnection? connection = null;
-HeartbeatSubscription? subscription = null;
+MessageSubscription? subscription = null;
 using var shutdown = new CancellationTokenSource();
 
 ConsoleCancelEventHandler cancelHandler = (_, eventArgs) =>
@@ -36,14 +36,14 @@ try
 
     var client = new MqttClientFactory().CreateMqttClient();
     connection = new MqttConnection(client);
-    subscription = new HeartbeatSubscription(client, ReceiveHeartbeat, ReportRejection,
-        type => Report($"HeartbeatReceiverError ExceptionType={type}"), ReportHeartbeat, showPayload);
+    subscription = new MessageSubscription(client, ReceiveMessage, ReportRejection,
+        error => Report($"CallbackError Stage={error.Stage} ExceptionType={error.ExceptionType}"), ReportDiagnostic, showPayload);
     Report("Connecting");
     await connection.ConnectAsync(settings, shutdown.Token);
     Report("Connected");
-    Report($"Subscribing TopicFilter={HeartbeatSubscription.TopicFilter} QoS=0 PayloadPreview={showPayload} LimitBytes=256");
+    Report($"Subscribing TopicFilters={string.Join(',', MessageSubscription.TopicFilters)} QoS=0 PayloadPreview={showPayload} LimitBytes=256");
     await subscription.SubscribeAsync(shutdown.Token);
-    Report($"Subscribed TopicFilter={HeartbeatSubscription.TopicFilter} QoS=0");
+    Report($"Subscribed TopicFilters={string.Join(',', MessageSubscription.TopicFilters)} QoS=0");
     Report("WaitingForShutdown: Ctrl+C로 정상 종료합니다.");
     await Task.Delay(Timeout.Infinite, shutdown.Token);
 }
@@ -112,22 +112,22 @@ static void Report(string message)
     Console.WriteLine($"{DateTimeOffset.UtcNow:O} {message}");
 }
 
-static void ReportHeartbeat(HeartbeatDiagnostic diagnostic)
+static void ReportDiagnostic(MessageDiagnostic diagnostic)
 {
     // 제어문자·개행은 이스케이프해 한 메시지가 다른 로그 줄처럼 보이지 않게 한다.
     var jsonOptions = new JsonSerializerOptions { Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping };
     string topic = JsonSerializer.Serialize(diagnostic.Topic[..Math.Min(diagnostic.Topic.Length, 256)], jsonOptions);
     string payload = diagnostic.PayloadPreview is null ? "<hidden>" : JsonSerializer.Serialize(diagnostic.PayloadPreview, jsonOptions);
-    Console.WriteLine($"{diagnostic.ReceivedAtUtc:O} HeartbeatDiagnostic Topic={topic} " +
+    Console.WriteLine($"{diagnostic.ReceivedAtUtc:O} MessageDiagnostic Topic={topic} " +
         $"TopicTruncated={diagnostic.Topic.Length > 256} PayloadBytes={diagnostic.PayloadBytes} " +
         $"Payload={payload} PayloadTruncated={diagnostic.PayloadTruncated} Validation={(diagnostic.IsValid ? "Accepted" : "Rejected")}");
 }
 
-static void ReceiveHeartbeat(HeartbeatMessage message)
+static void ReceiveMessage(ReceivedMessage message)
 {
     // 실제 Core 업무 처리 대신 정상 모델 전달을 관찰하는 시험용 수신자다.
-    Report($"Received Heartbeat Id={JsonSerializer.Serialize(message.Id)} ts={message.Timestamp} " +
-        $"status={JsonSerializer.Serialize(message.Status)} ReceivedAtUtc={message.ReceivedAtUtc:O}");
+    // object Model의 실제 수신 유형별 필드를 출력하며 제어문자는 JSON 이스케이프한다.
+    Report($"Received {JsonSerializer.Serialize(message)}");
 }
 
 static void ReportRejection(ValidationError error) =>

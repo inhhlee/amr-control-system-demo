@@ -1,0 +1,32 @@
+[
+  {
+    "before": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\MqttConnection.cs",
+    "after": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Connection\\MqttConnection.cs",
+    "sha256": "2D8901671BB3F72066184772F4B4045AE5F2AB7A6A1EC74283E8F49C1A14A416"
+  },
+  {
+    "before": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\MqttConnectionSettings.cs",
+    "after": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Connection\\MqttConnectionSettings.cs",
+    "sha256": "39331CD6BCDA0F09D1A72397A31993972C2C2BC937FD2BB0BADA6DB6B1155F1F"
+  },
+  {
+    "before": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\MessageSubscription.cs",
+    "after": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Subscriptions\\MessageSubscription.cs",
+    "sha256": "66DAD095A1664D1EF91A5A788B1670F285E8E44880570481ED8527F17E809B9C"
+  },
+  {
+    "before": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\MessageDiagnostic.cs",
+    "after": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Subscriptions\\MessageDiagnostic.cs",
+    "sha256": "D6A82AA18989CE93A8765A0B4D1B1F56D613ED650160623777AC5BBA15ED43C0"
+  },
+  {
+    "before": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\HeartbeatSubscription.cs",
+    "after": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Subscriptions\\HeartbeatSubscription.cs",
+    "sha256": "A38723932BC0C7B3DA1B4801D2F1650C19A4AA191706D749CE991A3C1DFB1BF2"
+  },
+  {
+    "before": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\HeartbeatDiagnostic.cs",
+    "after": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Subscriptions\\HeartbeatDiagnostic.cs",
+    "sha256": "C4CBA602462BF67C6FC472895DF0EA3635A46E683CD8B9667D26B22E0918720E"
+  }
+]

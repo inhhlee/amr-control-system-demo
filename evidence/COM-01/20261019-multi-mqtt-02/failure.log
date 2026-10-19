@@ -1,0 +1,7 @@
+ResourceUnavailable: C:\amr-control-system-demo\tests\manual\COM01-B\Verify-Mqtt.ps1:115
+Line |
+ 115 |              $publishOutput = docker compose -f docker/compose.yaml ex …
+     |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Program 'docker.exe' failed to run: The Win32 internal error "핸들이 잘못되었습니다." 0x6 occurred while getting the console mode. Contact Microsoft Customer Support Services.At C:\amr-control-system-demo\tests\manual\COM01-B\Verify-Mqtt.ps1:115 char:30 + … ishOutput = docker compose -f docker/compose.yaml exec -T mosquitto m … +               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+
