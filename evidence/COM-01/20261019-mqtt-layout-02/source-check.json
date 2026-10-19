@@ -1,0 +1,197 @@
+[
+  {
+    "originalPath": "src\\Amr.Communication.Console\\Program.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication.Console\\Program.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "tests\\manual\\COM01-B\\Verify-Mqtt.ps1",
+    "currentPath": "C:\\amr-control-system-demo\\tests\\manual\\COM01-B\\Verify-Mqtt.ps1",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication.Console\\Amr.Communication.Console.csproj",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication.Console\\Amr.Communication.Console.csproj",
+    "matches": true
+  },
+  {
+    "originalPath": "tests\\manual\\COM01-B\\inputs.json",
+    "currentPath": "C:\\amr-control-system-demo\\tests\\manual\\COM01-B\\inputs.json",
+    "matches": true
+  },
+  {
+    "originalPath": "tests\\Amr.Communication.Tests\\TelemetryValidatorTests.cs",
+    "currentPath": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\TelemetryValidatorTests.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "tests\\Amr.Communication.Tests\\MqttConnectionTests.cs",
+    "currentPath": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\MqttConnectionTests.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "tests\\Amr.Communication.Tests\\MessageValidationRegressionTests.cs",
+    "currentPath": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\MessageValidationRegressionTests.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "tests\\Amr.Communication.Tests\\MessageSubscriptionTests.cs",
+    "currentPath": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\MessageSubscriptionTests.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "tests\\Amr.Communication.Tests\\MessageFieldValidationTests.cs",
+    "currentPath": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\MessageFieldValidationTests.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "tests\\Amr.Communication.Tests\\HeartbeatValidatorTests.cs",
+    "currentPath": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\HeartbeatValidatorTests.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "tests\\Amr.Communication.Tests\\HeartbeatSubscriptionTests.cs",
+    "currentPath": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\HeartbeatSubscriptionTests.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "tests\\Amr.Communication.Tests\\FakeMqttClient.cs",
+    "currentPath": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\FakeMqttClient.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "tests\\Amr.Communication.Tests\\Amr.Communication.Tests.csproj",
+    "currentPath": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Amr.Communication.Tests.csproj",
+    "matches": true
+  },
+  {
+    "originalPath": "tests\\Amr.Communication.Tests\\AlarmValidatorTests.cs",
+    "currentPath": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\AlarmValidatorTests.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "tests\\Amr.Communication.Tests\\AckValidatorTests.cs",
+    "currentPath": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\AckValidatorTests.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Models\\TelemetryMessage.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Models\\TelemetryMessage.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Models\\ReceivedMessage.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Models\\ReceivedMessage.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Models\\HeartbeatMessage.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Models\\HeartbeatMessage.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Models\\AlarmMessage.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Models\\AlarmMessage.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Models\\AckMessage.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Models\\AckMessage.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Amr.Communication.csproj",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Amr.Communication.csproj",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Validation\\Telemetry\\TelemetryValidator.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Telemetry\\TelemetryValidator.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Validation\\Telemetry\\TelemetryValidationResult.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Telemetry\\TelemetryValidationResult.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Validation\\Alarm\\AlarmValidator.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Alarm\\AlarmValidator.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Validation\\Alarm\\AlarmValidationResult.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Alarm\\AlarmValidationResult.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Validation\\Ack\\AckValidator.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Ack\\AckValidator.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Validation\\Heartbeat\\HeartbeatValidator.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Heartbeat\\HeartbeatValidator.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Validation\\Ack\\AckValidationResult.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Ack\\AckValidationResult.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Validation\\Heartbeat\\HeartbeatValidationResult.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Heartbeat\\HeartbeatValidationResult.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Validation\\Common\\ValidationError.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Common\\ValidationError.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Validation\\Common\\MessageValidation.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Common\\MessageValidation.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Mqtt\\MqttConnectionSettings.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Connection\\MqttConnectionSettings.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Mqtt\\MqttConnection.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Connection\\MqttConnection.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Mqtt\\MessageSubscription.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Subscriptions\\MessageSubscription.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Mqtt\\MessageDiagnostic.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Subscriptions\\MessageDiagnostic.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Mqtt\\HeartbeatSubscription.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Subscriptions\\HeartbeatSubscription.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "src\\Amr.Communication\\Mqtt\\HeartbeatDiagnostic.cs",
+    "currentPath": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Subscriptions\\HeartbeatDiagnostic.cs",
+    "matches": true
+  },
+  {
+    "originalPath": "global.json",
+    "currentPath": "C:\\amr-control-system-demo\\global.json",
+    "matches": true
+  },
+  {
+    "originalPath": "AmrControlSystem.slnx",
+    "currentPath": "C:\\amr-control-system-demo\\AmrControlSystem.slnx",
+    "matches": true
+  }
+]

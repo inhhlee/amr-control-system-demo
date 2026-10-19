@@ -1,0 +1,14 @@
+{
+  "startedAtUtc": "2026-10-19T07:02:49.1689437+00:00",
+  "os": "Microsoft Windows 10.0.26200",
+  "sdk": "10.0.401",
+  "dockerVersion": "29.7.2 / 29.7.2",
+  "brokerVersion": "mosquitto version 2.1.2",
+  "endpoint": "127.0.0.1:1884",
+  "mqttnet": "5.2.0.1603",
+  "qos": 0,
+  "retain": false,
+  "brokerStartedOrRestartedByThisTest": false,
+  "baseCommit": "e40e2b4a72f5901a32e723a04661482f51f23f9a",
+  "branch": "feature/21-multi-amr-subscription"
+}

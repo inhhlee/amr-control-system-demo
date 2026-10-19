@@ -1,0 +1,382 @@
+[
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication.Console\\Program.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\TelemetryValidatorTests.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\MqttConnectionTests.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication.Console\\Amr.Communication.Console.csproj",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\MessageValidationRegressionTests.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\MessageSubscriptionTests.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\MessageFieldValidationTests.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\HeartbeatValidatorTests.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\HeartbeatSubscriptionTests.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\FakeMqttClient.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\Amr.Communication.Tests.csproj",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\AlarmValidatorTests.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\AckValidatorTests.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Validation\\Telemetry\\TelemetryValidator.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Validation\\Telemetry\\TelemetryValidationResult.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Validation\\Heartbeat\\HeartbeatValidator.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Validation\\Heartbeat\\HeartbeatValidationResult.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Validation\\Common\\ValidationError.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Validation\\Common\\MessageValidation.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Validation\\Alarm\\AlarmValidator.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Validation\\Alarm\\AlarmValidationResult.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Validation\\Ack\\AckValidator.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Validation\\Ack\\AckValidationResult.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Amr.Communication.csproj",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Mqtt\\MqttConnectionSettings.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Mqtt\\MqttConnection.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Mqtt\\MessageSubscription.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Mqtt\\MessageDiagnostic.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Mqtt\\HeartbeatSubscription.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Mqtt\\HeartbeatDiagnostic.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Models\\TelemetryMessage.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Models\\ReceivedMessage.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Models\\HeartbeatMessage.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Models\\AlarmMessage.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "src\\Amr.Communication\\Models\\AckMessage.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "global.json",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-01/source-version.json",
+    "path": "AmrControlSystem.slnx",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication.Console\\Program.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "tests\\manual\\COM01-B\\Verify-Mqtt.ps1",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication.Console\\Amr.Communication.Console.csproj",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "tests\\manual\\COM01-B\\inputs.json",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\TelemetryValidatorTests.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\MqttConnectionTests.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\MessageValidationRegressionTests.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\MessageSubscriptionTests.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\MessageFieldValidationTests.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\HeartbeatValidatorTests.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\HeartbeatSubscriptionTests.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\FakeMqttClient.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\Amr.Communication.Tests.csproj",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\AlarmValidatorTests.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "tests\\Amr.Communication.Tests\\AckValidatorTests.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Models\\TelemetryMessage.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Models\\ReceivedMessage.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Models\\HeartbeatMessage.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Models\\AlarmMessage.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Models\\AckMessage.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Amr.Communication.csproj",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Validation\\Telemetry\\TelemetryValidator.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Validation\\Telemetry\\TelemetryValidationResult.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Validation\\Alarm\\AlarmValidator.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Validation\\Alarm\\AlarmValidationResult.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Validation\\Ack\\AckValidator.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Validation\\Heartbeat\\HeartbeatValidator.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Validation\\Ack\\AckValidationResult.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Validation\\Heartbeat\\HeartbeatValidationResult.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Validation\\Common\\ValidationError.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Validation\\Common\\MessageValidation.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Mqtt\\MqttConnectionSettings.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Mqtt\\MqttConnection.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Mqtt\\MessageSubscription.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Mqtt\\MessageDiagnostic.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Mqtt\\HeartbeatSubscription.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "src\\Amr.Communication\\Mqtt\\HeartbeatDiagnostic.cs",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "global.json",
+    "matches": true
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-multi-mqtt-03/source-version.json",
+    "path": "AmrControlSystem.slnx",
+    "matches": true
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "command": "dotnet build AmrControlSystem.slnx --no-restore --verbosity minimal",
+  "exitCode": 0,
+  "completedAtUtc": "2026-10-19T07:11:25.6697074+00:00",
+  "baseCommit": "e40e2b4a72f5901a32e723a04661482f51f23f9a",
+  "sdk": "10.0.401",
+  "os": "Microsoft Windows 10.0.26200"
+}

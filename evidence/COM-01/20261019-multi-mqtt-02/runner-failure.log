@@ -1,0 +1,7 @@
+Exception: C:\amr-control-system-demo\tests\manual\COM01-B\Verify-Mqtt.ps1:46
+Line |
+  46 |  … de -ne 0) { throw 'MQTT scenario failed; see controller/failure logs. …
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | MQTT scenario failed; see controller/failure logs.
+
+

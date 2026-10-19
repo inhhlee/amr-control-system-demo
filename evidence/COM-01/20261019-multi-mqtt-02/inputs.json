@@ -1,0 +1,370 @@
+{
+  "sessions": [
+    [
+      {
+        "name": "heartbeat-AMR_001",
+        "topic": "amr/AMR_001/heartbeat",
+        "payload": "{\"id\":\"AMR_001\",\"ts\":100,\"status\":\"OK\"}",
+        "outcome": "accepted",
+        "amrId": "AMR_001",
+        "kind": "heartbeat",
+        "model": {
+          "Id": "AMR_001",
+          "Timestamp": 100,
+          "Status": "OK"
+        }
+      },
+      {
+        "name": "heartbeat-AMR_002",
+        "topic": "amr/AMR_002/heartbeat",
+        "payload": "{\"id\":\"AMR_002\",\"ts\":200,\"status\":\"OK\"}",
+        "outcome": "accepted",
+        "amrId": "AMR_002",
+        "kind": "heartbeat",
+        "model": {
+          "Id": "AMR_002",
+          "Timestamp": 200,
+          "Status": "OK"
+        }
+      },
+      {
+        "name": "telemetry-AMR_001",
+        "topic": "amr/AMR_001/telemetry",
+        "payload": "{\"id\":\"AMR_001\",\"ts\":101,\"pos\":{\"x\":1.25,\"y\":-2.5},\"sp\":0.25,\"state\":\"BUSY\"}",
+        "outcome": "accepted",
+        "amrId": "AMR_001",
+        "kind": "telemetry",
+        "model": {
+          "Id": "AMR_001",
+          "Timestamp": 101,
+          "Position": {
+            "X": 1.25,
+            "Y": -2.5
+          },
+          "Speed": 0.25,
+          "State": "BUSY"
+        }
+      },
+      {
+        "name": "telemetry-AMR_002",
+        "topic": "amr/AMR_002/telemetry",
+        "payload": "{\"id\":\"AMR_002\",\"ts\":201,\"pos\":{\"x\":2.5,\"y\":-5},\"sp\":0.5,\"state\":\"STOPPED\"}",
+        "outcome": "accepted",
+        "amrId": "AMR_002",
+        "kind": "telemetry",
+        "model": {
+          "Id": "AMR_002",
+          "Timestamp": 201,
+          "Position": {
+            "X": 2.5,
+            "Y": -5
+          },
+          "Speed": 0.5,
+          "State": "STOPPED"
+        }
+      },
+      {
+        "name": "alarm-AMR_001",
+        "topic": "amr/AMR_001/alarm",
+        "payload": "{\"id\":\"AMR_001\",\"ts\":102,\"code\":\" A1 \",\"level\":\"WARN\",\"alarmState\":\"ACTIVE\",\"message\":\" 경보 원형 보존 \"}",
+        "outcome": "accepted",
+        "amrId": "AMR_001",
+        "kind": "alarm",
+        "model": {
+          "Id": "AMR_001",
+          "Timestamp": 102,
+          "Code": " A1 ",
+          "Level": "WARN",
+          "AlarmState": "ACTIVE",
+          "Message": " 경보 원형 보존 "
+        }
+      },
+      {
+        "name": "alarm-AMR_002",
+        "topic": "amr/AMR_002/alarm",
+        "payload": "{\"id\":\"AMR_002\",\"ts\":202,\"code\":\" A2 \",\"level\":\"ERR\",\"alarmState\":\"CLEARED\"}",
+        "outcome": "accepted",
+        "amrId": "AMR_002",
+        "kind": "alarm",
+        "model": {
+          "Id": "AMR_002",
+          "Timestamp": 202,
+          "Code": " A2 ",
+          "Level": "ERR",
+          "AlarmState": "CLEARED",
+          "Message": null
+        }
+      },
+      {
+        "name": "ack-AMR_001",
+        "topic": "amr/AMR_001/ack",
+        "payload": "{\"cmdId\":\" CMD_1 \",\"result\":\"FAILURE\",\"ts\":103}",
+        "outcome": "accepted",
+        "amrId": "AMR_001",
+        "kind": "ack",
+        "model": {
+          "CommandId": " CMD_1 ",
+          "Result": "FAILURE",
+          "Timestamp": 103,
+          "Id": null,
+          "Reason": null
+        }
+      },
+      {
+        "name": "ack-AMR_002",
+        "topic": "amr/AMR_002/ack",
+        "payload": "{\"cmdId\":\" CMD_2 \",\"result\":\"SUCCESS\",\"ts\":203,\"id\":\"AMR_002\",\"reason\":\" 완료 \"}",
+        "outcome": "accepted",
+        "amrId": "AMR_002",
+        "kind": "ack",
+        "model": {
+          "CommandId": " CMD_2 ",
+          "Result": "SUCCESS",
+          "Timestamp": 203,
+          "Id": "AMR_002",
+          "Reason": " 완료 "
+        }
+      },
+      {
+        "name": "missing-ts",
+        "topic": "amr/AMR_001/heartbeat",
+        "payload": "{\"id\":\"AMR_001\",\"status\":\"OK\"}",
+        "outcome": "rejected",
+        "code": "MissingField"
+      },
+      {
+        "name": "normal-after-missing-ts",
+        "topic": "amr/AMR_001/heartbeat",
+        "payload": "{\"id\":\"AMR_001\",\"ts\":100,\"status\":\"OK\"}",
+        "outcome": "accepted",
+        "amrId": "AMR_001",
+        "kind": "heartbeat",
+        "model": {
+          "Id": "AMR_001",
+          "Timestamp": 100,
+          "Status": "OK"
+        }
+      },
+      {
+        "name": "negative-speed",
+        "topic": "amr/AMR_001/telemetry",
+        "payload": "{\"id\":\"AMR_001\",\"ts\":1,\"pos\":{\"x\":1,\"y\":2},\"sp\":-1,\"state\":\"IDLE\"}",
+        "outcome": "rejected",
+        "code": "InvalidValue"
+      },
+      {
+        "name": "normal-after-negative-speed",
+        "topic": "amr/AMR_001/telemetry",
+        "payload": "{\"id\":\"AMR_001\",\"ts\":101,\"pos\":{\"x\":1.25,\"y\":-2.5},\"sp\":0.25,\"state\":\"BUSY\"}",
+        "outcome": "accepted",
+        "amrId": "AMR_001",
+        "kind": "telemetry",
+        "model": {
+          "Id": "AMR_001",
+          "Timestamp": 101,
+          "Position": {
+            "X": 1.25,
+            "Y": -2.5
+          },
+          "Speed": 0.25,
+          "State": "BUSY"
+        }
+      },
+      {
+        "name": "malformed-json",
+        "topic": "amr/AMR_001/alarm",
+        "payload": "PRIVATE_COM01B_INPUT",
+        "outcome": "rejected",
+        "code": "InvalidJson"
+      },
+      {
+        "name": "normal-after-malformed-json",
+        "topic": "amr/AMR_001/alarm",
+        "payload": "{\"id\":\"AMR_001\",\"ts\":102,\"code\":\" A1 \",\"level\":\"WARN\",\"alarmState\":\"ACTIVE\",\"message\":\" 경보 원형 보존 \"}",
+        "outcome": "accepted",
+        "amrId": "AMR_001",
+        "kind": "alarm",
+        "model": {
+          "Id": "AMR_001",
+          "Timestamp": 102,
+          "Code": " A1 ",
+          "Level": "WARN",
+          "AlarmState": "ACTIVE",
+          "Message": " 경보 원형 보존 "
+        }
+      },
+      {
+        "name": "ack-id-mismatch",
+        "topic": "amr/AMR_001/ack",
+        "payload": "{\"cmdId\":\"cmd\",\"result\":\"FAILURE\",\"ts\":1,\"id\":\"AMR_002\"}",
+        "outcome": "rejected",
+        "code": "IdMismatch"
+      },
+      {
+        "name": "normal-after-ack-id-mismatch",
+        "topic": "amr/AMR_001/ack",
+        "payload": "{\"cmdId\":\" CMD_1 \",\"result\":\"FAILURE\",\"ts\":103}",
+        "outcome": "accepted",
+        "amrId": "AMR_001",
+        "kind": "ack",
+        "model": {
+          "CommandId": " CMD_1 ",
+          "Result": "FAILURE",
+          "Timestamp": 103,
+          "Id": null,
+          "Reason": null
+        }
+      },
+      {
+        "name": "outside-0",
+        "topic": "amr/AMR_001/command",
+        "payload": "PRIVATE_COM01B_INPUT",
+        "outcome": "ignored"
+      },
+      {
+        "name": "outside-1",
+        "topic": "amr/AMR_001/unknown",
+        "payload": "PRIVATE_COM01B_INPUT",
+        "outcome": "ignored"
+      },
+      {
+        "name": "outside-2",
+        "topic": "amr/AMR_001/ACK",
+        "payload": "PRIVATE_COM01B_INPUT",
+        "outcome": "ignored"
+      },
+      {
+        "name": "outside-3",
+        "topic": "amr/AMR_001/alarm/extra",
+        "payload": "PRIVATE_COM01B_INPUT",
+        "outcome": "ignored"
+      }
+    ],
+    [
+      {
+        "name": "heartbeat-AMR_001",
+        "topic": "amr/AMR_001/heartbeat",
+        "payload": "{\"id\":\"AMR_001\",\"ts\":100,\"status\":\"OK\"}",
+        "outcome": "accepted",
+        "amrId": "AMR_001",
+        "kind": "heartbeat",
+        "model": {
+          "Id": "AMR_001",
+          "Timestamp": 100,
+          "Status": "OK"
+        }
+      },
+      {
+        "name": "heartbeat-AMR_002",
+        "topic": "amr/AMR_002/heartbeat",
+        "payload": "{\"id\":\"AMR_002\",\"ts\":200,\"status\":\"OK\"}",
+        "outcome": "accepted",
+        "amrId": "AMR_002",
+        "kind": "heartbeat",
+        "model": {
+          "Id": "AMR_002",
+          "Timestamp": 200,
+          "Status": "OK"
+        }
+      },
+      {
+        "name": "telemetry-AMR_001",
+        "topic": "amr/AMR_001/telemetry",
+        "payload": "{\"id\":\"AMR_001\",\"ts\":101,\"pos\":{\"x\":1.25,\"y\":-2.5},\"sp\":0.25,\"state\":\"BUSY\"}",
+        "outcome": "accepted",
+        "amrId": "AMR_001",
+        "kind": "telemetry",
+        "model": {
+          "Id": "AMR_001",
+          "Timestamp": 101,
+          "Position": {
+            "X": 1.25,
+            "Y": -2.5
+          },
+          "Speed": 0.25,
+          "State": "BUSY"
+        }
+      },
+      {
+        "name": "telemetry-AMR_002",
+        "topic": "amr/AMR_002/telemetry",
+        "payload": "{\"id\":\"AMR_002\",\"ts\":201,\"pos\":{\"x\":2.5,\"y\":-5},\"sp\":0.5,\"state\":\"STOPPED\"}",
+        "outcome": "accepted",
+        "amrId": "AMR_002",
+        "kind": "telemetry",
+        "model": {
+          "Id": "AMR_002",
+          "Timestamp": 201,
+          "Position": {
+            "X": 2.5,
+            "Y": -5
+          },
+          "Speed": 0.5,
+          "State": "STOPPED"
+        }
+      },
+      {
+        "name": "alarm-AMR_001",
+        "topic": "amr/AMR_001/alarm",
+        "payload": "{\"id\":\"AMR_001\",\"ts\":102,\"code\":\" A1 \",\"level\":\"WARN\",\"alarmState\":\"ACTIVE\",\"message\":\" 경보 원형 보존 \"}",
+        "outcome": "accepted",
+        "amrId": "AMR_001",
+        "kind": "alarm",
+        "model": {
+          "Id": "AMR_001",
+          "Timestamp": 102,
+          "Code": " A1 ",
+          "Level": "WARN",
+          "AlarmState": "ACTIVE",
+          "Message": " 경보 원형 보존 "
+        }
+      },
+      {
+        "name": "alarm-AMR_002",
+        "topic": "amr/AMR_002/alarm",
+        "payload": "{\"id\":\"AMR_002\",\"ts\":202,\"code\":\" A2 \",\"level\":\"ERR\",\"alarmState\":\"CLEARED\"}",
+        "outcome": "accepted",
+        "amrId": "AMR_002",
+        "kind": "alarm",
+        "model": {
+          "Id": "AMR_002",
+          "Timestamp": 202,
+          "Code": " A2 ",
+          "Level": "ERR",
+          "AlarmState": "CLEARED",
+          "Message": null
+        }
+      },
+      {
+        "name": "ack-AMR_001",
+        "topic": "amr/AMR_001/ack",
+        "payload": "{\"cmdId\":\" CMD_1 \",\"result\":\"FAILURE\",\"ts\":103}",
+        "outcome": "accepted",
+        "amrId": "AMR_001",
+        "kind": "ack",
+        "model": {
+          "CommandId": " CMD_1 ",
+          "Result": "FAILURE",
+          "Timestamp": 103,
+          "Id": null,
+          "Reason": null
+        }
+      },
+      {
+        "name": "ack-AMR_002",
+        "topic": "amr/AMR_002/ack",
+        "payload": "{\"cmdId\":\" CMD_2 \",\"result\":\"SUCCESS\",\"ts\":203,\"id\":\"AMR_002\",\"reason\":\" 완료 \"}",
+        "outcome": "accepted",
+        "amrId": "AMR_002",
+        "kind": "ack",
+        "model": {
+          "CommandId": " CMD_2 ",
+          "Result": "SUCCESS",
+          "Timestamp": 203,
+          "Id": "AMR_002",
+          "Reason": " 완료 "
+        }
+      }
+    ]
+  ]
+}

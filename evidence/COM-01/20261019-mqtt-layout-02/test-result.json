@@ -1,0 +1,5 @@
+{
+  "command": "dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj --no-build --no-restore",
+  "exitCode": 0,
+  "completedAtUtc": "2026-10-19T07:11:27.6324315+00:00"
+}
