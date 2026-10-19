@@ -1,0 +1,5 @@
+{
+  "completedAtUtc": "2026-10-19T05:39:14.9521752Z",
+  "command": "dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj --no-build --no-restore --logger 'trx;LogFileName=tests.trx' --results-directory evidence/COM-04/20261019-alarm-fields-01",
+  "exitCode": 0
+}

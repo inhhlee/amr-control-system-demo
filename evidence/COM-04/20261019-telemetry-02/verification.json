@@ -1,0 +1,37 @@
+{
+  "sourceHashesMatch": true,
+  "localLinksChecked": 70,
+  "total": 228,
+  "failed": 0,
+  "scope": "Telemetry validator and existing automated regression; no MQTT run",
+  "checkedAtUtc": "2026-10-19T04:51:22.6907779+00:00",
+  "sourceFileCount": 24,
+  "missingLocalLinks": 0,
+  "suites": [
+    {
+      "count": 21,
+      "passed": 21,
+      "name": "HeartbeatSubscriptionTests"
+    },
+    {
+      "count": 86,
+      "passed": 86,
+      "name": "HeartbeatValidatorTests"
+    },
+    {
+      "count": 14,
+      "passed": 14,
+      "name": "MessageValidationRegressionTests"
+    },
+    {
+      "count": 6,
+      "passed": 6,
+      "name": "MqttConnectionTests"
+    },
+    {
+      "count": 101,
+      "passed": 101,
+      "name": "TelemetryValidatorTests"
+    }
+  ]
+}

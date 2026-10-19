@@ -1,0 +1,37 @@
+[
+  {
+    "from": "src/Amr.Communication/Validation/MessageValidation.cs",
+    "to": "src/Amr.Communication/Validation/Common/MessageValidation.cs",
+    "sha256Before": "42FFF48B8D678DD8CB79564B0EB7F3A8FE194C43C377073701AB4CAC9A6CB94D"
+  },
+  {
+    "from": "src/Amr.Communication/Validation/ValidationError.cs",
+    "to": "src/Amr.Communication/Validation/Common/ValidationError.cs",
+    "sha256Before": "3DCF8999E3771B4966872962A45D621BE51F862C1EFB16D268501CD3BE666B71"
+  },
+  {
+    "from": "src/Amr.Communication/Validation/HeartbeatValidator.cs",
+    "to": "src/Amr.Communication/Validation/Heartbeat/HeartbeatValidator.cs",
+    "sha256Before": "71F3AA777BA7A44E405F6B36FFD06D56B78825FE761A07B01C74CD0FE80EEC29"
+  },
+  {
+    "from": "src/Amr.Communication/Validation/HeartbeatValidationResult.cs",
+    "to": "src/Amr.Communication/Validation/Heartbeat/HeartbeatValidationResult.cs",
+    "sha256Before": "1604225131767FC7564E9D42470E976117920FC14DD0732039C91260EB14C9A7"
+  },
+  {
+    "from": "src/Amr.Communication/Validation/TelemetryValidator.cs",
+    "to": "src/Amr.Communication/Validation/Telemetry/TelemetryValidator.cs",
+    "sha256Before": "9A9D2A46EAD617E6EE9086C54BB738AE0FA1EE30806F18D5BCF790289F66E506"
+  },
+  {
+    "from": "src/Amr.Communication/Validation/TelemetryValidationResult.cs",
+    "to": "src/Amr.Communication/Validation/Telemetry/TelemetryValidationResult.cs",
+    "sha256Before": "3687D86B1B52EEA007F3FEF77BAA48C4E513753782EAC8E0EC284364D529E4C6"
+  },
+  {
+    "from": "src/Amr.Communication/Validation/AlarmValidationResult.cs",
+    "to": "src/Amr.Communication/Validation/Alarm/AlarmValidationResult.cs",
+    "sha256Before": "B09A032DE262596E065232FFEA7A3BDE00E7517DCF7A58EEBDDD3DFC4C18677C"
+  }
+]

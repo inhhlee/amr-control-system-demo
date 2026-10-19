@@ -1,0 +1,39 @@
+{
+  "passed": 357,
+  "total": 357,
+  "localLinksChecked": 70,
+  "gitDiffCheck": "passed",
+  "suites": [
+    {
+      "count": 117,
+      "suite": "AlarmValidatorTests"
+    },
+    {
+      "count": 21,
+      "suite": "HeartbeatSubscriptionTests"
+    },
+    {
+      "count": 86,
+      "suite": "HeartbeatValidatorTests"
+    },
+    {
+      "count": 12,
+      "suite": "MessageFieldValidationTests"
+    },
+    {
+      "count": 14,
+      "suite": "MessageValidationRegressionTests"
+    },
+    {
+      "count": 6,
+      "suite": "MqttConnectionTests"
+    },
+    {
+      "count": 101,
+      "suite": "TelemetryValidatorTests"
+    }
+  ],
+  "checkedAtUtc": "2026-10-19T05:53:09.3907170Z",
+  "sourceFiles": 29,
+  "sourceHashesMatch": true
+}

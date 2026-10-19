@@ -1,0 +1,5 @@
+{
+  "exitCode": 0,
+  "completedAtUtc": "2026-10-19T05:59:33.5421974Z",
+  "command": "dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj --no-build --no-restore --logger 'trx;LogFileName=tests.trx' --results-directory evidence/COM-04/20261019-ack-01"
+}

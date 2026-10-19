@@ -1,0 +1,9 @@
+C:\Program Files\dotnet\sdk\10.0.401\Microsoft.Common.CurrentVersion.targets(3883,5): error MSB3491: "obj\Debug\net10.0\Amr.Communication.csproj.CoreCompileInputs.cache" 파일에 줄을 쓸 수 없습니다. Access to the path 'C:\amr-control-system-demo\src\Amr.Communication\obj\Debug\net10.0\qi3nenfg.5sr~' is denied.  [C:\amr-control-system-demo\src\Amr.Communication\Amr.Communication.csproj]
+
+빌드하지 못했습니다.
+
+C:\Program Files\dotnet\sdk\10.0.401\Microsoft.Common.CurrentVersion.targets(3883,5): error MSB3491: "obj\Debug\net10.0\Amr.Communication.csproj.CoreCompileInputs.cache" 파일에 줄을 쓸 수 없습니다. Access to the path 'C:\amr-control-system-demo\src\Amr.Communication\obj\Debug\net10.0\qi3nenfg.5sr~' is denied.  [C:\amr-control-system-demo\src\Amr.Communication\Amr.Communication.csproj]
+    경고 0개
+    오류 1개
+
+경과 시간: 00:00:00.65
