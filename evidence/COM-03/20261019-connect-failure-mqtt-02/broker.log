@@ -1,0 +1,6 @@
+amr-demo-mosquitto-1  | 2026-10-19T14:12:00.337446965Z 1792419120: New connection from 172.19.0.1:56576 on port 1883.
+amr-demo-mosquitto-1  | 2026-10-19T14:12:00.365206279Z 1792419120: New client connected from 172.19.0.1:56576 as amr-demo-ec4726783788431b9579320f0fb600b4 (p5, c1, k5).
+amr-demo-mosquitto-1  | 2026-10-19T14:12:00.791326275Z 1792419120: Client amr-demo-ec4726783788431b9579320f0fb600b4 [172.19.0.1:56576] disconnected.
+amr-demo-mosquitto-1  | 2026-10-19T14:12:02.550868152Z 1792419122: New connection from 172.19.0.1:37522 on port 1883.
+amr-demo-mosquitto-1  | 2026-10-19T14:12:02.576213152Z 1792419122: New client connected from 172.19.0.1:37522 as amr-demo-f4c2a7a4e23d4b1ca161cf7776684850 (p5, c1, k5).
+amr-demo-mosquitto-1  | 2026-10-19T14:12:02.725732551Z 1792419122: Client amr-demo-f4c2a7a4e23d4b1ca161cf7776684850 [172.19.0.1:37522] disconnected.

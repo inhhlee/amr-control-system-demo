@@ -1,0 +1,38 @@
+[
+  {
+    "name": "refused",
+    "port": 52182,
+    "connectTimeoutSeconds": 10,
+    "elapsedMs": null,
+    "exitCode": 1,
+    "clientId": "amr-demo-dd9887b211164ba2ab16a6b4aa917bb4",
+    "connectBytesReceived": 0,
+    "transportClosed": null,
+    "consoleMembers": [],
+    "result": "passed"
+  },
+  {
+    "name": "timeout-1",
+    "port": 52186,
+    "connectTimeoutSeconds": 1,
+    "elapsedMs": 1030.9119,
+    "exitCode": 1,
+    "clientId": "amr-demo-4053e70c0b414fe881bcbfcfecfdcc46",
+    "connectBytesReceived": 56,
+    "transportClosed": true,
+    "consoleMembers": [],
+    "result": "passed"
+  },
+  {
+    "name": "timeout-2",
+    "port": 52189,
+    "connectTimeoutSeconds": 2,
+    "elapsedMs": 2029.1705,
+    "exitCode": 1,
+    "clientId": "amr-demo-4504d1e01d10480da739ad57c9b650ec",
+    "connectBytesReceived": 56,
+    "transportClosed": true,
+    "consoleMembers": [],
+    "result": "passed"
+  }
+]

@@ -42,17 +42,55 @@ public sealed class MqttConnection : IDisposable
             .WithKeepAlivePeriod(settings.KeepAlive)
             .Build();
 
-        using var timeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+        using var abort = new CancellationTokenSource();
+        using var timeout = new CancellationTokenSource();
+        // 두 신호가 근접해도 먼저 관찰한 종료 원인을 유지한다.
+        int outcome = 0; // 0: 대기, 1: 사용자, 2: 대기 제한, 3: 승인, 4: 실패
+        void Cancel(int reason)
+        {
+            if (Interlocked.CompareExchange(ref outcome, reason, 0) == 0) abort.Cancel();
+        }
+        using var userRegistration = cancellationToken.Register(() => Cancel(1));
+        using var timeoutRegistration = timeout.Token.Register(() => Cancel(2));
         timeout.CancelAfter(settings.ConnectTimeout);
 
-        // 요청 전송만으로 성공을 표시하지 않고 Broker의 MQTT 승인 결과를 기다린다.
-        var result = await _client.ConnectAsync(options, timeout.Token);
-        if (result.ResultCode != MqttClientConnectResultCode.Success || !_client.IsConnected)
+        Task<MqttClientConnectResult>? pending = null;
+        try
         {
-            throw new InvalidOperationException($"MQTT 접속이 승인되지 않았습니다: {result.ResultCode}");
+            abort.Token.ThrowIfCancellationRequested();
+            pending = _client.ConnectAsync(options, abort.Token);
+            // 대역/라이브러리가 취소를 늦게 처리해도 호출자의 대기는 끝낸다.
+            var result = await pending.WaitAsync(abort.Token);
+            abort.Token.ThrowIfCancellationRequested();
+            if (result.ResultCode != MqttClientConnectResultCode.Success)
+                throw new MqttConnectionException(MqttConnectionFailure.MqttRejected, result.ResultCode);
+            if (!_client.IsConnected)
+                throw new MqttConnectionException(MqttConnectionFailure.TransportFailure);
+            // 최종 검사와 승인 사이에 취소가 들어와도 이미 결정한 결과를 덮어쓰지 않는다.
+            if (Interlocked.CompareExchange(ref outcome, 3, 0) != 0)
+                throw new OperationCanceledException(abort.Token);
+            _approved = true;
         }
+        catch (Exception exception)
+        {
+            int terminalOutcome = Interlocked.CompareExchange(ref outcome, 4, 0);
+            // 실패한 인스턴스는 재사용하지 않는다. Dispose가 소켓을 닫고 늦은 승인을 격리한다.
+            Dispose();
+            if (pending is not null) _ = ObserveCompletionAsync(pending);
+            if (terminalOutcome == 1)
+                throw new OperationCanceledException("MQTT 접속을 사용자가 취소했습니다.", exception, cancellationToken);
+            if (terminalOutcome == 2)
+                throw new MqttConnectionException(MqttConnectionFailure.Timeout, innerException: exception);
+            if (exception is MqttConnectionException) throw;
+            throw new MqttConnectionException(MqttConnectionFailure.TransportFailure, innerException: exception);
+        }
+    }
 
-        _approved = true;
+    private static async Task ObserveCompletionAsync(Task<MqttClientConnectResult> pending)
+    {
+        // 이미 확정한 실패/취소를 변경하지 않으며, 늦은 fault도 관찰한다.
+        try { await pending; }
+        catch (Exception) { }
     }
 
     public async Task DisconnectAsync(CancellationToken cancellationToken = default)

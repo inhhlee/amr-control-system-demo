@@ -1,0 +1,7 @@
+Exception: C:\amr-control-system-demo\tests\manual\COM03-B\Verify-Connection.ps1:40
+Line |
+  40 |  … de -ne 0) { throw 'Scenario failed. See controller stderr/failure log …
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Scenario failed. See controller stderr/failure log.
+
+

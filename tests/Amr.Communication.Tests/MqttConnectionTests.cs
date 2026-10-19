@@ -57,7 +57,9 @@ public sealed class MqttConnectionTests
         Task pending = connection.ConnectAsync(new MqttConnectionSettings());
 
         client.ConnectResponse.SetResult(new MqttClientConnectResult { ResultCode = MqttClientConnectResultCode.NotAuthorized });
-        await Assert.ThrowsAsync<InvalidOperationException>(() => pending);
+        var failure = await Assert.ThrowsAsync<MqttConnectionException>(() => pending);
+        Assert.Equal(MqttConnectionFailure.MqttRejected, failure.Reason);
+        Assert.Equal(MqttClientConnectResultCode.NotAuthorized, failure.ResultCode);
         Assert.False(connection.IsConnected);
         await connection.DisconnectAsync();
         Assert.Equal(0, client.DisconnectCalls);
@@ -71,7 +73,9 @@ public sealed class MqttConnectionTests
         Task pending = connection.ConnectAsync(new MqttConnectionSettings());
 
         client.ConnectResponse.SetException(new IOException("Test transport failure"));
-        await Assert.ThrowsAsync<IOException>(() => pending);
+        var failure = await Assert.ThrowsAsync<MqttConnectionException>(() => pending);
+        Assert.Equal(MqttConnectionFailure.TransportFailure, failure.Reason);
+        Assert.IsType<IOException>(failure.InnerException);
         Assert.False(connection.IsConnected);
         await connection.DisconnectAsync();
         connection.Dispose();

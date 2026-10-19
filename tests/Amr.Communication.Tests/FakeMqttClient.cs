@@ -17,6 +17,11 @@ internal sealed class FakeMqttClient : IMqttClient
     public MqttClientDisconnectOptions? DisconnectOptions { get; private set; }
     public int DisconnectCalls { get; private set; }
     public int DisposeCalls { get; private set; }
+    public int ConnectCalls { get; private set; }
+    public bool IgnoreConnectCancellation { get; init; }
+    public Action? BeforeConnectReturn { get; set; }
+    public TaskCompletionSource ConnectEntered { get; } = new(TaskCreationOptions.RunContinuationsAsynchronously);
+    public TaskCompletionSource ConnectFinished { get; } = new(TaskCreationOptions.RunContinuationsAsynchronously);
     public TaskCompletionSource<MqttClientSubscribeResult> SubscribeResponse { get; } =
         new(TaskCreationOptions.RunContinuationsAsynchronously);
     public TaskCompletionSource<MqttClientUnsubscribeResult> UnsubscribeResponse { get; } =
@@ -31,9 +36,17 @@ internal sealed class FakeMqttClient : IMqttClient
     public async Task<MqttClientConnectResult> ConnectAsync(MqttClientOptions options, CancellationToken cancellationToken)
     {
         Options = options;
-        var result = await ConnectResponse.Task.WaitAsync(cancellationToken);
-        IsConnected = result.ResultCode == MqttClientConnectResultCode.Success;
-        return result;
+        ConnectCalls++;
+        ConnectEntered.TrySetResult();
+        try
+        {
+            var result = await ConnectResponse.Task.WaitAsync(IgnoreConnectCancellation ? CancellationToken.None : cancellationToken);
+            // Dispose는 실제 Client처럼 전송 자원을 닫는다. 완료 통지만 늦게 돌아올 수 있다.
+            IsConnected = DisposeCalls == 0 && result.ResultCode == MqttClientConnectResultCode.Success;
+            BeforeConnectReturn?.Invoke();
+            return result;
+        }
+        finally { ConnectFinished.TrySetResult(); }
     }
 
     public async Task DisconnectAsync(MqttClientDisconnectOptions options, CancellationToken cancellationToken)
@@ -54,7 +67,9 @@ internal sealed class FakeMqttClient : IMqttClient
     // 이번 시험에서는 사용하지 않는 MQTTnet 인터페이스 멤버다.
     public event Func<MqttClientConnectedEventArgs, Task>? ConnectedAsync { add { } remove { } }
     public event Func<MqttClientConnectingEventArgs, Task>? ConnectingAsync { add { } remove { } }
-    public event Func<MqttClientDisconnectedEventArgs, Task>? DisconnectedAsync { add { } remove { } }
+    public event Func<MqttClientDisconnectedEventArgs, Task>? DisconnectedAsync;
+    public Task NotifyDisconnectedAsync(MqttClientDisconnectedEventArgs args) =>
+        DisconnectedAsync?.Invoke(args) ?? Task.CompletedTask;
     public event Func<InspectMqttPacketEventArgs, Task>? InspectPacketAsync { add { } remove { } }
 
     public Task PingAsync(CancellationToken cancellationToken) => throw new NotSupportedException();

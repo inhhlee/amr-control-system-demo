@@ -16,5 +16,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../../src/Amr.Communication/Amr.Communication.csproj" />
+    <ProjectReference Include="../../src/Amr.Communication.Console/Amr.Communication.Console.csproj" />
   </ItemGroup>
 </Project>
