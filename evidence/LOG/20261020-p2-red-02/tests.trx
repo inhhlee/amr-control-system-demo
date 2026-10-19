@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="717f8624-8b6d-40e6-bc38-2a5543b98ee3" name="user@DESKTOP-BLNVKRS 2026-10-20 01:09:02" runUser="DESKTOP-BLNVKRS\user" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-20T01:09:02.9447674+09:00" queuing="2026-10-20T01:09:02.9447680+09:00" start="2026-10-20T01:08:59.2414244+09:00" finish="2026-10-20T01:09:03.0933740+09:00" />
+  <TestSettings name="default" id="f9bfde36-3c6b-4046-812b-e60c25b8e1b2">
+    <Deployment runDeploymentRoot="user_DESKTOP-BLNVKRS_2026-10-20_01_09_02" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="58455c8d-411d-4119-a414-a17d27ee0f3a" testId="04a71456-3c82-f124-bd21-9d312c03089e" testName="Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: True, order: &quot;lost-then-user&quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.1085630" startTime="2026-10-20T01:09:02.6545958+09:00" endTime="2026-10-20T01:09:02.7869572+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="58455c8d-411d-4119-a414-a17d27ee0f3a">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Strings differ&#xD;
+           ↓ (pos 0)&#xD;
+Expected: "ConnectionLost"&#xD;
+Actual:   "UserCanceled"&#xD;
+           ↑ (pos 0)</Message>
+          <StackTrace>   at Amr.Communication.Tests.ConsoleShutdownReasonTests.Run.AssertResultAsync(String reason, Int32 expectedExit, String eventType) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 138&#xD;
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 35&#xD;
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 35&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2d4c48cb-d103-42e0-88f7-a4816454e9a1" testId="e1af01c1-f4a2-d282-e0f6-785bc309a7b2" testName="Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: False, order: &quot;user&quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0456907" startTime="2026-10-20T01:09:02.8529600+09:00" endTime="2026-10-20T01:09:02.8936842+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2d4c48cb-d103-42e0-88f7-a4816454e9a1" />
+    <UnitTestResult executionId="5c62d3a7-4d5e-4853-88ad-795d4d1159fa" testId="0f32f982-a741-d1d9-53d2-40e1056fb7dd" testName="Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: True, order: &quot;user-then-lost&quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0374135" startTime="2026-10-20T01:09:02.5791056+09:00" endTime="2026-10-20T01:09:02.6542749+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5c62d3a7-4d5e-4853-88ad-795d4d1159fa" />
+    <UnitTestResult executionId="a2abf0e5-4221-441b-8819-ec442aea45d0" testId="042ada03-1616-54e8-aee0-9835b9889fd2" testName="Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: True, order: &quot;user&quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0867803" startTime="2026-10-20T01:09:02.4910214+09:00" endTime="2026-10-20T01:09:02.5788064+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a2abf0e5-4221-441b-8819-ec442aea45d0" />
+    <UnitTestResult executionId="63c01076-5bd1-4d25-b98c-08396c8eae51" testId="9cb3381f-0c6c-8294-26cd-c67c1e4915e4" testName="Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: False, order: &quot;user-then-lost&quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.1061052" startTime="2026-10-20T01:09:02.1625579+09:00" endTime="2026-10-20T01:09:02.2544281+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="63c01076-5bd1-4d25-b98c-08396c8eae51" />
+    <UnitTestResult executionId="05484cac-06ba-414f-93e1-7014c8a33998" testId="6e61d578-41d2-b174-ae29-2681e97b78c5" testName="Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: False, order: &quot;lost-then-user&quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0498036" startTime="2026-10-20T01:09:02.7891604+09:00" endTime="2026-10-20T01:09:02.8504322+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="05484cac-06ba-414f-93e1-7014c8a33998">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Strings differ&#xD;
+           ↓ (pos 0)&#xD;
+Expected: "ConnectionLost"&#xD;
+Actual:   "UserCanceled"&#xD;
+           ↑ (pos 0)</Message>
+          <StackTrace>   at Amr.Communication.Tests.ConsoleShutdownReasonTests.Run.AssertResultAsync(String reason, Int32 expectedExit, String eventType) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 138&#xD;
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 35&#xD;
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 35&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1bee554a-19b7-4454-9afb-1cf366c9adf5" testId="b4e190e5-50fb-774b-9d87-1e133df12942" testName="Amr.Communication.Tests.ConsoleShutdownReasonTests.InitialConnectCancellation_RemainsUserCanceledAndExitZero" computerName="DESKTOP-BLNVKRS" duration="00:00:00.2844734" startTime="2026-10-20T01:09:01.8120737+09:00" endTime="2026-10-20T01:09:02.1344894+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1bee554a-19b7-4454-9afb-1cf366c9adf5" />
+    <UnitTestResult executionId="0b1789de-7fc1-49e3-8aca-22d73be2040a" testId="c8268d0d-ba18-2340-079c-70ce27858fbe" testName="Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: True, order: &quot;lost&quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0580208" startTime="2026-10-20T01:09:02.4325367+09:00" endTime="2026-10-20T01:09:02.4854135+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0b1789de-7fc1-49e3-8aca-22d73be2040a">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Strings differ&#xD;
+           ↓ (pos 0)&#xD;
+Expected: "ConnectionLost"&#xD;
+Actual:   "UserCanceled"&#xD;
+           ↑ (pos 0)</Message>
+          <StackTrace>   at Amr.Communication.Tests.ConsoleShutdownReasonTests.Run.AssertResultAsync(String reason, Int32 expectedExit, String eventType) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 138&#xD;
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 35&#xD;
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 35&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="3ab42a4c-da24-46f9-9993-eb14733faf19" testId="c062df35-e684-5c2f-4704-312a30a9832d" testName="Amr.Communication.Tests.ConsoleShutdownReasonTests.ConcurrentSignals_KeepReasonExitCodeAndConnectionLostEventConsistent" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0423762" startTime="2026-10-20T01:09:02.9115961+09:00" endTime="2026-10-20T01:09:02.9383925+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3ab42a4c-da24-46f9-9993-eb14733faf19">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Values differ&#xD;
+Expected: 0&#xD;
+Actual:   1</Message>
+          <StackTrace>   at Amr.Communication.Tests.ConsoleShutdownReasonTests.Run.AssertResultAsync(String reason, Int32 expectedExit, String eventType) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 135&#xD;
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.ConcurrentSignals_KeepReasonExitCodeAndConnectionLostEventConsistent() in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 87&#xD;
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.ConcurrentSignals_KeepReasonExitCodeAndConnectionLostEventConsistent() in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 87&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c483d455-8f70-451f-8b1d-2abf2ead0f96" testId="ba26bec4-53c1-8fd1-6c84-00d24eda0a77" testName="Amr.Communication.Tests.ConsoleShutdownReasonTests.UserCancellationDuringDisconnectCallback_DoesNotOverwriteCauseOrReleaseWaitEarly" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0140043" startTime="2026-10-20T01:09:02.9406730+09:00" endTime="2026-10-20T01:09:02.9571793+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c483d455-8f70-451f-8b1d-2abf2ead0f96">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.False() Failure&#xD;
+Expected: False&#xD;
+Actual:   True</Message>
+          <StackTrace>   at Amr.Communication.Tests.ConsoleShutdownReasonTests.UserCancellationDuringDisconnectCallback_DoesNotOverwriteCauseOrReleaseWaitEarly() in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 65&#xD;
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.UserCancellationDuringDisconnectCallback_DoesNotOverwriteCauseOrReleaseWaitEarly() in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 69&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="82f05e35-4b09-4980-945b-8f42799ea8b2" testId="710b2254-e6c2-9b14-313e-966d7c92cb78" testName="Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: False, order: &quot;lost&quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.1230506" startTime="2026-10-20T01:09:02.2562502+09:00" endTime="2026-10-20T01:09:02.4219324+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="82f05e35-4b09-4980-945b-8f42799ea8b2">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Strings differ&#xD;
+           ↓ (pos 0)&#xD;
+Expected: "ConnectionLost"&#xD;
+Actual:   "UserCanceled"&#xD;
+           ↑ (pos 0)</Message>
+          <StackTrace>   at Amr.Communication.Tests.ConsoleShutdownReasonTests.Run.AssertResultAsync(String reason, Int32 expectedExit, String eventType) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 138&#xD;
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 35&#xD;
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 35&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Amr.Communication.Tests.ConsoleShutdownReasonTests.UserCancellationDuringDisconnectCallback_DoesNotOverwriteCauseOrReleaseWaitEarly" storage="c:\amr-control-system-demo\tests\amr.communication.tests\bin\debug\net10.0\amr.communication.tests.dll" id="ba26bec4-53c1-8fd1-6c84-00d24eda0a77">
+      <Execution id="c483d455-8f70-451f-8b1d-2abf2ead0f96" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Communication.Tests.ConsoleShutdownReasonTests" name="UserCancellationDuringDisconnectCallback_DoesNotOverwriteCauseOrReleaseWaitEarly" />
+    </UnitTest>
+    <UnitTest name="Amr.Communication.Tests.ConsoleShutdownReasonTests.InitialConnectCancellation_RemainsUserCanceledAndExitZero" storage="c:\amr-control-system-demo\tests\amr.communication.tests\bin\debug\net10.0\amr.communication.tests.dll" id="b4e190e5-50fb-774b-9d87-1e133df12942">
+      <Execution id="1bee554a-19b7-4454-9afb-1cf366c9adf5" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Communication.Tests.ConsoleShutdownReasonTests" name="InitialConnectCancellation_RemainsUserCanceledAndExitZero" />
+    </UnitTest>
+    <UnitTest name="Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: True, order: &quot;user&quot;)" storage="c:\amr-control-system-demo\tests\amr.communication.tests\bin\debug\net10.0\amr.communication.tests.dll" id="042ada03-1616-54e8-aee0-9835b9889fd2">
+      <Execution id="a2abf0e5-4221-441b-8819-ec442aea45d0" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Communication.Tests.ConsoleShutdownReasonTests" name="SubscriptionAndReceiveWait_PreserveFirstShutdownCause" />
+    </UnitTest>
+    <UnitTest name="Amr.Communication.Tests.ConsoleShutdownReasonTests.ConcurrentSignals_KeepReasonExitCodeAndConnectionLostEventConsistent" storage="c:\amr-control-system-demo\tests\amr.communication.tests\bin\debug\net10.0\amr.communication.tests.dll" id="c062df35-e684-5c2f-4704-312a30a9832d">
+      <Execution id="3ab42a4c-da24-46f9-9993-eb14733faf19" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Communication.Tests.ConsoleShutdownReasonTests" name="ConcurrentSignals_KeepReasonExitCodeAndConnectionLostEventConsistent" />
+    </UnitTest>
+    <UnitTest name="Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: False, order: &quot;user-then-lost&quot;)" storage="c:\amr-control-system-demo\tests\amr.communication.tests\bin\debug\net10.0\amr.communication.tests.dll" id="9cb3381f-0c6c-8294-26cd-c67c1e4915e4">
+      <Execution id="63c01076-5bd1-4d25-b98c-08396c8eae51" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Communication.Tests.ConsoleShutdownReasonTests" name="SubscriptionAndReceiveWait_PreserveFirstShutdownCause" />
+    </UnitTest>
+    <UnitTest name="Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: False, order: &quot;lost&quot;)" storage="c:\amr-control-system-demo\tests\amr.communication.tests\bin\debug\net10.0\amr.communication.tests.dll" id="710b2254-e6c2-9b14-313e-966d7c92cb78">
+      <Execution id="82f05e35-4b09-4980-945b-8f42799ea8b2" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Communication.Tests.ConsoleShutdownReasonTests" name="SubscriptionAndReceiveWait_PreserveFirstShutdownCause" />
+    </UnitTest>
+    <UnitTest name="Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: False, order: &quot;lost-then-user&quot;)" storage="c:\amr-control-system-demo\tests\amr.communication.tests\bin\debug\net10.0\amr.communication.tests.dll" id="6e61d578-41d2-b174-ae29-2681e97b78c5">
+      <Execution id="05484cac-06ba-414f-93e1-7014c8a33998" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Communication.Tests.ConsoleShutdownReasonTests" name="SubscriptionAndReceiveWait_PreserveFirstShutdownCause" />
+    </UnitTest>
+    <UnitTest name="Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: True, order: &quot;user-then-lost&quot;)" storage="c:\amr-control-system-demo\tests\amr.communication.tests\bin\debug\net10.0\amr.communication.tests.dll" id="0f32f982-a741-d1d9-53d2-40e1056fb7dd">
+      <Execution id="5c62d3a7-4d5e-4853-88ad-795d4d1159fa" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Communication.Tests.ConsoleShutdownReasonTests" name="SubscriptionAndReceiveWait_PreserveFirstShutdownCause" />
+    </UnitTest>
+    <UnitTest name="Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: False, order: &quot;user&quot;)" storage="c:\amr-control-system-demo\tests\amr.communication.tests\bin\debug\net10.0\amr.communication.tests.dll" id="e1af01c1-f4a2-d282-e0f6-785bc309a7b2">
+      <Execution id="2d4c48cb-d103-42e0-88f7-a4816454e9a1" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Communication.Tests.ConsoleShutdownReasonTests" name="SubscriptionAndReceiveWait_PreserveFirstShutdownCause" />
+    </UnitTest>
+    <UnitTest name="Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: True, order: &quot;lost-then-user&quot;)" storage="c:\amr-control-system-demo\tests\amr.communication.tests\bin\debug\net10.0\amr.communication.tests.dll" id="04a71456-3c82-f124-bd21-9d312c03089e">
+      <Execution id="58455c8d-411d-4119-a414-a17d27ee0f3a" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Communication.Tests.ConsoleShutdownReasonTests" name="SubscriptionAndReceiveWait_PreserveFirstShutdownCause" />
+    </UnitTest>
+    <UnitTest name="Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: True, order: &quot;lost&quot;)" storage="c:\amr-control-system-demo\tests\amr.communication.tests\bin\debug\net10.0\amr.communication.tests.dll" id="c8268d0d-ba18-2340-079c-70ce27858fbe">
+      <Execution id="0b1789de-7fc1-49e3-8aca-22d73be2040a" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Communication.Tests.ConsoleShutdownReasonTests" name="SubscriptionAndReceiveWait_PreserveFirstShutdownCause" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="04a71456-3c82-f124-bd21-9d312c03089e" executionId="58455c8d-411d-4119-a414-a17d27ee0f3a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e1af01c1-f4a2-d282-e0f6-785bc309a7b2" executionId="2d4c48cb-d103-42e0-88f7-a4816454e9a1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0f32f982-a741-d1d9-53d2-40e1056fb7dd" executionId="5c62d3a7-4d5e-4853-88ad-795d4d1159fa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="042ada03-1616-54e8-aee0-9835b9889fd2" executionId="a2abf0e5-4221-441b-8819-ec442aea45d0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9cb3381f-0c6c-8294-26cd-c67c1e4915e4" executionId="63c01076-5bd1-4d25-b98c-08396c8eae51" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6e61d578-41d2-b174-ae29-2681e97b78c5" executionId="05484cac-06ba-414f-93e1-7014c8a33998" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b4e190e5-50fb-774b-9d87-1e133df12942" executionId="1bee554a-19b7-4454-9afb-1cf366c9adf5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c8268d0d-ba18-2340-079c-70ce27858fbe" executionId="0b1789de-7fc1-49e3-8aca-22d73be2040a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c062df35-e684-5c2f-4704-312a30a9832d" executionId="3ab42a4c-da24-46f9-9993-eb14733faf19" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ba26bec4-53c1-8fd1-6c84-00d24eda0a77" executionId="c483d455-8f70-451f-8b1d-2abf2ead0f96" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="710b2254-e6c2-9b14-313e-966d7c92cb78" executionId="82f05e35-4b09-4980-945b-8f42799ea8b2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="목록에 없는 결과" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="로드된 모든 결과" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="11" executed="11" passed="5" failed="6" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.01] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.12)&#xD;
+[xUnit.net 00:00:00.28]   Discovering: Amr.Communication.Tests&#xD;
+[xUnit.net 00:00:00.93]   Discovered:  Amr.Communication.Tests&#xD;
+[xUnit.net 00:00:01.01]   Starting:    Amr.Communication.Tests&#xD;
+[xUnit.net 00:00:01.67]       Assert.Equal() Failure: Strings differ&#xD;
+[xUnit.net 00:00:01.67]                  ↓ (pos 0)&#xD;
+[xUnit.net 00:00:01.67]       Expected: "ConnectionLost"&#xD;
+[xUnit.net 00:00:01.67]       Actual:   "UserCanceled"&#xD;
+[xUnit.net 00:00:01.67]                  ↑ (pos 0)&#xD;
+[xUnit.net 00:00:01.67]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.68]         C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs(138,0): at Amr.Communication.Tests.ConsoleShutdownReasonTests.Run.AssertResultAsync(String reason, Int32 expectedExit, String eventType)&#xD;
+[xUnit.net 00:00:01.68]         C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs(35,0): at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order)&#xD;
+[xUnit.net 00:00:01.68]         C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs(35,0): at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order)&#xD;
+[xUnit.net 00:00:01.68]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.73]       Assert.Equal() Failure: Strings differ&#xD;
+[xUnit.net 00:00:01.73]                  ↓ (pos 0)&#xD;
+[xUnit.net 00:00:01.73]       Expected: "ConnectionLost"&#xD;
+[xUnit.net 00:00:01.73]       Actual:   "UserCanceled"&#xD;
+[xUnit.net 00:00:01.73]                  ↑ (pos 0)&#xD;
+[xUnit.net 00:00:01.73]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.73]         C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs(138,0): at Amr.Communication.Tests.ConsoleShutdownReasonTests.Run.AssertResultAsync(String reason, Int32 expectedExit, String eventType)&#xD;
+[xUnit.net 00:00:01.73]         C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs(35,0): at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order)&#xD;
+[xUnit.net 00:00:01.73]         C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs(35,0): at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order)&#xD;
+[xUnit.net 00:00:01.73]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:02.03]       Assert.Equal() Failure: Strings differ&#xD;
+[xUnit.net 00:00:02.03]                  ↓ (pos 0)&#xD;
+[xUnit.net 00:00:02.03]       Expected: "ConnectionLost"&#xD;
+[xUnit.net 00:00:02.03]       Actual:   "UserCanceled"&#xD;
+[xUnit.net 00:00:02.03]                  ↑ (pos 0)&#xD;
+[xUnit.net 00:00:02.03]       Stack Trace:&#xD;
+[xUnit.net 00:00:02.03]         C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs(138,0): at Amr.Communication.Tests.ConsoleShutdownReasonTests.Run.AssertResultAsync(String reason, Int32 expectedExit, String eventType)&#xD;
+[xUnit.net 00:00:02.03]         C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs(35,0): at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order)&#xD;
+[xUnit.net 00:00:02.03]         C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs(35,0): at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order)&#xD;
+[xUnit.net 00:00:02.03]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:02.10]       Assert.Equal() Failure: Strings differ&#xD;
+[xUnit.net 00:00:02.10]                  ↓ (pos 0)&#xD;
+[xUnit.net 00:00:02.10]       Expected: "ConnectionLost"&#xD;
+[xUnit.net 00:00:02.10]       Actual:   "UserCanceled"&#xD;
+[xUnit.net 00:00:02.10]                  ↑ (pos 0)&#xD;
+[xUnit.net 00:00:02.10]       Stack Trace:&#xD;
+[xUnit.net 00:00:02.10]         C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs(138,0): at Amr.Communication.Tests.ConsoleShutdownReasonTests.Run.AssertResultAsync(String reason, Int32 expectedExit, String eventType)&#xD;
+[xUnit.net 00:00:02.10]         C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs(35,0): at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order)&#xD;
+[xUnit.net 00:00:02.10]         C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs(35,0): at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order)&#xD;
+[xUnit.net 00:00:02.10]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:02.18]       Assert.Equal() Failure: Values differ&#xD;
+[xUnit.net 00:00:02.18]       Expected: 0&#xD;
+[xUnit.net 00:00:02.18]       Actual:   1&#xD;
+[xUnit.net 00:00:02.18]       Stack Trace:&#xD;
+[xUnit.net 00:00:02.18]         C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs(135,0): at Amr.Communication.Tests.ConsoleShutdownReasonTests.Run.AssertResultAsync(String reason, Int32 expectedExit, String eventType)&#xD;
+[xUnit.net 00:00:02.18]         C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs(87,0): at Amr.Communication.Tests.ConsoleShutdownReasonTests.ConcurrentSignals_KeepReasonExitCodeAndConnectionLostEventConsistent()&#xD;
+[xUnit.net 00:00:02.18]         C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs(87,0): at Amr.Communication.Tests.ConsoleShutdownReasonTests.ConcurrentSignals_KeepReasonExitCodeAndConnectionLostEventConsistent()&#xD;
+[xUnit.net 00:00:02.18]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:02.20]       Assert.False() Failure&#xD;
+[xUnit.net 00:00:02.20]       Expected: False&#xD;
+[xUnit.net 00:00:02.20]       Actual:   True&#xD;
+[xUnit.net 00:00:02.20]       Stack Trace:&#xD;
+[xUnit.net 00:00:02.20]         C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs(65,0): at Amr.Communication.Tests.ConsoleShutdownReasonTests.UserCancellationDuringDisconnectCallback_DoesNotOverwriteCauseOrReleaseWaitEarly()&#xD;
+[xUnit.net 00:00:02.20]         C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs(69,0): at Amr.Communication.Tests.ConsoleShutdownReasonTests.UserCancellationDuringDisconnectCallback_DoesNotOverwriteCauseOrReleaseWaitEarly()&#xD;
+[xUnit.net 00:00:02.20]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:02.22]   Finished:    Amr.Communication.Tests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="DESKTOP-BLNVKRS" outcome="Error" timestamp="2026-10-20T01:09:02.4277795+09:00">
+        <Text>[xUnit.net 00:00:01.67]     Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: False, order: "lost") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-BLNVKRS" outcome="Error" timestamp="2026-10-20T01:09:02.4880346+09:00">
+        <Text>[xUnit.net 00:00:01.73]     Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: True, order: "lost") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-BLNVKRS" outcome="Error" timestamp="2026-10-20T01:09:02.7876925+09:00">
+        <Text>[xUnit.net 00:00:02.03]     Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: True, order: "lost-then-user") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-BLNVKRS" outcome="Error" timestamp="2026-10-20T01:09:02.8514757+09:00">
+        <Text>[xUnit.net 00:00:02.10]     Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: False, order: "lost-then-user") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-BLNVKRS" outcome="Error" timestamp="2026-10-20T01:09:02.9672219+09:00">
+        <Text>[xUnit.net 00:00:02.18]     Amr.Communication.Tests.ConsoleShutdownReasonTests.ConcurrentSignals_KeepReasonExitCodeAndConnectionLostEventConsistent [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-BLNVKRS" outcome="Error" timestamp="2026-10-20T01:09:02.9673128+09:00">
+        <Text>[xUnit.net 00:00:02.20]     Amr.Communication.Tests.ConsoleShutdownReasonTests.UserCancellationDuringDisconnectCallback_DoesNotOverwriteCauseOrReleaseWaitEarly [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

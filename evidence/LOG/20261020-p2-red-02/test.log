@@ -1,0 +1,81 @@
+  Amr.Communication -> C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll
+  Amr.Communication.Console -> C:\amr-control-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.dll
+  Amr.Communication.Tests -> C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+[xUnit.net 00:00:01.67]     Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: False, order: "lost") [FAIL]
+[xUnit.net 00:00:01.73]     Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: True, order: "lost") [FAIL]
+[xUnit.net 00:00:02.03]     Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: True, order: "lost-then-user") [FAIL]
+[xUnit.net 00:00:02.10]     Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: False, order: "lost-then-user") [FAIL]
+  실패 Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: False, order: "lost") [123 ms]
+  오류 메시지:
+   Assert.Equal() Failure: Strings differ
+           ↓ (pos 0)
+Expected: "ConnectionLost"
+Actual:   "UserCanceled"
+           ↑ (pos 0)
+  스택 추적:
+     at Amr.Communication.Tests.ConsoleShutdownReasonTests.Run.AssertResultAsync(String reason, Int32 expectedExit, String eventType) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 138
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 35
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 35
+--- End of stack trace from previous location ---
+  실패 Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: True, order: "lost") [58 ms]
+  오류 메시지:
+   Assert.Equal() Failure: Strings differ
+           ↓ (pos 0)
+Expected: "ConnectionLost"
+Actual:   "UserCanceled"
+           ↑ (pos 0)
+  스택 추적:
+     at Amr.Communication.Tests.ConsoleShutdownReasonTests.Run.AssertResultAsync(String reason, Int32 expectedExit, String eventType) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 138
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 35
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 35
+--- End of stack trace from previous location ---
+  실패 Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: True, order: "lost-then-user") [108 ms]
+  오류 메시지:
+   Assert.Equal() Failure: Strings differ
+           ↓ (pos 0)
+Expected: "ConnectionLost"
+Actual:   "UserCanceled"
+           ↑ (pos 0)
+  스택 추적:
+     at Amr.Communication.Tests.ConsoleShutdownReasonTests.Run.AssertResultAsync(String reason, Int32 expectedExit, String eventType) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 138
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 35
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 35
+--- End of stack trace from previous location ---
+  실패 Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(subscribed: False, order: "lost-then-user") [49 ms]
+  오류 메시지:
+   Assert.Equal() Failure: Strings differ
+           ↓ (pos 0)
+Expected: "ConnectionLost"
+Actual:   "UserCanceled"
+           ↑ (pos 0)
+  스택 추적:
+     at Amr.Communication.Tests.ConsoleShutdownReasonTests.Run.AssertResultAsync(String reason, Int32 expectedExit, String eventType) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 138
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 35
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.SubscriptionAndReceiveWait_PreserveFirstShutdownCause(Boolean subscribed, String order) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 35
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:02.18]     Amr.Communication.Tests.ConsoleShutdownReasonTests.ConcurrentSignals_KeepReasonExitCodeAndConnectionLostEventConsistent [FAIL]
+[xUnit.net 00:00:02.20]     Amr.Communication.Tests.ConsoleShutdownReasonTests.UserCancellationDuringDisconnectCallback_DoesNotOverwriteCauseOrReleaseWaitEarly [FAIL]
+  실패 Amr.Communication.Tests.ConsoleShutdownReasonTests.ConcurrentSignals_KeepReasonExitCodeAndConnectionLostEventConsistent [42 ms]
+  오류 메시지:
+   Assert.Equal() Failure: Values differ
+Expected: 0
+Actual:   1
+  스택 추적:
+     at Amr.Communication.Tests.ConsoleShutdownReasonTests.Run.AssertResultAsync(String reason, Int32 expectedExit, String eventType) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 135
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.ConcurrentSignals_KeepReasonExitCodeAndConnectionLostEventConsistent() in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 87
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.ConcurrentSignals_KeepReasonExitCodeAndConnectionLostEventConsistent() in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 87
+--- End of stack trace from previous location ---
+  실패 Amr.Communication.Tests.ConsoleShutdownReasonTests.UserCancellationDuringDisconnectCallback_DoesNotOverwriteCauseOrReleaseWaitEarly [14 ms]
+  오류 메시지:
+   Assert.False() Failure
+Expected: False
+Actual:   True
+  스택 추적:
+     at Amr.Communication.Tests.ConsoleShutdownReasonTests.UserCancellationDuringDisconnectCallback_DoesNotOverwriteCauseOrReleaseWaitEarly() in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 65
+   at Amr.Communication.Tests.ConsoleShutdownReasonTests.UserCancellationDuringDisconnectCallback_DoesNotOverwriteCauseOrReleaseWaitEarly() in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs:line 69
+--- End of stack trace from previous location ---
+결과 파일: C:\amr-control-system-demo\evidence\LOG\20261020-p2-red-02\tests.trx
+
+실패!  - 실패:     6, 통과:     5, 건너뜀:     0, 전체:    11, 기간: 1 s - Amr.Communication.Tests.dll (net10.0)

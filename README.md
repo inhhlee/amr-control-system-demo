@@ -4,7 +4,7 @@
 ## Seq 구조화 로그 (Issue #26)
 
 기존 콘솔 출력·stdout/stderr 구분·종료 코드를 유지하고, 선택적으로 Serilog 이벤트를 Seq에 전송한다.
-작업 브랜치는 `feature/26-serilog-seq`, 기준은 develop `b4265af`다. 구현·테스트 폴더 정리를 `76cb19f`로 커밋·푸시하고 [PR #27](https://github.com/inhhlee/amr-control-system-demo/pull/27)을 develop 대상으로 생성했다. [AI 리뷰](https://github.com/inhhlee/amr-control-system-demo/pull/27#pullrequestreview-5574317537)에서 연결 단절을 `UserCanceled`로 기록하는 P2 문제 1건을 재현했다. 종료 원인 구분과 회귀 시험 추가가 남아 있으며, 병합·Issue 종료는 하지 않았다. 아래 실행 증거의 미커밋 표시는 당시 시험 시점의 기록이다.
+작업 브랜치는 `feature/26-serilog-seq`, 기준은 develop `b4265af`다. 구현·테스트 폴더 정리를 `76cb19f`로 커밋·푸시하고 [PR #27](https://github.com/inhhlee/amr-control-system-demo/pull/27)을 develop 대상으로 생성했다. [최초 AI 리뷰](https://github.com/inhhlee/amr-control-system-demo/pull/27#pullrequestreview-5574317537)의 P2에 따라 종료 원인을 분리했다. 먼저 접수한 사용자 취소는 `UserCanceled`, 연결 단절은 `ConnectionLost`로 유지하며 뒤늦은 신호는 원인을 덮어쓰지 않는다. [P2 수정 검증](evidence/LOG/20261020-p2-green-01/README.md): 신규 11건 포함 전체 591건 통과. 병합·Issue 종료는 하지 않았으며 최신 재리뷰는 PR에서 확인한다. 아래 실행 증거의 미커밋 표시는 당시 시험 시점의 기록이다.
 
 기존 Seq는 `C:\practice\docker\docker-compose.yml`의 `amr-seq`이며 `C:\practice\docker\seq\data`를 재사용한다.
 호스트 주소는 `http://127.0.0.1:5341`, 확인한 실행 버전은 2026.1.17114다. 이 저장소 Compose에는 Seq를 중복 정의하지 않는다.

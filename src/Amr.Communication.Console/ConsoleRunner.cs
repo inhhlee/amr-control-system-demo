@@ -16,6 +16,8 @@ namespace Amr.Communication.ConsoleApp;
 
 internal static class ConsoleRunner
 {
+    private enum ShutdownReason { None, UserCanceled, ConnectionLost }
+
     internal static async Task<int> RunAsync(string[] args, Func<IMqttClient> clientFactory,
         CancellationToken userCancellation, TextWriter output, TextWriter error, StructuredLog? log = null)
     {
@@ -35,9 +37,14 @@ internal static class ConsoleRunner
         Func<MqttClientDisconnectedEventArgs, Task>? disconnectedHandler = null;
         TimeSpan queueStopTimeout = TimeSpan.FromSeconds(3);
         using var shutdown = new CancellationTokenSource();
+        int shutdownReason = (int)ShutdownReason.None;
 
         using var userRegistration = userCancellation.Register(() =>
         {
+            // Only the first requester owns cancellation. A later signal must not release
+            // the wait while the winner is still recording its reason and exit code.
+            if (Interlocked.CompareExchange(ref shutdownReason, (int)ShutdownReason.UserCanceled,
+                (int)ShutdownReason.None) != (int)ShutdownReason.None) return;
             _ = queue?.RequestStop();
             shutdown.Cancel();
         });
@@ -71,7 +78,9 @@ internal static class ConsoleRunner
             });
             disconnectedHandler = eventArgs =>
             {
-                if (Volatile.Read(ref connectionApproved) == 1 && !shutdown.IsCancellationRequested)
+                if (Volatile.Read(ref connectionApproved) == 1 &&
+                    Interlocked.CompareExchange(ref shutdownReason, (int)ShutdownReason.ConnectionLost,
+                        (int)ShutdownReason.None) == (int)ShutdownReason.None)
                 {
                     _ = queue.RequestStop();
                     Report("ConnectionLost", "ConnectionLost");
@@ -111,8 +120,10 @@ internal static class ConsoleRunner
         }
         catch (OperationCanceledException) when (shutdown.IsCancellationRequested)
         {
-            Report(connecting ? "ConnectCanceled Reason=UserCanceled" : "ShutdownRequested");
-            log?.Event(connecting ? "ConnectCanceled" : "ShutdownRequested", properties: [("Reason", "UserCanceled")]);
+            var reason = (ShutdownReason)Volatile.Read(ref shutdownReason);
+            bool connectCanceled = connecting && reason == ShutdownReason.UserCanceled;
+            Report(connectCanceled ? "ConnectCanceled Reason=UserCanceled" : "ShutdownRequested");
+            log?.Event(connectCanceled ? "ConnectCanceled" : "ShutdownRequested", properties: [("Reason", reason.ToString())]);
         }
         catch (MqttConnectionException exception)
         {
