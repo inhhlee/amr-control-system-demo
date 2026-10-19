@@ -1,0 +1,6 @@
+{
+  "command": "dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj --no-build --logger \"trx;LogFileName=tests.trx\" --results-directory evidence/COM-04/20261019-integration-03",
+  "startedAtUtc": "2026-10-19T02:47:20.3922345+00:00",
+  "endedAtUtc": "2026-10-19T02:47:21.5961254+00:00",
+  "exitCode": 0
+}

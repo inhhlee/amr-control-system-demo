@@ -1,0 +1,6 @@
+1792378463: mosquitto version 2.1.2 terminating
+ResourceUnavailable: C:\amr-control-system-demo\evidence\COM-04\20261019-mqtt-04\verify-mqtt.ps1:125
+Line |
+ 125 |      & $dockerCli compose -f docker/compose.yaml logs --no-color --tim …
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Program 'docker.exe' failed to run: The Win32 internal error "핸들이 잘못되었습니다." 0x6 occurred while getting the console mode. Contact Microsoft Customer Support Services.At C:\amr-control-system-demo\evidence\COM-04\20261019-mqtt-04\verify-mqtt.ps1:125 char:5 +     & $dockerCli compose -f docker/compose.yaml logs --no-color --tim … +     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.

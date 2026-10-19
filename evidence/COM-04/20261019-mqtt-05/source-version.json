@@ -1,0 +1,78 @@
+{
+  "baseCommit": "82f6bb109dd964ca486f1bec5a99ab88d1d84cdf",
+  "sourceState": "uncommitted COM04-A including preserved user comment deletion",
+  "files": [
+    {
+      "path": "tests\\Amr.Communication.Tests\\MqttConnectionTests.cs",
+      "sha256": "8F74DA63A92913CDE59DA8C93028A2DDC04BAC00EC19E3A158746500171BBF7A"
+    },
+    {
+      "path": "tests\\Amr.Communication.Tests\\HeartbeatValidatorTests.cs",
+      "sha256": "8AA675BCAE55CB29D7143C29C01E1FE128A066E59177948E8E51D569128B45D1"
+    },
+    {
+      "path": "tests\\Amr.Communication.Tests\\HeartbeatSubscriptionTests.cs",
+      "sha256": "F2C98E620E2EC01166A0D1D2A06EF324E9C75B0D298ED80434562F8E34871E07"
+    },
+    {
+      "path": "tests\\Amr.Communication.Tests\\FakeMqttClient.cs",
+      "sha256": "8C0D57942B9EF768768667222E9B54081820923B5702B2792340BD1DB71297B9"
+    },
+    {
+      "path": "tests\\Amr.Communication.Tests\\Amr.Communication.Tests.csproj",
+      "sha256": "EB83BE1A7566189050881B542F3DBE2E8875DCE7068EBEBA73F8CC41E8F9F0CF"
+    },
+    {
+      "path": "src\\Amr.Communication.Console\\Program.cs",
+      "sha256": "35FCFADB166F49BC64F1246EFF90C879DD0B48AEF7FA9C9AF68F5D70002ED1B2"
+    },
+    {
+      "path": "src\\Amr.Communication.Console\\Amr.Communication.Console.csproj",
+      "sha256": "3D3C2FC9FDC8610438A96EEBA9C36C7CF395051C1C36F5DBB155C8930F061819"
+    },
+    {
+      "path": "src\\Amr.Communication\\Validation\\ValidationError.cs",
+      "sha256": "3DCF8999E3771B4966872962A45D621BE51F862C1EFB16D268501CD3BE666B71"
+    },
+    {
+      "path": "src\\Amr.Communication\\Validation\\HeartbeatValidator.cs",
+      "sha256": "3E61EF720C0D153A2D791D57C3DD7586A5B272596250C893E8109BC25DB5FEDC"
+    },
+    {
+      "path": "src\\Amr.Communication\\Validation\\HeartbeatValidationResult.cs",
+      "sha256": "1604225131767FC7564E9D42470E976117920FC14DD0732039C91260EB14C9A7"
+    },
+    {
+      "path": "src\\Amr.Communication\\Mqtt\\MqttConnectionSettings.cs",
+      "sha256": "39331CD6BCDA0F09D1A72397A31993972C2C2BC937FD2BB0BADA6DB6B1155F1F"
+    },
+    {
+      "path": "src\\Amr.Communication\\Mqtt\\MqttConnection.cs",
+      "sha256": "2D8901671BB3F72066184772F4B4045AE5F2AB7A6A1EC74283E8F49C1A14A416"
+    },
+    {
+      "path": "src\\Amr.Communication\\Mqtt\\HeartbeatSubscription.cs",
+      "sha256": "D726207813D33249AB685CF9FC664DD3C064AFF7EE0B9F208EAD977E714BD891"
+    },
+    {
+      "path": "src\\Amr.Communication\\Mqtt\\HeartbeatDiagnostic.cs",
+      "sha256": "C4CBA602462BF67C6FC472895DF0EA3635A46E683CD8B9667D26B22E0918720E"
+    },
+    {
+      "path": "src\\Amr.Communication\\Models\\HeartbeatMessage.cs",
+      "sha256": "4BEDA4DA2B7E45720E0C11779DF09496A34D069655BB1B0E509034BC16E33A4E"
+    },
+    {
+      "path": "src\\Amr.Communication\\Amr.Communication.csproj",
+      "sha256": "55C44F04AD1EC7D26873B8EAA14B8BFD2479BCDB46496D286C4CCA800F260767"
+    },
+    {
+      "path": "global.json",
+      "sha256": "6A8E9044030D136BD4C04FFF9684111A3478B27559BFB6D19E4D380F0DE91510"
+    },
+    {
+      "path": "AmrControlSystem.slnx",
+      "sha256": "CCD11FC15FF2A3A169DA6F6B0CA4B452AA5DC37AABC983C0DB668D4C7E0975A8"
+    }
+  ]
+}

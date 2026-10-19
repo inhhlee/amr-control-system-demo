@@ -1,0 +1,54 @@
+[
+  {
+    "name": "missing-ts",
+    "sentAtUtc": "2026-10-19T02:54:23.8572578+00:00",
+    "topic": "amr/AMR_001/heartbeat",
+    "payload": "{\"id\":\"AMR_001\",\"status\":\"OK\"}",
+    "payloadBytes": 30,
+    "expected": "Rejected Code=MissingField Field=\\$\\.ts",
+    "clientId": "com04-pub-a15f4c68fe24477ebd10e4bcf76d64ad",
+    "qos": 0,
+    "retain": false,
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "name": "valid-after-missing",
+    "sentAtUtc": "2026-10-19T02:54:24.2260001+00:00",
+    "topic": "amr/AMR_001/heartbeat",
+    "payload": "{\"id\":\"AMR_001\",\"ts\":1791195767000,\"status\":\"OK\"}",
+    "payloadBytes": 49,
+    "expected": "Received Heartbeat .*ts=1791195767000 ",
+    "clientId": "com04-pub-96ef6168f8124228b8b768a308bc66ed",
+    "qos": 0,
+    "retain": false,
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "name": "id-mismatch",
+    "sentAtUtc": "2026-10-19T02:54:24.5770280+00:00",
+    "topic": "amr/AMR_001/heartbeat",
+    "payload": "{\"id\":\"AMR_002\",\"ts\":1791195767001,\"status\":\"OK\"}",
+    "payloadBytes": 49,
+    "expected": "Rejected Code=IdMismatch Field=\\$\\.id",
+    "clientId": "com04-pub-7a1f118a1f4b42cd98e813bfacb230cd",
+    "qos": 0,
+    "retain": false,
+    "exitCode": 0,
+    "output": ""
+  },
+  {
+    "name": "long-valid-after-mismatch",
+    "sentAtUtc": "2026-10-19T02:54:24.9253502+00:00",
+    "topic": "amr/AMR_001/heartbeat",
+    "payload": "                                                                                                                                                                                                                                                                                                            {\"id\":\"AMR_001\",\"ts\":1791195767002,\"status\":\"OK\"}",
+    "payloadBytes": 349,
+    "expected": "Received Heartbeat .*ts=1791195767002 ",
+    "clientId": "com04-pub-61ad5d5e50604dffa5475c98282f0f2c",
+    "qos": 0,
+    "retain": false,
+    "exitCode": 0,
+    "output": ""
+  }
+]

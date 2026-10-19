@@ -1,0 +1,21 @@
+2026-10-19T02:55:10.3639055+00:00 Settings Host=127.0.0.1 Port=1884 ClientId=amr-demo-fe353b8fd4fd45a5b2a2e65fc9587294 MQTT=5 CleanStart=true SessionExpiry=0 KeepAliveSeconds=5 ConnectTimeoutSeconds=3 DisconnectTimeoutSeconds=3
+2026-10-19T02:55:10.3686835+00:00 Connecting
+2026-10-19T02:55:10.4003016+00:00 Connected
+2026-10-19T02:55:10.4021641+00:00 Subscribing TopicFilter=amr/+/heartbeat QoS=0 PayloadPreview=True LimitBytes=256
+2026-10-19T02:55:10.4109667+00:00 Subscribed TopicFilter=amr/+/heartbeat QoS=0
+2026-10-19T02:55:10.4116360+00:00 WaitingForShutdown: Ctrl+C로 정상 종료합니다.
+2026-10-19T02:55:10.5821219+00:00 HeartbeatDiagnostic Topic="amr/AMR_001/heartbeat" TopicTruncated=False PayloadBytes=30 Payload=<hidden> PayloadTruncated=False Validation=Rejected
+2026-10-19T02:55:10.5991492+00:00 Rejected Code=MissingField Field=$.ts Reason=Required field is missing.
+2026-10-19T02:55:10.9321008+00:00 HeartbeatDiagnostic Topic="amr/AMR_001/heartbeat" TopicTruncated=False PayloadBytes=49 Payload="{\"id\":\"AMR_001\",\"ts\":1791195767000,\"status\":\"OK\"}" PayloadTruncated=False Validation=Accepted
+2026-10-19T02:55:10.9359044+00:00 Received Heartbeat Id="AMR_001" ts=1791195767000 status="OK" ReceivedAtUtc=2026-10-19T02:55:10.9321008+00:00
+2026-10-19T02:55:11.2802934+00:00 HeartbeatDiagnostic Topic="amr/AMR_001/heartbeat" TopicTruncated=False PayloadBytes=49 Payload=<hidden> PayloadTruncated=False Validation=Rejected
+2026-10-19T02:55:11.2816195+00:00 Rejected Code=IdMismatch Field=$.id Reason=Payload ID must exactly match Topic ID.
+2026-10-19T02:55:11.6279386+00:00 HeartbeatDiagnostic Topic="amr/AMR_001/heartbeat" TopicTruncated=False PayloadBytes=349 Payload="                                                                                                                                                                                                                                                                " PayloadTruncated=True Validation=Accepted
+2026-10-19T02:55:11.6338661+00:00 Received Heartbeat Id="AMR_001" ts=1791195767002 status="OK" ReceivedAtUtc=2026-10-19T02:55:11.6279386+00:00
+2026-10-19T02:55:12.3815384+00:00 ShutdownRequested
+2026-10-19T02:55:12.3816910+00:00 Unsubscribing
+2026-10-19T02:55:12.3864621+00:00 SubscriptionStopped
+2026-10-19T02:55:12.3867201+00:00 Disconnecting
+2026-10-19T02:55:12.3911884+00:00 Disconnected
+2026-10-19T02:55:12.3914679+00:00 Disposed
+2026-10-19T02:55:12.3916563+00:00 ExitCode=0

@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "verificationCompletedAtUtc": "2026-10-19T02:55:51.8489714+00:00",
+  "kind": "evidence verification and Broker log collection; no product test rerun",
+  "automatedTestRun": "20261019-integration-03",
+  "automatedPassed": 113,
+  "mqttRun": "20261019-mqtt-05",
+  "mqttPublications": 4,
+  "rejections": 2,
+  "deliveredModels": 2,
+  "consoleExitCode": 0,
+  "receiverTimeAndFieldsPreserved": true,
+  "rejectedPayloadHidden": true,
+  "brokerDisconnectConfirmed": true,
+  "clientId": "amr-demo-fe353b8fd4fd45a5b2a2e65fc9587294",
+  "currentSourceMatchesBothTestManifests": true,
+  "brokerLogSinceUtc": "2026-10-19T02:55:08.2531087+00:00"
+}
