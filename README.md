@@ -20,7 +20,9 @@
 
 ## 개발 구성
 
-현재 변경은 [Issue #17 — COM04-A Heartbeat 검사와 정상 데이터 전달](https://github.com/inhhlee/amr-control-system-demo/issues/17)이다. 검사기·수신부·콘솔을 연결했고 2026-10-19 빌드(경고·오류 0), 자동시험 113개와 실제 Broker의 오류 후 정상 전달·Ctrl+C 종료를 확인했다. [COM-04 실행 안내](#com04-run)와 [최종 검증결과](evidence/COM-04/20261019-final-06/README.md)를 따른다. 아래 COM-01·COM-03 기록은 선행 구현 당시 근거다.
+현재 변경은 [Issue #18 — COM04-B 검사 확장](https://github.com/inhhlee/amr-control-system-demo/issues/18)의 **Telemetry·Alarm·ACK 구현·자동시험 완료 단계**다. 네 수신 유형이 공통 입력 검사를 공유하고 정상 모델·실패 결과를 반환한다. 2026-10-19 빌드(경고·오류 0)와 자동시험 463개를 통과했다. [Telemetry](#telemetry-validation), [Alarm](#alarm-validation), [ACK](#ack-validation) 사용 안내와 [ACK·네 유형 회귀 검증결과](evidence/COM-04/20261019-ack-01/README.md)를 따른다. 커밋·푸시·PR·GitHub Issue 근거 연결·리뷰·병합은 남아 있다. 실제 세 유형의 구독은 COM01-B에서 연결한다.
+
+선행 [Issue #17 — COM04-A Heartbeat 검사와 정상 데이터 전달](https://github.com/inhhlee/amr-control-system-demo/issues/17)은 PR #19로 develop에 반영됐다. 당시 자동시험 113개와 실제 Broker의 오류 후 정상 전달·Ctrl+C 종료 근거는 [COM-04 실행 안내](#com04-run)와 [최종 검증결과](evidence/COM-04/20261019-final-06/README.md)에 보존한다. 이번 변경에서는 실제 Broker 시험을 재실행하지 않았다. 아래 COM-01·COM-03 기록도 선행 구현 당시 근거다.
 
 [Issue #15 — COM-01 Heartbeat 한 종류 수신](https://github.com/inhhlee/amr-control-system-demo/issues/15)의 구현·검증은 아래 [Heartbeat 실행 안내](#heartbeat-run)와 [완료조건별 결과](evidence/COM-01/20261012-heartbeat-05/README.md)에서 확인한다. 사용자의 후속 요청으로 기존 `feature/COM-01-heartbeat-subscribe` 브랜치를 게시하는 단계다. 연결된 PR은 Issue #15에서 확인하며 리뷰·develop 병합은 별도 단계다.
 
@@ -32,7 +34,7 @@
 | [AmrControlSystem.slnx](AmrControlSystem.slnx) | Visual Studio에서 열 솔루션 |
 | [Amr.Communication](src/Amr.Communication/Amr.Communication.csproj) | MQTTnet 5.2.0.1603을 사용한 접속 설정·MQTT 승인 확인·명시적 해제·자원 정리 |
 | [Amr.Communication.Console](src/Amr.Communication.Console/Amr.Communication.Console.csproj) | 실제 Broker 접속 승인 후 Ctrl+C까지 유지하고 명시적 해제·정리를 기다리는 콘솔 |
-| [Amr.Communication.Tests](tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj) | 수명주기 6개 + Heartbeat 구독·전달 경계 21개 + 검사기 86개, 총 113개 |
+| [Amr.Communication.Tests](tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj) | 기존 수명주기·Heartbeat 113개 + Telemetry 101개 + Alarm 117개 + ACK 106개 + 공통 오류 회귀 14개 + 필수/선택 필드 검사 12개, 총 463개 |
 | [evidence/setup](evidence/setup/) | 실행별 환경·복원·빌드·실행·시험 탐색 증거 |
 
 시험 패키지는 `Microsoft.NET.Test.Sdk 17.14.1`, `xunit 2.9.3`, `xunit.runner.visualstudio 3.1.4`다.
@@ -54,7 +56,84 @@ dotnet build AmrControlSystem.slnx --no-restore
 dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj --no-build
 ```
 
-`dotnet test`는 작성한 xUnit 자동시험 113개를 실행한다. 검사기 직접 호출과 시험 대역(Fake)을 사용하므로 Broker 없이 실행할 수 있다. `--list-tests`를 붙이면 실행하지 않고 이름만 나열한다. `--no-build`는 빌드를 생략하므로 소스를 수정했다면 먼저 다시 빌드한다.
+`dotnet test`는 작성한 xUnit 자동시험 463개를 실행한다. 검사기 직접 호출과 시험 대역(Fake)을 사용하므로 Broker 없이 실행할 수 있다. `--list-tests`를 붙이면 실행하지 않고 이름만 나열한다. `--no-build`는 빌드를 생략하므로 소스를 수정했다면 먼저 다시 빌드한다.
+
+<a id="telemetry-validation"></a>
+
+## COM04-B Telemetry 검사 (Issue #18, 첫 단계)
+
+[TelemetryValidator](src/Amr.Communication/Validation/Telemetry/TelemetryValidator.cs)는 `amr/{amrId}/telemetry`와 전체 Payload, 수신 UTC 시각을 입력받는다. [공통 검사](src/Amr.Communication/Validation/Common/MessageValidation.cs)는 Heartbeat와 같은 크기 → Topic → strict UTF-8 → JSON object → 필드 경계를 적용한다. 제한은 65,536 bytes·깊이 16이며 첫 실패 한 건을 Code·Field·원문 없는 Reason으로 반환한다. 기존 Heartbeat 공개 API와 오류 순서·메시지는 유지했다.
+
+검사 코드는 `Validation/Common`(공통 검사·오류), `Validation/Heartbeat`, `Validation/Telemetry`, `Validation/Alarm`, `Validation/Ack`(유형별 검사기·결과)으로 묶는다. namespace는 모두 `Amr.Communication.Validation`을 유지하고 수신 모델은 `Models`에 둔다. [폴더 정리 검증결과](evidence/COM-04/20261019-validation-layout-01/README.md)에서 ACK 추가 전 이동 당시 내용 동일성과 빌드·회귀 시험을 확인한다.
+
+필수 필드는 `id, ts, pos{x,y}, sp, state`다. `pos`는 x/y만 허용하고 두 값은 유한 double이며 음수 좌표도 허용한다. 속도 sp는 유한 double·0 이상, state는 `IDLE/BUSY/STOPPED/FAULT`다. ts는 signed Int64 정수 표기만 허용하고 원래 값을 보존한다. 개발 단위는 위치 m·속도 m/s다. 정상 [TelemetryMessage](src/Amr.Communication/Models/TelemetryMessage.cs)는 검사한 필드와 전달받은 수신 시각을 보존한다.
+
+라이브러리를 참조한 C# 코드에서 MQTT 없이 직접 호출하는 예다.
+
+```csharp
+using System.Buffers;
+using System.Text;
+using Amr.Communication.Validation;
+
+var validator = new TelemetryValidator();
+const string json = """{"id":"AMR_001","ts":1791195767000,"pos":{"x":1.2,"y":-3.4},"sp":0.5,"state":"IDLE"}""";
+var result = validator.Validate("amr/AMR_001/telemetry",
+    new ReadOnlySequence<byte>(Encoding.UTF8.GetBytes(json)), DateTimeOffset.UtcNow);
+// result.IsValid == true, result.Message에 정상 모델, result.Error == null.
+```
+
+위 예에서 sp만 `-0.5`로 바꾸면 `InvalidValue / $.sp`, 정상 모델 없음이 예상 결과다. 비유한 숫자 범위, 필수 필드·자료형·허용값·ID·추가/중복 키 오류와 오류 후 정상 처리의 정확한 입력·예상값은 [Telemetry 시험](tests/Amr.Communication.Tests/TelemetryValidatorTests.cs), 기존 오류 이유·우선순위 대조는 [공통 회귀 시험](tests/Amr.Communication.Tests/MessageValidationRegressionTests.cs)을 따른다. 재현은 위 빌드·전체 자동시험 명령을 사용하며 TRX를 수집할 때는 기존 실행 ID를 덮어쓰지 않는다.
+
+이번 결과는 검사기 직접 호출과 기존 Fake 회귀다. 콘솔 구독은 Heartbeat 한 종류로 유지되며 실제 Telemetry·Alarm·ACK 수신·다중 Topic 분기는 COM01-B에서 연결한다. 코드 구현·자동시험 완료를 실제 MQTT 연동·#18 전체 절차·COM-04 전체·과제1 완료로 확대하지 않는다. 커밋·푸시·PR은 아직 수행하지 않았다.
+
+<a id="alarm-validation"></a>
+
+## COM04-B Alarm 검사 (Issue #18, 두 번째 단계)
+
+[AlarmValidator](src/Amr.Communication/Validation/Alarm/AlarmValidator.cs)는 `amr/{amrId}/alarm`과 전체 Payload, 수신 UTC 시각을 받는다. 공통 입력 경계 뒤에 필드 구성 → id → ts → code → level → alarmState → message 순서로 검사하며, 첫 실패 한 건을 원문 없는 Code·Field·Reason으로 반환한다.
+
+필수 필드는 `id, ts, code, level, alarmState`, 선택 필드는 `message`다. `level`은 `INFO/WARN/ERR/FATAL`, `alarmState`는 `ACTIVE/CLEARED`만 허용한다. `code`와 존재하는 `message`는 문자열이어야 하고 null·빈 문자열·공백뿐인 문자열을 거부한다. 유효한 문자열은 Trim이나 Unicode 정규화 없이 보존한다. `message` 생략만 모델의 null로 표현한다. `ts`는 Int64 정수 표기를 검사하고 자동 단위 변환 없이 보존한다.
+
+```csharp
+using System.Buffers;
+using System.Text;
+using Amr.Communication.Validation;
+
+var validator = new AlarmValidator();
+const string json = """{"id":"AMR_001","ts":1791195767000,"code":"A01","level":"WARN","alarmState":"ACTIVE","message":" 진동 경고 "}""";
+var result = validator.Validate("amr/AMR_001/alarm",
+    new ReadOnlySequence<byte>(Encoding.UTF8.GetBytes(json)), DateTimeOffset.UtcNow);
+// result.IsValid == true, result.Message.Message == " 진동 경고 ".
+```
+
+`message` 키를 생략하면 정상 모델의 Message는 null이다. 키가 있는 상태에서 null을 넣으면 `InvalidType / $.message`, 공백 문자열이면 `InvalidValue / $.message`로 거부한다. [Alarm 시험](tests/Amr.Communication.Tests/AlarmValidatorTests.cs) 117건과 Alarm까지 확장한 [공통 회귀 시험](tests/Amr.Communication.Tests/MessageValidationRegressionTests.cs)을 포함해 전체 357건을 통과했다. [실행 근거](evidence/COM-04/20261019-alarm-01/README.md)에 환경·소스 해시·입력/예상·실제 결과를 연결했다.
+
+정상 [AlarmMessage](src/Amr.Communication/Models/AlarmMessage.cs)는 알람 정보를 보존한다. 실제 AMR 주행 상태 변경·알람 업무 처리·큐 적재·MQTT 구독은 수행하지 않는다. 후속 ACK 결과는 아래 안내를 따른다.
+
+<a id="ack-validation"></a>
+
+## COM04-B ACK 검사 (Issue #18, 세 번째 단계)
+
+[AckValidator](src/Amr.Communication/Validation/Ack/AckValidator.cs)는 `amr/{amrId}/ack`와 전체 Payload, 수신 UTC 시각을 받는다. 공통 입력 경계 뒤에 필드 구성 → 존재하는 id → ts → cmdId → result → 존재하는 reason 순서로 검사한다. 필수 필드는 `cmdId, result, ts`, 선택 필드는 `id, reason`이다.
+
+Topic ID는 항상 검사하고 Payload id는 존재할 때만 Topic ID와 정확히 대조한다. `cmdId`와 존재하는 `reason`은 문자열이어야 하며 null·빈 문자열·공백뿐인 문자열을 거부한다. 선택 필드는 생략 시 모델에서 null로 표현하고, 명시적인 JSON null은 거부한다. `result`는 `SUCCESS/FAILURE`만 허용하고 `ts`는 Int64 정수 표기를 검사해 원래 값을 보존한다.
+
+```csharp
+using System.Buffers;
+using System.Text;
+using Amr.Communication.Validation;
+
+var validator = new AckValidator();
+const string json = """{"cmdId":"CMD_001","result":"FAILURE","ts":1791195767000,"reason":" 이동 불가 "}""";
+var result = validator.Validate("amr/AMR_001/ack",
+    new ReadOnlySequence<byte>(Encoding.UTF8.GetBytes(json)), DateTimeOffset.UtcNow);
+// result.IsValid == true, result.Error == null.
+// result.Message.Result == "FAILURE", Id == null, Reason == " 이동 불가 ".
+```
+
+`IsValid`는 수신 계약에 맞는다는 뜻이다. 유효한 FAILURE도 정상 [AckMessage](src/Amr.Communication/Models/AckMessage.cs)로 반환하며 SUCCESS로 바꾸거나 폐기하지 않는다. `cmdId`는 모델의 `CommandId`로, 선택 필드의 생략과 유효한 문자열의 공백·Unicode는 그대로 보존한다. 생략한 id를 Topic ID로 채우지 않는다. 실제 명령 대조·업무 결과 판단·재시도는 Core 및 후속 과제의 책임이다.
+
+[ACK 시험](tests/Amr.Communication.Tests/AckValidatorTests.cs) 106건과 네 유형의 [공통 오류 회귀](tests/Amr.Communication.Tests/MessageValidationRegressionTests.cs)를 포함한 전체 463건을 통과했다. [실행 근거](evidence/COM-04/20261019-ack-01/README.md)에 입력·예상·실제·환경·코드 해시를 연결했다. 다음 단계는 이번 변경 리뷰와 요청된 커밋·PR 절차다. 실제 MQTT·큐·Core·GUI 시험은 이번 결과에 포함하지 않는다.
 
 <a id="com04-run"></a>
 

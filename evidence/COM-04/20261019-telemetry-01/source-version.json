@@ -1,0 +1,103 @@
+{
+  "files": [
+    {
+      "path": "AmrControlSystem.slnx",
+      "sha256": "CCD11FC15FF2A3A169DA6F6B0CA4B452AA5DC37AABC983C0DB668D4C7E0975A8"
+    },
+    {
+      "path": "global.json",
+      "sha256": "6A8E9044030D136BD4C04FFF9684111A3478B27559BFB6D19E4D380F0DE91510"
+    },
+    {
+      "path": "src\\Amr.Communication.Console\\Amr.Communication.Console.csproj",
+      "sha256": "3D3C2FC9FDC8610438A96EEBA9C36C7CF395051C1C36F5DBB155C8930F061819"
+    },
+    {
+      "path": "src\\Amr.Communication.Console\\Program.cs",
+      "sha256": "35FCFADB166F49BC64F1246EFF90C879DD0B48AEF7FA9C9AF68F5D70002ED1B2"
+    },
+    {
+      "path": "src\\Amr.Communication\\Amr.Communication.csproj",
+      "sha256": "55C44F04AD1EC7D26873B8EAA14B8BFD2479BCDB46496D286C4CCA800F260767"
+    },
+    {
+      "path": "src\\Amr.Communication\\Models\\HeartbeatMessage.cs",
+      "sha256": "4BEDA4DA2B7E45720E0C11779DF09496A34D069655BB1B0E509034BC16E33A4E"
+    },
+    {
+      "path": "src\\Amr.Communication\\Models\\TelemetryMessage.cs",
+      "sha256": "6D0D5C7B6A8A0E26A8A87DB8AAF5957DCD7E9D8DB46E40225BB324B35467D695"
+    },
+    {
+      "path": "src\\Amr.Communication\\Mqtt\\HeartbeatDiagnostic.cs",
+      "sha256": "C4CBA602462BF67C6FC472895DF0EA3635A46E683CD8B9667D26B22E0918720E"
+    },
+    {
+      "path": "src\\Amr.Communication\\Mqtt\\HeartbeatSubscription.cs",
+      "sha256": "A38723932BC0C7B3DA1B4801D2F1650C19A4AA191706D749CE991A3C1DFB1BF2"
+    },
+    {
+      "path": "src\\Amr.Communication\\Mqtt\\MqttConnection.cs",
+      "sha256": "2D8901671BB3F72066184772F4B4045AE5F2AB7A6A1EC74283E8F49C1A14A416"
+    },
+    {
+      "path": "src\\Amr.Communication\\Mqtt\\MqttConnectionSettings.cs",
+      "sha256": "39331CD6BCDA0F09D1A72397A31993972C2C2BC937FD2BB0BADA6DB6B1155F1F"
+    },
+    {
+      "path": "src\\Amr.Communication\\Validation\\HeartbeatValidationResult.cs",
+      "sha256": "1604225131767FC7564E9D42470E976117920FC14DD0732039C91260EB14C9A7"
+    },
+    {
+      "path": "src\\Amr.Communication\\Validation\\HeartbeatValidator.cs",
+      "sha256": "71F3AA777BA7A44E405F6B36FFD06D56B78825FE761A07B01C74CD0FE80EEC29"
+    },
+    {
+      "path": "src\\Amr.Communication\\Validation\\MessageValidation.cs",
+      "sha256": "F02AABFAC0E5ED2591919F6AF6CA279118B663F97E395EF441BB89BD3AFDE5B4"
+    },
+    {
+      "path": "src\\Amr.Communication\\Validation\\TelemetryValidationResult.cs",
+      "sha256": "3687D86B1B52EEA007F3FEF77BAA48C4E513753782EAC8E0EC284364D529E4C6"
+    },
+    {
+      "path": "src\\Amr.Communication\\Validation\\TelemetryValidator.cs",
+      "sha256": "9A9D2A46EAD617E6EE9086C54BB738AE0FA1EE30806F18D5BCF790289F66E506"
+    },
+    {
+      "path": "src\\Amr.Communication\\Validation\\ValidationError.cs",
+      "sha256": "3DCF8999E3771B4966872962A45D621BE51F862C1EFB16D268501CD3BE666B71"
+    },
+    {
+      "path": "tests\\Amr.Communication.Tests\\Amr.Communication.Tests.csproj",
+      "sha256": "EB83BE1A7566189050881B542F3DBE2E8875DCE7068EBEBA73F8CC41E8F9F0CF"
+    },
+    {
+      "path": "tests\\Amr.Communication.Tests\\FakeMqttClient.cs",
+      "sha256": "8C0D57942B9EF768768667222E9B54081820923B5702B2792340BD1DB71297B9"
+    },
+    {
+      "path": "tests\\Amr.Communication.Tests\\HeartbeatSubscriptionTests.cs",
+      "sha256": "F2C98E620E2EC01166A0D1D2A06EF324E9C75B0D298ED80434562F8E34871E07"
+    },
+    {
+      "path": "tests\\Amr.Communication.Tests\\HeartbeatValidatorTests.cs",
+      "sha256": "8AA675BCAE55CB29D7143C29C01E1FE128A066E59177948E8E51D569128B45D1"
+    },
+    {
+      "path": "tests\\Amr.Communication.Tests\\MessageValidationRegressionTests.cs",
+      "sha256": "9F80A6E61C686C600690EF8185625FDEF79BE7A4E68E9E4B4B1C17887EC25425"
+    },
+    {
+      "path": "tests\\Amr.Communication.Tests\\MqttConnectionTests.cs",
+      "sha256": "8F74DA63A92913CDE59DA8C93028A2DDC04BAC00EC19E3A158746500171BBF7A"
+    },
+    {
+      "path": "tests\\Amr.Communication.Tests\\TelemetryValidatorTests.cs",
+      "sha256": "7FCE345256C6D84A78A4F6FCECEA5DC2480B8A35B70287730278366364EBB27F"
+    }
+  ],
+  "sourceState": "base + uncommitted COM04-B Telemetry and common validation",
+  "branch": "feature/18-message-validation",
+  "baseCommit": "0a4de95d8e582bd14cafe337e0d8c5389da67b4a"
+}

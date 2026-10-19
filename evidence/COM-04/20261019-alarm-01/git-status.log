@@ -1,0 +1,21 @@
+## feature/18-message-validation
+ M README.md
+ M src/Amr.Communication/Amr.Communication.csproj
+ D src/Amr.Communication/Validation/HeartbeatValidationResult.cs
+ D src/Amr.Communication/Validation/HeartbeatValidator.cs
+ D src/Amr.Communication/Validation/ValidationError.cs
+?? evidence/COM-04/20261019-alarm-01/
+?? evidence/COM-04/20261019-alarm-fields-01/
+?? evidence/COM-04/20261019-telemetry-01/
+?? evidence/COM-04/20261019-telemetry-02/
+?? evidence/COM-04/20261019-validation-layout-01/
+?? src/Amr.Communication/Models/AlarmMessage.cs
+?? src/Amr.Communication/Models/TelemetryMessage.cs
+?? src/Amr.Communication/Validation/Alarm/
+?? src/Amr.Communication/Validation/Common/
+?? src/Amr.Communication/Validation/Heartbeat/
+?? src/Amr.Communication/Validation/Telemetry/
+?? tests/Amr.Communication.Tests/AlarmValidatorTests.cs
+?? tests/Amr.Communication.Tests/MessageFieldValidationTests.cs
+?? tests/Amr.Communication.Tests/MessageValidationRegressionTests.cs
+?? tests/Amr.Communication.Tests/TelemetryValidatorTests.cs

@@ -1,0 +1,53 @@
+{
+  "previousProductionFilesChecked": 18,
+  "checkedAtUtc": "2026-10-19T06:03:29.9027483Z",
+  "lineEndingChanges": [
+    {
+      "currentSha256": "E2DFD160B68DC84377807B5D7ABB6620A8F1237E1CC87D79EF36152C97E4D684",
+      "difference": "LF to CRLF only; existing file preserved",
+      "path": "src\\Amr.Communication\\Validation\\Alarm\\AlarmValidator.cs",
+      "previousSha256": "1F21F77FBD02C55577A95FF21DDD05EACC717FE6EA194F6D6FB918CA7694EA7F"
+    }
+  ],
+  "passed": 463,
+  "gitDiffCheck": "passed",
+  "sourceHashesMatch": true,
+  "sourceFiles": 33,
+  "total": 463,
+  "localLinksChecked": 75,
+  "previousProductionContentsUnchanged": true,
+  "suites": [
+    {
+      "suite": "AckValidatorTests",
+      "count": 106
+    },
+    {
+      "suite": "AlarmValidatorTests",
+      "count": 117
+    },
+    {
+      "suite": "HeartbeatSubscriptionTests",
+      "count": 21
+    },
+    {
+      "suite": "HeartbeatValidatorTests",
+      "count": 86
+    },
+    {
+      "suite": "MessageFieldValidationTests",
+      "count": 12
+    },
+    {
+      "suite": "MessageValidationRegressionTests",
+      "count": 14
+    },
+    {
+      "suite": "MqttConnectionTests",
+      "count": 6
+    },
+    {
+      "suite": "TelemetryValidatorTests",
+      "count": 101
+    }
+  ]
+}

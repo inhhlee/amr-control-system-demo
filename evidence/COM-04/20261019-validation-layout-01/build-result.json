@@ -1,0 +1,4 @@
+{
+  "exitCode": 0,
+  "command": "dotnet build AmrControlSystem.slnx --no-restore --verbosity minimal"
+}

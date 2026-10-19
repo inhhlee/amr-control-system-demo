@@ -1,0 +1,10 @@
+{
+  "sdk": "10.0.401",
+  "displayTimeZone": "Asia/Seoul",
+  "broker": "not used; validator and Fake tests only",
+  "startedAtUtc": "2026-10-19T04:46:52.0176919+00:00",
+  "powershell": "7.6.5",
+  "os": "Microsoft Windows 10.0.26200",
+  "architecture": "X64",
+  "executionDirectory": "C:\\amr-control-system-demo"
+}

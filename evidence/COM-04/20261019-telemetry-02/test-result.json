@@ -1,0 +1,6 @@
+{
+  "command": "dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj --no-build --no-restore --logger \"trx;LogFileName=tests.trx\" --results-directory evidence/COM-04/20261019-telemetry-02",
+  "finishedAtUtc": "2026-10-19T13:47:06.2547409+09:00",
+  "exitCode": 0,
+  "startedAtUtc": "2026-10-19T13:47:04.9791555+09:00"
+}
