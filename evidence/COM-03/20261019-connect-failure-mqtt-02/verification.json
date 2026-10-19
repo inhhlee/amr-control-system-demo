@@ -1,0 +1,88 @@
+{
+  "brokerDisconnectConfirmed": true,
+  "scenarios": [
+    {
+      "name": "refused",
+      "port": 59022,
+      "connectTimeoutSeconds": 10,
+      "elapsedMs": null,
+      "exitCode": 1,
+      "clientId": "amr-demo-624ff6d08cd34c0baa0b2ecaa1f23aca",
+      "connectBytesReceived": 0,
+      "transportClosed": null,
+      "consoleMembers": [],
+      "result": "passed"
+    },
+    {
+      "name": "timeout-1",
+      "port": 59026,
+      "connectTimeoutSeconds": 1,
+      "elapsedMs": 1043.4677,
+      "exitCode": 1,
+      "clientId": "amr-demo-f88aa96c2ed14391bd8a68b19b95ed3e",
+      "connectBytesReceived": 56,
+      "transportClosed": true,
+      "consoleMembers": [],
+      "result": "passed"
+    },
+    {
+      "name": "timeout-2",
+      "port": 59030,
+      "connectTimeoutSeconds": 2,
+      "elapsedMs": 2040.8842,
+      "exitCode": 1,
+      "clientId": "amr-demo-04a1d7e6c68247cd961d65e8783bdeef",
+      "connectBytesReceived": 56,
+      "transportClosed": true,
+      "consoleMembers": [],
+      "result": "passed"
+    },
+    {
+      "name": "recovery-1",
+      "port": 1884,
+      "connectTimeoutSeconds": 3,
+      "elapsedMs": null,
+      "exitCode": 0,
+      "clientId": "amr-demo-ec4726783788431b9579320f0fb600b4",
+      "connectBytesReceived": 0,
+      "transportClosed": null,
+      "consoleMembers": [
+        43912,
+        41292
+      ],
+      "result": "passed"
+    },
+    {
+      "name": "cancel",
+      "port": 59037,
+      "connectTimeoutSeconds": 30,
+      "elapsedMs": null,
+      "exitCode": 0,
+      "clientId": "amr-demo-b909f6bd79c14e0688b97966e53a7141",
+      "connectBytesReceived": 56,
+      "transportClosed": true,
+      "consoleMembers": [
+        43912,
+        44892
+      ],
+      "result": "passed"
+    },
+    {
+      "name": "recovery-2",
+      "port": 1884,
+      "connectTimeoutSeconds": 3,
+      "elapsedMs": null,
+      "exitCode": 0,
+      "clientId": "amr-demo-f4c2a7a4e23d4b1ca161cf7776684850",
+      "connectBytesReceived": 0,
+      "transportClosed": null,
+      "consoleMembers": [
+        43912,
+        44128
+      ],
+      "result": "passed"
+    }
+  ],
+  "completedAtUtc": "2026-10-19T14:12:16.3443414+00:00",
+  "result": "passed"
+}

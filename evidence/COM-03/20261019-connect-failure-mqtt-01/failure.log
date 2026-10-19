@@ -1,0 +1,7 @@
+InvalidOperation: C:\amr-control-system-demo\tests\manual\COM03-B\Verify-Connection.ps1:82
+Line |
+  82 |          if ($text.Contains($marker)) { return }
+     |              ~~~~~~~~~~~~~~~~~~~~~~~
+     | You cannot call a method on a null-valued expression.
+
+

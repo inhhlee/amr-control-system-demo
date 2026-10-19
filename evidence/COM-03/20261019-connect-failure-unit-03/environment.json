@@ -1,0 +1,33 @@
+{
+  "baseCommit": "e2076145615d1310e1a52405cd5c35d66ca71a5e",
+  "branch": "feature/5-mqtt-connect-failure",
+  "sourceState": "uncommitted Issue #5",
+  "sdk": "10.0.401",
+  "os": "Microsoft Windows 10.0.26200",
+  "mqttnet": "5.2.0.1603",
+  "times": {
+    "creation": "2026-10-19T23:11:58.1001716+09:00",
+    "queuing": "2026-10-19T23:11:58.1001722+09:00",
+    "start": "2026-10-19T23:11:55.7693707+09:00",
+    "finish": "2026-10-19T23:12:02.0614202+09:00"
+  },
+  "counts": {
+    "total": "566",
+    "executed": "566",
+    "passed": "566",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "timeoutTolerance": "configured 1s/2s -50ms/+2000ms; user cancellation within 2s"
+}

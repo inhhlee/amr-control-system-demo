@@ -1,0 +1,6 @@
+ Container amr-demo-mosquitto-1  Stopping
+ Container amr-demo-mosquitto-1  Stopped
+ Container amr-demo-mosquitto-1  Removing
+ Container amr-demo-mosquitto-1  Removed
+ Network amr-demo_default  Removing
+ Network amr-demo_default  Removed

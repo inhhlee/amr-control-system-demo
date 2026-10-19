@@ -1,0 +1,23 @@
+{
+  "startedAtUtc": "2026-10-19T14:11:56.3528331+00:00",
+  "sdk": "10.0.401",
+  "os": "Microsoft Windows 10.0.26200",
+  "mqttnet": "5.2.0.1603",
+  "dockerVersion": "24.0.6 / 24.0.6",
+  "brokerVersion": "mosquitto version 2.1.2",
+  "baseCommit": "e2076145615d1310e1a52405cd5c35d66ca71a5e",
+  "branch": "feature/5-mqtt-connect-failure",
+  "sourceState": "uncommitted Issue #5",
+  "brokerManagedByThisScript": false,
+  "timeoutMeasurement": "Connecting timestamp to ConnectFailed timestamp, configured 1s/2s, allowed -50ms/+2000ms",
+  "processExitUpperBoundSeconds": 8,
+  "cancellationExitUpperBoundSeconds": 3,
+  "scenarios": [
+    "refused",
+    "timeout-1",
+    "timeout-2",
+    "recovery-1",
+    "cancel",
+    "recovery-2"
+  ]
+}

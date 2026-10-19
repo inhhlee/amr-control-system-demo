@@ -20,6 +20,8 @@
 
 ## 개발 구성
 
+현재 작업은 [Issue #5 — 접속 실패·대기 제한·취소 처리](https://github.com/inhhlee/amr-control-system-demo/issues/5)다. 최신 develop `e207614`에서 `feature/5-mqtt-connect-failure`를 생성했다. 입력 오류·TCP 실패·MQTT 거부·접속 제한·사용자 취소를 구분하고 늦은 접속 결과를 차단했다. 빌드 경고·오류 0, 자동시험 566건과 실제 실패·제한·Ctrl+C 취소·새 정상 세션을 확인했다. [실행 안내](#com03b-run) · [검증결과](evidence/COM-03/20261019-connect-failure-unit-03/README.md). 구현·시험 근거를 작업 브랜치에 함께 게시한다. PR의 최신 상태는 Issue #5에서 확인하며 develop 병합·Issue 종료는 후속 단계다. #23은 PR #24로 develop에 반영·종료됐으며 아래 #23 준비 단계 설명은 당시 기록이다.
+
 현재 작업은 [Issue #23 — COM01-C AMR별 수신 큐](https://github.com/inhhlee/amr-control-system-demo/issues/23)의 종료 경합 보완과 PR 검토다. 기존 큐 구현은 develop의 `1060c64`에 이미 포함됐고, `feature/23-amr-receive-queue`에서 호출 진입·취소 동기화와 추가 시험을 준비했다. 빌드 경고·오류 0, 전체 자동시험 547건, 실제 MQTT 정상 세 세션 및 별도 Broker 중단 시험을 통과했다. [최신 검증결과](evidence/COM-01/20261019-queue-pr-unit-02/README.md)와 [게시 전 PR 본문 초안](evidence/COM-01/20261019-queue-pr-unit-02/PR.md)을 연결하며, 게시 PR은 Issue #23에서 참조한다. 병합·Issue 종료는 별도 단계다. 아래 Issue별 이전 수치와 미커밋 표시는 당시 실행 기록이다.
 
 선행 [#21](https://github.com/inhhlee/amr-control-system-demo/issues/21)은 [PR #22](https://github.com/inhhlee/amr-control-system-demo/pull/22)로 develop에 반영됐다. 당시 실제 MQTT 두 세션에서 정상 20건 전달·불량 4건 거부·구독 밖 4건 미수신과 정상 종료를 확인했다. [당시 실행 안내](#com01b-run)와 [브라우저 보고서](evidence/COM-01/20261019-multi-mqtt-03/report.html)를 보존한다. 현재 콘솔은 그 수신부의 짧은 콜백에서 큐에 접수한 뒤 AMR별 비동기 처리자를 호출한다.
@@ -38,7 +40,7 @@
 | [AmrControlSystem.slnx](AmrControlSystem.slnx) | Visual Studio에서 열 솔루션 |
 | [Amr.Communication](src/Amr.Communication/Amr.Communication.csproj) | MQTTnet 5.2.0.1603을 사용한 접속 설정·MQTT 승인 확인·명시적 해제·자원 정리 |
 | [Amr.Communication.Console](src/Amr.Communication.Console/Amr.Communication.Console.csproj) | 실제 Broker 접속 승인 후 Ctrl+C까지 유지하고 명시적 해제·정리를 기다리는 콘솔 |
-| [Amr.Communication.Tests](tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj) | 기존 543개 + 큐 경계 시험 4개, 총 547개 |
+| [Amr.Communication.Tests](tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj) | 기존 547개 + 접속 실패·취소 시험 19개, 총 566개 |
 | [evidence/setup](evidence/setup/) | 실행별 환경·복원·빌드·실행·시험 탐색 증거 |
 
 시험 패키지는 `Microsoft.NET.Test.Sdk 17.14.1`, `xunit 2.9.3`, `xunit.runner.visualstudio 3.1.4`다.
@@ -60,7 +62,43 @@ dotnet build AmrControlSystem.slnx --no-restore
 dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj --no-build
 ```
 
-`dotnet test`는 작성한 xUnit 자동시험 547개를 실행한다. 검사기 직접 호출과 시험 대역(Fake)을 사용하므로 Broker 없이 실행할 수 있다. `--list-tests`를 붙이면 실행하지 않고 이름만 나열한다. `--no-build`는 빌드를 생략하므로 소스를 수정했다면 먼저 다시 빌드한다.
+`dotnet test`는 작성한 xUnit 자동시험 566개를 실행한다. 검사기 직접 호출과 시험 대역(Fake)을 사용하므로 Broker 없이 실행할 수 있다. `--list-tests`를 붙이면 실행하지 않고 이름만 나열한다. `--no-build`는 빌드를 생략하므로 소스를 수정했다면 먼저 다시 빌드한다.
+
+<a id="com03b-run"></a>
+
+## COM03-B 최초 접속 실패·대기 제한·취소 (Issue #5)
+
+[MqttConnection](src/Amr.Communication/Mqtt/Connection/MqttConnection.cs)은 MQTT 승인 후 연결됨을 표시한다. 기본 접속 제한은 3초이고 `--connect-timeout-seconds`로 양수 초를 지정한다. 최초 접속 제한과 연결 후 KeepAlive 감지 시간은 구분한다.
+
+| 입력·결과 | 출력·종료 코드 |
+| --- | --- |
+| 빈/공백 host, port 0/65536, 제한 0/음수, 잘못된 숫자 | `InputRejected Reason=InvalidSettings`, 연결 시도 전 종료 1 |
+| TCP 거절·이름 해석 등 전송 실패 | `ConnectFailed Reason=TransportFailure`, SocketError 등 원인 코드, 종료 1 |
+| MQTT 승인 거부 | `ConnectFailed Reason=MqttRejected ResultCode=...`, 종료 1 |
+| 설정한 접속 대기 제한 | `ConnectFailed Reason=Timeout`, 종료 1 |
+| 접속 중 Ctrl+C | `ConnectCanceled Reason=UserCanceled`, 정리 후 종료 0 |
+
+라이브러리는 실패를 `MqttConnectionException.Reason`으로 제공한다. 사용자 취소는 전달받은 토큰을 가진 `OperationCanceledException`이다. 실패·취소된 객체는 Client를 Dispose하고 재사용을 금지한다. 새 접속에는 새 객체/프로세스를 사용한다. 대기 중 취소는 최초로 관찰한 원인을 유지하며 늦은 결과·예외는 관찰만 하고 연결 승인으로 반영하지 않는다. 주입하는 Client는 Dispose로 전송 자원을 해제해야 하며 동기 호출 구간은 신속히 반환해야 한다.
+
+[ConsoleRunner](src/Amr.Communication.Console/ConsoleRunner.cs)에 실제 콘솔 흐름을 두고 시험에서 Client·취소 토큰·출력을 주입한다. Program은 Ctrl+C를 이 토큰에 전달한다. 최초 접속 중 Disconnected 이벤트는 연결 상실로 중복 기록하지 않으며, 예외의 자유 형식 메시지·Broker ReasonString은 출력하지 않는다.
+
+```powershell
+# 오류 입력: 연결 시도 없이 종료 1
+dotnet run --project src/Amr.Communication.Console --no-build -- --port 0
+dotnet run --project src/Amr.Communication.Console --no-build -- --connect-timeout-seconds 0
+# 정상 주소: 승인 후 대기, Ctrl+C로 종료 0
+dotnet run --project src/Amr.Communication.Console --no-build -- --host 127.0.0.1 --port 1884 --connect-timeout-seconds 3
+```
+
+실제 실패·제한·취소 도구에는 Windows·PowerShell 7·Docker, 빌드된 실행 파일과 기동된 프로젝트 전용 Broker(`127.0.0.1:1884`)가 필요하다. 도구는 Broker를 시작·중단하지 않는다.
+
+```powershell
+pwsh -NoProfile -File tests/manual/COM03-B/Verify-Connection.ps1 -RunId <새-실행ID>
+```
+
+[도구](tests/manual/COM03-B/Verify-Connection.ps1)는 임시 루프백 포트를 예약하되 Listen하지 않아 실제 TCP 거절을 만든다. 별도 TCP 대역은 CONNECT를 받은 후 CONNACK를 보내지 않아 1초·2초 제한과 접속 중 Ctrl+C를 검증한다. 측정은 Connecting부터 ConnectFailed까지이며 사전 허용 오차는 -50ms/+2000ms다. EOF로 소켓 정리를 확인하고 실제 Broker에 새 프로세스로 두 번 접속·구독·Ctrl+C 종료한다. CTRL_C_EVENT는 생성한 격리 콘솔에만 전달하며 사용자 키보드 조작 실적으로 표시하지 않는다.
+
+[최종 자동시험](evidence/COM-03/20261019-connect-failure-unit-03/README.md) · [실제 TCP/MQTT 결과](evidence/COM-03/20261019-connect-failure-mqtt-02/README.md). MQTT 승인 거부와 취소를 무시하는 늦은 완료는 Fake 시험이다. 연결 후 무응답/KeepAlive·중복 단절 경합은 #6, 자동 재접속·재구독은 COM-06 범위다.
 
 <a id="com01b-run"></a>
 

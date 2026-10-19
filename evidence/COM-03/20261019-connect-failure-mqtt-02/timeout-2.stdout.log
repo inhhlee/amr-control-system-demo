@@ -1,0 +1,8 @@
+2026-10-19T14:12:09.1423500+00:00 Settings Host=127.0.0.1 Port=59030 ClientId=amr-demo-04a1d7e6c68247cd961d65e8783bdeef MQTT=5 CleanStart=true SessionExpiry=0 KeepAliveSeconds=5 ConnectTimeoutSeconds=2 DisconnectTimeoutSeconds=3
+2026-10-19T14:12:09.1588310+00:00 Connecting
+2026-10-19T14:12:11.2778959+00:00 QueueEvent {"Code":"Stopped","AmrId":null,"Kind":null,"Count":0,"ExceptionType":null}
+2026-10-19T14:12:11.2787887+00:00 QueueStopped
+2026-10-19T14:12:11.2793380+00:00 Unsubscribing
+2026-10-19T14:12:11.2849271+00:00 SubscriptionStopped
+2026-10-19T14:12:11.2862573+00:00 Disposed
+2026-10-19T14:12:11.2868546+00:00 ExitCode=1

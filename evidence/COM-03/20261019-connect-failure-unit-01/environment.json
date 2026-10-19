@@ -1,0 +1,10 @@
+{
+  "sdk": "10.0.401",
+  "baseCommit": "e2076145615d1310e1a52405cd5c35d66ca71a5e",
+  "os": "Microsoft Windows NT 10.0.26200.0",
+  "timeoutMeasurement": "ConnectAsync entry to terminal task; 1s and 2s, allowed -50ms/+2000ms; hard wait +3s",
+  "startedAtUtc": "2026-10-19T14:07:42.7653795+00:00",
+  "sourceState": "uncommitted Issue #5 changes",
+  "userCancelUpperBoundSeconds": 2,
+  "branch": "feature/5-mqtt-connect-failure"
+}
