@@ -20,7 +20,7 @@
 
 ## 개발 구성
 
-현재 변경은 [Issue #23 — COM01-C AMR별 수신 큐](https://github.com/inhhlee/amr-control-system-demo/issues/23)의 콘솔 MQTT 연결·실제 시험 단계다. 빌드 경고·오류 0, 자동시험 543건 통과. 기존 Broker에 15건을 발행하여 순서·독립 처리, 처리 중 취소·대기 3건 폐기, 새 세션 수신과 세 세션 종료 0을 확인했다. [실행 안내](#com01c-mqtt)와 [검증결과](evidence/COM-01/20261019-queue-mqtt-01/README.md)를 따른다. 변경은 미커밋이며 #23 전체 완료 체크·PR은 아직 진행하지 않았다.
+현재 작업은 [Issue #23 — COM01-C AMR별 수신 큐](https://github.com/inhhlee/amr-control-system-demo/issues/23)의 종료 경합 보완과 PR 검토다. 기존 큐 구현은 develop의 `1060c64`에 이미 포함됐고, `feature/23-amr-receive-queue`에서 호출 진입·취소 동기화와 추가 시험을 준비했다. 빌드 경고·오류 0, 전체 자동시험 547건, 실제 MQTT 정상 세 세션 및 별도 Broker 중단 시험을 통과했다. [최신 검증결과](evidence/COM-01/20261019-queue-pr-unit-02/README.md)와 [게시 전 PR 본문 초안](evidence/COM-01/20261019-queue-pr-unit-02/PR.md)을 연결하며, 게시 PR은 Issue #23에서 참조한다. 병합·Issue 종료는 별도 단계다. 아래 Issue별 이전 수치와 미커밋 표시는 당시 실행 기록이다.
 
 선행 [#21](https://github.com/inhhlee/amr-control-system-demo/issues/21)은 [PR #22](https://github.com/inhhlee/amr-control-system-demo/pull/22)로 develop에 반영됐다. 당시 실제 MQTT 두 세션에서 정상 20건 전달·불량 4건 거부·구독 밖 4건 미수신과 정상 종료를 확인했다. [당시 실행 안내](#com01b-run)와 [브라우저 보고서](evidence/COM-01/20261019-multi-mqtt-03/report.html)를 보존한다. 현재 콘솔은 그 수신부의 짧은 콜백에서 큐에 접수한 뒤 AMR별 비동기 처리자를 호출한다.
 
@@ -38,7 +38,7 @@
 | [AmrControlSystem.slnx](AmrControlSystem.slnx) | Visual Studio에서 열 솔루션 |
 | [Amr.Communication](src/Amr.Communication/Amr.Communication.csproj) | MQTTnet 5.2.0.1603을 사용한 접속 설정·MQTT 승인 확인·명시적 해제·자원 정리 |
 | [Amr.Communication.Console](src/Amr.Communication.Console/Amr.Communication.Console.csproj) | 실제 Broker 접속 승인 후 Ctrl+C까지 유지하고 명시적 해제·정리를 기다리는 콘솔 |
-| [Amr.Communication.Tests](tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj) | 기존 463개 + COM01-B 수신부 66개, 총 529개 |
+| [Amr.Communication.Tests](tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj) | 기존 543개 + 큐 경계 시험 4개, 총 547개 |
 | [evidence/setup](evidence/setup/) | 실행별 환경·복원·빌드·실행·시험 탐색 증거 |
 
 시험 패키지는 `Microsoft.NET.Test.Sdk 17.14.1`, `xunit 2.9.3`, `xunit.runner.visualstudio 3.1.4`다.
@@ -60,7 +60,7 @@ dotnet build AmrControlSystem.slnx --no-restore
 dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj --no-build
 ```
 
-`dotnet test`는 작성한 xUnit 자동시험 529개를 실행한다. 검사기 직접 호출과 시험 대역(Fake)을 사용하므로 Broker 없이 실행할 수 있다. `--list-tests`를 붙이면 실행하지 않고 이름만 나열한다. `--no-build`는 빌드를 생략하므로 소스를 수정했다면 먼저 다시 빌드한다.
+`dotnet test`는 작성한 xUnit 자동시험 547개를 실행한다. 검사기 직접 호출과 시험 대역(Fake)을 사용하므로 Broker 없이 실행할 수 있다. `--list-tests`를 붙이면 실행하지 않고 이름만 나열한다. `--no-build`는 빌드를 생략하므로 소스를 수정했다면 먼저 다시 빌드한다.
 
 <a id="com01b-run"></a>
 
@@ -398,7 +398,15 @@ pwsh -NoProfile -File tests/manual/COM01-C/Verify-Mqtt.ps1 -RunId <새-실행ID>
 
 종료는 `RequestStop`으로 접수·다음 처리 시작을 차단하고 잔여를 폐기한 뒤 `StopAsync`로 취소·정리를 기다린다. 큐 대기는 ConnectTimeout(기본 3초), 구독 해제와 연결 해제는 각각 기존 3초 제한이다. 이는 종료 전체가 합계 3초라는 의미가 아니다. 이미 시작한 처리자는 취소에 협조해야 하며, 취소를 무시하면 StopTimeout을 보고하고 반환한 정리 Task에서 늦은 완료·실패를 관찰한다. 모든 소비자와 취소 콜백이 끝난 뒤 취소 자원을 폐기한다.
 
-이번 실제 시험은 정상 연결과 Ctrl+C 경로다. Broker 강제 단절, 실제 MQTT 과부하·장시간 부하, 소비자 시작/종료 경합의 반복 시험은 아직 수행하지 않았다. 취소 무시·늦은 성공/실패·로그 콜백 오류는 자동시험 대역으로 확인했다. [실제 입력·로그·판정](evidence/COM-01/20261019-queue-mqtt-01/README.md), [543건 자동시험](evidence/COM-01/20261019-queue-console-unit-01/README.md)을 참조한다.
+최신 검증에서는 정상 연결·Ctrl+C·새 세션을 재시험했고, 별도 시험에서 실제 Broker 중단 후 처리 중 1건 취소·대기 3건 폐기·구독/Client 정리·예상 종료 코드 1을 확인했다. [정상 MQTT 결과](evidence/COM-01/20261019-queue-pr-mqtt-01/README.md), [끊김 결과](evidence/COM-01/20261019-queue-pr-disconnect-03/README.md), [547건 자동시험과 완료조건 대조](evidence/COM-01/20261019-queue-pr-unit-02/README.md)를 참조한다. 실제 MQTT 과부하·장시간 부하·네트워크 무응답 감지는 미실행이다. 작은 큐/AMR 제한은 실제 MessageSubscription·Validator와 Fake MQTT를 연결해 확인했으며 실제 Broker 시험과 구분한다.
+
+호출 진입용 읽기/쓰기 잠금은 큐 접수 잠금과 분리했다. 이미 꺼낸 메시지도 처리자 호출 전에 종료 상태를 확인하면 폐기하고 수량을 기록한다. 호출자가 반환한 Task를 잠금 밖에서 기다리므로 다른 AMR의 비동기 처리는 계속된다. 취소는 진행 중인 처리자의 동기 구간이 Task를 반환한 뒤 전달된다. 처리자는 동기 구간에서 토큰 취소를 기다리는 `.Wait()`·`.Result` 등으로 멈추지 말고 비동기 Task를 빨리 반환해야 한다. 동기 구간이 반환하지 않아도 StopAsync는 제한 시간에 오류를 반환하고 늦은 반환 후 정리를 이어가며, 이 경계도 자동시험으로 확인했다.
+
+Broker 중단 시험은 다른 사용자가 쓰지 않는 프로젝트 전용 시험 Broker에서만 실행한다. 도구는 `amr-demo/mosquitto`를 중단한 뒤 finally에서 다시 시작하며 다른 Compose 프로젝트는 변경하지 않는다.
+
+```powershell
+pwsh -NoProfile -File tests/manual/COM01-C/Verify-Disconnect.ps1 -RunId <새-실행ID> -AllowBrokerStop
+```
 
 <a id="com01c-order"></a>
 

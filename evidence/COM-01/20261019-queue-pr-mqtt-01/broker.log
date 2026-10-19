@@ -1,0 +1,43 @@
+amr-demo-mosquitto-1  | 2026-10-19T13:25:52.383271391Z 1792416352: New connection from 127.0.0.1:36176 on port 1883.
+amr-demo-mosquitto-1  | 2026-10-19T13:25:52.383836566Z 1792416352: New client connected from 127.0.0.1:36176 as com01c-pub-7f41fa2a5bed45c1a2531135ac284664 (p5, c1, k60).
+amr-demo-mosquitto-1  | 2026-10-19T13:25:52.384578650Z 1792416352: Client com01c-pub-7f41fa2a5bed45c1a2531135ac284664 [127.0.0.1:36176] disconnected.
+amr-demo-mosquitto-1  | 2026-10-19T13:25:53.183963842Z 1792416353: New connection from 127.0.0.1:36178 on port 1883.
+amr-demo-mosquitto-1  | 2026-10-19T13:25:53.184388076Z 1792416353: New client connected from 127.0.0.1:36178 as com01c-pub-cc77c14e1b1447d783e3b3ccbdff9900 (p5, c1, k60).
+amr-demo-mosquitto-1  | 2026-10-19T13:25:53.184940576Z 1792416353: Client com01c-pub-cc77c14e1b1447d783e3b3ccbdff9900 [127.0.0.1:36178] disconnected.
+amr-demo-mosquitto-1  | 2026-10-19T13:25:54.175995335Z 1792416354: New connection from 127.0.0.1:36192 on port 1883.
+amr-demo-mosquitto-1  | 2026-10-19T13:25:54.176721602Z 1792416354: New client connected from 127.0.0.1:36192 as com01c-pub-545e087c2fec4f12ad1a0c29ad037f1a (p5, c1, k60).
+amr-demo-mosquitto-1  | 2026-10-19T13:25:54.178113685Z 1792416354: Client com01c-pub-545e087c2fec4f12ad1a0c29ad037f1a [127.0.0.1:36192] disconnected.
+amr-demo-mosquitto-1  | 2026-10-19T13:25:55.103593283Z 1792416355: New connection from 127.0.0.1:36206 on port 1883.
+amr-demo-mosquitto-1  | 2026-10-19T13:25:55.104453233Z 1792416355: New client connected from 127.0.0.1:36206 as com01c-pub-00a6d42703d4470c99840ccbe8bcea37 (p5, c1, k60).
+amr-demo-mosquitto-1  | 2026-10-19T13:25:55.105288916Z 1792416355: Client com01c-pub-00a6d42703d4470c99840ccbe8bcea37 [127.0.0.1:36206] disconnected.
+amr-demo-mosquitto-1  | 2026-10-19T13:25:55.985517233Z 1792416355: New connection from 127.0.0.1:56022 on port 1883.
+amr-demo-mosquitto-1  | 2026-10-19T13:25:55.986056734Z 1792416355: New client connected from 127.0.0.1:56022 as com01c-pub-09175e0d099548a8ac32b0b7a72fd886 (p5, c1, k60).
+amr-demo-mosquitto-1  | 2026-10-19T13:25:55.986873892Z 1792416355: Client com01c-pub-09175e0d099548a8ac32b0b7a72fd886 [127.0.0.1:56022] disconnected.
+amr-demo-mosquitto-1  | 2026-10-19T13:25:56.902484753Z 1792416356: New connection from 127.0.0.1:56036 on port 1883.
+amr-demo-mosquitto-1  | 2026-10-19T13:25:56.903019378Z 1792416356: New client connected from 127.0.0.1:56036 as com01c-pub-03af922aae394c0888d8a7e13c4d9034 (p5, c1, k60).
+amr-demo-mosquitto-1  | 2026-10-19T13:25:56.903347303Z 1792416356: Client com01c-pub-03af922aae394c0888d8a7e13c4d9034 [127.0.0.1:56036] disconnected.
+amr-demo-mosquitto-1  | 2026-10-19T13:26:09.716412668Z 1792416369: Client amr-demo-b96ad396553c46dd9ea47a0600d17f98 [172.19.0.1:33408] disconnected.
+amr-demo-mosquitto-1  | 2026-10-19T13:26:10.014098678Z 1792416370: New connection from 172.19.0.1:39392 on port 1883.
+amr-demo-mosquitto-1  | 2026-10-19T13:26:10.029923468Z 1792416370: New client connected from 172.19.0.1:39392 as amr-demo-8b06990749c24280877e03900da7df79 (p5, c1, k5).
+amr-demo-mosquitto-1  | 2026-10-19T13:26:10.960736673Z 1792416370: New connection from 127.0.0.1:33716 on port 1883.
+amr-demo-mosquitto-1  | 2026-10-19T13:26:10.961263173Z 1792416370: New client connected from 127.0.0.1:33716 as com01c-pub-6e6b080afce744b2bcf8b320cc81d061 (p5, c1, k60).
+amr-demo-mosquitto-1  | 2026-10-19T13:26:10.962014373Z 1792416370: Client com01c-pub-6e6b080afce744b2bcf8b320cc81d061 [127.0.0.1:33716] disconnected.
+amr-demo-mosquitto-1  | 2026-10-19T13:26:11.806971633Z 1792416371: New connection from 127.0.0.1:33730 on port 1883.
+amr-demo-mosquitto-1  | 2026-10-19T13:26:11.812435630Z 1792416371: New client connected from 127.0.0.1:33730 as com01c-pub-44e491b3ee284ee2b4bec463b6ac551a (p5, c1, k60).
+amr-demo-mosquitto-1  | 2026-10-19T13:26:11.824897322Z 1792416371: Client com01c-pub-44e491b3ee284ee2b4bec463b6ac551a [127.0.0.1:33730] disconnected.
+amr-demo-mosquitto-1  | 2026-10-19T13:26:12.719584150Z 1792416372: New connection from 127.0.0.1:33736 on port 1883.
+amr-demo-mosquitto-1  | 2026-10-19T13:26:12.720220650Z 1792416372: New client connected from 127.0.0.1:33736 as com01c-pub-b6cd049679bb4b1c9fe37488e6dd0e81 (p5, c1, k60).
+amr-demo-mosquitto-1  | 2026-10-19T13:26:12.720738250Z 1792416372: Client com01c-pub-b6cd049679bb4b1c9fe37488e6dd0e81 [127.0.0.1:33736] disconnected.
+amr-demo-mosquitto-1  | 2026-10-19T13:26:13.509791746Z 1792416373: New connection from 127.0.0.1:33740 on port 1883.
+amr-demo-mosquitto-1  | 2026-10-19T13:26:13.510216646Z 1792416373: New client connected from 127.0.0.1:33740 as com01c-pub-57a0b176ec4041b8b325a3b89da238c2 (p5, c1, k60).
+amr-demo-mosquitto-1  | 2026-10-19T13:26:13.510779245Z 1792416373: Client com01c-pub-57a0b176ec4041b8b325a3b89da238c2 [127.0.0.1:33740] disconnected.
+amr-demo-mosquitto-1  | 2026-10-19T13:26:14.349674710Z 1792416374: New connection from 127.0.0.1:33744 on port 1883.
+amr-demo-mosquitto-1  | 2026-10-19T13:26:14.350418109Z 1792416374: New client connected from 127.0.0.1:33744 as com01c-pub-1b60cba27e534f08b7d106d98f36a6b3 (p5, c1, k60).
+amr-demo-mosquitto-1  | 2026-10-19T13:26:14.350981009Z 1792416374: Client com01c-pub-1b60cba27e534f08b7d106d98f36a6b3 [127.0.0.1:33744] disconnected.
+amr-demo-mosquitto-1  | 2026-10-19T13:26:14.448856646Z 1792416374: Client amr-demo-8b06990749c24280877e03900da7df79 [172.19.0.1:39392] disconnected.
+amr-demo-mosquitto-1  | 2026-10-19T13:26:14.708130681Z 1792416374: New connection from 172.19.0.1:39400 on port 1883.
+amr-demo-mosquitto-1  | 2026-10-19T13:26:14.721469772Z 1792416374: New client connected from 172.19.0.1:39400 as amr-demo-af562476cfa94bec847f01c05fa00934 (p5, c1, k5).
+amr-demo-mosquitto-1  | 2026-10-19T13:26:15.560713136Z 1792416375: New connection from 127.0.0.1:48036 on port 1883.
+amr-demo-mosquitto-1  | 2026-10-19T13:26:15.561585336Z 1792416375: New client connected from 127.0.0.1:48036 as com01c-pub-b843987e81834035828f392b3e5bf7fb (p5, c1, k60).
+amr-demo-mosquitto-1  | 2026-10-19T13:26:15.562811235Z 1792416375: Client com01c-pub-b843987e81834035828f392b3e5bf7fb [127.0.0.1:48036] disconnected.
+amr-demo-mosquitto-1  | 2026-10-19T13:26:15.676638662Z 1792416375: Client amr-demo-af562476cfa94bec847f01c05fa00934 [172.19.0.1:39400] disconnected.

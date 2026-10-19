@@ -1,0 +1,7 @@
+InvalidOperation: C:\amr-control-system-demo\tests\manual\COM01-C\Verify-Disconnect.ps1:49
+Line |
+  49 |  …  Wait-Log { param($text) $text.Contains('Subscribed TopicFilters=') }
+     |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | You cannot call a method on a null-valued expression.
+
+

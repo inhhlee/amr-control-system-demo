@@ -1,0 +1,10 @@
+{
+  "startedAtUtc": "2026-10-19T13:27:35.4456713+00:00",
+  "sdk": "10.0.401",
+  "os": "Microsoft Windows 10.0.26200",
+  "baseCommit": "1060c6450f19d42e3fea0cb5d858500a8ab6aa93",
+  "branch": "feature/23-amr-receive-queue",
+  "endpoint": "127.0.0.1:1884",
+  "container": "418121dfd341b907aea4dff11a8fe10a93969c85ffb1b75dfe56cd447f00a593",
+  "brokerStopExplicitlyAllowed": true
+}

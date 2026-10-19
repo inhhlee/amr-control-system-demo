@@ -9,11 +9,15 @@ namespace Amr.Communication.Mqtt;
 /// <remarks>
 /// 연결 세션마다 새 객체를 만든다. 소유자가 StopAsync를 호출해 취소·잔여 폐기·정리를 기다린다.
 /// 처리자는 서로 다른 AMR에서 동시에 호출되며 취소에 협조해야 한다. 자기 큐의 종료를 기다리지 않는다.
+/// 처리자의 동기 구간은 짧게 반환해야 한다. 취소는 진행 중인 동기 호출이 Task를 반환한 뒤 전달된다.
+/// 동기 구간이 멈추면 StopAsync의 제한 시간이 적용되며, 늦은 반환 후 취소·정리를 계속한다.
 /// 처리 기록 콜백은 짧게 반환하고 자체 오류를 처리한다. 오류 시 Trace에 예외 형식만 기록한다.
 /// </remarks>
 public sealed class AmrReceiveQueue
 {
     private readonly object _gate = new();
+    // 접수 잠금과 분리한다. 여러 AMR의 동기 호출은 함께 진입하고, 취소는 그 호출들의 반환 뒤에 전달한다.
+    private readonly ReaderWriterLockSlim _dispatchGate = new();
     private readonly Dictionary<string, AmrQueue> _queues = new(StringComparer.Ordinal);
     private readonly Func<ReceivedMessage, CancellationToken, Task> _handler;
     private readonly Action<QueueProcessingEvent> _report;
@@ -22,7 +26,7 @@ public sealed class AmrReceiveQueue
     private readonly int _amrLimit;
     private Task? _completion;
     private Task? _stopTask;
-    private bool _stopping;
+    private volatile bool _stopping;
 
     internal AmrReceiveQueue(Func<ReceivedMessage, Task> handler, int capacityPerAmr = 256, int amrLimit = 64)
         : this((message, _) => handler(message), null, capacityPerAmr, amrLimit)
@@ -109,12 +113,19 @@ public sealed class AmrReceiveQueue
             {
                 try
                 {
-                    Task cancellation = _stop.CancelAsync();
+                    Task cancellation;
+                    _dispatchGate.EnterWriteLock();
+                    try { cancellation = _stop.CancelAsync(); }
+                    finally { _dispatchGate.ExitWriteLock(); }
                     foreach (var entry in discards) Report(entry);
                     await Task.WhenAll(consumers.Append(cancellation));
                     Report(new("Stopped"));
                 }
-                finally { _stop.Dispose(); }
+                finally
+                {
+                    _stop.Dispose();
+                    _dispatchGate.Dispose();
+                }
             });
             // 대기 제한 이후에도 최종 실패가 관찰되지 않은 예외로 남지 않게 한다.
             _ = _stopTask.ContinueWith(task =>
@@ -146,11 +157,24 @@ public sealed class AmrReceiveQueue
             lock (_gate)
             {
                 if (_stopping) break;
-                // 종료 요청과 같은 잠금에서 한 건의 처리를 시작하기로 확정한다.
-                // 이 경계를 먼저 통과한 건만 이미 시작한 처리로 취급하고, 종료 이후 다음 건은 꺼내지 않는다.
                 if (!reader.TryRead(out message)) continue;
             }
-            try { await _handler(message, token); }
+            try
+            {
+                Task? processing = null;
+                bool discarded;
+                _dispatchGate.EnterReadLock();
+                try
+                {
+                    discarded = _stopping;
+                    if (!discarded) processing = _handler(message, token);
+                }
+                finally { _dispatchGate.ExitReadLock(); }
+
+                // 큐에서 꺼냈어도 실제 호출 진입 전에 종료가 시작되면 폐기 수량에 포함한다.
+                if (discarded) Report(new("ShutdownDiscarded", message.AmrId, Count: 1));
+                else await processing!;
+            }
             catch (OperationCanceledException) when (token.IsCancellationRequested)
             { Report(new("HandlerCancelled", message.AmrId, message.Kind)); }
             catch (Exception exception)

@@ -1,0 +1,1 @@
+/amr-demo-mosquitto-1 eclipse-mosquitto:2.1.2-alpine {"1883/tcp":[{"HostIp":"127.0.0.1","HostPort":"1884"}]}
