@@ -1,0 +1,2 @@
+NAME                   IMAGE                            COMMAND                  SERVICE     CREATED       STATUS       PORTS
+amr-demo-mosquitto-1   eclipse-mosquitto:2.1.2-alpine   "/docker-entrypoint.…"   mosquitto   11 days ago   Up 7 hours   127.0.0.1:1884->1883/tcp

@@ -20,7 +20,9 @@
 
 ## 개발 구성
 
-현재 변경은 [Issue #21 — COM01-B 네 유형 구독·전달](https://github.com/inhhlee/amr-control-system-demo/issues/21)의 구현·실행 검증 단계다. 2026-10-19 빌드 경고·오류 0, 자동시험 529건 통과. 실제 MQTT 두 세션에서 정상 20건 전달·불량 4건 거부·구독 밖 4건 미수신과 정상 종료를 확인했다. [실행 안내](#com01b-run)와 [브라우저 보고서](evidence/COM-01/20261019-multi-mqtt-03/report.html)를 따른다. 변경은 미커밋이며 GitHub 결과 게시·PR·리뷰·병합은 남아 있다.
+현재 변경은 [Issue #23 — COM01-C AMR별 수신 큐](https://github.com/inhhlee/amr-control-system-demo/issues/23)의 콘솔 MQTT 연결·실제 시험 단계다. 빌드 경고·오류 0, 자동시험 543건 통과. 기존 Broker에 15건을 발행하여 순서·독립 처리, 처리 중 취소·대기 3건 폐기, 새 세션 수신과 세 세션 종료 0을 확인했다. [실행 안내](#com01c-mqtt)와 [검증결과](evidence/COM-01/20261019-queue-mqtt-01/README.md)를 따른다. 변경은 미커밋이며 #23 전체 완료 체크·PR은 아직 진행하지 않았다.
+
+선행 [#21](https://github.com/inhhlee/amr-control-system-demo/issues/21)은 [PR #22](https://github.com/inhhlee/amr-control-system-demo/pull/22)로 develop에 반영됐다. 당시 실제 MQTT 두 세션에서 정상 20건 전달·불량 4건 거부·구독 밖 4건 미수신과 정상 종료를 확인했다. [당시 실행 안내](#com01b-run)와 [브라우저 보고서](evidence/COM-01/20261019-multi-mqtt-03/report.html)를 보존한다. 현재 콘솔은 그 수신부의 짧은 콜백에서 큐에 접수한 뒤 AMR별 비동기 처리자를 호출한다.
 
 선행 [#18](https://github.com/inhhlee/amr-control-system-demo/issues/18)은 PR #20으로 develop에 병합됐다. [Telemetry](#telemetry-validation), [Alarm](#alarm-validation), [ACK](#ack-validation) 검사 API와 [당시 463건 검증결과](evidence/COM-04/20261019-ack-01/README.md)는 유지한다.
 
@@ -368,6 +370,68 @@ Docker 엔진에 연결되지 않으면 설치된 Docker Desktop을 시작하고
 이전 검증은 기존 Broker의 환경 조회 결과다. 현재 프로젝트의 설정·관리 경로는 위 로컬 폴더이며, 새 Broker 실행과 MQTT 통신은 이번 준비 Issue에서 제외된 후속 시험이다. 실제 로컬 경로 해석과 검사 근거는 [Docker 로컬 검증결과](evidence/setup/20261007-docker-local-01/README.md)에 기록한다.
 
 복원·빌드·탐색은 [첫 검증 기록](evidence/setup/20261007-setup-01/README.md)의 실제 결과다. 이번 확인에서 SDK·패키지·솔루션·프로젝트·소스의 SHA-256이 같음을 대조했으므로 성공한 검증을 반복하지 않았다. 당시 환경·정책 차단과 완료조건별 상태는 [추가 검증결과](evidence/setup/20261007-setup-02/README.md)에 보존하고, 최신 콘솔 정상 실행은 [콘솔 재시험 결과](evidence/setup/20261007-setup-03/README.md)에 기록했다.
+
+<a id="com01c-mqtt"></a>
+
+## COM01-C 실제 MQTT 큐 시험
+
+현재 흐름은 `MQTT → MessageSubscription → Validator → TryEnqueue → AMR별 ConsumeAsync → 콘솔 Received`다. 불량 입력은 기존 Rejected로 기록하고, 큐 접수는 QueueAdmission, 처리 실패·취소·폐기는 QueueEvent로 구분한다. 원본 모델과 최초 수신 UTC는 큐에서 다시 만들지 않는다.
+
+```powershell
+dotnet build AmrControlSystem.slnx --no-restore
+dotnet run --project src/Amr.Communication.Console --no-build -- --host 127.0.0.1 --port 1884 --test-delay-amr AMR_001 --test-delay-ms 5000
+```
+
+시험 지연 옵션은 AMR_001의 처리를 건당 5초 기다리게 한다. 그동안 AMR_002도 처리되는지 확인한다. 평소 실행에서는 두 지연 옵션을 생략한다. 처리자는 CancellationToken을 받아 Ctrl+C 때 대기에서 빠져나온다. 이 콘솔은 Core 대역이며 실제 로봇 상태를 바꾸지 않는다.
+
+기존 프로젝트 Broker가 실행 중인 상태에서 다음 재현 도구를 사용한다. 새 실행 ID를 지정해야 하며 기존 증거가 있으면 중단한다. 도구가 시작한 숨겨진 콘솔에만 Windows CTRL_C_EVENT를 보내므로 사용자 터미널은 종료하지 않는다.
+
+```powershell
+pwsh -NoProfile -File tests/manual/COM01-C/Verify-Mqtt.ps1 -RunId <새-실행ID>
+```
+
+| 실제 시나리오 | 확인 결과 |
+| --- | --- |
+| 001의 네 유형을 5초씩 지연, 002의 네 유형도 발행, 불량 JSON 1건 | 002가 먼저 처리됨. 각 AMR의 heartbeat → telemetry → alarm → ack 순서 유지. 정상 8건·거부 1건 |
+| 001 처리 중 Ctrl+C | 002 정상 1건 전달 후 001 실행 중 1건 취소·대기 3건 폐기. 종료 코드 0 |
+| 새 Client ID의 다음 세션 | id 없는 FAILURE ACK 1건 그대로 전달. 이전 큐 메시지 재전달 없음, 종료 코드 0 |
+
+종료는 `RequestStop`으로 접수·다음 처리 시작을 차단하고 잔여를 폐기한 뒤 `StopAsync`로 취소·정리를 기다린다. 큐 대기는 ConnectTimeout(기본 3초), 구독 해제와 연결 해제는 각각 기존 3초 제한이다. 이는 종료 전체가 합계 3초라는 의미가 아니다. 이미 시작한 처리자는 취소에 협조해야 하며, 취소를 무시하면 StopTimeout을 보고하고 반환한 정리 Task에서 늦은 완료·실패를 관찰한다. 모든 소비자와 취소 콜백이 끝난 뒤 취소 자원을 폐기한다.
+
+이번 실제 시험은 정상 연결과 Ctrl+C 경로다. Broker 강제 단절, 실제 MQTT 과부하·장시간 부하, 소비자 시작/종료 경합의 반복 시험은 아직 수행하지 않았다. 취소 무시·늦은 성공/실패·로그 콜백 오류는 자동시험 대역으로 확인했다. [실제 입력·로그·판정](evidence/COM-01/20261019-queue-mqtt-01/README.md), [543건 자동시험](evidence/COM-01/20261019-queue-console-unit-01/README.md)을 참조한다.
+
+<a id="com01c-order"></a>
+
+## COM01-C 첫 단계: AMR별 순서와 독립 처리
+
+택배를 **AMR마다 다른 줄에 세우는 것**과 같다. 1호기 줄의 앞 물건을 처리하는 동안 그 뒤 물건은 기다린다. 2호기는 자기 줄에서 처리한다. 같은 AMR의 Heartbeat·Telemetry·Alarm·ACK는 줄을 나누지 않는다.
+
+```text
+MessageSubscription → 기존 Validator → 정상 ReceivedMessage → TryEnqueue
+                                                        ├─ AMR_001: HB → Telemetry → Alarm → ACK
+                                                        └─ AMR_002: ACK → HB
+```
+
+이 절은 첫 단계의 이해를 위한 설명이다. 처음에는 FakeMqttClient로 확인했고, 이후 위 실제 MQTT 단계에서 콘솔에도 연결했다.
+
+| 먼저 읽을 코드 | 역할 |
+| --- | --- |
+| [AmrReceiveQueue.TryEnqueue](src/Amr.Communication/Mqtt/Queues/AmrReceiveQueue.cs) | 동기 작업. AMR ID로 줄을 찾고 메시지를 넣은 뒤 바로 반환한다. 짧은 lock으로 줄 생성·접수 순서를 보호한다. |
+| 같은 파일의 ConsumeAsync | 비동기 작업. 한 AMR은 `await _handler(message)`가 끝나야 다음 건을 꺼낸다. 다른 AMR의 소비자는 별도 Task로 진행한다. |
+| 같은 파일의 CompleteAsync | 시험 정리용. 접수를 닫고 이미 넣은 메시지를 모두 처리할 때까지 기다린다. 취소·폐기하는 연결 종료 기능은 아직 아니다. |
+| [QueueAdmission](src/Amr.Communication/Mqtt/Queues/QueueAdmission.cs) | Accepted·QueueFull·AmrLimitReached·NotAccepting으로 접수 여부를 알려준다. JSON 검사 실패와 업무 처리 성공은 별개다. |
+| [AmrReceiveQueueTests](tests/Amr.Communication.Tests/AmrReceiveQueueTests.cs) | 첫 시험에서 001을 대기시킨 채 002 완료를 확인하고, 001을 풀어 네 유형 순서를 대조한다. |
+
+`Task.Run`은 각 소비자를 공유 스레드 풀에서 시작하게 한다. AMR마다 전용 스레드를 만드는 것은 아니다. 처리자의 비동기 대기 중에는 스레드를 붙잡지 않는다. 처리자는 서로 다른 AMR에서 동시에 호출될 수 있으므로 함께 쓰는 값도 안전하게 다뤄야 한다.
+
+기본 대기 256개/AMR·세션 64 AMR 제한과 처리자 예외 뒤 다음 입력 처리를 포함한다. 첫 단계에서 internal이던 큐는 콘솔 연결 시 public으로 바꾸고 취소 토큰을 받는 처리자와 StopAsync를 추가했다. MQTT 수신 콜백에 async 람다를 직접 넣지 않는다.
+
+```powershell
+dotnet build AmrControlSystem.slnx --no-restore
+dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj --no-build --no-restore --filter FullyQualifiedName~AmrReceiveQueueTests
+```
+
+첫 단계 당시 9건, 기존 회귀 포함 총 538건이 통과했다. [당시 검증결과](evidence/COM-01/20261019-queue-order-02/README.md)를 보존하며 후속 543건·실제 MQTT 결과는 위 최신 절을 따른다. #23 전체 완료나 실제 로봇 제어 구현으로 확대하지 않는다.
 
 ## 준비 단계 당시 확인 절차 (현재 실행은 위 A3 안내 참조)
 

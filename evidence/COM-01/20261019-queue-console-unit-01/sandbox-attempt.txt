@@ -1,0 +1,1 @@
+Sandbox build attempt before this run failed: MSB3491, Access denied writing src/Amr.Communication/obj/Debug/net10.0/CoreCompileInputs cache. Build/test rerun with approved write permissions below.

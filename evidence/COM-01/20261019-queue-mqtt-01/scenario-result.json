@@ -1,0 +1,104 @@
+{
+  "result": "passed",
+  "completedAtUtc": "2026-10-19T09:41:24.2683387+00:00",
+  "sessions": [
+    {
+      "session": 0,
+      "clientId": "amr-demo-106e2c15f8964997b09de8c8a9a5f96e",
+      "publications": 9,
+      "delivered": 8,
+      "rejected": 1,
+      "ignored": 0,
+      "signal": "Windows CTRL_C_EVENT",
+      "exitCode": 0,
+      "modelFieldsPreserved": true,
+      "receptionTimePreserved": true,
+      "rejectedPayloadHidden": true,
+      "consoleMembers": [
+        27868,
+        8704
+      ],
+      "queueEvents": [
+        {
+          "Code": "Stopped",
+          "AmrId": null,
+          "Kind": null,
+          "Count": 0,
+          "ExceptionType": null
+        }
+      ],
+      "perAmrOrder": true,
+      "secondAmrFirst": true
+    },
+    {
+      "session": 1,
+      "clientId": "amr-demo-290b0d9ef3524a65a9addc07b25746aa",
+      "publications": 5,
+      "delivered": 1,
+      "rejected": 0,
+      "ignored": 0,
+      "signal": "Windows CTRL_C_EVENT",
+      "exitCode": 0,
+      "modelFieldsPreserved": true,
+      "receptionTimePreserved": true,
+      "rejectedPayloadHidden": true,
+      "consoleMembers": [
+        27868,
+        43164
+      ],
+      "queueEvents": [
+        {
+          "Code": "ShutdownDiscarded",
+          "AmrId": "AMR_001",
+          "Kind": null,
+          "Count": 3,
+          "ExceptionType": null
+        },
+        {
+          "Code": "HandlerCancelled",
+          "AmrId": "AMR_001",
+          "Kind": "heartbeat",
+          "Count": 0,
+          "ExceptionType": null
+        },
+        {
+          "Code": "Stopped",
+          "AmrId": null,
+          "Kind": null,
+          "Count": 0,
+          "ExceptionType": null
+        }
+      ],
+      "perAmrOrder": true,
+      "secondAmrFirst": true
+    },
+    {
+      "session": 2,
+      "clientId": "amr-demo-47254c5209a345b982bda75c22803f5c",
+      "publications": 1,
+      "delivered": 1,
+      "rejected": 0,
+      "ignored": 0,
+      "signal": "Windows CTRL_C_EVENT",
+      "exitCode": 0,
+      "modelFieldsPreserved": true,
+      "receptionTimePreserved": true,
+      "rejectedPayloadHidden": true,
+      "consoleMembers": [
+        27868,
+        4020
+      ],
+      "queueEvents": [
+        {
+          "Code": "Stopped",
+          "AmrId": null,
+          "Kind": null,
+          "Count": 0,
+          "ExceptionType": null
+        }
+      ],
+      "perAmrOrder": true,
+      "secondAmrFirst": false
+    }
+  ]
+}

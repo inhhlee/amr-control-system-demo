@@ -1,0 +1,12 @@
+{
+  "RunId": "20261019-queue-order-01",
+  "StartedAt": "2026-10-19T09:32:10.2199005+00:00",
+  "BaseCommit": "b8af05738d08b76db84f2b020789539c8062ad07",
+  "Branch": "feature/23-amr-receive-queue",
+  "SDK": "10.0.401",
+  "OS": "Microsoft Windows NT 10.0.26200.0",
+  "Framework": "net10.0",
+  "MQTTnet": "5.2.0.1603",
+  "Broker": "Not used; FakeMqttClient",
+  "Code": "Base commit plus uncommitted queue implementation and tests"
+}

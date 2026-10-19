@@ -11,36 +11,67 @@ if (args.Length == 1 && args[0] == "--help")
 {
     Console.WriteLine("사용법: --host 127.0.0.1 --port 1884 --connect-timeout-seconds 3 [--show-payload]");
     Console.WriteLine("Heartbeat·Telemetry·Alarm·ACK 검사 후 대상 AMR과 정상 모델을 전달합니다. --show-payload는 비밀정보 없는 정상 시험 입력의 앞 256바이트만 표시합니다. Ctrl+C로 종료합니다.");
+    Console.WriteLine("순서·독립성 시험: --test-delay-amr AMR_001 --test-delay-ms 5000 (해당 AMR의 처리만 지연)");
     return 0;
 }
 
 int exitCode = 0;
 MqttConnection? connection = null;
 MessageSubscription? subscription = null;
+AmrReceiveQueue? queue = null;
+IMqttClient? client = null;
+Func<MqttClientDisconnectedEventArgs, Task>? disconnectedHandler = null;
+TimeSpan queueStopTimeout = TimeSpan.FromSeconds(3);
 using var shutdown = new CancellationTokenSource();
 
 ConsoleCancelEventHandler cancelHandler = (_, eventArgs) =>
 {
     // 즉시 프로세스를 종료하는 기본 동작을 막고, 실행 흐름에 종료를 요청한다.
     eventArgs.Cancel = true;
+    _ = queue?.RequestStop();
     shutdown.Cancel();
 };
 Console.CancelKeyPress += cancelHandler;
 
 try
 {
-    var (settings, showPayload) = ReadSettings(args);
+    var (settings, showPayload, delayAmr, delayMs) = ReadSettings(args);
+    queueStopTimeout = settings.ConnectTimeout;
     Report($"Settings Host={settings.Host} Port={settings.Port} ClientId={settings.ClientId} " +
         $"MQTT=5 CleanStart=true SessionExpiry=0 KeepAliveSeconds={settings.KeepAlive.TotalSeconds} " +
         $"ConnectTimeoutSeconds={settings.ConnectTimeout.TotalSeconds} DisconnectTimeoutSeconds=3");
 
-    var client = new MqttClientFactory().CreateMqttClient();
+    client = new MqttClientFactory().CreateMqttClient();
     connection = new MqttConnection(client);
-    subscription = new MessageSubscription(client, ReceiveMessage, ReportRejection,
+    queue = new AmrReceiveQueue(async (message, token) =>
+    {
+        Report($"ProcessingStarted AmrId={JsonSerializer.Serialize(message.AmrId)} Kind={message.Kind}");
+        if (message.AmrId == delayAmr && delayMs > 0) await Task.Delay(delayMs, token);
+        token.ThrowIfCancellationRequested();
+        ReceiveMessage(message);
+    }, entry => Report($"QueueEvent {JsonSerializer.Serialize(entry)}"));
+    disconnectedHandler = eventArgs =>
+    {
+        if (!shutdown.IsCancellationRequested)
+        {
+            _ = queue.RequestStop();
+            Report("ConnectionLost");
+            Interlocked.Exchange(ref exitCode, 1);
+            shutdown.Cancel();
+        }
+        return Task.CompletedTask;
+    };
+    client.DisconnectedAsync += disconnectedHandler;
+    subscription = new MessageSubscription(client, message =>
+    {
+        var result = queue.TryEnqueue(message);
+        Report($"QueueAdmission Result={result} AmrId={JsonSerializer.Serialize(message.AmrId)} Kind={message.Kind}");
+    }, ReportRejection,
         error => Report($"CallbackError Stage={error.Stage} ExceptionType={error.ExceptionType}"), ReportDiagnostic, showPayload);
     Report("Connecting");
     await connection.ConnectAsync(settings, shutdown.Token);
     Report("Connected");
+    Report($"QueueReady CapacityPerAmr=256 AmrLimit=64 StopTimeoutSeconds={queueStopTimeout.TotalSeconds} TestDelayAmr={JsonSerializer.Serialize(delayAmr)} TestDelayMs={delayMs}");
     Report($"Subscribing TopicFilters={string.Join(',', MessageSubscription.TopicFilters)} QoS=0 PayloadPreview={showPayload} LimitBytes=256");
     await subscription.SubscribeAsync(shutdown.Token);
     Report($"Subscribed TopicFilters={string.Join(',', MessageSubscription.TopicFilters)} QoS=0");
@@ -58,6 +89,16 @@ catch (Exception exception)
 }
 finally
 {
+    // 먼저 큐 접수를 차단한다. 구독 해제 응답을 기다리는 동안에도 새 처리를 시작하지 않는다.
+    if (queue is not null)
+    {
+        try { await queue.StopAsync(queueStopTimeout); Report("QueueStopped"); }
+        catch (Exception exception)
+        {
+            Console.Error.WriteLine($"QueueCleanupError ExceptionType={exception.GetType().Name}");
+            exitCode = 1;
+        }
+    }
     try
     {
         if (subscription is not null)
@@ -88,6 +129,7 @@ finally
             }
             finally
             {
+                if (client is not null && disconnectedHandler is not null) client.DisconnectedAsync -= disconnectedHandler;
                 connection.Dispose();
                 Report("Disposed");
             }
@@ -133,12 +175,14 @@ static void ReceiveMessage(ReceivedMessage message)
 static void ReportRejection(ValidationError error) =>
     Report($"Rejected Code={error.Code} Field={error.Field} Reason={error.Reason}");
 
-static (MqttConnectionSettings Settings, bool ShowPayload) ReadSettings(string[] arguments)
+static (MqttConnectionSettings Settings, bool ShowPayload, string? DelayAmr, int DelayMs) ReadSettings(string[] arguments)
 {
     string host = "127.0.0.1";
     int port = 1884;
     int connectTimeoutSeconds = 3;
     bool showPayload = false;
+    string? delayAmr = null;
+    int delayMs = 0;
 
     for (int index = 0; index < arguments.Length; index++)
     {
@@ -164,11 +208,19 @@ static (MqttConnectionSettings Settings, bool ShowPayload) ReadSettings(string[]
             case "--connect-timeout-seconds":
                 connectTimeoutSeconds = int.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
                 break;
+            case "--test-delay-amr":
+                delayAmr = value;
+                break;
+            case "--test-delay-ms":
+                delayMs = int.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
+                if (delayMs < 0 || delayMs > 60000) throw new ArgumentOutOfRangeException(nameof(delayMs));
+                break;
             default:
                 throw new ArgumentException($"알 수 없는 인자입니다: {arguments[index]}");
         }
         index++;
     }
 
-    return (new MqttConnectionSettings(host, port, connectTimeoutSeconds), showPayload);
+    if ((delayAmr is null) != (delayMs == 0)) throw new ArgumentException("시험 지연 AMR과 1~60000ms를 함께 지정하세요.");
+    return (new MqttConnectionSettings(host, port, connectTimeoutSeconds), showPayload, delayAmr, delayMs);
 }

@@ -1,0 +1,14 @@
+{
+  "startedAtUtc": "2026-10-19T09:40:58.5546109+00:00",
+  "os": "Microsoft Windows 10.0.26200",
+  "sdk": "10.0.401",
+  "dockerVersion": "29.7.2 / 29.7.2",
+  "brokerVersion": "mosquitto version 2.1.2",
+  "endpoint": "127.0.0.1:1884",
+  "mqttnet": "5.2.0.1603",
+  "qos": 0,
+  "retain": false,
+  "brokerStartedOrRestartedByThisTest": false,
+  "baseCommit": "b8af05738d08b76db84f2b020789539c8062ad07",
+  "branch": "feature/23-amr-receive-queue"
+}
