@@ -1,0 +1,7 @@
+Exception: C:\amr-control-system-demo\tests\manual\LOG\Verify-Seq.ps1:31
+Line |
+  31 |  … or $exits.Count -ne 2) { throw 'Seq count or final flush mismatch.' }
+     |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Seq count or final flush mismatch.
+
+

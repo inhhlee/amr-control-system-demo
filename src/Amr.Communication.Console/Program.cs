@@ -1,3 +1,4 @@
+using Amr.Communication.ConsoleApp.Logging;
 using Amr.Communication.ConsoleApp;
 using MQTTnet;
 
@@ -9,12 +10,14 @@ ConsoleCancelEventHandler cancelHandler = (_, eventArgs) =>
     shutdown.Cancel();
 };
 Console.CancelKeyPress += cancelHandler;
+var seq = SeqLogging.FromEnvironment(Console.Error);
 try
 {
     return await ConsoleRunner.RunAsync(args, () => new MqttClientFactory().CreateMqttClient(),
-        shutdown.Token, Console.Out, Console.Error);
+        shutdown.Token, Console.Out, Console.Error, seq?.Log);
 }
 finally
 {
     Console.CancelKeyPress -= cancelHandler;
+    if (seq is not null) await seq.StopAsync(Console.Error);
 }

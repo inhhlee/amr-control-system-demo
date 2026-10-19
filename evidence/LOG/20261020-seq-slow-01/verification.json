@@ -1,0 +1,13 @@
+{
+  "result": "passed",
+  "baseCommit": "b4265aff198ead9d234c592cfaf9b89f9e217024",
+  "sourceState": "uncommitted #26",
+  "completedAtUtc": "2026-10-19T15:43:15.8826456+00:00",
+  "elapsedSeconds": 2.8580318,
+  "processExitCode": 1,
+  "httpRequestBytes": 385,
+  "serverResponseSent": false,
+  "clientClosedSocket": true,
+  "allowedProcessSeconds": 7,
+  "expectedApplicationExitCode": 1
+}

@@ -1,0 +1,7 @@
+Exception: C:\amr-control-system-demo\tests\manual\LOG\Verify-Seq.ps1:21
+Line |
+  21 |  …   if ($LASTEXITCODE -ne 0) { throw 'Online MQTT regression failed.' }
+     |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Online MQTT regression failed.
+
+

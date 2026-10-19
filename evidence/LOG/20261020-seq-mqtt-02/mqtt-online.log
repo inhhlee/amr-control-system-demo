@@ -1,0 +1,6 @@
+1792424485: mosquitto version 2.1.2 terminating
+Exception: C:\amr-control-system-demo\tests\manual\COM01-B\Verify-Mqtt.ps1:45
+Line |
+  45 |  … f (!$child.WaitForExit(55000)) { throw 'MQTT controller timed out.' }
+     |                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | MQTT controller timed out.

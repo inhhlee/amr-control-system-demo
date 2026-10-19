@@ -1,6 +1,7 @@
 param(
     [Parameter(Mandatory)][ValidatePattern('^[a-zA-Z0-9_-]+$')][string]$RunId,
-    [switch]$Controller
+    [switch]$Controller,
+    [switch]$SeqUnavailable
 )
 $ErrorActionPreference = 'Stop'
 $repository = (Resolve-Path (Join-Path $PSScriptRoot '../../..')).Path
@@ -31,15 +32,19 @@ if (!$Controller) {
             brokerStartedOrRestartedByThisTest=$false; baseCommit=(git rev-parse HEAD); branch=(git branch --show-current) } |
             ConvertTo-Json | Set-Content -Encoding utf8 "$run/environment.json"
         $files = @(rg --files src tests -g '*.cs' -g '*.csproj' -g '*.ps1' -g '*.json') + @('global.json','AmrControlSystem.slnx')
-        [ordered]@{ baseCommit=(git rev-parse HEAD); sourceState='uncommitted COM01-B'; files=@($files | ForEach-Object {
+        [ordered]@{ baseCommit=(git rev-parse HEAD); sourceState='working tree; see file hashes'; files=@($files | ForEach-Object {
             [ordered]@{path=$_;sha256=(Get-FileHash -LiteralPath $_ -Algorithm SHA256).Hash}
         }) } | ConvertTo-Json -Depth 5 | Set-Content -Encoding utf8 "$run/source-version.json"
         Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'inputs.json') -Destination "$run/inputs.json"
-        $child = Start-Process -FilePath (Get-Command pwsh).Source -ArgumentList @('-NoProfile','-File', $PSCommandPath,'-RunId',$RunId,'-Controller') `
+        $controllerArguments = @('-NoProfile','-File', $PSCommandPath,'-RunId',$RunId,'-Controller')
+        if ($SeqUnavailable) { $controllerArguments += '-SeqUnavailable' }
+        $child = Start-Process -FilePath (Get-Command pwsh).Source -ArgumentList $controllerArguments `
             -WorkingDirectory $repository -WindowStyle Hidden -RedirectStandardOutput "$run/controller.stdout.log" `
             -RedirectStandardError "$run/controller.stderr.log" -PassThru
         $null = $child.Handle
-        if (!$child.WaitForExit(55000)) { throw 'MQTT controller timed out.' }
+        # Docker exec startup per publication can exceed the old whole-scenario budget on a busy host.
+        # Individual receive, publish and application shutdown limits (8s each) are unchanged.
+        if (!$child.WaitForExit(180000)) { throw 'MQTT controller timed out.' }
         $child.WaitForExit()
         [ordered]@{exitCode=$child.ExitCode;completedAtUtc=[DateTimeOffset]::UtcNow.ToString('O')} |
             ConvertTo-Json | Set-Content -Encoding utf8 "$run/controller-result.json"
@@ -183,7 +188,13 @@ try {
         if (!$process.WaitForExit(8000)) { throw 'Normal shutdown timed out.' }
         $process.WaitForExit()
         $final = Read-Log
-        if ($process.ExitCode -ne 0 -or (Get-Content $stderr -Raw)) { throw 'Console exit/stderr failure.' }
+        $errorText = Get-Content $stderr -Raw
+        if ($process.ExitCode -ne 0) { throw 'Console exit failure.' }
+        if ($SeqUnavailable) {
+            # Explicit additional scenario: only the bounded logging-loss summary is expected.
+            if ($errorText -notmatch '^SeqDeliverySummary RunId=[a-zA-Z0-9_-]+ Sent=0 Failed=(\d+) Dropped=(\d+)\s*$' -or
+                ([long]$Matches[1] + [long]$Matches[2]) -le 0) { throw 'Expected only a Seq loss summary.' }
+        } elseif ($errorText) { throw 'Console stderr failure.' }
         if ($final -notmatch '(?s)ShutdownRequested.*Unsubscribing.*SubscriptionStopped.*Disconnecting.*Disconnected.*Disposed.*ExitCode=0') { throw 'Cleanup order mismatch.' }
         if ((Lines $final ' Received ').Count -ne $accepted) { throw 'Unexpected delivery at shutdown.' }
         $clientId = [regex]::Match($final,'ClientId=(\S+)').Groups[1].Value

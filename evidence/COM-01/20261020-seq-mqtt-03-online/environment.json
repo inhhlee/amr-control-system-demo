@@ -1,0 +1,14 @@
+{
+  "startedAtUtc": "2026-10-19T15:43:42.6715484+00:00",
+  "os": "Microsoft Windows 10.0.26200",
+  "sdk": "10.0.401",
+  "dockerVersion": "24.0.6 / 24.0.6",
+  "brokerVersion": "mosquitto version 2.1.2",
+  "endpoint": "127.0.0.1:1884",
+  "mqttnet": "5.2.0.1603",
+  "qos": 0,
+  "retain": false,
+  "brokerStartedOrRestartedByThisTest": false,
+  "baseCommit": "b4265aff198ead9d234c592cfaf9b89f9e217024",
+  "branch": "feature/26-serilog-seq"
+}

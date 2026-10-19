@@ -1,0 +1,10 @@
+{
+  "baseCommit": "b4265aff198ead9d234c592cfaf9b89f9e217024",
+  "branch": "feature/26-serilog-seq",
+  "startedAtUtc": "2026-10-19T15:43:41.2556379+00:00",
+  "sdk": "10.0.401",
+  "seqVersion": "2026.1.17114",
+  "seqUrl": "http://127.0.0.1:5341",
+  "sourceState": "uncommitted #26; source hashes in MQTT evidence",
+  "serviceStartedOrStoppedByThisScript": false
+}

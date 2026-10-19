@@ -1,0 +1,2 @@
+2026-10-19T15:43:13.1255924+00:00 InputRejected Reason=InvalidSettings Field=port ExceptionType=ArgumentOutOfRangeException
+SeqDeliverySummary RunId=20261020-seq-slow-01 Sent=0 Failed=2 Dropped=0
