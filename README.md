@@ -1,6 +1,38 @@
 # amr-control-system-demo
 가상 AMR 기반 관제시스템 구현 및 Issue·PR 개발 절차 실습
 
+## MQTT 명령 발행 (COM05-A / Issue #29)
+
+현재 작업은 [#29](https://github.com/inhhlee/amr-control-system-demo/issues/29)이며, develop `64df6f0`에서 만든 `feature/29-mqtt-command-publish`의 구현·시험 근거를 함께 게시한다. 사용자 요청에 따라 기존 AGENTS.md의 설계·검토·학습 설명 규칙도 포함한다. 아래 이전 Issue별 진행 문구·시험 수치는 당시 기록이다. #5와 #26은 각각 PR #25·#27로 develop에 병합되고 종료됐다. #29의 최신 PR·리뷰 상태는 Issue에서 확인하며 develop 병합·Issue 종료는 별도 단계다.
+
+```powershell
+dotnet build AmrControlSystem.slnx --no-restore
+dotnet run --no-build --project src/Amr.Communication.Console -- --command MOVE --amr-id AMR_001 --x 30 --y 15
+dotnet run --no-build --project src/Amr.Communication.Console -- --command STOP --amr-id AMR_001
+dotnet run --no-build --project src/Amr.Communication.Console -- --command RESET --amr-id AMR_001
+```
+
+- 한 실행에서 요청 ID `CMD-` + Guid와 UTC Unix 밀리초 `ts`를 한 번 생성하고 한 명령 발행 후 해제·종료한다. `--command`를 생략하면 기존 수신 모드다.
+- 공통 접속 옵션은 `--host`, `--port`(기본 1884), `--connect-timeout-seconds`(기본 3)다. 명령 모드는 `--publish-timeout-seconds`(기본 3)를 추가로 받는다. 같은 옵션의 중복·알 수 없는 옵션은 거부한다.
+- Topic은 `amr/{amrId}/command`, QoS 0, Retain=false. 대상 ID에 공백·제어문자·`/`·`+`·`#`를 허용하지 않는다. MQTT Topic UTF-8 길이 한계도 검사한다.
+- MOVE는 유한 숫자 `x/y`만 받으며 소수점은 `.`이다. STOP/RESET은 좌표 옵션을 생략해야 한다. Payload 필수 필드는 `cmdId/type/ts/param`; STOP/RESET의 `param`은 `{}`다.
+- [CommandValidator](src/Amr.Communication/Command/CommandValidator.cs)는 strict UTF-8 JSON object, 추가·중복 필드, 자료형, signed Int64 정수 표기 시각, 65,536바이트·깊이 16 제한을 검사한다. `CommandPublisher.PublishAsync(amrId, payload, token)`은 검증 실패 시 `CommandValidationException.Error`를 반환하고 MQTT를 호출하지 않는다.
+- [CommandPublisher](src/Amr.Communication/Command/CommandPublisher.cs)는 요청 ID와 검증한 Payload 바이트를 유지한다. Client 접속·정리는 호출자가 소유한다. 발행에는 내부 재시도·대기열이 없으며, 시간 초과·취소 후 Client 정리를 포함한 다음 처리는 소유자가 결정한다. 콘솔은 종료 시 Client를 정리한다.
+- `CommandPublished`는 MQTTnet 발행 반환이며 **Broker 수신·AMR 동작 완료를 보장하지 않는다**. 출력에 `Delivery=Unconfirmed Execution=NotTracked`를 명시한다. 발행 도중 취소·실패·시간 초과는 이미 전송됐을 수 있어 `Delivery=Unknown`으로 출력한다. 자동 재전송은 하지 않는다.
+- 입력·접속·발행·정리 오류는 종료 코드 1, 정상 발행 및 사용자 취소는 0이다. `CommandCanceled`를 정상 발행과 구분해야 한다. 발행 후 해제 실패는 `CommandPublished`와 `DisconnectFailed`를 함께 남기고 1로 종료한다.
+- 기존 Seq 환경 변수를 그대로 사용한다. `CommandRequested/CommandPublished`의 `AmrId`, `CommandId`, `CommandType`, `RunId`로 요청과 발행 로그를 검색한다. Payload 원문은 Seq에 기록하지 않는다.
+
+실제 AMR 대신 MQTT Explorer에서 `amr/+/command`를 구독하거나 아래 Broker CLI로 수신을 확인할 수 있다. MQTT Explorer를 직접 실행한 검증은 이번 근거에 포함하지 않는다.
+
+```powershell
+docker exec -it amr-demo-mosquitto-1 mosquitto_sub -h 127.0.0.1 -p 1883 -t 'amr/+/command' -v
+# 기존 Broker·Seq 실행 상태에서 자동 검증. 실행 ID는 매번 다르게 지정한다.
+pwsh -NoProfile -File tests/manual/COM05-A/Verify-Commands.ps1 -RunId <새-실행ID>
+dotnet test AmrControlSystem.slnx --no-restore
+```
+
+ACK 자체의 기존 수신 검사는 유지하지만 이번 명령 모드에서 ACK를 기다리거나 요청에 대조하지 않는다. 해당 연결은 COM05-B, 실제 이동·정지·복구는 가상 AMR 후속 범위다. [#29 실행 근거](evidence/COM-05/20261020-command-full-02/README.md)에서 자동시험과 실제 MQTT·Seq를 구분한다.
+
 ## Seq 구조화 로그 (Issue #26)
 
 기존 콘솔 출력·stdout/stderr 구분·종료 코드를 유지하고, 선택적으로 Serilog 이벤트를 Seq에 전송한다.

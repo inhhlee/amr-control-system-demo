@@ -1,0 +1,3 @@
+CommandRequested AmrId="COM05_20261020-command-mqtt-02_1" CommandId="CMD-8f5008f925aa49cbb12951085245edcb" CommandType=MOVE
+CommandPublished AmrId="COM05_20261020-command-mqtt-02_1" CommandId="CMD-8f5008f925aa49cbb12951085245edcb" CommandType=MOVE QoS=0 Retain=false Delivery=Unconfirmed Execution=NotTracked
+

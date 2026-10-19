@@ -1,0 +1,13 @@
+{
+  "baseCommit": "64df6f0e639c7c9fbb1c474711940ab2eeabb287",
+  "branch": "feature/29-mqtt-command-publish",
+  "sourceState": "uncommitted #29",
+  "startedAtUtc": "2026-10-19T16:43:12.2067453+00:00",
+  "completedAtUtc": "2026-10-19T16:43:31.0085559+00:00",
+  "sdk": "10.0.401",
+  "os": "Microsoft Windows 10.0.26200",
+  "brokerImage": "eclipse-mosquitto:2.1.2-alpine",
+  "endpoint": "127.0.0.1:1884",
+  "seqVersion": "2026.1.17114",
+  "serviceStartedOrStopped": false
+}

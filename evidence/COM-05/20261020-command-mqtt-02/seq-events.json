@@ -1,0 +1,161 @@
+[
+  {
+    "Timestamp": "2026-10-19T16:42:17.1642675Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "COM05_20261020-command-mqtt-02_3"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "CommandId",
+        "Value": "CMD-3e2eb8fed8e845d3b7e1eb71808ac454"
+      },
+      {
+        "Name": "CommandType",
+        "Value": "RESET"
+      },
+      {
+        "Name": "Detail",
+        "Value": "QoS=0 Retain=false Delivery=Unconfirmed Execution=NotTracked"
+      },
+      {
+        "Name": "EventType",
+        "Value": "CommandPublished"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-command-mqtt-02"
+      },
+      {
+        "Name": "Stage",
+        "Value": "Publish"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR CommandPublished",
+    "Id": "event-efb84b332dff08df0600000000000000",
+    "Links": {
+      "Self": "api/events/event-efb84b332dff08df0600000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T16:42:16.7713131Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "COM05_20261020-command-mqtt-02_2"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "CommandId",
+        "Value": "CMD-7ef19c6472804927addeebc9e34c9e5b"
+      },
+      {
+        "Name": "CommandType",
+        "Value": "STOP"
+      },
+      {
+        "Name": "Detail",
+        "Value": "QoS=0 Retain=false Delivery=Unconfirmed Execution=NotTracked"
+      },
+      {
+        "Name": "EventType",
+        "Value": "CommandPublished"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-command-mqtt-02"
+      },
+      {
+        "Name": "Stage",
+        "Value": "Publish"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR CommandPublished",
+    "Id": "event-ef7c556b2dff08df0400000000000000",
+    "Links": {
+      "Self": "api/events/event-ef7c556b2dff08df0400000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-10-19T16:42:16.3442829Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "COM05_20261020-command-mqtt-02_1"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "CommandId",
+        "Value": "CMD-8f5008f925aa49cbb12951085245edcb"
+      },
+      {
+        "Name": "CommandType",
+        "Value": "MOVE"
+      },
+      {
+        "Name": "Detail",
+        "Value": "QoS=0 Retain=false Delivery=Unconfirmed Execution=NotTracked"
+      },
+      {
+        "Name": "EventType",
+        "Value": "CommandPublished"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261020-command-mqtt-02"
+      },
+      {
+        "Name": "Stage",
+        "Value": "Publish"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR "
+      },
+      {
+        "PropertyName": "EventType"
+      }
+    ],
+    "EventType": "$AC349B34",
+    "Level": "Information",
+    "RenderedMessage": "AMR CommandPublished",
+    "Id": "event-ef3b2c8d2dff08df0200000000000000",
+    "Links": {
+      "Self": "api/events/event-ef3b2c8d2dff08df0200000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  }
+]

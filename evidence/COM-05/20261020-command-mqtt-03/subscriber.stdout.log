@@ -1,0 +1,16 @@
+Client null sending CONNECT
+Client auto-7929E66F-A00B-DF27-D839-5E36F77C3E93 received CONNACK (0)
+Client auto-7929E66F-A00B-DF27-D839-5E36F77C3E93 sending SUBSCRIBE (Mid: 1, Topic: amr/COM05_20261020-command-mqtt-03_1/command, QoS: 0, Options: 0x00)
+Client auto-7929E66F-A00B-DF27-D839-5E36F77C3E93 sending SUBSCRIBE (Mid: 1, Topic: amr/COM05_20261020-command-mqtt-03_2/command, QoS: 0, Options: 0x00)
+Client auto-7929E66F-A00B-DF27-D839-5E36F77C3E93 sending SUBSCRIBE (Mid: 1, Topic: amr/COM05_20261020-command-mqtt-03_3/command, QoS: 0, Options: 0x00)
+Client auto-7929E66F-A00B-DF27-D839-5E36F77C3E93 received SUBACK
+Subscribed (mid: 1): 0, 0, 0
+Client auto-7929E66F-A00B-DF27-D839-5E36F77C3E93 received PUBLISH (d0, q0, r0, m0, 'amr/COM05_20261020-command-mqtt-03_1/command', ... (111 bytes))
+amr/COM05_20261020-command-mqtt-03_1/command 0 0 {"cmdId":"CMD-761c1307472d4432994ce8a0039addae","type":"MOVE","ts":1792428193177,"param":{"x":-30.5,"y":15.25}}
+Client auto-7929E66F-A00B-DF27-D839-5E36F77C3E93 received PUBLISH (d0, q0, r0, m0, 'amr/COM05_20261020-command-mqtt-03_2/command', ... (92 bytes))
+amr/COM05_20261020-command-mqtt-03_2/command 0 0 {"cmdId":"CMD-f4a63ea0ea014a81987f011aa0be74bf","type":"STOP","ts":1792428193752,"param":{}}
+Client auto-7929E66F-A00B-DF27-D839-5E36F77C3E93 received PUBLISH (d0, q0, r0, m0, 'amr/COM05_20261020-command-mqtt-03_3/command', ... (93 bytes))
+amr/COM05_20261020-command-mqtt-03_3/command 0 0 {"cmdId":"CMD-1ef88cd845bd437c8066b926a0a00bf2","type":"RESET","ts":1792428194110,"param":{}}
+Client auto-7929E66F-A00B-DF27-D839-5E36F77C3E93 sending DISCONNECT
+Timed out
+

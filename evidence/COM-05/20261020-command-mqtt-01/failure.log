@@ -1,0 +1,7 @@
+MethodInvocationException: C:\amr-control-system-demo\tests\manual\COM05-A\Verify-Commands.ps1:57
+Line |
+  57 |          $line = $subscriber.StandardOutput.ReadLineAsync().WaitAsync( …
+     |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Exception calling "GetResult" with "0" argument(s): "The operation has timed out."
+
+
