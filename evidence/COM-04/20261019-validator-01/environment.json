@@ -1,0 +1,9 @@
+{
+  "startedAtUtc": "2026-10-19T02:41:20.8079884+00:00",
+  "os": "Microsoft Windows 10.0.26200",
+  "architecture": "X64",
+  "sdk": "10.0.401",
+  "powershell": "7.6.5",
+  "executionDirectory": "C:\\amr-control-system-demo",
+  "broker": "not used; validator and existing Fake tests only"
+}

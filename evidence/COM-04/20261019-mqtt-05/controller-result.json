@@ -1,0 +1,5 @@
+{
+  "command": "pwsh -NoProfile -File verify-mqtt.ps1",
+  "exitCode": 0,
+  "completedAtUtc": "2026-10-19T02:55:12.4959325+00:00"
+}

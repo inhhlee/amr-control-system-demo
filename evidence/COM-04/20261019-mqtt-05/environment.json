@@ -1,0 +1,16 @@
+{
+  "startedAtUtc": "2026-10-19T02:55:08.2531087+00:00",
+  "os": "Microsoft Windows 10.0.26200",
+  "sdk": "10.0.401",
+  "dockerCli": "C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+  "dockerVersion": "29.7.2 / 29.7.2",
+  "brokerVersion": "mosquitto version 2.1.2",
+  "mqttnet": "5.2.0.1603",
+  "endpoint": "127.0.0.1:1884",
+  "qos": 0,
+  "retain": false,
+  "brokerStartedOrRestartedByThisTest": false,
+  "workingDirectory": "C:\\amr-control-system-demo",
+  "baseCommit": "82f6bb109dd964ca486f1bec5a99ab88d1d84cdf",
+  "branch": "feature/17-heartbeat-validation"
+}

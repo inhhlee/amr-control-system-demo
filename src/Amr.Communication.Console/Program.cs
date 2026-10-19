@@ -1,4 +1,6 @@
 using Amr.Communication.Mqtt;
+using Amr.Communication.Models;
+using Amr.Communication.Validation;
 using MQTTnet;
 using System.Text.Encodings.Web;
 using System.Text.Json;
@@ -8,7 +10,7 @@ Console.OutputEncoding = new System.Text.UTF8Encoding(false);
 if (args.Length == 1 && args[0] == "--help")
 {
     Console.WriteLine("사용법: --host 127.0.0.1 --port 1884 --connect-timeout-seconds 3 [--show-payload]");
-    Console.WriteLine("Heartbeat 구독 후 Ctrl+C까지 유지합니다. --show-payload는 비밀정보 없는 시험 입력 전용이며 최대 256바이트를 표시합니다.");
+    Console.WriteLine("Heartbeat 검사 후 정상 모델만 전달합니다. --show-payload는 비밀정보 없는 정상 시험 입력의 앞 256바이트만 표시합니다. Ctrl+C로 종료합니다.");
     return 0;
 }
 
@@ -34,7 +36,8 @@ try
 
     var client = new MqttClientFactory().CreateMqttClient();
     connection = new MqttConnection(client);
-    subscription = new HeartbeatSubscription(client, ReportHeartbeat, showPayload);
+    subscription = new HeartbeatSubscription(client, ReceiveHeartbeat, ReportRejection,
+        type => Report($"HeartbeatReceiverError ExceptionType={type}"), ReportHeartbeat, showPayload);
     Report("Connecting");
     await connection.ConnectAsync(settings, shutdown.Token);
     Report("Connected");
@@ -117,8 +120,18 @@ static void ReportHeartbeat(HeartbeatDiagnostic diagnostic)
     string payload = diagnostic.PayloadPreview is null ? "<hidden>" : JsonSerializer.Serialize(diagnostic.PayloadPreview, jsonOptions);
     Console.WriteLine($"{diagnostic.ReceivedAtUtc:O} HeartbeatDiagnostic Topic={topic} " +
         $"TopicTruncated={diagnostic.Topic.Length > 256} PayloadBytes={diagnostic.PayloadBytes} " +
-        $"Payload={payload} PayloadTruncated={diagnostic.PayloadTruncated} Validation=NotPerformed");
+        $"Payload={payload} PayloadTruncated={diagnostic.PayloadTruncated} Validation={(diagnostic.IsValid ? "Accepted" : "Rejected")}");
 }
+
+static void ReceiveHeartbeat(HeartbeatMessage message)
+{
+    // 실제 Core 업무 처리 대신 정상 모델 전달을 관찰하는 시험용 수신자다.
+    Report($"Received Heartbeat Id={JsonSerializer.Serialize(message.Id)} ts={message.Timestamp} " +
+        $"status={JsonSerializer.Serialize(message.Status)} ReceivedAtUtc={message.ReceivedAtUtc:O}");
+}
+
+static void ReportRejection(ValidationError error) =>
+    Report($"Rejected Code={error.Code} Field={error.Field} Reason={error.Reason}");
 
 static (MqttConnectionSettings Settings, bool ShowPayload) ReadSettings(string[] arguments)
 {

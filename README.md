@@ -20,6 +20,8 @@
 
 ## 개발 구성
 
+현재 변경은 [Issue #17 — COM04-A Heartbeat 검사와 정상 데이터 전달](https://github.com/inhhlee/amr-control-system-demo/issues/17)이다. 검사기·수신부·콘솔을 연결했고 2026-10-19 빌드(경고·오류 0), 자동시험 113개와 실제 Broker의 오류 후 정상 전달·Ctrl+C 종료를 확인했다. [COM-04 실행 안내](#com04-run)와 [최종 검증결과](evidence/COM-04/20261019-final-06/README.md)를 따른다. 아래 COM-01·COM-03 기록은 선행 구현 당시 근거다.
+
 [Issue #15 — COM-01 Heartbeat 한 종류 수신](https://github.com/inhhlee/amr-control-system-demo/issues/15)의 구현·검증은 아래 [Heartbeat 실행 안내](#heartbeat-run)와 [완료조건별 결과](evidence/COM-01/20261012-heartbeat-05/README.md)에서 확인한다. 사용자의 후속 요청으로 기존 `feature/COM-01-heartbeat-subscribe` 브랜치를 게시하는 단계다. 연결된 PR은 Issue #15에서 확인하며 리뷰·develop 병합은 별도 단계다.
 
 [Issue #2](https://github.com/inhhlee/amr-control-system-demo/issues/2)에서 최소 구성을 만들었고, 현재 [Issue #8](https://github.com/inhhlee/amr-control-system-demo/issues/8)의 **A2 접속·해제와 A3 연결 유지·Ctrl+C 정상 종료**를 구현·검증했다. 아래 프로젝트는 모두 `net10.0`을 사용한다. [PR #13](https://github.com/inhhlee/amr-control-system-demo/pull/13)은 2026-10-11 develop에 병합됐다(코드 기준 `c34f380`). 총괄 [Issue #4](https://github.com/inhhlee/amr-control-system-demo/issues/4)의 원래 완료조건 7개와 기존 A1·A2·A3 시험 근거는 [통합 검증결과](evidence/COM-03/20261012-a-summary-01/README.md)에 연결한다. 이 결과는 기존 시험과 병합 코드의 대조이며 제품 재시험·COM-03 전체·과제1 전체 완료를 뜻하지 않는다.
@@ -30,7 +32,7 @@
 | [AmrControlSystem.slnx](AmrControlSystem.slnx) | Visual Studio에서 열 솔루션 |
 | [Amr.Communication](src/Amr.Communication/Amr.Communication.csproj) | MQTTnet 5.2.0.1603을 사용한 접속 설정·MQTT 승인 확인·명시적 해제·자원 정리 |
 | [Amr.Communication.Console](src/Amr.Communication.Console/Amr.Communication.Console.csproj) | 실제 Broker 접속 승인 후 Ctrl+C까지 유지하고 명시적 해제·정리를 기다리는 콘솔 |
-| [Amr.Communication.Tests](tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj) | 시험 대역을 사용하는 수명주기 6개 + Heartbeat 구독 경계 12개, 총 18개 |
+| [Amr.Communication.Tests](tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj) | 수명주기 6개 + Heartbeat 구독·전달 경계 21개 + 검사기 86개, 총 113개 |
 | [evidence/setup](evidence/setup/) | 실행별 환경·복원·빌드·실행·시험 탐색 증거 |
 
 시험 패키지는 `Microsoft.NET.Test.Sdk 17.14.1`, `xunit 2.9.3`, `xunit.runner.visualstudio 3.1.4`다.
@@ -52,11 +54,51 @@ dotnet build AmrControlSystem.slnx --no-restore
 dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj --no-build
 ```
 
-`dotnet test`는 작성한 xUnit 자동시험 18개를 실행한다. 시험 대역(Fake)을 사용하므로 Broker 없이 실행할 수 있다. `--list-tests`를 붙이면 실행하지 않고 이름만 나열한다. `--no-build`는 빌드를 생략하므로 소스를 수정했다면 먼저 다시 빌드한다.
+`dotnet test`는 작성한 xUnit 자동시험 113개를 실행한다. 검사기 직접 호출과 시험 대역(Fake)을 사용하므로 Broker 없이 실행할 수 있다. `--list-tests`를 붙이면 실행하지 않고 이름만 나열한다. `--no-build`는 빌드를 생략하므로 소스를 수정했다면 먼저 다시 빌드한다.
+
+<a id="com04-run"></a>
+
+## COM-04 Heartbeat 검사·정상 모델 전달 (Issue #17)
+
+현재 콘솔은 `amr/+/heartbeat`의 구독 승인 후 전체 Payload를 `HeartbeatValidator`에 넘긴다. 크기(최대 65,536 bytes) → Topic → strict UTF-8 → JSON(object, 깊이 최대 16) → 필드 계약 순으로 검사하며, 처음 발견한 실패 한 건을 반환한다. `id`, `ts`, `status`만 허용하고 누락·추가·중복·잘못된 자료형을 거부한다. `ts`는 signed Int64 정수 표기만 허용하며 단위 추측·날짜 변환 없이 보존한다. `status`는 `OK`만 허용하며 Online/Offline 판정은 하지 않는다.
+
+성공 시 [HeartbeatMessage](src/Amr.Communication/Models/HeartbeatMessage.cs)에 ID·ts·status·MQTT 콜백의 UTC 수신 시각을 담아 시험용 수신자에 한 번 전달한다. 이 수신자는 콘솔 출력으로 실제 Core를 대신한다. 실패 시 `Rejected Code=... Field=... Reason=...`만 기록하고 정상 수신자는 호출하지 않는다. 수신자 자체의 예외는 별도 `HeartbeatReceiverError`로 기록하며 재전달하지 않고 다음 입력을 처리한다. 로그 콜백 자체의 장애 복구는 이번 검증 범위가 아니다.
+
+`HeartbeatDiagnostic`는 진단용 정보다. 기본 원문은 숨기며 `--show-payload`를 켰을 때도 **정상 시험 입력만** 앞 256바이트를 보여 준다. 거부 입력은 항상 원문을 숨긴다. 검사기는 이 미리보기를 사용하지 않는다. 미리보기 끝의 UTF-8 문자가 잘려 대체문자로 보이더라도 전체 원본 바이트로 내린 검사 결과와는 별개다.
+
+실제 Broker가 실행 중인 PowerShell에서 다음을 수행한다. 현재 확인한 Docker CLI는 사용자 설치 경로이며, 다른 PC에서는 `Get-Command docker`로 위치를 확인한다.
+
+```powershell
+Set-Location C:\amr-control-system-demo
+$dockerCli = 'C:\Users\Admin\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe'
+& $dockerCli compose -f docker/compose.yaml ps -a
+dotnet run --project src/Amr.Communication.Console --no-build -- --host 127.0.0.1 --port 1884 --show-payload
+```
+
+`Subscribed` 이후 다른 PowerShell에서 오류 → 정상 순서로 발행한다. 호스트 수신 포트는 1884, 컨테이너 내부 발행 포트는 1883이다. QoS 0, `-r` 생략으로 Retain=false, 실행별 Client ID를 사용한다.
+
+```powershell
+Set-Location C:\amr-control-system-demo
+$dockerCli = 'C:\Users\Admin\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe'
+$bad = '{"id":"AMR_001","status":"OK"}'
+$good = '{"id":"AMR_001","ts":1791195767000,"status":"OK"}'
+foreach ($payload in @($bad, $good)) {
+    & $dockerCli compose -f docker/compose.yaml exec -T mosquitto mosquitto_pub -h 127.0.0.1 -p 1883 -V mqttv5 -i "com04-pub-$([Guid]::NewGuid().ToString('N'))" -q 0 -t amr/AMR_001/heartbeat -m $payload
+    if ($LASTEXITCODE -ne 0) { throw '발행 실패' }
+}
+```
+
+예상 출력은 `Rejected Code=MissingField Field=$.ts` 1건과 `Received Heartbeat Id="AMR_001" ts=1791195767000 status="OK" ReceivedAtUtc=...` 1건이다. 두 입력 모두 JSON 문법은 유효하지만 첫 입력은 필수 필드 계약을 위반한다. 고정 ts는 전달 확인용이며 현재 생존 증거가 아니다. QoS 0 발행 종료 0만으로 성공을 판정하지 않고 실제 수신 출력을 확인한다. 수신 콘솔에서 Ctrl+C 후 `SubscriptionStopped → Disconnected → Disposed → ExitCode=0` 및 `$LASTEXITCODE`를 확인한다.
+
+**2026-10-19 실제 결과:** 자동시험 113개 통과(실패·건너뜀 0). 실제 Broker에 ts 누락 → 정상 → ID 불일치 → 349바이트 정상 입력을 발행해 거부 2건·정상 모델 2건, 원본 필드·수신 시각 보존, 거부 원문 숨김, Windows CTRL_C_EVENT 후 실제 프로세스 종료 0과 Broker 해제 로그를 확인했다. [입력·수신 로그](evidence/COM-04/20261019-mqtt-05/), [자동시험](evidence/COM-04/20261019-integration-03/tests.trx), [최종 판정·실패 이력·미검증 범위](evidence/COM-04/20261019-final-06/README.md).
+
+학습 답변은 시험 실적에 포함하지 않는다. 사용자 키보드 직접 종료·실제 Core 업무·GUI·Telemetry/Alarm/ACK·다중 Topic·큐·Timeout·자동 재접속은 검증하지 않았다. 다른 유형 검사는 별도 #18, 다중 Topic 연결은 COM01-B 범위다. COM01-A의 후속 시험 도구 보완은 수행하지 않았다.
 
 <a id="heartbeat-run"></a>
 
-## COM-01 Heartbeat 구독·수신 (Issue #15)
+## COM-01 Heartbeat 구독·수신 (Issue #15, 선행 이력)
+
+아래는 2026-10-12 당시의 검사 전 진단 구현·시험 기록이다. 현재 검사·모델 전달과 실행 방법은 위 [COM-04 안내](#com04-run)를 따른다.
 
 현재 콘솔은 접속 후 `amr/+/heartbeat` 하나를 QoS 0으로 구독한다. Broker의 SUBACK에서 QoS 0 승인을 확인한 뒤 `Subscribed`를 표시한다. 아래는 PowerShell에서 프로젝트 전용 Broker가 실행 중일 때 수행하는 순서다.
 

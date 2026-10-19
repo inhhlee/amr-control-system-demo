@@ -1,0 +1,6 @@
+{
+  "command": "dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj --no-build --logger trx;LogFileName=tests.trx --results-directory evidence/COM-04/20261019-validator-02",
+  "startedAtUtc": "2026-10-19T02:41:56.9697812+00:00",
+  "endedAtUtc": "2026-10-19T02:41:58.7458816+00:00",
+  "exitCode": 0
+}

@@ -1,0 +1,30 @@
+{
+  "result": "passed",
+  "startedAtUtc": "2026-10-19T02:55:08.2531087+00:00",
+  "finishedAtUtc": "2026-10-19T02:55:12.4096783+00:00",
+  "publications": 4,
+  "diagnostics": 4,
+  "rejections": 2,
+  "deliveredModels": 2,
+  "rejectionCodes": [
+    "MissingField",
+    "IdMismatch"
+  ],
+  "receivedTimestamps": [
+    1791195767000,
+    1791195767002
+  ],
+  "receptionTimePreserved": true,
+  "rejectedPayloadHidden": true,
+  "longPayloadBytes": 349,
+  "signal": "Windows CTRL_C_EVENT",
+  "signalAtUtc": "2026-10-19T02:55:12.3777714+00:00",
+  "consoleMembers": [
+    27812,
+    37588
+  ],
+  "processId": 37588,
+  "clientId": "amr-demo-fe353b8fd4fd45a5b2a2e65fc9587294",
+  "exitCode": 0,
+  "stderr": null
+}

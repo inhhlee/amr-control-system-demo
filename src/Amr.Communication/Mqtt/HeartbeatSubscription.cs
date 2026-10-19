@@ -1,5 +1,7 @@
 using System.Buffers;
 using System.Text;
+using Amr.Communication.Models;
+using Amr.Communication.Validation;
 using MQTTnet;
 using MQTTnet.Protocol;
 
@@ -11,7 +13,11 @@ public sealed class HeartbeatSubscription : IDisposable
     public const string TopicFilter = "amr/+/heartbeat";
     public const int PayloadPreviewLimit = 256;
     private readonly IMqttClient _client;
-    private readonly Action<HeartbeatDiagnostic> _received;
+    private readonly HeartbeatValidator _validator = new();
+    private readonly Action<HeartbeatMessage> _received;
+    private readonly Action<ValidationError> _rejected;
+    private readonly Action<string> _receiverFailed;
+    private readonly Action<HeartbeatDiagnostic>? _diagnostic;
     private readonly bool _showPayload;
 
     // _gate를 사용하여 임계구역 설정
@@ -26,12 +32,23 @@ public sealed class HeartbeatSubscription : IDisposable
     //
     private bool _disposed;
 
-    public HeartbeatSubscription(IMqttClient client, Action<HeartbeatDiagnostic> received, bool showPayload = false)
+    public HeartbeatSubscription(
+        IMqttClient client,
+        Action<HeartbeatMessage> received,
+        Action<ValidationError> rejected,
+        Action<string> receiverFailed,
+        Action<HeartbeatDiagnostic>? diagnostic = null,
+        bool showPayload = false)
     {
         ArgumentNullException.ThrowIfNull(client);
         ArgumentNullException.ThrowIfNull(received);
+        ArgumentNullException.ThrowIfNull(rejected);
+        ArgumentNullException.ThrowIfNull(receiverFailed);
         _client = client;
         _received = received;
+        _rejected = rejected;
+        _receiverFailed = receiverFailed;
+        _diagnostic = diagnostic;
         _showPayload = showPayload;
         _client.ApplicationMessageReceivedAsync += OnMessageAsync;
     }
@@ -124,13 +141,31 @@ public sealed class HeartbeatSubscription : IDisposable
                 return Task.CompletedTask;
             }
 
-            // 검사·모델 전달은 후속 Issue다. 원문은 명시적으로 켠 시험 진단에서만 제한해 복사한다.
+            // 미리보기와 독립적으로 전체 바이트를 검사한다. 검사기는 크기를 먼저 확인한다.
+            var result = _validator.Validate(message.Topic, message.Payload, receivedAt);
             long length = message.Payload.Length;
-            string? preview = _showPayload
+            string? preview = result.IsValid && _showPayload && _diagnostic is not null
                 ? Encoding.UTF8.GetString(message.Payload.Slice(0, Math.Min(length, PayloadPreviewLimit)).ToArray())
                 : null;
-            _received(new HeartbeatDiagnostic(receivedAt, message.Topic, length, preview,
-                _showPayload && length > PayloadPreviewLimit));
+            _diagnostic?.Invoke(new HeartbeatDiagnostic(receivedAt, message.Topic, length, preview,
+                preview is not null && length > PayloadPreviewLimit, result.IsValid));
+
+            if (!result.IsValid)
+            {
+                _rejected(result.Error!);
+                return Task.CompletedTask;
+            }
+
+            try
+            {
+                _received(result.Message!);
+            }
+            catch (Exception exception)
+            {
+                // Core 대역의 처리 오류는 입력 거부로 기록하거나 재전달하지 않는다.
+                // 예외 메시지는 Payload·비밀정보를 포함할 수 있으므로 형식 이름만 전달한다.
+                _receiverFailed(exception.GetType().Name);
+            }
         }
         return Task.CompletedTask;
     }
