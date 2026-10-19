@@ -1,0 +1,8 @@
+{
+  "startedAtUtc": "2026-10-19T13:24:45.7673381+00:00",
+  "codeVersion": "1060c6450f19d42e3fea0cb5d858500a8ab6aa93",
+  "branch": "feature/23-amr-receive-queue",
+  "sourceState": "uncommitted Issue 23 shutdown fix and boundary tests",
+  "os": "Microsoft Windows 10.0.26200",
+  "sdk": "10.0.401"
+}

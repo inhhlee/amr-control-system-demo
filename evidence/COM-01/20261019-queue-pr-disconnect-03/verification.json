@@ -1,0 +1,14 @@
+{
+  "result": "passed",
+  "completedAtUtc": "2026-10-19T13:27:49.3908692+00:00",
+  "publications": 5,
+  "delivered": 1,
+  "handlerCancelled": 1,
+  "shutdownDiscarded": 3.0,
+  "connectionLost": true,
+  "subscriptionStopped": true,
+  "disposed": true,
+  "exitCode": 1,
+  "startedAfterLoss": false,
+  "deliveredAfterLoss": false
+}

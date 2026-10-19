@@ -1,0 +1,31 @@
+2026-10-19T13:26:21.8316327+00:00 Settings Host=127.0.0.1 Port=1884 ClientId=amr-demo-8b06990749c24280877e03900da7df79 MQTT=5 CleanStart=true SessionExpiry=0 KeepAliveSeconds=5 ConnectTimeoutSeconds=3 DisconnectTimeoutSeconds=3
+2026-10-19T13:26:21.8408830+00:00 Connecting
+2026-10-19T13:26:21.9224723+00:00 Connected
+2026-10-19T13:26:21.9508910+00:00 QueueReady CapacityPerAmr=256 AmrLimit=64 StopTimeoutSeconds=3 TestDelayAmr="AMR_001" TestDelayMs=5000
+2026-10-19T13:26:21.9525666+00:00 Subscribing TopicFilters=amr/+/heartbeat,amr/+/telemetry,amr/+/alarm,amr/+/ack QoS=0 PayloadPreview=False LimitBytes=256
+2026-10-19T13:26:21.9727099+00:00 Subscribed TopicFilters=amr/+/heartbeat,amr/+/telemetry,amr/+/alarm,amr/+/ack QoS=0
+2026-10-19T13:26:21.9730087+00:00 WaitingForShutdown: Ctrl+C로 정상 종료합니다.
+2026-10-19T13:26:22.8502013+00:00 MessageDiagnostic Topic="amr/AMR_001/heartbeat" TopicTruncated=False PayloadBytes=39 Payload=<hidden> PayloadTruncated=False Validation=Accepted
+2026-10-19T13:26:22.8647521+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=heartbeat
+2026-10-19T13:26:22.8648993+00:00 ProcessingStarted AmrId="AMR_001" Kind=heartbeat
+2026-10-19T13:26:23.7150726+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=76 Payload=<hidden> PayloadTruncated=False Validation=Accepted
+2026-10-19T13:26:23.7205943+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-19T13:26:24.6003110+00:00 MessageDiagnostic Topic="amr/AMR_001/alarm" TopicTruncated=False PayloadBytes=111 Payload=<hidden> PayloadTruncated=False Validation=Accepted
+2026-10-19T13:26:24.6066042+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=alarm
+2026-10-19T13:26:25.3902852+00:00 MessageDiagnostic Topic="amr/AMR_001/ack" TopicTruncated=False PayloadBytes=47 Payload=<hidden> PayloadTruncated=False Validation=Accepted
+2026-10-19T13:26:25.3928019+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=ack
+2026-10-19T13:26:26.2305947+00:00 MessageDiagnostic Topic="amr/AMR_002/ack" TopicTruncated=False PayloadBytes=82 Payload=<hidden> PayloadTruncated=False Validation=Accepted
+2026-10-19T13:26:26.2315979+00:00 QueueAdmission Result=Accepted AmrId="AMR_002" Kind=ack
+2026-10-19T13:26:26.2316570+00:00 ProcessingStarted AmrId="AMR_002" Kind=ack
+2026-10-19T13:26:26.2529867+00:00 Received {"AmrId":"AMR_002","Kind":"ack","Model":{"CommandId":" CMD_2 ","Result":"SUCCESS","Timestamp":203,"Id":"AMR_002","Reason":" \uC644\uB8CC ","ReceivedAtUtc":"2026-10-19T13:26:26.2305947+00:00"},"ReceivedAtUtc":"2026-10-19T13:26:26.2305947+00:00"}
+2026-10-19T13:26:26.3115594+00:00 ShutdownRequested
+2026-10-19T13:26:26.3143173+00:00 QueueEvent {"Code":"ShutdownDiscarded","AmrId":"AMR_001","Kind":null,"Count":3,"ExceptionType":null}
+2026-10-19T13:26:26.3143217+00:00 QueueEvent {"Code":"HandlerCancelled","AmrId":"AMR_001","Kind":"heartbeat","Count":0,"ExceptionType":null}
+2026-10-19T13:26:26.3150382+00:00 QueueEvent {"Code":"Stopped","AmrId":null,"Kind":null,"Count":0,"ExceptionType":null}
+2026-10-19T13:26:26.3153177+00:00 QueueStopped
+2026-10-19T13:26:26.3155272+00:00 Unsubscribing
+2026-10-19T13:26:26.3240719+00:00 SubscriptionStopped
+2026-10-19T13:26:26.3244443+00:00 Disconnecting
+2026-10-19T13:26:26.3311408+00:00 Disconnected
+2026-10-19T13:26:26.3316622+00:00 Disposed
+2026-10-19T13:26:26.3319579+00:00 ExitCode=0

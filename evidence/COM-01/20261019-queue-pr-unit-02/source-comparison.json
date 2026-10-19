@@ -1,0 +1,14 @@
+[
+  {
+    "manifest": "evidence/COM-01/20261019-queue-pr-mqtt-01/source-version.json",
+    "files": 47,
+    "mismatchCount": 0,
+    "mismatches": []
+  },
+  {
+    "manifest": "evidence/COM-01/20261019-queue-pr-disconnect-03/source-version.json",
+    "files": 48,
+    "mismatchCount": 0,
+    "mismatches": []
+  }
+]
