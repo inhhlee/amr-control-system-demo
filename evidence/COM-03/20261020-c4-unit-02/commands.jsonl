@@ -1,0 +1,2 @@
+{"startedAtUtc":"2026-10-20T01:59:09.8946363+00:00","command":"dotnet build AmrControlSystem.slnx --no-restore --verbosity minimal","exitCode":0,"completedAtUtc":"2026-10-20T01:59:12.1839775+00:00"}
+{"startedAtUtc":"2026-10-20T01:59:12.1979265+00:00","command":"dotnet test AmrControlSystem.slnx --no-build --no-restore --logger \"trx;LogFileName=tests.trx\" --results-directory evidence/COM-03/20261020-c4-unit-02","exitCode":0,"completedAtUtc":"2026-10-20T01:59:17.7117912+00:00"}

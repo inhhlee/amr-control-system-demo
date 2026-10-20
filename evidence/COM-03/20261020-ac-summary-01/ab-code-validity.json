@@ -1,0 +1,589 @@
+{
+  "checkedAtUtc": "2026-10-20T02:00:44.0654614+00:00",
+  "head": "d777ab7d8ef034d66a862343231268cd1476af24",
+  "A3ArchiveHashMatches": true,
+  "A3": [
+    {
+      "oldPath": "global.json",
+      "currentPath": "global.json",
+      "archiveHashMatches": true,
+      "mergedContentMatches": true,
+      "currentContentSame": true
+    },
+    {
+      "oldPath": "AmrControlSystem.slnx",
+      "currentPath": "AmrControlSystem.slnx",
+      "archiveHashMatches": true,
+      "mergedContentMatches": true,
+      "currentContentSame": true
+    },
+    {
+      "oldPath": "src/Amr.Communication/Amr.Communication.csproj",
+      "currentPath": "src/Amr.Communication/Amr.Communication.csproj",
+      "archiveHashMatches": true,
+      "mergedContentMatches": true,
+      "currentContentSame": false
+    },
+    {
+      "oldPath": "src/Amr.Communication/Mqtt/MqttConnectionSettings.cs",
+      "currentPath": "src/Amr.Communication/Mqtt/Connection/MqttConnectionSettings.cs",
+      "archiveHashMatches": true,
+      "mergedContentMatches": true,
+      "currentContentSame": true
+    },
+    {
+      "oldPath": "src/Amr.Communication/Mqtt/MqttConnection.cs",
+      "currentPath": "src/Amr.Communication/Mqtt/Connection/MqttConnection.cs",
+      "archiveHashMatches": true,
+      "mergedContentMatches": true,
+      "currentContentSame": false
+    },
+    {
+      "oldPath": "src/Amr.Communication.Console/Amr.Communication.Console.csproj",
+      "currentPath": "src/Amr.Communication.Console/Amr.Communication.Console.csproj",
+      "archiveHashMatches": true,
+      "mergedContentMatches": true,
+      "currentContentSame": false
+    },
+    {
+      "oldPath": "src/Amr.Communication.Console/Program.cs",
+      "currentPath": "src/Amr.Communication.Console/Program.cs",
+      "archiveHashMatches": true,
+      "mergedContentMatches": true,
+      "currentContentSame": false
+    },
+    {
+      "oldPath": "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj",
+      "currentPath": "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj",
+      "archiveHashMatches": true,
+      "mergedContentMatches": true,
+      "currentContentSame": false
+    },
+    {
+      "oldPath": "docker/compose.yaml",
+      "currentPath": "docker/compose.yaml",
+      "archiveHashMatches": true,
+      "mergedContentMatches": true,
+      "currentContentSame": true
+    },
+    {
+      "oldPath": "docker/mosquitto/config/mosquitto.conf",
+      "currentPath": "docker/mosquitto/config/mosquitto.conf",
+      "archiveHashMatches": true,
+      "mergedContentMatches": true,
+      "currentContentSame": true
+    },
+    {
+      "oldPath": "tests/Amr.Communication.Tests/FakeMqttClient.cs",
+      "currentPath": "tests/Amr.Communication.Tests/TestDoubles/FakeMqttClient.cs",
+      "archiveHashMatches": true,
+      "mergedContentMatches": true,
+      "currentContentSame": false
+    },
+    {
+      "oldPath": "tests/Amr.Communication.Tests/MqttConnectionTests.cs",
+      "currentPath": "tests/Amr.Communication.Tests/Mqtt/Connection/MqttConnectionTests.cs",
+      "archiveHashMatches": true,
+      "mergedContentMatches": true,
+      "currentContentSame": false
+    }
+  ],
+  "B": [
+    {
+      "oldPath": "src/Amr.Communication.Console/Program.cs",
+      "currentPath": "src/Amr.Communication.Console/Program.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": false,
+      "oldEvidenceSha256": "9A72B8D307ACCE7012DBE45F568898E9559904F2E796E06678880337A5F49B6E",
+      "mergedLfSha256": "B5A1B23C584514EA08FFD51BEF9AA54BFFF40D6AD152CDEE76A413472C605E9E",
+      "currentLfSha256": "22BF452FA5C1973AC18BFC23A1505474620BF4267B2D268BE1F1D815D7BBDCA3"
+    },
+    {
+      "oldPath": "src/Amr.Communication.Console/ConsoleRunner.cs",
+      "currentPath": "src/Amr.Communication.Console/ConsoleRunner.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": false,
+      "oldEvidenceSha256": "C5C5F181EE0A2B8EB2F148A60E7E5E92D5E7F8936CD0FCE3FEE21D1B3D595F46",
+      "mergedLfSha256": "C74FF5BE0A832B7A850A63CCF7217CBE962F806D1AD0E24E935C36E0899CA2EC",
+      "currentLfSha256": "33AD38F76FC404DE0080040392B523617D6438589BFFA2A76F1FA7786041DFB8"
+    },
+    {
+      "oldPath": "src/Amr.Communication.Console/Amr.Communication.Console.csproj",
+      "currentPath": "src/Amr.Communication.Console/Amr.Communication.Console.csproj",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": false,
+      "oldEvidenceSha256": "3D3C2FC9FDC8610438A96EEBA9C36C7CF395051C1C36F5DBB155C8930F061819",
+      "mergedLfSha256": "34E3FE9324FE1E0030BF69712E18004382833ADD9E6BF7EDD5CAEFB9BB7DD382",
+      "currentLfSha256": "7EE8E7AF753BAE4B1ACB6DFEC5E0556EDB949D24E10D72E97FA97F1808DA3340"
+    },
+    {
+      "oldPath": "tests/manual/COM03-B/Verify-Connection.ps1",
+      "currentPath": "tests/manual/COM03-B/Verify-Connection.ps1",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "5DB13264971B5A7890CDF335754517FE315441BF9B82AA02C345C0D9C28BC0DC",
+      "mergedLfSha256": "5DB13264971B5A7890CDF335754517FE315441BF9B82AA02C345C0D9C28BC0DC",
+      "currentLfSha256": "5DB13264971B5A7890CDF335754517FE315441BF9B82AA02C345C0D9C28BC0DC"
+    },
+    {
+      "oldPath": "tests/manual/COM01-C/Verify-Mqtt.ps1",
+      "currentPath": "tests/manual/COM01-C/Verify-Mqtt.ps1",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "CD32B182ADC8BFEB758B953DB31C6D834A61052E30B2C1B67030BD672AAE6029",
+      "mergedLfSha256": "9248F15AA25D01CC2CD2374295C0E44B1235F3E7BD00521B7BFB37DCC6C4CB36",
+      "currentLfSha256": "9248F15AA25D01CC2CD2374295C0E44B1235F3E7BD00521B7BFB37DCC6C4CB36"
+    },
+    {
+      "oldPath": "tests/manual/COM01-C/Verify-Disconnect.ps1",
+      "currentPath": "tests/manual/COM01-C/Verify-Disconnect.ps1",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "8D8B9AAC7BF15037C23BBF39555E2937834CD9691BF8336D9D56AD8325963386",
+      "mergedLfSha256": "84C9AA43839EEC6A0173281D81949C281E9C98EC4EE7B2A1F087F8BC339640DE",
+      "currentLfSha256": "84C9AA43839EEC6A0173281D81949C281E9C98EC4EE7B2A1F087F8BC339640DE"
+    },
+    {
+      "oldPath": "tests/manual/COM01-C/inputs.json",
+      "currentPath": "tests/manual/COM01-C/inputs.json",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "618834D91FFFE8BA3345A4C9D8EC1852902EDB3AA3A5A86D3E327C88330B56EB",
+      "mergedLfSha256": "4A065CC641767424E6538ADF6D467B403B3FAD1A59B2BA60B1F6D8A71E802529",
+      "currentLfSha256": "4A065CC641767424E6538ADF6D467B403B3FAD1A59B2BA60B1F6D8A71E802529"
+    },
+    {
+      "oldPath": "tests/manual/COM01-B/Verify-Mqtt.ps1",
+      "currentPath": "tests/manual/COM01-B/Verify-Mqtt.ps1",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": false,
+      "oldEvidenceSha256": "EE69F1D704CE461BFEB1267065A61C50B0911F61DBF87CD889A4CF1B55CDCE86",
+      "mergedLfSha256": "C47D5CF8502A93EA7C5ED6DB8008479971591D12A9498597B2B6B0DFB4924A72",
+      "currentLfSha256": "848D84162A239FA7110D76980F98236818008D887803C07C26DA8EF7EF5C7788"
+    },
+    {
+      "oldPath": "tests/manual/COM01-B/inputs.json",
+      "currentPath": "tests/manual/COM01-B/inputs.json",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "CE14F0E7E5ECB3E4CDE98DB63796F56C0BDA8BA6CE1C406B18C96185481A9DFB",
+      "mergedLfSha256": "18C82198765FED5984E6814F0B8CB6173AFA88573533AA06D971DA18DC83AF4B",
+      "currentLfSha256": "18C82198765FED5984E6814F0B8CB6173AFA88573533AA06D971DA18DC83AF4B"
+    },
+    {
+      "oldPath": "tests/Amr.Communication.Tests/TelemetryValidatorTests.cs",
+      "currentPath": "tests/Amr.Communication.Tests/Validation/TelemetryValidatorTests.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "7C09035A772D947ACF7C70802255F0911785DA7FFFCFF290E645FCF67A2793C1",
+      "mergedLfSha256": "7FCE345256C6D84A78A4F6FCECEA5DC2480B8A35B70287730278366364EBB27F",
+      "currentLfSha256": "7FCE345256C6D84A78A4F6FCECEA5DC2480B8A35B70287730278366364EBB27F"
+    },
+    {
+      "oldPath": "tests/Amr.Communication.Tests/MqttConnectionTests.cs",
+      "currentPath": "tests/Amr.Communication.Tests/Mqtt/Connection/MqttConnectionTests.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "56D70E386AEA42EB11F533A7D2313896BD89E7E68D88550AD23908390CD3D394",
+      "mergedLfSha256": "F54F7B4EDB9DE90169C119A3B00B27BCFABDE3C5A9F72A05403B5F6FE5EDFB2A",
+      "currentLfSha256": "F54F7B4EDB9DE90169C119A3B00B27BCFABDE3C5A9F72A05403B5F6FE5EDFB2A"
+    },
+    {
+      "oldPath": "tests/Amr.Communication.Tests/MqttConnectionFailureTests.cs",
+      "currentPath": "tests/Amr.Communication.Tests/Mqtt/Connection/MqttConnectionFailureTests.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "9CFC1CC4AB86784C899AFC6367813CE9C587D9B72890F0D300D02CEC86BEC09E",
+      "mergedLfSha256": "9CFC1CC4AB86784C899AFC6367813CE9C587D9B72890F0D300D02CEC86BEC09E",
+      "currentLfSha256": "9CFC1CC4AB86784C899AFC6367813CE9C587D9B72890F0D300D02CEC86BEC09E"
+    },
+    {
+      "oldPath": "tests/Amr.Communication.Tests/MessageValidationRegressionTests.cs",
+      "currentPath": "tests/Amr.Communication.Tests/Validation/MessageValidationRegressionTests.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "4C277CD69DEC818F0F0A876D661E37520DEC421F7BB9B7B76EA9B259A510D96A",
+      "mergedLfSha256": "53499FF4AA7D690530814A6BF7B1E4B09876EBC3CD11FC125142A61D3BA52E58",
+      "currentLfSha256": "53499FF4AA7D690530814A6BF7B1E4B09876EBC3CD11FC125142A61D3BA52E58"
+    },
+    {
+      "oldPath": "tests/Amr.Communication.Tests/MessageSubscriptionTests.cs",
+      "currentPath": "tests/Amr.Communication.Tests/Mqtt/Subscriptions/MessageSubscriptionTests.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "620D55AE24DAE636BC93137D498ECC2E5F5B6BB8460AB7B86FEA72F7523FE71C",
+      "mergedLfSha256": "22B6358F6C73D6CBE9F58DB2D928E483FCD3A6B99A47F5182FDD336A4D0746D7",
+      "currentLfSha256": "22B6358F6C73D6CBE9F58DB2D928E483FCD3A6B99A47F5182FDD336A4D0746D7"
+    },
+    {
+      "oldPath": "tests/Amr.Communication.Tests/MessageFieldValidationTests.cs",
+      "currentPath": "tests/Amr.Communication.Tests/Validation/MessageFieldValidationTests.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "6D9096C1AB067EB6833929CDD7EC05978A93E250B3A73518829C6AE879DC8205",
+      "mergedLfSha256": "5D71FCF21CA972EB921FD36C838F17222397FA35B672844868DF92A6A0BA4F3D",
+      "currentLfSha256": "5D71FCF21CA972EB921FD36C838F17222397FA35B672844868DF92A6A0BA4F3D"
+    },
+    {
+      "oldPath": "tests/Amr.Communication.Tests/HeartbeatValidatorTests.cs",
+      "currentPath": "tests/Amr.Communication.Tests/Validation/HeartbeatValidatorTests.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "FAA761D201B0A94778633B28EFFCE1FED4243689CA30DF2EA083AF9B813B842D",
+      "mergedLfSha256": "8AA675BCAE55CB29D7143C29C01E1FE128A066E59177948E8E51D569128B45D1",
+      "currentLfSha256": "8AA675BCAE55CB29D7143C29C01E1FE128A066E59177948E8E51D569128B45D1"
+    },
+    {
+      "oldPath": "tests/Amr.Communication.Tests/HeartbeatSubscriptionTests.cs",
+      "currentPath": "tests/Amr.Communication.Tests/Mqtt/Subscriptions/HeartbeatSubscriptionTests.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "F2C98E620E2EC01166A0D1D2A06EF324E9C75B0D298ED80434562F8E34871E07",
+      "mergedLfSha256": "769723A9359669BCF8B7C35E312BD1AFD78D6CF2747CBAC49647B69BB92A6614",
+      "currentLfSha256": "769723A9359669BCF8B7C35E312BD1AFD78D6CF2747CBAC49647B69BB92A6614"
+    },
+    {
+      "oldPath": "tests/Amr.Communication.Tests/FakeMqttClient.cs",
+      "currentPath": "tests/Amr.Communication.Tests/TestDoubles/FakeMqttClient.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": false,
+      "oldEvidenceSha256": "06B71425B7F7904DE027B4578CFAE44A0B2F2D3B0363A0903E3F5FC0D49D2056",
+      "mergedLfSha256": "FB86DC16501F9859553658DF91B86C9ACFCA75A514AFDEEEA912079A59C01AB8",
+      "currentLfSha256": "9C962B39865E37F0D72E2980029283140FBC2EFAA4472F543A05B4799237506B"
+    },
+    {
+      "oldPath": "tests/Amr.Communication.Tests/ConsoleConnectionFailureTests.cs",
+      "currentPath": "tests/Amr.Communication.Tests/Console/ConsoleConnectionFailureTests.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "5A39A1398C3EF6170750ECCCA53D86D1E68331C684A46BF6EEB2533D52D2780F",
+      "mergedLfSha256": "5A39A1398C3EF6170750ECCCA53D86D1E68331C684A46BF6EEB2533D52D2780F",
+      "currentLfSha256": "5A39A1398C3EF6170750ECCCA53D86D1E68331C684A46BF6EEB2533D52D2780F"
+    },
+    {
+      "oldPath": "tests/Amr.Communication.Tests/AmrReceiveQueueTests.cs",
+      "currentPath": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueTests.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "D4BAEDD8ACA2F15660F2730FD3433AA75FCCF882EDF8E46F4C0D47E8D2A4DFFA",
+      "mergedLfSha256": "ADF9D4E57E1E5B8D6D626B34B9DD33EA1AF72D889C3FB9207C29304DC98DA533",
+      "currentLfSha256": "ADF9D4E57E1E5B8D6D626B34B9DD33EA1AF72D889C3FB9207C29304DC98DA533"
+    },
+    {
+      "oldPath": "tests/Amr.Communication.Tests/AmrReceiveQueueShutdownTests.cs",
+      "currentPath": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueShutdownTests.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "F4D564CFC5E7D3A29A32F06EFB5D0FCB2929A710B632568878C2F17E88F60CCE",
+      "mergedLfSha256": "198A5F6F282DDFEC144A839B9AD58B0FFFD552506962FE02B06F0B209731EDF5",
+      "currentLfSha256": "198A5F6F282DDFEC144A839B9AD58B0FFFD552506962FE02B06F0B209731EDF5"
+    },
+    {
+      "oldPath": "tests/Amr.Communication.Tests/AmrReceiveQueueBoundaryTests.cs",
+      "currentPath": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueBoundaryTests.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "4DB676AB1C6ECBAF3D474C8201211F9243DBC9C4B57198792B3AE3E0758E38D9",
+      "mergedLfSha256": "299E772FC6AE7A7F579F66F8FF99ABB427E1B877D34AF6DB19CEF4C39EAFF864",
+      "currentLfSha256": "299E772FC6AE7A7F579F66F8FF99ABB427E1B877D34AF6DB19CEF4C39EAFF864"
+    },
+    {
+      "oldPath": "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj",
+      "currentPath": "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "0BB622C8930E883F570DD8DCFA7D4055CCD4722555C8B2F2FF972798A22E8699",
+      "mergedLfSha256": "9639D45D5035DC6749ACCF60FBA4D677DDC14611A0602ABD6B45889ABAE5FCDA",
+      "currentLfSha256": "9639D45D5035DC6749ACCF60FBA4D677DDC14611A0602ABD6B45889ABAE5FCDA"
+    },
+    {
+      "oldPath": "tests/Amr.Communication.Tests/AlarmValidatorTests.cs",
+      "currentPath": "tests/Amr.Communication.Tests/Validation/AlarmValidatorTests.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "B7D1CF7A60639CE9427B791EC9ADB8CBB5E318F98741F5F70382BCA7417D9533",
+      "mergedLfSha256": "E1EF3EBB38AA48DBCD50BC59769C7F54EC2779CC95D00F2C780137CA610F1524",
+      "currentLfSha256": "E1EF3EBB38AA48DBCD50BC59769C7F54EC2779CC95D00F2C780137CA610F1524"
+    },
+    {
+      "oldPath": "tests/Amr.Communication.Tests/AckValidatorTests.cs",
+      "currentPath": "tests/Amr.Communication.Tests/Validation/AckValidatorTests.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "BB727F21F3290D691053663CE44EA4D145E6E3DD243F844D9AB7E14DCF6ACA17",
+      "mergedLfSha256": "A7F5875230128C515B29E2C2A46836C918BC8EA16E5E426418665EFC34664F4B",
+      "currentLfSha256": "A7F5875230128C515B29E2C2A46836C918BC8EA16E5E426418665EFC34664F4B"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Amr.Communication.csproj",
+      "currentPath": "src/Amr.Communication/Amr.Communication.csproj",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "EC8DE05434FD0644E9F9424BF0AE3239E38A21022A3DDFA5CA4CEF21A05E8361",
+      "mergedLfSha256": "3B644241E4D737D57F8BC13F1F62542CEA77C97AD2292C587750BC8C54A82027",
+      "currentLfSha256": "3B644241E4D737D57F8BC13F1F62542CEA77C97AD2292C587750BC8C54A82027"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Mqtt/Subscriptions/MessageSubscription.cs",
+      "currentPath": "src/Amr.Communication/Mqtt/Subscriptions/MessageSubscription.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "C1103DFC77D3E5B7DD92914A15A6514A3C8F9869EB860324EECD4952A0ADCB47",
+      "mergedLfSha256": "66DAD095A1664D1EF91A5A788B1670F285E8E44880570481ED8527F17E809B9C",
+      "currentLfSha256": "66DAD095A1664D1EF91A5A788B1670F285E8E44880570481ED8527F17E809B9C"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Mqtt/Subscriptions/MessageDiagnostic.cs",
+      "currentPath": "src/Amr.Communication/Mqtt/Subscriptions/MessageDiagnostic.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "5AA07F8F98E5991B407E7F82987D0C1FC0BD8BBCD7CB91DD0119B1E3CAE74291",
+      "mergedLfSha256": "D6A82AA18989CE93A8765A0B4D1B1F56D613ED650160623777AC5BBA15ED43C0",
+      "currentLfSha256": "D6A82AA18989CE93A8765A0B4D1B1F56D613ED650160623777AC5BBA15ED43C0"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Mqtt/Subscriptions/HeartbeatSubscription.cs",
+      "currentPath": "src/Amr.Communication/Mqtt/Subscriptions/HeartbeatSubscription.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "A38723932BC0C7B3DA1B4801D2F1650C19A4AA191706D749CE991A3C1DFB1BF2",
+      "mergedLfSha256": "D7033D5A36EDBD7D66441DD68FFF130D18C58A102503EFC86AB2DFECDAB6F840",
+      "currentLfSha256": "D7033D5A36EDBD7D66441DD68FFF130D18C58A102503EFC86AB2DFECDAB6F840"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Mqtt/Subscriptions/HeartbeatDiagnostic.cs",
+      "currentPath": "src/Amr.Communication/Mqtt/Subscriptions/HeartbeatDiagnostic.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "C4CBA602462BF67C6FC472895DF0EA3635A46E683CD8B9667D26B22E0918720E",
+      "mergedLfSha256": "0825F99BA9AFE22B70E26845B06B00C843402CE394DDCA4AEC7721E19A59DAF1",
+      "currentLfSha256": "0825F99BA9AFE22B70E26845B06B00C843402CE394DDCA4AEC7721E19A59DAF1"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Mqtt/Queues/QueueProcessingEvent.cs",
+      "currentPath": "src/Amr.Communication/Mqtt/Queues/QueueProcessingEvent.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "A0737B49FBF57EF9B6296AE2190BCA39D9BDA4B0B388874D4B131469B0F146EE",
+      "mergedLfSha256": "F0C065F9289AEC821A19A6E090A4944CF10C155DBA6024B0CF7D9A63975D5789",
+      "currentLfSha256": "F0C065F9289AEC821A19A6E090A4944CF10C155DBA6024B0CF7D9A63975D5789"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Mqtt/Queues/QueueAdmission.cs",
+      "currentPath": "src/Amr.Communication/Mqtt/Queues/QueueAdmission.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "D3EE58D761F697C52F66C49AD1448E0DEC8769536298AFCEAD155635781CF477",
+      "mergedLfSha256": "B2E9578282ECE81E1CB6F07119C1D87964D34EDF195A16DB1C6871E2E43D3316",
+      "currentLfSha256": "B2E9578282ECE81E1CB6F07119C1D87964D34EDF195A16DB1C6871E2E43D3316"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Mqtt/Queues/AmrReceiveQueue.cs",
+      "currentPath": "src/Amr.Communication/Mqtt/Queues/AmrReceiveQueue.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "182038B55E6AE298CEDBF8EB159B475518619DE962487E722B610BC4383F7625",
+      "mergedLfSha256": "2D840D3B0713A823C79689AABCB45A35C1CEA9BFE50A75993D7456CBD43FE6ED",
+      "currentLfSha256": "2D840D3B0713A823C79689AABCB45A35C1CEA9BFE50A75993D7456CBD43FE6ED"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Mqtt/Connection/MqttConnectionSettings.cs",
+      "currentPath": "src/Amr.Communication/Mqtt/Connection/MqttConnectionSettings.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "39331CD6BCDA0F09D1A72397A31993972C2C2BC937FD2BB0BADA6DB6B1155F1F",
+      "mergedLfSha256": "48AFB867D94752EC4C1AD35776211763F72EA94849113265F9C3A120F85FFD75",
+      "currentLfSha256": "48AFB867D94752EC4C1AD35776211763F72EA94849113265F9C3A120F85FFD75"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Mqtt/Connection/MqttConnectionException.cs",
+      "currentPath": "src/Amr.Communication/Mqtt/Connection/MqttConnectionException.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "C8FE5EDF3DA75CEC64E6A96B1E91BD0D0F1C77FC0B01CF98E65AD1BD58C07DD6",
+      "mergedLfSha256": "C8FE5EDF3DA75CEC64E6A96B1E91BD0D0F1C77FC0B01CF98E65AD1BD58C07DD6",
+      "currentLfSha256": "C8FE5EDF3DA75CEC64E6A96B1E91BD0D0F1C77FC0B01CF98E65AD1BD58C07DD6"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Mqtt/Connection/MqttConnection.cs",
+      "currentPath": "src/Amr.Communication/Mqtt/Connection/MqttConnection.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "70BA5CB9000AA2A0C09D6741C81C8347F4FC7D5F23CD95C02BAC75926812FD95",
+      "mergedLfSha256": "19D78EB7C85186E9A1F393DB794C0F5070E4EA0018F26635385DEE19E231D10D",
+      "currentLfSha256": "19D78EB7C85186E9A1F393DB794C0F5070E4EA0018F26635385DEE19E231D10D"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Validation/Telemetry/TelemetryValidator.cs",
+      "currentPath": "src/Amr.Communication/Validation/Telemetry/TelemetryValidator.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "62818FA1E43319F7F608E1DC2A5C7A67C7F2403176C750F5A24167385B99E617",
+      "mergedLfSha256": "9A9D2A46EAD617E6EE9086C54BB738AE0FA1EE30806F18D5BCF790289F66E506",
+      "currentLfSha256": "9A9D2A46EAD617E6EE9086C54BB738AE0FA1EE30806F18D5BCF790289F66E506"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Validation/Telemetry/TelemetryValidationResult.cs",
+      "currentPath": "src/Amr.Communication/Validation/Telemetry/TelemetryValidationResult.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "EE625D9304CDBA53CCFDDC47C98DE6AF0A54D89B26B94024DEF925441187F460",
+      "mergedLfSha256": "3687D86B1B52EEA007F3FEF77BAA48C4E513753782EAC8E0EC284364D529E4C6",
+      "currentLfSha256": "3687D86B1B52EEA007F3FEF77BAA48C4E513753782EAC8E0EC284364D529E4C6"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Validation/Heartbeat/HeartbeatValidator.cs",
+      "currentPath": "src/Amr.Communication/Validation/Heartbeat/HeartbeatValidator.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "C40A596D16200707369D8CB7108C81AF1DB05BD7AB28008EE9C1547D1C6CC6FE",
+      "mergedLfSha256": "3089B1F4C6583570A73F31B3C4320AFE68702B75968BBC8D52B2F3FCF055DD2C",
+      "currentLfSha256": "3089B1F4C6583570A73F31B3C4320AFE68702B75968BBC8D52B2F3FCF055DD2C"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Validation/Heartbeat/HeartbeatValidationResult.cs",
+      "currentPath": "src/Amr.Communication/Validation/Heartbeat/HeartbeatValidationResult.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "E0DC28054F8C188CE07033BE670131679B32F794228A7A4E83AEB90DDABAB7E4",
+      "mergedLfSha256": "1604225131767FC7564E9D42470E976117920FC14DD0732039C91260EB14C9A7",
+      "currentLfSha256": "1604225131767FC7564E9D42470E976117920FC14DD0732039C91260EB14C9A7"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Validation/Common/ValidationError.cs",
+      "currentPath": "src/Amr.Communication/Validation/Common/ValidationError.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "2FDC9241F38C81E7EACF90DB191A28A34B6D0DCC0C6FAE74020BD19C6409F479",
+      "mergedLfSha256": "3DCF8999E3771B4966872962A45D621BE51F862C1EFB16D268501CD3BE666B71",
+      "currentLfSha256": "3DCF8999E3771B4966872962A45D621BE51F862C1EFB16D268501CD3BE666B71"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Validation/Common/MessageValidation.cs",
+      "currentPath": "src/Amr.Communication/Validation/Common/MessageValidation.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "37B5634721799FE3432CAA43B53A04B24632D5C4044437EDD3AE6AE0533A8DE3",
+      "mergedLfSha256": "430CB62E5C08D1BAD586F1EBDDCA205FA84D69E2C3D65C1836ABAF9BE36D21D2",
+      "currentLfSha256": "430CB62E5C08D1BAD586F1EBDDCA205FA84D69E2C3D65C1836ABAF9BE36D21D2"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Validation/Alarm/AlarmValidator.cs",
+      "currentPath": "src/Amr.Communication/Validation/Alarm/AlarmValidator.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "E2DFD160B68DC84377807B5D7ABB6620A8F1237E1CC87D79EF36152C97E4D684",
+      "mergedLfSha256": "1F21F77FBD02C55577A95FF21DDD05EACC717FE6EA194F6D6FB918CA7694EA7F",
+      "currentLfSha256": "1F21F77FBD02C55577A95FF21DDD05EACC717FE6EA194F6D6FB918CA7694EA7F"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Validation/Alarm/AlarmValidationResult.cs",
+      "currentPath": "src/Amr.Communication/Validation/Alarm/AlarmValidationResult.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "B09A032DE262596E065232FFEA7A3BDE00E7517DCF7A58EEBDDD3DFC4C18677C",
+      "mergedLfSha256": "0245F8FF9E8CCF314FB7D180E7857E3FB6390879D0A43C47C98FC016A2631183",
+      "currentLfSha256": "0245F8FF9E8CCF314FB7D180E7857E3FB6390879D0A43C47C98FC016A2631183"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Validation/Ack/AckValidator.cs",
+      "currentPath": "src/Amr.Communication/Validation/Ack/AckValidator.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "1A7BE4B0C9B44045F2C647FEAE47A77EC55EEABEA8DC697E55F7631AC0D9E6AB",
+      "mergedLfSha256": "35A64751463D3BF49A4C691DB175360E268CC410E80F2401A98B89FD681248ED",
+      "currentLfSha256": "35A64751463D3BF49A4C691DB175360E268CC410E80F2401A98B89FD681248ED"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Models/TelemetryMessage.cs",
+      "currentPath": "src/Amr.Communication/Models/TelemetryMessage.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "5715585D9DD636E8C315C248A9602AE0F6BEE3E192A74663B05A598AAF3225F7",
+      "mergedLfSha256": "6D0D5C7B6A8A0E26A8A87DB8AAF5957DCD7E9D8DB46E40225BB324B35467D695",
+      "currentLfSha256": "6D0D5C7B6A8A0E26A8A87DB8AAF5957DCD7E9D8DB46E40225BB324B35467D695"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Validation/Ack/AckValidationResult.cs",
+      "currentPath": "src/Amr.Communication/Validation/Ack/AckValidationResult.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "A9FAD17750B4B01A967406850A9E0C1E8E2CDBC7BC5866E309BF07EFFEED10B4",
+      "mergedLfSha256": "22A832C7E5FD12E8CEFC636A35760EE629E1C640DA095A49F404ACC8D0BD9131",
+      "currentLfSha256": "22A832C7E5FD12E8CEFC636A35760EE629E1C640DA095A49F404ACC8D0BD9131"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Models/AlarmMessage.cs",
+      "currentPath": "src/Amr.Communication/Models/AlarmMessage.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "E86A417FF8ACD3E76500CAC357BE23DE2FF1BF593742E8C323E0DB172701E93E",
+      "mergedLfSha256": "5797EE9280B056D7E11707E6A56087FB2805F27F45371AEAE6F6B0766409BD13",
+      "currentLfSha256": "5797EE9280B056D7E11707E6A56087FB2805F27F45371AEAE6F6B0766409BD13"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Models/AckMessage.cs",
+      "currentPath": "src/Amr.Communication/Models/AckMessage.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "EA41EFB4053B3689E5C3461D40D79E7F0E9BBE10580473F37E35816EBE977AAB",
+      "mergedLfSha256": "D28A532212713B8A86D1AF35F2F542B6B53461D73F92F017CA3AFFFA7CA73821",
+      "currentLfSha256": "D28A532212713B8A86D1AF35F2F542B6B53461D73F92F017CA3AFFFA7CA73821"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Models/HeartbeatMessage.cs",
+      "currentPath": "src/Amr.Communication/Models/HeartbeatMessage.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "E5A975C5A616E603D1A1FF7DDFE290E32B26E9DABA799B9D3F614FC41654FE41",
+      "mergedLfSha256": "4BEDA4DA2B7E45720E0C11779DF09496A34D069655BB1B0E509034BC16E33A4E",
+      "currentLfSha256": "4BEDA4DA2B7E45720E0C11779DF09496A34D069655BB1B0E509034BC16E33A4E"
+    },
+    {
+      "oldPath": "src/Amr.Communication/Models/ReceivedMessage.cs",
+      "currentPath": "src/Amr.Communication/Models/ReceivedMessage.cs",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "0A7D983DB5E8185A3760BA57B567A2B0924F9FE0DAD5DD34E39FBE95061C7EBF",
+      "mergedLfSha256": "D20B826A92B2B86C64E3FA985122C1BAC137BAB9A8C8AA6C2CF3F272CE080548",
+      "currentLfSha256": "D20B826A92B2B86C64E3FA985122C1BAC137BAB9A8C8AA6C2CF3F272CE080548"
+    },
+    {
+      "oldPath": "global.json",
+      "currentPath": "global.json",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "6A8E9044030D136BD4C04FFF9684111A3478B27559BFB6D19E4D380F0DE91510",
+      "mergedLfSha256": "CE61F5AE207D33D00594C77C5999C7F0DC66434E85A85F38090335D588438974",
+      "currentLfSha256": "CE61F5AE207D33D00594C77C5999C7F0DC66434E85A85F38090335D588438974"
+    },
+    {
+      "oldPath": "AmrControlSystem.slnx",
+      "currentPath": "AmrControlSystem.slnx",
+      "evidenceMatchesMergedContentWithEncodingNormalization": true,
+      "currentContentSameAsMerged": true,
+      "oldEvidenceSha256": "CCD11FC15FF2A3A169DA6F6B0CA4B452AA5DC37AABC983C0DB668D4C7E0975A8",
+      "mergedLfSha256": "698695FE8A09E721B87F1CDC3B80A545102EBF455C65AC86780C2130B352FA1C",
+      "currentLfSha256": "698695FE8A09E721B87F1CDC3B80A545102EBF455C65AC86780C2130B352FA1C"
+    }
+  ],
+  "ancestry": [
+    {
+      "commit": "b91fc8e22ef56b208b3c2edeca99f5e2807474ef",
+      "isAncestor": true
+    },
+    {
+      "commit": "c34f380728d914aed9d0fe5f3427d698493d2ab6",
+      "isAncestor": true
+    },
+    {
+      "commit": "98162c1c5c85c476260e26d96f0ad4ae98570916",
+      "isAncestor": true
+    },
+    {
+      "commit": "b4265aff198ead9d234c592cfaf9b89f9e217024",
+      "isAncestor": true
+    }
+  ],
+  "normalization": "UTF-8 BOM and CRLF/LF only; content match does not claim byte identity"
+}

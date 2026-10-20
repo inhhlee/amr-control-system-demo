@@ -1,0 +1,12 @@
+  Amr.Communication -> C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll
+  Amr.Communication.Console -> C:\amr-control-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.dll
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs(107,14): warning CS0618: 'MqttUserProperty.MqttUserProperty(string, string)'은(는) 사용되지 않습니다. 'Please use more performance constructor with ArraySegment<byte> or ReadOnlyMemory<byte> for the value.' [C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj]
+  Amr.Communication.Tests -> C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll
+
+빌드했습니다.
+
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\Logging\ConsoleShutdownReasonTests.cs(107,14): warning CS0618: 'MqttUserProperty.MqttUserProperty(string, string)'은(는) 사용되지 않습니다. 'Please use more performance constructor with ArraySegment<byte> or ReadOnlyMemory<byte> for the value.' [C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj]
+    경고 1개
+    오류 0개
+
+경과 시간: 00:00:01.95

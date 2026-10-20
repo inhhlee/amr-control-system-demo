@@ -1,0 +1,11 @@
+{"program":"docker","arguments":["version","--format","{{.Client.Version}} / {{.Server.Version}}"],"atUtc":"2026-10-20T01:07:36.1373903+00:00","exitCode":0}
+{"program":"docker","arguments":["ps","-a","--format","{{json .}}"],"atUtc":"2026-10-20T01:07:36.3201302+00:00","exitCode":0}
+{"program":"docker","arguments":["image","inspect","eclipse-mosquitto:2.1.2-alpine","--format","{{.Id}}"],"atUtc":"2026-10-20T01:07:36.4965637+00:00","exitCode":0}
+{"program":"docker","arguments":["run","--detach","--pull","never","--name","amr-c3a-20261020-c3a-proxy-02","--label","amr.c3a.run=20261020-c3a-proxy-02","--publish","127.0.0.1::1883","--mount","type=bind,source=C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c3a-proxy-02/broker.conf,target=/mosquitto/config/mosquitto.conf,readonly","eclipse-mosquitto:2.1.2-alpine"],"atUtc":"2026-10-20T01:07:37.9351543+00:00","exitCode":0}
+{"program":"docker","arguments":["port","96d3c9534370e716e9d4fb4924943debfef32463aea64fbbdf5e7b12d84c6907","1883/tcp"],"atUtc":"2026-10-20T01:07:38.2497958+00:00","exitCode":0}
+{"program":"docker","arguments":["logs","--timestamps","96d3c9534370e716e9d4fb4924943debfef32463aea64fbbdf5e7b12d84c6907"],"atUtc":"2026-10-20T01:07:38.3970339+00:00","exitCode":0}
+{"program":"docker","arguments":["logs","--timestamps","96d3c9534370e716e9d4fb4924943debfef32463aea64fbbdf5e7b12d84c6907"],"atUtc":"2026-10-20T01:07:45.7505296+00:00","exitCode":0}
+{"program":"docker","arguments":["logs","--timestamps","96d3c9534370e716e9d4fb4924943debfef32463aea64fbbdf5e7b12d84c6907"],"atUtc":"2026-10-20T01:07:46.0617636+00:00","exitCode":0}
+{"program":"docker","arguments":["stop","--time","5","96d3c9534370e716e9d4fb4924943debfef32463aea64fbbdf5e7b12d84c6907"],"atUtc":"2026-10-20T01:07:46.2062552+00:00","exitCode":0}
+{"program":"docker","arguments":["rm","96d3c9534370e716e9d4fb4924943debfef32463aea64fbbdf5e7b12d84c6907"],"atUtc":"2026-10-20T01:07:46.6112418+00:00","exitCode":0}
+{"program":"docker","arguments":["ps","-a","--format","{{json .}}"],"atUtc":"2026-10-20T01:07:46.7759749+00:00","exitCode":0}

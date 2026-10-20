@@ -1,0 +1,10 @@
+{
+  "result": "passed",
+  "case": "explicit stop before client accept; no Broker process used",
+  "requestedAtUtc": "2026-10-20T01:08:42.2382880+00:00",
+  "observedAtUtc": "2026-10-20T01:08:42.3736844+00:00",
+  "exitCode": 0,
+  "listenerPort": 63069,
+  "listenerReleased": true,
+  "proxySourceSha256": "9005C0024388205F12D0627DAF61A1845A396277C41F533544C7D75E6D668524"
+}

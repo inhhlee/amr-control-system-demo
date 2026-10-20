@@ -1,0 +1,17 @@
+{"atUtc":"2026-10-20T01:51:13.6017839+00:00","elapsedMs":3.3816,"eventType":"Listening","data":{"port":50643,"brokerPort":50642,"processId":30644}}
+{"atUtc":"2026-10-20T01:51:14.3196962+00:00","elapsedMs":721.2926,"eventType":"SessionOpened","data":{"clientPeer":"127.0.0.1:50644","proxyLocal":"127.0.0.1:50643","upstreamLocal":"127.0.0.1:50645","brokerPeer":"127.0.0.1:50642"}}
+{"atUtc":"2026-10-20T01:51:14.3241419+00:00","elapsedMs":725.7371,"eventType":"Forwarded","data":{"direction":"client-to-broker","bytes":56}}
+{"atUtc":"2026-10-20T01:51:14.3249768+00:00","elapsedMs":726.572,"eventType":"Forwarded","data":{"direction":"broker-to-client","bytes":16}}
+{"atUtc":"2026-10-20T01:51:14.3452531+00:00","elapsedMs":746.8488,"eventType":"Forwarded","data":{"direction":"client-to-broker","bytes":67}}
+{"atUtc":"2026-10-20T01:51:14.3461176+00:00","elapsedMs":747.7127,"eventType":"Forwarded","data":{"direction":"broker-to-client","bytes":9}}
+{"atUtc":"2026-10-20T01:51:14.5933878+00:00","elapsedMs":994.9836,"eventType":"ControlApplied","data":{"sequence":1,"action":"block","blocked":true}}
+{"atUtc":"2026-10-20T01:51:19.4531128+00:00","elapsedMs":5854.7086,"eventType":"Forwarded","data":{"direction":"client-to-broker","bytes":2}}
+{"atUtc":"2026-10-20T01:51:19.454272+00:00","elapsedMs":5855.8674,"eventType":"Dropped","data":{"direction":"broker-to-client","bytes":2}}
+{"atUtc":"2026-10-20T01:51:19.6180657+00:00","elapsedMs":6019.6618,"eventType":"ControlApplied","data":{"sequence":2,"action":"resume","blocked":false}}
+{"atUtc":"2026-10-20T01:51:19.6793301+00:00","elapsedMs":6080.9261,"eventType":"Forwarded","data":{"direction":"client-to-broker","bytes":63}}
+{"atUtc":"2026-10-20T01:51:19.6803584+00:00","elapsedMs":6081.9535,"eventType":"Forwarded","data":{"direction":"broker-to-client","bytes":9}}
+{"atUtc":"2026-10-20T01:51:19.6840958+00:00","elapsedMs":6085.6909,"eventType":"Forwarded","data":{"direction":"client-to-broker","bytes":4}}
+{"atUtc":"2026-10-20T01:51:19.6847064+00:00","elapsedMs":6086.3014,"eventType":"Eof","data":{"direction":"broker-to-client"}}
+{"atUtc":"2026-10-20T01:51:19.6858539+00:00","elapsedMs":6087.4489,"eventType":"Eof","data":{"direction":"client-to-broker"}}
+{"atUtc":"2026-10-20T01:51:19.6864065+00:00","elapsedMs":6088.0014,"eventType":"SessionClosed","data":{}}
+{"atUtc":"2026-10-20T01:51:19.68666+00:00","elapsedMs":6088.2549,"eventType":"Stopped","data":{}}

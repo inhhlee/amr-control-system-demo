@@ -1,0 +1,13 @@
+{
+  "startedAtUtc": "2026-10-20T00:29:42.2442890+00:00",
+  "baseCommit": "d777ab7d8ef034d66a862343231268cd1476af24",
+  "branch": "feature/6-mqtt-keepalive",
+  "sdk": "10.0.401",
+  "os": "Microsoft Windows 10.0.26200",
+  "mqttnet": "5.2.0.1603",
+  "sourceState": "Test-only obsolete MqttUserProperty constructor replaced. Product and manual-tool sources unchanged since actual C2 run.",
+  "previousRun": "20261020-c2-unit-01",
+  "actualRun": "20261020-c2-mqtt-01",
+  "build": "dotnet build AmrControlSystem.slnx --no-restore --verbosity minimal",
+  "test": "dotnet test AmrControlSystem.slnx --no-build --no-restore"
+}

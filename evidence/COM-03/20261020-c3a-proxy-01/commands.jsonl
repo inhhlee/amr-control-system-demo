@@ -1,0 +1,10 @@
+{"program":"docker","arguments":["version","--format","{{.Client.Version}} / {{.Server.Version}}"],"atUtc":"2026-10-20T01:06:41.8267775+00:00","exitCode":0}
+{"program":"docker","arguments":["ps","-a","--format","{{json .}}"],"atUtc":"2026-10-20T01:06:42.0105767+00:00","exitCode":0}
+{"program":"docker","arguments":["image","inspect","eclipse-mosquitto:2.1.2-alpine","--format","{{.Id}}"],"atUtc":"2026-10-20T01:06:42.1890846+00:00","exitCode":0}
+{"program":"docker","arguments":["run","--detach","--pull","never","--name","amr-c3a-20261020-c3a-proxy-01","--label","amr.c3a.run=20261020-c3a-proxy-01","--publish","127.0.0.1::1883","--mount","type=bind,source=C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c3a-proxy-01/broker.conf,target=/mosquitto/config/mosquitto.conf,readonly","eclipse-mosquitto:2.1.2-alpine"],"atUtc":"2026-10-20T01:06:43.5770781+00:00","exitCode":0}
+{"program":"docker","arguments":["port","988e8ce97cad31eae9c94d9cb506d1cfec6cb1075e3ca9be8f2ad058f3f7e47c","1883/tcp"],"atUtc":"2026-10-20T01:06:43.9005167+00:00","exitCode":0}
+{"program":"docker","arguments":["logs","--timestamps","988e8ce97cad31eae9c94d9cb506d1cfec6cb1075e3ca9be8f2ad058f3f7e47c"],"atUtc":"2026-10-20T01:06:44.0609802+00:00","exitCode":0}
+{"program":"docker","arguments":["logs","--timestamps","988e8ce97cad31eae9c94d9cb506d1cfec6cb1075e3ca9be8f2ad058f3f7e47c"],"atUtc":"2026-10-20T01:06:46.0320366+00:00","exitCode":0}
+{"program":"docker","arguments":["stop","--time","5","988e8ce97cad31eae9c94d9cb506d1cfec6cb1075e3ca9be8f2ad058f3f7e47c"],"atUtc":"2026-10-20T01:06:46.1762381+00:00","exitCode":0}
+{"program":"docker","arguments":["rm","988e8ce97cad31eae9c94d9cb506d1cfec6cb1075e3ca9be8f2ad058f3f7e47c"],"atUtc":"2026-10-20T01:06:46.5808356+00:00","exitCode":0}
+{"program":"docker","arguments":["ps","-a","--format","{{json .}}"],"atUtc":"2026-10-20T01:06:46.7399269+00:00","exitCode":0}

@@ -1,0 +1,10 @@
+2026-10-20T01:06:43.778273571Z 1792458403: mosquitto version 2.1.2 starting
+2026-10-20T01:06:43.778233576Z 1792458403: Info: running mosquitto as user: mosquitto.
+2026-10-20T01:06:43.778281127Z 1792458403: Config loaded from /mosquitto/config/mosquitto.conf.
+2026-10-20T01:06:43.778282399Z 1792458403: Bridge support available.
+2026-10-20T01:06:43.778283179Z 1792458403: Persistence support available.
+2026-10-20T01:06:43.778283910Z 1792458403: TLS support available.
+2026-10-20T01:06:43.778284590Z 1792458403: TLS-PSK support available.
+2026-10-20T01:06:43.778285241Z 1792458403: Websockets support available.
+2026-10-20T01:06:43.778285887Z 1792458403: Opening ipv4 listen socket on port 1883.
+2026-10-20T01:06:43.778322116Z 1792458403: mosquitto version 2.1.2 running

@@ -1,0 +1,11 @@
+{"program":"docker","arguments":["version","--format","{{.Client.Version}} / {{.Server.Version}}"],"atUtc":"2026-10-20T01:51:10.5205457+00:00","exitCode":0}
+{"program":"docker","arguments":["ps","-a","--format","{{json .}}"],"atUtc":"2026-10-20T01:51:10.6972145+00:00","exitCode":0}
+{"program":"docker","arguments":["image","inspect","eclipse-mosquitto:2.1.2-alpine","--format","{{.Id}}"],"atUtc":"2026-10-20T01:51:10.8781635+00:00","exitCode":0}
+{"program":"docker","arguments":["run","--detach","--pull","never","--name","amr-c3a-20261020-c3b-c3a-regression-01","--label","amr.c3a.run=20261020-c3b-c3a-regression-01","--publish","127.0.0.1::1883","--mount","type=bind,source=C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c3b-c3a-regression-01/broker.conf,target=/mosquitto/config/mosquitto.conf,readonly","eclipse-mosquitto:2.1.2-alpine"],"atUtc":"2026-10-20T01:51:12.2208096+00:00","exitCode":0}
+{"program":"docker","arguments":["port","085015b91d810de2f6bdf40eed96844b94d601f8f406ea62c188b2f8bd0d5ecb","1883/tcp"],"atUtc":"2026-10-20T01:51:12.5365037+00:00","exitCode":0}
+{"program":"docker","arguments":["logs","--timestamps","085015b91d810de2f6bdf40eed96844b94d601f8f406ea62c188b2f8bd0d5ecb"],"atUtc":"2026-10-20T01:51:12.6811122+00:00","exitCode":0}
+{"program":"docker","arguments":["logs","--timestamps","085015b91d810de2f6bdf40eed96844b94d601f8f406ea62c188b2f8bd0d5ecb"],"atUtc":"2026-10-20T01:51:19.7761894+00:00","exitCode":0}
+{"program":"docker","arguments":["logs","--timestamps","085015b91d810de2f6bdf40eed96844b94d601f8f406ea62c188b2f8bd0d5ecb"],"atUtc":"2026-10-20T01:51:19.9256655+00:00","exitCode":0}
+{"program":"docker","arguments":["stop","--time","5","085015b91d810de2f6bdf40eed96844b94d601f8f406ea62c188b2f8bd0d5ecb"],"atUtc":"2026-10-20T01:51:20.0674933+00:00","exitCode":0}
+{"program":"docker","arguments":["rm","085015b91d810de2f6bdf40eed96844b94d601f8f406ea62c188b2f8bd0d5ecb"],"atUtc":"2026-10-20T01:51:20.4907965+00:00","exitCode":0}
+{"program":"docker","arguments":["ps","-a","--format","{{json .}}"],"atUtc":"2026-10-20T01:51:20.6475057+00:00","exitCode":0}

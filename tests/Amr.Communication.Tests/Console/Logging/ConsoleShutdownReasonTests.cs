@@ -8,11 +8,113 @@ using Serilog;
 using Serilog.Core;
 using Serilog.Events;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Amr.Communication.Tests;
 
-public sealed class ConsoleShutdownReasonTests
+public sealed class ConsoleShutdownReasonTests(ITestOutputHelper testOutput)
 {
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public async Task DuplicateDisconnect_WhileFirstCallbackIsInFlight_ShutsDownOnce(bool subscribed)
+    {
+        using var release = new ManualResetEventSlim();
+        var entered = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+        await using var run = new Run(e =>
+        {
+            if (EventType(e) != "ConnectionLost") return;
+            entered.TrySetResult();
+            if (!release.Wait(TimeSpan.FromSeconds(3))) throw new TimeoutException("Test callback gate timed out");
+        });
+        await run.ConnectAsync(subscribed);
+        var callback = run.Client.CaptureDisconnectedCallback();
+        var notification = new MqttClientDisconnectedEventArgs(true, null,
+            MqttClientDisconnectReason.UnspecifiedError, null, null, null);
+        run.Client.IsConnected = false;
+        Task first = Task.Run(() => callback(notification));
+        try
+        {
+            await entered.Task.WaitAsync(TimeSpan.FromSeconds(3));
+            // The winner is inside logging, before setting exitCode and canceling the wait.
+            await Task.WhenAll(Enumerable.Range(0, 8).Select(_ => Task.Run(() => callback(notification))))
+                .WaitAsync(TimeSpan.FromSeconds(3));
+            run.User.Cancel();
+            Assert.False(run.Completion.IsCompleted);
+            Assert.Single(run.Sink.Events, e => EventType(e) == "ConnectionLost");
+            testOutput.WriteLine($"Subscribed={subscribed} Order=first-lost-held -> 8-duplicates-completed -> user-cancel -> first-released; CompletionBeforeRelease=False");
+        }
+        finally { release.Set(); }
+        await first.WaitAsync(TimeSpan.FromSeconds(3));
+        await run.AssertResultAsync("ConnectionLost", 1);
+        Assert.Equal(0, run.Client.DisconnectCalls);
+        WriteEvidence(run);
+    }
+
+    [Theory]
+    [InlineData(false, false)]
+    [InlineData(false, true)]
+    [InlineData(true, false)]
+    [InlineData(true, true)]
+    public async Task CapturedDisconnect_AfterExit_CannotChangeResultOrReconnect(bool subscribed, bool lostFirst)
+    {
+        await using var run = new Run();
+        await run.ConnectAsync(subscribed);
+        var staleCallback = run.Client.CaptureDisconnectedCallback();
+        if (lostFirst) await run.LoseConnectionAsync();
+        else run.User.Cancel();
+        await run.AssertResultAsync(lostFirst ? "ConnectionLost" : "UserCanceled", lostFirst ? 1 : 0);
+        string finalOutput = run.Output.ToString();
+        var finalEvents = run.Sink.Events.ToArray();
+        int disconnectCalls = run.Client.DisconnectCalls;
+        var late = new MqttClientDisconnectedEventArgs(true, null,
+            MqttClientDisconnectReason.UnspecifiedError, null, null, null);
+        // Calling the captured delegate is stronger than publishing to an empty event list.
+        await staleCallback(late).WaitAsync(TimeSpan.FromSeconds(3));
+        await staleCallback(late).WaitAsync(TimeSpan.FromSeconds(3));
+        await run.Client.NotifyDisconnectedAsync(late);
+        run.User.Cancel();
+        Assert.Equal(finalOutput, run.Output.ToString());
+        Assert.Equal(finalEvents, run.Sink.Events.ToArray());
+        Assert.Equal(disconnectCalls, run.Client.DisconnectCalls);
+        Assert.Equal(1, run.Client.ConnectCalls);
+        await run.AssertResultAsync(lostFirst ? "ConnectionLost" : "UserCanceled", lostFirst ? 1 : 0);
+        testOutput.WriteLine($"Subscribed={subscribed} LostFirst={lostFirst} Order=terminal-exit -> captured-late-callback-twice -> event-notify -> user-cancel; OutputAndEventsUnchanged=True");
+        WriteEvidence(run);
+    }
+
+    [Fact]
+    public async Task UserCancellation_ThenDisconnectDuringExplicitCleanup_RemainsExitZero()
+    {
+        await using var run = new Run(holdDisconnect: true);
+        await run.ConnectAsync(true);
+        var callback = run.Client.CaptureDisconnectedCallback();
+        run.User.Cancel();
+        try
+        {
+            await run.Client.DisconnectEntered.Task.WaitAsync(TimeSpan.FromSeconds(3));
+            Assert.False(run.Completion.IsCompleted);
+            Assert.Equal(0, run.Client.DisposeCalls);
+            Assert.Equal(MqttClientDisconnectOptionsReason.NormalDisconnection, run.Client.DisconnectOptions!.Reason);
+            run.Client.IsConnected = false;
+            await callback(new(true, null, MqttClientDisconnectReason.NormalDisconnection, null, null, null));
+            await callback(new(true, null, MqttClientDisconnectReason.UnspecifiedError, null, null, null));
+            Assert.False(run.Completion.IsCompleted);
+            Assert.DoesNotContain(run.Sink.Events, e => EventType(e) == "ConnectionLost");
+            testOutput.WriteLine("Order=user-cancel -> explicit-disconnect-held -> normal-and-unexpected-callbacks -> disconnect-released; CompletionBeforeRelease=False");
+        }
+        finally { run.Client.DisconnectCompletion.TrySetResult(); }
+        await run.AssertResultAsync("UserCanceled", 0);
+        Assert.Equal(1, run.Client.DisconnectCalls);
+        WriteEvidence(run);
+    }
+
+    private void WriteEvidence(Run run)
+    {
+        testOutput.WriteLine($"ClientId={run.Client.Options.ClientId} Connected={run.Client.IsConnected} DisposeCalls={run.Client.DisposeCalls} DisconnectCalls={run.Client.DisconnectCalls} MessageHandlers={run.Client.MessageHandlerCount} DisconnectHandlers={run.Client.DisconnectedHandlerCount}");
+        testOutput.WriteLine(run.Output.ToString());
+    }
+
     [Theory]
     [InlineData(false, "user")]
     [InlineData(true, "user")]
@@ -88,6 +190,41 @@ public sealed class ConsoleShutdownReasonTests
         }
     }
 
+    [Theory]
+    [InlineData(MqttClientDisconnectReason.ServerShuttingDown, false)]
+    [InlineData(MqttClientDisconnectReason.NormalDisconnection, false)]
+    [InlineData(MqttClientDisconnectReason.UnspecifiedError, true)]
+    public async Task UnexpectedDisconnect_RecordsSafeCauseAndTime_AndNeverTreatsProtocolCodeAsUserCancel(
+        MqttClientDisconnectReason mqttReason, bool transportError)
+    {
+        await using var run = new Run();
+        await run.ConnectAsync(true);
+        const string secret = "must-not-log-secret\r\nforged-event";
+        Exception? exception = transportError
+            ? new IOException(secret, new System.Net.Sockets.SocketException((int)System.Net.Sockets.SocketError.ConnectionReset))
+            : null;
+        var before = DateTimeOffset.UtcNow;
+        run.Client.IsConnected = false;
+        await run.Client.NotifyDisconnectedAsync(new(true, null, mqttReason, secret,
+            [new MqttUserProperty("private", new ArraySegment<byte>(System.Text.Encoding.UTF8.GetBytes(secret)))], exception));
+        await run.AssertResultAsync("ConnectionLost", 1);
+        var after = DateTimeOffset.UtcNow;
+        var lost = Assert.Single(run.Sink.Events, e => EventType(e) == "ConnectionLost");
+        Assert.Equal(LogEventLevel.Warning, lost.Level);
+        Assert.Equal(mqttReason.ToString(), Property(lost, "Reason"));
+        Assert.Equal("True", Property(lost, "ClientWasConnected"));
+        Assert.Equal(transportError ? "IOException" : "None", Property(lost, "ExceptionType"));
+        Assert.Equal(transportError ? "ConnectionReset" : "None", Property(lost, "SocketError"));
+        Assert.Equal(run.Client.Options.ClientId, Property(lost, "ClientId"));
+        var detected = Assert.IsType<DateTimeOffset>(((ScalarValue)lost.Properties["DetectedAtUtc"]).Value);
+        Assert.Equal(TimeSpan.Zero, detected.Offset);
+        Assert.InRange(detected, before, after);
+        Assert.Contains($"ConnectionLost Reason={mqttReason} ClientWasConnected=True", run.Output.ToString());
+        Assert.Contains("ShutdownRequested Reason=ConnectionLost", run.Output.ToString());
+        Assert.DoesNotContain(secret, run.Output.ToString());
+        Assert.All(run.Sink.Events, e => Assert.DoesNotContain(secret, string.Join(";", e.Properties)));
+    }
+
     private static string EventType(LogEvent e) => Property(e, "EventType");
     private static string Property(LogEvent e, string name) => ((ScalarValue)e.Properties[name]).Value!.ToString()!;
 
@@ -101,11 +238,11 @@ public sealed class ConsoleShutdownReasonTests
         private readonly Logger _logger;
         internal Task<int> Completion { get; }
 
-        internal Run(Action<LogEvent>? onEmit = null)
+        internal Run(Action<LogEvent>? onEmit = null, bool holdDisconnect = false)
         {
             Sink = new Capture(onEmit);
             _logger = new LoggerConfiguration().WriteTo.Sink(Sink).CreateLogger();
-            Client.DisconnectCompletion.SetResult();
+            if (!holdDisconnect) Client.DisconnectCompletion.SetResult();
             Client.UnsubscribeResponse.SetResult(new MqttClientUnsubscribeResult(2,
                 MessageSubscription.TopicFilters.Select(t => new MqttClientUnsubscribeResultItem(t,
                     MqttClientUnsubscribeResultCode.Success)).ToList(), "", []));
@@ -143,6 +280,10 @@ public sealed class ConsoleShutdownReasonTests
             Assert.Equal("", Error.ToString());
             Assert.Equal(1, Client.DisposeCalls);
             Assert.Equal(0, Client.MessageHandlerCount);
+            Assert.Equal(0, Client.DisconnectedHandlerCount);
+            Assert.False(Client.IsConnected);
+            foreach (string lifecycle in new[] { "QueueStopped", "SubscriptionStopped", "Disposed" })
+                Assert.Single(Sink.Events, e => EventType(e) == lifecycle);
         }
 
         public async ValueTask DisposeAsync()

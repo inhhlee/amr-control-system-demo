@@ -1,0 +1,14 @@
+{
+  "checkedAtUtc": "2026-10-20T00:31:37.8957211+00:00",
+  "actualSnapshotFiles": 71,
+  "changedSinceActual": [
+    "tests/Amr.Communication.Tests/Console/Logging/ConsoleShutdownReasonTests.cs"
+  ],
+  "changeReason": "Only test MqttUserProperty obsolete string constructor replaced with byte segment; no expected result relaxed.",
+  "productAndManualToolMismatches": 0,
+  "binaryFiles": 4,
+  "binaryMismatches": 0,
+  "finalUnitRun": "20261020-c2-unit-02",
+  "finalUnitSourceFiles": 69,
+  "finalUnitSourceMismatches": 0
+}

@@ -1,0 +1,12 @@
+{
+  "startedAtUtc": "2026-10-20T00:25:59.4775469+00:00",
+  "baseCommit": "d777ab7d8ef034d66a862343231268cd1476af24",
+  "branch": "feature/6-mqtt-keepalive",
+  "os": "Microsoft Windows 10.0.26200",
+  "sdk": "10.0.401",
+  "mqttnet": "5.2.0.1603",
+  "sourceState": "C1 uncommitted work preserved; C2 logging and 3 new theory cases uncommitted",
+  "build": "dotnet build AmrControlSystem.slnx --no-restore --verbosity minimal",
+  "test": "dotnet test AmrControlSystem.slnx --no-build --no-restore",
+  "scope": "full unit regression with FakeMqttClient; real Broker tested separately"
+}

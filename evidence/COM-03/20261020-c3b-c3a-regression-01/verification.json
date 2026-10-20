@@ -1,0 +1,51 @@
+{
+  "result": "passed",
+  "scope": "C3a environment only; no timeout/detection verdict",
+  "session": {
+    "clientId": "amr-demo-585f691d52de4deca3599ce53aa16b27",
+    "keepAliveSeconds": "5",
+    "productPid": 39816,
+    "proxyPort": 50643,
+    "readyAtUtc": "2026-10-20T01:51:14.3694764+00:00"
+  },
+  "block": {
+    "atUtc": "2026-10-20T01:51:14.5933878+00:00",
+    "elapsedMs": 994.9836,
+    "eventType": "ControlApplied",
+    "data": {
+      "sequence": 1,
+      "action": "block",
+      "blocked": true
+    }
+  },
+  "firstDiscard": {
+    "atUtc": "2026-10-20T01:51:19.454272+00:00",
+    "elapsedMs": 5855.8674,
+    "eventType": "Dropped",
+    "data": {
+      "direction": "broker-to-client",
+      "bytes": 2
+    }
+  },
+  "resume": {
+    "atUtc": "2026-10-20T01:51:19.6180657+00:00",
+    "elapsedMs": 6019.6618,
+    "eventType": "ControlApplied",
+    "data": {
+      "sequence": 2,
+      "action": "resume",
+      "blocked": false
+    }
+  },
+  "blockedBytes": 2.0,
+  "proxyTcpLegsEstablished": 2,
+  "productSocketEstablished": true,
+  "blockedIncomingForwards": 0,
+  "outgoingForwardingContinued": true,
+  "console": {
+    "productPid": 39816,
+    "exitCode": 0,
+    "normalCleanup": true,
+    "completedAtUtc": "2026-10-20T01:51:19.7169175+00:00"
+  }
+}

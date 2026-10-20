@@ -1,0 +1,24 @@
+{
+  "checkedAtUtc": "2026-10-20T02:07:06.2027374+00:00",
+  "changedOriginals": [
+    "C:\\process-plan\\관제시스템 과제 진행\\전체일정.md",
+    "C:\\process-plan\\관제시스템 과제 진행\\과제1\\이슈\\README.md",
+    "C:\\process-plan\\관제시스템 과제 진행\\과제1\\이슈\\04_COM-03_연결유지와_끊김감지.md",
+    "C:\\process-plan\\관제시스템 과제 진행\\과제1\\과제계획.md",
+    "C:\\process-plan\\일일업무\\2026-10-20.md",
+    "C:\\process-plan\\관제시스템 과제 진행\\과제1\\산출물\\2026-10-20_COM03-C4_경합과최종취합_20261020-c4-unit-02_검증결과.md"
+  ],
+  "htmlChanged": [
+    "C:\\process-plan\\보기본\\과제1_과제계획.html"
+  ],
+  "beforeHashes": {
+    "C:\\process-plan\\관제시스템 과제 진행\\과제1\\이슈\\README.md": "74EE2176C8202BFE683E5100DA162DB2E7B7AB0A500E8B710E4F3BDF3A8E827D",
+    "C:\\process-plan\\관제시스템 과제 진행\\과제1\\과제계획.md": "A87E4DB0F6C63844076177C43E951E976D2D96B25B4B86BA730C01FED7A6905F",
+    "C:\\process-plan\\일일업무\\2026-10-20.md": "04F38D8CB0C02584A08D6FEAC3973F0813C7B7B40CE6A22CE075B2A7933A8CEF",
+    "C:\\process-plan\\관제시스템 과제 진행\\과제1\\이슈\\04_COM-03_연결유지와_끊김감지.md": "BA104629F0D2BEAB731A11DDE38834F459C5579D0EDBCFEE7E827AC3ADD33253",
+    "C:\\process-plan\\관제시스템 과제 진행\\전체일정.md": "033B48AFA19105AE81C67E04C6B3F522F8925CF725BB938A68A87BF6AA6BBDF8"
+  },
+  "planVersion": "v0.47",
+  "guideVersion": "v0.11",
+  "scheduleVersion": "v0.36"
+}

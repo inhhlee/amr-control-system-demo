@@ -1,0 +1,19 @@
+{
+  "scope": "C4 deterministic IMqttClient callback ordering; not real MQTT fault injection",
+  "baseline": "d777ab7d8ef034d66a862343231268cd1476af24 plus existing C2 product changes",
+  "orderControl": "TaskCompletionSource and ManualResetEventSlim; no timing sleeps",
+  "watchdogSeconds": 3,
+  "cases": [
+    "First disconnect held before exit/cancel; eight duplicate callbacks finish and user cancellation cannot release the wait; then first callback released (subscribing/subscribed)",
+    "User cancellation enters explicit DisconnectAsync; normal and unexpected callbacks arrive while completion is held; then release cleanup",
+    "User/lost terminal result at subscribing/subscribed; invoke captured stale callback twice after disposal, then event notification and user cancel; output/events/result unchanged"
+  ],
+  "expected": {
+    "lostFirst": "ConnectionLost once, ShutdownRequested ConnectionLost, exit 1",
+    "userFirst": "No ConnectionLost, ShutdownRequested UserCanceled, exit 0",
+    "cleanup": "QueueStopped/SubscriptionStopped/Disposed once; client disconnected; message and disconnect handlers zero; stderr empty",
+    "late": "No new output/events, no second connect/disconnect/dispose, no Connected resurrection"
+  },
+  "regression": "Build and one full automatic suite because the shared test double is extended; includes existing B3 late-connect and first-cause tests",
+  "reuse": "C1-C3b real network evidence only if product hashes still match; historical A/B compared by path/content and linked to final regression"
+}

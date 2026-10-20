@@ -1,0 +1,1 @@
+{"startedAtUtc":"2026-10-20T01:58:45.4391545+00:00","command":"dotnet build AmrControlSystem.slnx --no-restore --verbosity minimal","exitCode":1,"completedAtUtc":"2026-10-20T01:58:46.6200547+00:00"}

@@ -1,0 +1,5 @@
+InvalidOperation: C:\amr-control-system-demo\tests\manual\COM03-C\Verify-KeepAlive.ps1:38
+Line |
+  38 |              if ($text.Contains('WaitingForShutdown')) { break }
+     |                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | You cannot call a method on a null-valued expression.

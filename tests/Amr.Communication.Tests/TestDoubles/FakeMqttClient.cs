@@ -30,6 +30,12 @@ internal sealed class FakeMqttClient : IMqttClient
     public MqttClientSubscribeOptions? SubscribeOptions { get; private set; }
     public MqttClientUnsubscribeOptions? UnsubscribeOptions { get; private set; }
     public int MessageHandlerCount => ApplicationMessageReceivedAsync?.GetInvocationList().Length ?? 0;
+    public int DisconnectedHandlerCount => DisconnectedAsync?.GetInvocationList().Length ?? 0;
+    public TaskCompletionSource DisconnectEntered { get; } = new(TaskCreationOptions.RunContinuationsAsynchronously);
+
+    // Capture before unsubscribe to model a callback already queued by the transport.
+    public Func<MqttClientDisconnectedEventArgs, Task> CaptureDisconnectedCallback() =>
+        DisconnectedAsync ?? throw new InvalidOperationException("No disconnect handler registered");
 
     public Task ReceiveAsync(MqttApplicationMessage message) => ApplicationMessageReceivedAsync?.Invoke(
         new MqttApplicationMessageReceivedEventArgs("test-client", message, new MqttPublishPacket(), null)) ?? Task.CompletedTask;
@@ -54,6 +60,7 @@ internal sealed class FakeMqttClient : IMqttClient
     {
         DisconnectCalls++;
         DisconnectOptions = options;
+        DisconnectEntered.TrySetResult();
         await DisconnectCompletion.Task.WaitAsync(cancellationToken);
         IsConnected = false;
     }

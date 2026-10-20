@@ -1,0 +1,62 @@
+{
+  "capturedAtUtc": "2026-10-20T02:00:39.581Z",
+  "repository": "inhhlee/amr-control-system-demo",
+  "issues": [
+    {
+      "number": 4,
+      "url": "https://github.com/inhhlee/amr-control-system-demo/issues/4",
+      "title": "[COM-03][총괄] Broker 접속과 정상 종료",
+      "state": "closed",
+      "stateReason": "completed",
+      "closedAt": "2026-10-12T02:43:06Z",
+      "completionConditions": "- [x] 준비 결과가 반영된 기준 브랜치·문서 버전·기존 변경과 실제 대상 경로를 확인한다.\n- [x] 프로젝트 전용 Broker가 실제로 기동되고 호스트에서 MQTT 접속 승인을 받은 뒤에만 Connected가 표시된다.\n- [x] 적용 주소·설정·고유 Client ID가 기록되어 같은 실행의 콘솔·Broker 접속 로그를 대조할 수 있다.\n- [x] 연결된 콘솔에서 Ctrl+C 후 연결·자원이 정리되고 미처리 예외 없이 종료 코드 0으로 끝난다.\n- [x] 콘솔을 다시 실행하면 새 Client ID로 정상 연결하며 이전 실행의 연결·자원이 남지 않는다.\n- [x] 정상 수명주기 자동 시험과 실제 Broker 시험의 범위·결과를 구분하고 의존성 복원·빌드·관련 시험이 성공한다.\n- [x] README의 실제 명령·설정과 실행 ID·코드 버전·콘솔/Broker 로그·판정을 Issue·PR에 연결한다."
+    },
+    {
+      "number": 5,
+      "url": "https://github.com/inhhlee/amr-control-system-demo/issues/5",
+      "title": "[COM-03] 접속 실패와 대기 제한·취소 처리",
+      "state": "closed",
+      "stateReason": "completed",
+      "closedAt": "2026-10-19T15:09:22Z",
+      "completionConditions": "- [x] 서비스가 없는 것으로 확인한 로컬 포트 접속은 원인을 기록하고 Connected 없이 비정상 종료한다.\n- [x] MQTT 접속 거부·전송 실패·대기 제한·사용자 취소의 결과와 종료 이유를 시험에서 구분한다.\n- [x] 잘못된 호스트·포트·접속 대기 제한 입력은 실제 연결 시도 전에 거부된다.\n- [x] 응답을 완료하지 않는 시험 대역에서 설정한 접속 대기 제한과 사용자 취소가 구분되고 무한 대기가 없다.\n- [x] 실패·취소 뒤 자원이 해제되며 늦은 접속 결과가 종료 상태를 Connected로 바꾸지 않는다.\n- [x] 실패·취소 시험 뒤 새 프로세스의 정상 접속·Ctrl+C 종료가 가능하고 필요한 정상 수명주기 회귀가 통과한다.\n- [x] 환경 문제·코드 실패·시험 대역·실제 네트워크 결과를 구분한 명령·설정·로그·판정을 Issue·PR에 연결한다."
+    },
+    {
+      "number": 6,
+      "url": "https://github.com/inhhlee/amr-control-system-demo/issues/6",
+      "title": "[COM-03] 연결 유지와 끊김 감지 및 실습 검증 정리",
+      "state": "open",
+      "stateReason": null,
+      "closedAt": null,
+      "completionConditions": "- [ ] 무메시지 상태에서 적용 KeepAlive 2배 이상 실제 연결 유지와 PING 또는 이에 대응하는 프로토콜 진단 근거를 확인한다.\n- [ ] 실제 격리 Broker 정상 종료 후 사전에 정한 관찰 범위 안에 연결 상실·이유·시각이 기록된다.\n- [ ] 접속 후 응답 전달이 중단된 조건에서 감지 기준·허용 오차·실제 감지 시간을 비교할 수 있다.\n- [ ] 같은 단절의 중복 통지와 명시적 종료를 구분하며 늦은 알림이 종료 상태를 되돌리지 않는다.\n- [ ] Ctrl+C와 단절 경합에서도 자원 정리·종료가 가능하고 종료 이유와 코드가 일치한다.\n- [ ] Broker 복구 후 새 실행의 접속을 확인하고 자동 재접속 결과로 표시하지 않는다.\n- [ ] A~C의 유효한 정상·실패·대기 제한·취소·유지·단절 증거와 필요한 회귀 결과를 검토할 코드 버전에 연결한다.\n- [ ] 자동 시험·실제 Broker·프록시 조건의 적용 범위와 미실행·실패·감지 한계를 표시하고 README·Issue·PR·증거를 연결한다."
+    }
+  ],
+  "pullRequests": [
+    {
+      "number": 14,
+      "url": "https://github.com/inhhlee/amr-control-system-demo/pull/14",
+      "state": "closed",
+      "merged": true,
+      "base": "develop",
+      "head": "feature/4-integration-verification",
+      "mergeCommit": "98162c1c5c85c476260e26d96f0ad4ae98570916",
+      "mergedAt": "2026-10-12T02:42:33Z"
+    },
+    {
+      "number": 25,
+      "url": "https://github.com/inhhlee/amr-control-system-demo/pull/25",
+      "state": "closed",
+      "merged": true,
+      "base": "develop",
+      "head": "feature/5-mqtt-connect-failure",
+      "mergeCommit": "b4265aff198ead9d234c592cfaf9b89f9e217024",
+      "mergedAt": "2026-10-19T15:08:28Z"
+    }
+  ],
+  "issue6PullRequestQuery": {
+    "query": "repo:inhhlee/amr-control-system-demo head:feature/6-mqtt-keepalive",
+    "result": {
+      "issues": []
+    }
+  },
+  "mutationsPerformed": false
+}

@@ -3,7 +3,7 @@
 
 ## MQTT 명령 발행 (COM05-A / Issue #29)
 
-현재 작업은 [#29](https://github.com/inhhlee/amr-control-system-demo/issues/29)이며, develop `64df6f0`에서 만든 `feature/29-mqtt-command-publish`의 구현·시험 근거를 함께 게시한다. 사용자 요청에 따라 기존 AGENTS.md의 설계·검토·학습 설명 규칙도 포함한다. 아래 이전 Issue별 진행 문구·시험 수치는 당시 기록이다. #5와 #26은 각각 PR #25·#27로 develop에 병합되고 종료됐다. #29의 최신 PR·리뷰 상태는 Issue에서 확인하며 develop 병합·Issue 종료는 별도 단계다.
+현재 작업은 [#6의 C4 검증·A~C 최종 근거 취합](#com03c4-run)까지 완료했다. 같은 `feature/6-mqtt-keepalive`에서 중복 단절·늦은 알림·사용자 취소와 단절의 순서를 제어하는 신규 7건을 추가했고 전체 자동시험 768건·빌드 경고/오류 0을 확인했다. 기존 실제 C1~C3b 근거를 최종 제품 코드와 대조했다. [#6 완료조건 7개 충족·1개 부분 충족](evidence/COM-03/20261020-ac-summary-01/README.md)이며 실제 Issue·PR 게시 연결과 리뷰·병합·종료가 남아 있다. 앞선 #29 명령 발행은 [PR #30](https://github.com/inhhlee/amr-control-system-demo/pull/30) develop 반영·완료 종료 상태다. 아래 과거 단계·시험 수치는 당시 기록이다.
 
 ```powershell
 dotnet build AmrControlSystem.slnx --no-restore
@@ -138,6 +138,89 @@ dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj --no-bu
 ```
 
 `dotnet test`는 작성한 xUnit 자동시험 566개를 실행한다. 검사기 직접 호출과 시험 대역(Fake)을 사용하므로 Broker 없이 실행할 수 있다. `--list-tests`를 붙이면 실행하지 않고 이름만 나열한다. `--no-build`는 빌드를 생략하므로 소스를 수정했다면 먼저 다시 빌드한다.
+
+<a id="com03c4-run"></a>
+
+## 중복 단절·늦은 알림·종료 경합 및 A~C 취합 (COM03-C4 / Issue #6)
+
+첫 단절 콜백을 진행 중에 멈추고 중복 알림 8개·사용자 취소를 전달하는 경우, 사용자 취소 뒤 정상 해제를 기다리는 동안 단절이 오는 경우, 종료 전에 캡처한 콜백이 Dispose 뒤 실행되는 경우를 순서 제어로 확인했다. 최초 원인과 종료 코드가 유지되고 QueueStopped·SubscriptionStopped·Disposed는 각 1회, 이벤트 구독은 0으로 끝난다. 사용자 취소 우선은 종료 0, 단절 우선은 종료 1이다.
+
+```powershell
+dotnet build AmrControlSystem.slnx --no-restore --verbosity minimal
+dotnet test AmrControlSystem.slnx --no-build --no-restore --logger "trx;LogFileName=tests.trx" --results-directory evidence/COM-03/<새-실행ID>
+```
+
+[C4 자동시험 768건·사전 기준·원본 로그](evidence/COM-03/20261020-c4-unit-02/README.md)와 [A~C 최종 코드 유효성·#4/#5/#6 완료조건표](evidence/COM-03/20261020-ac-summary-01/README.md)를 참조한다. C4는 실제 Program이 Ctrl+C에서 전달하는 취소 경계와 MQTT 대역 알림의 순서 시험이다. 실제 OS/네트워크 동시 경합 전수 검증은 아니며, 실제 Ctrl+C·Broker·프록시 결과는 C2·C3b의 기존 증거다. 제품 소스·C3b 바이너리 4개가 같아 실제 MQTT를 다시 실행하지 않았다.
+
+현재 #6 원래 조건 1~7은 충족하며 8번의 실제 Issue·PR 게시 연결이 남아 있다. [PR 본문 초안](evidence/COM-03/20261020-ac-summary-01/PR.md)은 로컬 자료다. 커밋·푸시·PR·리뷰·병합·Issue 종료는 수행하지 않았다. 자동 재접속·AMR Heartbeat·GUI·Core·DB 및 과제1 전체 완료와 구분한다.
+
+<a id="com03c3b-run"></a>
+
+## COM03-C3b 응답 차단 후 감지 시간 (Issue #6, 부분 결과)
+
+C3a 프록시·격리 Broker·제품 콘솔을 재사용하고 같은 실행 도구에 감지 측정 모드를 추가했다. 제품·MQTT 설정·프록시 코드는 변경하지 않았다. 아래 명령은 응답 재개·Ctrl+C 없이 제품의 단절 감지·정리·종료 1을 관찰한다.
+
+```powershell
+pwsh -NoProfile -File tests/manual/COM03-C/Verify-ResponseGate.ps1 -RunId <새-측정ID> -MeasureTimeout -BlockDelaySeconds 0
+# 위상 차이 비교는 새 ID와 -BlockDelaySeconds 2로 실행한다.
+```
+
+사전 기준은 장애 전에 `criteria.json`에 저장한다. 현재 MQTTnet 5.2.0.1603·KeepAlive 5초에서 마지막 송신→감지 7.4~8.75초, 응답 폐기→감지 2.4~3.5초다. 차단→감지 기준에는 마지막 송신 이후 차단까지의 위상을 반영한다. [기준 산정·허용 오차](tools/COM-03/README.md#c3b-무응답-감지-시간-측정).
+
+두 실제 세션의 차단→감지는 **7.3297821초·5.3980114초**, 마지막 송신→감지는 **7.5744957초·7.6373481초**, 폐기→감지는 **2.5027692초·2.5050294초**였다. 모두 사전 범위 안이며 `MqttCommunicationTimedOutException`·ConnectionLost 1건·정리·종료 1이다. Broker는 감지 후에도 실행 중이었고 Client EOF로 프록시가 종료했다. 기존 컨테이너 3개 상태 보존·시험 자원 정리를 확인했다.
+
+[검증결과](evidence/COM-03/20261020-c3b-noresponse-02/README.md) · [사전 기준](evidence/COM-03/20261020-c3b-noresponse-02/criteria.json) · [실제 측정](evidence/COM-03/20261020-c3b-noresponse-02/measurement.json) · [원본 로그](evidence/COM-03/20261020-c3b-noresponse-02/proxy.jsonl).
+
+기존 C3a 모드도 같은 최종 도구로 재실행해 정상 종료 0을 확인했다. 제품·기존 시험 소스69개가 기존 761건 스냅샷과 일치해 자동시험을 반복하지 않았다. C4 및 A~C 최종 근거 취합·#6 전체는 남아 있다. 운영 SLA·실제 Seq·MQTT Explorer·자동 복구 결과로 확대하지 않는다. 커밋·푸시·PR·Issue 변경은 하지 않았다.
+
+<a id="com03c3a-run"></a>
+
+## COM03-C3a 접속 후 응답 차단 시험 환경 (Issue #6, 부분 결과)
+
+제품 소스와 기존 C1·C2 도구는 그대로 두고 [최소 TCP 프록시](tools/COM-03/README.md)와 실제 실행 도구를 추가했다. 별도 루프백 포트의 격리 Broker에 프록시를 경유해 접속·구독한 뒤 Broker→Client 응답만 폐기한다. MQTT 패킷을 해석하거나 PC 방화벽·기존 Broker를 조작하지 않는다.
+
+```powershell
+pwsh -NoProfile -File tests/manual/COM03-C/Verify-ResponseGate.ps1 -RunId <새-실행ID>
+```
+
+실행 중인 Docker Linux Engine·설치된 Mosquitto 이미지·PowerShell 7.5 이상·NetTCPIP이 필요하다. 실제 실행 03에서 같은 Client의 PINGRESP와 대응하는 응답 2바이트 폐기·응답 전달 0건, Client→Broker 전달 지속·양쪽 프록시 TCP와 제품 소켓 Established를 확인했다. 전달 재개 후 콘솔·프록시 종료 0, 시험 자원 정리·기존 컨테이너 3개 상태 보존이다. 접속 전 stop의 대기 취소·포트 반환도 확인했다.
+
+[최종 검증결과](evidence/COM-03/20261020-c3a-proxy-03/README.md) · [응답 전달·차단 원본](evidence/COM-03/20261020-c3a-proxy-03/proxy.jsonl) · [차단 중 소켓](evidence/COM-03/20261020-c3a-proxy-03/sockets-blocked.json) · [시작·차단·재개·종료·재실행 절차](tools/COM-03/README.md).
+
+C3a 도구·환경 검증 통과다. 제품 감지 시간·허용 오차·무응답 종료는 C3b이며 이번 정상 종료와 구분한다. C4·A~C 최종 취합·#6 전체 완료는 남아 있다. 기존 자동761건은 소스69개 해시 일치로 유효성을 대조했고 이번에 재실행하지 않았다. 실제 Seq·MQTT Explorer GUI·자동 복구는 이번 범위가 아니다. 커밋·푸시·PR·Issue 수정은 하지 않았다.
+
+<a id="com03c2-run"></a>
+
+## COM03-C2 단절 사유·Broker 종료·새 콘솔 접속 (Issue #6, 부분 결과)
+
+같은 `feature/6-mqtt-keepalive`에서 단절 콜백의 안전한 사유·예외 유형·소켓 오류·UTC 감지 시각·Client ID를 콘솔과 구조화 로그에 추가했다. 사용자 취소와 연결 상실은 기존 최초 종료 원인 선택을 유지하며 `ShutdownRequested Reason=...`도 콘솔에 기록한다. 자유 형식 Broker 사유·UserProperties·예외 메시지는 기록하지 않는다.
+
+```powershell
+dotnet build AmrControlSystem.slnx --no-restore --verbosity minimal
+pwsh -NoProfile -File tests/manual/COM03-C/Verify-BrokerShutdown.ps1 -RunId <새-실행ID>
+```
+
+Windows·PowerShell 7.5 이상·NetTCPIP 모듈·기동된 Docker Linux Engine·설치된 Mosquitto 이미지가 필요하다. 도구는 격리 컨테이너의 접속·구독 완료 후 정상 종료 요청부터 감지 10초·종료 관찰 15초를 사전 상한으로 검사한다. 동일 컨테이너를 재기동한 뒤 매핑 포트를 다시 조회하고 **새 콘솔 프로세스**를 시작한다. 기존 C1 제어 프로세스로 12초 유지·PING·Ctrl+C 정상 종료까지 회귀하며, 기존 컨테이너·설정·데이터는 보존한다. 실행 ID는 덮어쓰지 않는다.
+
+실제 결과: Broker 종료 요청 후 **53.4907ms에 감지·79.4166ms에 종료 관찰**, ConnectionLost 1건·큐/구독/Client 정리·**종료 1**. 동일 Broker 재기동 후 새 PID·Client ID로 접속·구독·**12.0829546초/PING 2쌍/종료 0**, 기존 컨테이너 3개 상태 보존. 동적 Host port는 56793→56796으로 바뀌었다. MQTTnet 사유 `NormalDisconnection`을 사용자 취소로 치환하지 않는다. 감지 시간은 이번 로컬 관찰값이며 운영 SLA·응답 차단 감지 제한이 아니다.
+
+[상세 결과](evidence/COM-03/20261020-c2-mqtt-01/README.md) · [단절 원본 로그](evidence/COM-03/20261020-c2-mqtt-01/lost.stdout.log) · [종료·감지 측정](evidence/COM-03/20261020-c2-mqtt-01/shutdown.json) · [최종 761건 자동시험](evidence/COM-03/20261020-c2-unit-02/README.md). 실제 Seq 수집은 재실행하지 않았으며 구조화 필드는 Capture sink 시험으로 확인했다. C3 응답 차단·C4 추가 경합·자동 복구는 남아 있다.
+
+
+<a id="com03c1-run"></a>
+
+## COM03-C1 KeepAlive 실제 연결 유지 (Issue #6, 부분 결과)
+
+C1 최초 시험의 작업 브랜치는 `feature/6-mqtt-keepalive`이며, develop `d777ab7`의 제품 코드를 변경하지 않고 C1만 실제 시험했다. KeepAlive 5초로 업무 메시지 없이 **12.0899808초**, 같은 Client ID의 **PINGREQ/PINGRESP 2쌍**, Broker PUBLISH 0건, Ctrl+C 정상 종료 0을 확인했다. 격리 시험 컨테이너는 정리했고 기존 컨테이너 3개 상태는 보존했다.
+
+```powershell
+pwsh -NoProfile -File tests/manual/COM03-C/Verify-KeepAlive.ps1 -RunId <새-실행ID>
+```
+
+Windows·PowerShell 7·기동된 Docker Linux Engine·설치된 `eclipse-mosquitto:2.1.2-alpine` 이미지가 필요하다. 도구는 콘솔 프로젝트를 `--no-restore`로 빌드하고 실행별 설정·별도 컨테이너·동적 루프백 포트를 준비한다. 기존 Broker 설정·데이터를 바꾸지 않으며 업무 발행자를 실행하지 않는다. 콘솔의 기존 네 Topic 구독과 MQTT 제어 패킷은 유지한다. Seq는 시험 자식 프로세스에서만 비활성화한다. 관찰 후 시험 프로세스에만 CTRL_C_EVENT를 보내 정상 해제·Dispose·종료를 확인하고 생성한 컨테이너만 정리한다. 기존 실행 ID는 거부한다.
+
+[검증결과](evidence/COM-03/20261020-c1-keepalive-02/README.md) · [PING 로그](evidence/COM-03/20261020-c1-keepalive-02/ping.log) · [원본 Broker 로그](evidence/COM-03/20261020-c1-keepalive-02/broker.log) · [최초 도구 실패](evidence/COM-03/20261020-c1-keepalive-01/README.md). C1 관찰 시간은 장애 감지 제한이 아니다. 연결 중 Broker 종료(C2)·승인 후 응답 차단(C3)·상세 경합(C4)은 남아 있고 #6 전체 완료·자동 복구 통과로 표시하지 않는다.
+
 
 <a id="com03b-run"></a>
 

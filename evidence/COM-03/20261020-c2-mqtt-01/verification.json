@@ -1,0 +1,61 @@
+{
+  "result": "passed",
+  "completedAtUtc": "2026-10-20T00:28:08.5307593+00:00",
+  "shutdown": {
+    "stopRequestedAtUtc": "2026-10-20T00:27:52.6794724+00:00",
+    "stopReturnedAtUtc": "2026-10-20T00:27:53.0759196+00:00",
+    "brokerFinishedAtUtc": "2026-10-20T00:27:52.729594431Z",
+    "brokerExitCode": 0,
+    "detectedAtUtc": "2026-10-20T00:27:52.7329631+00:00",
+    "detectionMilliseconds": 53.4907,
+    "productExitMilliseconds": 79.4166,
+    "controllerCompletionMilliseconds": 398.8346,
+    "productProcessGone": true,
+    "establishedSocketsAfterExit": 0,
+    "session": {
+      "clientId": "amr-demo-c2785509767c428a9451feabcab28047",
+      "productPid": 14992,
+      "port": 56793,
+      "detectedAtUtc": "2026-10-20T00:27:52.7329631+00:00",
+      "reason": "NormalDisconnection",
+      "exceptionType": "None",
+      "socketError": "None",
+      "clientWasConnected": true,
+      "connectionLostEvents": 1,
+      "exitCode": 1,
+      "exitedAtUtc": "2026-10-20T00:27:52.7588890+00:00",
+      "queueStopped": true,
+      "subscriptionStopped": true,
+      "disposed": true,
+      "seqEnabled": false
+    }
+  },
+  "restart": {
+    "restartRequestedAtUtc": "2026-10-20T00:27:54.8563393+00:00",
+    "sameContainerId": "e77d61a36ddfeca506c07745201f04bf9e64978043809568dc0eb7a3660c7bbd",
+    "recoveryEndpoint": "127.0.0.1:56796",
+    "method": "Explicit new process via the existing C1 controller, not automatic reconnect"
+  },
+  "recovery": {
+    "clientId": "amr-demo-5a004ca1c1c448dfb27790e3bf5ff3b9",
+    "keepAliveSeconds": 5.0,
+    "port": 56796,
+    "observedFromUtc": "2026-10-20T00:27:56.1663265+00:00",
+    "observedUntilUtc": "2026-10-20T00:28:08.2500716+00:00",
+    "observedSeconds": 12.0829546,
+    "ctrlCAtUtc": "2026-10-20T00:28:08.2721113+00:00",
+    "exitedAtUtc": "2026-10-20T00:28:08.3117818+00:00",
+    "exitCode": 0,
+    "consolePids": [
+      36396,
+      35848
+    ],
+    "productPid": 35848,
+    "businessMessagesInConsole": 0,
+    "seqEnabled": false
+  },
+  "recoveryPingRequests": 2,
+  "recoveryPingResponses": 2,
+  "businessPublishes": 0,
+  "automaticReconnectTested": false
+}
