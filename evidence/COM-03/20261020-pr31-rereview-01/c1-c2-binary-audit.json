@@ -1,0 +1,45 @@
+{
+  "pingAudit": [
+    {
+      "run": "20261020-pr31-c1-regression-01",
+      "keepAlive": 5.0,
+      "observedSeconds": 12.0615306,
+      "pingReq": 2,
+      "pingResp": 2,
+      "businessPublish": 0,
+      "exitCode": 0
+    },
+    {
+      "run": "20261020-pr31-c2-regression-01",
+      "keepAlive": 5.0,
+      "observedSeconds": 12.0050119,
+      "pingReq": 2,
+      "pingResp": 2,
+      "businessPublish": 0,
+      "exitCode": 0
+    }
+  ],
+  "c2DetectMilliseconds": 50.0696,
+  "c2ConnectionLostCount": 1,
+  "c2NewProcess": true,
+  "c2NewClient": true,
+  "binaryAudit": [
+    {
+      "id": "20261020-pr31-c2-regression-01",
+      "binaryFiles": 4,
+      "mismatches": 0
+    },
+    {
+      "id": "20261020-pr31-c3a-regression-01",
+      "binaryFiles": 4,
+      "mismatches": 0
+    },
+    {
+      "id": "20261020-pr31-c3b-regression-01",
+      "binaryFiles": 4,
+      "mismatches": 0
+    }
+  ],
+  "c1BinarySnapshot": "Not recorded; source snapshot and successful build/run logs are the C1 evidence",
+  "auditPreflight": "Initial read assumed a C1 binary snapshot and failed before writing this audit; corrected to report its actual absence."
+}

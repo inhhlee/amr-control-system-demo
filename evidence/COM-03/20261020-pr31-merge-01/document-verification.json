@@ -1,0 +1,9 @@
+{
+  "DocumentCount": 5,
+  "ChangedViews": [
+    "C:\\process-plan\\보기본\\과제1_과제계획.html"
+  ],
+  "UnchangedViews": 5,
+  "Result": "PASS",
+  "CheckerCorrection": "Single changed view is collected as an array before indexing; earlier scalar index assertion corrected without regenerating files."
+}

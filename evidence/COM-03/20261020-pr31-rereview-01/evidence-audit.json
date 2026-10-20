@@ -1,0 +1,87 @@
+{
+  "head": "55ac85491bed143f1eb33162fa9a601eec9d2853",
+  "greenToolSourceFiles": 6,
+  "greenSourceDifferences": 0,
+  "greenToCommitBlobDifferences": 0,
+  "unchangedProductFiles": 60,
+  "productDifferences": 0,
+  "oldRed": {
+    "proxyCases": 3,
+    "cleanupCases": 27,
+    "failed": 20,
+    "passed": false,
+    "completedAtUtc": "2026-10-20T11:30:33.0330363+09:00"
+  },
+  "oldGreen": {
+    "proxyCases": 3,
+    "cleanupCases": 27,
+    "failed": 0,
+    "passed": true,
+    "completedAtUtc": "2026-10-20T11:31:09.6716889+09:00"
+  },
+  "actualEvidence": [
+    {
+      "id": "20261020-pr31-c1-regression-01",
+      "sourceFiles": 40,
+      "sourceDifferences": 0,
+      "existingContainers": 3,
+      "stateDifferences": 0,
+      "ownedContainerAbsent": true,
+      "successfulOwnedStop": 1,
+      "successfulOwnedRemove": 1,
+      "verification": "passed"
+    },
+    {
+      "id": "20261020-pr31-c2-regression-01",
+      "sourceFiles": 72,
+      "sourceDifferences": 0,
+      "existingContainers": 3,
+      "stateDifferences": 0,
+      "ownedContainerAbsent": true,
+      "successfulOwnedStop": 2,
+      "successfulOwnedRemove": 1,
+      "verification": "passed"
+    },
+    {
+      "id": "20261020-pr31-c3a-regression-01",
+      "sourceFiles": 74,
+      "sourceDifferences": 0,
+      "existingContainers": 3,
+      "stateDifferences": 0,
+      "ownedContainerAbsent": true,
+      "successfulOwnedStop": 1,
+      "successfulOwnedRemove": 1,
+      "verification": "passed"
+    },
+    {
+      "id": "20261020-pr31-c3b-regression-01",
+      "sourceFiles": 74,
+      "sourceDifferences": 0,
+      "existingContainers": 3,
+      "stateDifferences": 0,
+      "ownedContainerAbsent": true,
+      "successfulOwnedStop": 1,
+      "successfulOwnedRemove": 1,
+      "verification": "passed"
+    }
+  ],
+  "c3bRecalculated": {
+    "blockToDetect": 5.3131973,
+    "sendToDetect": 7.5537873,
+    "discardToDetect": 2.5075987,
+    "discardToEof": 2.501807699999999,
+    "criteriaRecordedBeforeBlock": true,
+    "criteriaChangedFields": 0,
+    "responsesForwardedAfterBlock": 0,
+    "resumeOrStopControl": 0,
+    "firstEofDirection": "client-to-broker",
+    "exitCode": 1,
+    "ctrlCSent": false,
+    "exception": "MqttCommunicationTimedOutException",
+    "brokerStillRunning": true
+  },
+  "ciChecks": 0,
+  "ciStatuses": 0,
+  "actualMqttRerunInReview": false,
+  "productUnitTestsRerunInReview": false
+}
