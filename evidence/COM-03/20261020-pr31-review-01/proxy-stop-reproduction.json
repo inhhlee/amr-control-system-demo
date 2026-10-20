@@ -1,0 +1,1 @@
+{"head":"da1e64083f73e12fc5ec992ba3dab03bddcf6679","backpressureEstablished":true,"bytesSentByFakeBroker":393216,"blockAcknowledgedBeforeStop":false,"stopAcknowledgedWithin2Seconds":false,"proxyCompletedWithin2SecondsOfStop":false,"peerSocketsAndListenerDisposed":true,"forcedPeerClosureException":"IOException","verdict":"stop-stuck-behind-block"}

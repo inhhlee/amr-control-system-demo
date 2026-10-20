@@ -1,0 +1,65 @@
+{
+  "lastOutgoing": {
+    "atUtc": "2026-10-20T01:50:08.6472334+00:00",
+    "elapsedMs": 793.4712,
+    "eventType": "Forwarded",
+    "data": {
+      "direction": "client-to-broker",
+      "bytes": 67
+    }
+  },
+  "block": {
+    "atUtc": "2026-10-20T01:50:08.891947+00:00",
+    "elapsedMs": 1038.1853,
+    "eventType": "ControlApplied",
+    "data": {
+      "sequence": 1,
+      "action": "block",
+      "blocked": true
+    }
+  },
+  "firstDiscard": {
+    "atUtc": "2026-10-20T01:50:13.7189599+00:00",
+    "elapsedMs": 5865.1974,
+    "eventType": "Dropped",
+    "data": {
+      "direction": "broker-to-client",
+      "bytes": 2
+    }
+  },
+  "firstEof": {
+    "atUtc": "2026-10-20T01:50:16.2188444+00:00",
+    "elapsedMs": 8365.0824,
+    "eventType": "Eof",
+    "data": {
+      "direction": "client-to-broker"
+    }
+  },
+  "console": {
+    "clientId": "amr-demo-318d536fd57d41ea958d7c593251f44e",
+    "productPid": 27140,
+    "exitCode": 1,
+    "detectedAtUtc": "2026-10-20T01:50:16.2217291+00:00",
+    "reason": "NormalDisconnection",
+    "exceptionType": "MqttCommunicationTimedOutException",
+    "socketError": "None",
+    "exitObservedAtUtc": "2026-10-20T01:50:16.2486495+00:00",
+    "cleanupCompleted": true,
+    "ctrlCSent": false
+  },
+  "phaseSeconds": 0.24471410000000016,
+  "blockToDetectSeconds": 7.3297821,
+  "expectedBlockToDetectMinimumSeconds": 7.1552859,
+  "expectedBlockToDetectMaximumSeconds": 8.5052859,
+  "lastOutgoingToDetectSeconds": 7.5744957,
+  "firstDiscardToDetectSeconds": 2.5027692,
+  "firstDiscardToEofMonotonicSeconds": 2.4998849999999995,
+  "exitAfterDetectionSeconds": 0.0269204,
+  "blockRequestAtUtc": "2026-10-20T01:50:08.8685482+00:00",
+  "blockAckObservedMs": 50.132,
+  "detectionObservedMs": 7378.7999,
+  "monotonicBlockToObservationMinimumMs": 7328.6679,
+  "monotonicBlockToObservationMaximumMs": 7378.7999,
+  "wallVsMonotonicDriftMs": 0.7552999999998065,
+  "brokerStillRunning": true
+}

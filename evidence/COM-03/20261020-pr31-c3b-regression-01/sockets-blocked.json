@@ -1,0 +1,29 @@
+{
+  "atUtc": "2026-10-20T03:56:45.2696963+00:00",
+  "connections": [
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 57367,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 52957,
+      "State": 5,
+      "OwningProcess": 31468
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 57366,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 57365,
+      "State": 5,
+      "OwningProcess": 29028
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 57365,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 57366,
+      "State": 5,
+      "OwningProcess": 31468
+    }
+  ]
+}

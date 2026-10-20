@@ -1,0 +1,43 @@
+{
+  "recordedAtUtc": "2026-10-20T02:14:51.636Z",
+  "repository": "inhhlee/amr-control-system-demo",
+  "codeCommit": "bccb461554f14dd5b7456c07f4dec4d9ea9a3a99",
+  "base": "develop",
+  "branch": "feature/6-mqtt-keepalive",
+  "issue": {
+    "url": "https://github.com/inhhlee/amr-control-system-demo/issues/6",
+    "state": "open",
+    "completedConditions": 8,
+    "prLinked": true
+  },
+  "pullRequest": {
+    "url": "https://github.com/inhhlee/amr-control-system-demo/pull/31",
+    "number": 31,
+    "state": "open",
+    "merged": false,
+    "base": "develop",
+    "head": "feature/6-mqtt-keepalive",
+    "codeHeadAtVerification": "bccb461554f14dd5b7456c07f4dec4d9ea9a3a99",
+    "completedConditions": 8
+  },
+  "sourceAudit": "committed-source-audit.json",
+  "automaticTests": 768,
+  "failedTests": 0,
+  "skippedTests": 0,
+  "productTestsRerunDuringPublication": false,
+  "sourceChangedDuringPublication": false,
+  "stepsCompleted": [
+    "commit",
+    "git flow feature publish",
+    "develop PR create",
+    "attach PR artifact",
+    "Issue evidence/checklist update",
+    "PR checklist update"
+  ],
+  "remaining": [
+    "review",
+    "develop merge after user request",
+    "Issue close after merge verification"
+  ],
+  "documentationCommit": "Publication documentation follows codeCommit; this record is stored in that documentation commit."
+}

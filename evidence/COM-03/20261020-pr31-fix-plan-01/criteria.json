@@ -1,0 +1,8 @@
+{
+  "baseCommit": "da1e64083f73e12fc5ec992ba3dab03bddcf6679",
+  "scope": "PR31 R1/R2 test-tool error paths; preserve product behavior and existing C1-C4 acceptance criteria",
+  "r1": "With a nonreading TCP peer and a pending block or resume, stop must be acknowledged and RunAsync must succeed within the original 2-second observation limit before the harness closes peer sockets. Direct stop before accept must still succeed.",
+  "r2": "For each of the three manual runners, diagnostic retrieval or file-write failure must not suppress stop/rm/state-check attempts. Preserve the original runner error, collect cleanup failures, and target only the confirmed owned container ID.",
+  "regression": "Run C1, C2, C3a, C3b with the existing time/tolerance/exit criteria. Audit unchanged product and xUnit sources against the prior 768-pass result; do not count reused tests as new executions.",
+  "evidence": "Keep review failure evidence and new baseline/fix runs separately. Commit code, regression scripts and evidence on the same feature branch, update PR31/Issue6, leave both open without merging."
+}

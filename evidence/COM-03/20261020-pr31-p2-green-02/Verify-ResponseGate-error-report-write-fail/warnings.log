@@ -1,0 +1,1 @@
+Cleanup error report could not be written: Unable to clear content of 'C:\amr-control-system-demo\evidence\COM-03\20261020-pr31-p2-green-02\Verify-ResponseGate-error-report-write-fail\cleanup-failure.log' because it is a directory. Clear-Content is only supported on files.

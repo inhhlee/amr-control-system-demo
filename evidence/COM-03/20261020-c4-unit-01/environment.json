@@ -1,0 +1,11 @@
+{
+  "startedAtUtc": "2026-10-20T01:58:45.2617107+00:00",
+  "baseCommit": "d777ab7d8ef034d66a862343231268cd1476af24",
+  "branch": "feature/6-mqtt-keepalive",
+  "os": "Microsoft Windows NT 10.0.26200.0",
+  "sdk": "10.0.401",
+  "powershell": "7.6.5",
+  "mqttnet": "5.2.0.1603",
+  "scope": "C4 seven new deterministic cases + full regression; no product source changes in C4",
+  "criteriaSha256": "9305022369C5CE06106D1B1E09B9C1348BC5E54E236B20A97E1C6956167B8F7B"
+}

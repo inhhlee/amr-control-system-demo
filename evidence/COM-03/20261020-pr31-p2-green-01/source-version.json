@@ -1,0 +1,26 @@
+[
+  {
+    "path": "tools/COM-03/ResponseGateProxy.cs",
+    "sha256": "DC3D8F6011E646EC450CFC4747D219F27E1590320A59348B8F913FF4B8A9DFB8"
+  },
+  {
+    "path": "tests/manual/COM03-C/ToolRecoveryProbe.cs",
+    "sha256": "80F6D6249241F9666BB92C85A65789B7B558F0C5A9FEF8FE933E9B4CBCD8A69A"
+  },
+  {
+    "path": "tests/manual/COM03-C/Verify-ToolRecovery.ps1",
+    "sha256": "BF35438AE7DD8ABB12D068FA717C8676B800D585037581B0F8B1361C4FFA227A"
+  },
+  {
+    "path": "tests/manual/COM03-C/Verify-KeepAlive.ps1",
+    "sha256": "DBA3942DBBD8D8F0C6C6DDFD8B720062B99DCE6DA7348E9901A5567075F57CFC"
+  },
+  {
+    "path": "tests/manual/COM03-C/Verify-BrokerShutdown.ps1",
+    "sha256": "A13B32373CCDB3DB5C7451883F8C4385173C3536F863EF76627A3316C5E0CE98"
+  },
+  {
+    "path": "tests/manual/COM03-C/Verify-ResponseGate.ps1",
+    "sha256": "EA46BC410BBBCD3BBBC44B7E48236DCDC381EFB56B877E092CF998939BB14668"
+  }
+]

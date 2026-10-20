@@ -1,0 +1,13 @@
+{"program":"docker","arguments":["version","--format","{{.Client.Version}} / {{.Server.Version}}"],"startedAtUtc":"2026-10-20T00:18:58.2129715+00:00","exitCode":0}
+{"program":"docker","arguments":["ps","-a","--format","{{json .}}"],"startedAtUtc":"2026-10-20T00:18:58.4040729+00:00","exitCode":0}
+{"program":"docker","arguments":["image","inspect","eclipse-mosquitto:2.1.2-alpine","--format","{{.Id}}"],"startedAtUtc":"2026-10-20T00:18:58.5826469+00:00","exitCode":0}
+{"program":"docker","arguments":["run","--detach","--pull","never","--name","amr-c1-20261020-c1-keepalive-02","--label","amr.c1.run=20261020-c1-keepalive-02","--publish","127.0.0.1::1883","--mount","type=bind,source=C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c1-keepalive-02/broker.conf,target=/mosquitto/config/mosquitto.conf,readonly","eclipse-mosquitto:2.1.2-alpine"],"startedAtUtc":"2026-10-20T00:18:59.5184931+00:00","exitCode":0}
+{"program":"docker","arguments":["port","3c4a6516d9c66ee18bdaf2e82f082ed1d223b48174f60335e517b3798d137fa2","1883/tcp"],"startedAtUtc":"2026-10-20T00:18:59.8486067+00:00","exitCode":0}
+{"program":"docker","arguments":["inspect","3c4a6516d9c66ee18bdaf2e82f082ed1d223b48174f60335e517b3798d137fa2","--format","{{json .Mounts}}"],"startedAtUtc":"2026-10-20T00:19:00.0057118+00:00","exitCode":0}
+{"program":"docker","arguments":["logs","--timestamps","3c4a6516d9c66ee18bdaf2e82f082ed1d223b48174f60335e517b3798d137fa2"],"startedAtUtc":"2026-10-20T00:19:00.1531030+00:00","exitCode":0}
+{"program":"docker","arguments":["logs","--timestamps","3c4a6516d9c66ee18bdaf2e82f082ed1d223b48174f60335e517b3798d137fa2"],"startedAtUtc":"2026-10-20T00:19:13.5744129+00:00","exitCode":0}
+{"program":"docker","arguments":["logs","--timestamps","3c4a6516d9c66ee18bdaf2e82f082ed1d223b48174f60335e517b3798d137fa2"],"startedAtUtc":"2026-10-20T00:19:13.7698566+00:00","exitCode":0}
+{"program":"docker","arguments":["stop","--time","5","3c4a6516d9c66ee18bdaf2e82f082ed1d223b48174f60335e517b3798d137fa2"],"startedAtUtc":"2026-10-20T00:19:13.9127807+00:00","exitCode":0}
+{"program":"docker","arguments":["logs","--timestamps","3c4a6516d9c66ee18bdaf2e82f082ed1d223b48174f60335e517b3798d137fa2"],"startedAtUtc":"2026-10-20T00:19:14.3274314+00:00","exitCode":0}
+{"program":"docker","arguments":["rm","3c4a6516d9c66ee18bdaf2e82f082ed1d223b48174f60335e517b3798d137fa2"],"startedAtUtc":"2026-10-20T00:19:14.4756975+00:00","exitCode":0}
+{"program":"docker","arguments":["ps","-a","--format","{{json .}}"],"startedAtUtc":"2026-10-20T00:19:15.1517815+00:00","exitCode":0}

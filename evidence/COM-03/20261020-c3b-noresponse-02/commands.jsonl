@@ -1,0 +1,12 @@
+{"program":"docker","arguments":["version","--format","{{.Client.Version}} / {{.Server.Version}}"],"atUtc":"2026-10-20T01:50:36.6285180+00:00","exitCode":0}
+{"program":"docker","arguments":["ps","-a","--format","{{json .}}"],"atUtc":"2026-10-20T01:50:36.7947751+00:00","exitCode":0}
+{"program":"docker","arguments":["image","inspect","eclipse-mosquitto:2.1.2-alpine","--format","{{.Id}}"],"atUtc":"2026-10-20T01:50:36.9866715+00:00","exitCode":0}
+{"program":"docker","arguments":["run","--detach","--pull","never","--name","amr-c3b-20261020-c3b-noresponse-02","--label","amr.c3b.run=20261020-c3b-noresponse-02","--publish","127.0.0.1::1883","--mount","type=bind,source=C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c3b-noresponse-02/broker.conf,target=/mosquitto/config/mosquitto.conf,readonly","eclipse-mosquitto:2.1.2-alpine"],"atUtc":"2026-10-20T01:50:38.3448527+00:00","exitCode":0}
+{"program":"docker","arguments":["port","5ca5138a044604eee0f431e8efb30181c309165bebe41e0aceb8b42d21793a55","1883/tcp"],"atUtc":"2026-10-20T01:50:38.6534699+00:00","exitCode":0}
+{"program":"docker","arguments":["logs","--timestamps","5ca5138a044604eee0f431e8efb30181c309165bebe41e0aceb8b42d21793a55"],"atUtc":"2026-10-20T01:50:38.7986155+00:00","exitCode":0}
+{"program":"docker","arguments":["logs","--timestamps","5ca5138a044604eee0f431e8efb30181c309165bebe41e0aceb8b42d21793a55"],"atUtc":"2026-10-20T01:50:47.8911795+00:00","exitCode":0}
+{"program":"docker","arguments":["inspect","5ca5138a044604eee0f431e8efb30181c309165bebe41e0aceb8b42d21793a55","--format","{{json .State}}"],"atUtc":"2026-10-20T01:50:48.0453712+00:00","exitCode":0}
+{"program":"docker","arguments":["logs","--timestamps","5ca5138a044604eee0f431e8efb30181c309165bebe41e0aceb8b42d21793a55"],"atUtc":"2026-10-20T01:50:48.2033231+00:00","exitCode":0}
+{"program":"docker","arguments":["stop","--time","5","5ca5138a044604eee0f431e8efb30181c309165bebe41e0aceb8b42d21793a55"],"atUtc":"2026-10-20T01:50:48.3493360+00:00","exitCode":0}
+{"program":"docker","arguments":["rm","5ca5138a044604eee0f431e8efb30181c309165bebe41e0aceb8b42d21793a55"],"atUtc":"2026-10-20T01:50:48.7747327+00:00","exitCode":0}
+{"program":"docker","arguments":["ps","-a","--format","{{json .}}"],"atUtc":"2026-10-20T01:50:48.9308391+00:00","exitCode":0}

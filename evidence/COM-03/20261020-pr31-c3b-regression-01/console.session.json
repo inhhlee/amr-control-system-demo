@@ -1,0 +1,12 @@
+{
+  "clientId": "amr-demo-2f3d1816a5f84c63ae6bb6bdfbc6d0f7",
+  "productPid": 29028,
+  "exitCode": 1,
+  "detectedAtUtc": "2026-10-20T03:56:47.7529215+00:00",
+  "reason": "NormalDisconnection",
+  "exceptionType": "MqttCommunicationTimedOutException",
+  "socketError": "None",
+  "exitObservedAtUtc": "2026-10-20T03:56:47.7815209+00:00",
+  "cleanupCompleted": true,
+  "ctrlCSent": false
+}

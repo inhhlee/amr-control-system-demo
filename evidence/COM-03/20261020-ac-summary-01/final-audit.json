@@ -1,0 +1,20 @@
+{
+  "checkedAtUtc": "2026-10-20T02:07:51.5267697+00:00",
+  "branch": "feature/6-mqtt-keepalive",
+  "head": "d777ab7d8ef034d66a862343231268cd1476af24",
+  "localLinksChecked": 307,
+  "missingLinks": [],
+  "explicitAnchorsChecked": 3,
+  "sourceFilesAfterTest": 72,
+  "changedSourcesAfterTest": [],
+  "automaticTests": 768,
+  "newC4Tests": 7,
+  "C4LocalChecksCompleted": 6,
+  "issue6OriginalConditionsComplete": 7,
+  "issue6OriginalConditionsPartial": 1,
+  "codeDiffCheckExit": 0,
+  "documentDiffCheckExit": 0,
+  "realMqttRerun": false,
+  "remoteMutations": false,
+  "committed": false
+}

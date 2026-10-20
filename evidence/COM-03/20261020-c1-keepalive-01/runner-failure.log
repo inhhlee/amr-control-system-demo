@@ -1,0 +1,7 @@
+Exception: C:\amr-control-system-demo\tests\manual\COM03-C\Verify-KeepAlive.ps1:147
+Line |
+ 147 |  … d.ExitCode -ne 0) { throw 'Controller failed; see controller logs.' }
+     |                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Controller failed; see controller logs.
+
+

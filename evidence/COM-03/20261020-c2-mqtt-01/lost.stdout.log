@@ -1,0 +1,15 @@
+2026-10-20T00:27:52.5532128+00:00 Settings Host=127.0.0.1 Port=56793 ClientId=amr-demo-c2785509767c428a9451feabcab28047 MQTT=5 CleanStart=true SessionExpiry=0 KeepAliveSeconds=5 ConnectTimeoutSeconds=3 DisconnectTimeoutSeconds=3
+2026-10-20T00:27:52.5577023+00:00 Connecting
+2026-10-20T00:27:52.5906178+00:00 Connected
+2026-10-20T00:27:52.6034077+00:00 QueueReady CapacityPerAmr=256 AmrLimit=64 StopTimeoutSeconds=3 TestDelayAmr=null TestDelayMs=0
+2026-10-20T00:27:52.6048072+00:00 Subscribing TopicFilters=amr/+/heartbeat,amr/+/telemetry,amr/+/alarm,amr/+/ack QoS=0 PayloadPreview=False LimitBytes=256
+2026-10-20T00:27:52.6131535+00:00 Subscribed TopicFilters=amr/+/heartbeat,amr/+/telemetry,amr/+/alarm,amr/+/ack QoS=0
+2026-10-20T00:27:52.6133324+00:00 WaitingForShutdown: Ctrl+C로 정상 종료합니다.
+2026-10-20T00:27:52.7329631+00:00 ConnectionLost Reason=NormalDisconnection ClientWasConnected=True ExceptionType=None SocketError=None ClientId=amr-demo-c2785509767c428a9451feabcab28047
+2026-10-20T00:27:52.7355742+00:00 ShutdownRequested Reason=ConnectionLost
+2026-10-20T00:27:52.7427079+00:00 QueueEvent {"Code":"Stopped","AmrId":null,"Kind":null,"Count":0,"ExceptionType":null}
+2026-10-20T00:27:52.7428902+00:00 QueueStopped
+2026-10-20T00:27:52.7429452+00:00 Unsubscribing
+2026-10-20T00:27:52.7448124+00:00 SubscriptionStopped
+2026-10-20T00:27:52.7451442+00:00 Disposed
+2026-10-20T00:27:52.7452786+00:00 ExitCode=1

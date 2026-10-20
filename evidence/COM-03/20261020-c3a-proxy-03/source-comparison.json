@@ -1,0 +1,15 @@
+{
+  "scope": "Post-documentation source comparison; no product test rerun",
+  "currentRunSnapshot": "source-version.json",
+  "currentRunFilesChecked": 72,
+  "currentRunDifferences": [],
+  "previousUnitSnapshot": "../20261020-c2-unit-02/source-version.json",
+  "previousUnitFilesChecked": 69,
+  "previousUnitDifferences": [],
+  "previousUnitTests": 761,
+  "previousUnitTestsRerun": false,
+  "workspaceDocumentationLinksChecked": 140,
+  "workspaceMissingLinks": [],
+  "powershellScriptsParsed": 2,
+  "powershellParseErrors": 0
+}

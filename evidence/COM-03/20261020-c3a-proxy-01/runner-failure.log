@@ -1,0 +1,7 @@
+Exception: C:\amr-control-system-demo\tests\manual\COM03-C\Verify-ResponseGate.ps1:151
+Line |
+ 151 |  … f ($console.HasExited) { throw 'Console controller startup failed.' }
+     |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Console controller startup failed.
+
+

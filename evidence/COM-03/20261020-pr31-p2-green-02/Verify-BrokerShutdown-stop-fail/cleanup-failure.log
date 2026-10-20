@@ -1,0 +1,18 @@
+OperationStopped: C:\amr-control-system-demo\tests\manual\COM03-C\Verify-ToolRecovery.ps1:43
+Line |
+  43 |  … '-fail')) { throw [IO.IOException]::new("Injected $($Arguments[0]) fa …
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Injected stop failure
+
+OperationStopped: C:\amr-control-system-demo\tests\manual\COM03-C\Verify-ToolRecovery.ps1:48
+Line |
+  48 |  … op-fail') { throw [IO.IOException]::new('Cannot remove a running cont …
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot remove a running container
+
+Exception: 
+Line |
+  25 |  … re-Object Names -eq $name).Count) { throw 'Test container remains.' }
+     |                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Test container remains.
+

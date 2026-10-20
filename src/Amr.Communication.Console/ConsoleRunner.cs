@@ -86,8 +86,19 @@ internal static class ConsoleRunner
                     Interlocked.CompareExchange(ref shutdownReason, (int)ShutdownReason.ConnectionLost,
                         (int)ShutdownReason.None) == (int)ShutdownReason.None)
                 {
+                    var detectedAt = DateTimeOffset.UtcNow;
+                    string reason = eventArgs.Reason.ToString();
+                    string exceptionType = eventArgs.Exception?.GetType().Name ?? "None";
+                    string socketError = eventArgs.Exception is null ? "None" : FindSocketError(eventArgs.Exception);
                     _ = queue.RequestStop();
-                    Report("ConnectionLost", "ConnectionLost");
+                    // Only protocol codes and exception types are diagnostic data. Broker reason
+                    // text, user properties and exception messages may contain credentials or newlines.
+                    log?.Event("ConnectionLost", LogEventLevel.Warning, ("Reason", reason),
+                        ("ClientWasConnected", eventArgs.ClientWasConnected), ("ExceptionType", exceptionType),
+                        ("SocketError", socketError), ("DetectedAtUtc", detectedAt), ("ClientId", settings.ClientId));
+                    output.WriteLine($"{detectedAt:O} ConnectionLost Reason={reason} " +
+                        $"ClientWasConnected={eventArgs.ClientWasConnected} ExceptionType={exceptionType} " +
+                        $"SocketError={socketError} ClientId={settings.ClientId}");
                     Interlocked.Exchange(ref exitCode, 1);
                     shutdown.Cancel();
                 }
@@ -126,7 +137,7 @@ internal static class ConsoleRunner
         {
             var reason = (ShutdownReason)Volatile.Read(ref shutdownReason);
             bool connectCanceled = connecting && reason == ShutdownReason.UserCanceled;
-            Report(connectCanceled ? "ConnectCanceled Reason=UserCanceled" : "ShutdownRequested");
+            Report(connectCanceled ? "ConnectCanceled Reason=UserCanceled" : $"ShutdownRequested Reason={reason}");
             log?.Event(connectCanceled ? "ConnectCanceled" : "ShutdownRequested", properties: [("Reason", reason.ToString())]);
         }
         catch (MqttConnectionException exception)

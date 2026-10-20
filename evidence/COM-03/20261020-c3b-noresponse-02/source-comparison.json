@@ -1,0 +1,23 @@
+{
+  "scope": "Final evidence and source audit; no unit-test rerun",
+  "currentSourceSnapshot": "source-version.json",
+  "currentSourceFilesChecked": 72,
+  "currentSourceDifferences": [],
+  "previousUnitSnapshot": "../20261020-c2-unit-02/source-version.json",
+  "previousUnitSourceFilesChecked": 69,
+  "previousUnitSourceDifferences": [],
+  "previousUnitTests": 761,
+  "unitTestsRerun": false,
+  "actualC3bSessionsPassed": 2,
+  "actualC3aRegressionPassed": 1,
+  "criteriaSavedBeforeFaultInBothSessions": true,
+  "approvedToBlockedToDiscardedToDetectedTimelineOrdered": true,
+  "responsesForwardedAfterBlockInBothSessions": 0,
+  "localDocumentationLinksChecked": 154,
+  "missingLocalLinks": [],
+  "c3bLocalChecksComplete": 5,
+  "issue6ConditionsComplete": 4,
+  "issue6ConditionsPending": 4,
+  "planRevision": "v0.46",
+  "issueGuideRevision": "v0.10"
+}

@@ -1,0 +1,7 @@
+OperationStopped: C:\amr-control-system-demo\evidence\COM-03\20261020-pr31-review-01\Reproduce-Cleanup.ps1:25
+Line |
+  25 |  … q 'logs') { throw [IO.IOException]::new('Injected diagnostic log retr …
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Injected diagnostic log retrieval failure
+
+

@@ -1,0 +1,6 @@
+{
+  "status": "invalid-harness-output",
+  "originalBytes": 61109249,
+  "originalSha256": "D592D3545F3CAE937170C52BFEF1B866691CF682004638AC955DBE2B9170E424",
+  "reason": "Finally AST braces returned ScriptBlock objects rather than executing the cleanup. 61MB object serialization replaced with this diagnostic; initial verification.json is not a valid cleanup test verdict. Proxy cases did execute. Corrected harness follows in red-02."
+}

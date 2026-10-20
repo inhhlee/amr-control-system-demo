@@ -1,0 +1,658 @@
+{
+  "checkedAtUtc": "2026-10-20T02:13:59.6318291+00:00",
+  "codeCommit": "bccb461554f14dd5b7456c07f4dec4d9ea9a3a99",
+  "baseCommit": "d777ab7d8ef034d66a862343231268cd1476af24",
+  "branch": "feature/6-mqtt-keepalive",
+  "scope": "Commit/source evidence mapping; no product test rerun",
+  "lineEndingPolicy": "SHA-256 compares original test/current bytes; Git clean-filter blob equality maps them to committed content",
+  "sourceFiles": [
+    {
+      "path": "AmrControlSystem.slnx",
+      "snapshotSha256": "CCD11FC15FF2A3A169DA6F6B0CA4B452AA5DC37AABC983C0DB668D4C7E0975A8",
+      "currentSha256": "CCD11FC15FF2A3A169DA6F6B0CA4B452AA5DC37AABC983C0DB668D4C7E0975A8",
+      "testSnapshotMatches": true,
+      "commitBlob": "2722a167a06c018303d8b267ef37cf224cbadf5b",
+      "cleanedWorkingBlob": "2722a167a06c018303d8b267ef37cf224cbadf5b",
+      "committedContentMatches": true
+    },
+    {
+      "path": "global.json",
+      "snapshotSha256": "6A8E9044030D136BD4C04FFF9684111A3478B27559BFB6D19E4D380F0DE91510",
+      "currentSha256": "6A8E9044030D136BD4C04FFF9684111A3478B27559BFB6D19E4D380F0DE91510",
+      "testSnapshotMatches": true,
+      "commitBlob": "e1c5e9980fedfa6ce8a2a67c128634c78c392f46",
+      "cleanedWorkingBlob": "e1c5e9980fedfa6ce8a2a67c128634c78c392f46",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication.Console/Amr.Communication.Console.csproj",
+      "snapshotSha256": "D2E902231968D3B2214955E0BC2D7FCED4607AA3A08F2B5530D15004093F22F3",
+      "currentSha256": "D2E902231968D3B2214955E0BC2D7FCED4607AA3A08F2B5530D15004093F22F3",
+      "testSnapshotMatches": true,
+      "commitBlob": "f913e07b4ea3d32230d355d38b24bcb7dade2dde",
+      "cleanedWorkingBlob": "f913e07b4ea3d32230d355d38b24bcb7dade2dde",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication.Console/CommandConsoleRunner.cs",
+      "snapshotSha256": "BD211AA52F54CCD31A8B3CBDE504B34BE6EF3FAB73FEFE523C7CFC539962BFFA",
+      "currentSha256": "BD211AA52F54CCD31A8B3CBDE504B34BE6EF3FAB73FEFE523C7CFC539962BFFA",
+      "testSnapshotMatches": true,
+      "commitBlob": "a6e923cd3a515a43c79a96b5be1279582c74ee9e",
+      "cleanedWorkingBlob": "a6e923cd3a515a43c79a96b5be1279582c74ee9e",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication.Console/ConsoleRunner.cs",
+      "snapshotSha256": "968646AF29EA5D97AE7650D4061BA2CD6E76C2781C6BB38E4524D66AEE7EE4FE",
+      "currentSha256": "968646AF29EA5D97AE7650D4061BA2CD6E76C2781C6BB38E4524D66AEE7EE4FE",
+      "testSnapshotMatches": true,
+      "commitBlob": "97d54bd3d7679534e777736a7d24d26d8ffec7ea",
+      "cleanedWorkingBlob": "97d54bd3d7679534e777736a7d24d26d8ffec7ea",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication.Console/Logging/SeqLogSink.cs",
+      "snapshotSha256": "4752EFE0F1F10B2CA0A8C505CBF2F5AB811F6886B3A727A67814B6A023A9646F",
+      "currentSha256": "4752EFE0F1F10B2CA0A8C505CBF2F5AB811F6886B3A727A67814B6A023A9646F",
+      "testSnapshotMatches": true,
+      "commitBlob": "855261c3202a96a56d68bf4de28127994c8e6e35",
+      "cleanedWorkingBlob": "855261c3202a96a56d68bf4de28127994c8e6e35",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication.Console/Logging/SeqLogging.cs",
+      "snapshotSha256": "18978489BD3DDC3A994BD66FE3B7C5FE5EC7F61FD715CC7438C18046D9BAAF15",
+      "currentSha256": "18978489BD3DDC3A994BD66FE3B7C5FE5EC7F61FD715CC7438C18046D9BAAF15",
+      "testSnapshotMatches": true,
+      "commitBlob": "aaa52d424e6bd5cc41d0ecd948f2738d61cded47",
+      "cleanedWorkingBlob": "aaa52d424e6bd5cc41d0ecd948f2738d61cded47",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication.Console/Logging/StructuredLog.cs",
+      "snapshotSha256": "561668FB1C6182E80B231B7345DECACB7FB761C2C6ED940EF468F28A86DD32F2",
+      "currentSha256": "561668FB1C6182E80B231B7345DECACB7FB761C2C6ED940EF468F28A86DD32F2",
+      "testSnapshotMatches": true,
+      "commitBlob": "fbee9a77c754695f9f6a919ce65722ff413bad65",
+      "cleanedWorkingBlob": "fbee9a77c754695f9f6a919ce65722ff413bad65",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication.Console/Program.cs",
+      "snapshotSha256": "52DDBCF2CC06B9DE401C41FED418512F8F182E908B0F2831EE567DF5B5BB2C3D",
+      "currentSha256": "52DDBCF2CC06B9DE401C41FED418512F8F182E908B0F2831EE567DF5B5BB2C3D",
+      "testSnapshotMatches": true,
+      "commitBlob": "d1fee91abb6daa6e53f905da060a14aabb670d5c",
+      "cleanedWorkingBlob": "d1fee91abb6daa6e53f905da060a14aabb670d5c",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Amr.Communication.csproj",
+      "snapshotSha256": "EC8DE05434FD0644E9F9424BF0AE3239E38A21022A3DDFA5CA4CEF21A05E8361",
+      "currentSha256": "EC8DE05434FD0644E9F9424BF0AE3239E38A21022A3DDFA5CA4CEF21A05E8361",
+      "testSnapshotMatches": true,
+      "commitBlob": "f5cb0ceed1b458b5b77c7742bcb78831653d42ac",
+      "cleanedWorkingBlob": "f5cb0ceed1b458b5b77c7742bcb78831653d42ac",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandMessage.cs",
+      "snapshotSha256": "6B708F4DC1C0D16F16E56B10A5A3C0B828E8F142409F4AD2D2B531811017A9DC",
+      "currentSha256": "6B708F4DC1C0D16F16E56B10A5A3C0B828E8F142409F4AD2D2B531811017A9DC",
+      "testSnapshotMatches": true,
+      "commitBlob": "4765a6ff1c6198ccff91fac1f384b6483f724e13",
+      "cleanedWorkingBlob": "4765a6ff1c6198ccff91fac1f384b6483f724e13",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandPublisher.cs",
+      "snapshotSha256": "96AA8D5A26228895EDC5A1CFEA3BAD9D65D810EB8D7FBA1503CCDD0CAF623FC7",
+      "currentSha256": "96AA8D5A26228895EDC5A1CFEA3BAD9D65D810EB8D7FBA1503CCDD0CAF623FC7",
+      "testSnapshotMatches": true,
+      "commitBlob": "1e256e106a51ff51481678443c86ca0a053e713b",
+      "cleanedWorkingBlob": "1e256e106a51ff51481678443c86ca0a053e713b",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandValidationResult.cs",
+      "snapshotSha256": "B7CFAAAEB25702513F055CD304C72074F2460FBC34EC418382C859EBC6025623",
+      "currentSha256": "B7CFAAAEB25702513F055CD304C72074F2460FBC34EC418382C859EBC6025623",
+      "testSnapshotMatches": true,
+      "commitBlob": "5442df11957d73bbeaa3e4575e4947a361937d2d",
+      "cleanedWorkingBlob": "5442df11957d73bbeaa3e4575e4947a361937d2d",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandValidator.cs",
+      "snapshotSha256": "3B672887A0503D44155DCF808DE8D9293CE13AF7F8F01C4FE76A49C84CC9223B",
+      "currentSha256": "3B672887A0503D44155DCF808DE8D9293CE13AF7F8F01C4FE76A49C84CC9223B",
+      "testSnapshotMatches": true,
+      "commitBlob": "ff8590db5e55b12b7437566ba1f74355c00b02e0",
+      "cleanedWorkingBlob": "ff8590db5e55b12b7437566ba1f74355c00b02e0",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Models/AckMessage.cs",
+      "snapshotSha256": "D28A532212713B8A86D1AF35F2F542B6B53461D73F92F017CA3AFFFA7CA73821",
+      "currentSha256": "D28A532212713B8A86D1AF35F2F542B6B53461D73F92F017CA3AFFFA7CA73821",
+      "testSnapshotMatches": true,
+      "commitBlob": "625b3dcba61a52b3b9b6a787bc9ce2ff43cc6139",
+      "cleanedWorkingBlob": "625b3dcba61a52b3b9b6a787bc9ce2ff43cc6139",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Models/AlarmMessage.cs",
+      "snapshotSha256": "E86A417FF8ACD3E76500CAC357BE23DE2FF1BF593742E8C323E0DB172701E93E",
+      "currentSha256": "E86A417FF8ACD3E76500CAC357BE23DE2FF1BF593742E8C323E0DB172701E93E",
+      "testSnapshotMatches": true,
+      "commitBlob": "dc754e3bc5edd423dc349d4847544e70b86cbc99",
+      "cleanedWorkingBlob": "dc754e3bc5edd423dc349d4847544e70b86cbc99",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Models/HeartbeatMessage.cs",
+      "snapshotSha256": "4BEDA4DA2B7E45720E0C11779DF09496A34D069655BB1B0E509034BC16E33A4E",
+      "currentSha256": "4BEDA4DA2B7E45720E0C11779DF09496A34D069655BB1B0E509034BC16E33A4E",
+      "testSnapshotMatches": true,
+      "commitBlob": "6e83714e27ae27deddd686f1d3f9471974403669",
+      "cleanedWorkingBlob": "6e83714e27ae27deddd686f1d3f9471974403669",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Models/ReceivedMessage.cs",
+      "snapshotSha256": "0A7D983DB5E8185A3760BA57B567A2B0924F9FE0DAD5DD34E39FBE95061C7EBF",
+      "currentSha256": "0A7D983DB5E8185A3760BA57B567A2B0924F9FE0DAD5DD34E39FBE95061C7EBF",
+      "testSnapshotMatches": true,
+      "commitBlob": "2e26f880b4db2f364f0488a832e4b11212ad76cc",
+      "cleanedWorkingBlob": "2e26f880b4db2f364f0488a832e4b11212ad76cc",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Models/TelemetryMessage.cs",
+      "snapshotSha256": "6D0D5C7B6A8A0E26A8A87DB8AAF5957DCD7E9D8DB46E40225BB324B35467D695",
+      "currentSha256": "6D0D5C7B6A8A0E26A8A87DB8AAF5957DCD7E9D8DB46E40225BB324B35467D695",
+      "testSnapshotMatches": true,
+      "commitBlob": "653e795c6ef4afe2193bce85bf672cff26233682",
+      "cleanedWorkingBlob": "653e795c6ef4afe2193bce85bf672cff26233682",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Connection/MqttConnection.cs",
+      "snapshotSha256": "70BA5CB9000AA2A0C09D6741C81C8347F4FC7D5F23CD95C02BAC75926812FD95",
+      "currentSha256": "70BA5CB9000AA2A0C09D6741C81C8347F4FC7D5F23CD95C02BAC75926812FD95",
+      "testSnapshotMatches": true,
+      "commitBlob": "f233a546beb305d89f0917df982df44d43658b23",
+      "cleanedWorkingBlob": "f233a546beb305d89f0917df982df44d43658b23",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Connection/MqttConnectionException.cs",
+      "snapshotSha256": "BBD323C8E96884039640BB93A263FEB13A3BB8F7F622BF96DD5F091069C375EB",
+      "currentSha256": "BBD323C8E96884039640BB93A263FEB13A3BB8F7F622BF96DD5F091069C375EB",
+      "testSnapshotMatches": true,
+      "commitBlob": "f6c5cab8ad827de2c684c434e6302b1cdebf7959",
+      "cleanedWorkingBlob": "f6c5cab8ad827de2c684c434e6302b1cdebf7959",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Connection/MqttConnectionSettings.cs",
+      "snapshotSha256": "39331CD6BCDA0F09D1A72397A31993972C2C2BC937FD2BB0BADA6DB6B1155F1F",
+      "currentSha256": "39331CD6BCDA0F09D1A72397A31993972C2C2BC937FD2BB0BADA6DB6B1155F1F",
+      "testSnapshotMatches": true,
+      "commitBlob": "47525d16a4730ed9ff8cee1d2c3bf901c53b0cd7",
+      "cleanedWorkingBlob": "47525d16a4730ed9ff8cee1d2c3bf901c53b0cd7",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Queues/AmrReceiveQueue.cs",
+      "snapshotSha256": "182038B55E6AE298CEDBF8EB159B475518619DE962487E722B610BC4383F7625",
+      "currentSha256": "182038B55E6AE298CEDBF8EB159B475518619DE962487E722B610BC4383F7625",
+      "testSnapshotMatches": true,
+      "commitBlob": "2506b488891f1e54448d3bf338268f555f6862c3",
+      "cleanedWorkingBlob": "2506b488891f1e54448d3bf338268f555f6862c3",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Queues/QueueAdmission.cs",
+      "snapshotSha256": "B2E9578282ECE81E1CB6F07119C1D87964D34EDF195A16DB1C6871E2E43D3316",
+      "currentSha256": "B2E9578282ECE81E1CB6F07119C1D87964D34EDF195A16DB1C6871E2E43D3316",
+      "testSnapshotMatches": true,
+      "commitBlob": "103d170076fd63de443b6d0812f3ac3ad06dabbd",
+      "cleanedWorkingBlob": "103d170076fd63de443b6d0812f3ac3ad06dabbd",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Queues/QueueProcessingEvent.cs",
+      "snapshotSha256": "F0C065F9289AEC821A19A6E090A4944CF10C155DBA6024B0CF7D9A63975D5789",
+      "currentSha256": "F0C065F9289AEC821A19A6E090A4944CF10C155DBA6024B0CF7D9A63975D5789",
+      "testSnapshotMatches": true,
+      "commitBlob": "9b35489de2ba95dd8979a29a297e7103cf592f70",
+      "cleanedWorkingBlob": "9b35489de2ba95dd8979a29a297e7103cf592f70",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/HeartbeatDiagnostic.cs",
+      "snapshotSha256": "C4CBA602462BF67C6FC472895DF0EA3635A46E683CD8B9667D26B22E0918720E",
+      "currentSha256": "C4CBA602462BF67C6FC472895DF0EA3635A46E683CD8B9667D26B22E0918720E",
+      "testSnapshotMatches": true,
+      "commitBlob": "a0f963f70db32cd30ef2c964656f9e6ab7f5f192",
+      "cleanedWorkingBlob": "a0f963f70db32cd30ef2c964656f9e6ab7f5f192",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/HeartbeatSubscription.cs",
+      "snapshotSha256": "A38723932BC0C7B3DA1B4801D2F1650C19A4AA191706D749CE991A3C1DFB1BF2",
+      "currentSha256": "A38723932BC0C7B3DA1B4801D2F1650C19A4AA191706D749CE991A3C1DFB1BF2",
+      "testSnapshotMatches": true,
+      "commitBlob": "c79a8668cffa5b0d169591cc605877a7e295d874",
+      "cleanedWorkingBlob": "c79a8668cffa5b0d169591cc605877a7e295d874",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/MessageDiagnostic.cs",
+      "snapshotSha256": "5AA07F8F98E5991B407E7F82987D0C1FC0BD8BBCD7CB91DD0119B1E3CAE74291",
+      "currentSha256": "5AA07F8F98E5991B407E7F82987D0C1FC0BD8BBCD7CB91DD0119B1E3CAE74291",
+      "testSnapshotMatches": true,
+      "commitBlob": "27c4857a4d9fa685cce734b3e15a240462c89316",
+      "cleanedWorkingBlob": "27c4857a4d9fa685cce734b3e15a240462c89316",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/MessageSubscription.cs",
+      "snapshotSha256": "C1103DFC77D3E5B7DD92914A15A6514A3C8F9869EB860324EECD4952A0ADCB47",
+      "currentSha256": "C1103DFC77D3E5B7DD92914A15A6514A3C8F9869EB860324EECD4952A0ADCB47",
+      "testSnapshotMatches": true,
+      "commitBlob": "cf67f866e9b2f436c72a4ceb9fdb18de4cf6a460",
+      "cleanedWorkingBlob": "cf67f866e9b2f436c72a4ceb9fdb18de4cf6a460",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Ack/AckValidationResult.cs",
+      "snapshotSha256": "22A832C7E5FD12E8CEFC636A35760EE629E1C640DA095A49F404ACC8D0BD9131",
+      "currentSha256": "22A832C7E5FD12E8CEFC636A35760EE629E1C640DA095A49F404ACC8D0BD9131",
+      "testSnapshotMatches": true,
+      "commitBlob": "e5774d4e97bb2a6d08e0dac26ce79943f6ad5d85",
+      "cleanedWorkingBlob": "e5774d4e97bb2a6d08e0dac26ce79943f6ad5d85",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Ack/AckValidator.cs",
+      "snapshotSha256": "35A64751463D3BF49A4C691DB175360E268CC410E80F2401A98B89FD681248ED",
+      "currentSha256": "35A64751463D3BF49A4C691DB175360E268CC410E80F2401A98B89FD681248ED",
+      "testSnapshotMatches": true,
+      "commitBlob": "ec46d48e252839bc0f03f00dc953230945b61e50",
+      "cleanedWorkingBlob": "ec46d48e252839bc0f03f00dc953230945b61e50",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Alarm/AlarmValidationResult.cs",
+      "snapshotSha256": "B09A032DE262596E065232FFEA7A3BDE00E7517DCF7A58EEBDDD3DFC4C18677C",
+      "currentSha256": "B09A032DE262596E065232FFEA7A3BDE00E7517DCF7A58EEBDDD3DFC4C18677C",
+      "testSnapshotMatches": true,
+      "commitBlob": "6f1325fd74529d09ef355a8299d45294c0977ead",
+      "cleanedWorkingBlob": "6f1325fd74529d09ef355a8299d45294c0977ead",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Alarm/AlarmValidator.cs",
+      "snapshotSha256": "E2DFD160B68DC84377807B5D7ABB6620A8F1237E1CC87D79EF36152C97E4D684",
+      "currentSha256": "E2DFD160B68DC84377807B5D7ABB6620A8F1237E1CC87D79EF36152C97E4D684",
+      "testSnapshotMatches": true,
+      "commitBlob": "642a27b4e26f4be5ea2286189f1cc581a21b95d2",
+      "cleanedWorkingBlob": "642a27b4e26f4be5ea2286189f1cc581a21b95d2",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Common/MessageValidation.cs",
+      "snapshotSha256": "430CB62E5C08D1BAD586F1EBDDCA205FA84D69E2C3D65C1836ABAF9BE36D21D2",
+      "currentSha256": "430CB62E5C08D1BAD586F1EBDDCA205FA84D69E2C3D65C1836ABAF9BE36D21D2",
+      "testSnapshotMatches": true,
+      "commitBlob": "189180551785977dc6f171d6b95af0dd269f0afb",
+      "cleanedWorkingBlob": "189180551785977dc6f171d6b95af0dd269f0afb",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Common/ValidationError.cs",
+      "snapshotSha256": "3DCF8999E3771B4966872962A45D621BE51F862C1EFB16D268501CD3BE666B71",
+      "currentSha256": "3DCF8999E3771B4966872962A45D621BE51F862C1EFB16D268501CD3BE666B71",
+      "testSnapshotMatches": true,
+      "commitBlob": "b91414ebf9189ec4618099c650f41c596885b115",
+      "cleanedWorkingBlob": "b91414ebf9189ec4618099c650f41c596885b115",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Heartbeat/HeartbeatValidationResult.cs",
+      "snapshotSha256": "1604225131767FC7564E9D42470E976117920FC14DD0732039C91260EB14C9A7",
+      "currentSha256": "1604225131767FC7564E9D42470E976117920FC14DD0732039C91260EB14C9A7",
+      "testSnapshotMatches": true,
+      "commitBlob": "047e895ceea52a6fd9d1ec32d7479e1d50aa8bd6",
+      "cleanedWorkingBlob": "047e895ceea52a6fd9d1ec32d7479e1d50aa8bd6",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Heartbeat/HeartbeatValidator.cs",
+      "snapshotSha256": "71F3AA777BA7A44E405F6B36FFD06D56B78825FE761A07B01C74CD0FE80EEC29",
+      "currentSha256": "71F3AA777BA7A44E405F6B36FFD06D56B78825FE761A07B01C74CD0FE80EEC29",
+      "testSnapshotMatches": true,
+      "commitBlob": "a717f7e46c9cb5cfb33afc741741c18e9c175759",
+      "cleanedWorkingBlob": "a717f7e46c9cb5cfb33afc741741c18e9c175759",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Telemetry/TelemetryValidationResult.cs",
+      "snapshotSha256": "3687D86B1B52EEA007F3FEF77BAA48C4E513753782EAC8E0EC284364D529E4C6",
+      "currentSha256": "3687D86B1B52EEA007F3FEF77BAA48C4E513753782EAC8E0EC284364D529E4C6",
+      "testSnapshotMatches": true,
+      "commitBlob": "0d05f8f12a625ee34c6b648d76dced48b1768235",
+      "cleanedWorkingBlob": "0d05f8f12a625ee34c6b648d76dced48b1768235",
+      "committedContentMatches": true
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Telemetry/TelemetryValidator.cs",
+      "snapshotSha256": "9A9D2A46EAD617E6EE9086C54BB738AE0FA1EE30806F18D5BCF790289F66E506",
+      "currentSha256": "9A9D2A46EAD617E6EE9086C54BB738AE0FA1EE30806F18D5BCF790289F66E506",
+      "testSnapshotMatches": true,
+      "commitBlob": "8746cfaba28a2be52f8e51d6b1356bdd30e48d22",
+      "cleanedWorkingBlob": "8746cfaba28a2be52f8e51d6b1356bdd30e48d22",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj",
+      "snapshotSha256": "0BB622C8930E883F570DD8DCFA7D4055CCD4722555C8B2F2FF972798A22E8699",
+      "currentSha256": "0BB622C8930E883F570DD8DCFA7D4055CCD4722555C8B2F2FF972798A22E8699",
+      "testSnapshotMatches": true,
+      "commitBlob": "ec23dea1a0067c0029b7f92ae485145b357b72e0",
+      "cleanedWorkingBlob": "ec23dea1a0067c0029b7f92ae485145b357b72e0",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Command/CommandPublisherTests.cs",
+      "snapshotSha256": "737C9B02695DA77486CA60B494119BECEAF47A7B124603CDD5238C2D6E717F7E",
+      "currentSha256": "737C9B02695DA77486CA60B494119BECEAF47A7B124603CDD5238C2D6E717F7E",
+      "testSnapshotMatches": true,
+      "commitBlob": "e80386a43a84da7822c4899ae82410d0a583e47a",
+      "cleanedWorkingBlob": "e80386a43a84da7822c4899ae82410d0a583e47a",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Command/CommandValidationTests.cs",
+      "snapshotSha256": "D46034A32A23874B921E2D84F5DAF0AAC2E82402C6FBA77D444F07EB8A904DEA",
+      "currentSha256": "D46034A32A23874B921E2D84F5DAF0AAC2E82402C6FBA77D444F07EB8A904DEA",
+      "testSnapshotMatches": true,
+      "commitBlob": "9401b31048bc016e7122c1d2920b6dcb7ba32cae",
+      "cleanedWorkingBlob": "9401b31048bc016e7122c1d2920b6dcb7ba32cae",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/CommandConsoleTests.cs",
+      "snapshotSha256": "2C6BE32CD789014ECC68EBFCF202E7AE7C3607C5DA920F35BE85433667A58366",
+      "currentSha256": "2C6BE32CD789014ECC68EBFCF202E7AE7C3607C5DA920F35BE85433667A58366",
+      "testSnapshotMatches": true,
+      "commitBlob": "eb0cd2c9bdb82e5e7834e93d16036086f5254156",
+      "cleanedWorkingBlob": "eb0cd2c9bdb82e5e7834e93d16036086f5254156",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/ConsoleConnectionFailureTests.cs",
+      "snapshotSha256": "350ED8A675D54A7960169F652BB1D99CFB31B9985CCD34E275F8FA4F18C825C8",
+      "currentSha256": "350ED8A675D54A7960169F652BB1D99CFB31B9985CCD34E275F8FA4F18C825C8",
+      "testSnapshotMatches": true,
+      "commitBlob": "177cf018ed74891df58b825887c56856d3c0b99a",
+      "cleanedWorkingBlob": "177cf018ed74891df58b825887c56856d3c0b99a",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/Logging/ConsoleShutdownReasonTests.cs",
+      "snapshotSha256": "8CC649EEB22F698C2733472995299690A3E97AE69B3BEE2A8C814276C69633B4",
+      "currentSha256": "8CC649EEB22F698C2733472995299690A3E97AE69B3BEE2A8C814276C69633B4",
+      "testSnapshotMatches": true,
+      "commitBlob": "4e5490526c83bf2cf4898a60ff6be1eb31822455",
+      "cleanedWorkingBlob": "4e5490526c83bf2cf4898a60ff6be1eb31822455",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/Logging/SeqLoggingTests.cs",
+      "snapshotSha256": "17530FCDCEC2D59F4268393C93D2E709991BF6733D65EC65E85BFE7145CC6D56",
+      "currentSha256": "17530FCDCEC2D59F4268393C93D2E709991BF6733D65EC65E85BFE7145CC6D56",
+      "testSnapshotMatches": true,
+      "commitBlob": "e141ec94f3ea839376b9cd954cb7b72d85a06f6b",
+      "cleanedWorkingBlob": "e141ec94f3ea839376b9cd954cb7b72d85a06f6b",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Connection/MqttConnectionFailureTests.cs",
+      "snapshotSha256": "C90E243665956EE3267D7767A4DE94D86382322C7CC16EF8B1A5FC85CA200229",
+      "currentSha256": "C90E243665956EE3267D7767A4DE94D86382322C7CC16EF8B1A5FC85CA200229",
+      "testSnapshotMatches": true,
+      "commitBlob": "a27effa7488df0285a99ea60df6f219b76e1f9f3",
+      "cleanedWorkingBlob": "a27effa7488df0285a99ea60df6f219b76e1f9f3",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Connection/MqttConnectionTests.cs",
+      "snapshotSha256": "56D70E386AEA42EB11F533A7D2313896BD89E7E68D88550AD23908390CD3D394",
+      "currentSha256": "56D70E386AEA42EB11F533A7D2313896BD89E7E68D88550AD23908390CD3D394",
+      "testSnapshotMatches": true,
+      "commitBlob": "df66f1a1720e7f751e574177a03ee8ede968f4cd",
+      "cleanedWorkingBlob": "df66f1a1720e7f751e574177a03ee8ede968f4cd",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueBoundaryTests.cs",
+      "snapshotSha256": "4DB676AB1C6ECBAF3D474C8201211F9243DBC9C4B57198792B3AE3E0758E38D9",
+      "currentSha256": "4DB676AB1C6ECBAF3D474C8201211F9243DBC9C4B57198792B3AE3E0758E38D9",
+      "testSnapshotMatches": true,
+      "commitBlob": "855525a10bd459c58a803859b15191a5576850a8",
+      "cleanedWorkingBlob": "855525a10bd459c58a803859b15191a5576850a8",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueShutdownTests.cs",
+      "snapshotSha256": "F4D564CFC5E7D3A29A32F06EFB5D0FCB2929A710B632568878C2F17E88F60CCE",
+      "currentSha256": "F4D564CFC5E7D3A29A32F06EFB5D0FCB2929A710B632568878C2F17E88F60CCE",
+      "testSnapshotMatches": true,
+      "commitBlob": "d239bce382a119099fd915590041c18364d3ee00",
+      "cleanedWorkingBlob": "d239bce382a119099fd915590041c18364d3ee00",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueTests.cs",
+      "snapshotSha256": "D4BAEDD8ACA2F15660F2730FD3433AA75FCCF882EDF8E46F4C0D47E8D2A4DFFA",
+      "currentSha256": "D4BAEDD8ACA2F15660F2730FD3433AA75FCCF882EDF8E46F4C0D47E8D2A4DFFA",
+      "testSnapshotMatches": true,
+      "commitBlob": "ef8c8481a849eb45df3063368a3dad2a78b9ecbb",
+      "cleanedWorkingBlob": "ef8c8481a849eb45df3063368a3dad2a78b9ecbb",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Subscriptions/HeartbeatSubscriptionTests.cs",
+      "snapshotSha256": "F2C98E620E2EC01166A0D1D2A06EF324E9C75B0D298ED80434562F8E34871E07",
+      "currentSha256": "F2C98E620E2EC01166A0D1D2A06EF324E9C75B0D298ED80434562F8E34871E07",
+      "testSnapshotMatches": true,
+      "commitBlob": "ddce9821a75537a82a955542921f961c1706f40a",
+      "cleanedWorkingBlob": "ddce9821a75537a82a955542921f961c1706f40a",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Subscriptions/MessageSubscriptionTests.cs",
+      "snapshotSha256": "620D55AE24DAE636BC93137D498ECC2E5F5B6BB8460AB7B86FEA72F7523FE71C",
+      "currentSha256": "620D55AE24DAE636BC93137D498ECC2E5F5B6BB8460AB7B86FEA72F7523FE71C",
+      "testSnapshotMatches": true,
+      "commitBlob": "78c2a9ccefa42299e42ea5c50e5955bc7d39e6fe",
+      "cleanedWorkingBlob": "78c2a9ccefa42299e42ea5c50e5955bc7d39e6fe",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/TestDoubles/FakeMqttClient.cs",
+      "snapshotSha256": "191CBE4B02410B354DCAEFA46AB02F538A796FBD0E7E383B388C0CD98C11041A",
+      "currentSha256": "191CBE4B02410B354DCAEFA46AB02F538A796FBD0E7E383B388C0CD98C11041A",
+      "testSnapshotMatches": true,
+      "commitBlob": "d4a0b1c63785aaeb03176b7cc515819eefdf62c9",
+      "cleanedWorkingBlob": "d4a0b1c63785aaeb03176b7cc515819eefdf62c9",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/AckValidatorTests.cs",
+      "snapshotSha256": "BB727F21F3290D691053663CE44EA4D145E6E3DD243F844D9AB7E14DCF6ACA17",
+      "currentSha256": "BB727F21F3290D691053663CE44EA4D145E6E3DD243F844D9AB7E14DCF6ACA17",
+      "testSnapshotMatches": true,
+      "commitBlob": "1848f7c12f8732537be839a3e28520fe682d2971",
+      "cleanedWorkingBlob": "1848f7c12f8732537be839a3e28520fe682d2971",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/AlarmValidatorTests.cs",
+      "snapshotSha256": "B7D1CF7A60639CE9427B791EC9ADB8CBB5E318F98741F5F70382BCA7417D9533",
+      "currentSha256": "B7D1CF7A60639CE9427B791EC9ADB8CBB5E318F98741F5F70382BCA7417D9533",
+      "testSnapshotMatches": true,
+      "commitBlob": "8e8737dc3b00001e59ba10189809e5a3c3828b52",
+      "cleanedWorkingBlob": "8e8737dc3b00001e59ba10189809e5a3c3828b52",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/HeartbeatValidatorTests.cs",
+      "snapshotSha256": "FAA761D201B0A94778633B28EFFCE1FED4243689CA30DF2EA083AF9B813B842D",
+      "currentSha256": "FAA761D201B0A94778633B28EFFCE1FED4243689CA30DF2EA083AF9B813B842D",
+      "testSnapshotMatches": true,
+      "commitBlob": "f6e5946c3df0ac24d045f38336e2aeb501d47de0",
+      "cleanedWorkingBlob": "f6e5946c3df0ac24d045f38336e2aeb501d47de0",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/MessageFieldValidationTests.cs",
+      "snapshotSha256": "6D9096C1AB067EB6833929CDD7EC05978A93E250B3A73518829C6AE879DC8205",
+      "currentSha256": "6D9096C1AB067EB6833929CDD7EC05978A93E250B3A73518829C6AE879DC8205",
+      "testSnapshotMatches": true,
+      "commitBlob": "d8ad263f6b222141191148ed9dab693ff1acfc9d",
+      "cleanedWorkingBlob": "d8ad263f6b222141191148ed9dab693ff1acfc9d",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/MessageValidationRegressionTests.cs",
+      "snapshotSha256": "4C277CD69DEC818F0F0A876D661E37520DEC421F7BB9B7B76EA9B259A510D96A",
+      "currentSha256": "4C277CD69DEC818F0F0A876D661E37520DEC421F7BB9B7B76EA9B259A510D96A",
+      "testSnapshotMatches": true,
+      "commitBlob": "4543f69b7f51509e5f02003f33b1c70aeea7072e",
+      "cleanedWorkingBlob": "4543f69b7f51509e5f02003f33b1c70aeea7072e",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/TelemetryValidatorTests.cs",
+      "snapshotSha256": "7C09035A772D947ACF7C70802255F0911785DA7FFFCFF290E645FCF67A2793C1",
+      "currentSha256": "7C09035A772D947ACF7C70802255F0911785DA7FFFCFF290E645FCF67A2793C1",
+      "testSnapshotMatches": true,
+      "commitBlob": "748d5c6f760d4b42a8da14c1377fbfb7d3228bc9",
+      "cleanedWorkingBlob": "748d5c6f760d4b42a8da14c1377fbfb7d3228bc9",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/manual/COM01-B/Verify-Mqtt.ps1",
+      "snapshotSha256": "C707017DA1872C3C793061163BA71A241B239C54DE8B59E786761E2B00CB1D9C",
+      "currentSha256": "C707017DA1872C3C793061163BA71A241B239C54DE8B59E786761E2B00CB1D9C",
+      "testSnapshotMatches": true,
+      "commitBlob": "a1ac4ad9c405f98e200a4eb89641f8d5e6c0a3db",
+      "cleanedWorkingBlob": "a1ac4ad9c405f98e200a4eb89641f8d5e6c0a3db",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/manual/COM01-B/inputs.json",
+      "snapshotSha256": "CE14F0E7E5ECB3E4CDE98DB63796F56C0BDA8BA6CE1C406B18C96185481A9DFB",
+      "currentSha256": "CE14F0E7E5ECB3E4CDE98DB63796F56C0BDA8BA6CE1C406B18C96185481A9DFB",
+      "testSnapshotMatches": true,
+      "commitBlob": "05a9ddb23d495758268281698cb4d9e62f9a1ce8",
+      "cleanedWorkingBlob": "05a9ddb23d495758268281698cb4d9e62f9a1ce8",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/manual/COM01-C/Verify-Disconnect.ps1",
+      "snapshotSha256": "8D8B9AAC7BF15037C23BBF39555E2937834CD9691BF8336D9D56AD8325963386",
+      "currentSha256": "8D8B9AAC7BF15037C23BBF39555E2937834CD9691BF8336D9D56AD8325963386",
+      "testSnapshotMatches": true,
+      "commitBlob": "7e33195501572e13492ed3ba094e538bb59d2798",
+      "cleanedWorkingBlob": "7e33195501572e13492ed3ba094e538bb59d2798",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/manual/COM01-C/Verify-Mqtt.ps1",
+      "snapshotSha256": "9248F15AA25D01CC2CD2374295C0E44B1235F3E7BD00521B7BFB37DCC6C4CB36",
+      "currentSha256": "9248F15AA25D01CC2CD2374295C0E44B1235F3E7BD00521B7BFB37DCC6C4CB36",
+      "testSnapshotMatches": true,
+      "commitBlob": "13c545fd7de7ad768a9184c8f9fb55204edce67f",
+      "cleanedWorkingBlob": "13c545fd7de7ad768a9184c8f9fb55204edce67f",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/manual/COM01-C/inputs.json",
+      "snapshotSha256": "4A065CC641767424E6538ADF6D467B403B3FAD1A59B2BA60B1F6D8A71E802529",
+      "currentSha256": "4A065CC641767424E6538ADF6D467B403B3FAD1A59B2BA60B1F6D8A71E802529",
+      "testSnapshotMatches": true,
+      "commitBlob": "a84ddb65e8cf40ebdf15497a528e14e3f9ee4c52",
+      "cleanedWorkingBlob": "a84ddb65e8cf40ebdf15497a528e14e3f9ee4c52",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/manual/COM03-B/Verify-Connection.ps1",
+      "snapshotSha256": "63D22C825D9F0622A381873C8BA0FBC78FF679AA59AEA03E9910122CED6781CB",
+      "currentSha256": "63D22C825D9F0622A381873C8BA0FBC78FF679AA59AEA03E9910122CED6781CB",
+      "testSnapshotMatches": true,
+      "commitBlob": "f03c873436f4a0d79b7db89ec15a21468fd7751f",
+      "cleanedWorkingBlob": "f03c873436f4a0d79b7db89ec15a21468fd7751f",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/manual/COM05-A/Verify-Commands.ps1",
+      "snapshotSha256": "32B8386332CA7C2C904581B486BD0909F13340FE9AF30903B62B6E80AD5196AC",
+      "currentSha256": "32B8386332CA7C2C904581B486BD0909F13340FE9AF30903B62B6E80AD5196AC",
+      "testSnapshotMatches": true,
+      "commitBlob": "114356fd7b314e8f075ea0d0d34704933d19d4a8",
+      "cleanedWorkingBlob": "114356fd7b314e8f075ea0d0d34704933d19d4a8",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/manual/LOG/Verify-Seq.ps1",
+      "snapshotSha256": "51F91B5A6F39F8FCCFF3725E11F5B8F349600782F1F472E9BA76874CAA2FABEA",
+      "currentSha256": "51F91B5A6F39F8FCCFF3725E11F5B8F349600782F1F472E9BA76874CAA2FABEA",
+      "testSnapshotMatches": true,
+      "commitBlob": "a6635535601f6cff6ef292bf4d36bdb331b17e6c",
+      "cleanedWorkingBlob": "a6635535601f6cff6ef292bf4d36bdb331b17e6c",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/manual/LOG/Verify-SeqShutdown.ps1",
+      "snapshotSha256": "580848222D9A297D7A0339E6D2E81D3E66DCD8B499B3870EC6DD015F7739517A",
+      "currentSha256": "580848222D9A297D7A0339E6D2E81D3E66DCD8B499B3870EC6DD015F7739517A",
+      "testSnapshotMatches": true,
+      "commitBlob": "1ecb7312e8c5ad97003e2043bcb7a3f261f9de17",
+      "cleanedWorkingBlob": "1ecb7312e8c5ad97003e2043bcb7a3f261f9de17",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tests/manual/COM03-C/Verify-ResponseGate.ps1",
+      "snapshotSha256": "EA46BC410BBBCD3BBBC44B7E48236DCDC381EFB56B877E092CF998939BB14668",
+      "currentSha256": "EA46BC410BBBCD3BBBC44B7E48236DCDC381EFB56B877E092CF998939BB14668",
+      "testSnapshotMatches": true,
+      "commitBlob": "b487a1ff1ea9709a340d6c7d15ae29bfdde6b707",
+      "cleanedWorkingBlob": "b487a1ff1ea9709a340d6c7d15ae29bfdde6b707",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tools/COM-03/ResponseGateProxy.cs",
+      "snapshotSha256": "9005C0024388205F12D0627DAF61A1845A396277C41F533544C7D75E6D668524",
+      "currentSha256": "9005C0024388205F12D0627DAF61A1845A396277C41F533544C7D75E6D668524",
+      "testSnapshotMatches": true,
+      "commitBlob": "5013063e1420a2ff885e4fb8ff9d202891bf13d2",
+      "cleanedWorkingBlob": "5013063e1420a2ff885e4fb8ff9d202891bf13d2",
+      "committedContentMatches": true
+    },
+    {
+      "path": "tools/COM-03/Start-ResponseGateProxy.ps1",
+      "snapshotSha256": "3A784ED16E5199D10474F967F531FB317C3076A66A44C1D54567DBA8FDBDBDD9",
+      "currentSha256": "3A784ED16E5199D10474F967F531FB317C3076A66A44C1D54567DBA8FDBDBDD9",
+      "testSnapshotMatches": true,
+      "commitBlob": "1a2057226f0cf1b93147dce228756b8efad0f92f",
+      "cleanedWorkingBlob": "1a2057226f0cf1b93147dce228756b8efad0f92f",
+      "committedContentMatches": true
+    }
+  ]
+}

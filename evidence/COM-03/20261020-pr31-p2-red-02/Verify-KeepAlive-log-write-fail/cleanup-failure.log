@@ -1,0 +1,6 @@
+Set-Content: 
+Line |
+   8 |  … ontainer) | Set-Content -LiteralPath "$run/broker.log" -Encoding utf8 …
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Unable to clear content of 'C:\amr-control-system-demo\evidence\COM-03\20261020-pr31-p2-red-02\Verify-KeepAlive-log-write-fail\broker.log' because it is a directory. Clear-Content is only supported on files.
+
