@@ -3,7 +3,7 @@
 
 ## MQTT 명령 발행 (COM05-A / Issue #29)
 
-현재 작업은 [#6의 C4 검증·A~C 최종 근거 취합](#com03c4-run)까지 완료했다. 같은 `feature/6-mqtt-keepalive`에서 중복 단절·늦은 알림·사용자 취소와 단절의 순서를 제어하는 신규 7건을 추가했고 전체 자동시험 768건·빌드 경고/오류 0을 확인했다. 기존 실제 C1~C3b 근거를 최종 제품 코드와 대조했다. [#6 완료조건 7개 충족·1개 부분 충족](evidence/COM-03/20261020-ac-summary-01/README.md)이며 실제 Issue·PR 게시 연결과 리뷰·병합·종료가 남아 있다. 앞선 #29 명령 발행은 [PR #30](https://github.com/inhhlee/amr-control-system-demo/pull/30) develop 반영·완료 종료 상태다. 아래 과거 단계·시험 수치는 당시 기록이다.
+현재 작업은 [#6의 C4 검증·A~C 최종 근거 취합](#com03c4-run)을 마치고 같은 `feature/6-mqtt-keepalive`를 커밋·푸시해 [PR #31](https://github.com/inhhlee/amr-control-system-demo/pull/31)을 develop 대상으로 생성했다. 중복 단절·늦은 알림·사용자 취소와 단절의 순서 제어 신규 7건 포함 자동시험 768건·빌드 경고/오류 0이다. [최종 검증 근거](evidence/COM-03/20261020-ac-summary-01/README.md)를 #6 Issue·PR에 연결해 원래 완료조건 8개를 모두 갱신했다. Issue와 PR은 open이며 리뷰·병합·종료가 남아 있다. 앞선 #29 명령 발행은 [PR #30](https://github.com/inhhlee/amr-control-system-demo/pull/30) develop 반영·완료 종료 상태다. 아래 과거 단계·시험 수치는 당시 기록이다.
 
 ```powershell
 dotnet build AmrControlSystem.slnx --no-restore
@@ -152,7 +152,7 @@ dotnet test AmrControlSystem.slnx --no-build --no-restore --logger "trx;LogFileN
 
 [C4 자동시험 768건·사전 기준·원본 로그](evidence/COM-03/20261020-c4-unit-02/README.md)와 [A~C 최종 코드 유효성·#4/#5/#6 완료조건표](evidence/COM-03/20261020-ac-summary-01/README.md)를 참조한다. C4는 실제 Program이 Ctrl+C에서 전달하는 취소 경계와 MQTT 대역 알림의 순서 시험이다. 실제 OS/네트워크 동시 경합 전수 검증은 아니며, 실제 Ctrl+C·Broker·프록시 결과는 C2·C3b의 기존 증거다. 제품 소스·C3b 바이너리 4개가 같아 실제 MQTT를 다시 실행하지 않았다.
 
-현재 #6 원래 조건 1~7은 충족하며 8번의 실제 Issue·PR 게시 연결이 남아 있다. [PR 본문 초안](evidence/COM-03/20261020-ac-summary-01/PR.md)은 로컬 자료다. 커밋·푸시·PR·리뷰·병합·Issue 종료는 수행하지 않았다. 자동 재접속·AMR Heartbeat·GUI·Core·DB 및 과제1 전체 완료와 구분한다.
+2026-10-20 후속 게시 요청으로 코드·근거를 `bccb461`에 커밋·푸시했고 [PR #31](https://github.com/inhhlee/amr-control-system-demo/pull/31)·[#6 Issue](https://github.com/inhhlee/amr-control-system-demo/issues/6)에 근거를 연결해 원래 8조건을 모두 체크했다. [게시 확인·시험본/커밋 대조](evidence/COM-03/20261020-pr-publication-01/README.md)와 [PR 본문](evidence/COM-03/20261020-ac-summary-01/PR.md)을 참조한다. 리뷰·develop 병합·Issue 종료는 대기다. 자동 재접속·AMR Heartbeat·GUI·Core·DB 및 과제1 전체 완료와 구분한다.
 
 <a id="com03c3b-run"></a>
 

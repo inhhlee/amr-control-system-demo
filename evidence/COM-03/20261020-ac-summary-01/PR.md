@@ -3,28 +3,31 @@
 - 관련 Issue: #6
 - 대상 브랜치(base): develop
 - 과제·기능 ID: 과제1 COM-03 / COM03-C1~C4
-- 명세·계획 근거: 기능명세 v0.7 COM-03, 공통규칙 v0.4 C-09·C-10, 결정사항 v0.5 D-08·D-09, 과제계획 v0.47 및 C 안내 v0.11. 원본은 C:\process-plan이며 공유 URL은 미확인이다.
-- **로컬 PR 본문 초안 — 아직 게시하지 않았다.**
+- 명세·계획 근거: 기능명세 v0.7 COM-03, 요구사항정의 v0.5 R-04, 공통규칙 v0.4 C-09·C-10, 결정사항 v0.5 D-08·D-09, 과제계획 v0.47 및 C 안내 v0.11. 원본 공유 URL은 없어 문서명·버전·ID로 식별한다.
 
 ## 변경 내용
 
-- MQTT 연결 유지·Broker 종료·승인 뒤 응답 무시를 실제 격리 환경에서 확인하고, 단절의 UTC 시각·안전한 원인·Client ID를 기록한다. 예상치 못한 상실은 정리 후 종료 1, 먼저 접수한 사용자 취소는 종료 0을 유지한다.
-- 기존 ConsoleRunner 단절 진단, 3건 안전 진단 시험과 C4 7건 제어 순서 시험, 최소 TCP 응답 차단 프록시 및 C1~C3 실행 도구, README·실행별 근거를 추가한다. C4는 제품 코드를 추가 변경하지 않았다.
-- 자동 재접속·재구독, AMR Heartbeat·GUI·Core·DB는 포함하지 않는다.
+접속 후 연결을 잃으면 UTC 시각·MQTT 원인 코드·안전한 예외 유형·Client ID를 기록하고 정리 후 종료 1을 반환한다. 먼저 접수한 사용자 취소는 종료 0을 유지한다. 중복 알림과 종료 후 도착한 콜백이 최초 원인이나 종료 결과를 바꾸지 않는지 검증했다.
+
+- ConsoleRunner의 단절 진단과 종료 이유 출력, 안전 진단 시험 3건·C4 순서 제어 시험 7건을 추가한다.
+- 기존 Docker·Mosquitto를 사용하는 격리 시험 도구와 최소 TCP 응답 차단 프록시를 추가한다. 정상 승인 후 Broker→Client 응답만 폐기하고 반대 방향과 TCP 연결을 유지한다.
+- A~C 정상·최초 접속 실패/제한/취소·KeepAlive·연결 후 단절의 근거를 최종 코드에 연결한다. 기존 실패·중간 실행 기록도 보존한다.
 
 ## 실제 시험 결과
 
-- 코드: d777ab7d8ef034d66a862343231268cd1476af24 + 미커밋 변경. 게시 직전에 커밋 SHA와 최종 해시 대조 결과를 보완해야 한다.
-- 위치·환경: C:\amr-control-system-demo, Windows 10.0.26200, SDK 10.0.401, MQTTnet 5.2.0.1603, 실제 Mosquitto 2.1.2의 격리 컨테이너·루프백 동적 포트.
-- 통합 근거: [A~C 및 원래 완료조건](README.md), [소스/바이너리 대조](../20261020-c4-unit-02/source-comparison.json).
+- 검토 코드: [bccb461](https://github.com/inhhlee/amr-control-system-demo/commit/bccb461554f14dd5b7456c07f4dec4d9ea9a3a99). 최종 C4 소스 해시 72개와 게시 커밋의 내용이 대응한다.
+- 실행 일시·환경: 2026-10-20 KST, Windows 10.0.26200, SDK 10.0.401, MQTTnet 5.2.0.1603, xUnit 2.9.3. 실제 연동은 기존 이미지 Mosquitto 2.1.2의 격리 Broker·루프백 임시 포트다.
+- 실행 위치: amr-control-system-demo. [A~C 최종 근거·완료조건표](https://github.com/inhhlee/amr-control-system-demo/blob/feature/6-mqtt-keepalive/evidence/COM-03/20261020-ac-summary-01/README.md), [최종 시험 소스](https://github.com/inhhlee/amr-control-system-demo/blob/bccb461554f14dd5b7456c07f4dec4d9ea9a3a99/evidence/COM-03/20261020-c4-unit-02/source-version.json), [기존 시험본/바이너리 대조](https://github.com/inhhlee/amr-control-system-demo/blob/bccb461554f14dd5b7456c07f4dec4d9ea9a3a99/evidence/COM-03/20261020-c4-unit-02/source-comparison.json).
+- 아래 C1~C3b는 앞서 실제 실행한 기록이며 이번 게시 단계에서 반복 실행하지 않았다. C4는 대역 알림·사용자 취소의 순서를 제어하는 자동시험이다.
 
-| 구분 | 명령·입력·조건 | 예상 | 실제·판정 | 근거 |
-| --- | --- | --- | --- | --- |
-| 빌드·전체 회귀 | dotnet build/test --no-restore, 시험은 --no-build | 경고/오류 0·전체 통과 | 0/0, 768건 통과·실패/건너뜀 0 | [C4 명령](../20261020-c4-unit-02/commands.jsonl), [TRX](../20261020-c4-unit-02/tests.trx) |
-| C1 무업무 유지 | KeepAlive 5초, 2배 이상 관찰 | PING 유지·Ctrl+C 종료 0 | 12.0899808초·2쌍·종료 0 | [C1](../20261020-c1-keepalive-02/README.md) |
-| C2 실제 Broker 종료/복구 | 격리 Broker 종료 후 새 프로세스로 재접속 | 단절·정리·종료 1, 새 실행 정상 | 감지 53.4907ms, 새 ID/PID·12초/PING·종료 0 | [C2](../20261020-c2-mqtt-01/README.md) |
-| C3 무응답 | 승인·구독 후 응답 폐기, 차단 대기0/2초 | 사전 허용 시간 내 타임아웃·종료 1 | 차단→감지7.3297821/5.3980114초, 마지막 송신/폐기 기준 모두 통과; C3a 회귀 종료 0 | [C3b](../20261020-c3b-noresponse-02/README.md) |
-| C4 대역 순서 제어 | 중복8회·승자 콜백 지연·정상 해제 중 알림·Dispose 후 캡처 콜백 | 최초 원인 유지·단일 정리 | 신규7건 통과, 현재 종료 원인21건/직접 관련46건 포함 전체768 | [C4](../20261020-c4-unit-02/README.md) |
+| 구분 | 명령·입력·조건 | 예상 결과 | 실제 결과 | 판정 | 근거 |
+| --- | --- | --- | --- | --- | --- |
+| 빌드·자동시험 | dotnet build/test --no-restore, test --no-build | 경고/오류 0·회귀 통과 | 기존 761+신규 7=768건, 실패/건너뜀 0·경고/오류 0 | 통과 | [명령](https://github.com/inhhlee/amr-control-system-demo/blob/bccb461554f14dd5b7456c07f4dec4d9ea9a3a99/evidence/COM-03/20261020-c4-unit-02/commands.jsonl), [TRX](https://github.com/inhhlee/amr-control-system-demo/blob/bccb461554f14dd5b7456c07f4dec4d9ea9a3a99/evidence/COM-03/20261020-c4-unit-02/tests.trx) |
+| C1 실제 유지 | KeepAlive 5초, 업무 PUBLISH 없음·2배 이상 관찰 | PING 유지·Ctrl+C 종료 0 | 12.0899808초·PING 2쌍·종료 0 | 통과 | [C1](https://github.com/inhhlee/amr-control-system-demo/blob/bccb461554f14dd5b7456c07f4dec4d9ea9a3a99/evidence/COM-03/20261020-c1-keepalive-02/README.md) |
+| C2 실제 Broker 종료·새 실행 | 격리 Broker 종료, 동일 Broker 재기동 뒤 새 프로세스 | 범위 내 상실·정리·종료 1, 새 실행 정상 | 감지 53.4907ms·종료 관찰 79.4166ms, 새 PID/ID·12초/PING·종료 0 | 통과 | [C2](https://github.com/inhhlee/amr-control-system-demo/blob/bccb461554f14dd5b7456c07f4dec4d9ea9a3a99/evidence/COM-03/20261020-c2-mqtt-01/README.md) |
+| C3a 전달/차단·정리 | 승인 뒤 응답 폐기·TCP 유지·재개, 접속 전 stop | 차단 조건·시험 자원 정리 | 응답 2바이트 폐기·반대 전달·연결 유지, 최신 도구 회귀 종료 0 | 통과 | [C3a](https://github.com/inhhlee/amr-control-system-demo/blob/bccb461554f14dd5b7456c07f4dec4d9ea9a3a99/evidence/COM-03/20261020-c3a-proxy-03/README.md), [회귀](https://github.com/inhhlee/amr-control-system-demo/blob/bccb461554f14dd5b7456c07f4dec4d9ea9a3a99/evidence/COM-03/20261020-c3b-c3a-regression-01/README.md) |
+| C3b 실제 무응답 | 차단 대기0초/2초, 사전 기준·허용 오차 저장 | 위상 반영 범위 내 감지·종료 1 | 차단→감지7.3297821/5.3980114초, 마지막 송신→감지7.5744957/7.6373481초(허용7.4~8.75), 폐기→감지2.5027692/2.5050294초(허용2.4~3.5) | 통과 | [C3b](https://github.com/inhhlee/amr-control-system-demo/blob/bccb461554f14dd5b7456c07f4dec4d9ea9a3a99/evidence/COM-03/20261020-c3b-noresponse-02/README.md) |
+| C4 순서·중복·늦은 콜백 | 첫 알림 보류 중 중복8회/취소, 정상 해제 중 알림, Dispose 뒤 캡처 콜백 | 최초 원인/코드·단일 정리 유지 | 신규7건 포함 종료 원인21건·관련46건 통과. UserCanceled/0·ConnectionLost/1, 정리 각1회·구독0 | 통과 | [C4](https://github.com/inhhlee/amr-control-system-demo/blob/bccb461554f14dd5b7456c07f4dec4d9ea9a3a99/evidence/COM-03/20261020-c4-unit-02/README.md) |
 
 ## 완료조건
 
@@ -35,18 +38,17 @@
 - [x] Ctrl+C와 단절 경합에서도 자원 정리·종료가 가능하고 종료 이유와 코드가 일치한다.
 - [x] Broker 복구 후 새 실행의 접속을 확인하고 자동 재접속 결과로 표시하지 않는다.
 - [x] A~C의 유효한 정상·실패·대기 제한·취소·유지·단절 증거와 필요한 회귀 결과를 검토할 코드 버전에 연결한다.
-- [ ] 자동 시험·실제 Broker·프록시 조건의 적용 범위와 미실행·실패·감지 한계를 표시하고 README·Issue·PR·증거를 연결한다.
+- [x] 자동 시험·실제 Broker·프록시 조건의 적용 범위와 미실행·실패·감지 한계를 표시하고 README·Issue·PR·증거를 연결한다.
 
-1~7번의 조건별 근거는 [최종 대응표](README.md)에 있다. 8번은 범위·실패·한계·README·로컬 안내까지 준비됐으며 **실제 Issue 결과 게시와 이 PR 게시 연결 후에만 체크**한다.
+8개 완료조건의 개별 근거와 선행 #4/#5 조건 유효성은 최종 근거표에 있다. [#6 Issue의 최종 검증·PR 게시](https://github.com/inhhlee/amr-control-system-demo/issues/6)에서 실제 PR·고정 코드 증거를 연결하고 8개 조건을 갱신했다. Issue는 open, PR은 병합 대기로 유지한다.
 
 ## 미검증 항목과 남은 작업
 
-| 항목 | 사유·영향 | 후속 |
+| 항목 | 사유·영향 | 후속 확인 |
 | --- | --- | --- |
-| Issue/PR 게시 연결 | 현재 로컬 초안, #6 open·PR 없음 | 요청된 게시 단계에서 커밋/푸시·같은 브랜치 PR·Issue 연결, 코드 해시 대조 |
-| 리뷰·develop 병합·Issue 종료 | 이번 요청 범위는 C4 검증·근거 취합 | 리뷰 뒤 merge commit, 전체 조건 확인 후 수동 종료 |
-| 실제 OS Ctrl+C와 Broker 동시 경합 | C4는 취소 토큰·대역 콜백 순서 제어, 실제 Ctrl+C/단절은 별도 기존 세션 | 시험 범위를 명시하며 전수 스케줄 보장 안 함 |
-| 실제 인증 거부/Seq 새 필드·장시간/부하/시각 변경 | 이번 실제 MQTT 통과 범위 밖 | 필요 시 별도 조건/계획으로 검증 |
-| 자동 복구·AMR 상태·GUI·Core·DB | COM-06/COM-02 등 후속 범위 | 별도 Issue/계획 |
+| 리뷰·develop 병합·Issue 종료 | 이번 요청은 커밋·푸시·PR·Issue 근거 갱신까지다 | 병합은 보류. 이후 요청된 단계에서 리뷰·반영·완료 확인 |
+| 실제 OS Ctrl+C와 Broker 동시 경합 전수 | C4는 동일 취소 토큰·대역 콜백 순서 제어이며 실제 Ctrl+C/단절은 기존 별도 세션 | 검증 범위를 넘어 모든 스케줄 보장으로 확대하지 않음 |
+| 실제 인증 Broker 거부·Seq 새 필드 수집·장시간/부하/시각 변경 | 이번 실제 MQTT 통과 범위 밖 | 필요 시 별도 계획·입력으로 검증 |
+| 자동 재접속·재구독, AMR Heartbeat·GUI·Core·DB | COM-06·COM-02 등 후속 범위 | 별도 Issue·계획 |
 
-최초 빌드 권한 실패 등 실행 이력은 최종 보고서의 실패 목록과 원본 디렉터리에 보존했다. 문서 저장소 변경은 코드 PR 커밋 대상과 구분한다.
+초기 환경/도구 실패와 중간 결과는 [실패 이력](https://github.com/inhhlee/amr-control-system-demo/blob/feature/6-mqtt-keepalive/evidence/COM-03/20261020-ac-summary-01/README.md#5-실패-이력한계남은-단계)에 연결했다. MQTT 이유 코드 NormalDisconnection도 최초 원인·타임아웃 예외·실제 종료 코드와 함께 해석한다. C3b 감지 허용 범위는 시험 기준이며 운영 SLA가 아니다.

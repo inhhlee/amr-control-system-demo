@@ -1,6 +1,6 @@
 # COM-03 A~C 최종 근거 취합과 #6 완료조건
 
-2026-10-20 Codex 확인. **C1~C4 구현·시험 근거를 취합했고 #6 원래 완료조건 8개 중 7개가 충족, 1개는 게시 연결이 남은 부분 충족이다.** #6은 open·PR 없음·미커밋이다. 이번 요청에서는 커밋·푸시·PR 생성·Issue 변경·병합을 수행하지 않았다.
+2026-10-20 Codex 확인. **C1~C4 구현·시험과 후속 게시 요청을 마쳐 #6 원래 완료조건 8개 모두에 충족 근거를 연결했다.** 구현·시험·증거 커밋은 `bccb461554f14dd5b7456c07f4dec4d9ea9a3a99`, [PR #31](https://github.com/inhhlee/amr-control-system-demo/pull/31)은 develop 대상이다. [#6 Issue](https://github.com/inhhlee/amr-control-system-demo/issues/6)의 8개 체크와 근거·PR 연결을 갱신했다. **Issue·PR은 open, 병합·Issue 종료는 대기**다. [게시 시 코드/상태 대조](../20261020-pr-publication-01/README.md)에서 기존 검증 시점의 미커밋·7/8 상태와 구분한다.
 
 ## 1. 적용 기준·최종 코드
 
@@ -42,9 +42,9 @@ B 이후 변경은 [콘솔 비교](b-to-final-console.diff)에서 확인한다. 
 | 5 | Ctrl+C와 단절 경합의 정리·이유/코드 일치 | 충족 — 동일 취소 경계의 두 순서·진행 중 콜백·32회 동시 시작 회귀. UserCanceled/0, ConnectionLost/1, 정리 각 1회. 실제 Ctrl+C 전달은 기존 실제 세션 근거 |
 | 6 | Broker 복구 후 새 실행 접속, 자동 재접속과 구분 | 충족 — C2 동일 Broker 재기동 후 새 PID/Client ID·PING·종료 0 |
 | 7 | A~C의 유효한 증거·필요 회귀를 최종 코드에 연결 | 충족 — 본 표·A/B 병합/소스 대조·C2/C3 제품/바이너리 동일성·768건 최종 TRX |
-| 8 | 자동/실제 조건·실패/한계를 표시하고 README·Issue·PR·증거 연결 | **부분 충족** — README·본 보고서·로컬 Issue 안내·[PR 본문 초안](PR.md) 준비. 실제 #6 Issue 결과 게시 및 develop 대상 PR 링크는 아직 없음 |
+| 8 | 자동/실제 조건·실패/한계를 표시하고 README·Issue·PR·증거 연결 | **충족** — README·본 보고서·[#6 Issue](https://github.com/inhhlee/amr-control-system-demo/issues/6)·[develop 대상 PR #31](https://github.com/inhhlee/amr-control-system-demo/pull/31)·[PR 본문](PR.md)을 실제 연결하고 8조건 갱신. [게시 확인](../20261020-pr-publication-01/publication.json) |
 
-기능·시험 범위는 확인됐지만 실제 게시 연결까지 요구하는 8번을 완료 체크하지 않는다. GitHub 본문의 최초 체크박스도 이번 작업에서 바꾸지 않았다.
+최초 취합 시점에는 7개 충족·게시 연결 1개 부분 충족이었다. 후속 요청으로 커밋·푸시·PR 생성과 Issue 결과 연결을 수행해 8개를 체크했다. 완료조건의 근거 확인과 develop 병합은 구분하며 Issue는 아직 닫지 않는다.
 
 ## 4. 선행 #4·#5 원래 조건의 유지
 
@@ -73,5 +73,5 @@ B 이후 변경은 [콘솔 비교](b-to-final-console.diff)에서 확인한다. 
 - 이전 실패/중간 결과는 그대로 보존한다: A2/A3 초기 권한·도우미 실패, B unit-01 권한/중간 unit-02 및 mqtt-01 도구 오류, C1 첫 빈 출력 처리, C2 unit-01 API 경고, C3a proxy-01 빈 출력 오류·proxy-02 중간 통과 뒤 stop 보완, C4 unit-01 빌드 쓰기 권한 오류. 최종 실행 ID는 위 표를 따른다. 실패 로그를 통과 수에 포함하지 않는다.
 - C4 전체 768건은 단위/컴포넌트 자동시험이다. 실제 MQTT/OS Ctrl+C를 새로 동시에 주입하지 않았고, 실제 인증 Broker 거부·Seq 새 진단 필드 수집·GUI·장시간 부하·벽시계 변경·모든 경합 스케줄·운영 SLA·장비 안전성은 미검증이다. 별도 COM-02 Heartbeat, COM-06 자동 재접속·재구독과 과제1 전체 완료를 뜻하지 않는다.
 - 정상 종료는 실제 결과가 중요하다. MQTT 이유 코드 NormalDisconnection만으로 사용자 취소를 판정하지 않는다. C3b의 해당 이유 코드는 MqttCommunicationTimedOutException 및 최초 원인 ConnectionLost·종료 1과 함께 읽는다.
-- 다음 요청 단계: #6 변경만 선별 커밋·푸시 → 같은 브랜치에서 develop 대상 PR 생성/Issue에 결과 연결 → 리뷰/필요 수정 → merge commit 병합 → 8조건과 develop 반영을 확인한 뒤 #6 종료. `git flow feature finish`는 사용하지 않는다.
-- [PR 초안](PR.md)은 로컬 검토 자료이며 게시된 PR이 아니다. 코드·문서 저장소는 별도이고 이번에 어느 쪽도 커밋하지 않았다.
+- 다음 요청 단계: PR #31 리뷰/필요 수정 → 요청된 merge commit 병합 → 8조건과 develop 반영을 확인한 뒤 #6 종료. 현재 병합은 명시적으로 보류했다. `git flow feature finish`는 사용하지 않는다.
+- [PR 본문](PR.md)은 게시한 설명과 같은 범위의 기록이다. 코드 저장소만 커밋·푸시하고 C:\process-plan 문서 저장소는 별도 원본 갱신 상태로 보존했다. 이전 실행의 미커밋·PR 없음 표시는 해당 실행 시점의 기록이다.
