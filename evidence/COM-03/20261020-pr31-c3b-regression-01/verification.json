@@ -1,0 +1,82 @@
+{
+  "result": "passed",
+  "scope": "C3b actual response suppression detection",
+  "session": {
+    "clientId": "amr-demo-2f3d1816a5f84c63ae6bb6bdfbc6d0f7",
+    "keepAliveSeconds": "5",
+    "productPid": 29028,
+    "proxyPort": 57365,
+    "readyAtUtc": "2026-10-20T03:56:40.2275037+00:00"
+  },
+  "measurement": {
+    "lastOutgoing": {
+      "atUtc": "2026-10-20T03:56:40.1991342+00:00",
+      "elapsedMs": 806.4663,
+      "eventType": "Forwarded",
+      "data": {
+        "direction": "client-to-broker",
+        "bytes": 67
+      }
+    },
+    "block": {
+      "atUtc": "2026-10-20T03:56:42.4397242+00:00",
+      "elapsedMs": 3047.0563,
+      "eventType": "ControlApplied",
+      "data": {
+        "sequence": 1,
+        "action": "block",
+        "blocked": true
+      }
+    },
+    "firstDiscard": {
+      "atUtc": "2026-10-20T03:56:45.2453228+00:00",
+      "elapsedMs": 5852.6553,
+      "eventType": "Dropped",
+      "data": {
+        "direction": "broker-to-client",
+        "bytes": 2
+      }
+    },
+    "firstEof": {
+      "atUtc": "2026-10-20T03:56:47.7471307+00:00",
+      "elapsedMs": 8354.463,
+      "eventType": "Eof",
+      "data": {
+        "direction": "client-to-broker"
+      }
+    },
+    "console": {
+      "clientId": "amr-demo-2f3d1816a5f84c63ae6bb6bdfbc6d0f7",
+      "productPid": 29028,
+      "exitCode": 1,
+      "detectedAtUtc": "2026-10-20T03:56:47.7529215+00:00",
+      "reason": "NormalDisconnection",
+      "exceptionType": "MqttCommunicationTimedOutException",
+      "socketError": "None",
+      "exitObservedAtUtc": "2026-10-20T03:56:47.7815209+00:00",
+      "cleanupCompleted": true,
+      "ctrlCSent": false
+    },
+    "phaseSeconds": 2.24059,
+    "blockToDetectSeconds": 5.3131973,
+    "expectedBlockToDetectMinimumSeconds": 5.15941,
+    "expectedBlockToDetectMaximumSeconds": 6.50941,
+    "lastOutgoingToDetectSeconds": 7.5537873,
+    "firstDiscardToDetectSeconds": 2.5075987,
+    "firstDiscardToEofMonotonicSeconds": 2.501807699999999,
+    "exitAfterDetectionSeconds": 0.0285994,
+    "blockRequestAtUtc": "2026-10-20T03:56:42.4214438+00:00",
+    "blockAckObservedMs": 58.0113,
+    "detectionObservedMs": 5343.4557,
+    "monotonicBlockToObservationMinimumMs": 5285.4444,
+    "monotonicBlockToObservationMaximumMs": 5343.4557,
+    "wallVsMonotonicDriftMs": 1.0731999999998152,
+    "brokerStillRunning": true
+  },
+  "blockedBytes": 2.0,
+  "responseForwardsAfterBlock": 0,
+  "ctrlCSent": false,
+  "responseResumed": false,
+  "brokerStoppedBeforeDetection": false,
+  "proxyExitedOnClientEof": true
+}

@@ -1,0 +1,731 @@
+[
+  {
+    "tool": "Verify-KeepAlive.ps1",
+    "scenario": "normal",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "stop",
+        "--time",
+        "5",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "rm",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "ps",
+        "-a",
+        "--format",
+        "{{json .}}"
+      ]
+    ],
+    "stopAttempted": true,
+    "removeAttempted": true,
+    "stateCheckAttempted": true,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": false,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": true,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-KeepAlive.ps1",
+    "scenario": "logs-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    ],
+    "stopAttempted": false,
+    "removeAttempted": false,
+    "stateCheckAttempted": false,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": false,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-KeepAlive.ps1",
+    "scenario": "log-write-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    ],
+    "stopAttempted": false,
+    "removeAttempted": false,
+    "stateCheckAttempted": false,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": false,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-KeepAlive.ps1",
+    "scenario": "stop-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "stop",
+        "--time",
+        "5",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    ],
+    "stopAttempted": true,
+    "removeAttempted": false,
+    "stateCheckAttempted": false,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "",
+    "errorsAggregated": false,
+    "passed": false,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-KeepAlive.ps1",
+    "scenario": "rm-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "stop",
+        "--time",
+        "5",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "rm",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    ],
+    "stopAttempted": true,
+    "removeAttempted": true,
+    "stateCheckAttempted": false,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": false,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-KeepAlive.ps1",
+    "scenario": "ps-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "stop",
+        "--time",
+        "5",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "rm",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "ps",
+        "-a",
+        "--format",
+        "{{json .}}"
+      ]
+    ],
+    "stopAttempted": true,
+    "removeAttempted": true,
+    "stateCheckAttempted": true,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": true,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-KeepAlive.ps1",
+    "scenario": "primary-and-logs-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    ],
+    "stopAttempted": false,
+    "removeAttempted": false,
+    "stateCheckAttempted": false,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": false,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-KeepAlive.ps1",
+    "scenario": "error-report-write-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    ],
+    "stopAttempted": false,
+    "removeAttempted": false,
+    "stateCheckAttempted": false,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "Unable to clear content of 'C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-pr31-p2-green-01\\Verify-KeepAlive-error-report-write-fail\\cleanup-failure.log' because it is a directory. Clear-Content is only supported on files.",
+    "errorsAggregated": true,
+    "passed": false,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-KeepAlive.ps1",
+    "scenario": "invalid-id",
+    "calls": [
+      [
+        "ps",
+        "-a",
+        "--format",
+        "{{json .}}"
+      ]
+    ],
+    "stopAttempted": false,
+    "removeAttempted": false,
+    "stateCheckAttempted": true,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": false,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": true,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-BrokerShutdown.ps1",
+    "scenario": "normal",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "stop",
+        "--time",
+        "5",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "rm",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "ps",
+        "-a",
+        "--format",
+        "{{json .}}"
+      ]
+    ],
+    "stopAttempted": true,
+    "removeAttempted": true,
+    "stateCheckAttempted": true,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": false,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": true,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-BrokerShutdown.ps1",
+    "scenario": "logs-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    ],
+    "stopAttempted": false,
+    "removeAttempted": false,
+    "stateCheckAttempted": false,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": false,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-BrokerShutdown.ps1",
+    "scenario": "log-write-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    ],
+    "stopAttempted": false,
+    "removeAttempted": false,
+    "stateCheckAttempted": false,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": false,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-BrokerShutdown.ps1",
+    "scenario": "stop-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "stop",
+        "--time",
+        "5",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    ],
+    "stopAttempted": true,
+    "removeAttempted": false,
+    "stateCheckAttempted": false,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "",
+    "errorsAggregated": false,
+    "passed": false,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-BrokerShutdown.ps1",
+    "scenario": "rm-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "stop",
+        "--time",
+        "5",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "rm",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    ],
+    "stopAttempted": true,
+    "removeAttempted": true,
+    "stateCheckAttempted": false,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": false,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-BrokerShutdown.ps1",
+    "scenario": "ps-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "stop",
+        "--time",
+        "5",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "rm",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "ps",
+        "-a",
+        "--format",
+        "{{json .}}"
+      ]
+    ],
+    "stopAttempted": true,
+    "removeAttempted": true,
+    "stateCheckAttempted": true,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": true,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-BrokerShutdown.ps1",
+    "scenario": "primary-and-logs-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    ],
+    "stopAttempted": false,
+    "removeAttempted": false,
+    "stateCheckAttempted": false,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": false,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-BrokerShutdown.ps1",
+    "scenario": "error-report-write-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    ],
+    "stopAttempted": false,
+    "removeAttempted": false,
+    "stateCheckAttempted": false,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "Unable to clear content of 'C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-pr31-p2-green-01\\Verify-BrokerShutdown-error-report-write-fail\\cleanup-failure.log' because it is a directory. Clear-Content is only supported on files.",
+    "errorsAggregated": true,
+    "passed": false,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-BrokerShutdown.ps1",
+    "scenario": "invalid-id",
+    "calls": [
+      [
+        "ps",
+        "-a",
+        "--format",
+        "{{json .}}"
+      ]
+    ],
+    "stopAttempted": false,
+    "removeAttempted": false,
+    "stateCheckAttempted": true,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": false,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": true,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-ResponseGate.ps1",
+    "scenario": "normal",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "stop",
+        "--time",
+        "5",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "rm",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "ps",
+        "-a",
+        "--format",
+        "{{json .}}"
+      ]
+    ],
+    "stopAttempted": true,
+    "removeAttempted": true,
+    "stateCheckAttempted": true,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": false,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": true,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-ResponseGate.ps1",
+    "scenario": "logs-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    ],
+    "stopAttempted": false,
+    "removeAttempted": false,
+    "stateCheckAttempted": false,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": false,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-ResponseGate.ps1",
+    "scenario": "log-write-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    ],
+    "stopAttempted": false,
+    "removeAttempted": false,
+    "stateCheckAttempted": false,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": false,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-ResponseGate.ps1",
+    "scenario": "stop-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "stop",
+        "--time",
+        "5",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    ],
+    "stopAttempted": true,
+    "removeAttempted": false,
+    "stateCheckAttempted": false,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "",
+    "errorsAggregated": false,
+    "passed": false,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-ResponseGate.ps1",
+    "scenario": "rm-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "stop",
+        "--time",
+        "5",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "rm",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    ],
+    "stopAttempted": true,
+    "removeAttempted": true,
+    "stateCheckAttempted": false,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": false,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-ResponseGate.ps1",
+    "scenario": "ps-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "stop",
+        "--time",
+        "5",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "rm",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      [
+        "ps",
+        "-a",
+        "--format",
+        "{{json .}}"
+      ]
+    ],
+    "stopAttempted": true,
+    "removeAttempted": true,
+    "stateCheckAttempted": true,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": true,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-ResponseGate.ps1",
+    "scenario": "primary-and-logs-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    ],
+    "stopAttempted": false,
+    "removeAttempted": false,
+    "stateCheckAttempted": false,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": false,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-ResponseGate.ps1",
+    "scenario": "error-report-write-fail",
+    "calls": [
+      [
+        "logs",
+        "--timestamps",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    ],
+    "stopAttempted": false,
+    "removeAttempted": false,
+    "stateCheckAttempted": false,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": true,
+    "escapedError": "Unable to clear content of 'C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-pr31-p2-green-01\\Verify-ResponseGate-error-report-write-fail\\cleanup-failure.log' because it is a directory. Clear-Content is only supported on files.",
+    "errorsAggregated": true,
+    "passed": false,
+    "dockerActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-ResponseGate.ps1",
+    "scenario": "invalid-id",
+    "calls": [
+      [
+        "ps",
+        "-a",
+        "--format",
+        "{{json .}}"
+      ]
+    ],
+    "stopAttempted": false,
+    "removeAttempted": false,
+    "stateCheckAttempted": true,
+    "ownedIdOnly": true,
+    "primaryPreserved": true,
+    "failureRecorded": false,
+    "escapedError": "",
+    "errorsAggregated": true,
+    "passed": true,
+    "dockerActuallyInvoked": false
+  }
+]

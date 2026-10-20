@@ -1,0 +1,10 @@
+{
+  "recordedAtUtc": "2026-10-20T02:20:57.4886839+00:00",
+  "pullRequest": 31,
+  "head": "da1e64083f73e12fc5ec992ba3dab03bddcf6679",
+  "scope": "Review reproductions, no product change or Docker service start",
+  "expectedProxyStop": "stop acknowledged and proxy completes even when block waits behind a backpressured response write",
+  "expectedCleanup": "logs failure does not prevent stop and rm attempts",
+  "previousProductTests": "Existing C4 768, not rerun",
+  "ci": "No checks/statuses reported for head; not a CI pass"
+}

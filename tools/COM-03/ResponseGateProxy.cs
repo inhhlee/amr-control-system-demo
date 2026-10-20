@@ -111,7 +111,9 @@ public static class ResponseGateProxy
                             stop.Cancel();
                             return;
                         }
-                        await responseGate.WaitAsync(stop.Token);
+                        // Re-read the latest command if a response write is stalled.
+                        // An unacknowledged block/resume must not hide a later stop.
+                        if (!await responseGate.WaitAsync(25, stop.Token)) continue;
                         try
                         {
                             blocked = action == "block";

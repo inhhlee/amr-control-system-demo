@@ -1,0 +1,18 @@
+{
+  "clientId": "amr-demo-628244c23f6548f3b39089618ea57ae1",
+  "keepAliveSeconds": 5.0,
+  "port": 64652,
+  "observedFromUtc": "2026-10-20T03:55:37.9082328+00:00",
+  "observedUntilUtc": "2026-10-20T03:55:49.9141232+00:00",
+  "observedSeconds": 12.0050119,
+  "ctrlCAtUtc": "2026-10-20T03:55:49.9274363+00:00",
+  "exitedAtUtc": "2026-10-20T03:55:49.9653715+00:00",
+  "exitCode": 0,
+  "consolePids": [
+    37480,
+    42864
+  ],
+  "productPid": 42864,
+  "businessMessagesInConsole": 0,
+  "seqEnabled": false
+}

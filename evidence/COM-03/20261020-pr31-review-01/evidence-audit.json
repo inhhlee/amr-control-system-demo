@@ -1,0 +1,40 @@
+{
+  "checkedAtUtc": "2026-10-20T02:22:19.0276861+00:00",
+  "reviewedHead": "da1e64083f73e12fc5ec992ba3dab03bddcf6679",
+  "codeSourceSnapshotMatches": 72,
+  "existingAutomaticResults": {
+    "passed": 768,
+    "total": 768,
+    "failed": 0,
+    "notExecuted": 0
+  },
+  "existingC3b": [
+    {
+      "run": "20261020-c3b-noresponse-01",
+      "sequenceOrdered": true,
+      "clientId": "amr-demo-318d536fd57d41ea958d7c593251f44e",
+      "blockToDetectSeconds": 7.3297821,
+      "lastOutgoingToDetectSeconds": 7.5744957,
+      "discardToDetectSeconds": 2.5027692,
+      "responseForwardedAfterBlock": 0,
+      "exceptionType": "MqttCommunicationTimedOutException",
+      "exitCode": 1
+    },
+    {
+      "run": "20261020-c3b-noresponse-02",
+      "sequenceOrdered": true,
+      "clientId": "amr-demo-d861789eecf04ba580774016db6389d3",
+      "blockToDetectSeconds": 5.3980114,
+      "lastOutgoingToDetectSeconds": 7.6373481,
+      "discardToDetectSeconds": 2.5050294,
+      "responseForwardedAfterBlock": 0,
+      "exceptionType": "MqttCommunicationTimedOutException",
+      "exitCode": 1
+    }
+  ],
+  "existingABSourceValidity": "consistent",
+  "productTestsRerun": false,
+  "newReviewProbes": 2,
+  "ciChecksForHead": 0,
+  "ciPassClaimed": false
+}

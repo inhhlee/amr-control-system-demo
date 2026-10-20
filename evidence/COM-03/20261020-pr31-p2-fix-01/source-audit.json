@@ -1,0 +1,475 @@
+{
+  "baseCommit": "da1e64083f73e12fc5ec992ba3dab03bddcf6679",
+  "previousTestRun": "20261020-c4-unit-02",
+  "previousCounters": {
+    "total": 768,
+    "executed": 768,
+    "passed": 768,
+    "failed": 0,
+    "error": 0,
+    "timeout": 0,
+    "aborted": 0,
+    "inconclusive": 0,
+    "passedButRunAborted": 0,
+    "notRunnable": 0,
+    "notExecuted": 0,
+    "disconnected": 0,
+    "warning": 0,
+    "completed": 0,
+    "inProgress": 0,
+    "pending": 0
+  },
+  "previousProductTestsRerun": false,
+  "baselineFiles": 72,
+  "matchingFiles": 70,
+  "changedFiles": [
+    {
+      "path": "tests/manual/COM03-C/Verify-ResponseGate.ps1",
+      "baselineSha256": "EA46BC410BBBCD3BBBC44B7E48236DCDC381EFB56B877E092CF998939BB14668",
+      "currentSha256": "DC5923C530C67E507A94CFE42FE14B1F019D1EDBD4CE4B9806CFD902FACC0F18",
+      "matches": false
+    },
+    {
+      "path": "tools/COM-03/ResponseGateProxy.cs",
+      "baselineSha256": "9005C0024388205F12D0627DAF61A1845A396277C41F533544C7D75E6D668524",
+      "currentSha256": "DC3D8F6011E646EC450CFC4747D219F27E1590320A59348B8F913FF4B8A9DFB8",
+      "matches": false
+    }
+  ],
+  "productAndUnitFiles": 60,
+  "productAndUnitDifferences": 0,
+  "fileComparison": [
+    {
+      "path": "AmrControlSystem.slnx",
+      "baselineSha256": "CCD11FC15FF2A3A169DA6F6B0CA4B452AA5DC37AABC983C0DB668D4C7E0975A8",
+      "currentSha256": "CCD11FC15FF2A3A169DA6F6B0CA4B452AA5DC37AABC983C0DB668D4C7E0975A8",
+      "matches": true
+    },
+    {
+      "path": "global.json",
+      "baselineSha256": "6A8E9044030D136BD4C04FFF9684111A3478B27559BFB6D19E4D380F0DE91510",
+      "currentSha256": "6A8E9044030D136BD4C04FFF9684111A3478B27559BFB6D19E4D380F0DE91510",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication.Console/Amr.Communication.Console.csproj",
+      "baselineSha256": "D2E902231968D3B2214955E0BC2D7FCED4607AA3A08F2B5530D15004093F22F3",
+      "currentSha256": "D2E902231968D3B2214955E0BC2D7FCED4607AA3A08F2B5530D15004093F22F3",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication.Console/CommandConsoleRunner.cs",
+      "baselineSha256": "BD211AA52F54CCD31A8B3CBDE504B34BE6EF3FAB73FEFE523C7CFC539962BFFA",
+      "currentSha256": "BD211AA52F54CCD31A8B3CBDE504B34BE6EF3FAB73FEFE523C7CFC539962BFFA",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication.Console/ConsoleRunner.cs",
+      "baselineSha256": "968646AF29EA5D97AE7650D4061BA2CD6E76C2781C6BB38E4524D66AEE7EE4FE",
+      "currentSha256": "968646AF29EA5D97AE7650D4061BA2CD6E76C2781C6BB38E4524D66AEE7EE4FE",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication.Console/Logging/SeqLogSink.cs",
+      "baselineSha256": "4752EFE0F1F10B2CA0A8C505CBF2F5AB811F6886B3A727A67814B6A023A9646F",
+      "currentSha256": "4752EFE0F1F10B2CA0A8C505CBF2F5AB811F6886B3A727A67814B6A023A9646F",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication.Console/Logging/SeqLogging.cs",
+      "baselineSha256": "18978489BD3DDC3A994BD66FE3B7C5FE5EC7F61FD715CC7438C18046D9BAAF15",
+      "currentSha256": "18978489BD3DDC3A994BD66FE3B7C5FE5EC7F61FD715CC7438C18046D9BAAF15",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication.Console/Logging/StructuredLog.cs",
+      "baselineSha256": "561668FB1C6182E80B231B7345DECACB7FB761C2C6ED940EF468F28A86DD32F2",
+      "currentSha256": "561668FB1C6182E80B231B7345DECACB7FB761C2C6ED940EF468F28A86DD32F2",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication.Console/Program.cs",
+      "baselineSha256": "52DDBCF2CC06B9DE401C41FED418512F8F182E908B0F2831EE567DF5B5BB2C3D",
+      "currentSha256": "52DDBCF2CC06B9DE401C41FED418512F8F182E908B0F2831EE567DF5B5BB2C3D",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Amr.Communication.csproj",
+      "baselineSha256": "EC8DE05434FD0644E9F9424BF0AE3239E38A21022A3DDFA5CA4CEF21A05E8361",
+      "currentSha256": "EC8DE05434FD0644E9F9424BF0AE3239E38A21022A3DDFA5CA4CEF21A05E8361",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandMessage.cs",
+      "baselineSha256": "6B708F4DC1C0D16F16E56B10A5A3C0B828E8F142409F4AD2D2B531811017A9DC",
+      "currentSha256": "6B708F4DC1C0D16F16E56B10A5A3C0B828E8F142409F4AD2D2B531811017A9DC",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandPublisher.cs",
+      "baselineSha256": "96AA8D5A26228895EDC5A1CFEA3BAD9D65D810EB8D7FBA1503CCDD0CAF623FC7",
+      "currentSha256": "96AA8D5A26228895EDC5A1CFEA3BAD9D65D810EB8D7FBA1503CCDD0CAF623FC7",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandValidationResult.cs",
+      "baselineSha256": "B7CFAAAEB25702513F055CD304C72074F2460FBC34EC418382C859EBC6025623",
+      "currentSha256": "B7CFAAAEB25702513F055CD304C72074F2460FBC34EC418382C859EBC6025623",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandValidator.cs",
+      "baselineSha256": "3B672887A0503D44155DCF808DE8D9293CE13AF7F8F01C4FE76A49C84CC9223B",
+      "currentSha256": "3B672887A0503D44155DCF808DE8D9293CE13AF7F8F01C4FE76A49C84CC9223B",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Models/AckMessage.cs",
+      "baselineSha256": "D28A532212713B8A86D1AF35F2F542B6B53461D73F92F017CA3AFFFA7CA73821",
+      "currentSha256": "D28A532212713B8A86D1AF35F2F542B6B53461D73F92F017CA3AFFFA7CA73821",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Models/AlarmMessage.cs",
+      "baselineSha256": "E86A417FF8ACD3E76500CAC357BE23DE2FF1BF593742E8C323E0DB172701E93E",
+      "currentSha256": "E86A417FF8ACD3E76500CAC357BE23DE2FF1BF593742E8C323E0DB172701E93E",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Models/HeartbeatMessage.cs",
+      "baselineSha256": "4BEDA4DA2B7E45720E0C11779DF09496A34D069655BB1B0E509034BC16E33A4E",
+      "currentSha256": "4BEDA4DA2B7E45720E0C11779DF09496A34D069655BB1B0E509034BC16E33A4E",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Models/ReceivedMessage.cs",
+      "baselineSha256": "0A7D983DB5E8185A3760BA57B567A2B0924F9FE0DAD5DD34E39FBE95061C7EBF",
+      "currentSha256": "0A7D983DB5E8185A3760BA57B567A2B0924F9FE0DAD5DD34E39FBE95061C7EBF",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Models/TelemetryMessage.cs",
+      "baselineSha256": "6D0D5C7B6A8A0E26A8A87DB8AAF5957DCD7E9D8DB46E40225BB324B35467D695",
+      "currentSha256": "6D0D5C7B6A8A0E26A8A87DB8AAF5957DCD7E9D8DB46E40225BB324B35467D695",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Connection/MqttConnection.cs",
+      "baselineSha256": "70BA5CB9000AA2A0C09D6741C81C8347F4FC7D5F23CD95C02BAC75926812FD95",
+      "currentSha256": "70BA5CB9000AA2A0C09D6741C81C8347F4FC7D5F23CD95C02BAC75926812FD95",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Connection/MqttConnectionException.cs",
+      "baselineSha256": "BBD323C8E96884039640BB93A263FEB13A3BB8F7F622BF96DD5F091069C375EB",
+      "currentSha256": "BBD323C8E96884039640BB93A263FEB13A3BB8F7F622BF96DD5F091069C375EB",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Connection/MqttConnectionSettings.cs",
+      "baselineSha256": "39331CD6BCDA0F09D1A72397A31993972C2C2BC937FD2BB0BADA6DB6B1155F1F",
+      "currentSha256": "39331CD6BCDA0F09D1A72397A31993972C2C2BC937FD2BB0BADA6DB6B1155F1F",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Queues/AmrReceiveQueue.cs",
+      "baselineSha256": "182038B55E6AE298CEDBF8EB159B475518619DE962487E722B610BC4383F7625",
+      "currentSha256": "182038B55E6AE298CEDBF8EB159B475518619DE962487E722B610BC4383F7625",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Queues/QueueAdmission.cs",
+      "baselineSha256": "B2E9578282ECE81E1CB6F07119C1D87964D34EDF195A16DB1C6871E2E43D3316",
+      "currentSha256": "B2E9578282ECE81E1CB6F07119C1D87964D34EDF195A16DB1C6871E2E43D3316",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Queues/QueueProcessingEvent.cs",
+      "baselineSha256": "F0C065F9289AEC821A19A6E090A4944CF10C155DBA6024B0CF7D9A63975D5789",
+      "currentSha256": "F0C065F9289AEC821A19A6E090A4944CF10C155DBA6024B0CF7D9A63975D5789",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/HeartbeatDiagnostic.cs",
+      "baselineSha256": "C4CBA602462BF67C6FC472895DF0EA3635A46E683CD8B9667D26B22E0918720E",
+      "currentSha256": "C4CBA602462BF67C6FC472895DF0EA3635A46E683CD8B9667D26B22E0918720E",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/HeartbeatSubscription.cs",
+      "baselineSha256": "A38723932BC0C7B3DA1B4801D2F1650C19A4AA191706D749CE991A3C1DFB1BF2",
+      "currentSha256": "A38723932BC0C7B3DA1B4801D2F1650C19A4AA191706D749CE991A3C1DFB1BF2",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/MessageDiagnostic.cs",
+      "baselineSha256": "5AA07F8F98E5991B407E7F82987D0C1FC0BD8BBCD7CB91DD0119B1E3CAE74291",
+      "currentSha256": "5AA07F8F98E5991B407E7F82987D0C1FC0BD8BBCD7CB91DD0119B1E3CAE74291",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/MessageSubscription.cs",
+      "baselineSha256": "C1103DFC77D3E5B7DD92914A15A6514A3C8F9869EB860324EECD4952A0ADCB47",
+      "currentSha256": "C1103DFC77D3E5B7DD92914A15A6514A3C8F9869EB860324EECD4952A0ADCB47",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Ack/AckValidationResult.cs",
+      "baselineSha256": "22A832C7E5FD12E8CEFC636A35760EE629E1C640DA095A49F404ACC8D0BD9131",
+      "currentSha256": "22A832C7E5FD12E8CEFC636A35760EE629E1C640DA095A49F404ACC8D0BD9131",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Ack/AckValidator.cs",
+      "baselineSha256": "35A64751463D3BF49A4C691DB175360E268CC410E80F2401A98B89FD681248ED",
+      "currentSha256": "35A64751463D3BF49A4C691DB175360E268CC410E80F2401A98B89FD681248ED",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Alarm/AlarmValidationResult.cs",
+      "baselineSha256": "B09A032DE262596E065232FFEA7A3BDE00E7517DCF7A58EEBDDD3DFC4C18677C",
+      "currentSha256": "B09A032DE262596E065232FFEA7A3BDE00E7517DCF7A58EEBDDD3DFC4C18677C",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Alarm/AlarmValidator.cs",
+      "baselineSha256": "E2DFD160B68DC84377807B5D7ABB6620A8F1237E1CC87D79EF36152C97E4D684",
+      "currentSha256": "E2DFD160B68DC84377807B5D7ABB6620A8F1237E1CC87D79EF36152C97E4D684",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Common/MessageValidation.cs",
+      "baselineSha256": "430CB62E5C08D1BAD586F1EBDDCA205FA84D69E2C3D65C1836ABAF9BE36D21D2",
+      "currentSha256": "430CB62E5C08D1BAD586F1EBDDCA205FA84D69E2C3D65C1836ABAF9BE36D21D2",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Common/ValidationError.cs",
+      "baselineSha256": "3DCF8999E3771B4966872962A45D621BE51F862C1EFB16D268501CD3BE666B71",
+      "currentSha256": "3DCF8999E3771B4966872962A45D621BE51F862C1EFB16D268501CD3BE666B71",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Heartbeat/HeartbeatValidationResult.cs",
+      "baselineSha256": "1604225131767FC7564E9D42470E976117920FC14DD0732039C91260EB14C9A7",
+      "currentSha256": "1604225131767FC7564E9D42470E976117920FC14DD0732039C91260EB14C9A7",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Heartbeat/HeartbeatValidator.cs",
+      "baselineSha256": "71F3AA777BA7A44E405F6B36FFD06D56B78825FE761A07B01C74CD0FE80EEC29",
+      "currentSha256": "71F3AA777BA7A44E405F6B36FFD06D56B78825FE761A07B01C74CD0FE80EEC29",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Telemetry/TelemetryValidationResult.cs",
+      "baselineSha256": "3687D86B1B52EEA007F3FEF77BAA48C4E513753782EAC8E0EC284364D529E4C6",
+      "currentSha256": "3687D86B1B52EEA007F3FEF77BAA48C4E513753782EAC8E0EC284364D529E4C6",
+      "matches": true
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Telemetry/TelemetryValidator.cs",
+      "baselineSha256": "9A9D2A46EAD617E6EE9086C54BB738AE0FA1EE30806F18D5BCF790289F66E506",
+      "currentSha256": "9A9D2A46EAD617E6EE9086C54BB738AE0FA1EE30806F18D5BCF790289F66E506",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj",
+      "baselineSha256": "0BB622C8930E883F570DD8DCFA7D4055CCD4722555C8B2F2FF972798A22E8699",
+      "currentSha256": "0BB622C8930E883F570DD8DCFA7D4055CCD4722555C8B2F2FF972798A22E8699",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Command/CommandPublisherTests.cs",
+      "baselineSha256": "737C9B02695DA77486CA60B494119BECEAF47A7B124603CDD5238C2D6E717F7E",
+      "currentSha256": "737C9B02695DA77486CA60B494119BECEAF47A7B124603CDD5238C2D6E717F7E",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Command/CommandValidationTests.cs",
+      "baselineSha256": "D46034A32A23874B921E2D84F5DAF0AAC2E82402C6FBA77D444F07EB8A904DEA",
+      "currentSha256": "D46034A32A23874B921E2D84F5DAF0AAC2E82402C6FBA77D444F07EB8A904DEA",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/CommandConsoleTests.cs",
+      "baselineSha256": "2C6BE32CD789014ECC68EBFCF202E7AE7C3607C5DA920F35BE85433667A58366",
+      "currentSha256": "2C6BE32CD789014ECC68EBFCF202E7AE7C3607C5DA920F35BE85433667A58366",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/ConsoleConnectionFailureTests.cs",
+      "baselineSha256": "350ED8A675D54A7960169F652BB1D99CFB31B9985CCD34E275F8FA4F18C825C8",
+      "currentSha256": "350ED8A675D54A7960169F652BB1D99CFB31B9985CCD34E275F8FA4F18C825C8",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/Logging/ConsoleShutdownReasonTests.cs",
+      "baselineSha256": "8CC649EEB22F698C2733472995299690A3E97AE69B3BEE2A8C814276C69633B4",
+      "currentSha256": "8CC649EEB22F698C2733472995299690A3E97AE69B3BEE2A8C814276C69633B4",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/Logging/SeqLoggingTests.cs",
+      "baselineSha256": "17530FCDCEC2D59F4268393C93D2E709991BF6733D65EC65E85BFE7145CC6D56",
+      "currentSha256": "17530FCDCEC2D59F4268393C93D2E709991BF6733D65EC65E85BFE7145CC6D56",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Connection/MqttConnectionFailureTests.cs",
+      "baselineSha256": "C90E243665956EE3267D7767A4DE94D86382322C7CC16EF8B1A5FC85CA200229",
+      "currentSha256": "C90E243665956EE3267D7767A4DE94D86382322C7CC16EF8B1A5FC85CA200229",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Connection/MqttConnectionTests.cs",
+      "baselineSha256": "56D70E386AEA42EB11F533A7D2313896BD89E7E68D88550AD23908390CD3D394",
+      "currentSha256": "56D70E386AEA42EB11F533A7D2313896BD89E7E68D88550AD23908390CD3D394",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueBoundaryTests.cs",
+      "baselineSha256": "4DB676AB1C6ECBAF3D474C8201211F9243DBC9C4B57198792B3AE3E0758E38D9",
+      "currentSha256": "4DB676AB1C6ECBAF3D474C8201211F9243DBC9C4B57198792B3AE3E0758E38D9",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueShutdownTests.cs",
+      "baselineSha256": "F4D564CFC5E7D3A29A32F06EFB5D0FCB2929A710B632568878C2F17E88F60CCE",
+      "currentSha256": "F4D564CFC5E7D3A29A32F06EFB5D0FCB2929A710B632568878C2F17E88F60CCE",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueTests.cs",
+      "baselineSha256": "D4BAEDD8ACA2F15660F2730FD3433AA75FCCF882EDF8E46F4C0D47E8D2A4DFFA",
+      "currentSha256": "D4BAEDD8ACA2F15660F2730FD3433AA75FCCF882EDF8E46F4C0D47E8D2A4DFFA",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Subscriptions/HeartbeatSubscriptionTests.cs",
+      "baselineSha256": "F2C98E620E2EC01166A0D1D2A06EF324E9C75B0D298ED80434562F8E34871E07",
+      "currentSha256": "F2C98E620E2EC01166A0D1D2A06EF324E9C75B0D298ED80434562F8E34871E07",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Subscriptions/MessageSubscriptionTests.cs",
+      "baselineSha256": "620D55AE24DAE636BC93137D498ECC2E5F5B6BB8460AB7B86FEA72F7523FE71C",
+      "currentSha256": "620D55AE24DAE636BC93137D498ECC2E5F5B6BB8460AB7B86FEA72F7523FE71C",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/TestDoubles/FakeMqttClient.cs",
+      "baselineSha256": "191CBE4B02410B354DCAEFA46AB02F538A796FBD0E7E383B388C0CD98C11041A",
+      "currentSha256": "191CBE4B02410B354DCAEFA46AB02F538A796FBD0E7E383B388C0CD98C11041A",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/AckValidatorTests.cs",
+      "baselineSha256": "BB727F21F3290D691053663CE44EA4D145E6E3DD243F844D9AB7E14DCF6ACA17",
+      "currentSha256": "BB727F21F3290D691053663CE44EA4D145E6E3DD243F844D9AB7E14DCF6ACA17",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/AlarmValidatorTests.cs",
+      "baselineSha256": "B7D1CF7A60639CE9427B791EC9ADB8CBB5E318F98741F5F70382BCA7417D9533",
+      "currentSha256": "B7D1CF7A60639CE9427B791EC9ADB8CBB5E318F98741F5F70382BCA7417D9533",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/HeartbeatValidatorTests.cs",
+      "baselineSha256": "FAA761D201B0A94778633B28EFFCE1FED4243689CA30DF2EA083AF9B813B842D",
+      "currentSha256": "FAA761D201B0A94778633B28EFFCE1FED4243689CA30DF2EA083AF9B813B842D",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/MessageFieldValidationTests.cs",
+      "baselineSha256": "6D9096C1AB067EB6833929CDD7EC05978A93E250B3A73518829C6AE879DC8205",
+      "currentSha256": "6D9096C1AB067EB6833929CDD7EC05978A93E250B3A73518829C6AE879DC8205",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/MessageValidationRegressionTests.cs",
+      "baselineSha256": "4C277CD69DEC818F0F0A876D661E37520DEC421F7BB9B7B76EA9B259A510D96A",
+      "currentSha256": "4C277CD69DEC818F0F0A876D661E37520DEC421F7BB9B7B76EA9B259A510D96A",
+      "matches": true
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/TelemetryValidatorTests.cs",
+      "baselineSha256": "7C09035A772D947ACF7C70802255F0911785DA7FFFCFF290E645FCF67A2793C1",
+      "currentSha256": "7C09035A772D947ACF7C70802255F0911785DA7FFFCFF290E645FCF67A2793C1",
+      "matches": true
+    },
+    {
+      "path": "tests/manual/COM01-B/Verify-Mqtt.ps1",
+      "baselineSha256": "C707017DA1872C3C793061163BA71A241B239C54DE8B59E786761E2B00CB1D9C",
+      "currentSha256": "C707017DA1872C3C793061163BA71A241B239C54DE8B59E786761E2B00CB1D9C",
+      "matches": true
+    },
+    {
+      "path": "tests/manual/COM01-B/inputs.json",
+      "baselineSha256": "CE14F0E7E5ECB3E4CDE98DB63796F56C0BDA8BA6CE1C406B18C96185481A9DFB",
+      "currentSha256": "CE14F0E7E5ECB3E4CDE98DB63796F56C0BDA8BA6CE1C406B18C96185481A9DFB",
+      "matches": true
+    },
+    {
+      "path": "tests/manual/COM01-C/Verify-Disconnect.ps1",
+      "baselineSha256": "8D8B9AAC7BF15037C23BBF39555E2937834CD9691BF8336D9D56AD8325963386",
+      "currentSha256": "8D8B9AAC7BF15037C23BBF39555E2937834CD9691BF8336D9D56AD8325963386",
+      "matches": true
+    },
+    {
+      "path": "tests/manual/COM01-C/Verify-Mqtt.ps1",
+      "baselineSha256": "9248F15AA25D01CC2CD2374295C0E44B1235F3E7BD00521B7BFB37DCC6C4CB36",
+      "currentSha256": "9248F15AA25D01CC2CD2374295C0E44B1235F3E7BD00521B7BFB37DCC6C4CB36",
+      "matches": true
+    },
+    {
+      "path": "tests/manual/COM01-C/inputs.json",
+      "baselineSha256": "4A065CC641767424E6538ADF6D467B403B3FAD1A59B2BA60B1F6D8A71E802529",
+      "currentSha256": "4A065CC641767424E6538ADF6D467B403B3FAD1A59B2BA60B1F6D8A71E802529",
+      "matches": true
+    },
+    {
+      "path": "tests/manual/COM03-B/Verify-Connection.ps1",
+      "baselineSha256": "63D22C825D9F0622A381873C8BA0FBC78FF679AA59AEA03E9910122CED6781CB",
+      "currentSha256": "63D22C825D9F0622A381873C8BA0FBC78FF679AA59AEA03E9910122CED6781CB",
+      "matches": true
+    },
+    {
+      "path": "tests/manual/COM05-A/Verify-Commands.ps1",
+      "baselineSha256": "32B8386332CA7C2C904581B486BD0909F13340FE9AF30903B62B6E80AD5196AC",
+      "currentSha256": "32B8386332CA7C2C904581B486BD0909F13340FE9AF30903B62B6E80AD5196AC",
+      "matches": true
+    },
+    {
+      "path": "tests/manual/LOG/Verify-Seq.ps1",
+      "baselineSha256": "51F91B5A6F39F8FCCFF3725E11F5B8F349600782F1F472E9BA76874CAA2FABEA",
+      "currentSha256": "51F91B5A6F39F8FCCFF3725E11F5B8F349600782F1F472E9BA76874CAA2FABEA",
+      "matches": true
+    },
+    {
+      "path": "tests/manual/LOG/Verify-SeqShutdown.ps1",
+      "baselineSha256": "580848222D9A297D7A0339E6D2E81D3E66DCD8B499B3870EC6DD015F7739517A",
+      "currentSha256": "580848222D9A297D7A0339E6D2E81D3E66DCD8B499B3870EC6DD015F7739517A",
+      "matches": true
+    },
+    {
+      "path": "tests/manual/COM03-C/Verify-ResponseGate.ps1",
+      "baselineSha256": "EA46BC410BBBCD3BBBC44B7E48236DCDC381EFB56B877E092CF998939BB14668",
+      "currentSha256": "DC5923C530C67E507A94CFE42FE14B1F019D1EDBD4CE4B9806CFD902FACC0F18",
+      "matches": false
+    },
+    {
+      "path": "tools/COM-03/ResponseGateProxy.cs",
+      "baselineSha256": "9005C0024388205F12D0627DAF61A1845A396277C41F533544C7D75E6D668524",
+      "currentSha256": "DC3D8F6011E646EC450CFC4747D219F27E1590320A59348B8F913FF4B8A9DFB8",
+      "matches": false
+    },
+    {
+      "path": "tools/COM-03/Start-ResponseGateProxy.ps1",
+      "baselineSha256": "3A784ED16E5199D10474F967F531FB317C3076A66A44C1D54567DBA8FDBDBDD9",
+      "currentSha256": "3A784ED16E5199D10474F967F531FB317C3076A66A44C1D54567DBA8FDBDBDD9",
+      "matches": true
+    }
+  ]
+}

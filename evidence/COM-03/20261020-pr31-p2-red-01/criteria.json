@@ -1,0 +1,7 @@
+{
+  "recordedAtUtc": "2026-10-20T02:29:38.6113142+00:00",
+  "head": "da1e64083f73e12fc5ec992ba3dab03bddcf6679",
+  "stopLimitMilliseconds": 2000,
+  "expected": "Pending block/resume cannot prevent stop; diagnostic failure cannot prevent cleanup; original error preserved",
+  "dockerActuallyInvoked": false
+}

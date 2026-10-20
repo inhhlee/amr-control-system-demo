@@ -73,6 +73,10 @@ Move-Item -LiteralPath "$c3Directory/proxy.control.tmp" -Destination "$c3Directo
 
 ## 증거와 경계
 
+PR #31 수정 후 `block`/`resume`의 gate 대기는 25ms마다 최신 명령을 재확인한다. 아직 ACK하지 못한 명령이 있어도 후속 `stop`을 읽을 수 있다. ACK와 응답 쓰기의 직렬화는 유지한다. C1/C2/C3의 로그·stop·rm은 독립 시도하며 오류를 보존한다. [수정·실제 회귀 결과](../../evidence/COM-03/20261020-pr31-p2-fix-01/README.md).
+
+도구 오류 경로는 `pwsh -NoProfile -File tests/manual/COM03-C/Verify-ToolRecovery.ps1 -RunId <새-ID>`로 재검증한다. 실제 루프백 TCP 프록시 3건과 Docker 호출 대역을 쓰는 정리 27건이며 제품 자동시험이나 실제 MQTT를 대신하지 않는다.
+
 실행별 `evidence/COM-03/<실행ID>/`에 proxy.jsonl·Broker/콘솔 로그·차단 중 소켓·환경·소스/바이너리 해시·정리 결과를 남긴다. 실패한 실행도 보존한다. 테스트 자식 프로세스에서 Seq를 비활성화하며 실제 Seq·MQTT Explorer GUI 검증은 포함하지 않는다.
 
 최종 실제 결과: [20261020-c3a-proxy-03](../../evidence/COM-03/20261020-c3a-proxy-03/README.md). 접속 전 stop: [20261020-c3a-stop-01](../../evidence/COM-03/20261020-c3a-stop-01/README.md).

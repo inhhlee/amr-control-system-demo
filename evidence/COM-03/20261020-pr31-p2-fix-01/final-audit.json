@@ -1,0 +1,15 @@
+{
+  "baseCommit": "da1e64083f73e12fc5ec992ba3dab03bddcf6679",
+  "branch": "feature/6-mqtt-keepalive",
+  "sourceFilesUnchangedSinceGreen": true,
+  "greenSourceFiles": 6,
+  "productAndUnitFilesUnchanged": 60,
+  "newToolTestsPassed": 30,
+  "previous768ProductTestsRerun": false,
+  "actualRegressionRunsPassed": 4,
+  "unchangedC3bCriteriaFields": 23,
+  "changedC3bCriteriaFields": 0,
+  "credentialShapeMatches": 0,
+  "scope": "Verification tool implementation and tests/evidence; product code and acceptance criteria unchanged",
+  "originalReviewEvidenceIncluded": true
+}

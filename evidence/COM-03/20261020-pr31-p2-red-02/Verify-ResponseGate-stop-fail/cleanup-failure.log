@@ -1,0 +1,7 @@
+OperationStopped: C:\amr-control-system-demo\tests\manual\COM03-C\Verify-ToolRecovery.ps1:43
+Line |
+  43 |  … '-fail')) { throw [IO.IOException]::new("Injected $($Arguments[0]) fa …
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Injected stop failure
+
+

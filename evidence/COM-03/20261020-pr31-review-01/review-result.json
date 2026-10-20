@@ -1,0 +1,37 @@
+{
+  "reviewedAtUtc": "2026-10-20T02:24:18.505Z",
+  "pullRequest": "https://github.com/inhhlee/amr-control-system-demo/pull/31",
+  "head": "da1e64083f73e12fc5ec992ba3dab03bddcf6679",
+  "action": "COMMENT",
+  "reviewId": 5580054400,
+  "reviewUrl": "https://github.com/inhhlee/amr-control-system-demo/pull/31#pullrequestreview-5580054400",
+  "recommendation": "changes needed before merge",
+  "findings": [
+    {
+      "id": "R1",
+      "priority": 2,
+      "path": "tools/COM-03/ResponseGateProxy.cs",
+      "line": 114,
+      "reproduction": "proxy-stop-reproduction.json"
+    },
+    {
+      "id": "R2",
+      "priority": 2,
+      "path": "tests/manual/COM03-C/Verify-ResponseGate.ps1",
+      "startLine": 256,
+      "endLine": 258,
+      "reproduction": "cleanup-reproduction.json",
+      "alsoAffected": [
+        "tests/manual/COM03-C/Verify-KeepAlive.ps1:170",
+        "tests/manual/COM03-C/Verify-BrokerShutdown.ps1:181"
+      ]
+    }
+  ],
+  "productSourceModified": false,
+  "committed": false,
+  "pushed": false,
+  "merged": false,
+  "issueChanged": false,
+  "reviewEvidence": "Local uncommitted review run; existing PR head is unchanged",
+  "ci": "No checks/statuses reported, not a CI pass"
+}

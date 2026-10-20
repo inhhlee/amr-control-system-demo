@@ -1,0 +1,50 @@
+[
+  {
+    "action": "block",
+    "backpressureEstablished": true,
+    "bytesSentByFakeBroker": 393216,
+    "pendingAcknowledgedBeforeStop": false,
+    "stopAcknowledged": false,
+    "proxyCompletedWithin2Seconds": false,
+    "stopToCompletionMilliseconds": 2001.6815,
+    "succeededBeforePeerClosure": false,
+    "stoppedEvent": false,
+    "sessionClosed": false,
+    "probeFailure": null,
+    "cleanupFailure": "IOException",
+    "peerSocketsAndListenerDisposed": true,
+    "passed": false
+  },
+  {
+    "action": "resume",
+    "backpressureEstablished": true,
+    "bytesSentByFakeBroker": 393216,
+    "pendingAcknowledgedBeforeStop": false,
+    "stopAcknowledged": false,
+    "proxyCompletedWithin2Seconds": false,
+    "stopToCompletionMilliseconds": 2001.9055,
+    "succeededBeforePeerClosure": false,
+    "stoppedEvent": false,
+    "sessionClosed": false,
+    "probeFailure": null,
+    "cleanupFailure": "IOException",
+    "peerSocketsAndListenerDisposed": true,
+    "passed": false
+  },
+  {
+    "action": "before-accept",
+    "backpressureEstablished": false,
+    "bytesSentByFakeBroker": 0,
+    "pendingAcknowledgedBeforeStop": false,
+    "stopAcknowledged": true,
+    "proxyCompletedWithin2Seconds": true,
+    "stopToCompletionMilliseconds": 24.5338,
+    "succeededBeforePeerClosure": true,
+    "stoppedEvent": true,
+    "sessionClosed": false,
+    "probeFailure": null,
+    "cleanupFailure": null,
+    "peerSocketsAndListenerDisposed": true,
+    "passed": true
+  }
+]

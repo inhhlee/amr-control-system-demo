@@ -1,5 +1,7 @@
 # COM-03 A~C 최종 근거 취합과 #6 완료조건
 
+후속 상태: [PR #31 P2 수정·재현·회귀](../20261020-pr31-p2-fix-01/README.md)에서 검증 도구 두 결함을 수정하고 새 30건·실제 C1/C2/C3a/C3b를 확인했다. 제품/xUnit 소스는 동일하며 아래 768건과 A~B 근거를 재사용한다. 원래 완료조건 8개는 유지하고 재검토·병합·종료는 대기한다. 아래 C4 취합·게시 시점의 코드 버전과 수치는 과거 이력이다.
+
 2026-10-20 Codex 확인. **C1~C4 구현·시험과 후속 게시 요청을 마쳐 #6 원래 완료조건 8개 모두에 충족 근거를 연결했다.** 구현·시험·증거 커밋은 `bccb461554f14dd5b7456c07f4dec4d9ea9a3a99`, [PR #31](https://github.com/inhhlee/amr-control-system-demo/pull/31)은 develop 대상이다. [#6 Issue](https://github.com/inhhlee/amr-control-system-demo/issues/6)의 8개 체크와 근거·PR 연결을 갱신했다. **Issue·PR은 open, 병합·Issue 종료는 대기**다. [게시 시 코드/상태 대조](../20261020-pr-publication-01/README.md)에서 기존 검증 시점의 미커밋·7/8 상태와 구분한다.
 
 ## 1. 적용 기준·최종 코드

@@ -176,12 +176,17 @@ finally {
         if (!$child.HasExited) { $child.Kill($true); $child.WaitForExit() }
         $child.Dispose()
     }
+    $cleanupErrors = [Collections.Generic.List[object]]::new()
+    # Diagnostic failure must not prevent cleanup of the confirmed owned ID.
+    if ($container -match '^[a-f0-9]{64}$') {
+        try { Invoke-Docker -Arguments @('logs','--timestamps',$container) | Set-Content -LiteralPath "$run/broker-final.log" -Encoding utf8 }
+        catch { $cleanupErrors.Add($_); if (!$failure) { $failure=$_ } }
+        try { Invoke-Docker -Arguments @('stop','--time','5',$container) | Set-Content -LiteralPath "$run/broker-cleanup-stop.log" -Encoding utf8 }
+        catch { $cleanupErrors.Add($_); if (!$failure) { $failure=$_ } }
+        try { Invoke-Docker -Arguments @('rm',$container) | Set-Content -LiteralPath "$run/broker-remove.log" -Encoding utf8 }
+        catch { $cleanupErrors.Add($_); if (!$failure) { $failure=$_ } }
+    }
     try {
-        if ($container -match '^[a-f0-9]{64}$') {
-            Invoke-Docker -Arguments @('logs','--timestamps',$container) | Set-Content -LiteralPath "$run/broker-final.log" -Encoding utf8
-            Invoke-Docker -Arguments @('stop','--time','5',$container) | Set-Content -LiteralPath "$run/broker-cleanup-stop.log" -Encoding utf8
-            Invoke-Docker -Arguments @('rm',$container) | Set-Content -LiteralPath "$run/broker-remove.log" -Encoding utf8
-        }
         $after = @(Invoke-Docker -Arguments @('ps','-a','--format','{{json .}}'))
         $after | Set-Content -LiteralPath "$run/containers-after.jsonl" -Encoding utf8
         $before = @(Get-Content -LiteralPath "$run/containers-before.jsonl" | ForEach-Object { $_ | ConvertFrom-Json })
@@ -193,7 +198,11 @@ finally {
         if (@($afterObjects | Where-Object Names -eq $name).Count) { throw 'Test container remains.' }
         [ordered]@{testContainerRemoved=$true;existingContainerStatesPreserved=$true;containersBefore=$before.Count;containersAfter=$afterObjects.Count;completedAtUtc=[DateTimeOffset]::UtcNow.ToString('O')} | ConvertTo-Json | Set-Content -LiteralPath "$run/cleanup.json" -Encoding utf8
     }
-    catch { $_ | Out-String | Set-Content -LiteralPath "$run/cleanup-failure.log" -Encoding utf8; if (!$failure) {$failure=$_} }
+    catch { $cleanupErrors.Add($_); if (!$failure) { $failure=$_ } }
+    if ($cleanupErrors.Count) {
+        try { $cleanupErrors | Out-String | Set-Content -LiteralPath "$run/cleanup-failure.log" -Encoding utf8 }
+        catch { Write-Warning "Cleanup error report could not be written: $_" }
+    }
 }
 if ($failure) { throw $failure }
 Write-Output "PASS: C2 Broker stop detection, exit 1 and cleanup, same Broker restart, new normal console + C1 regression, isolated resource cleanup. $run"

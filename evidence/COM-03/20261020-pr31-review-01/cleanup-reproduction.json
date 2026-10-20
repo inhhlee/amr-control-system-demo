@@ -1,0 +1,35 @@
+[
+  {
+    "tool": "Verify-KeepAlive.ps1",
+    "sourceCleanupStartLine": 168,
+    "calls": [
+      "logs --timestamps aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    ],
+    "stopAttempted": false,
+    "removeAttempted": false,
+    "cleanupFailureRecorded": true,
+    "DockerWasActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-BrokerShutdown.ps1",
+    "sourceCleanupStartLine": 179,
+    "calls": [
+      "logs --timestamps aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    ],
+    "stopAttempted": false,
+    "removeAttempted": false,
+    "cleanupFailureRecorded": true,
+    "DockerWasActuallyInvoked": false
+  },
+  {
+    "tool": "Verify-ResponseGate.ps1",
+    "sourceCleanupStartLine": 254,
+    "calls": [
+      "logs --timestamps aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    ],
+    "stopAttempted": false,
+    "removeAttempted": false,
+    "cleanupFailureRecorded": true,
+    "DockerWasActuallyInvoked": false
+  }
+]

@@ -1,0 +1,12 @@
+{"atUtc":"2026-10-20T03:56:39.3960368+00:00","elapsedMs":3.371,"eventType":"Listening","data":{"port":57365,"brokerPort":52957,"processId":31468}}
+{"atUtc":"2026-10-20T03:56:40.1729396+00:00","elapsedMs":780.2724,"eventType":"SessionOpened","data":{"clientPeer":"127.0.0.1:57366","proxyLocal":"127.0.0.1:57365","upstreamLocal":"127.0.0.1:57367","brokerPeer":"127.0.0.1:52957"}}
+{"atUtc":"2026-10-20T03:56:40.177396+00:00","elapsedMs":784.7276,"eventType":"Forwarded","data":{"direction":"client-to-broker","bytes":56}}
+{"atUtc":"2026-10-20T03:56:40.178246+00:00","elapsedMs":785.5775,"eventType":"Forwarded","data":{"direction":"broker-to-client","bytes":16}}
+{"atUtc":"2026-10-20T03:56:40.1991342+00:00","elapsedMs":806.4663,"eventType":"Forwarded","data":{"direction":"client-to-broker","bytes":67}}
+{"atUtc":"2026-10-20T03:56:40.199989+00:00","elapsedMs":807.3205,"eventType":"Forwarded","data":{"direction":"broker-to-client","bytes":9}}
+{"atUtc":"2026-10-20T03:56:42.4397242+00:00","elapsedMs":3047.0563,"eventType":"ControlApplied","data":{"sequence":1,"action":"block","blocked":true}}
+{"atUtc":"2026-10-20T03:56:45.2435108+00:00","elapsedMs":5850.8438,"eventType":"Forwarded","data":{"direction":"client-to-broker","bytes":2}}
+{"atUtc":"2026-10-20T03:56:45.2453228+00:00","elapsedMs":5852.6553,"eventType":"Dropped","data":{"direction":"broker-to-client","bytes":2}}
+{"atUtc":"2026-10-20T03:56:47.7471307+00:00","elapsedMs":8354.463,"eventType":"Eof","data":{"direction":"client-to-broker"}}
+{"atUtc":"2026-10-20T03:56:47.7498151+00:00","elapsedMs":8357.1471,"eventType":"SessionClosed","data":{}}
+{"atUtc":"2026-10-20T03:56:47.750403+00:00","elapsedMs":8357.7349,"eventType":"Stopped","data":{}}

@@ -1,6 +1,8 @@
 # amr-control-system-demo
 가상 AMR 기반 관제시스템 구현 및 Issue·PR 개발 절차 실습
 
+현재 #6 작업은 [PR #31의 P2 두 건 수정·회귀 검증](evidence/COM-03/20261020-pr31-p2-fix-01/README.md)까지 진행했다. 검증 도구의 stop 처리·오류 후 Broker 정리를 수정했으며 제품 코드와 기존 합격 기준은 유지했다. 새 도구 시험 30건과 실제 C1·C2·C3a·C3b가 통과했다. 기존 제품 자동시험 768건은 변경 없는 소스의 근거로 재사용한다. 같은 브랜치·PR에서 재검토·develop 병합·Issue 종료가 남아 있다. 아래 게시·구현 단계의 수치는 당시 기록이다.
+
 ## MQTT 명령 발행 (COM05-A / Issue #29)
 
 현재 작업은 [#6의 C4 검증·A~C 최종 근거 취합](#com03c4-run)을 마치고 같은 `feature/6-mqtt-keepalive`를 커밋·푸시해 [PR #31](https://github.com/inhhlee/amr-control-system-demo/pull/31)을 develop 대상으로 생성했다. 중복 단절·늦은 알림·사용자 취소와 단절의 순서 제어 신규 7건 포함 자동시험 768건·빌드 경고/오류 0이다. [최종 검증 근거](evidence/COM-03/20261020-ac-summary-01/README.md)를 #6 Issue·PR에 연결해 원래 완료조건 8개를 모두 갱신했다. Issue와 PR은 open이며 리뷰·병합·종료가 남아 있다. 앞선 #29 명령 발행은 [PR #30](https://github.com/inhhlee/amr-control-system-demo/pull/30) develop 반영·완료 종료 상태다. 아래 과거 단계·시험 수치는 당시 기록이다.

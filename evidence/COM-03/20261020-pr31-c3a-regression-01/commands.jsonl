@@ -1,0 +1,11 @@
+{"program":"docker","arguments":["version","--format","{{.Client.Version}} / {{.Server.Version}}"],"atUtc":"2026-10-20T03:56:09.2711376+00:00","exitCode":0}
+{"program":"docker","arguments":["ps","-a","--format","{{json .}}"],"atUtc":"2026-10-20T03:56:09.4513474+00:00","exitCode":0}
+{"program":"docker","arguments":["image","inspect","eclipse-mosquitto:2.1.2-alpine","--format","{{.Id}}"],"atUtc":"2026-10-20T03:56:09.6420686+00:00","exitCode":0}
+{"program":"docker","arguments":["run","--detach","--pull","never","--name","amr-c3a-20261020-pr31-c3a-regression-01","--label","amr.c3a.run=20261020-pr31-c3a-regression-01","--publish","127.0.0.1::1883","--mount","type=bind,source=C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-pr31-c3a-regression-01/broker.conf,target=/mosquitto/config/mosquitto.conf,readonly","eclipse-mosquitto:2.1.2-alpine"],"atUtc":"2026-10-20T03:56:11.2784729+00:00","exitCode":0}
+{"program":"docker","arguments":["port","6fe3c0b14d335c53980a89e07861e9dec8621666c4d7fd2855b0fe1f09175f93","1883/tcp"],"atUtc":"2026-10-20T03:56:11.6191144+00:00","exitCode":0}
+{"program":"docker","arguments":["logs","--timestamps","6fe3c0b14d335c53980a89e07861e9dec8621666c4d7fd2855b0fe1f09175f93"],"atUtc":"2026-10-20T03:56:11.7685539+00:00","exitCode":0}
+{"program":"docker","arguments":["logs","--timestamps","6fe3c0b14d335c53980a89e07861e9dec8621666c4d7fd2855b0fe1f09175f93"],"atUtc":"2026-10-20T03:56:18.6133125+00:00","exitCode":0}
+{"program":"docker","arguments":["logs","--timestamps","6fe3c0b14d335c53980a89e07861e9dec8621666c4d7fd2855b0fe1f09175f93"],"atUtc":"2026-10-20T03:56:18.7833372+00:00","exitCode":0}
+{"program":"docker","arguments":["stop","--time","5","6fe3c0b14d335c53980a89e07861e9dec8621666c4d7fd2855b0fe1f09175f93"],"atUtc":"2026-10-20T03:56:18.9318060+00:00","exitCode":0}
+{"program":"docker","arguments":["rm","6fe3c0b14d335c53980a89e07861e9dec8621666c4d7fd2855b0fe1f09175f93"],"atUtc":"2026-10-20T03:56:19.3617102+00:00","exitCode":0}
+{"program":"docker","arguments":["ps","-a","--format","{{json .}}"],"atUtc":"2026-10-20T03:56:19.5246973+00:00","exitCode":0}

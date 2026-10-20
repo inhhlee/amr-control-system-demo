@@ -1,0 +1,19 @@
+{
+  "checkedAtUtc": "2026-10-20T02:22:43.3119833+00:00",
+  "C1": {
+    "exitCode": 0,
+    "keepAlive": 5.0,
+    "rawPingResponses": 2,
+    "rawPingRequests": 2,
+    "seconds": 12.0899808
+  },
+  "C2": {
+    "oneRawConnectionLost": true,
+    "automaticReconnect": false,
+    "detectionMilliseconds": 53.4907,
+    "recoveryExit0Confirmed": true,
+    "freshPidAndClientId": true,
+    "exit1Confirmed": true
+  },
+  "newActualMqttRun": false
+}
