@@ -1,9 +1,0 @@
-{
-  "result": "passed",
-  "testBrokerRemoved": true,
-  "existingContainerStatesPreserved": true,
-  "containersBefore": 3,
-  "containersAfter": 3,
-  "sourceUnchangedDuringExecution": true,
-  "cleanupErrors": []
-}

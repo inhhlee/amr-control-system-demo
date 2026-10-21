@@ -1,4 +1,0 @@
-{"event":"Subscribed","value":{"clientId":"amr-demo-b5133fa94dee4eadad04ae921d5acf13","host":"127.0.0.1","port":50302}}
-{"event":"Received","value":{"amrId":"AMR_001","kind":"heartbeat","model":{"id":"AMR_001","timestamp":1792590134850,"status":"OK","receivedAtUtc":"2026-10-21T13:42:14.8916146+00:00"},"receivedAtUtc":"2026-10-21T13:42:14.8916146+00:00"}}
-{"event":"Received","value":{"amrId":"AMR_001","kind":"telemetry","model":{"id":"AMR_001","timestamp":1792590134850,"position":{"x":-1,"y":0},"speed":0,"state":"IDLE","receivedAtUtc":"2026-10-21T13:42:14.8917054+00:00"},"receivedAtUtc":"2026-10-21T13:42:14.8917054+00:00"}}
-{"event":"Received","value":{"amrId":"AMR_001","kind":"telemetry","model":{"id":"AMR_001","timestamp":1792590135066,"position":{"x":-0.8860565,"y":0},"speed":1,"state":"BUSY","receivedAtUtc":"2026-10-21T13:42:15.0685593+00:00"},"receivedAtUtc":"2026-10-21T13:42:15.0685593+00:00"}}

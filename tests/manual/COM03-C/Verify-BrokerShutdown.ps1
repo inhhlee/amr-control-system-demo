@@ -49,7 +49,7 @@ if ($Controller) {
 }
 
 if (Test-Path -LiteralPath $run) { throw 'Execution ID exists; use a new RunId.' }
-# Reusable after merge: the actual branch, source hashes and binaries are recorded below.
+if ((git branch --show-current) -ne 'feature/6-mqtt-keepalive') { throw 'Use the existing Issue #6 branch.' }
 New-Item -ItemType Directory -Path $run | Out-Null
 $docker = (Get-Command docker -ErrorAction SilentlyContinue).Source
 if (!$docker) { $docker = Join-Path $env:LOCALAPPDATA 'Programs/DockerDesktop/resources/bin/docker.exe' }
@@ -82,7 +82,7 @@ function Wait-Broker([int]$ExpectedStarts) {
 }
 try {
     $version = Invoke-Docker -Arguments @('version','--format','{{.Client.Version}} / {{.Server.Version}}')
-    Invoke-Docker -Arguments @('ps','-a','--no-trunc','--format','{{json .}}') | Set-Content -LiteralPath "$run/containers-before.jsonl" -Encoding utf8
+    Invoke-Docker -Arguments @('ps','-a','--format','{{json .}}') | Set-Content -LiteralPath "$run/containers-before.jsonl" -Encoding utf8
     $image = 'eclipse-mosquitto:2.1.2-alpine'
     $imageId = [string](Invoke-Docker -Arguments @('image','inspect',$image,'--format','{{.Id}}'))
     $files = @(git ls-files src tests global.json AmrControlSystem.slnx) + @('tests/manual/COM03-C/Verify-KeepAlive.ps1','tests/manual/COM03-C/Verify-BrokerShutdown.ps1')
@@ -183,11 +183,11 @@ finally {
         catch { $cleanupErrors.Add($_); if (!$failure) { $failure=$_ } }
         try { Invoke-Docker -Arguments @('stop','--time','5',$container) | Set-Content -LiteralPath "$run/broker-cleanup-stop.log" -Encoding utf8 }
         catch { $cleanupErrors.Add($_); if (!$failure) { $failure=$_ } }
-        try { Invoke-Docker -Arguments @('rm','--volumes',$container) | Set-Content -LiteralPath "$run/broker-remove.log" -Encoding utf8 }
+        try { Invoke-Docker -Arguments @('rm',$container) | Set-Content -LiteralPath "$run/broker-remove.log" -Encoding utf8 }
         catch { $cleanupErrors.Add($_); if (!$failure) { $failure=$_ } }
     }
     try {
-        $after = @(Invoke-Docker -Arguments @('ps','-a','--no-trunc','--format','{{json .}}'))
+        $after = @(Invoke-Docker -Arguments @('ps','-a','--format','{{json .}}'))
         $after | Set-Content -LiteralPath "$run/containers-after.jsonl" -Encoding utf8
         $before = @(Get-Content -LiteralPath "$run/containers-before.jsonl" | ForEach-Object { $_ | ConvertFrom-Json })
         $afterObjects = @($after | ForEach-Object { $_ | ConvertFrom-Json })

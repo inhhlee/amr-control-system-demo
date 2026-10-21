@@ -1,8 +1,0 @@
-{
-  "result": "passed",
-  "removedCount": 12,
-  "expectedRemoved": 12,
-  "existingOtherVolumesPreserved": true,
-  "errors": [],
-  "completedAtUtc": "2026-10-21T11:02:06.8532173+00:00"
-}

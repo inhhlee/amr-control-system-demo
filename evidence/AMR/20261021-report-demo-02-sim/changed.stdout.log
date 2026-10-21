@@ -1,4 +1,0 @@
-ConfigurationLoaded AmrId=AMR_001 InitialX=12 InitialY=-7 SpeedMps=2.5 UpdateIntervalMs=100 WaypointCount=1
-Waypoint Index=0 X=-8 Y=9
-AmrInitialized AmrId=AMR_001 X=12 Y=-7 State=IDLE CurrentSpeedMps=0
-InitializationCompleted

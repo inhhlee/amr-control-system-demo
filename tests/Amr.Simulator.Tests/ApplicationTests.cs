@@ -13,7 +13,7 @@ public sealed class ApplicationTests
         using var file = new TemporaryConfig(ValidJson);
         using var output = new StringWriter();
         using var error = new StringWriter();
-        int code = await SimulatorApplication.RunAsync(["--config", file.FilePath], output, error, clock: new TestSimulationClock(100));
+        int code = await SimulatorApplication.RunAsync(["--config", file.FilePath], output, error);
         Assert.Equal(0, code);
         Assert.Equal("", error.ToString());
         string text = output.ToString();
@@ -21,8 +21,7 @@ public sealed class ApplicationTests
         Assert.Contains("Waypoint Index=0 X=1 Y=2", text);
         Assert.Contains("Waypoint Index=1 X=-4 Y=-5", text);
         Assert.Contains("AmrInitialized AmrId=AMR_001 X=-2 Y=3.5 State=IDLE CurrentSpeedMps=0", text);
-        Assert.Contains("InitializationCompleted" + Environment.NewLine, text);
-        Assert.Contains("SimulationCompleted AmrId=AMR_001 X=-4 Y=-5 State=IDLE CurrentSpeedMps=0", text);
+        Assert.EndsWith("InitializationCompleted" + Environment.NewLine, text);
     }
 
     [Fact]
@@ -109,7 +108,7 @@ public sealed class ApplicationTests
             using var file = new TemporaryConfig(ValidJson);
             using var output = new StringWriter();
             using var error = new StringWriter();
-            Assert.Equal(0, await SimulatorApplication.RunAsync(["--config", file.FilePath], output, error, clock: new TestSimulationClock(100)));
+            Assert.Equal(0, await SimulatorApplication.RunAsync(["--config", file.FilePath], output, error));
             Assert.Contains("InitialY=3.5 SpeedMps=1.25", output.ToString());
         }
         finally

@@ -1,23 +1,6 @@
 # amr-control-system-demo
 가상 AMR 기반 관제시스템 구현 및 Issue·PR 개발 절차 실습
 
-책임님께 보여드릴 때는 [보고 화면](evidence/DEMO/20261021-report-demo-03/report.html)을 열어 **과제1 통신 → 과제2 이동 시연 → 남은 일** 순서로 설명한다. 과제1은 저장된 통신 시험, 과제2는 사용자가 직접 실행해 전달한 로그로 구분했다. [보고 순서와 새 시험 실행 안내](tests/manual/DEMO/README.md), [상세 결과 문서](evidence/DEMO/20261021-report-demo-03/README.md)도 확인할 수 있다. 아래 단계별 본문은 각 작업 당시 기록이다.
-
-## 현재 과제2 시연: 출발 → 경유점 → 도착·정지 (#34 로컬 구현)
-
-실제 위치·상태의 **MQTT 송신 → 기존 관제 콘솔 수신**도 로컬 구현·검증했다. [쉬운 시연 순서와 명령](tests/manual/AMR01/MQTT-DEMO.md), [최종 결과·로그](evidence/AMR/20261021-mqtt-01/README.md)를 따른다. `--mqtt --host <호스트> --port <포트> --telemetry-ms 200 --heartbeat-ms 1000`을 기존 Simulator 명령에 추가한다. MQTT 옵션을 생략한 독립 이동은 유지한다. 2D 지도에 관제 수신 좌표를 연결하는 작업은 다음 단계다.
-
-실제 좌표가 움직이는 화면은 [2D 지도 시연 도구](tools/Amr.Simulator.Map/README.md)에서 실행한다. `dotnet run --project tools/Amr.Simulator.Map` 후 출력된 로컬 주소를 열고 **시연 시작**을 누르면 된다. 기존 Simulator를 직접 실행해 출력 좌표를 지도에 표시하는 별도 도구이며, MQTT·과제3 전체 GUI 구현과 구분한다.
-
-이제 설정을 읽은 뒤 실제로 이동하고 목적지에서 정지한다. [한 시나리오로 따라 하는 시연 순서](tests/manual/AMR01/README.md)와 [이번 검증결과](evidence/AMR/20261021-runner-01/README.md)를 따른다. 기본 설정은 (-1, 0) → (1, 0) → (1, 2), 속도 1m/s이며 약 4초 뒤 `SimulationCompleted`, `IDLE`, 현재 속도 0으로 정상 종료한다. 이동 중 Ctrl+C는 `SimulationCanceled`와 종료 코드 0, 설정·실행 오류는 종료 코드 1이다. 현재 #33 브랜치 위의 미커밋 로컬 변경이며 커밋·푸시·PR·병합은 수행하지 않았다.
-
-```powershell
-dotnet build src/Amr.Simulator --no-restore
-dotnet run --no-build --project src/Amr.Simulator -- --config config/simulator.single.json
-```
-
-아래 #32·#33 본문의 초기화 후 종료·루프 미구현 설명과 시험 수치는 각 단계 당시의 이력이다. 현재 실행 동작은 이 절과 #34 시연 안내를 기준으로 한다.
-
 ## 과제2/2: 경로 이동 계산과 도착 정지 (Issue #33)
 
 `Simulation/SimulatedAmr`의 `Advance(double elapsedSeconds)`에 초 단위 경과 시간을 전달하면 순서 있는 경유점 사이를 직선 이동한다. 실제 대기나 타이머 없이 계산하며, 한 경유점에 도착하고 남은 시간은 다음 구간에 적용한다. 같은 위치의 경유점은 시간 소모 없이 통과한다.

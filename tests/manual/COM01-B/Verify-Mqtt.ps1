@@ -1,9 +1,7 @@
 param(
     [Parameter(Mandatory)][ValidatePattern('^[a-zA-Z0-9_-]+$')][string]$RunId,
     [switch]$Controller,
-    [switch]$SeqUnavailable,
-    [ValidatePattern('^$|^[a-f0-9]{64}$')][string]$BrokerContainer,
-    [ValidateRange(1,65535)][int]$BrokerPort = 1884
+    [switch]$SeqUnavailable
 )
 $ErrorActionPreference = 'Stop'
 $repository = (Resolve-Path (Join-Path $PSScriptRoot '../../..')).Path
@@ -17,29 +15,20 @@ if (!$Controller) {
     $started = [DateTimeOffset]::UtcNow
     $child = $null
     try {
-        if ($BrokerContainer) {
-            $brokerInfo = (docker inspect $BrokerContainer | ConvertFrom-Json)[0]
-            if ($LASTEXITCODE -ne 0 -or !$brokerInfo.State.Running) { throw 'Supplied isolated Broker is not running.' }
-            $binding = @($brokerInfo.NetworkSettings.Ports.'1883/tcp')
-            if ($binding.Count -ne 1 -or $binding[0].HostIp -ne '127.0.0.1' -or [int]$binding[0].HostPort -ne $BrokerPort) { throw 'Isolated Broker endpoint mismatch.' }
-            $container = $BrokerContainer
-            $brokerInfo.State | ConvertTo-Json | Set-Content "$run/broker-state.log"
-        } else {
-            docker compose -f docker/compose.yaml config --quiet
-            if ($LASTEXITCODE -ne 0) { throw 'Compose configuration failed.' }
-            docker compose -f docker/compose.yaml ps -a > "$run/broker-state.log"
-            $container = docker compose -f docker/compose.yaml ps -q mosquitto
-            if ($LASTEXITCODE -ne 0 -or !$container) { throw 'Project Broker must already be running.' }
-        }
+        docker compose -f docker/compose.yaml config --quiet
+        if ($LASTEXITCODE -ne 0) { throw 'Compose configuration failed.' }
+        docker compose -f docker/compose.yaml ps -a > "$run/broker-state.log"
+        $container = docker compose -f docker/compose.yaml ps -q mosquitto
+        if ($LASTEXITCODE -ne 0 -or !$container) { throw 'Project Broker must already be running.' }
         docker inspect $container --format '{{json .Mounts}}' > "$run/broker-mounts.json"
         if ($LASTEXITCODE -ne 0) { throw 'Broker mount query failed.' }
         $dockerVersion = docker version --format '{{.Client.Version}} / {{.Server.Version}}'
         if ($LASTEXITCODE -ne 0) { throw 'Docker version query failed.' }
-        $brokerVersion = docker exec $container mosquitto -h
+        $brokerVersion = docker compose -f docker/compose.yaml exec -T mosquitto mosquitto -h
         if ($LASTEXITCODE -ne 0) { throw 'Broker version query failed.' }
         [ordered]@{ startedAtUtc=$started.ToString('O'); os=[Runtime.InteropServices.RuntimeInformation]::OSDescription;
             sdk=(dotnet --version); dockerVersion=$dockerVersion; brokerVersion=$brokerVersion[0];
-            endpoint="127.0.0.1:$BrokerPort"; brokerContainer=$container; mqttnet='5.2.0.1603'; qos=0; retain=$false;
+            endpoint='127.0.0.1:1884'; mqttnet='5.2.0.1603'; qos=0; retain=$false;
             brokerStartedOrRestartedByThisTest=$false; baseCommit=(git rev-parse HEAD); branch=(git branch --show-current) } |
             ConvertTo-Json | Set-Content -Encoding utf8 "$run/environment.json"
         $files = @(rg --files src tests -g '*.cs' -g '*.csproj' -g '*.ps1' -g '*.json') + @('global.json','AmrControlSystem.slnx')
@@ -48,8 +37,6 @@ if (!$Controller) {
         }) } | ConvertTo-Json -Depth 5 | Set-Content -Encoding utf8 "$run/source-version.json"
         Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'inputs.json') -Destination "$run/inputs.json"
         $controllerArguments = @('-NoProfile','-File', $PSCommandPath,'-RunId',$RunId,'-Controller')
-        $controllerArguments += @('-BrokerPort',"$BrokerPort")
-        if ($BrokerContainer) { $controllerArguments += @('-BrokerContainer',$BrokerContainer) }
         if ($SeqUnavailable) { $controllerArguments += '-SeqUnavailable' }
         $child = Start-Process -FilePath (Get-Command pwsh).Source -ArgumentList $controllerArguments `
             -WorkingDirectory $repository -WindowStyle Hidden -RedirectStandardOutput "$run/controller.stdout.log" `
@@ -62,7 +49,7 @@ if (!$Controller) {
         [ordered]@{exitCode=$child.ExitCode;completedAtUtc=[DateTimeOffset]::UtcNow.ToString('O')} |
             ConvertTo-Json | Set-Content -Encoding utf8 "$run/controller-result.json"
         if ($child.ExitCode -ne 0) { throw 'MQTT scenario failed; see controller/failure logs.' }
-        docker logs --timestamps --since $started.ToString('O') $container *> "$run/broker.log"
+        docker compose -f docker/compose.yaml logs --no-color --timestamps --since $started.ToString('O') mosquitto *> "$run/broker.log"
         if ($LASTEXITCODE -ne 0) { throw 'Broker log collection failed.' }
         $results = Get-Content "$run/scenario-result.json" -Raw | ConvertFrom-Json
         $brokerLog = Get-Content "$run/broker.log" -Raw
@@ -86,10 +73,6 @@ if (!$Controller) {
 }
 
 # Ctrl+C는 이 도구가 시작한 콘솔에만 보낸다. 부모 PowerShell·다른 프로그램은 대상으로 삼지 않는다.
-if ($BrokerContainer) {
-    $env:AMR_SEQ_URL = $null
-    $env:AMR_SEQ_API_KEY = $null
-}
 Add-Type -TypeDefinition @'
 using System;
 using System.Runtime.InteropServices;
@@ -126,7 +109,7 @@ try {
         $stdout = "$run/console-$index.stdout.log"
         $stderr = "$run/console-$index.stderr.log"
         $executable = Join-Path $repository 'src/Amr.Communication.Console/bin/Debug/net10.0/Amr.Communication.Console.exe'
-        $process = Start-Process -FilePath $executable -ArgumentList @('--host','127.0.0.1','--port',"$BrokerPort",'--show-payload') `
+        $process = Start-Process -FilePath $executable -ArgumentList @('--host','127.0.0.1','--port','1884','--show-payload') `
             -WorkingDirectory $repository -WindowStyle Hidden -RedirectStandardOutput $stdout -RedirectStandardError $stderr -PassThru
         $null = $process.Handle
         $null = Wait-Log { param($text) $text -match 'Subscribed TopicFilters=amr/\+/heartbeat,amr/\+/telemetry,amr/\+/alarm,amr/\+/ack QoS=0' }
@@ -142,9 +125,8 @@ try {
             $publishInfo.RedirectStandardInput = $true
             $publishInfo.RedirectStandardOutput = $true
             $publishInfo.RedirectStandardError = $true
-            $publisherPrefix = if ($BrokerContainer) { @('exec',$BrokerContainer) } else { @('compose','-f','docker/compose.yaml','exec','-T','mosquitto') }
-            foreach ($argument in ($publisherPrefix + @('mosquitto_pub',
-                    '-h','127.0.0.1','-p','1883','-V','mqttv5','-i',$publisher,'-q','0','-t',$case.topic,'-m',$case.payload))) {
+            foreach ($argument in @('compose','-f','docker/compose.yaml','exec','-T','mosquitto','mosquitto_pub',
+                    '-h','127.0.0.1','-p','1883','-V','mqttv5','-i',$publisher,'-q','0','-t',$case.topic,'-m',$case.payload)) {
                 $publishInfo.ArgumentList.Add($argument)
             }
             $publisherProcess = [Diagnostics.Process]::Start($publishInfo)

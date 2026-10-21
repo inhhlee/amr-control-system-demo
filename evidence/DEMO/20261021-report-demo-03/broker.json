@@ -1,7 +1,0 @@
-{
-  "containerId": "4d8189d3785ff01c9febc04769a43bb6b8beab1fc081c1f72ef5b58ee9fff59e",
-  "name": "amr-demo-20261021-report-demo-03",
-  "endpoint": "127.0.0.1:60342",
-  "imageId": "sha256:38c0da4f2ef84284d47b3b3eeea1cb3bdeabe81ee10caf0cd5c5ff61ee3ea408",
-  "existingServicesChanged": false
-}

@@ -1,3 +1,0 @@
-CommandRequested AmrId="COM05_20261021-report-demo-02-cmd_2" CommandId="CMD-bb9551636bd648c5891aa5599b372d38" CommandType=STOP
-CommandPublished AmrId="COM05_20261021-report-demo-02-cmd_2" CommandId="CMD-bb9551636bd648c5891aa5599b372d38" CommandType=STOP QoS=0 Retain=false Delivery=Unconfirmed Execution=NotTracked
-

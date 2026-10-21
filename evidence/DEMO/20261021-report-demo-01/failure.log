@@ -1,7 +1,0 @@
-Exception: C:\amr-control-system-demo\tests\manual\DEMO\Invoke-ReportDemo.ps1:50
-Line |
-  50 |  … de -ne 0) { throw "$Name failed ($exitCode); see $run/$Name.stderr.lo …
-     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     | keepalive failed (1); see C:\amr-control-system-demo\evidence\DEMO\20261021-report-demo-01/keepalive.stderr.log
-
-

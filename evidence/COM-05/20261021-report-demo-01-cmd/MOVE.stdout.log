@@ -1,3 +1,0 @@
-CommandRequested AmrId="COM05_20261021-report-demo-01-cmd_1" CommandId="CMD-038c5170f8ad44a3889cf21fdabd9616" CommandType=MOVE
-CommandPublished AmrId="COM05_20261021-report-demo-01-cmd_1" CommandId="CMD-038c5170f8ad44a3889cf21fdabd9616" CommandType=MOVE QoS=0 Retain=false Delivery=Unconfirmed Execution=NotTracked
-

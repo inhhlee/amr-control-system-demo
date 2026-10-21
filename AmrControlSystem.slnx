@@ -8,8 +8,4 @@
     <Project Path="tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj" />
     <Project Path="tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj" />
   </Folder>
-  <Folder Name="/tools/">
-    <Project Path="tools/Amr.Simulator.Map/Amr.Simulator.Map.csproj" />
-    <Project Path="tools/RunSimulatorTests/RunSimulatorTests.csproj" />
-  </Folder>
 </Solution>

@@ -1,9 +1,0 @@
-  Amr.Communication -> C:\amr-control-system-demo\evidence\AMR\20261021-mqtt-map-01\artifacts\bin\Amr.Communication\debug\Amr.Communication.dll
-  Amr.Simulator -> C:\amr-control-system-demo\evidence\AMR\20261021-mqtt-map-01\artifacts\bin\Amr.Simulator\debug\Amr.Simulator.dll
-  Amr.Simulator.Map -> C:\amr-control-system-demo\evidence\AMR\20261021-mqtt-map-01\artifacts\bin\Amr.Simulator.Map\debug\Amr.Simulator.Map.dll
-  Amr.Simulator.Map.Tests -> C:\amr-control-system-demo\evidence\AMR\20261021-mqtt-map-01\artifacts\bin\Amr.Simulator.Map.Tests\debug\Amr.Simulator.Map.Tests.dll
-C:\amr-control-system-demo\evidence\AMR\20261021-mqtt-map-01\artifacts\bin\Amr.Simulator.Map.Tests\debug\Amr.Simulator.Map.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
-지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
-결과 파일: C:\amr-control-system-demo\evidence\AMR\20261021-mqtt-map-01\automatic\Map-final.trx
-
-통과!  - 실패:     0, 통과:     9, 건너뜀:     0, 전체:     9, 기간: 58 ms - Amr.Simulator.Map.Tests.dll (net10.0)
