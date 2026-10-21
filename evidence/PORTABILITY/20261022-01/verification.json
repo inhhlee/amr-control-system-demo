@@ -1,0 +1,23 @@
+{
+  "Baseline": "4bd0be313c866c7ed2ab629f9ec61ab4891267ef",
+  "Issue": 42,
+  "TestedFileCount": 111,
+  "BuildWarnings": 0,
+  "BuildErrors": 0,
+  "UnitPassed": 922,
+  "UnitFailed": 0,
+  "UnitSkipped": 0,
+  "RunnerCases": 6,
+  "MqttCases": 7,
+  "SourceEnumerators": 5,
+  "LegacyTools": [
+    "KeepAlive 12s",
+    "ResponseGate C3a",
+    "BrokerShutdown C2 + recovery"
+  ],
+  "ArchivePython": "3.9",
+  "RawZipSHA256": "29C58A19A442D595E17E3281DF6783A22EC0BE65BDF440FAC49ABE69215A9379",
+  "SameMachineRelocationOnly": true,
+  "Previous10sKeepAliveFailurePreserved": true,
+  "GitHubCiExecuted": false
+}

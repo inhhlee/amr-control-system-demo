@@ -4,7 +4,7 @@ param(
 )
 $ErrorActionPreference='Stop'
 $repo=(Resolve-Path (Join-Path $PSScriptRoot '../../..')).Path
-Set-Location $repo
+Set-Location -LiteralPath $repo
 $root=Join-Path $repo "evidence/AMR/$RunId"
 if(Test-Path $root){throw 'Use a new RunId; previous results are preserved.'}
 $null=New-Item -ItemType Directory $root

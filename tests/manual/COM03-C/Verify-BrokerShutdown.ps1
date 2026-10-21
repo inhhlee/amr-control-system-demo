@@ -51,8 +51,7 @@ if ($Controller) {
 if (Test-Path -LiteralPath $run) { throw 'Execution ID exists; use a new RunId.' }
 if ((git branch --show-current) -ne 'feature/6-mqtt-keepalive') { throw 'Use the existing Issue #6 branch.' }
 New-Item -ItemType Directory -Path $run | Out-Null
-$docker = (Get-Command docker -ErrorAction SilentlyContinue).Source
-if (!$docker) { $docker = Join-Path $env:LOCALAPPDATA 'Programs/DockerDesktop/resources/bin/docker.exe' }
+$docker = @(Get-Command docker -CommandType Application -ErrorAction Stop)[0].Source
 $container = $null
 $child = $null
 $failure = $null
@@ -110,7 +109,7 @@ log_timestamp true
     # C2 is an orderly Broker stop: TCP closes / MQTT disconnect may be delivered.
     # Its bounds include Docker stop-command overhead; they do not define a KeepAlive/SLA timeout.
     [ordered]@{runId=$RunId;startedAtUtc=$started.ToString('O');branch=(git branch --show-current);baseCommit=(git rev-parse HEAD);sdk=(dotnet --version);os=[Runtime.InteropServices.RuntimeInformation]::OSDescription;mqttnet='5.2.0.1603';dockerVersion=$version;image=$image;imageId=$imageId;containerId=$container;containerName=$name;initialEndpoint="127.0.0.1:$port";keepAliveSeconds=5;detectUpperBoundSeconds=10;exitUpperBoundSeconds=15;clockOrigin='UTC timestamp immediately before docker stop request';brokerStopGraceSeconds=5;unitRun='20261020-c2-unit-01';recoveryObserveSeconds=12;businessPublisher='none';seqEnabled=$false;sourceState='C1 preserved; C2 product/test/manual changes uncommitted'} | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath "$run/environment.json" -Encoding utf8
-    $child = Start-Process -FilePath (Get-Command pwsh).Source -ArgumentList @('-NoProfile','-File',$PSCommandPath,'-RunId',$RunId,'-Controller','-BrokerPort',"$port") -WorkingDirectory $repository -WindowStyle Hidden -RedirectStandardOutput "$run/lost-controller.stdout.log" -RedirectStandardError "$run/lost-controller.stderr.log" -PassThru
+    $child = Start-Process -FilePath (Get-Command pwsh).Source -ArgumentList @('-NoProfile','-File',"`"$PSCommandPath`"",'-RunId',$RunId,'-Controller','-BrokerPort',"$port") -WorkingDirectory $repository -WindowStyle Hidden -RedirectStandardOutput "$run/lost-controller.stdout.log" -RedirectStandardError "$run/lost-controller.stderr.log" -PassThru
     $null = $child.Handle
     $deadline = [DateTimeOffset]::UtcNow.AddSeconds(12)
     $ready = $null
@@ -150,7 +149,7 @@ log_timestamp true
     [ordered]@{restartRequestedAtUtc=$restartRequested.ToString('O');sameContainerId=$container;recoveryEndpoint="127.0.0.1:$recoveryPort";method='Explicit new process via the existing C1 controller, not automatic reconnect'} | ConvertTo-Json | Set-Content -LiteralPath "$run/restart.json" -Encoding utf8
     # Reuse C1's already tested isolated CTRL_C_EVENT controller for the new normal session.
     $c1Script = Join-Path $PSScriptRoot 'Verify-KeepAlive.ps1'
-    $child = Start-Process -FilePath (Get-Command pwsh).Source -ArgumentList @('-NoProfile','-File',$c1Script,'-RunId',$RunId,'-ObserveSeconds','12','-Controller','-BrokerPort',"$recoveryPort") -WorkingDirectory $repository -WindowStyle Hidden -RedirectStandardOutput "$run/recovery-controller.stdout.log" -RedirectStandardError "$run/recovery-controller.stderr.log" -PassThru
+    $child = Start-Process -FilePath (Get-Command pwsh).Source -ArgumentList @('-NoProfile','-File',"`"$c1Script`"",'-RunId',$RunId,'-ObserveSeconds','12','-Controller','-BrokerPort',"$recoveryPort") -WorkingDirectory $repository -WindowStyle Hidden -RedirectStandardOutput "$run/recovery-controller.stdout.log" -RedirectStandardError "$run/recovery-controller.stderr.log" -PassThru
     $null = $child.Handle
     if (!$child.WaitForExit(35000)) { throw 'Recovery controller exceeded 35s.' }
     $child.WaitForExit()

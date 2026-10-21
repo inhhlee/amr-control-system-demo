@@ -32,7 +32,7 @@ winget install --id GitTower.GitFlowNext --exact --version 2.0.0 --source winget
 
 # 설치 후 새 PowerShell을 열어 확인한다.
 git flow version
-Set-Location C:\amr-control-system-demo
+# 복제한 저장소 루트에서 실행
 git status --short
 git branch -vv
 git config --local --get-regexp '^gitflow\.'

@@ -83,8 +83,7 @@ if ((git branch --show-current) -ne 'feature/6-mqtt-keepalive') { throw 'Use the
 if (!$MeasureTimeout -and $BlockDelaySeconds -ne 0) { throw 'BlockDelaySeconds is only for C3b measurement.' }
 if (Test-Path -LiteralPath $run) { throw 'RunId exists; choose a new execution ID.' }
 New-Item -ItemType Directory -Path $run | Out-Null
-$docker = (Get-Command docker -ErrorAction SilentlyContinue).Source
-if (!$docker) { $docker=Join-Path $env:LOCALAPPDATA 'Programs/DockerDesktop/resources/bin/docker.exe' }
+$docker = @(Get-Command docker -CommandType Application -ErrorAction Stop)[0].Source
 $container=$null; $proxy=$null; $console=$null; $failure=$null; $observation=$null
 $stage=if ($MeasureTimeout) { 'c3b' } else { 'c3a' }
 $name=('amr-'+$stage+'-'+$RunId).ToLowerInvariant()
@@ -153,7 +152,7 @@ log_timestamp true
         Start-Sleep -Milliseconds 100
     } while ([DateTimeOffset]::UtcNow -lt $deadline)
     if ($brokerReady -notmatch 'mosquitto version .* running') { throw 'Broker did not become ready.' }
-    $proxy=Start-Process -FilePath (Get-Command pwsh).Source -ArgumentList @('-NoProfile','-File',"$repository/tools/COM-03/Start-ResponseGateProxy.ps1",'-BrokerPort',"$brokerPort",'-RunDirectory',$run) -WindowStyle Hidden -RedirectStandardOutput "$run/proxy.stdout.log" -RedirectStandardError "$run/proxy.stderr.log" -PassThru
+    $proxy=Start-Process -FilePath (Get-Command pwsh).Source -ArgumentList @('-NoProfile','-File',"`"$repository/tools/COM-03/Start-ResponseGateProxy.ps1`"",'-BrokerPort',"$brokerPort",'-RunDirectory',"`"$run`"") -WindowStyle Hidden -RedirectStandardOutput "$run/proxy.stdout.log" -RedirectStandardError "$run/proxy.stderr.log" -PassThru
     $null=$proxy.Handle
     $deadline=[DateTimeOffset]::UtcNow.AddSeconds(15)
     do {
@@ -163,7 +162,7 @@ log_timestamp true
         Start-Sleep -Milliseconds 25
     } while ([DateTimeOffset]::UtcNow -lt $deadline)
     if (!$proxyReady.port -or $proxyReady.processId -ne $proxy.Id) { throw 'Proxy listener/PID not confirmed.' }
-    $controllerArguments=@('-NoProfile','-File',$PSCommandPath,'-RunId',$RunId,'-Controller','-ProxyPort',"$($proxyReady.port)")
+    $controllerArguments=@('-NoProfile','-File',"`"$PSCommandPath`"",'-RunId',$RunId,'-Controller','-ProxyPort',"$($proxyReady.port)")
     if ($MeasureTimeout) { $controllerArguments+='-MeasureTimeout' }
     $console=Start-Process -FilePath (Get-Command pwsh).Source -ArgumentList $controllerArguments -WindowStyle Hidden -RedirectStandardOutput "$run/controller.stdout.log" -RedirectStandardError "$run/controller.stderr.log" -PassThru
     $null=$console.Handle

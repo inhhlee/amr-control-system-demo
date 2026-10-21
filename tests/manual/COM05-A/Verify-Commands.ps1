@@ -111,7 +111,7 @@ try {
         os=[Runtime.InteropServices.RuntimeInformation]::OSDescription;brokerImage=$container.Config.Image;
         endpoint='127.0.0.1:1884';seqVersion=$seq.Version;serviceStartedOrStopped=$false} |
         ConvertTo-Json -Depth 5 | Set-Content "$run/environment.json" -Encoding utf8
-    $files = @(rg --files src tests -g '*.cs' -g '*.csproj' -g '*.ps1')
+    $files = @(Get-ChildItem src,tests -Recurse -File | Where-Object { $_.Extension -in '.cs','.csproj','.ps1' -and $_.FullName -notmatch '[\\/](bin|obj|TestResults)[\\/]' } | ForEach-Object { [IO.Path]::GetRelativePath($repository, $_.FullName) })
     @($files | ForEach-Object { [ordered]@{path=$_;sha256=(Get-FileHash -LiteralPath $_ -Algorithm SHA256).Hash} }) |
         ConvertTo-Json -Depth 4 | Set-Content "$run/source-version.json" -Encoding utf8
     [ordered]@{result='passed';requests=$requests;received=$wire;invalidExitCode=$invalid.exitCode;

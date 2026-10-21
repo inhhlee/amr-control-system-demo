@@ -87,8 +87,7 @@ public static class Com03C1Control {
 
 if (Test-Path -LiteralPath $run) { throw 'Execution ID already exists; use a new RunId.' }
 New-Item -ItemType Directory -Path $run | Out-Null
-$docker = (Get-Command docker -ErrorAction SilentlyContinue).Source
-if (!$docker) { $docker = Join-Path $env:LOCALAPPDATA 'Programs/DockerDesktop/resources/bin/docker.exe' }
+$docker = @(Get-Command docker -CommandType Application -ErrorAction Stop)[0].Source
 $container = $null
 $child = $null
 $failure = $null
@@ -140,7 +139,7 @@ log_timestamp true
     } while ([DateTimeOffset]::UtcNow -lt $deadline)
     if ($brokerLog -notmatch 'mosquitto version .* running') { throw 'Broker did not become ready.' }
     [ordered]@{runId=$RunId;startedAtUtc=$started.ToString('O');os=[Runtime.InteropServices.RuntimeInformation]::OSDescription;sdk=(dotnet --version);mqttnet='5.2.0.1603';dockerVersion=$dockerVersion;image=$image;imageId=$imageId;containerId=$container;containerName=$name;endpoint="127.0.0.1:$port";branch=(git branch --show-current);baseCommit=(git rev-parse HEAD);sourceState='C1 script and execution evidence uncommitted; product source unchanged';businessPublisher='none';expectedKeepAliveSeconds=5;minimumObserveSeconds=10;requestedObserveSeconds=$ObserveSeconds;minimumPingPairs=2;normalExitCode=0;shutdownUpperBoundSeconds=5;seqEnabled=$false} | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath "$run/environment.json" -Encoding utf8
-    $child = Start-Process -FilePath (Get-Command pwsh).Source -ArgumentList @('-NoProfile','-File',$PSCommandPath,'-RunId',$RunId,'-ObserveSeconds',"$ObserveSeconds",'-Controller','-BrokerPort',"$port") -WorkingDirectory $repository -WindowStyle Hidden -RedirectStandardOutput "$run/controller.stdout.log" -RedirectStandardError "$run/controller.stderr.log" -PassThru
+    $child = Start-Process -FilePath (Get-Command pwsh).Source -ArgumentList @('-NoProfile','-File',"`"$PSCommandPath`"",'-RunId',$RunId,'-ObserveSeconds',"$ObserveSeconds",'-Controller','-BrokerPort',"$port") -WorkingDirectory $repository -WindowStyle Hidden -RedirectStandardOutput "$run/controller.stdout.log" -RedirectStandardError "$run/controller.stderr.log" -PassThru
     $null = $child.Handle
     if (!$child.WaitForExit(45000)) { throw 'Controller exceeded 45s.' }
     $child.WaitForExit()
