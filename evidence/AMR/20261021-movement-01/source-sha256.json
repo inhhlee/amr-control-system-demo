@@ -1,0 +1,110 @@
+[
+  {
+    "Path": "AmrControlSystem.slnx",
+    "SHA256": "37B9BEFC2AB39FD5A0588F4F4AC358A5894B892EC4EC062D39305625EC9C9E83",
+    "GitBlob": "03bbad412144850561691bb213605f3b6d616434",
+    "PreservedUnrelatedLocalChange": true
+  },
+  {
+    "Path": "config/simulator.single.json",
+    "SHA256": "623932AA66B3F507171867A4A60186D7339170FB617DF0C9C1BD7E6DDF0C71B5",
+    "GitBlob": "d26907a47e1cbeba56a00afc162224bf41ecf851",
+    "PreservedUnrelatedLocalChange": false
+  },
+  {
+    "Path": "global.json",
+    "SHA256": "6A8E9044030D136BD4C04FFF9684111A3478B27559BFB6D19E4D380F0DE91510",
+    "GitBlob": "e1c5e9980fedfa6ce8a2a67c128634c78c392f46",
+    "PreservedUnrelatedLocalChange": false
+  },
+  {
+    "Path": "src/Amr.Simulator/Amr.Simulator.csproj",
+    "SHA256": "96118037D4040D2D67496059A40521E51B390867F7CE27BBE028F0A8E92DBF45",
+    "GitBlob": "ed9781c223ab97571e13f98c401aa0e9a1b55a4b",
+    "PreservedUnrelatedLocalChange": false
+  },
+  {
+    "Path": "src/Amr.Simulator/Configuration/ConfigurationException.cs",
+    "SHA256": "E00CCC37DF6E8B329A88A9E4464B0D475827498C4A14235A57C12DA2E7320C87",
+    "GitBlob": "3709c2ed332b37cb60945e2c48f99eb9cc324a44",
+    "PreservedUnrelatedLocalChange": false
+  },
+  {
+    "Path": "src/Amr.Simulator/Configuration/SimulatorSettings.cs",
+    "SHA256": "4481585F3457C64A116AF2E15FE9A759BD0AE3DE6621F0D349C5E5EAC93175F4",
+    "GitBlob": "609684dfee54f3276599e4f7c3a44baa6dcf339f",
+    "PreservedUnrelatedLocalChange": false
+  },
+  {
+    "Path": "src/Amr.Simulator/Configuration/SimulatorSettingsLoader.cs",
+    "SHA256": "0061C8B11AD0FBCF622BF4DC3071579198F047E0909519D76A0426A3F2C0359E",
+    "GitBlob": "106521ec5dc779e70eb9fb54a4dfa52a5ea2f01b",
+    "PreservedUnrelatedLocalChange": false
+  },
+  {
+    "Path": "src/Amr.Simulator/Program.cs",
+    "SHA256": "21550BC6BBC9E932A2891C4E76D435D7D428D77F6147B787846C64190A82960B",
+    "GitBlob": "65cd6c1848f304697b44d81026e843856215706e",
+    "PreservedUnrelatedLocalChange": false
+  },
+  {
+    "Path": "src/Amr.Simulator/Simulation/Position2D.cs",
+    "SHA256": "EF5F0EF9E64C3815B896507C0F94D8C3CE6F9EFC46279DFDDBA5CAC8DEFADB22",
+    "GitBlob": "8827f22b81bb42e853ea4c0f7d28f2c0bd7e9b6b",
+    "PreservedUnrelatedLocalChange": false
+  },
+  {
+    "Path": "src/Amr.Simulator/Simulation/SimulatedAmr.cs",
+    "SHA256": "9F60202E4C488C7D3C75D868088D5ED056ABC80DAA15E4AC93A00C2F720E2902",
+    "GitBlob": "f8c415342984e7e90d987184359b63055479922a",
+    "PreservedUnrelatedLocalChange": false
+  },
+  {
+    "Path": "src/Amr.Simulator/SimulatorApplication.cs",
+    "SHA256": "B4251E38EC31065F50330F1DD0EEEA2E39ECB53C366672E8DEBA48800532301E",
+    "GitBlob": "4b930fa43d6918fde854b92392ee1278e9f2717a",
+    "PreservedUnrelatedLocalChange": false
+  },
+  {
+    "Path": "tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj",
+    "SHA256": "28B0645A3392C071381AC25E0F52BCD34502A4D97D8448CC30C5D4B30827A764",
+    "GitBlob": "f049bc9a2727d48b90949c316a8403eef493c266",
+    "PreservedUnrelatedLocalChange": false
+  },
+  {
+    "Path": "tests/Amr.Simulator.Tests/ApplicationTests.cs",
+    "SHA256": "81217A865FB71A9F112AE1AD1A82C53FF4FEA11BA1DA16FB150FE381B68D0FDF",
+    "GitBlob": "3804c3c1cdf73fc23f4bc3074b44d59fcb5dd31b",
+    "PreservedUnrelatedLocalChange": false
+  },
+  {
+    "Path": "tests/Amr.Simulator.Tests/ConfigurationTests.cs",
+    "SHA256": "35FFE1EF67C3FCA7599CF318D15118FE973AD8C0F2A98E7EAFA324A393BF8C6C",
+    "GitBlob": "ab75a00d9e231ef15e570ccb0e0972ef8ad9e22d",
+    "PreservedUnrelatedLocalChange": false
+  },
+  {
+    "Path": "tests/Amr.Simulator.Tests/MovementTests.cs",
+    "SHA256": "31009CAF62BA9173CFA7805DCFD0DC2B25DABBB10A655F0B17F12622DC72A367",
+    "GitBlob": "362800d51c0cf6501de37553a81119175317d926",
+    "PreservedUnrelatedLocalChange": false
+  },
+  {
+    "Path": "tests/manual/AMR01/Verify-Settings.ps1",
+    "SHA256": "3832DE7968C738E0DE288AD4E1CF9D3ECEE59078AA924754A46D6CA197702295",
+    "GitBlob": "ce41abd92e34f10ff465b6fe4d9e46ddffed0c97",
+    "PreservedUnrelatedLocalChange": false
+  },
+  {
+    "Path": "tools/RunSimulatorTests/Program.cs",
+    "SHA256": "0DAE6034C087D3E3A6CA62C7CC6F233A4F919608695D3B0A37CDC0589F5CE3F5",
+    "GitBlob": "f7ff7b04bb113276ea9e84fb7c1c3cf923b112f4",
+    "PreservedUnrelatedLocalChange": false
+  },
+  {
+    "Path": "tools/RunSimulatorTests/RunSimulatorTests.csproj",
+    "SHA256": "1FB04D1392C2E72755B673052CA58B379DE35524F3998916CB93F20233B64C1A",
+    "GitBlob": "2c8335c6c361c129cf8679090469cfedf2b012fd",
+    "PreservedUnrelatedLocalChange": false
+  }
+]

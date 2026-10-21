@@ -1,0 +1,12 @@
+3257f5e HEAD@{2026-10-21 17:02:32 +0900} checkout: moving from develop to feature/33-simulator-movement
+3257f5e HEAD@{2026-10-21 16:56:05 +0900} checkout: moving from develop to develop
+3257f5e HEAD@{2026-10-21 16:56:05 +0900} checkout: moving from develop to develop
+3257f5e HEAD@{2026-10-21 16:54:29 +0900} checkout: moving from develop to develop
+3257f5e HEAD@{2026-10-21 16:54:29 +0900} checkout: moving from feature/33-simulator-movement to develop
+3257f5e HEAD@{2026-10-21 16:48:48 +0900} reset: moving to HEAD
+3257f5e HEAD@{2026-10-21 16:48:48 +0900} checkout: moving from develop to feature/33-simulator-movement
+3257f5e HEAD@{2026-10-21 16:48:46 +0900} merge origin/develop: Fast-forward
+d518356 HEAD@{2026-10-21 16:48:46 +0900} checkout: moving from feature/32-simulator-settings to develop
+95a43a5 HEAD@{2026-10-21 16:48:46 +0900} reset: moving to HEAD
+95a43a5 HEAD@{2026-10-21 16:06:59 +0900} commit: docs: 시험 근거의 원시 바이트 Git 식별값 정정 (#32)
+f17d87e HEAD@{2026-10-21 16:05:29 +0900} commit: fix: BOM 유무와 관계없이 잘못된 UTF-8 거부 (#32)

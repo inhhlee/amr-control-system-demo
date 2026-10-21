@@ -1,0 +1,8 @@
+{
+  "Command": "dotnet build tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj --no-restore -m:1 -nr:false -p:UseSharedCompilation=false",
+  "Started": "2026-10-21T16:54:07.0360556+09:00",
+  "Finished": "2026-10-21T16:54:10.1913045+09:00",
+  "ExitCode": 0,
+  "ProductDLLSHA256": "249E710A233A93F844E683544693AFACA179A473986179E41A254875554F54AB",
+  "TestDLLSHA256": "07F02656C7204FAE704590B9A259F58B82F4359A926314F29007F555F99B0205"
+}

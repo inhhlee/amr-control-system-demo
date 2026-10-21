@@ -1,0 +1,12 @@
+[
+  {
+    "Path": "src/Amr.Simulator/Simulation/SimulatedAmr.cs",
+    "SHA256": "E3637FEBB3D82C506202DC1B6FF70334BDF77E5BA1E103AB3EE204858DF78BD7",
+    "GitBlob": "717f35b52910812a971e7681786abfc1c850d87e"
+  },
+  {
+    "Path": "tests/Amr.Simulator.Tests/MovementTests.cs",
+    "SHA256": "31009CAF62BA9173CFA7805DCFD0DC2B25DABBB10A655F0B17F12622DC72A367",
+    "GitBlob": "362800d51c0cf6501de37553a81119175317d926"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "CheckedAt": "2026-10-21T17:03:20.5275881+09:00",
+  "BackupRoot": "C:\\Users\\Admin\\AppData\\Local\\Temp\\amr-issue33-preserve-d0dca88a8b3a4da7a71fc13e6f0fe2c3",
+  "StashBackup": "1fffc4b4fef06b7e63d95f84724f5f2fc96ddc0b",
+  "OriginalBranch": "feature/32-simulator-settings",
+  "OriginalHead": "95a43a579630a844d8dfe352717fe78206f39e5b",
+  "CurrentBranch": "feature/33-simulator-movement",
+  "BaseCommit": "3257f5ee88041cbc03827256b155f5e481c7aed0",
+  "CurrentDevelop": "3257f5ee88041cbc03827256b155f5e481c7aed0",
+  "CurrentOriginDevelop": "3257f5ee88041cbc03827256b155f5e481c7aed0",
+  "PreservedFileCount": 26,
+  "RawFilesPreserved": true,
+  "OriginalIndexPreserved": true,
+  "SourceFilesMatchTestedSnapshot": 18,
+  "DLLsMatchRecordedBuild": true,
+  "ProductCommitsCreated": false,
+  "Pushed": false,
+  "PRCreated": false,
+  "ExternalBranchSwitchAndDeletionDetected": true,
+  "RequestedBranchRestoredAtSameCommit": true,
+  "ConsoleRecordedWorkingBranch": "develop"
+}

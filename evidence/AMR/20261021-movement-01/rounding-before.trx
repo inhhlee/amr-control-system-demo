@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="56214318-caf1-4c8e-b32a-cb70f2f7fc33" name="Admin@DESKTOP-N1BSNS3 2026-10-21 16:55:36" runUser="DESKTOP-N1BSNS3\Admin" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-21T16:55:36.5965548+09:00" queuing="2026-10-21T16:55:36.5965550+09:00" start="2026-10-21T16:55:36.0783969+09:00" finish="2026-10-21T16:55:36.6004503+09:00" />
+  <TestSettings name="default" id="08634f52-3d97-4c84-ad80-d599a69f3a7b">
+    <Deployment runDeploymentRoot="Admin_DESKTOP-N1BSNS3_2026-10-21_16_55_36" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="a2c730c1-6470-4842-8f17-61ba110f58a3" testId="7adb8333-de4f-8dc1-3546-f1f70dad87d3" testName="Amr.Simulator.Tests.MovementTests.RoundedIntermediateWaypoint_DoesNotCorruptTheNextUpdate" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0241761" startTime="2026-10-21T16:55:36.4870668+09:00" endTime="2026-10-21T16:55:36.5197545+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a2c730c1-6470-4842-8f17-61ba110f58a3">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.InRange() Failure: Value not in range&#xD;
+Range:  (0 - 9.9999999999999995E-07)&#xD;
+Actual: 0.75</Message>
+          <StackTrace>   at Amr.Simulator.Tests.MovementTests.AssertPosition(Position2D expected, Position2D actual) in C:\amr-control-system-demo\tests\Amr.Simulator.Tests\MovementTests.cs:line 28&#xD;
+   at Amr.Simulator.Tests.MovementTests.RoundedIntermediateWaypoint_DoesNotCorruptTheNextUpdate() in C:\amr-control-system-demo\tests\Amr.Simulator.Tests\MovementTests.cs:line 173&#xD;
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Amr.Simulator.Tests.MovementTests.RoundedIntermediateWaypoint_DoesNotCorruptTheNextUpdate" storage="c:\amr-control-system-demo\tests\amr.simulator.tests\bin\debug\net10.0\amr.simulator.tests.dll" id="7adb8333-de4f-8dc1-3546-f1f70dad87d3">
+      <Execution id="a2c730c1-6470-4842-8f17-61ba110f58a3" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\Amr.Simulator.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Tests.MovementTests" name="RoundedIntermediateWaypoint_DoesNotCorruptTheNextUpdate" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="7adb8333-de4f-8dc1-3546-f1f70dad87d3" executionId="a2c730c1-6470-4842-8f17-61ba110f58a3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="목록에 없는 결과" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="로드된 모든 결과" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" passed="0" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.12)&#xD;
+[xUnit.net 00:00:00.05]   Discovering: Amr.Simulator.Tests&#xD;
+[xUnit.net 00:00:00.10]   Discovered:  Amr.Simulator.Tests&#xD;
+[xUnit.net 00:00:00.11]   Starting:    Amr.Simulator.Tests&#xD;
+[xUnit.net 00:00:00.16]       Assert.InRange() Failure: Value not in range&#xD;
+[xUnit.net 00:00:00.16]       Range:  (0 - 9.9999999999999995E-07)&#xD;
+[xUnit.net 00:00:00.16]       Actual: 0.75&#xD;
+[xUnit.net 00:00:00.16]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.16]         C:\amr-control-system-demo\tests\Amr.Simulator.Tests\MovementTests.cs(28,0): at Amr.Simulator.Tests.MovementTests.AssertPosition(Position2D expected, Position2D actual)&#xD;
+[xUnit.net 00:00:00.16]         C:\amr-control-system-demo\tests\Amr.Simulator.Tests\MovementTests.cs(173,0): at Amr.Simulator.Tests.MovementTests.RoundedIntermediateWaypoint_DoesNotCorruptTheNextUpdate()&#xD;
+[xUnit.net 00:00:00.16]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+[xUnit.net 00:00:00.16]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+[xUnit.net 00:00:00.17]   Finished:    Amr.Simulator.Tests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="DESKTOP-N1BSNS3" outcome="Error" timestamp="2026-10-21T16:55:36.5217052+09:00">
+        <Text>[xUnit.net 00:00:00.16]     Amr.Simulator.Tests.MovementTests.RoundedIntermediateWaypoint_DoesNotCorruptTheNextUpdate [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>
