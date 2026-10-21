@@ -1,0 +1,6 @@
+{
+  "Finished": "2026-10-22T02:06:47.6531843+09:00",
+  "Started": "2026-10-22T02:06:09.4233660+09:00",
+  "Command": "pwsh -NoProfile -File tests/manual/AMR01/Verify-MqttTelemetry.ps1 -RunId 20261022-pr39-review-live-01",
+  "ExitCode": 0
+}

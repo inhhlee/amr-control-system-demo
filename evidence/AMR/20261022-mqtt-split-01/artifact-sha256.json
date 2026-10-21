@@ -1,0 +1,247 @@
+[
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-01/.gitattributes",
+    "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+    "rawGitBlob": "fa1385d99a319b43c06f5309d1aae9fdd3adea46"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-01/final-communication.json",
+    "sha256": "54588b369b97cba2cdd0c8bbb3fd80979a433b1a872bc25a08b9e90e138f7202",
+    "rawGitBlob": "2ab18f2cb935835c9e6f072f89755bdc950c911a"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-01/final-communication.log",
+    "sha256": "c39f77ff8d406460e423217db07b46c5a996c99a54f2737df7b68aad00bd61bc",
+    "rawGitBlob": "1d9690a43c0798e370a3f80271d7b8e320c66539"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-01/final-communication.trx",
+    "sha256": "bf3a22d056b6910dd638331096752b36bde5e7da911482e6b0eaf396727b2ea4",
+    "rawGitBlob": "7d6de2dda36eaf1e4d8e9f2c81565b14d2840f45"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-01/final-simulator.json",
+    "sha256": "059d3c36621d2edaddf2b64d0db61d828ef7df121aa8075b45fd2159c0227858",
+    "rawGitBlob": "d54fcd995a6fbdb86039191cc677da457b1032cc"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-01/final-simulator.log",
+    "sha256": "b8bbd78fd42fe29a4f5d46b01f13762fcfeb3ce2447ca65204b87655430cbe6c",
+    "rawGitBlob": "87f71f3a37b3831864bfc30ca545f6bfbaeef639"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-01/final-simulator.trx",
+    "sha256": "0cc13e0c09aa0997775edd529a0e13780b34a232fb474a17b196f7b6927abeec",
+    "rawGitBlob": "9419339388bc2cf20e489567da115914be9c9223"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-01/integrity.json",
+    "sha256": "9489522ea511670fbbb8ba607a2cdaa06cf5b79ad30416b88b52dc9cb36be94c",
+    "rawGitBlob": "244373f3f88cc9d5d6e15ab121ec1d4df32fb19e"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-01/live-run-01.log",
+    "sha256": "ff2ef3dfb214fbddca83a07b0d4624d0737dde4d96d7f29ad1d60da0f79d1d0e",
+    "rawGitBlob": "4dc7788dc2f1d10d007ae9409fe58e0061092e14"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-01/live-run-02.log",
+    "sha256": "5588ccf3434a29d9a17c18e6b10db16dfe6a81f1ccaddeb136ac2b07497879a9",
+    "rawGitBlob": "22f845ad34cf3546ef6d0d5b87902e155614ad2f"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-01/provenance.json",
+    "sha256": "082e486091c1e4a8ffd2173612ad5d2f22833f6d6a6395f75949e398f2aad15e",
+    "rawGitBlob": "a86b7114aff6f71939b040ae37759b32fe36ccf9"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-01/README.md",
+    "sha256": "693f242352642f88e53296748929ae167e00220f04b6a5e2be810a42e89f64cd",
+    "rawGitBlob": "baf97af407bf74c8522045e3112ad2b952183857"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-01/report-review.json",
+    "sha256": "e6158cdf1b588322e46983d713f3fb002317daffc03d27a3ee30479617f5275d",
+    "rawGitBlob": "175a6887b24ec78e4052201b270d8efb669f5bb8"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-01/sandbox-build.json",
+    "sha256": "ba20dcfcc532a4a679fcc6138d327b2a9003fe45a72aa64b988170adc081a373",
+    "rawGitBlob": "3c706ac1e6b65e5aa2767cbd452ab821dabdb67e"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-01/sandbox-build.log",
+    "sha256": "572d989d42c6c99bbaa69f2e1ac45577d359afb4d052c5678f7dd36c1a870057",
+    "rawGitBlob": "ce39ccd3f81c4f708878762edee1dcf430005c7a"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-01/sandbox-simulator.json",
+    "sha256": "a6848a26e4ad3e38607fc8cde6f3293c37277b28aa9dffaf73ac4dc8fac173f3",
+    "rawGitBlob": "6b901babf6384e71f4f7e67045ffea2b9cfe1670"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-01/sandbox-simulator.log",
+    "sha256": "b1d53b8e5de29159d6b97f4ba0d4bd1a3dcbc598ca6b45cb22c56c14835a6aa7",
+    "rawGitBlob": "59608fcb63c51b8a026057bd9598908dbafc4ca4"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-01/sandbox-simulator.trx",
+    "sha256": "43a96fd5a37071da44cf8a3cb93769702ede6d48921be75d36741281aa957222",
+    "rawGitBlob": "bbe5df1ee262475320ca72c4d4f2774cbc1f9488"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-01/Verify.ps1",
+    "sha256": "213043b1e328ce66a9b525312b3b899a0ff9c262bd61e1b3895aadf26d856c29",
+    "rawGitBlob": "f67753141b9308940567f69ae7432c519e914137"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/.gitattributes",
+    "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+    "rawGitBlob": "fa1385d99a319b43c06f5309d1aae9fdd3adea46"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/already-arrived.json",
+    "sha256": "8db37eb7532e4de4457b8afb6c0aad3c00e465cfdda0210c8fcb4a1d721b2c97",
+    "rawGitBlob": "ac81f14aa4a58110644e9d4e157cf6bd067c409d"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/already-arrived.received.json",
+    "sha256": "09caa548b5a0b4562f406f304bcaff6c0f0375bc4259fe68330cad1a494dc127",
+    "rawGitBlob": "77965df35188e3f62187b1ec8d791dbe9a5eb187"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/already-arrived.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rawGitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/already-arrived.stdout.log",
+    "sha256": "46abcae05dea6449c4d463343a7b4f467229cf9161880b0e8af64158c969d67d",
+    "rawGitBlob": "2887354b24a15eb6bfb5e19bf553484fafed6bda"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/broker-loss.stderr.log",
+    "sha256": "6f8dcc7e3c11dd419e9b215071c8699d1f102e38b11297c91217b917d7a06afb",
+    "rawGitBlob": "76e0b13d095effb885cec3ff1fabf6cd1c1675bf"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/broker-loss.stdout.log",
+    "sha256": "22df62f0984f2396c00f767aafd2246df6e6af318c9e31c9c9c3e44846b00f2d",
+    "rawGitBlob": "c58b9eae143e673d0a9246b4847afb9e28ee69d0"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/broker.conf",
+    "sha256": "bcbc5ff03f3b0886011651260e93a9d6351e4962f6b64ffe702ffacbf9500d57",
+    "rawGitBlob": "7e4a25cb1c53f955e67cbf0f08ac62e9cce6160f"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/broker.log",
+    "sha256": "a989bc5f02ef5f843b0be6cd3312b1891f6fa0e9fc281d82ccd452cee6f1d387",
+    "rawGitBlob": "7e53176122e83de9506b4f51deba72dbc0f8cb79"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/cancel-signal.json",
+    "sha256": "4ea6fd7d202d5e3122271af7be090169189c0b6829ced571053db7adcd675bb6",
+    "rawGitBlob": "11d59980adc15c019c5986a1a908d69b42a94008"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/cancel.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rawGitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/cancel.stdout.log",
+    "sha256": "8fbb7334b05a7d42e019fe6105d859884978b7a14789a52372646d56a8f41533",
+    "rawGitBlob": "4a8a1fdf8b86b33ed164a9a6fbb0eeb1d9085c92"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/changed.json",
+    "sha256": "a82bd2a92ee38c3acadd4badcb152d7d68f83cb9598aa7de07a86ca5ff050b80",
+    "rawGitBlob": "0277495486aa57e5eab4bee08f72a6d2c15b4ce6"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/changed.received.json",
+    "sha256": "cb2fcf87fd203bc26070aeb66dfaa2d507c7ae3c83789b7aee04586aa66676a9",
+    "rawGitBlob": "a907e8cf98c1c434ea2a976ab97d7bfee9a87765"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/changed.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rawGitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/changed.stdout.log",
+    "sha256": "363bc88149a21082b71b6bc3fb51efaeb2a88314a1a5f6a8febd684fcac8caa9",
+    "rawGitBlob": "e03699d8f14c5fa59f1a2cac3cbca3e31e61693b"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/connect-failure.stderr.log",
+    "sha256": "8462e61aa0dba72dd58405d6abc45edd31f90b94b97e363b3680b1cca7b94bf3",
+    "rawGitBlob": "d77724f6ec495997ebfc64b92398afe262b7b3fe"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/connect-failure.stdout.log",
+    "sha256": "0158683b2813f64559ee8753b707112d2b688f532a3cd382469430ff35ad1322",
+    "rawGitBlob": "0f6dcfa8e801ae0d1fe6dc28706e6cab1714bfae"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/containers-after.jsonl",
+    "sha256": "fe012ab196dd1955c277f18b3bc409de1631d52667dc3c088f9d36d6ae46e12a",
+    "rawGitBlob": "37f318b849d9bb79ef527445bb6bc0331e8131a5"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/containers-before.jsonl",
+    "sha256": "d687195e52804caaa7b8610b88a6ef8785f31d075a739fb669b5dc6d2517d988",
+    "rawGitBlob": "b854b4b5b0c7918a22d8bf62be1ac3699f3c4145"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/default.json",
+    "sha256": "623932aa66b3f507171867a4a60186d7339170fb617df0c9c1bd7e6ddf0c71b5",
+    "rawGitBlob": "fadc76d1b9e656fccb2c4dc480f222a82e2e2de5"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/default.received.json",
+    "sha256": "eba4dcf2bffa4e11330ea2a760219d9346882836d6e92e10029460b3d207752b",
+    "rawGitBlob": "6d4f41a48c62a965308b76c5e0e60eb0f434edab"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/default.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rawGitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/default.stdout.log",
+    "sha256": "8969ad32552efaee42526064c4b3a3dfb67c07b31bdfc7efce9dc334302d85ec",
+    "rawGitBlob": "9327a0c2e0b516edc62f56526cc192b78004880a"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/environment.json",
+    "sha256": "882d0d2288d50392138c12b77b4f6ca1a066c0e91f9cd9003f5098718170d71b",
+    "rawGitBlob": "a7690f571693b07de039a53710df7d264cc4e52f"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/long-interval.json",
+    "sha256": "bd09532cbd1580200d5293e799a69c701c86625d7667bf32dfa12bfcf40e2300",
+    "rawGitBlob": "b8bcb8b7cdbdba3a0a524c527c2c940ed94932e7"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/receiver.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rawGitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/receiver.stdout.log",
+    "sha256": "ed6ae7e00f0f85e345163105623f2c5f8756d50455f3ab13fe3c94b2486f4d23",
+    "rawGitBlob": "a9eed5f98d449a8009ec38709fcd8051a620f061"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/retained.stderr.log",
+    "sha256": "e2bba7134922643a5b7c24839b34fb867c308faee3ef530fb2e389c0d967dc64",
+    "rawGitBlob": "695349d7de0d2e9a06c2879a956a6c3a7567a291"
+  },
+  {
+    "path": "evidence/AMR/20261022-mqtt-split-live-02/verification.json",
+    "sha256": "60304985f38438fa21bf5314eb21407b45cec7ff25990a518b49b55f1a17a6f1",
+    "rawGitBlob": "416130ff620f96bd93131734ba0623f30559eb02"
+  }
+]

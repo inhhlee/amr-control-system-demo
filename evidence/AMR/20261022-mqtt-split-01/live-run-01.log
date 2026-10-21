@@ -1,0 +1,6 @@
+Resolve-Path: C:\amr-control-system-demo\tests\manual\AMR01\Verify-MqttTelemetry.ps1:14
+Line |
+  14 |  $docker=(Resolve-Path -LiteralPath $DockerPath -ErrorAction Stop).Pat …
+     |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot find path 'C:\Program Files\Docker\Docker\resources\bin\docker.exe C:\Program
+     | Files\Docker\Docker\resources\bin\docker' because it does not exist.

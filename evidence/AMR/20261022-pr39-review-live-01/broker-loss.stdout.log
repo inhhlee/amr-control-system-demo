@@ -1,0 +1,15 @@
+ConfigurationLoaded AmrId=AMR_001 InitialX=-1 InitialY=0 SpeedMps=1 UpdateIntervalMs=100 WaypointCount=2
+Waypoint Index=0 X=1 Y=0
+Waypoint Index=1 X=1 Y=2
+AmrInitialized AmrId=AMR_001 X=-1 Y=0 State=IDLE CurrentSpeedMps=0
+InitializationCompleted
+MqttConnected ClientId=amr-demo-785e5eaf9f424eee8877a4834e6d7471 TelemetryMs=200 HeartbeatMs=1000
+HeartbeatPublished Topic=amr/AMR_001/heartbeat Payload={"id":"AMR_001","ts":1792602401646,"status":"OK"} Delivery=Unconfirmed
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1792602401653,"pos":{"x":-1,"y":0},"sp":0,"state":"IDLE"} Delivery=Unconfirmed
+SimulationStarted AmrId=AMR_001 X=-1 Y=0 State=IDLE CurrentSpeedMps=0 ElapsedSeconds=0.000
+AmrMoved AmrId=AMR_001 X=-0.8885812 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.111
+AmrMoved AmrId=AMR_001 X=-0.7842807 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.216
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1792602401872,"pos":{"x":-0.7842807,"y":0},"sp":1,"state":"BUSY"} Delivery=Unconfirmed
+AmrMoved AmrId=AMR_001 X=-0.6716108000000001 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.328
+SimulationCanceled AmrId=AMR_001 X=-0.6716108000000001 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.328
+MqttSessionEnded ExitCode=1

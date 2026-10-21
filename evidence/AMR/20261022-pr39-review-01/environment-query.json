@@ -1,0 +1,6 @@
+{
+  "ExitCode": 0,
+  "RecordedAt": "2026-10-22T02:10:30.5832904+09:00",
+  "Command": "dotnet --info",
+  "SandboxAttempt": "environment.txt is the partial output of an access-denied Service Control Manager query"
+}

@@ -1,0 +1,858 @@
+{
+  "headAtExecution": "2ccdd2511fed8a146f8338250cbaa813198c0fca",
+  "branch": "feature/38-simulator-mqtt",
+  "sources": [
+    {
+      "path": "src/Amr.Communication/Amr.Communication.csproj",
+      "sha256": "ec8de05434fd0644e9f9424bf0ae3239e38a21022a3ddfa5ca4cef21a05e8361",
+      "normalizedGitBlob": "f5cb0ceed1b458b5b77c7742bcb78831653d42ac"
+    },
+    {
+      "path": "src/Amr.Communication.Console/Amr.Communication.Console.csproj",
+      "sha256": "d2e902231968d3b2214955e0bc2d7fced4607aa3a08f2b5530d15004093f22f3",
+      "normalizedGitBlob": "f913e07b4ea3d32230d355d38b24bcb7dade2dde"
+    },
+    {
+      "path": "src/Amr.Communication.Console/CommandConsoleRunner.cs",
+      "sha256": "bd211aa52f54ccd31a8b3cbde504b34be6ef3fab73fefe523c7cfc539962bffa",
+      "normalizedGitBlob": "a6e923cd3a515a43c79a96b5be1279582c74ee9e"
+    },
+    {
+      "path": "src/Amr.Communication.Console/ConsoleRunner.cs",
+      "sha256": "968646af29ea5d97ae7650d4061ba2cd6e76c2781c6bb38e4524d66aee7ee4fe",
+      "normalizedGitBlob": "97d54bd3d7679534e777736a7d24d26d8ffec7ea"
+    },
+    {
+      "path": "src/Amr.Communication.Console/Program.cs",
+      "sha256": "52ddbcf2cc06b9de401c41fed418512f8f182e908b0f2831ee567df5b5bb2c3d",
+      "normalizedGitBlob": "d1fee91abb6daa6e53f905da060a14aabb670d5c"
+    },
+    {
+      "path": "src/Amr.Simulator/Amr.Simulator.csproj",
+      "sha256": "3af26357768fffafeebba38bbd640c8af2d92d1f2948a8df28b5dda2b670b282",
+      "normalizedGitBlob": "d557e59a0fe6538adde54f5dc14bede6007576d4"
+    },
+    {
+      "path": "src/Amr.Simulator/Program.cs",
+      "sha256": "21550bc6bbc9e932a2891c4e76d435d7d428d77f6147b787846c64190a82960b",
+      "normalizedGitBlob": "65cd6c1848f304697b44d81026e843856215706e"
+    },
+    {
+      "path": "src/Amr.Simulator/SimulatorApplication.cs",
+      "sha256": "a967fec949c62b732acd4423ac6146f1e2cc941cd59baead6325d6f2d47c12cc",
+      "normalizedGitBlob": "ce7864caaf894559dabfd421da4a8b9bef50b97b"
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandMessage.cs",
+      "sha256": "6b708f4dc1c0d16f16e56b10a5a3c0b828e8f142409f4ad2d2b531811017a9dc",
+      "normalizedGitBlob": "4765a6ff1c6198ccff91fac1f384b6483f724e13"
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandPublisher.cs",
+      "sha256": "96aa8d5a26228895edc5a1cfea3bad9d65d810eb8d7fba1503ccdd0caf623fc7",
+      "normalizedGitBlob": "1e256e106a51ff51481678443c86ca0a053e713b"
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandValidationResult.cs",
+      "sha256": "b7cfaaaeb25702513f055cd304c72074f2460fbc34ec418382c859ebc6025623",
+      "normalizedGitBlob": "5442df11957d73bbeaa3e4575e4947a361937d2d"
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandValidator.cs",
+      "sha256": "3b672887a0503d44155dcf808de8d9293ce13af7f8f01c4fe76a49c84cc9223b",
+      "normalizedGitBlob": "ff8590db5e55b12b7437566ba1f74355c00b02e0"
+    },
+    {
+      "path": "src/Amr.Communication/Models/AckMessage.cs",
+      "sha256": "ea41efb4053b3689e5c3461d40d79e7f0e9bbe10580473f37e35816ebe977aab",
+      "normalizedGitBlob": "625b3dcba61a52b3b9b6a787bc9ce2ff43cc6139"
+    },
+    {
+      "path": "src/Amr.Communication/Models/AlarmMessage.cs",
+      "sha256": "e86a417ff8acd3e76500cac357be23de2ff1bf593742e8c323e0db172701e93e",
+      "normalizedGitBlob": "dc754e3bc5edd423dc349d4847544e70b86cbc99"
+    },
+    {
+      "path": "src/Amr.Communication/Models/HeartbeatMessage.cs",
+      "sha256": "e5a975c5a616e603d1a1ff7ddfe290e32b26e9daba799b9d3f614fc41654fe41",
+      "normalizedGitBlob": "6e83714e27ae27deddd686f1d3f9471974403669"
+    },
+    {
+      "path": "src/Amr.Communication/Models/ReceivedMessage.cs",
+      "sha256": "0a7d983db5e8185a3760ba57b567a2b0924f9fe0dad5dd34e39fbe95061c7ebf",
+      "normalizedGitBlob": "2e26f880b4db2f364f0488a832e4b11212ad76cc"
+    },
+    {
+      "path": "src/Amr.Communication/Models/TelemetryMessage.cs",
+      "sha256": "5715585d9dd636e8c315c248a9602ae0f6bee3e192a74663b05a598aaf3225f7",
+      "normalizedGitBlob": "653e795c6ef4afe2193bce85bf672cff26233682"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Connection/MqttConnection.cs",
+      "sha256": "70ba5cb9000aa2a0c09d6741c81c8347f4fc7d5f23cd95c02bac75926812fd95",
+      "normalizedGitBlob": "f233a546beb305d89f0917df982df44d43658b23"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Connection/MqttConnectionException.cs",
+      "sha256": "bbd323c8e96884039640bb93a263feb13a3bb8f7f622bf96dd5f091069c375eb",
+      "normalizedGitBlob": "f6c5cab8ad827de2c684c434e6302b1cdebf7959"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Connection/MqttConnectionSettings.cs",
+      "sha256": "39331cd6bcda0f09d1a72397a31993972c2c2bc937fd2bb0bada6db6b1155f1f",
+      "normalizedGitBlob": "47525d16a4730ed9ff8cee1d2c3bf901c53b0cd7"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Queues/AmrReceiveQueue.cs",
+      "sha256": "182038b55e6ae298cedbf8eb159b475518619de962487e722b610bc4383f7625",
+      "normalizedGitBlob": "2506b488891f1e54448d3bf338268f555f6862c3"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Queues/QueueAdmission.cs",
+      "sha256": "d3ee58d761f697c52f66c49ad1448e0dec8769536298afcead155635781cf477",
+      "normalizedGitBlob": "103d170076fd63de443b6d0812f3ac3ad06dabbd"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Queues/QueueProcessingEvent.cs",
+      "sha256": "a0737b49fbf57ef9b6296ae2190bca39d9bda4b0b388874d4b131469b0f146ee",
+      "normalizedGitBlob": "9b35489de2ba95dd8979a29a297e7103cf592f70"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/HeartbeatDiagnostic.cs",
+      "sha256": "c4cba602462bf67c6fc472895df0ea3635a46e683cd8b9667d26b22e0918720e",
+      "normalizedGitBlob": "a0f963f70db32cd30ef2c964656f9e6ab7f5f192"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/HeartbeatSubscription.cs",
+      "sha256": "a38723932bc0c7b3da1b4801d2f1650c19a4aa191706d749ce991a3c1dfb1bf2",
+      "normalizedGitBlob": "c79a8668cffa5b0d169591cc605877a7e295d874"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/MessageDiagnostic.cs",
+      "sha256": "5aa07f8f98e5991b407e7f82987d0c1fc0bd8bbcd7cb91dd0119b1e3cae74291",
+      "normalizedGitBlob": "27c4857a4d9fa685cce734b3e15a240462c89316"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/MessageSubscription.cs",
+      "sha256": "c1103dfc77d3e5b7dd92914a15a6514a3c8f9869eb860324eecd4952a0adcb47",
+      "normalizedGitBlob": "cf67f866e9b2f436c72a4ceb9fdb18de4cf6a460"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Ack/AckValidationResult.cs",
+      "sha256": "a9fad17750b4b01a967406850a9e0c1e8e2cdbc7bc5866e309bf07effeed10b4",
+      "normalizedGitBlob": "e5774d4e97bb2a6d08e0dac26ce79943f6ad5d85"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Ack/AckValidator.cs",
+      "sha256": "1a7be4b0c9b44045f2c647feae47a77ec55eeabea8dc697e55f7631ac0d9e6ab",
+      "normalizedGitBlob": "ec46d48e252839bc0f03f00dc953230945b61e50"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Alarm/AlarmValidationResult.cs",
+      "sha256": "b09a032de262596e065232ffea7a3bde00e7517dcf7a58eebddd3dfc4c18677c",
+      "normalizedGitBlob": "6f1325fd74529d09ef355a8299d45294c0977ead"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Alarm/AlarmValidator.cs",
+      "sha256": "e2dfd160b68dc84377807b5d7abb6620a8f1237e1cc87d79ef36152c97e4d684",
+      "normalizedGitBlob": "642a27b4e26f4be5ea2286189f1cc581a21b95d2"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Common/MessageValidation.cs",
+      "sha256": "37b5634721799fe3432caa43b53a04b24632d5c4044437edd3ae6ae0533a8de3",
+      "normalizedGitBlob": "189180551785977dc6f171d6b95af0dd269f0afb"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Common/ValidationError.cs",
+      "sha256": "2fdc9241f38c81e7eacf90db191a28a34b6d0dcc0c6fae74020bd19c6409f479",
+      "normalizedGitBlob": "b91414ebf9189ec4618099c650f41c596885b115"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Heartbeat/HeartbeatValidationResult.cs",
+      "sha256": "e0dc28054f8c188ce07033be670131679b32f794228a7a4e83aeb90ddabab7e4",
+      "normalizedGitBlob": "047e895ceea52a6fd9d1ec32d7479e1d50aa8bd6"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Heartbeat/HeartbeatValidator.cs",
+      "sha256": "c40a596d16200707369d8cb7108c81af1db05bd7ab28008ee9c1547d1c6cc6fe",
+      "normalizedGitBlob": "a717f7e46c9cb5cfb33afc741741c18e9c175759"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Telemetry/TelemetryValidationResult.cs",
+      "sha256": "ee625d9304cdba53ccfddc47c98de6af0a54d89b26b94024def925441187f460",
+      "normalizedGitBlob": "0d05f8f12a625ee34c6b648d76dced48b1768235"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Telemetry/TelemetryValidator.cs",
+      "sha256": "62818fa1e43319f7f608e1dc2a5c7a67c7f2403176c750f5a24167385b99e617",
+      "normalizedGitBlob": "8746cfaba28a2be52f8e51d6b1356bdd30e48d22"
+    },
+    {
+      "path": "src/Amr.Communication.Console/Logging/SeqLogging.cs",
+      "sha256": "18978489bd3ddc3a994bd66fe3b7c5fe5ec7f61fd715cc7438c18046d9baaf15",
+      "normalizedGitBlob": "aaa52d424e6bd5cc41d0ecd948f2738d61cded47"
+    },
+    {
+      "path": "src/Amr.Communication.Console/Logging/SeqLogSink.cs",
+      "sha256": "4752efe0f1f10b2ca0a8c505cbf2f5ab811f6886b3a727a67814b6a023a9646f",
+      "normalizedGitBlob": "855261c3202a96a56d68bf4de28127994c8e6e35"
+    },
+    {
+      "path": "src/Amr.Communication.Console/Logging/StructuredLog.cs",
+      "sha256": "561668fb1c6182e80b231b7345decacb7fb761c2c6ed940ef468f28a86dd32f2",
+      "normalizedGitBlob": "fbee9a77c754695f9f6a919ce65722ff413bad65"
+    },
+    {
+      "path": "src/Amr.Simulator/Configuration/ConfigurationException.cs",
+      "sha256": "e00ccc37df6e8b329a88a9e4464b0d475827498c4a14235a57c12da2e7320c87",
+      "normalizedGitBlob": "3709c2ed332b37cb60945e2c48f99eb9cc324a44"
+    },
+    {
+      "path": "src/Amr.Simulator/Configuration/SimulatorSettings.cs",
+      "sha256": "4481585f3457c64a116af2e15fe9a759bd0ae3de6621f0d349c5e5eac93175f4",
+      "normalizedGitBlob": "609684dfee54f3276599e4f7c3a44baa6dcf339f"
+    },
+    {
+      "path": "src/Amr.Simulator/Configuration/SimulatorSettingsLoader.cs",
+      "sha256": "0061c8b11ad0fbcf622bf4dc3071579198f047e0909519d76a0426a3f2c0359e",
+      "normalizedGitBlob": "106521ec5dc779e70eb9fb54a4dfa52a5ea2f01b"
+    },
+    {
+      "path": "src/Amr.Simulator/Simulation/ISimulationClock.cs",
+      "sha256": "25d810d754797d1b6f1cadee1b3087fc1382922a783de07641c2de06d97caf87",
+      "normalizedGitBlob": "8c1fee5fb55e4d7a69bf0366eb600c03fe81c4cf"
+    },
+    {
+      "path": "src/Amr.Simulator/Simulation/Position2D.cs",
+      "sha256": "ef5f0ef9e64c3815b896507c0f94d8c3ce6f9efc46279dfddba5cac8defadb22",
+      "normalizedGitBlob": "8827f22b81bb42e853ea4c0f7d28f2c0bd7e9b6b"
+    },
+    {
+      "path": "src/Amr.Simulator/Simulation/SimulatedAmr.cs",
+      "sha256": "9f60202e4c488c7d3c75d868088d5ed056abc80daa15e4ac93a00c2f720e2902",
+      "normalizedGitBlob": "f8c415342984e7e90d987184359b63055479922a"
+    },
+    {
+      "path": "src/Amr.Simulator/Simulation/SimulationRunner.cs",
+      "sha256": "1cf8105fa03f20320ab608d3d89b00aed006fb20a07d36d19ca5e3626357d1d5",
+      "normalizedGitBlob": "67fee82d37b830077c903ea4b722d358809b4048"
+    },
+    {
+      "path": "src/Amr.Simulator/Simulation/SimulationSnapshot.cs",
+      "sha256": "000420a5f1b2e2a0a8d4ec088a22aac7323370d7159fdfc5afaa77c3c9067693",
+      "normalizedGitBlob": "130df3cb45138c3c7fae51fe54eb0702d719b0cb"
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/ISimulationTransport.cs",
+      "sha256": "508de876d122ff6d87f03c6d51e6fc377b374ccfbff278c9573796ee1589466a",
+      "normalizedGitBlob": "aae161d9f2d8dc2c7b63aea6c8261369ff3c432d"
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/MqttSimulationSession.cs",
+      "sha256": "9e548cdd37259e9e313424ec595dc5768909182321ffb995d848a97bc06958a7",
+      "normalizedGitBlob": "d4f85b861a562f41ff4c2734dda781f8652572b1"
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/MqttSimulationTransport.cs",
+      "sha256": "4f6c9f98a040d3f0dff2918d1af5ec209fae6efc99b487a47c11da380e0fc6cb",
+      "normalizedGitBlob": "e9fef0bf9bf05e23843f6f74701af26e204ee3ac"
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/SimulationMessages.cs",
+      "sha256": "41a55ba28103db5bdb64df0fc24ad7bce957b79322b13977a0302f2b40a1a05d",
+      "normalizedGitBlob": "cb65571192537f28b2e7fbe94b7bb4ef0d8c9cc5"
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/SimulatorMqttOptions.cs",
+      "sha256": "3d23ec917c71c010a3ef99ad91f7fbb6dfc907e9d275a61e7a4414ad2089f0b0",
+      "normalizedGitBlob": "27f8ee0a526ec75f204509c2468ff34cfae77a57"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj",
+      "sha256": "0bb622c8930e883f570dd8dcfa7d4055ccd4722555c8b2f2ff972798a22e8699",
+      "normalizedGitBlob": "ec23dea1a0067c0029b7f92ae485145b357b72e0"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj",
+      "sha256": "28b0645a3392c071381ac25e0f52bcd34502a4d97d8448cc30c5d4b30827a764",
+      "normalizedGitBlob": "f049bc9a2727d48b90949c316a8403eef493c266"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/ApplicationTests.cs",
+      "sha256": "594eb45bef7e2a13f47035ca6dc61bf60caca779100e6ef02aac506f95e6c89a",
+      "normalizedGitBlob": "515e430e34f569f3a12f747577c220f87c94a9ed"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/ConfigurationTests.cs",
+      "sha256": "35ffe1ef67c3fca7599cf318d15118fe973ad8c0f2a98e7eafa324a393bf8c6c",
+      "normalizedGitBlob": "ab75a00d9e231ef15e570ccb0e0972ef8ad9e22d"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/MovementTests.cs",
+      "sha256": "87080dcc538b8626fddf986d34914632e5b7735f62c85bf750392ed1477ce279",
+      "normalizedGitBlob": "362800d51c0cf6501de37553a81119175317d926"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/MqttSimulationTests.cs",
+      "sha256": "ac38fff2c811b18a7d216528d534b899fadb242bd9233b115580fecd6add7ef1",
+      "normalizedGitBlob": "21fb257cfed12e43ab901d48ea0ca73d8be0d1f7"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/RunnerTests.cs",
+      "sha256": "a420d4d2ea16c0d6384bfe5ccd78fcbdb63198029537c2f4f7a0002d8bab0b0a",
+      "normalizedGitBlob": "99b65516d186412806c0445cba83c3bd7d8a5d7b"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Command/CommandPublisherTests.cs",
+      "sha256": "737c9b02695da77486ca60b494119beceaf47a7b124603cdd5238c2d6e717f7e",
+      "normalizedGitBlob": "e80386a43a84da7822c4899ae82410d0a583e47a"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Command/CommandValidationTests.cs",
+      "sha256": "d46034a32a23874b921e2d84f5daf0aac2e82402c6fba77d444f07eb8a904dea",
+      "normalizedGitBlob": "9401b31048bc016e7122c1d2920b6dcb7ba32cae"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/CommandConsoleTests.cs",
+      "sha256": "2c6be32cd789014ecc68ebfcf202e7ae7c3607c5da920f35be85433667a58366",
+      "normalizedGitBlob": "eb0cd2c9bdb82e5e7834e93d16036086f5254156"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/ConsoleConnectionFailureTests.cs",
+      "sha256": "350ed8a675d54a7960169f652bb1d99cfb31b9985ccd34e275f8fa4f18c825c8",
+      "normalizedGitBlob": "177cf018ed74891df58b825887c56856d3c0b99a"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/TestDoubles/FakeMqttClient.cs",
+      "sha256": "191cbe4b02410b354dcaefa46ab02f538a796fbd0e7e383b388c0cd98c11041a",
+      "normalizedGitBlob": "d4a0b1c63785aaeb03176b7cc515819eefdf62c9"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/AckValidatorTests.cs",
+      "sha256": "bb727f21f3290d691053663ce44ea4d145e6e3dd243f844d9ab7e14dcf6aca17",
+      "normalizedGitBlob": "1848f7c12f8732537be839a3e28520fe682d2971"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/AlarmValidatorTests.cs",
+      "sha256": "b7d1cf7a60639ce9427b791ec9adb8cbb5e318f98741f5f70382bca7417d9533",
+      "normalizedGitBlob": "8e8737dc3b00001e59ba10189809e5a3c3828b52"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/HeartbeatValidatorTests.cs",
+      "sha256": "faa761d201b0a94778633b28effce1fed4243689ca30df2ea083af9b813b842d",
+      "normalizedGitBlob": "f6e5946c3df0ac24d045f38336e2aeb501d47de0"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/MessageFieldValidationTests.cs",
+      "sha256": "6d9096c1ab067eb6833929cdd7ec05978a93e250b3a73518829c6ae879dc8205",
+      "normalizedGitBlob": "d8ad263f6b222141191148ed9dab693ff1acfc9d"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/MessageValidationRegressionTests.cs",
+      "sha256": "4c277cd69dec818f0f0a876d661e37520dec421f7bb9b7b76ea9b259a510d96a",
+      "normalizedGitBlob": "4543f69b7f51509e5f02003f33b1c70aeea7072e"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/TelemetryValidatorTests.cs",
+      "sha256": "7c09035a772d947acf7c70802255f0911785da7fffcff290e645fcf67a2793c1",
+      "normalizedGitBlob": "748d5c6f760d4b42a8da14c1377fbfb7d3228bc9"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/Logging/ConsoleShutdownReasonTests.cs",
+      "sha256": "8cc649eeb22f698c2733472995299690a3e97ae69b3bee2a8c814276c69633b4",
+      "normalizedGitBlob": "4e5490526c83bf2cf4898a60ff6be1eb31822455"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/Logging/SeqLoggingTests.cs",
+      "sha256": "17530fcdcec2d59f4268393c93d2e709991bf6733d65ec65e85bfe7145cc6d56",
+      "normalizedGitBlob": "e141ec94f3ea839376b9cd954cb7b72d85a06f6b"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Connection/MqttConnectionFailureTests.cs",
+      "sha256": "c90e243665956ee3267d7767a4de94d86382322c7cc16ef8b1a5fc85ca200229",
+      "normalizedGitBlob": "a27effa7488df0285a99ea60df6f219b76e1f9f3"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Connection/MqttConnectionTests.cs",
+      "sha256": "56d70e386aea42eb11f533a7d2313896bd89e7e68d88550ad23908390cd3d394",
+      "normalizedGitBlob": "df66f1a1720e7f751e574177a03ee8ede968f4cd"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueBoundaryTests.cs",
+      "sha256": "4db676ab1c6ecbaf3d474c8201211f9243dbc9c4b57198792b3ae3e0758e38d9",
+      "normalizedGitBlob": "855525a10bd459c58a803859b15191a5576850a8"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueShutdownTests.cs",
+      "sha256": "f4d564cfc5e7d3a29a32f06efb5d0fcb2929a710b632568878c2f17e88f60cce",
+      "normalizedGitBlob": "d239bce382a119099fd915590041c18364d3ee00"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueTests.cs",
+      "sha256": "d4baedd8aca2f15660f2730fd3433aa75fccf882edf8e46f4c0d47e8d2a4dffa",
+      "normalizedGitBlob": "ef8c8481a849eb45df3063368a3dad2a78b9ecbb"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Subscriptions/HeartbeatSubscriptionTests.cs",
+      "sha256": "f2c98e620e2ec01166a0d1d2a06ef324e9c75b0d298ed80434562f8e34871e07",
+      "normalizedGitBlob": "ddce9821a75537a82a955542921f961c1706f40a"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Subscriptions/MessageSubscriptionTests.cs",
+      "sha256": "620d55ae24dae636bc93137d498ecc2e5f5b6bb8460ab7b86fea72f7523fe71c",
+      "normalizedGitBlob": "78c2a9ccefa42299e42ea5c50e5955bc7d39e6fe"
+    },
+    {
+      "path": "tests/manual/AMR01/Send-OwnedCtrlC.ps1",
+      "sha256": "d6e478b0a9eeb5e5cd9f37003fdaa3ddc0aa96e8dc7d7b15a3acb6530ba606ff",
+      "normalizedGitBlob": "1bd9d80f172d9f66ff26572242403b473a5036ea"
+    },
+    {
+      "path": "tests/manual/AMR01/Verify-MqttTelemetry.ps1",
+      "sha256": "4a0ac54253dfbe619c39b5e47f148c258b5a19470c975c3726311402aee72b02",
+      "normalizedGitBlob": "d644ee18649a6499a7657ac5776e928849a0251b"
+    },
+    {
+      "path": "tests/manual/AMR01/Verify-Run.ps1",
+      "sha256": "9eb6317b401b5d015c09ac43dfecff47e2d347a9a25515c339fac998d8dd4d1d",
+      "normalizedGitBlob": "fe4adff3c7dd6cf4b8002c97c4660cdd05d66eb9"
+    },
+    {
+      "path": "tests/manual/AMR01/Verify-Settings.ps1",
+      "sha256": "3832de7968c738e0de288ad4e1cf9d3ecee59078aa924754a46d6ca197702295",
+      "normalizedGitBlob": "ce41abd92e34f10ff465b6fe4d9e46ddffed0c97"
+    },
+    {
+      "path": "tests/manual/COM01-B/inputs.json",
+      "sha256": "ce14f0e7e5ecb3e4cde98db63796f56c0bda8ba6ce1c406b18c96185481a9dfb",
+      "normalizedGitBlob": "05a9ddb23d495758268281698cb4d9e62f9a1ce8"
+    },
+    {
+      "path": "tests/manual/COM01-B/Verify-Mqtt.ps1",
+      "sha256": "c707017da1872c3c793061163ba71a241b239c54de8b59e786761e2b00cb1d9c",
+      "normalizedGitBlob": "a1ac4ad9c405f98e200a4eb89641f8d5e6c0a3db"
+    },
+    {
+      "path": "tests/manual/COM01-C/inputs.json",
+      "sha256": "618834d91fffe8ba3345a4c9d8ec1852902edb3aa3a5a86d3e327c88330b56eb",
+      "normalizedGitBlob": "a84ddb65e8cf40ebdf15497a528e14e3f9ee4c52"
+    },
+    {
+      "path": "tests/manual/COM01-C/Verify-Disconnect.ps1",
+      "sha256": "8d8b9aac7bf15037c23bbf39555e2937834cd9691bf8336d9d56ad8325963386",
+      "normalizedGitBlob": "7e33195501572e13492ed3ba094e538bb59d2798"
+    },
+    {
+      "path": "tests/manual/COM01-C/Verify-Mqtt.ps1",
+      "sha256": "cd32b182adc8bfeb758b953db31c6d834a61052e30b2c1b67030bd672aae6029",
+      "normalizedGitBlob": "13c545fd7de7ad768a9184c8f9fb55204edce67f"
+    },
+    {
+      "path": "tests/manual/COM03-B/Verify-Connection.ps1",
+      "sha256": "63d22c825d9f0622a381873c8ba0fbc78ff679aa59aea03e9910122ced6781cb",
+      "normalizedGitBlob": "f03c873436f4a0d79b7db89ec15a21468fd7751f"
+    },
+    {
+      "path": "tests/manual/COM03-C/ToolRecoveryProbe.cs",
+      "sha256": "47250b13b57bcda315218aee9651646d0f028fd445427bf8650f541eca6673c0",
+      "normalizedGitBlob": "9b4192901144ca37ede513315170a229f55c88e4"
+    },
+    {
+      "path": "tests/manual/COM03-C/Verify-BrokerShutdown.ps1",
+      "sha256": "64647ff6bb30ba2b8c9fde84585d2da31239c460403f576491c403ad1751bbc5",
+      "normalizedGitBlob": "3f16123f64577d5d875163d32e1dbb47fa1cc74d"
+    },
+    {
+      "path": "tests/manual/COM03-C/Verify-KeepAlive.ps1",
+      "sha256": "475029dd75239555f601c77a9c65837f25c1b090eba8c12ab7d18e074bd7901d",
+      "normalizedGitBlob": "77e44a11d2c5694a935cdcbe8e536c344a4e7e63"
+    },
+    {
+      "path": "tests/manual/COM03-C/Verify-ResponseGate.ps1",
+      "sha256": "7185de9f13c7074a725e674ac00f7e8ff6f1e9e5b0b6ee4580e33c62f14506d5",
+      "normalizedGitBlob": "07dd7c545e280cc35cc0629752472fbb0d31f6af"
+    },
+    {
+      "path": "tests/manual/COM03-C/Verify-ToolRecovery.ps1",
+      "sha256": "0c7e88b0c932655663462599084932b486ec3ac7c1868d4ba129d1acc982b298",
+      "normalizedGitBlob": "1c0d7ef96b7c53de59c15e6a2a8105609340fe8a"
+    },
+    {
+      "path": "tests/manual/COM05-A/Verify-Commands.ps1",
+      "sha256": "32b8386332ca7c2c904581b486bd0909f13340fe9af30903b62b6e80ad5196ac",
+      "normalizedGitBlob": "114356fd7b314e8f075ea0d0d34704933d19d4a8"
+    },
+    {
+      "path": "tests/manual/LOG/Verify-Seq.ps1",
+      "sha256": "51f91b5a6f39f8fccff3725e11f5b8f349600782f1f472e9ba76874caa2fabea",
+      "normalizedGitBlob": "a6635535601f6cff6ef292bf4d36bdb331b17e6c"
+    },
+    {
+      "path": "tests/manual/LOG/Verify-SeqShutdown.ps1",
+      "sha256": "580848222d9a297d7a0339e6d2e81d3e66dcd8b499b3870ec6dd015f7739517a",
+      "normalizedGitBlob": "1ecb7312e8c5ad97003e2043bcb7a3f261f9de17"
+    },
+    {
+      "path": "config/simulator.single.json",
+      "sha256": "623932aa66b3f507171867a4a60186d7339170fb617df0c9c1bd7e6ddf0c71b5",
+      "normalizedGitBlob": "d26907a47e1cbeba56a00afc162224bf41ecf851"
+    }
+  ],
+  "dlls": [
+    {
+      "path": "src/Amr.Simulator/bin/Debug/net10.0/Amr.Simulator.dll",
+      "sha256": "1f8b589118ce25e50713bde217c7797188414e769ff210a6117199983d145cbe"
+    },
+    {
+      "path": "src/Amr.Communication/bin/Debug/net10.0/Amr.Communication.dll",
+      "sha256": "4dab17c56249240c9b7a4c723f64c621d97204a246eff9552cdb9de90db8b2c7"
+    },
+    {
+      "path": "src/Amr.Communication.Console/bin/Debug/net10.0/Amr.Communication.Console.dll",
+      "sha256": "0e0db0c19d88fc0e4c8dc6da5136bd62e83f1f5ff3d675f8dbd12f2765f6f10e"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/bin/Debug/net10.0/Amr.Simulator.Tests.dll",
+      "sha256": "2254eb4db3f34c8e4aab3b38e9a4c5818d5ef179474f05ab116fa360ceee152b"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/bin/Debug/net10.0/Amr.Communication.Tests.dll",
+      "sha256": "06702f1606dec7a3fa9387f66978e45e2fb91f85875de9cf6fdec133f176b29f"
+    }
+  ],
+  "preservedExisting": [
+    {
+      "path": "README.md",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/Append-DailyRecord.ps1",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/artifact-sha256.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/console.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/daily-record-update.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/elevated-environment.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/elevated-source-sha256.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/elevated-test-summary.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/elevated-tests.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/elevated-tests.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/elevated-tests.trx",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/integrity.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/README.md",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restore.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restore.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-build.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-build.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-environment.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-source-sha256.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-tests.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-tests.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-tests.trx",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/sandbox-build.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/sandbox-build.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/sandbox-environment.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/sandbox-source-sha256.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/Verify.ps1",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/changed.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/changed.stderr.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/changed.stdout.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/fractional-interval.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/fractional-interval.stderr.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/fractional-interval.stdout.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-coordinate.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-coordinate.stderr.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-coordinate.stdout.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-id.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-id.stderr.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-id.stdout.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8-bom.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8-bom.stderr.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8-bom.stdout.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8.stderr.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8.stdout.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/malformed.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/malformed.stderr.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/malformed.stdout.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/missing-field.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/missing-field.stderr.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/missing-field.stdout.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/missing-file.stderr.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/missing-file.stdout.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/negative-speed.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/negative-speed.stderr.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/negative-speed.stdout.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/normal-utf8-bom.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/normal-utf8-bom.stderr.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/normal-utf8-bom.stdout.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/normal.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/normal.stderr.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/normal.stdout.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/overflow-speed.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/overflow-speed.stderr.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/overflow-speed.stdout.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/verification.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/wrong-type.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/wrong-type.stderr.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/wrong-type.stdout.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/zero-speed.json",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/zero-speed.stderr.log",
+      "preserved": true
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/zero-speed.stdout.log",
+      "preserved": true
+    }
+  ],
+  "unitCounters": {
+    "simulator": {
+      "total": "151",
+      "executed": "151",
+      "passed": "151",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "communication": {
+      "total": "768",
+      "executed": "768",
+      "passed": "768",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    }
+  },
+  "liveScenarioCount": 7,
+  "livePassed": true,
+  "ownedBrokerRemoved": true,
+  "ownedProcessesExited": true,
+  "existingContainersPreserved": true,
+  "communicationSourceDiff": "",
+  "solutionDiff": ""
+}

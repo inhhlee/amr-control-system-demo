@@ -1,0 +1,16 @@
+{
+  "ExitCode": 1,
+  "Started": "2026-10-22T01:34:29.2972510+09:00",
+  "Finished": "2026-10-22T01:36:01.0045610+09:00",
+  "Command": [
+    "dotnet",
+    "test",
+    "tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--logger",
+    "trx;LogFileName=sandbox-simulator.trx",
+    "--results-directory",
+    "C:\\amr-control-system-demo\\evidence\\AMR\\20261022-mqtt-split-01"
+  ]
+}

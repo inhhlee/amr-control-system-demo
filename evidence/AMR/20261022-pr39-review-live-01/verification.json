@@ -1,0 +1,91 @@
+{
+  "Results": [
+    {
+      "Telemetry": 19,
+      "AllPayloadsMatched": true,
+      "Heartbeat": 4,
+      "Case": "default",
+      "Final": {
+        "Id": "AMR_001",
+        "Timestamp": 1792602393860,
+        "Position": {
+          "X": 1,
+          "Y": 2
+        },
+        "Speed": 0,
+        "State": "IDLE",
+        "ReceivedAtUtc": "2026-10-22T02:06:33.8632303+09:00"
+      },
+      "AllCoordinatesMatched": true,
+      "ExitCode": 0,
+      "Passed": true
+    },
+    {
+      "Telemetry": 9,
+      "AllPayloadsMatched": true,
+      "Heartbeat": 2,
+      "Case": "changed",
+      "Final": {
+        "Id": "AMR_001",
+        "Timestamp": 1792602396501,
+        "Position": {
+          "X": 7,
+          "Y": 4
+        },
+        "Speed": 0,
+        "State": "IDLE",
+        "ReceivedAtUtc": "2026-10-22T02:06:36.5029556+09:00"
+      },
+      "AllCoordinatesMatched": true,
+      "ExitCode": 0,
+      "Passed": true
+    },
+    {
+      "Telemetry": 2,
+      "AllPayloadsMatched": true,
+      "Heartbeat": 1,
+      "Case": "already-arrived",
+      "Final": {
+        "Id": "AMR_001",
+        "Timestamp": 1792602396991,
+        "Position": {
+          "X": 5,
+          "Y": 3
+        },
+        "Speed": 0,
+        "State": "IDLE",
+        "ReceivedAtUtc": "2026-10-22T02:06:36.994676+09:00"
+      },
+      "AllCoordinatesMatched": true,
+      "ExitCode": 0,
+      "Passed": true
+    },
+    {
+      "SubscriberExitCode": 27,
+      "Case": "no-retained-message",
+      "Passed": true
+    },
+    {
+      "Heartbeats": 2,
+      "Case": "long-update-independent-sending-and-cancel",
+      "Passed": true,
+      "ExitCode": 0
+    },
+    {
+      "ReceiverExit": 1,
+      "Case": "broker-loss",
+      "Passed": true,
+      "SimulatorExit": 1
+    },
+    {
+      "Case": "connect-failure-before-movement",
+      "Passed": true,
+      "ExitCode": 1
+    }
+  ],
+  "ExistingContainersPreserved": true,
+  "Passed": true,
+  "OwnedBrokerRemoved": true,
+  "Finished": "2026-10-21T17:06:47.5858018+00:00",
+  "OwnedProcessesExited": true
+}

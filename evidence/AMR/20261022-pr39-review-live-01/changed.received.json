@@ -1,0 +1,168 @@
+[
+  {
+    "AmrId": "AMR_001",
+    "Kind": "heartbeat",
+    "Model": {
+      "Id": "AMR_001",
+      "Timestamp": 1792602394942,
+      "Status": "OK",
+      "ReceivedAtUtc": "2026-10-22T02:06:34.957434+09:00"
+    },
+    "ReceivedAtUtc": "2026-10-22T02:06:34.957434+09:00"
+  },
+  {
+    "AmrId": "AMR_001",
+    "Kind": "telemetry",
+    "Model": {
+      "Id": "AMR_001",
+      "Timestamp": 1792602394952,
+      "Position": {
+        "X": 5,
+        "Y": 3
+      },
+      "Speed": 0,
+      "State": "IDLE",
+      "ReceivedAtUtc": "2026-10-22T02:06:34.960753+09:00"
+    },
+    "ReceivedAtUtc": "2026-10-22T02:06:34.960753+09:00"
+  },
+  {
+    "AmrId": "AMR_001",
+    "Kind": "telemetry",
+    "Model": {
+      "Id": "AMR_001",
+      "Timestamp": 1792602395165,
+      "Position": {
+        "X": 5,
+        "Y": 3.22741
+      },
+      "Speed": 2,
+      "State": "BUSY",
+      "ReceivedAtUtc": "2026-10-22T02:06:35.1713754+09:00"
+    },
+    "ReceivedAtUtc": "2026-10-22T02:06:35.1713754+09:00"
+  },
+  {
+    "AmrId": "AMR_001",
+    "Kind": "telemetry",
+    "Model": {
+      "Id": "AMR_001",
+      "Timestamp": 1792602395378,
+      "Position": {
+        "X": 5,
+        "Y": 3.6832675999999998
+      },
+      "Speed": 2,
+      "State": "BUSY",
+      "ReceivedAtUtc": "2026-10-22T02:06:35.3863775+09:00"
+    },
+    "ReceivedAtUtc": "2026-10-22T02:06:35.3863775+09:00"
+  },
+  {
+    "AmrId": "AMR_001",
+    "Kind": "telemetry",
+    "Model": {
+      "Id": "AMR_001",
+      "Timestamp": 1792602395590,
+      "Position": {
+        "X": 5.1127294,
+        "Y": 4
+      },
+      "Speed": 2,
+      "State": "BUSY",
+      "ReceivedAtUtc": "2026-10-22T02:06:35.5930575+09:00"
+    },
+    "ReceivedAtUtc": "2026-10-22T02:06:35.5930575+09:00"
+  },
+  {
+    "AmrId": "AMR_001",
+    "Kind": "telemetry",
+    "Model": {
+      "Id": "AMR_001",
+      "Timestamp": 1792602395793,
+      "Position": {
+        "X": 5.5556736,
+        "Y": 4
+      },
+      "Speed": 2,
+      "State": "BUSY",
+      "ReceivedAtUtc": "2026-10-22T02:06:35.7956466+09:00"
+    },
+    "ReceivedAtUtc": "2026-10-22T02:06:35.7956466+09:00"
+  },
+  {
+    "AmrId": "AMR_001",
+    "Kind": "heartbeat",
+    "Model": {
+      "Id": "AMR_001",
+      "Timestamp": 1792602395969,
+      "Status": "OK",
+      "ReceivedAtUtc": "2026-10-22T02:06:35.9719354+09:00"
+    },
+    "ReceivedAtUtc": "2026-10-22T02:06:35.9719354+09:00"
+  },
+  {
+    "AmrId": "AMR_001",
+    "Kind": "telemetry",
+    "Model": {
+      "Id": "AMR_001",
+      "Timestamp": 1792602396004,
+      "Position": {
+        "X": 5.991717000000001,
+        "Y": 4
+      },
+      "Speed": 2,
+      "State": "BUSY",
+      "ReceivedAtUtc": "2026-10-22T02:06:36.0063416+09:00"
+    },
+    "ReceivedAtUtc": "2026-10-22T02:06:36.0063416+09:00"
+  },
+  {
+    "AmrId": "AMR_001",
+    "Kind": "telemetry",
+    "Model": {
+      "Id": "AMR_001",
+      "Timestamp": 1792602396217,
+      "Position": {
+        "X": 6.414886800000001,
+        "Y": 4
+      },
+      "Speed": 2,
+      "State": "BUSY",
+      "ReceivedAtUtc": "2026-10-22T02:06:36.2208683+09:00"
+    },
+    "ReceivedAtUtc": "2026-10-22T02:06:36.2208683+09:00"
+  },
+  {
+    "AmrId": "AMR_001",
+    "Kind": "telemetry",
+    "Model": {
+      "Id": "AMR_001",
+      "Timestamp": 1792602396432,
+      "Position": {
+        "X": 6.843463000000001,
+        "Y": 4
+      },
+      "Speed": 2,
+      "State": "BUSY",
+      "ReceivedAtUtc": "2026-10-22T02:06:36.4344476+09:00"
+    },
+    "ReceivedAtUtc": "2026-10-22T02:06:36.4344476+09:00"
+  },
+  {
+    "AmrId": "AMR_001",
+    "Kind": "telemetry",
+    "Model": {
+      "Id": "AMR_001",
+      "Timestamp": 1792602396501,
+      "Position": {
+        "X": 7,
+        "Y": 4
+      },
+      "Speed": 0,
+      "State": "IDLE",
+      "ReceivedAtUtc": "2026-10-22T02:06:36.5029556+09:00"
+    },
+    "ReceivedAtUtc": "2026-10-22T02:06:36.5029556+09:00"
+  }
+]

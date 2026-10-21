@@ -1,0 +1,872 @@
+{
+  "createdAt": "2026-10-22T02:11:23.437609+09:00",
+  "head": "68c66d53cd168ecbbea3248c8f3b8182211bff60",
+  "codeVersion": "HEAD 68c66d5 + the uncommitted fix and tests listed in fixPaths",
+  "branch": "feature/38-simulator-mqtt",
+  "fixPaths": [
+    "src/Amr.Simulator/Telemetry/ISimulationTransport.cs",
+    "src/Amr.Simulator/Telemetry/MqttSimulationSession.cs",
+    "src/Amr.Simulator/Telemetry/MqttSimulationTransport.cs",
+    "tests/Amr.Simulator.Tests/MqttSimulationTests.cs",
+    "tests/Amr.Simulator.Tests/MqttTransportConnectionTests.cs"
+  ],
+  "os": "Windows-10-10.0.26200-SP0",
+  "python": "3.9.12",
+  "sdk": "10.0.401",
+  "sources": [
+    {
+      "path": "src/Amr.Communication/Amr.Communication.csproj",
+      "sha256": "ec8de05434fd0644e9f9424bf0ae3239e38a21022a3ddfa5ca4cef21a05e8361"
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandMessage.cs",
+      "sha256": "6b708f4dc1c0d16f16e56b10a5a3c0b828e8f142409f4ad2d2b531811017a9dc"
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandPublisher.cs",
+      "sha256": "96aa8d5a26228895edc5a1cfea3bad9d65d810eb8d7fba1503ccdd0caf623fc7"
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandValidationResult.cs",
+      "sha256": "b7cfaaaeb25702513f055cd304c72074f2460fbc34ec418382c859ebc6025623"
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandValidator.cs",
+      "sha256": "3b672887a0503d44155dcf808de8d9293ce13af7f8f01c4fe76a49c84cc9223b"
+    },
+    {
+      "path": "src/Amr.Communication/Models/AckMessage.cs",
+      "sha256": "ea41efb4053b3689e5c3461d40d79e7f0e9bbe10580473f37e35816ebe977aab"
+    },
+    {
+      "path": "src/Amr.Communication/Models/AlarmMessage.cs",
+      "sha256": "e86a417ff8acd3e76500cac357be23de2ff1bf593742e8c323e0db172701e93e"
+    },
+    {
+      "path": "src/Amr.Communication/Models/HeartbeatMessage.cs",
+      "sha256": "e5a975c5a616e603d1a1ff7ddfe290e32b26e9daba799b9d3f614fc41654fe41"
+    },
+    {
+      "path": "src/Amr.Communication/Models/ReceivedMessage.cs",
+      "sha256": "0a7d983db5e8185a3760ba57b567a2b0924f9fe0dad5dd34e39fbe95061c7ebf"
+    },
+    {
+      "path": "src/Amr.Communication/Models/TelemetryMessage.cs",
+      "sha256": "5715585d9dd636e8c315c248a9602ae0f6bee3e192a74663b05a598aaf3225f7"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Connection/MqttConnection.cs",
+      "sha256": "70ba5cb9000aa2a0c09d6741c81c8347f4fc7d5f23cd95c02bac75926812fd95"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Connection/MqttConnectionException.cs",
+      "sha256": "bbd323c8e96884039640bb93a263feb13a3bb8f7f622bf96dd5f091069c375eb"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Connection/MqttConnectionSettings.cs",
+      "sha256": "39331cd6bcda0f09d1a72397a31993972c2c2bc937fd2bb0bada6db6b1155f1f"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Queues/AmrReceiveQueue.cs",
+      "sha256": "182038b55e6ae298cedbf8eb159b475518619de962487e722b610bc4383f7625"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Queues/QueueAdmission.cs",
+      "sha256": "d3ee58d761f697c52f66c49ad1448e0dec8769536298afcead155635781cf477"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Queues/QueueProcessingEvent.cs",
+      "sha256": "a0737b49fbf57ef9b6296ae2190bca39d9bda4b0b388874d4b131469b0f146ee"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/HeartbeatDiagnostic.cs",
+      "sha256": "c4cba602462bf67c6fc472895df0ea3635a46e683cd8b9667d26b22e0918720e"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/HeartbeatSubscription.cs",
+      "sha256": "a38723932bc0c7b3da1b4801d2f1650c19a4aa191706d749ce991a3c1dfb1bf2"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/MessageDiagnostic.cs",
+      "sha256": "5aa07f8f98e5991b407e7f82987d0c1fc0bd8bbcd7cb91dd0119b1e3cae74291"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/MessageSubscription.cs",
+      "sha256": "c1103dfc77d3e5b7dd92914a15a6514a3c8f9869eb860324eecd4952a0adcb47"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Ack/AckValidationResult.cs",
+      "sha256": "a9fad17750b4b01a967406850a9e0c1e8e2cdbc7bc5866e309bf07effeed10b4"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Ack/AckValidator.cs",
+      "sha256": "1a7be4b0c9b44045f2c647feae47a77ec55eeabea8dc697e55f7631ac0d9e6ab"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Alarm/AlarmValidationResult.cs",
+      "sha256": "b09a032de262596e065232ffea7a3bde00e7517dcf7a58eebddd3dfc4c18677c"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Alarm/AlarmValidator.cs",
+      "sha256": "e2dfd160b68dc84377807b5d7abb6620a8f1237e1cc87d79ef36152c97e4d684"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Common/MessageValidation.cs",
+      "sha256": "37b5634721799fe3432caa43b53a04b24632d5c4044437edd3ae6ae0533a8de3"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Common/ValidationError.cs",
+      "sha256": "2fdc9241f38c81e7eacf90db191a28a34b6d0dcc0c6fae74020bd19c6409f479"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Heartbeat/HeartbeatValidationResult.cs",
+      "sha256": "e0dc28054f8c188ce07033be670131679b32f794228a7a4e83aeb90ddabab7e4"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Heartbeat/HeartbeatValidator.cs",
+      "sha256": "c40a596d16200707369d8cb7108c81af1db05bd7ab28008ee9c1547d1c6cc6fe"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Telemetry/TelemetryValidationResult.cs",
+      "sha256": "ee625d9304cdba53ccfddc47c98de6af0a54d89b26b94024def925441187f460"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Telemetry/TelemetryValidator.cs",
+      "sha256": "62818fa1e43319f7f608e1dc2a5c7a67c7f2403176c750f5a24167385b99e617"
+    },
+    {
+      "path": "src/Amr.Communication.Console/Amr.Communication.Console.csproj",
+      "sha256": "d2e902231968d3b2214955e0bc2d7fced4607aa3a08f2b5530d15004093f22f3"
+    },
+    {
+      "path": "src/Amr.Communication.Console/CommandConsoleRunner.cs",
+      "sha256": "bd211aa52f54ccd31a8b3cbde504b34be6ef3fab73fefe523c7cfc539962bffa"
+    },
+    {
+      "path": "src/Amr.Communication.Console/ConsoleRunner.cs",
+      "sha256": "968646af29ea5d97ae7650d4061ba2cd6e76c2781c6bb38e4524d66aee7ee4fe"
+    },
+    {
+      "path": "src/Amr.Communication.Console/Logging/SeqLogging.cs",
+      "sha256": "18978489bd3ddc3a994bd66fe3b7c5fe5ec7f61fd715cc7438c18046d9baaf15"
+    },
+    {
+      "path": "src/Amr.Communication.Console/Logging/SeqLogSink.cs",
+      "sha256": "4752efe0f1f10b2ca0a8c505cbf2f5ab811f6886b3a727a67814b6a023a9646f"
+    },
+    {
+      "path": "src/Amr.Communication.Console/Logging/StructuredLog.cs",
+      "sha256": "561668fb1c6182e80b231b7345decacb7fb761c2c6ed940ef468f28a86dd32f2"
+    },
+    {
+      "path": "src/Amr.Communication.Console/Program.cs",
+      "sha256": "52ddbcf2cc06b9de401c41fed418512f8f182e908b0f2831ee567df5b5bb2c3d"
+    },
+    {
+      "path": "src/Amr.Simulator/Amr.Simulator.csproj",
+      "sha256": "3af26357768fffafeebba38bbd640c8af2d92d1f2948a8df28b5dda2b670b282"
+    },
+    {
+      "path": "src/Amr.Simulator/Configuration/ConfigurationException.cs",
+      "sha256": "e00ccc37df6e8b329a88a9e4464b0d475827498c4a14235a57c12da2e7320c87"
+    },
+    {
+      "path": "src/Amr.Simulator/Configuration/SimulatorSettings.cs",
+      "sha256": "4481585f3457c64a116af2e15fe9a759bd0ae3de6621f0d349c5e5eac93175f4"
+    },
+    {
+      "path": "src/Amr.Simulator/Configuration/SimulatorSettingsLoader.cs",
+      "sha256": "0061c8b11ad0fbcf622bf4dc3071579198f047e0909519d76a0426a3f2c0359e"
+    },
+    {
+      "path": "src/Amr.Simulator/Program.cs",
+      "sha256": "21550bc6bbc9e932a2891c4e76d435d7d428d77f6147b787846c64190a82960b"
+    },
+    {
+      "path": "src/Amr.Simulator/Simulation/ISimulationClock.cs",
+      "sha256": "25d810d754797d1b6f1cadee1b3087fc1382922a783de07641c2de06d97caf87"
+    },
+    {
+      "path": "src/Amr.Simulator/Simulation/Position2D.cs",
+      "sha256": "ef5f0ef9e64c3815b896507c0f94d8c3ce6f9efc46279dfddba5cac8defadb22"
+    },
+    {
+      "path": "src/Amr.Simulator/Simulation/SimulatedAmr.cs",
+      "sha256": "9f60202e4c488c7d3c75d868088d5ed056abc80daa15e4ac93a00c2f720e2902"
+    },
+    {
+      "path": "src/Amr.Simulator/Simulation/SimulationRunner.cs",
+      "sha256": "1cf8105fa03f20320ab608d3d89b00aed006fb20a07d36d19ca5e3626357d1d5"
+    },
+    {
+      "path": "src/Amr.Simulator/Simulation/SimulationSnapshot.cs",
+      "sha256": "000420a5f1b2e2a0a8d4ec088a22aac7323370d7159fdfc5afaa77c3c9067693"
+    },
+    {
+      "path": "src/Amr.Simulator/SimulatorApplication.cs",
+      "sha256": "a967fec949c62b732acd4423ac6146f1e2cc941cd59baead6325d6f2d47c12cc"
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/ISimulationTransport.cs",
+      "sha256": "c24bca29e8cbfeb5cb79afe1c074bd728df04cbd8e3d0a644ff31e841f585ccf"
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/MqttSimulationSession.cs",
+      "sha256": "0f9788b50a46518c63392df1ed9d8d5500e1abef678a3b90de1bf8b732c6dfd0"
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/MqttSimulationTransport.cs",
+      "sha256": "9fb8f431e2981f331bf2fcafabf9c127ac22ee9eb04d4526931583aac3e95783"
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/SimulationMessages.cs",
+      "sha256": "41a55ba28103db5bdb64df0fc24ad7bce957b79322b13977a0302f2b40a1a05d"
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/SimulatorMqttOptions.cs",
+      "sha256": "3d23ec917c71c010a3ef99ad91f7fbb6dfc907e9d275a61e7a4414ad2089f0b0"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj",
+      "sha256": "0bb622c8930e883f570dd8dcfa7d4055ccd4722555c8b2f2ff972798a22e8699"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Command/CommandPublisherTests.cs",
+      "sha256": "737c9b02695da77486ca60b494119beceaf47a7b124603cdd5238c2d6e717f7e"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Command/CommandValidationTests.cs",
+      "sha256": "d46034a32a23874b921e2d84f5daf0aac2e82402c6fba77d444f07eb8a904dea"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/CommandConsoleTests.cs",
+      "sha256": "2c6be32cd789014ecc68ebfcf202e7ae7c3607c5da920f35be85433667a58366"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/ConsoleConnectionFailureTests.cs",
+      "sha256": "350ed8a675d54a7960169f652bb1d99cfb31b9985ccd34e275f8fa4f18c825c8"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/Logging/ConsoleShutdownReasonTests.cs",
+      "sha256": "8cc649eeb22f698c2733472995299690a3e97ae69b3bee2a8c814276c69633b4"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/Logging/SeqLoggingTests.cs",
+      "sha256": "17530fcdcec2d59f4268393c93d2e709991bf6733d65ec65e85bfe7145cc6d56"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Connection/MqttConnectionFailureTests.cs",
+      "sha256": "c90e243665956ee3267d7767a4de94d86382322c7cc16ef8b1a5fc85ca200229"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Connection/MqttConnectionTests.cs",
+      "sha256": "56d70e386aea42eb11f533a7d2313896bd89e7e68d88550ad23908390cd3d394"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueBoundaryTests.cs",
+      "sha256": "4db676ab1c6ecbaf3d474c8201211f9243dbc9c4b57198792b3ae3e0758e38d9"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueShutdownTests.cs",
+      "sha256": "f4d564cfc5e7d3a29a32f06efb5d0fcb2929a710b632568878c2f17e88f60cce"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueTests.cs",
+      "sha256": "d4baedd8aca2f15660f2730fd3433aa75fccf882edf8e46f4c0d47e8d2a4dffa"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Subscriptions/HeartbeatSubscriptionTests.cs",
+      "sha256": "f2c98e620e2ec01166a0d1d2a06ef324e9c75b0d298ed80434562f8e34871e07"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Subscriptions/MessageSubscriptionTests.cs",
+      "sha256": "620d55ae24dae636bc93137d498ecc2e5f5b6bb8460ab7b86fea72f7523fe71c"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/TestDoubles/FakeMqttClient.cs",
+      "sha256": "191cbe4b02410b354dcaefa46ab02f538a796fbd0e7e383b388c0cd98c11041a"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/AckValidatorTests.cs",
+      "sha256": "bb727f21f3290d691053663ce44ea4d145e6e3dd243f844d9ab7e14dcf6aca17"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/AlarmValidatorTests.cs",
+      "sha256": "b7d1cf7a60639ce9427b791ec9adb8cbb5e318f98741f5f70382bca7417d9533"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/HeartbeatValidatorTests.cs",
+      "sha256": "faa761d201b0a94778633b28effce1fed4243689ca30df2ea083af9b813b842d"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/MessageFieldValidationTests.cs",
+      "sha256": "6d9096c1ab067eb6833929cdd7ec05978a93e250b3a73518829c6ae879dc8205"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/MessageValidationRegressionTests.cs",
+      "sha256": "4c277cd69dec818f0f0a876d661e37520dec421f7bb9b7b76ea9b259a510d96a"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/TelemetryValidatorTests.cs",
+      "sha256": "7c09035a772d947acf7c70802255f0911785da7fffcff290e645fcf67a2793c1"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj",
+      "sha256": "28b0645a3392c071381ac25e0f52bcd34502a4d97d8448cc30c5d4b30827a764"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/ApplicationTests.cs",
+      "sha256": "594eb45bef7e2a13f47035ca6dc61bf60caca779100e6ef02aac506f95e6c89a"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/ConfigurationTests.cs",
+      "sha256": "35ffe1ef67c3fca7599cf318d15118fe973ad8c0f2a98e7eafa324a393bf8c6c"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/MovementTests.cs",
+      "sha256": "87080dcc538b8626fddf986d34914632e5b7735f62c85bf750392ed1477ce279"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/MqttSimulationTests.cs",
+      "sha256": "e01487a8b318cb1bd909a6bc70b3c6165a8f5a5a9c476006822808da14049e51"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/MqttTransportConnectionTests.cs",
+      "sha256": "e9f3d90b94e188c08e4f7fa1bc2f03b2bec7b334fe22dd78347073e73a361429"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/RunnerTests.cs",
+      "sha256": "a420d4d2ea16c0d6384bfe5ccd78fcbdb63198029537c2f4f7a0002d8bab0b0a"
+    },
+    {
+      "path": "tests/manual/AMR01/Send-OwnedCtrlC.ps1",
+      "sha256": "d6e478b0a9eeb5e5cd9f37003fdaa3ddc0aa96e8dc7d7b15a3acb6530ba606ff"
+    },
+    {
+      "path": "tests/manual/AMR01/Verify-MqttTelemetry.ps1",
+      "sha256": "4a0ac54253dfbe619c39b5e47f148c258b5a19470c975c3726311402aee72b02"
+    },
+    {
+      "path": "tests/manual/AMR01/Verify-Run.ps1",
+      "sha256": "9eb6317b401b5d015c09ac43dfecff47e2d347a9a25515c339fac998d8dd4d1d"
+    },
+    {
+      "path": "tests/manual/AMR01/Verify-Settings.ps1",
+      "sha256": "3832de7968c738e0de288ad4e1cf9d3ecee59078aa924754a46d6ca197702295"
+    },
+    {
+      "path": "tests/manual/COM01-B/inputs.json",
+      "sha256": "ce14f0e7e5ecb3e4cde98db63796f56c0bda8ba6ce1c406b18c96185481a9dfb"
+    },
+    {
+      "path": "tests/manual/COM01-B/Verify-Mqtt.ps1",
+      "sha256": "c707017da1872c3c793061163ba71a241b239c54de8b59e786761e2b00cb1d9c"
+    },
+    {
+      "path": "tests/manual/COM01-C/inputs.json",
+      "sha256": "618834d91fffe8ba3345a4c9d8ec1852902edb3aa3a5a86d3e327c88330b56eb"
+    },
+    {
+      "path": "tests/manual/COM01-C/Verify-Disconnect.ps1",
+      "sha256": "8d8b9aac7bf15037c23bbf39555e2937834cd9691bf8336d9d56ad8325963386"
+    },
+    {
+      "path": "tests/manual/COM01-C/Verify-Mqtt.ps1",
+      "sha256": "cd32b182adc8bfeb758b953db31c6d834a61052e30b2c1b67030bd672aae6029"
+    },
+    {
+      "path": "tests/manual/COM03-B/Verify-Connection.ps1",
+      "sha256": "63d22c825d9f0622a381873c8ba0fbc78ff679aa59aea03e9910122ced6781cb"
+    },
+    {
+      "path": "tests/manual/COM03-C/ToolRecoveryProbe.cs",
+      "sha256": "47250b13b57bcda315218aee9651646d0f028fd445427bf8650f541eca6673c0"
+    },
+    {
+      "path": "tests/manual/COM03-C/Verify-BrokerShutdown.ps1",
+      "sha256": "64647ff6bb30ba2b8c9fde84585d2da31239c460403f576491c403ad1751bbc5"
+    },
+    {
+      "path": "tests/manual/COM03-C/Verify-KeepAlive.ps1",
+      "sha256": "475029dd75239555f601c77a9c65837f25c1b090eba8c12ab7d18e074bd7901d"
+    },
+    {
+      "path": "tests/manual/COM03-C/Verify-ResponseGate.ps1",
+      "sha256": "7185de9f13c7074a725e674ac00f7e8ff6f1e9e5b0b6ee4580e33c62f14506d5"
+    },
+    {
+      "path": "tests/manual/COM03-C/Verify-ToolRecovery.ps1",
+      "sha256": "0c7e88b0c932655663462599084932b486ec3ac7c1868d4ba129d1acc982b298"
+    },
+    {
+      "path": "tests/manual/COM05-A/Verify-Commands.ps1",
+      "sha256": "32b8386332ca7c2c904581b486bd0909f13340fe9af30903b62b6e80ad5196ac"
+    },
+    {
+      "path": "tests/manual/LOG/Verify-Seq.ps1",
+      "sha256": "51f91b5a6f39f8fccff3725e11f5b8f349600782f1f472e9ba76874caa2fabea"
+    },
+    {
+      "path": "tests/manual/LOG/Verify-SeqShutdown.ps1",
+      "sha256": "580848222d9a297d7a0339e6d2e81d3e66dcd8b499b3870ec6dd015f7739517a"
+    },
+    {
+      "path": "config/simulator.single.json",
+      "sha256": "623932aa66b3f507171867a4a60186d7339170fb617df0c9c1bd7e6ddf0c71b5"
+    }
+  ],
+  "dlls": [
+    {
+      "path": "src/Amr.Simulator/bin/Debug/net10.0/Amr.Simulator.dll",
+      "sha256": "88ffb6e2f07534222d1a271174bf1ef65005f27f14ee180a9b16fb5c12a3977b"
+    },
+    {
+      "path": "src/Amr.Communication/bin/Debug/net10.0/Amr.Communication.dll",
+      "sha256": "d18dfeef737e20ec7f3de0f5c1454ee317c9bc3abda1c9a1622a9f86547f0ed0"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/bin/Debug/net10.0/Amr.Simulator.Tests.dll",
+      "sha256": "6e1db4ac2676b56fc110d3c61629beaee69c0563eabf1a5488a9ff200ab2edde"
+    }
+  ],
+  "preservedExisting": [
+    {
+      "path": "README.md",
+      "sha256": "fc708b159549ead9b03768f1ba2c5efc9e2939828573ad91f07a64fe39f1f0c3",
+      "bytes": 88365
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/Append-DailyRecord.ps1",
+      "sha256": "26299fc293766a54c899c4799bfb7240c39196750d1d515686df76e31ac25e31",
+      "bytes": 4582
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/README.md",
+      "sha256": "5c4aa7f7cbb5b15a29bd384fd176a4e67739b631b0c4c5b20d4da60e3209ef7d",
+      "bytes": 11148
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/Verify.ps1",
+      "sha256": "9309260043c01a721f35437db095082f398f15626abcc8afebba621fad7c42eb",
+      "bytes": 3414
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/artifact-sha256.json",
+      "sha256": "ad7e05aa577e42b47bf2c1a60314a713d210bd49b9465f70260d59b5c82a80cb",
+      "bytes": 12650
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/console.log",
+      "sha256": "49f1173c18610b325bdaffe0bb2127a89e8ac84d6f3d8737106b59165dce32da",
+      "bytes": 51
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/daily-record-update.json",
+      "sha256": "5693240951948ce62c47ad629b3c1882abf11aa8cef19c84b039a9d0d89f8fdf",
+      "bytes": 506
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/elevated-environment.json",
+      "sha256": "3d0015a27d57eea592bee7b1818bb305fd47b14dbe1159b9abcaa0e9ed4e132b",
+      "bytes": 1281
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/elevated-source-sha256.json",
+      "sha256": "f162098333ddcfa074fe917299eeabdac15b3c4896a7dd6ff96bb7bf74392511",
+      "bytes": 8823
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/elevated-test-summary.json",
+      "sha256": "d6ba87729bffda22b75fad8d411f4d766c02ce3243bce3541af9e704effc8e86",
+      "bytes": 31042
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/elevated-tests.json",
+      "sha256": "0b5a92c4618cdb1f3436d071eb25085aae3c267b2fb95e7852c9448bcf76d0b7",
+      "bytes": 451
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/elevated-tests.log",
+      "sha256": "cbc491e7565fd1661ae86ff08376b3e2f12048cc83498b5e7d487bab6be72738",
+      "bytes": 456
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/elevated-tests.trx",
+      "sha256": "2856cb9a0565a2d0fd75d151ac426abc2527abb642c83c442f3ee64645d0f594",
+      "bytes": 225581
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/integrity.json",
+      "sha256": "f885675f1a98a59aa9541bba8c189d8f59c98ce292b1ba04e4af3b703ca5de2d",
+      "bytes": 1187
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restore.json",
+      "sha256": "0769b0f480337b3fe0b96cba3bed1ffce8efbd8130da205726c17055cc9da921",
+      "bytes": 236
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restore.log",
+      "sha256": "85e8936d316354a9a60183a9915a8b9d26afaf53c111d84b73ace3db655a125e",
+      "bytes": 357
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-build.json",
+      "sha256": "8f8721e3079d91d6ef30e56c022ab307aaf3b2a0f0c79d70fdc44177c591972f",
+      "bytes": 333
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-build.log",
+      "sha256": "f442efccc811ec19ecd2d5b36eed5926b82eba75a46ce1b90c72b8c0a98c4a78",
+      "bytes": 422
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-environment.json",
+      "sha256": "3d0015a27d57eea592bee7b1818bb305fd47b14dbe1159b9abcaa0e9ed4e132b",
+      "bytes": 1281
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-source-sha256.json",
+      "sha256": "f162098333ddcfa074fe917299eeabdac15b3c4896a7dd6ff96bb7bf74392511",
+      "bytes": 8823
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-tests.json",
+      "sha256": "cac1f7b40f0681d42c0ed06d59760956a73b85f971dc99201c7d4b8eb0669441",
+      "bytes": 451
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-tests.log",
+      "sha256": "50a76ebcf294353c19e446aa9acbfb7d944ab65d5824d08725cdc66459844c30",
+      "bytes": 707
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-tests.trx",
+      "sha256": "f9479d4ff93f933448c9a2ba4f320699dc8c1f976f67c7e63fb76d1026494027",
+      "bytes": 1635
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/sandbox-build.json",
+      "sha256": "9329f85dfc7f43e929756b8bba049bdc1098a49ccef5eb7aa72c11434c062d16",
+      "bytes": 333
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/sandbox-build.log",
+      "sha256": "6e9b651ede563121d41fc9deda96d80a20cf0c0ad9109bd735288add4f328935",
+      "bytes": 937
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/sandbox-environment.json",
+      "sha256": "3d0015a27d57eea592bee7b1818bb305fd47b14dbe1159b9abcaa0e9ed4e132b",
+      "bytes": 1281
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/sandbox-source-sha256.json",
+      "sha256": "f162098333ddcfa074fe917299eeabdac15b3c4896a7dd6ff96bb7bf74392511",
+      "bytes": 8823
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/changed.json",
+      "sha256": "52102bb6e431e4f3bbb8832342ba482edfb74261cc8b98c758b1d6c13e22609d",
+      "bytes": 199
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/changed.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/changed.stdout.log",
+      "sha256": "d2c5cce5ee484591fbf418777b8fafd02a96b3f919e609b42138f376a3af5b3d",
+      "bytes": 11666
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/fractional-interval.json",
+      "sha256": "2b0c131bd4c64610faebd87fbeda1cd0fb8684ae2acc246996cd2cae45300142",
+      "bytes": 192
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/fractional-interval.stderr.log",
+      "sha256": "af1ae1af11a085e2021641726dababe64965007816fca80972f4d926b379b35d",
+      "bytes": 131
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/fractional-interval.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-coordinate.json",
+      "sha256": "d11d19f8361d017c3a59f170d07d8dd40c5db04369d62c486f4d79b7027440d2",
+      "bytes": 194
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-coordinate.stderr.log",
+      "sha256": "5c418856ee41fe8edc86579af265700cc9ea973c543b3517e41bbd2c0609c090",
+      "bytes": 98
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-coordinate.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-id.json",
+      "sha256": "490bbdbe5674404efd5a0e9732eec6ef92ef7ba369498099ceb9dbfd61455f8b",
+      "bytes": 192
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-id.stderr.log",
+      "sha256": "31fbf260b1b7c1a0117bf14d388a12c4239203c23a092b93143ad39ba6ac0cd3",
+      "bytes": 143
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-id.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8-bom.json",
+      "sha256": "b92a8340a4f1198adee2a38ca6f709d410c00f463e22282b056fbc74a823ab4c",
+      "bytes": 195
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8-bom.stderr.log",
+      "sha256": "675733763237f425c8a6bc58908e93526a768bcd76b4db7c4b5b5fab6d0042d6",
+      "bytes": 104
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8-bom.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8.json",
+      "sha256": "81703c2e4e17a220b3cab46aad839e21acc00f4321affa19b5d98e2adf236fde",
+      "bytes": 192
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8.stderr.log",
+      "sha256": "675733763237f425c8a6bc58908e93526a768bcd76b4db7c4b5b5fab6d0042d6",
+      "bytes": 104
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/malformed.json",
+      "sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+      "bytes": 1
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/malformed.stderr.log",
+      "sha256": "356b445221cc144f45bd2eab7e967c846757fc042c9866f07cc5f147ac76f824",
+      "bytes": 84
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/malformed.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/missing-field.json",
+      "sha256": "6a271697787fcaefae4ea3391a2e8da32300aa102fab53945b60efca3b2fbd01",
+      "bytes": 221
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/missing-field.stderr.log",
+      "sha256": "b63a05db506ead14d3d782eee280a0abd4eae60813eb0113e53117df5b36441d",
+      "bytes": 84
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/missing-field.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/missing-file.stderr.log",
+      "sha256": "aae2f6a26e387d008a0f64292baa47b8fbbe9634c52846e3e79ee468a563ea13",
+      "bytes": 108
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/missing-file.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/negative-speed.json",
+      "sha256": "c129f7b1fa191f72ada0a374ea7ebadc7f17085384a491e96b4c7e83c62386a2",
+      "bytes": 191
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/negative-speed.stderr.log",
+      "sha256": "b0f94b6595174d306f7b5f092d46a1f0832c9f79a42cfb0dc722909cd177cb27",
+      "bytes": 96
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/negative-speed.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/normal-utf8-bom.json",
+      "sha256": "4f0f356aaaf2b6b156a8d44ff71de7129839998aaa8f17ededb7814ece9f4979",
+      "bytes": 195
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/normal-utf8-bom.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/normal-utf8-bom.stdout.log",
+      "sha256": "75b8cbfc94dc56b9978afe92469f1fa74f3a0e54d82c9ae6f1afd593dff579d7",
+      "bytes": 4222
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/normal.json",
+      "sha256": "623932aa66b3f507171867a4a60186d7339170fb617df0c9c1bd7e6ddf0c71b5",
+      "bytes": 192
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/normal.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/normal.stdout.log",
+      "sha256": "e8273ecedcf372d63ff43b6d5528ef66d0f16a82a758567cca6ba302c2e2a70f",
+      "bytes": 4124
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/overflow-speed.json",
+      "sha256": "8e3efff3d478d63deb118cd9cc7f580cb2376b1b75d9aa33ae3eea2120a2df79",
+      "bytes": 194
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/overflow-speed.stderr.log",
+      "sha256": "00268ce504de57d708ff93631c3df00969580b09562932ce20957e88ecdf9a63",
+      "bytes": 89
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/overflow-speed.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/verification.json",
+      "sha256": "a99349ada6f3ab1af01f9ee369a54944a327f39a9e99b4f5426b78cfc5e1750c",
+      "bytes": 8069
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/wrong-type.json",
+      "sha256": "4e9e1140b8fa72a12ead98d6e16cdbc1c2eedde880260b5816d75d58bc502081",
+      "bytes": 192
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/wrong-type.stderr.log",
+      "sha256": "00268ce504de57d708ff93631c3df00969580b09562932ce20957e88ecdf9a63",
+      "bytes": 89
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/wrong-type.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/zero-speed.json",
+      "sha256": "6a6ab73bcc220b40c12f7012986d702ceacca632d0b2da43772f1b6364a2beca",
+      "bytes": 190
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/zero-speed.stderr.log",
+      "sha256": "b0f94b6595174d306f7b5f092d46a1f0832c9f79a42cfb0dc722909cd177cb27",
+      "bytes": 96
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/zero-speed.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "preservedExistingRawBytesMatch": true,
+  "priorArtifactsVerified": 49,
+  "communicationFilesUnchanged": 58,
+  "reusedCommunicationCounters": {
+    "total": "768",
+    "executed": "768",
+    "passed": "768",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "beforeCounters": {
+    "total": "1",
+    "executed": "1",
+    "passed": "0",
+    "failed": "1",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "afterCounters": {
+    "total": "154",
+    "executed": "154",
+    "passed": "154",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "liveScenarioCount": 7,
+  "telemetryMatched": 30,
+  "heartbeatsMatched": 7,
+  "cleanup": {
+    "ExistingContainersPreserved": true,
+    "OwnedBrokerRemoved": true,
+    "OwnedProcessesExited": true
+  },
+  "githubCI": {
+    "head": "68c66d53cd168ecbbea3248c8f3b8182211bff60",
+    "checks": [],
+    "statuses": [],
+    "meaning": "No CI checks reported; local results are not CI results"
+  },
+  "prState": {
+    "number": 39,
+    "head": "68c66d53cd168ecbbea3248c8f3b8182211bff60",
+    "draft": true,
+    "merged": false,
+    "localFixPublished": false
+  }
+}

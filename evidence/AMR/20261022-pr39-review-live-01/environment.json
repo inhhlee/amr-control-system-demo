@@ -1,0 +1,10 @@
+{
+  "Sdk": "10.0.401",
+  "Port": 61971,
+  "ContainerId": "ff376981c7f182e728ce5f509e49a63af69da5739ce5a9a467b96a6f281f1c50",
+  "RunId": "20261022-pr39-review-live-01",
+  "Head": "68c66d53cd168ecbbea3248c8f3b8182211bff60",
+  "Started": "2026-10-21T17:06:10.3256849+00:00",
+  "ImageId": "sha256:8c4aa03990b1b9b542d42c0d4daabe03381d3e06c0279f82936eeee81cf2c905",
+  "Branch": "feature/38-simulator-mqtt"
+}
