@@ -1,0 +1,66 @@
+{
+  "Passed": true,
+  "Branch": "feature/33-simulator-movement",
+  "Cases": [
+    {
+      "ExitCode": 0,
+      "Case": "normal",
+      "ProductPid": 25872,
+      "Passed": true,
+      "Expected": "SimulationCompleted AmrId=AMR_001 X=1 Y=2 State=IDLE CurrentSpeedMps=0"
+    },
+    {
+      "ExitCode": 0,
+      "Case": "changed",
+      "ProductPid": 34036,
+      "Passed": true,
+      "Expected": "SimulationCompleted AmrId=AMR_001 X=7 Y=4 State=IDLE CurrentSpeedMps=0"
+    },
+    {
+      "ExitCode": 1,
+      "Case": "invalid",
+      "ProductPid": 52616,
+      "Passed": true,
+      "Expected": "ConfigurationRejected Field=$.speedMps"
+    },
+    {
+      "ExitCode": 0,
+      "Case": "stationary",
+      "ProductPid": 57896,
+      "Passed": true,
+      "Expected": "SimulationCompleted AmrId=AMR_001 X=-1 Y=0 State=IDLE CurrentSpeedMps=0"
+    },
+    {
+      "ShutdownMilliseconds": 16.9517,
+      "Case": "cancel",
+      "Exited": true,
+      "ExitCode": 0,
+      "Signal": "Windows CTRL_C_EVENT",
+      "ConsolePids": [
+        13648,
+        37868
+      ],
+      "Passed": true,
+      "ProductPid": 37868
+    },
+    {
+      "ProductPid": 41744,
+      "ShutdownMilliseconds": 19.9365,
+      "Exited": true,
+      "Signal": "Windows CTRL_C_EVENT",
+      "ExitCode": 0,
+      "Case": "long-interval",
+      "ConsolePids": [
+        26796,
+        41744
+      ],
+      "Passed": true
+    }
+  ],
+  "Sdk": "10.0.401",
+  "Head": "71160f412624f829f8b5673c409da5a4accf202c",
+  "OS": "Microsoft Windows NT 10.0.26200.0",
+  "DllHash": "8EB6C0ACC140A575400C18B2E87A1D04BABD751244337A08C36214510D027CB2",
+  "Started": "2026-10-21T20:54:41.4783533+09:00",
+  "Finished": "2026-10-21T20:54:49.3323342+09:00"
+}

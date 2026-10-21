@@ -1,0 +1,30 @@
+[
+  {
+    "Case": "normal",
+    "ProductPid": 44484,
+    "Passed": true,
+    "Expected": "SimulationCompleted AmrId=AMR_001 X=1 Y=2 State=IDLE CurrentSpeedMps=0",
+    "ExitCode": 0
+  },
+  {
+    "Case": "changed",
+    "ProductPid": 38304,
+    "Passed": true,
+    "Expected": "SimulationCompleted AmrId=AMR_001 X=7 Y=4 State=IDLE CurrentSpeedMps=0",
+    "ExitCode": 0
+  },
+  {
+    "Case": "invalid",
+    "ProductPid": 38156,
+    "Passed": true,
+    "Expected": "ConfigurationRejected Field=$.speedMps",
+    "ExitCode": 1
+  },
+  {
+    "Case": "stationary",
+    "ProductPid": 23436,
+    "Passed": true,
+    "Expected": "SimulationCompleted AmrId=AMR_001 X=-1 Y=0 State=IDLE CurrentSpeedMps=0",
+    "ExitCode": 0
+  }
+]

@@ -6,7 +6,7 @@ namespace Amr.Simulator;
 public static class SimulatorApplication
 {
     public static async Task<int> RunAsync(string[] args, TextWriter output, TextWriter error,
-        CancellationToken cancellationToken = default)
+        CancellationToken cancellationToken = default, ISimulationClock? clock = null)
     {
         if (args is ["--help"])
         {
@@ -34,6 +34,7 @@ public static class SimulatorApplication
             await output.WriteLineAsync(FormattableString.Invariant(
                 $"AmrInitialized AmrId={amr.Id} X={amr.Position.X:R} Y={amr.Position.Y:R} State={amr.State} CurrentSpeedMps={amr.CurrentSpeedMps:R}"));
             await output.WriteLineAsync("InitializationCompleted");
+            await new SimulationRunner(clock).RunAsync(amr, output, cancellationToken);
             return 0;
         }
         catch (ConfigurationException exception)
@@ -45,6 +46,11 @@ public static class SimulatorApplication
         {
             await output.WriteLineAsync("InitializationCanceled");
             return 0;
+        }
+        catch (Exception exception)
+        {
+            await error.WriteLineAsync($"SimulationFailed Reason={exception.GetType().Name}");
+            return 1;
         }
     }
 }
