@@ -1,0 +1,14 @@
+{
+  "Command": [
+    "dotnet",
+    "build",
+    "tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj",
+    "--no-restore",
+    "-m:1",
+    "-nr:false",
+    "-p:UseSharedCompilation=false"
+  ],
+  "StartedKst": "2026-10-21T23:29:18.4063545+09:00",
+  "FinishedKst": "2026-10-21T23:29:19.4099430+09:00",
+  "ExitCode": 1
+}

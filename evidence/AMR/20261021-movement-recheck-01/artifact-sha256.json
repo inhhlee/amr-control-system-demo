@@ -1,0 +1,282 @@
+[
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\Append-DailyRecord.ps1",
+    "SHA256": "26299FC293766A54C899C4799BFB7240C39196750D1D515686DF76E31AC25E31"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\console.log",
+    "SHA256": "49F1173C18610B325BDAFFE0BB2127A89E8AC84D6F3D8737106B59165DCE32DA"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\daily-record-update.json",
+    "SHA256": "5693240951948CE62C47AD629B3C1882ABF11AA8CEF19C84B039A9D0D89F8FDF"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\elevated-environment.json",
+    "SHA256": "3D0015A27D57EEA592BEE7B1818BB305FD47B14DBE1159B9ABCAA0E9ED4E132B"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\elevated-source-sha256.json",
+    "SHA256": "F162098333DDCFA074FE917299EEABDAC15B3C4896A7DD6FF96BB7BF74392511"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\elevated-test-summary.json",
+    "SHA256": "D6BA87729BFFDA22B75FAD8D411F4D766C02CE3243BCE3541AF9E704EFFC8E86"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\elevated-tests.json",
+    "SHA256": "0B5A92C4618CDB1F3436D071EB25085AAE3C267B2FB95E7852C9448BCF76D0B7"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\elevated-tests.log",
+    "SHA256": "CBC491E7565FD1661AE86FF08376B3E2F12048CC83498B5E7D487BAB6BE72738"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\elevated-tests.trx",
+    "SHA256": "2856CB9A0565A2D0FD75D151AC426ABC2527ABB642C83C442F3EE64645D0F594"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\integrity.json",
+    "SHA256": "F885675F1A98A59AA9541BBA8C189D8F59C98CE292B1BA04E4AF3B703CA5DE2D"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\README.md",
+    "SHA256": "5C4AA7F7CBB5B15A29BD384FD176A4E67739B631B0C4C5B20D4DA60E3209EF7D"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\restore.json",
+    "SHA256": "0769B0F480337B3FE0B96CBA3BED1FFCE8EFBD8130DA205726C17055CC9DA921"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\restore.log",
+    "SHA256": "85E8936D316354A9A60183A9915A8B9D26AFAF53C111D84B73ACE3DB655A125E"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\restored-build.json",
+    "SHA256": "8F8721E3079D91D6EF30E56C022AB307AAF3B2A0F0C79D70FDC44177C591972F"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\restored-build.log",
+    "SHA256": "F442EFCCC811EC19ECD2D5B36EED5926B82EBA75A46CE1B90C72B8C0A98C4A78"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\restored-environment.json",
+    "SHA256": "3D0015A27D57EEA592BEE7B1818BB305FD47B14DBE1159B9ABCAA0E9ED4E132B"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\restored-source-sha256.json",
+    "SHA256": "F162098333DDCFA074FE917299EEABDAC15B3C4896A7DD6FF96BB7BF74392511"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\restored-tests.json",
+    "SHA256": "CAC1F7B40F0681D42C0ED06D59760956A73B85F971DC99201C7D4B8EB0669441"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\restored-tests.log",
+    "SHA256": "50A76EBCF294353C19E446AA9ACBFB7D944AB65D5824D08725CDC66459844C30"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\restored-tests.trx",
+    "SHA256": "F9479D4FF93F933448C9A2BA4F320699DC8C1F976F67C7E63FB76D1026494027"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\sandbox-build.json",
+    "SHA256": "9329F85DFC7F43E929756B8BBA049BDC1098A49CCEF5EB7AA72C11434C062D16"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\sandbox-build.log",
+    "SHA256": "6E9B651EDE563121D41FC9DEDA96D80A20CF0C0AD9109BD735288ADD4F328935"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\sandbox-environment.json",
+    "SHA256": "3D0015A27D57EEA592BEE7B1818BB305FD47B14DBE1159B9ABCAA0E9ED4E132B"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\sandbox-source-sha256.json",
+    "SHA256": "F162098333DDCFA074FE917299EEABDAC15B3C4896A7DD6FF96BB7BF74392511"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-01\\Verify.ps1",
+    "SHA256": "9309260043C01A721F35437DB095082F398F15626ABCC8AFEBBA621FAD7C42EB"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\changed.json",
+    "SHA256": "52102BB6E431E4F3BBB8832342BA482EDFB74261CC8B98C758B1D6C13E22609D"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\changed.stderr.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\changed.stdout.log",
+    "SHA256": "D2C5CCE5EE484591FBF418777B8FAFD02A96B3F919E609B42138F376A3AF5B3D"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\fractional-interval.json",
+    "SHA256": "2B0C131BD4C64610FAEBD87FBEDA1CD0FB8684AE2ACC246996CD2CAE45300142"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\fractional-interval.stderr.log",
+    "SHA256": "AF1AE1AF11A085E2021641726DABABE64965007816FCA80972F4D926B379B35D"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\fractional-interval.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\invalid-coordinate.json",
+    "SHA256": "D11D19F8361D017C3A59F170D07D8DD40C5DB04369D62C486F4D79B7027440D2"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\invalid-coordinate.stderr.log",
+    "SHA256": "5C418856EE41FE8EDC86579AF265700CC9EA973C543B3517E41BBD2C0609C090"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\invalid-coordinate.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\invalid-id.json",
+    "SHA256": "490BBDBE5674404EFD5A0E9732EEC6EF92EF7BA369498099CEB9DBFD61455F8B"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\invalid-id.stderr.log",
+    "SHA256": "31FBF260B1B7C1A0117BF14D388A12C4239203C23A092B93143AD39BA6AC0CD3"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\invalid-id.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\invalid-utf8-bom.json",
+    "SHA256": "B92A8340A4F1198ADEE2A38CA6F709D410C00F463E22282B056FBC74A823AB4C"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\invalid-utf8-bom.stderr.log",
+    "SHA256": "675733763237F425C8A6BC58908E93526A768BCD76B4DB7C4B5B5FAB6D0042D6"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\invalid-utf8-bom.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\invalid-utf8.json",
+    "SHA256": "81703C2E4E17A220B3CAB46AAD839E21ACC00F4321AFFA19B5D98E2ADF236FDE"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\invalid-utf8.stderr.log",
+    "SHA256": "675733763237F425C8A6BC58908E93526A768BCD76B4DB7C4B5B5FAB6D0042D6"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\invalid-utf8.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\malformed.json",
+    "SHA256": "021FB596DB81E6D02BF3D2586EE3981FE519F275C0AC9CA76BBCF2EBB4097D96"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\malformed.stderr.log",
+    "SHA256": "356B445221CC144F45BD2EAB7E967C846757FC042C9866F07CC5F147AC76F824"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\malformed.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\missing-field.json",
+    "SHA256": "6A271697787FCAEFAE4EA3391A2E8DA32300AA102FAB53945B60EFCA3B2FBD01"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\missing-field.stderr.log",
+    "SHA256": "B63A05DB506EAD14D3D782EEE280A0ABD4EAE60813EB0113E53117DF5B36441D"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\missing-field.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\missing-file.stderr.log",
+    "SHA256": "AAE2F6A26E387D008A0F64292BAA47B8FBBE9634C52846E3E79EE468A563EA13"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\missing-file.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\negative-speed.json",
+    "SHA256": "C129F7B1FA191F72ADA0A374EA7EBADC7F17085384A491E96B4C7E83C62386A2"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\negative-speed.stderr.log",
+    "SHA256": "B0F94B6595174D306F7B5F092D46A1F0832C9F79A42CFB0DC722909CD177CB27"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\negative-speed.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\normal-utf8-bom.json",
+    "SHA256": "4F0F356AAAF2B6B156A8D44FF71DE7129839998AAA8F17EDEDB7814ECE9F4979"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\normal-utf8-bom.stderr.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\normal-utf8-bom.stdout.log",
+    "SHA256": "75B8CBFC94DC56B9978AFE92469F1FA74F3A0E54D82C9AE6F1AFD593DFF579D7"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\normal.json",
+    "SHA256": "623932AA66B3F507171867A4A60186D7339170FB617DF0C9C1BD7E6DDF0C71B5"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\normal.stderr.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\normal.stdout.log",
+    "SHA256": "E8273ECEDCF372D63FF43B6D5528EF66D0F16A82A758567CCA6BA302C2E2A70F"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\overflow-speed.json",
+    "SHA256": "8E3EFFF3D478D63DEB118CD9CC7F580CB2376B1B75D9AA33AE3EEA2120A2DF79"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\overflow-speed.stderr.log",
+    "SHA256": "00268CE504DE57D708FF93631C3DF00969580B09562932CE20957E88ECDF9A63"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\overflow-speed.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\verification.json",
+    "SHA256": "A99349ADA6F3AB1AF01F9EE369A54944A327F39A9E99B4F5426B78CFC5E1750C"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\wrong-type.json",
+    "SHA256": "4E9E1140B8FA72A12EAD98D6E16CDBC1C2EEDDE880260B5816D75D58BC502081"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\wrong-type.stderr.log",
+    "SHA256": "00268CE504DE57D708FF93631C3DF00969580B09562932CE20957E88ECDF9A63"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\wrong-type.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\zero-speed.json",
+    "SHA256": "6A6AB73BCC220B40C12F7012986D702CEACCA632D0B2DA43772F1B6364A2BECA"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\zero-speed.stderr.log",
+    "SHA256": "B0F94B6595174D306F7B5F092D46A1F0832C9F79A42CFB0DC722909CD177CB27"
+  },
+  {
+    "Path": "evidence\\AMR\\20261021-movement-recheck-console-01\\zero-speed.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  }
+]

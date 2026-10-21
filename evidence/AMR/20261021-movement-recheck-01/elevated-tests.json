@@ -1,0 +1,16 @@
+{
+  "Command": [
+    "dotnet",
+    "test",
+    "tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--logger",
+    "trx;LogFileName=elevated-tests.trx",
+    "--results-directory",
+    "C:\\amr-control-system-demo\\evidence\\AMR\\20261021-movement-recheck-01"
+  ],
+  "StartedKst": "2026-10-21T23:31:59.5806663+09:00",
+  "FinishedKst": "2026-10-21T23:32:02.8438289+09:00",
+  "ExitCode": 0
+}

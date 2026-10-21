@@ -1,0 +1,33 @@
+{
+  "Head": "a8934f0bfed803cee47d7c2e13775ba648e0862a",
+  "Branch": "feature/33-simulator-movement",
+  "SourceFilesChecked": 54,
+  "SourceMismatches": [],
+  "TrackedChanges": [
+    "README.md"
+  ],
+  "StagedChanges": [],
+  "ProductAndTestDiff": [],
+  "MovementChangesSinceOriginal": [],
+  "Dlls": [
+    {
+      "Path": "src/Amr.Simulator/bin/Debug/net10.0/Amr.Simulator.dll",
+      "SHA256": "D5C08107536212A4BF139B49DC88FC68BF327CE70421EF1B7794BC0F8F145226",
+      "LastWriteUtc": "2026-10-21T14:29:54.3138802Z"
+    },
+    {
+      "Path": "src/Amr.Communication/bin/Debug/net10.0/Amr.Communication.dll",
+      "SHA256": "449F1DCEDF8598FE24FA29436E11C4DA3CE8FE0B4FA3C4D3A58772F503E3D1CC",
+      "LastWriteUtc": "2026-10-21T14:29:51.6416184Z"
+    },
+    {
+      "Path": "tests/Amr.Simulator.Tests/bin/Debug/net10.0/Amr.Simulator.Tests.dll",
+      "SHA256": "DA4EAA7E07DB7E883E0501E972DE07C580EE0BA86C34E10EEF43B57A63D93ED2",
+      "LastWriteUtc": "2026-10-21T14:29:57.7353394Z"
+    }
+  ],
+  "SettingsScriptSHA256": "67C444D43D218B1FFDFCB2C3D2B35E992EC94F54E9B12B2DB57349DD14DF263D",
+  "ConsoleCases": 15,
+  "ConsolePassed": true,
+  "ConsoleFailures": 0
+}

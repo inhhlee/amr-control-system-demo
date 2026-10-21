@@ -1,0 +1,13 @@
+{
+  "Target": "C:\\process-plan\\일일업무\\2026-10-21.md",
+  "BeforeSHA256": "2A87A50783B05AAAC45CBC016775ED20CC919D079310553FA3138EECC72BC0D1",
+  "AfterSHA256": "A8B43E8A2D41812348C60C010EECF2FE137212D535EEC5F2E3B7CC0722A730B9",
+  "OriginalBytesPreserved": true,
+  "GitStatusBefore": [],
+  "GitStatusAfter": [
+    " M \"\\354\\235\\274\\354\\235\\274\\354\\227\\205\\353\\254\\264/2026-10-21.md\""
+  ],
+  "MarkerCount": 1,
+  "ProductCodeChanged": false,
+  "CommitPushPrMutation": false
+}

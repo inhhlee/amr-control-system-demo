@@ -1,0 +1,669 @@
+{
+  "reviewedAt": "2026-10-22T02:30:48.634757+09:00",
+  "issue": 40,
+  "base": "088589ad32c16efbb6180fa661bd226e0bd47612",
+  "originalFileCount": 72,
+  "retainedEvidence": [
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/README.md",
+      "sha256": "5c4aa7f7cbb5b15a29bd384fd176a4e67739b631b0c4c5b20d4da60e3209ef7d",
+      "bytes": 11148
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/Verify.ps1",
+      "sha256": "9309260043c01a721f35437db095082f398f15626abcc8afebba621fad7c42eb",
+      "bytes": 3414
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/artifact-sha256.json",
+      "sha256": "ad7e05aa577e42b47bf2c1a60314a713d210bd49b9465f70260d59b5c82a80cb",
+      "bytes": 12650
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/console.log",
+      "sha256": "49f1173c18610b325bdaffe0bb2127a89e8ac84d6f3d8737106b59165dce32da",
+      "bytes": 51
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/daily-record-update.json",
+      "sha256": "5693240951948ce62c47ad629b3c1882abf11aa8cef19c84b039a9d0d89f8fdf",
+      "bytes": 506
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/elevated-environment.json",
+      "sha256": "3d0015a27d57eea592bee7b1818bb305fd47b14dbe1159b9abcaa0e9ed4e132b",
+      "bytes": 1281
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/elevated-source-sha256.json",
+      "sha256": "f162098333ddcfa074fe917299eeabdac15b3c4896a7dd6ff96bb7bf74392511",
+      "bytes": 8823
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/elevated-test-summary.json",
+      "sha256": "d6ba87729bffda22b75fad8d411f4d766c02ce3243bce3541af9e704effc8e86",
+      "bytes": 31042
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/elevated-tests.json",
+      "sha256": "0b5a92c4618cdb1f3436d071eb25085aae3c267b2fb95e7852c9448bcf76d0b7",
+      "bytes": 451
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/elevated-tests.log",
+      "sha256": "cbc491e7565fd1661ae86ff08376b3e2f12048cc83498b5e7d487bab6be72738",
+      "bytes": 456
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/elevated-tests.trx",
+      "sha256": "2856cb9a0565a2d0fd75d151ac426abc2527abb642c83c442f3ee64645d0f594",
+      "bytes": 225581
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/integrity.json",
+      "sha256": "f885675f1a98a59aa9541bba8c189d8f59c98ce292b1ba04e4af3b703ca5de2d",
+      "bytes": 1187
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restore.json",
+      "sha256": "0769b0f480337b3fe0b96cba3bed1ffce8efbd8130da205726c17055cc9da921",
+      "bytes": 236
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restore.log",
+      "sha256": "85e8936d316354a9a60183a9915a8b9d26afaf53c111d84b73ace3db655a125e",
+      "bytes": 357
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-build.json",
+      "sha256": "8f8721e3079d91d6ef30e56c022ab307aaf3b2a0f0c79d70fdc44177c591972f",
+      "bytes": 333
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-build.log",
+      "sha256": "f442efccc811ec19ecd2d5b36eed5926b82eba75a46ce1b90c72b8c0a98c4a78",
+      "bytes": 422
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-environment.json",
+      "sha256": "3d0015a27d57eea592bee7b1818bb305fd47b14dbe1159b9abcaa0e9ed4e132b",
+      "bytes": 1281
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-source-sha256.json",
+      "sha256": "f162098333ddcfa074fe917299eeabdac15b3c4896a7dd6ff96bb7bf74392511",
+      "bytes": 8823
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-tests.json",
+      "sha256": "cac1f7b40f0681d42c0ed06d59760956a73b85f971dc99201c7d4b8eb0669441",
+      "bytes": 451
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-tests.log",
+      "sha256": "50a76ebcf294353c19e446aa9acbfb7d944ab65d5824d08725cdc66459844c30",
+      "bytes": 707
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/restored-tests.trx",
+      "sha256": "f9479d4ff93f933448c9a2ba4f320699dc8c1f976f67c7e63fb76d1026494027",
+      "bytes": 1635
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/sandbox-build.json",
+      "sha256": "9329f85dfc7f43e929756b8bba049bdc1098a49ccef5eb7aa72c11434c062d16",
+      "bytes": 333
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/sandbox-build.log",
+      "sha256": "6e9b651ede563121d41fc9deda96d80a20cf0c0ad9109bd735288add4f328935",
+      "bytes": 937
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/sandbox-environment.json",
+      "sha256": "3d0015a27d57eea592bee7b1818bb305fd47b14dbe1159b9abcaa0e9ed4e132b",
+      "bytes": 1281
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/sandbox-source-sha256.json",
+      "sha256": "f162098333ddcfa074fe917299eeabdac15b3c4896a7dd6ff96bb7bf74392511",
+      "bytes": 8823
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/changed.json",
+      "sha256": "52102bb6e431e4f3bbb8832342ba482edfb74261cc8b98c758b1d6c13e22609d",
+      "bytes": 199
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/changed.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/changed.stdout.log",
+      "sha256": "d2c5cce5ee484591fbf418777b8fafd02a96b3f919e609b42138f376a3af5b3d",
+      "bytes": 11666
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/fractional-interval.json",
+      "sha256": "2b0c131bd4c64610faebd87fbeda1cd0fb8684ae2acc246996cd2cae45300142",
+      "bytes": 192
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/fractional-interval.stderr.log",
+      "sha256": "af1ae1af11a085e2021641726dababe64965007816fca80972f4d926b379b35d",
+      "bytes": 131
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/fractional-interval.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-coordinate.json",
+      "sha256": "d11d19f8361d017c3a59f170d07d8dd40c5db04369d62c486f4d79b7027440d2",
+      "bytes": 194
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-coordinate.stderr.log",
+      "sha256": "5c418856ee41fe8edc86579af265700cc9ea973c543b3517e41bbd2c0609c090",
+      "bytes": 98
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-coordinate.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-id.json",
+      "sha256": "490bbdbe5674404efd5a0e9732eec6ef92ef7ba369498099ceb9dbfd61455f8b",
+      "bytes": 192
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-id.stderr.log",
+      "sha256": "31fbf260b1b7c1a0117bf14d388a12c4239203c23a092b93143ad39ba6ac0cd3",
+      "bytes": 143
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-id.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8-bom.json",
+      "sha256": "b92a8340a4f1198adee2a38ca6f709d410c00f463e22282b056fbc74a823ab4c",
+      "bytes": 195
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8-bom.stderr.log",
+      "sha256": "675733763237f425c8a6bc58908e93526a768bcd76b4db7c4b5b5fab6d0042d6",
+      "bytes": 104
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8-bom.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8.json",
+      "sha256": "81703c2e4e17a220b3cab46aad839e21acc00f4321affa19b5d98e2adf236fde",
+      "bytes": 192
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8.stderr.log",
+      "sha256": "675733763237f425c8a6bc58908e93526a768bcd76b4db7c4b5b5fab6d0042d6",
+      "bytes": 104
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/malformed.json",
+      "sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+      "bytes": 1
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/malformed.stderr.log",
+      "sha256": "356b445221cc144f45bd2eab7e967c846757fc042c9866f07cc5f147ac76f824",
+      "bytes": 84
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/malformed.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/missing-field.json",
+      "sha256": "6a271697787fcaefae4ea3391a2e8da32300aa102fab53945b60efca3b2fbd01",
+      "bytes": 221
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/missing-field.stderr.log",
+      "sha256": "b63a05db506ead14d3d782eee280a0abd4eae60813eb0113e53117df5b36441d",
+      "bytes": 84
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/missing-field.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/missing-file.stderr.log",
+      "sha256": "aae2f6a26e387d008a0f64292baa47b8fbbe9634c52846e3e79ee468a563ea13",
+      "bytes": 108
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/missing-file.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/negative-speed.json",
+      "sha256": "c129f7b1fa191f72ada0a374ea7ebadc7f17085384a491e96b4c7e83c62386a2",
+      "bytes": 191
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/negative-speed.stderr.log",
+      "sha256": "b0f94b6595174d306f7b5f092d46a1f0832c9f79a42cfb0dc722909cd177cb27",
+      "bytes": 96
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/negative-speed.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/normal-utf8-bom.json",
+      "sha256": "4f0f356aaaf2b6b156a8d44ff71de7129839998aaa8f17ededb7814ece9f4979",
+      "bytes": 195
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/normal-utf8-bom.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/normal-utf8-bom.stdout.log",
+      "sha256": "75b8cbfc94dc56b9978afe92469f1fa74f3a0e54d82c9ae6f1afd593dff579d7",
+      "bytes": 4222
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/normal.json",
+      "sha256": "623932aa66b3f507171867a4a60186d7339170fb617df0c9c1bd7e6ddf0c71b5",
+      "bytes": 192
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/normal.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/normal.stdout.log",
+      "sha256": "e8273ecedcf372d63ff43b6d5528ef66d0f16a82a758567cca6ba302c2e2a70f",
+      "bytes": 4124
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/overflow-speed.json",
+      "sha256": "8e3efff3d478d63deb118cd9cc7f580cb2376b1b75d9aa33ae3eea2120a2df79",
+      "bytes": 194
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/overflow-speed.stderr.log",
+      "sha256": "00268ce504de57d708ff93631c3df00969580b09562932ce20957e88ecdf9a63",
+      "bytes": 89
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/overflow-speed.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/verification.json",
+      "sha256": "a99349ada6f3ab1af01f9ee369a54944a327f39a9e99b4f5426b78cfc5e1750c",
+      "bytes": 8069
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/wrong-type.json",
+      "sha256": "4e9e1140b8fa72a12ead98d6e16cdbc1c2eedde880260b5816d75d58bc502081",
+      "bytes": 192
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/wrong-type.stderr.log",
+      "sha256": "00268ce504de57d708ff93631c3df00969580b09562932ce20957e88ecdf9a63",
+      "bytes": 89
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/wrong-type.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/zero-speed.json",
+      "sha256": "6a6ab73bcc220b40c12f7012986d702ceacca632d0b2da43772f1b6364a2beca",
+      "bytes": 190
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/zero-speed.stderr.log",
+      "sha256": "b0f94b6595174d306f7b5f092d46a1f0832c9f79a42cfb0dc722909cd177cb27",
+      "bytes": 96
+    },
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-console-01/zero-speed.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "retainedEvidenceCount": 70,
+  "excluded": [
+    {
+      "path": "evidence/AMR/20261021-movement-recheck-01/Append-DailyRecord.ps1",
+      "sha256": "26299fc293766a54c899c4799bfb7240c39196750d1d515686df76e31ac25e31",
+      "reason": "One-time canonical daily-record writer with expired expected hash; not a product test/reproduction dependency. Original bytes remain in the verified 72-file recovery ZIP."
+    }
+  ],
+  "readmeOriginalParagraph": "2026-10-21 #33 재확인: 기존 `feature/33-simulator-movement`의 이동 계산 구현을 보존하고 현재 head `a8934f0`에서 빌드 경고·오류 0, 표준 자동시험 151건(이동 41건 포함), 별도 Simulator 설정 회귀 15건 통과를 확인했다. 제품 소스의 추가 수정은 없으며 이번 작업에서 커밋·푸시·PR 변경은 하지 않았다. [이번 실행 결과와 완료조건 대조](evidence/AMR/20261021-movement-recheck-01/README.md)를 따른다. 아래 미커밋·후속·미착수 표시는 각 단계 당시 기록이다.",
+  "readmeOriginalFileSha256": "fc708b159549ead9b03768f1ba2c5efc9e2939828573ad91f07a64fe39f1f0c3",
+  "archiveSha256": "8a611090e5e2374a2fc491ae8069ad5617f278b739ae52a143dbb4b6fbeebdac",
+  "archiveVerifiedFileCount": 72,
+  "priorArtifactEntries": 70,
+  "expectedExcludedPriorArtifactEntries": 1,
+  "priorSourceCommit": "a8934f0bfed803cee47d7c2e13775ba648e0862a",
+  "priorSourceMatches": [
+    {
+      "path": "config/simulator.single.json",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "623932AA66B3F507171867A4A60186D7339170FB617DF0C9C1BD7E6DDF0C71B5"
+    },
+    {
+      "path": "global.json",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "6A8E9044030D136BD4C04FFF9684111A3478B27559BFB6D19E4D380F0DE91510"
+    },
+    {
+      "path": "src/Amr.Communication\\Amr.Communication.csproj",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "EC8DE05434FD0644E9F9424BF0AE3239E38A21022A3DDFA5CA4CEF21A05E8361"
+    },
+    {
+      "path": "src/Amr.Communication\\Command\\CommandMessage.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "6B708F4DC1C0D16F16E56B10A5A3C0B828E8F142409F4AD2D2B531811017A9DC"
+    },
+    {
+      "path": "src/Amr.Communication\\Command\\CommandPublisher.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "96AA8D5A26228895EDC5A1CFEA3BAD9D65D810EB8D7FBA1503CCDD0CAF623FC7"
+    },
+    {
+      "path": "src/Amr.Communication\\Command\\CommandValidationResult.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "B7CFAAAEB25702513F055CD304C72074F2460FBC34EC418382C859EBC6025623"
+    },
+    {
+      "path": "src/Amr.Communication\\Command\\CommandValidator.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "3B672887A0503D44155DCF808DE8D9293CE13AF7F8F01C4FE76A49C84CC9223B"
+    },
+    {
+      "path": "src/Amr.Communication\\Models\\AckMessage.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "EA41EFB4053B3689E5C3461D40D79E7F0E9BBE10580473F37E35816EBE977AAB"
+    },
+    {
+      "path": "src/Amr.Communication\\Models\\AlarmMessage.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "E86A417FF8ACD3E76500CAC357BE23DE2FF1BF593742E8C323E0DB172701E93E"
+    },
+    {
+      "path": "src/Amr.Communication\\Models\\HeartbeatMessage.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "E5A975C5A616E603D1A1FF7DDFE290E32B26E9DABA799B9D3F614FC41654FE41"
+    },
+    {
+      "path": "src/Amr.Communication\\Models\\ReceivedMessage.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "0A7D983DB5E8185A3760BA57B567A2B0924F9FE0DAD5DD34E39FBE95061C7EBF"
+    },
+    {
+      "path": "src/Amr.Communication\\Models\\TelemetryMessage.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "5715585D9DD636E8C315C248A9602AE0F6BEE3E192A74663B05A598AAF3225F7"
+    },
+    {
+      "path": "src/Amr.Communication\\Mqtt\\Connection\\MqttConnection.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "70BA5CB9000AA2A0C09D6741C81C8347F4FC7D5F23CD95C02BAC75926812FD95"
+    },
+    {
+      "path": "src/Amr.Communication\\Mqtt\\Connection\\MqttConnectionException.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "BBD323C8E96884039640BB93A263FEB13A3BB8F7F622BF96DD5F091069C375EB"
+    },
+    {
+      "path": "src/Amr.Communication\\Mqtt\\Connection\\MqttConnectionSettings.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "39331CD6BCDA0F09D1A72397A31993972C2C2BC937FD2BB0BADA6DB6B1155F1F"
+    },
+    {
+      "path": "src/Amr.Communication\\Mqtt\\Queues\\AmrReceiveQueue.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "182038B55E6AE298CEDBF8EB159B475518619DE962487E722B610BC4383F7625"
+    },
+    {
+      "path": "src/Amr.Communication\\Mqtt\\Queues\\QueueAdmission.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "D3EE58D761F697C52F66C49AD1448E0DEC8769536298AFCEAD155635781CF477"
+    },
+    {
+      "path": "src/Amr.Communication\\Mqtt\\Queues\\QueueProcessingEvent.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "A0737B49FBF57EF9B6296AE2190BCA39D9BDA4B0B388874D4B131469B0F146EE"
+    },
+    {
+      "path": "src/Amr.Communication\\Mqtt\\Subscriptions\\HeartbeatDiagnostic.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "C4CBA602462BF67C6FC472895DF0EA3635A46E683CD8B9667D26B22E0918720E"
+    },
+    {
+      "path": "src/Amr.Communication\\Mqtt\\Subscriptions\\HeartbeatSubscription.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "A38723932BC0C7B3DA1B4801D2F1650C19A4AA191706D749CE991A3C1DFB1BF2"
+    },
+    {
+      "path": "src/Amr.Communication\\Mqtt\\Subscriptions\\MessageDiagnostic.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "5AA07F8F98E5991B407E7F82987D0C1FC0BD8BBCD7CB91DD0119B1E3CAE74291"
+    },
+    {
+      "path": "src/Amr.Communication\\Mqtt\\Subscriptions\\MessageSubscription.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "C1103DFC77D3E5B7DD92914A15A6514A3C8F9869EB860324EECD4952A0ADCB47"
+    },
+    {
+      "path": "src/Amr.Communication\\Validation\\Ack\\AckValidationResult.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "A9FAD17750B4B01A967406850A9E0C1E8E2CDBC7BC5866E309BF07EFFEED10B4"
+    },
+    {
+      "path": "src/Amr.Communication\\Validation\\Ack\\AckValidator.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "1A7BE4B0C9B44045F2C647FEAE47A77EC55EEABEA8DC697E55F7631AC0D9E6AB"
+    },
+    {
+      "path": "src/Amr.Communication\\Validation\\Alarm\\AlarmValidationResult.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "B09A032DE262596E065232FFEA7A3BDE00E7517DCF7A58EEBDDD3DFC4C18677C"
+    },
+    {
+      "path": "src/Amr.Communication\\Validation\\Alarm\\AlarmValidator.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "E2DFD160B68DC84377807B5D7ABB6620A8F1237E1CC87D79EF36152C97E4D684"
+    },
+    {
+      "path": "src/Amr.Communication\\Validation\\Common\\MessageValidation.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "37B5634721799FE3432CAA43B53A04B24632D5C4044437EDD3AE6AE0533A8DE3"
+    },
+    {
+      "path": "src/Amr.Communication\\Validation\\Common\\ValidationError.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "2FDC9241F38C81E7EACF90DB191A28A34B6D0DCC0C6FAE74020BD19C6409F479"
+    },
+    {
+      "path": "src/Amr.Communication\\Validation\\Heartbeat\\HeartbeatValidationResult.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "E0DC28054F8C188CE07033BE670131679B32F794228A7A4E83AEB90DDABAB7E4"
+    },
+    {
+      "path": "src/Amr.Communication\\Validation\\Heartbeat\\HeartbeatValidator.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "C40A596D16200707369D8CB7108C81AF1DB05BD7AB28008EE9C1547D1C6CC6FE"
+    },
+    {
+      "path": "src/Amr.Communication\\Validation\\Telemetry\\TelemetryValidationResult.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "EE625D9304CDBA53CCFDDC47C98DE6AF0A54D89B26B94024DEF925441187F460"
+    },
+    {
+      "path": "src/Amr.Communication\\Validation\\Telemetry\\TelemetryValidator.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "62818FA1E43319F7F608E1DC2A5C7A67C7F2403176C750F5A24167385B99E617"
+    },
+    {
+      "path": "src/Amr.Simulator\\Amr.Simulator.csproj",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "AAE9C0C0DEAF1C22063816BFD6E1700F209A1629DB4051A948C638B28937C589"
+    },
+    {
+      "path": "src/Amr.Simulator\\Configuration\\ConfigurationException.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "E00CCC37DF6E8B329A88A9E4464B0D475827498C4A14235A57C12DA2E7320C87"
+    },
+    {
+      "path": "src/Amr.Simulator\\Configuration\\SimulatorSettings.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "4481585F3457C64A116AF2E15FE9A759BD0AE3DE6621F0D349C5E5EAC93175F4"
+    },
+    {
+      "path": "src/Amr.Simulator\\Configuration\\SimulatorSettingsLoader.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "0061C8B11AD0FBCF622BF4DC3071579198F047E0909519D76A0426A3F2C0359E"
+    },
+    {
+      "path": "src/Amr.Simulator\\Program.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "21550BC6BBC9E932A2891C4E76D435D7D428D77F6147B787846C64190A82960B"
+    },
+    {
+      "path": "src/Amr.Simulator\\Simulation\\ISimulationClock.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "25D810D754797D1B6F1CADEE1B3087FC1382922A783DE07641C2DE06D97CAF87"
+    },
+    {
+      "path": "src/Amr.Simulator\\Simulation\\Position2D.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "EF5F0EF9E64C3815B896507C0F94D8C3CE6F9EFC46279DFDDBA5CAC8DEFADB22"
+    },
+    {
+      "path": "src/Amr.Simulator\\Simulation\\SimulatedAmr.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "9F60202E4C488C7D3C75D868088D5ED056ABC80DAA15E4AC93A00C2F720E2902"
+    },
+    {
+      "path": "src/Amr.Simulator\\Simulation\\SimulationRunner.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "289222CF25021BFA7D2A9196842ECB6E4FE3BA0510A12FC2532DA7A0662D9981"
+    },
+    {
+      "path": "src/Amr.Simulator\\Simulation\\SimulationSnapshot.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "AD42A93D4FECA4D8E8DFA7AB50A7B00612F13D4DEF661D040A685637529F2FEA"
+    },
+    {
+      "path": "src/Amr.Simulator\\SimulatorApplication.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "3EDD671C022DB56E07D6C1DCF7C822197CDD9602A8A5FC2DCCCEF2E4CC9CDF7F"
+    },
+    {
+      "path": "src/Amr.Simulator\\Telemetry\\ISimulationTransport.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "D93668D59643A5F28DECEF152F5E83697D3A798D0ABB93A417100799CF8A59F0"
+    },
+    {
+      "path": "src/Amr.Simulator\\Telemetry\\MqttSimulationSession.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "AF56A219045A2AD106B1B6186249C1EB378DC36C30ADA180E3C91B75C1AF21F0"
+    },
+    {
+      "path": "src/Amr.Simulator\\Telemetry\\MqttSimulationTransport.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "4BAB2B960124F95A9874E3FFF2B2670CD917E35CE00372CE03BC149A3558CF7E"
+    },
+    {
+      "path": "src/Amr.Simulator\\Telemetry\\SimulationMessages.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "874C9BC2DEC5F46B0EA5437133414F8AEBDF5FFB87CE540A4DA9930A1FDDC13B"
+    },
+    {
+      "path": "src/Amr.Simulator\\Telemetry\\SimulatorMqttOptions.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "39020994A915111657C98C2FB16DAC9005A2A95EF12E93D3A61FA5E660E912A3"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests\\Amr.Simulator.Tests.csproj",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "28B0645A3392C071381AC25E0F52BCD34502A4D97D8448CC30C5D4B30827A764"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests\\ApplicationTests.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "594EB45BEF7E2A13F47035CA6DC61BF60CACA779100E6EF02AAC506F95E6C89A"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests\\ConfigurationTests.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "35FFE1EF67C3FCA7599CF318D15118FE973AD8C0F2A98E7EAFA324A393BF8C6C"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests\\MovementTests.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "87080DCC538B8626FDDF986D34914632E5B7735F62C85BF750392ED1477CE279"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests\\MqttSimulationTests.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "11AEC7F66C4422ECED14DBB08B1667C86CE5F17E5FEB8AF9C18252E8497A63BE"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests\\RunnerTests.cs",
+      "match": "Git LF blob restored to CRLF bytes",
+      "recordedSha256": "A420D4D2EA16C0D6384BFE5CCD78FCBDB63198029537C2F4F7A0002D8BAB0B0A"
+    }
+  ],
+  "priorUnitCounters": {
+    "total": "151",
+    "executed": "151",
+    "passed": "151",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "priorConsoleCases": 15,
+  "productDiffEmpty": true,
+  "productTestsRunThisStep": false,
+  "secretPatternFindings": 0,
+  "merge39": "088589ad32c16efbb6180fa661bd226e0bd47612",
+  "head39": "e17deec7a361cfa0de1d58ab1a8c06fa347e2101"
+}

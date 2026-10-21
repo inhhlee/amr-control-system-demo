@@ -1,0 +1,9 @@
+C:\Program Files\dotnet\sdk\10.0.401\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(266,5): error NETSDK1004: 자산 파일 'C:\amr-control-system-demo\tests\Amr.Simulator.Tests\obj\project.assets.json'을(를) 찾을 수 없습니다. NuGet 패키지 복원을 실행하여 이 파일을 생성하세요. [C:\amr-control-system-demo\tests\Amr.Simulator.Tests\Amr.Simulator.Tests.csproj]
+
+빌드하지 못했습니다.
+
+C:\Program Files\dotnet\sdk\10.0.401\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(266,5): error NETSDK1004: 자산 파일 'C:\amr-control-system-demo\tests\Amr.Simulator.Tests\obj\project.assets.json'을(를) 찾을 수 없습니다. NuGet 패키지 복원을 실행하여 이 파일을 생성하세요. [C:\amr-control-system-demo\tests\Amr.Simulator.Tests\Amr.Simulator.Tests.csproj]
+    경고 0개
+    오류 1개
+
+경과 시간: 00:00:00.58

@@ -1,0 +1,22 @@
+{
+  "Branch": "feature/33-simulator-movement",
+  "Head": "a8934f0bfed803cee47d7c2e13775ba648e0862a",
+  "BaseDevelop": "3257f5ee88041cbc03827256b155f5e481c7aed0",
+  "PriorMovementCommit": "71160f412624f829f8b5673c409da5a4accf202c",
+  "MovementSourceChangesSincePriorCommit": [],
+  "OS": "Microsoft Windows 10.0.26200",
+  "Sdk": "10.0.401",
+  "Runtime": [
+    "Microsoft.AspNetCore.App 8.0.0 [C:\\Program Files\\dotnet\\shared\\Microsoft.AspNetCore.App]",
+    "Microsoft.AspNetCore.App 10.0.12 [C:\\Program Files\\dotnet\\shared\\Microsoft.AspNetCore.App]",
+    "Microsoft.NETCore.App 6.0.16 [C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App]",
+    "Microsoft.NETCore.App 8.0.0 [C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App]",
+    "Microsoft.NETCore.App 10.0.12 [C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App]",
+    "Microsoft.WindowsDesktop.App 8.0.0 [C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App]",
+    "Microsoft.WindowsDesktop.App 10.0.12 [C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App]"
+  ],
+  "InitialStatus": [
+    "?? evidence/AMR/20261021-movement-recheck-01/"
+  ],
+  "Scope": "#33 movement verification; existing #34/MQTT code preserved; no broker, GUI, commit, push, PR mutation"
+}

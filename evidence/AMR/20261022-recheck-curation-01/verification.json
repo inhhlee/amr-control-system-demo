@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "kind": "evidence/document validation only",
+  "head": "088589ad32c16efbb6180fa661bd226e0bd47612",
+  "retainedRawFiles": 70,
+  "originalManifestMatches": 69,
+  "expectedExcludedManifestEntries": 1,
+  "priorSourceMatches": 54,
+  "priorUnitPassed": 151,
+  "priorConsolePassed": 15,
+  "localLinksChecked": 9,
+  "productSourceDiff": 0,
+  "productTestsExecuted": 0,
+  "secretPatternFindings": 0
+}

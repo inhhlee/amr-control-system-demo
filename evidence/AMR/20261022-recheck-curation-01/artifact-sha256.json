@@ -1,0 +1,314 @@
+[
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/.gitattributes",
+    "sha256": "8b9c3028d6467ff3be7c793141927841d70f47f52d0590677438f488ca154992"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/artifact-sha256.json",
+    "sha256": "ad7e05aa577e42b47bf2c1a60314a713d210bd49b9465f70260d59b5c82a80cb"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/console.log",
+    "sha256": "49f1173c18610b325bdaffe0bb2127a89e8ac84d6f3d8737106b59165dce32da"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/daily-record-update.json",
+    "sha256": "5693240951948ce62c47ad629b3c1882abf11aa8cef19c84b039a9d0d89f8fdf"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/elevated-environment.json",
+    "sha256": "3d0015a27d57eea592bee7b1818bb305fd47b14dbe1159b9abcaa0e9ed4e132b"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/elevated-source-sha256.json",
+    "sha256": "f162098333ddcfa074fe917299eeabdac15b3c4896a7dd6ff96bb7bf74392511"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/elevated-test-summary.json",
+    "sha256": "d6ba87729bffda22b75fad8d411f4d766c02ce3243bce3541af9e704effc8e86"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/elevated-tests.json",
+    "sha256": "0b5a92c4618cdb1f3436d071eb25085aae3c267b2fb95e7852c9448bcf76d0b7"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/elevated-tests.log",
+    "sha256": "cbc491e7565fd1661ae86ff08376b3e2f12048cc83498b5e7d487bab6be72738"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/elevated-tests.trx",
+    "sha256": "2856cb9a0565a2d0fd75d151ac426abc2527abb642c83c442f3ee64645d0f594"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/integrity.json",
+    "sha256": "f885675f1a98a59aa9541bba8c189d8f59c98ce292b1ba04e4af3b703ca5de2d"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/README.md",
+    "sha256": "5c4aa7f7cbb5b15a29bd384fd176a4e67739b631b0c4c5b20d4da60e3209ef7d"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/restore.json",
+    "sha256": "0769b0f480337b3fe0b96cba3bed1ffce8efbd8130da205726c17055cc9da921"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/restore.log",
+    "sha256": "85e8936d316354a9a60183a9915a8b9d26afaf53c111d84b73ace3db655a125e"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/restored-build.json",
+    "sha256": "8f8721e3079d91d6ef30e56c022ab307aaf3b2a0f0c79d70fdc44177c591972f"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/restored-build.log",
+    "sha256": "f442efccc811ec19ecd2d5b36eed5926b82eba75a46ce1b90c72b8c0a98c4a78"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/restored-environment.json",
+    "sha256": "3d0015a27d57eea592bee7b1818bb305fd47b14dbe1159b9abcaa0e9ed4e132b"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/restored-source-sha256.json",
+    "sha256": "f162098333ddcfa074fe917299eeabdac15b3c4896a7dd6ff96bb7bf74392511"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/restored-tests.json",
+    "sha256": "cac1f7b40f0681d42c0ed06d59760956a73b85f971dc99201c7d4b8eb0669441"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/restored-tests.log",
+    "sha256": "50a76ebcf294353c19e446aa9acbfb7d944ab65d5824d08725cdc66459844c30"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/restored-tests.trx",
+    "sha256": "f9479d4ff93f933448c9a2ba4f320699dc8c1f976f67c7e63fb76d1026494027"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/sandbox-build.json",
+    "sha256": "9329f85dfc7f43e929756b8bba049bdc1098a49ccef5eb7aa72c11434c062d16"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/sandbox-build.log",
+    "sha256": "6e9b651ede563121d41fc9deda96d80a20cf0c0ad9109bd735288add4f328935"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/sandbox-environment.json",
+    "sha256": "3d0015a27d57eea592bee7b1818bb305fd47b14dbe1159b9abcaa0e9ed4e132b"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/sandbox-source-sha256.json",
+    "sha256": "f162098333ddcfa074fe917299eeabdac15b3c4896a7dd6ff96bb7bf74392511"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-01/Verify.ps1",
+    "sha256": "9309260043c01a721f35437db095082f398f15626abcc8afebba621fad7c42eb"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/.gitattributes",
+    "sha256": "8b9c3028d6467ff3be7c793141927841d70f47f52d0590677438f488ca154992"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/changed.json",
+    "sha256": "52102bb6e431e4f3bbb8832342ba482edfb74261cc8b98c758b1d6c13e22609d"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/changed.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/changed.stdout.log",
+    "sha256": "d2c5cce5ee484591fbf418777b8fafd02a96b3f919e609b42138f376a3af5b3d"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/fractional-interval.json",
+    "sha256": "2b0c131bd4c64610faebd87fbeda1cd0fb8684ae2acc246996cd2cae45300142"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/fractional-interval.stderr.log",
+    "sha256": "af1ae1af11a085e2021641726dababe64965007816fca80972f4d926b379b35d"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/fractional-interval.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-coordinate.json",
+    "sha256": "d11d19f8361d017c3a59f170d07d8dd40c5db04369d62c486f4d79b7027440d2"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-coordinate.stderr.log",
+    "sha256": "5c418856ee41fe8edc86579af265700cc9ea973c543b3517e41bbd2c0609c090"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-coordinate.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-id.json",
+    "sha256": "490bbdbe5674404efd5a0e9732eec6ef92ef7ba369498099ceb9dbfd61455f8b"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-id.stderr.log",
+    "sha256": "31fbf260b1b7c1a0117bf14d388a12c4239203c23a092b93143ad39ba6ac0cd3"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-id.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8-bom.json",
+    "sha256": "b92a8340a4f1198adee2a38ca6f709d410c00f463e22282b056fbc74a823ab4c"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8-bom.stderr.log",
+    "sha256": "675733763237f425c8a6bc58908e93526a768bcd76b4db7c4b5b5fab6d0042d6"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8-bom.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8.json",
+    "sha256": "81703c2e4e17a220b3cab46aad839e21acc00f4321affa19b5d98e2adf236fde"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8.stderr.log",
+    "sha256": "675733763237f425c8a6bc58908e93526a768bcd76b4db7c4b5b5fab6d0042d6"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/invalid-utf8.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/malformed.json",
+    "sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/malformed.stderr.log",
+    "sha256": "356b445221cc144f45bd2eab7e967c846757fc042c9866f07cc5f147ac76f824"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/malformed.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/missing-field.json",
+    "sha256": "6a271697787fcaefae4ea3391a2e8da32300aa102fab53945b60efca3b2fbd01"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/missing-field.stderr.log",
+    "sha256": "b63a05db506ead14d3d782eee280a0abd4eae60813eb0113e53117df5b36441d"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/missing-field.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/missing-file.stderr.log",
+    "sha256": "aae2f6a26e387d008a0f64292baa47b8fbbe9634c52846e3e79ee468a563ea13"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/missing-file.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/negative-speed.json",
+    "sha256": "c129f7b1fa191f72ada0a374ea7ebadc7f17085384a491e96b4c7e83c62386a2"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/negative-speed.stderr.log",
+    "sha256": "b0f94b6595174d306f7b5f092d46a1f0832c9f79a42cfb0dc722909cd177cb27"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/negative-speed.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/normal-utf8-bom.json",
+    "sha256": "4f0f356aaaf2b6b156a8d44ff71de7129839998aaa8f17ededb7814ece9f4979"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/normal-utf8-bom.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/normal-utf8-bom.stdout.log",
+    "sha256": "75b8cbfc94dc56b9978afe92469f1fa74f3a0e54d82c9ae6f1afd593dff579d7"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/normal.json",
+    "sha256": "623932aa66b3f507171867a4a60186d7339170fb617df0c9c1bd7e6ddf0c71b5"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/normal.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/normal.stdout.log",
+    "sha256": "e8273ecedcf372d63ff43b6d5528ef66d0f16a82a758567cca6ba302c2e2a70f"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/overflow-speed.json",
+    "sha256": "8e3efff3d478d63deb118cd9cc7f580cb2376b1b75d9aa33ae3eea2120a2df79"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/overflow-speed.stderr.log",
+    "sha256": "00268ce504de57d708ff93631c3df00969580b09562932ce20957e88ecdf9a63"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/overflow-speed.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/verification.json",
+    "sha256": "a99349ada6f3ab1af01f9ee369a54944a327f39a9e99b4f5426b78cfc5e1750c"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/wrong-type.json",
+    "sha256": "4e9e1140b8fa72a12ead98d6e16cdbc1c2eedde880260b5816d75d58bc502081"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/wrong-type.stderr.log",
+    "sha256": "00268ce504de57d708ff93631c3df00969580b09562932ce20957e88ecdf9a63"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/wrong-type.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/zero-speed.json",
+    "sha256": "6a6ab73bcc220b40c12f7012986d702ceacca632d0b2da43772f1b6364a2beca"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/zero-speed.stderr.log",
+    "sha256": "b0f94b6595174d306f7b5f092d46a1f0832c9f79a42cfb0dc722909cd177cb27"
+  },
+  {
+    "path": "evidence/AMR/20261021-movement-recheck-console-01/zero-speed.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/AMR/20261022-recheck-curation-01/.gitattributes",
+    "sha256": "8b9c3028d6467ff3be7c793141927841d70f47f52d0590677438f488ca154992"
+  },
+  {
+    "path": "evidence/AMR/20261022-recheck-curation-01/curation.json",
+    "sha256": "e20611fc2ab2d0bdd62d6a9df9959a6235f13d7d8fad67c1961b76563c6ee1a0"
+  },
+  {
+    "path": "evidence/AMR/20261022-recheck-curation-01/README.md",
+    "sha256": "23e91fb71a9a92cfe3f75ae3fc32569248717f086aaeedd7290e3550b5aad7a4"
+  },
+  {
+    "path": "evidence/AMR/20261022-recheck-curation-01/verification.json",
+    "sha256": "e92236c0ec099242b481612d54caf15a39d746128799e719c62cd16821d6a045"
+  },
+  {
+    "path": "evidence/AMR/20261022-recheck-curation-01/Verify.py",
+    "sha256": "9474290c33e80614ddcf7c374e6de8e746334f6e838f392299604427c0424646"
+  },
+  {
+    "path": "README.md",
+    "sha256": "e04f5c144d754183b7e608386aa09785f191e1a2bf5bff9b83e89e5649451607"
+  }
+]
