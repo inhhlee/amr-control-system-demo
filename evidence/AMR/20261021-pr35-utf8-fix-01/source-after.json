@@ -1,0 +1,82 @@
+[
+  {
+    "Path": "config/simulator.single.json",
+    "SHA256": "503C9C4596B796D41623E6EA8D60B3BD4349D54CC9A80A0179745434295E9828",
+    "GitBlob": "d26907a47e1cbeba56a00afc162224bf41ecf851"
+  },
+  {
+    "Path": "global.json",
+    "SHA256": "6A8E9044030D136BD4C04FFF9684111A3478B27559BFB6D19E4D380F0DE91510",
+    "GitBlob": "e1c5e9980fedfa6ce8a2a67c128634c78c392f46"
+  },
+  {
+    "Path": "src/Amr.Simulator/Amr.Simulator.csproj",
+    "SHA256": "96118037D4040D2D67496059A40521E51B390867F7CE27BBE028F0A8E92DBF45",
+    "GitBlob": "ed9781c223ab97571e13f98c401aa0e9a1b55a4b"
+  },
+  {
+    "Path": "src/Amr.Simulator/Configuration/ConfigurationException.cs",
+    "SHA256": "9DC87A2A85DA7D950C86D0182722BE714EC29F2429653376DA3229B1D823970B",
+    "GitBlob": "3709c2ed332b37cb60945e2c48f99eb9cc324a44"
+  },
+  {
+    "Path": "src/Amr.Simulator/Configuration/SimulatorSettings.cs",
+    "SHA256": "7486196D46D1E9DF5BF6B5CD1EF8C2564F35831A233DFECFEE5658F59E7182F5",
+    "GitBlob": "609684dfee54f3276599e4f7c3a44baa6dcf339f"
+  },
+  {
+    "Path": "src/Amr.Simulator/Configuration/SimulatorSettingsLoader.cs",
+    "SHA256": "35FD8639B0C4E6B941414AA65FB851A424E7AB47F2DFE98282EC5FE101C4685B",
+    "GitBlob": "106521ec5dc779e70eb9fb54a4dfa52a5ea2f01b"
+  },
+  {
+    "Path": "src/Amr.Simulator/Program.cs",
+    "SHA256": "21550BC6BBC9E932A2891C4E76D435D7D428D77F6147B787846C64190A82960B",
+    "GitBlob": "65cd6c1848f304697b44d81026e843856215706e"
+  },
+  {
+    "Path": "src/Amr.Simulator/Simulation/Position2D.cs",
+    "SHA256": "AD8995860F60260818B9E3E220BF7E85F94B47FD2A2189CBA8C0D226DA97176D",
+    "GitBlob": "8827f22b81bb42e853ea4c0f7d28f2c0bd7e9b6b"
+  },
+  {
+    "Path": "src/Amr.Simulator/Simulation/SimulatedAmr.cs",
+    "SHA256": "68F99C23A39920B683DF01A102AF1CFF2B4EEB487CDF441CFBDCA23A0034482E",
+    "GitBlob": "7950d83cfe5b934a6a6407da07039cf590f7dff1"
+  },
+  {
+    "Path": "src/Amr.Simulator/SimulatorApplication.cs",
+    "SHA256": "199143F33B277B22C991EE06A5407115FF1D586ED3B01C3A112643DC038032F4",
+    "GitBlob": "4b930fa43d6918fde854b92392ee1278e9f2717a"
+  },
+  {
+    "Path": "tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj",
+    "SHA256": "571F23CD6D49C1F73D1BE9D7E85AF1BC8818AAFB44BF524527F858928303C692",
+    "GitBlob": "f049bc9a2727d48b90949c316a8403eef493c266"
+  },
+  {
+    "Path": "tests/Amr.Simulator.Tests/ApplicationTests.cs",
+    "SHA256": "7265C4ADB04A555C3A37B6B07FF0A428BF230AEB56198A690D5D077998AFB133",
+    "GitBlob": "3804c3c1cdf73fc23f4bc3074b44d59fcb5dd31b"
+  },
+  {
+    "Path": "tests/Amr.Simulator.Tests/ConfigurationTests.cs",
+    "SHA256": "A03B6A2B014A02854046E89AABA547C6ACF98FB285B17FECC3A7E2A75F3070B9",
+    "GitBlob": "ab75a00d9e231ef15e570ccb0e0972ef8ad9e22d"
+  },
+  {
+    "Path": "tests/manual/AMR01/Verify-Settings.ps1",
+    "SHA256": "FC2DBC1C6D7CC679C1767AE6821900ADCE857FC719D43B9D7CF2FEDBB9BD5C17",
+    "GitBlob": "ce41abd92e34f10ff465b6fe4d9e46ddffed0c97"
+  },
+  {
+    "Path": "tools/RunSimulatorTests/Program.cs",
+    "SHA256": "8473BA15051D73FD2B949E8A261D4672BB917B3A655A0C50C3FDEFEC82753BBC",
+    "GitBlob": "f7ff7b04bb113276ea9e84fb7c1c3cf923b112f4"
+  },
+  {
+    "Path": "tools/RunSimulatorTests/RunSimulatorTests.csproj",
+    "SHA256": "8E84C0DD771B96127DADF6C4B92D5904406296023500FB000B58AFC8CE683CF3",
+    "GitBlob": "2c8335c6c361c129cf8679090469cfedf2b012fd"
+  }
+]

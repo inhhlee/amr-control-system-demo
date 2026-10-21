@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="358b3429-c8c7-4a2e-9a8c-a276960c9482" name="Admin@DESKTOP-N1BSNS3 2026-10-21 15:59:11" runUser="DESKTOP-N1BSNS3\CodexSandboxOffline" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-21T15:59:11.7317372+09:00" queuing="2026-10-21T15:59:11.7317373+09:00" start="2026-10-21T15:59:11.1948078+09:00" finish="2026-10-21T15:59:11.7360837+09:00" />
+  <TestSettings name="default" id="0e083df6-ac5c-4871-b4aa-f9cab0786066">
+    <Deployment runDeploymentRoot="Admin_DESKTOP-N1BSNS3_2026-10-21_15_59_11" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="301cda05-fd7c-48f1-9e51-01bea73e232b" testId="6b427680-a6c1-1308-fe0f-ccf4a8c474a7" testName="Amr.Simulator.Tests.ApplicationTests.InvalidUtf8InId_WithOrWithoutBom_HasErrorExitAndNoInitialization(withBom: True)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0171906" startTime="2026-10-21T15:59:11.6391148+09:00" endTime="2026-10-21T15:59:11.6571361+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="301cda05-fd7c-48f1-9e51-01bea73e232b">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Values differ&#xD;
+Expected: 1&#xD;
+Actual:   0</Message>
+          <StackTrace>   at Amr.Simulator.Tests.ApplicationTests.InvalidUtf8InId_WithOrWithoutBom_HasErrorExitAndNoInitialization(Boolean withBom) in C:\amr-control-system-demo\tests\Amr.Simulator.Tests\ApplicationTests.cs:line 49&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="9ef13ed6-24a2-4083-ba9e-a3ac5db23195" testId="462c4ed8-c63a-7c4d-e10b-d2e35da3ff64" testName="Amr.Simulator.Tests.ConfigurationTests.Utf8File_WithOrWithoutBom_LoadsWithoutChangingValues(withBom: False)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0059069" startTime="2026-10-21T15:59:11.6390949+09:00" endTime="2026-10-21T15:59:11.6397346+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9ef13ed6-24a2-4083-ba9e-a3ac5db23195" />
+    <UnitTestResult executionId="6f38d779-94f0-46fd-ba43-c271585fd030" testId="9b8cfb59-5433-5f76-c472-f41db3c9944d" testName="Amr.Simulator.Tests.ConfigurationTests.Utf8File_WithOrWithoutBom_LoadsWithoutChangingValues(withBom: True)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0164513" startTime="2026-10-21T15:59:11.6116605+09:00" endTime="2026-10-21T15:59:11.6354109+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6f38d779-94f0-46fd-ba43-c271585fd030" />
+    <UnitTestResult executionId="48c33ade-a7a9-4e2f-bdf5-920bc7259134" testId="28cc563c-377d-98e7-993f-6e046409c39a" testName="Amr.Simulator.Tests.ApplicationTests.InvalidUtf8InId_WithOrWithoutBom_HasErrorExitAndNoInitialization(withBom: False)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0156020" startTime="2026-10-21T15:59:11.6107186+09:00" endTime="2026-10-21T15:59:11.6332622+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="48c33ade-a7a9-4e2f-bdf5-920bc7259134" />
+    <UnitTestResult executionId="1a067efa-82ca-45a8-9e81-c8be9576bbfe" testId="78c46076-22e2-0898-cba7-2a2baf07d9a8" testName="Amr.Simulator.Tests.ConfigurationTests.InvalidUtf8InId_WithOrWithoutBom_IsRejectedAsFileError(withBom: False)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0036127" startTime="2026-10-21T15:59:11.6406930+09:00" endTime="2026-10-21T15:59:11.6442069+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1a067efa-82ca-45a8-9e81-c8be9576bbfe" />
+    <UnitTestResult executionId="060a1484-9d26-4de1-be99-96736dd72bf0" testId="b5ccdaf3-2a3a-dfc8-5ed3-1c677c4cd1c1" testName="Amr.Simulator.Tests.ConfigurationTests.InvalidUtf8InId_WithOrWithoutBom_IsRejectedAsFileError(withBom: True)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0081894" startTime="2026-10-21T15:59:11.6442942+09:00" endTime="2026-10-21T15:59:11.6602844+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="060a1484-9d26-4de1-be99-96736dd72bf0">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Throws() Failure: No exception was thrown&#xD;
+Expected: typeof(Amr.Simulator.Configuration.ConfigurationException)</Message>
+          <StackTrace>   at Amr.Simulator.Tests.ConfigurationTests.InvalidUtf8InId_WithOrWithoutBom_IsRejectedAsFileError(Boolean withBom) in C:\amr-control-system-demo\tests\Amr.Simulator.Tests\ConfigurationTests.cs:line 156&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Amr.Simulator.Tests.ApplicationTests.InvalidUtf8InId_WithOrWithoutBom_HasErrorExitAndNoInitialization(withBom: False)" storage="c:\amr-control-system-demo\tests\amr.simulator.tests\bin\debug\net10.0\amr.simulator.tests.dll" id="28cc563c-377d-98e7-993f-6e046409c39a">
+      <Execution id="48c33ade-a7a9-4e2f-bdf5-920bc7259134" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\Amr.Simulator.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Tests.ApplicationTests" name="InvalidUtf8InId_WithOrWithoutBom_HasErrorExitAndNoInitialization" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Tests.ConfigurationTests.InvalidUtf8InId_WithOrWithoutBom_IsRejectedAsFileError(withBom: True)" storage="c:\amr-control-system-demo\tests\amr.simulator.tests\bin\debug\net10.0\amr.simulator.tests.dll" id="b5ccdaf3-2a3a-dfc8-5ed3-1c677c4cd1c1">
+      <Execution id="060a1484-9d26-4de1-be99-96736dd72bf0" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\Amr.Simulator.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Tests.ConfigurationTests" name="InvalidUtf8InId_WithOrWithoutBom_IsRejectedAsFileError" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Tests.ConfigurationTests.InvalidUtf8InId_WithOrWithoutBom_IsRejectedAsFileError(withBom: False)" storage="c:\amr-control-system-demo\tests\amr.simulator.tests\bin\debug\net10.0\amr.simulator.tests.dll" id="78c46076-22e2-0898-cba7-2a2baf07d9a8">
+      <Execution id="1a067efa-82ca-45a8-9e81-c8be9576bbfe" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\Amr.Simulator.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Tests.ConfigurationTests" name="InvalidUtf8InId_WithOrWithoutBom_IsRejectedAsFileError" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Tests.ConfigurationTests.Utf8File_WithOrWithoutBom_LoadsWithoutChangingValues(withBom: False)" storage="c:\amr-control-system-demo\tests\amr.simulator.tests\bin\debug\net10.0\amr.simulator.tests.dll" id="462c4ed8-c63a-7c4d-e10b-d2e35da3ff64">
+      <Execution id="9ef13ed6-24a2-4083-ba9e-a3ac5db23195" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\Amr.Simulator.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Tests.ConfigurationTests" name="Utf8File_WithOrWithoutBom_LoadsWithoutChangingValues" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Tests.ConfigurationTests.Utf8File_WithOrWithoutBom_LoadsWithoutChangingValues(withBom: True)" storage="c:\amr-control-system-demo\tests\amr.simulator.tests\bin\debug\net10.0\amr.simulator.tests.dll" id="9b8cfb59-5433-5f76-c472-f41db3c9944d">
+      <Execution id="6f38d779-94f0-46fd-ba43-c271585fd030" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\Amr.Simulator.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Tests.ConfigurationTests" name="Utf8File_WithOrWithoutBom_LoadsWithoutChangingValues" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Tests.ApplicationTests.InvalidUtf8InId_WithOrWithoutBom_HasErrorExitAndNoInitialization(withBom: True)" storage="c:\amr-control-system-demo\tests\amr.simulator.tests\bin\debug\net10.0\amr.simulator.tests.dll" id="6b427680-a6c1-1308-fe0f-ccf4a8c474a7">
+      <Execution id="301cda05-fd7c-48f1-9e51-01bea73e232b" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\Amr.Simulator.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Tests.ApplicationTests" name="InvalidUtf8InId_WithOrWithoutBom_HasErrorExitAndNoInitialization" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="6b427680-a6c1-1308-fe0f-ccf4a8c474a7" executionId="301cda05-fd7c-48f1-9e51-01bea73e232b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="462c4ed8-c63a-7c4d-e10b-d2e35da3ff64" executionId="9ef13ed6-24a2-4083-ba9e-a3ac5db23195" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9b8cfb59-5433-5f76-c472-f41db3c9944d" executionId="6f38d779-94f0-46fd-ba43-c271585fd030" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="28cc563c-377d-98e7-993f-6e046409c39a" executionId="48c33ade-a7a9-4e2f-bdf5-920bc7259134" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="78c46076-22e2-0898-cba7-2a2baf07d9a8" executionId="1a067efa-82ca-45a8-9e81-c8be9576bbfe" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b5ccdaf3-2a3a-dfc8-5ed3-1c677c4cd1c1" executionId="060a1484-9d26-4de1-be99-96736dd72bf0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="목록에 없는 결과" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="로드된 모든 결과" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="6" executed="6" passed="4" failed="2" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.12)&#xD;
+[xUnit.net 00:00:00.06]   Discovering: Amr.Simulator.Tests&#xD;
+[xUnit.net 00:00:00.10]   Discovered:  Amr.Simulator.Tests&#xD;
+[xUnit.net 00:00:00.11]   Starting:    Amr.Simulator.Tests&#xD;
+[xUnit.net 00:00:00.18]       Assert.Equal() Failure: Values differ&#xD;
+[xUnit.net 00:00:00.18]       Expected: 1&#xD;
+[xUnit.net 00:00:00.18]       Actual:   0&#xD;
+[xUnit.net 00:00:00.18]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.18]         C:\amr-control-system-demo\tests\Amr.Simulator.Tests\ApplicationTests.cs(49,0): at Amr.Simulator.Tests.ApplicationTests.InvalidUtf8InId_WithOrWithoutBom_HasErrorExitAndNoInitialization(Boolean withBom)&#xD;
+[xUnit.net 00:00:00.18]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:00.18]       Assert.Throws() Failure: No exception was thrown&#xD;
+[xUnit.net 00:00:00.18]       Expected: typeof(Amr.Simulator.Configuration.ConfigurationException)&#xD;
+[xUnit.net 00:00:00.18]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.18]         C:\amr-control-system-demo\tests\Amr.Simulator.Tests\ConfigurationTests.cs(156,0): at Amr.Simulator.Tests.ConfigurationTests.InvalidUtf8InId_WithOrWithoutBom_IsRejectedAsFileError(Boolean withBom)&#xD;
+[xUnit.net 00:00:00.18]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:00.18]   Finished:    Amr.Simulator.Tests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="DESKTOP-N1BSNS3" outcome="Error" timestamp="2026-10-21T15:59:11.6588129+09:00">
+        <Text>[xUnit.net 00:00:00.17]     Amr.Simulator.Tests.ApplicationTests.InvalidUtf8InId_WithOrWithoutBom_HasErrorExitAndNoInitialization(withBom: True) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-N1BSNS3" outcome="Error" timestamp="2026-10-21T15:59:11.6604609+09:00">
+        <Text>[xUnit.net 00:00:00.18]     Amr.Simulator.Tests.ConfigurationTests.InvalidUtf8InId_WithOrWithoutBom_IsRejectedAsFileError(withBom: True) [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

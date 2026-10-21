@@ -1,0 +1,9 @@
+{
+  "Command": "dotnet build tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj --no-restore -m:1 -nr:false -p:UseSharedCompilation=false",
+  "Permission": "escalated after MSB3491 access denied",
+  "Started": "2026-10-21T15:58:57.1993371+09:00",
+  "Finished": "2026-10-21T15:58:59.0992560+09:00",
+  "ExitCode": 0,
+  "ProductDLLSHA256": "968575956C0CA8719C1B42837C099A61BCF48563BE5F198DB10413377474A943",
+  "TestDLLSHA256": "58888E1E4C816AC571BCAA09DCC679AB17C88D0DE316CB6660E322402A5CAF71"
+}

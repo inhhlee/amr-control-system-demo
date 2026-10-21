@@ -36,6 +36,22 @@ public sealed class ApplicationTests
         Assert.Contains("ConfigurationRejected Field=$.speedMps Reason=", error.ToString());
     }
 
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public async Task InvalidUtf8InId_WithOrWithoutBom_HasErrorExitAndNoInitialization(bool withBom)
+    {
+        using var file = new TemporaryConfig(ValidJson);
+        await File.WriteAllBytesAsync(file.FilePath, InvalidUtf8InId(withBom));
+        using var output = new StringWriter();
+        using var error = new StringWriter();
+        int code = await SimulatorApplication.RunAsync(["--config", file.FilePath], output, error);
+        Assert.Equal(1, code);
+        Assert.Equal("", output.ToString());
+        Assert.Equal("ConfigurationRejected Field=$file Reason=설정 파일의 문자 인코딩을 읽을 수 없습니다."
+            + Environment.NewLine, error.ToString());
+    }
+
     public static IEnumerable<object[]> InvalidArguments()
     {
         yield return [Array.Empty<string>()];

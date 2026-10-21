@@ -29,11 +29,11 @@ pwsh -NoProfile -File tests/manual/AMR01/Verify-Settings.ps1 -RunId <새-실행I
 
 정상 실행은 `ConfigurationLoaded`·`Waypoint`·`AmrInitialized`·`InitializationCompleted`를 stdout에 남기고 종료 코드 0으로 끝난다. 출력 숫자는 소수점 `.`을 사용한다. 초기화 중 취소는 `InitializationCanceled`와 코드 0으로 구분한다. 실제 위치 변경은 아직 수행하지 않는다.
 
-설정 파일은 System.Text.Json으로 읽어 항목별로 검사한다. 검사된 설정과 경유점 목록은 외부에서 바꿀 수 없게 보관해 생성 후 설정값이 바뀌지 않도록 했다. 별도의 설정 패키지·통신 참조는 추가하지 않았다.
+설정 파일은 UTF-8(BOM 유무 모두 허용)로 엄격하게 읽은 뒤 System.Text.Json으로 항목별로 검사한다. 잘못된 UTF-8은 BOM이 있어도 대체 문자로 바꾸지 않고 파일 오류로 거부한다. 검사된 설정과 경유점 목록은 외부에서 바꿀 수 없게 보관해 생성 후 설정값이 바뀌지 않도록 했다. 별도의 설정 패키지·통신 참조는 추가하지 않았다.
 
 적용 기준은 과제2 과제계획 v0.10 초안, 기능명세 v0.9 초안 AMR-01, 공통데이터명세 v0.6 초안 4절, 결정사항 v0.9 초안 D-12·10/21 ID 검사 보완이다. #32 게시 당시 버전보다 최신 사용자 승인 보완을 적용하며, 세 Issue 분할은 10/21 사용자 요청에 따른다.
 
-이번 실행의 [검증결과](evidence/AMR/20261021-settings-final-01/README.md): 솔루션 빌드 경고·오류 0, xUnit 프로세스 내 실행 83건 통과, 별도 Simulator 프로세스 12건 통과. 일반 VSTest 실행은 testhost와의 로컬 소켓 통신이 권한 오류 10013으로 차단돼 중단됐으며 통과로 집계하지 않는다. 기존 통신 자동시험은 이번에 다시 실행하지 않았다.
+최신 [PR #35 UTF-8 수정·회귀 검증](evidence/AMR/20261021-pr35-utf8-fix-01/README.md): Simulator·전용 시험 프로젝트 빌드 경고·오류 0, 표준 VSTest 88건 통과, 별도 Simulator 프로세스 15건 통과. 새 시험으로 수정 전 BOM 인코딩 오류를 재현한 기록과 수정 후 통과 기록을 함께 보관한다. [최초 검증결과](evidence/AMR/20261021-settings-final-01/README.md)의 프로세스 내 83건·콘솔 12건·표준 VSTest 환경 오류는 당시 이력이며 현재 결과와 합산하지 않는다. 이번에는 전체 솔루션 빌드·기존 통신 자동시험·NuGet 복원을 다시 실행하지 않았다.
 
 로컬 소켓이 제한된 환경에서는 아래 보조 도구가 동일한 xUnit 2.9.3 엔진으로 Simulator 시험 어셈블리를 프로세스 안에서 실행한다. VSTest 어댑터·testhost 연동 검증을 대신하는 결과로 표시하지 않는다.
 

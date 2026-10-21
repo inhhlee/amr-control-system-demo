@@ -1,0 +1,15 @@
+{
+  "amrId": "AMR_001",
+  "initialPosition": {
+    "y": -7,
+    "x": 12
+  },
+  "speedMps": 2.5,
+  "updateIntervalMs": 100,
+  "waypoints": [
+    {
+      "y": 9,
+      "x": -8
+    }
+  ]
+}

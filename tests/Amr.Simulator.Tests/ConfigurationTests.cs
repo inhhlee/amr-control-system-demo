@@ -135,13 +135,37 @@ public sealed class ConfigurationTests
         Assert.False(string.IsNullOrWhiteSpace(error.Reason));
     }
 
-    [Fact]
-    public async Task BomFile_LoadsWithoutChangingValues()
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public async Task Utf8File_WithOrWithoutBom_LoadsWithoutChangingValues(bool withBom)
     {
-        using var file = new TemporaryConfig(ValidJson, new UTF8Encoding(true));
+        using var file = new TemporaryConfig(ValidJson.Replace("AMR_001", "AMR_한글"), new UTF8Encoding(withBom));
         var settings = await SimulatorSettingsLoader.LoadAsync(file.FilePath);
-        Assert.Equal("AMR_001", settings.AmrId);
+        Assert.Equal("AMR_한글", settings.AmrId);
         Assert.Equal(new Position2D(-2, 3.5), settings.InitialPosition);
+    }
+
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public async Task InvalidUtf8InId_WithOrWithoutBom_IsRejectedAsFileError(bool withBom)
+    {
+        using var file = new TemporaryConfig(ValidJson);
+        await File.WriteAllBytesAsync(file.FilePath, InvalidUtf8InId(withBom));
+        var error = await Assert.ThrowsAsync<ConfigurationException>(() => SimulatorSettingsLoader.LoadAsync(file.FilePath));
+        Assert.Equal("$file", error.Field);
+        Assert.Equal("설정 파일의 문자 인코딩을 읽을 수 없습니다.", error.Reason);
+    }
+
+    internal static byte[] InvalidUtf8InId(bool withBom)
+    {
+        byte[] bytes = Encoding.UTF8.GetBytes(ValidJson);
+        int idOffset = Encoding.UTF8.GetByteCount(ValidJson.AsSpan(0, ValidJson.IndexOf("AMR_001", StringComparison.Ordinal)));
+        // C3 다음에는 80~BF가 필요하지만 M(4D)이 오므로 잘못된 UTF-8이다.
+        // 나머지는 정상 JSON으로 두어 대체 문자 보정을 놓치지 않게 한다.
+        bytes[idOffset] = 0xc3;
+        return withBom ? [0xef, 0xbb, 0xbf, .. bytes] : bytes;
     }
 
     [Fact]

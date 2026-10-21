@@ -1,0 +1,25 @@
+{
+  "BaseCommit": "c9d917a78280346cf5dfcc15dbe871383cf56ad9",
+  "PreservedLocalFiles": [
+    {
+      "Path": "AmrControlSystem.slnx",
+      "SHA256": "37B9BEFC2AB39FD5A0588F4F4AC358A5894B892EC4EC062D39305625EC9C9E83"
+    },
+    {
+      "Path": "evidence/AMR/20261021-settings-final-01/pr-body.md",
+      "SHA256": "DB95B68A282268DC58E333E1FDD113B671E9A3F1D70DAAA63510CA641E47C992"
+    }
+  ],
+  "DraftIndex": "100644 425d86a98a277de50ddc3a7da65e942fdf7ae95d 0\tevidence/AMR/20261021-settings-final-01/pr-body.md",
+  "LoaderBlobBefore": "06c9312ee95733a82def95602eb28e9b9cfc35ed",
+  "LoaderSHA256Before": "39360C07EF45E15516403E90110D2BAA131B388B632463554620AAE1BF4530F1",
+  "OS": "Microsoft Windows 10.0.26200",
+  "SDK": "10.0.401",
+  "Runtimes": [
+    "Microsoft.AspNetCore.App 10.0.12 [C:\\Program Files\\dotnet\\shared\\Microsoft.AspNetCore.App]",
+    "Microsoft.NETCore.App 10.0.12 [C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App]",
+    "Microsoft.WindowsDesktop.App 10.0.12 [C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App]"
+  ],
+  "Powershell": "7.6.5",
+  "Started": "2026-10-21T15:58:06.0624967+09:00"
+}

@@ -15,8 +15,11 @@ public static class SimulatorSettingsLoader
         string json;
         try
         {
-            // 잘못된 바이트를 대체 문자로 보정하지 않는다. BOM이 있는 파일도 읽는다.
-            json = await File.ReadAllTextAsync(path, new UTF8Encoding(false, true), cancellationToken);
+            // BOM 자동 감지가 엄격한 디코더를 바꾸지 않도록 UTF-8 BOM만 직접 건너뛴다.
+            // 나머지 바이트는 BOM 유무와 관계없이 대체 문자 보정 없이 읽는다.
+            byte[] bytes = await File.ReadAllBytesAsync(path, cancellationToken);
+            int offset = bytes.AsSpan().StartsWith(Encoding.UTF8.Preamble) ? Encoding.UTF8.Preamble.Length : 0;
+            json = new UTF8Encoding(false, true).GetString(bytes, offset, bytes.Length - offset);
         }
         catch (DecoderFallbackException)
         {

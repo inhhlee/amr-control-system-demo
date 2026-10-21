@@ -1,0 +1,10 @@
+  Amr.Simulator -> C:\amr-control-system-demo\src\Amr.Simulator\bin\Debug\net10.0\Amr.Simulator.dll
+C:\Users\Admin\.nuget\packages\microsoft.codecoverage\17.14.1\build\netstandard2.0\Microsoft.CodeCoverage.targets(52,5): error MSB3491: "bin\Debug\net10.0\.msCoverageSourceRootsMapping_Amr.Simulator.Tests" 파일에 줄을 쓸 수 없습니다. Access to the path 'C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\tj4yxvdl.kfx~' is denied.  [C:\amr-control-system-demo\tests\Amr.Simulator.Tests\Amr.Simulator.Tests.csproj]
+
+빌드하지 못했습니다.
+
+C:\Users\Admin\.nuget\packages\microsoft.codecoverage\17.14.1\build\netstandard2.0\Microsoft.CodeCoverage.targets(52,5): error MSB3491: "bin\Debug\net10.0\.msCoverageSourceRootsMapping_Amr.Simulator.Tests" 파일에 줄을 쓸 수 없습니다. Access to the path 'C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\tj4yxvdl.kfx~' is denied.  [C:\amr-control-system-demo\tests\Amr.Simulator.Tests\Amr.Simulator.Tests.csproj]
+    경고 0개
+    오류 1개
+
+경과 시간: 00:00:00.53

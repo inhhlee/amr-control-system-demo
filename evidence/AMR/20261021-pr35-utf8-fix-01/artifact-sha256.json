@@ -1,0 +1,547 @@
+[
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/.gitattributes",
+    "SHA256": "0119500E87F082B90937B7C40A7A9F60593C7759AAA9DF214E46E13ED90211EF",
+    "GitBlob": "c351847c5ee3c0f8e81d5ff3b3854338d931f61b"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/changed.json",
+    "SHA256": "00DC43F2A2D9AF24A15D7F049E8C40B3DF688003FC04B404E1A858F64B31650C",
+    "GitBlob": "9ddf462036dabe08b76ed147432bd2d7ddaa341d"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/changed.stderr.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/changed.stdout.log",
+    "SHA256": "39376916C019836AF69B4BB78EFF045E54F28C6D1852F45197B920D42369E3E6",
+    "GitBlob": "e3cce0e186750cd2056f2826f044f019fd323928"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/fractional-interval.json",
+    "SHA256": "52220887C1A56ED37C2C6E1DFA7E15B23B5E1F71692650612E0D58B20DEDF305",
+    "GitBlob": "d3916d9185b1dfd61b24c7dd7bdfc5fca13c5de6"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/fractional-interval.stderr.log",
+    "SHA256": "AF1AE1AF11A085E2021641726DABABE64965007816FCA80972F4D926B379B35D",
+    "GitBlob": "6481259a30c720328e81b0e44df0bc1600a17e36"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/fractional-interval.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/invalid-coordinate.json",
+    "SHA256": "F8F09CC765BEC7111C5BB56428EB0F1D1411F054572BE8B8610D60C88B021B9B",
+    "GitBlob": "2000483f26304cb51fa5fb8acf089297c3cd5f57"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/invalid-coordinate.stderr.log",
+    "SHA256": "5C418856EE41FE8EDC86579AF265700CC9EA973C543B3517E41BBD2C0609C090",
+    "GitBlob": "c78ba649bdf343bca47d94102334ae96c69cabb5"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/invalid-coordinate.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/invalid-id.json",
+    "SHA256": "DFC1E7034022F7780A9CB7CCB9653D3DA69A5F39D6722EFC41D2F10D57140469",
+    "GitBlob": "9bd817e63640a4f03326ac7b660336989e53e55b"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/invalid-id.stderr.log",
+    "SHA256": "31FBF260B1B7C1A0117BF14D388A12C4239203C23A092B93143AD39BA6AC0CD3",
+    "GitBlob": "9eb09e55efb0b6a87e11a8526304af435f07fd80"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/invalid-id.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/invalid-utf8-bom.json",
+    "SHA256": "A9632FF2F36CBDD4DB51262912436F955443376B2340CE130F0409D0C8A4659D",
+    "GitBlob": "ed418a5a480fbbc94eb02b6ac7de23b3077a3204"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/invalid-utf8-bom.stderr.log",
+    "SHA256": "675733763237F425C8A6BC58908E93526A768BCD76B4DB7C4B5B5FAB6D0042D6",
+    "GitBlob": "6a79d3027c29b02a3366e8b0353b87bb30241867"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/invalid-utf8-bom.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/invalid-utf8.json",
+    "SHA256": "68AC7023966ECD846B47C635B3A1367E6DB5C22B59C46FFB3183A63625E1D1EE",
+    "GitBlob": "e9822c5c386e83cda2f36de89ef3cfe9ec84a872"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/invalid-utf8.stderr.log",
+    "SHA256": "675733763237F425C8A6BC58908E93526A768BCD76B4DB7C4B5B5FAB6D0042D6",
+    "GitBlob": "6a79d3027c29b02a3366e8b0353b87bb30241867"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/invalid-utf8.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/malformed.json",
+    "SHA256": "021FB596DB81E6D02BF3D2586EE3981FE519F275C0AC9CA76BBCF2EBB4097D96",
+    "GitBlob": "81750b96f9d83b395f285233d54ec0c9df9ab93d"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/malformed.stderr.log",
+    "SHA256": "356B445221CC144F45BD2EAB7E967C846757FC042C9866F07CC5F147AC76F824",
+    "GitBlob": "1460b0715144db0b042e97caa15fa3dc86cd5bf3"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/malformed.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/missing-field.json",
+    "SHA256": "6A271697787FCAEFAE4EA3391A2E8DA32300AA102FAB53945B60EFCA3B2FBD01",
+    "GitBlob": "3ba3b47109fe78a3142a036871e9c8512cf88be9"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/missing-field.stderr.log",
+    "SHA256": "B63A05DB506EAD14D3D782EEE280A0ABD4EAE60813EB0113E53117DF5B36441D",
+    "GitBlob": "d9df879c9ea30aa3e7ee9f938d91f78b8b9cd052"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/missing-field.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/missing-file.stderr.log",
+    "SHA256": "AAE2F6A26E387D008A0F64292BAA47B8FBBE9634C52846E3E79EE468A563EA13",
+    "GitBlob": "9eba781d47326747724cec234914a5067cb5823f"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/missing-file.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/negative-speed.json",
+    "SHA256": "818D8C2115D30B442B0E8B67CFCA45A9AF9187D514497EE8398080913EA4949C",
+    "GitBlob": "86553104f651b7e0cd3db8e522ce5df50ff1254f"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/negative-speed.stderr.log",
+    "SHA256": "B0F94B6595174D306F7B5F092D46A1F0832C9F79A42CFB0DC722909CD177CB27",
+    "GitBlob": "88927c914667a364f0f7b213e1f980e9791e8b97"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/negative-speed.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/normal-utf8-bom.json",
+    "SHA256": "065B7855E657041BBF5283E1991D18A6CE518D4319EC814A9610E6255925A8AC",
+    "GitBlob": "ee9d57e8342f24ff065051db1d5e8864032a6430"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/normal-utf8-bom.stderr.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/normal-utf8-bom.stdout.log",
+    "SHA256": "BA26E9DA0E119F8FFC2D96D9E7B6AD4660B67170A83D73BE9E6287634E2AAAAD",
+    "GitBlob": "32cc3502b3a6824e19f3463fa7a7e54639960485"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/normal.json",
+    "SHA256": "503C9C4596B796D41623E6EA8D60B3BD4349D54CC9A80A0179745434295E9828",
+    "GitBlob": "d26907a47e1cbeba56a00afc162224bf41ecf851"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/normal.stderr.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/normal.stdout.log",
+    "SHA256": "BA26E9DA0E119F8FFC2D96D9E7B6AD4660B67170A83D73BE9E6287634E2AAAAD",
+    "GitBlob": "32cc3502b3a6824e19f3463fa7a7e54639960485"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/overflow-speed.json",
+    "SHA256": "D954D9C61F92967198E56ADB1ADB5F8CBF11D6D3397EF3CD2AE3CAE2F4330F91",
+    "GitBlob": "56d815669de7a08aad3da6de561c55a5ed23c112"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/overflow-speed.stderr.log",
+    "SHA256": "00268CE504DE57D708FF93631C3DF00969580B09562932CE20957E88ECDF9A63",
+    "GitBlob": "729bb52991c28b547a105fbdb87f56b9b5419eed"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/overflow-speed.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/verification.json",
+    "SHA256": "06C49CCE381FCC58B7423AA0B04C4789456D0CFA0C7F117861E58DA2422201F9",
+    "GitBlob": "7daa6bddf24310471d088d173fe0c9a15336445c"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/wrong-type.json",
+    "SHA256": "BA8315A5BECF7ACA428514706272AA850A82F16B4E81CCD88B24FF0F64C8445B",
+    "GitBlob": "fdb5945da99a3ff42104da50700155e1bf352faa"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/wrong-type.stderr.log",
+    "SHA256": "00268CE504DE57D708FF93631C3DF00969580B09562932CE20957E88ECDF9A63",
+    "GitBlob": "729bb52991c28b547a105fbdb87f56b9b5419eed"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/wrong-type.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/zero-speed.json",
+    "SHA256": "043DC9B5B2C2F7A383B5D68AFA31611CADC4C3689B07E4EF0FB0ECCE5B4964E3",
+    "GitBlob": "a4c089aad362fa3f0219a71e0e371439c8b0b694"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/zero-speed.stderr.log",
+    "SHA256": "B0F94B6595174D306F7B5F092D46A1F0832C9F79A42CFB0DC722909CD177CB27",
+    "GitBlob": "88927c914667a364f0f7b213e1f980e9791e8b97"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-after-01/zero-speed.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/.gitattributes",
+    "SHA256": "0119500E87F082B90937B7C40A7A9F60593C7759AAA9DF214E46E13ED90211EF",
+    "GitBlob": "c351847c5ee3c0f8e81d5ff3b3854338d931f61b"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/changed.json",
+    "SHA256": "52102BB6E431E4F3BBB8832342BA482EDFB74261CC8B98C758B1D6C13E22609D",
+    "GitBlob": "fc64e457e20979c463fa9318a0944a61c82c2f30"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/changed.stderr.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/changed.stdout.log",
+    "SHA256": "39376916C019836AF69B4BB78EFF045E54F28C6D1852F45197B920D42369E3E6",
+    "GitBlob": "e3cce0e186750cd2056f2826f044f019fd323928"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/fractional-interval.json",
+    "SHA256": "52220887C1A56ED37C2C6E1DFA7E15B23B5E1F71692650612E0D58B20DEDF305",
+    "GitBlob": "d3916d9185b1dfd61b24c7dd7bdfc5fca13c5de6"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/fractional-interval.stderr.log",
+    "SHA256": "AF1AE1AF11A085E2021641726DABABE64965007816FCA80972F4D926B379B35D",
+    "GitBlob": "6481259a30c720328e81b0e44df0bc1600a17e36"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/fractional-interval.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/invalid-coordinate.json",
+    "SHA256": "F8F09CC765BEC7111C5BB56428EB0F1D1411F054572BE8B8610D60C88B021B9B",
+    "GitBlob": "2000483f26304cb51fa5fb8acf089297c3cd5f57"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/invalid-coordinate.stderr.log",
+    "SHA256": "5C418856EE41FE8EDC86579AF265700CC9EA973C543B3517E41BBD2C0609C090",
+    "GitBlob": "c78ba649bdf343bca47d94102334ae96c69cabb5"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/invalid-coordinate.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/invalid-id.json",
+    "SHA256": "DFC1E7034022F7780A9CB7CCB9653D3DA69A5F39D6722EFC41D2F10D57140469",
+    "GitBlob": "9bd817e63640a4f03326ac7b660336989e53e55b"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/invalid-id.stderr.log",
+    "SHA256": "31FBF260B1B7C1A0117BF14D388A12C4239203C23A092B93143AD39BA6AC0CD3",
+    "GitBlob": "9eb09e55efb0b6a87e11a8526304af435f07fd80"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/invalid-id.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/invalid-utf8-bom.json",
+    "SHA256": "A9632FF2F36CBDD4DB51262912436F955443376B2340CE130F0409D0C8A4659D",
+    "GitBlob": "ed418a5a480fbbc94eb02b6ac7de23b3077a3204"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/invalid-utf8-bom.stderr.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/invalid-utf8-bom.stdout.log",
+    "SHA256": "76E1ADACCE1846E56EE7B7DB4B0012CAA65F8937E9A1E0E701C143DFBFF5C38B",
+    "GitBlob": "3e6ceeefa86fc0a3a674c3352d22e161bc48dc9e"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/invalid-utf8.json",
+    "SHA256": "68AC7023966ECD846B47C635B3A1367E6DB5C22B59C46FFB3183A63625E1D1EE",
+    "GitBlob": "e9822c5c386e83cda2f36de89ef3cfe9ec84a872"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/invalid-utf8.stderr.log",
+    "SHA256": "675733763237F425C8A6BC58908E93526A768BCD76B4DB7C4B5B5FAB6D0042D6",
+    "GitBlob": "6a79d3027c29b02a3366e8b0353b87bb30241867"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/invalid-utf8.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/malformed.json",
+    "SHA256": "021FB596DB81E6D02BF3D2586EE3981FE519F275C0AC9CA76BBCF2EBB4097D96",
+    "GitBlob": "81750b96f9d83b395f285233d54ec0c9df9ab93d"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/malformed.stderr.log",
+    "SHA256": "356B445221CC144F45BD2EAB7E967C846757FC042C9866F07CC5F147AC76F824",
+    "GitBlob": "1460b0715144db0b042e97caa15fa3dc86cd5bf3"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/malformed.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/missing-field.json",
+    "SHA256": "6A271697787FCAEFAE4EA3391A2E8DA32300AA102FAB53945B60EFCA3B2FBD01",
+    "GitBlob": "3ba3b47109fe78a3142a036871e9c8512cf88be9"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/missing-field.stderr.log",
+    "SHA256": "B63A05DB506EAD14D3D782EEE280A0ABD4EAE60813EB0113E53117DF5B36441D",
+    "GitBlob": "d9df879c9ea30aa3e7ee9f938d91f78b8b9cd052"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/missing-field.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/missing-file.stderr.log",
+    "SHA256": "AAE2F6A26E387D008A0F64292BAA47B8FBBE9634C52846E3E79EE468A563EA13",
+    "GitBlob": "9eba781d47326747724cec234914a5067cb5823f"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/missing-file.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/negative-speed.json",
+    "SHA256": "818D8C2115D30B442B0E8B67CFCA45A9AF9187D514497EE8398080913EA4949C",
+    "GitBlob": "86553104f651b7e0cd3db8e522ce5df50ff1254f"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/negative-speed.stderr.log",
+    "SHA256": "B0F94B6595174D306F7B5F092D46A1F0832C9F79A42CFB0DC722909CD177CB27",
+    "GitBlob": "88927c914667a364f0f7b213e1f980e9791e8b97"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/negative-speed.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/normal-utf8-bom.json",
+    "SHA256": "065B7855E657041BBF5283E1991D18A6CE518D4319EC814A9610E6255925A8AC",
+    "GitBlob": "ee9d57e8342f24ff065051db1d5e8864032a6430"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/normal-utf8-bom.stderr.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/normal-utf8-bom.stdout.log",
+    "SHA256": "BA26E9DA0E119F8FFC2D96D9E7B6AD4660B67170A83D73BE9E6287634E2AAAAD",
+    "GitBlob": "32cc3502b3a6824e19f3463fa7a7e54639960485"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/normal.json",
+    "SHA256": "503C9C4596B796D41623E6EA8D60B3BD4349D54CC9A80A0179745434295E9828",
+    "GitBlob": "d26907a47e1cbeba56a00afc162224bf41ecf851"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/normal.stderr.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/normal.stdout.log",
+    "SHA256": "BA26E9DA0E119F8FFC2D96D9E7B6AD4660B67170A83D73BE9E6287634E2AAAAD",
+    "GitBlob": "32cc3502b3a6824e19f3463fa7a7e54639960485"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/overflow-speed.json",
+    "SHA256": "D954D9C61F92967198E56ADB1ADB5F8CBF11D6D3397EF3CD2AE3CAE2F4330F91",
+    "GitBlob": "56d815669de7a08aad3da6de561c55a5ed23c112"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/overflow-speed.stderr.log",
+    "SHA256": "00268CE504DE57D708FF93631C3DF00969580B09562932CE20957E88ECDF9A63",
+    "GitBlob": "729bb52991c28b547a105fbdb87f56b9b5419eed"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/overflow-speed.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/verification.json",
+    "SHA256": "2592B43C6948CE59CEB6AAE47071F1433F07454F0882A586C1056189EC418B93",
+    "GitBlob": "6c44a54b12106f33f3b2acd5d0b2ea1012c6acfd"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/wrong-type.json",
+    "SHA256": "BA8315A5BECF7ACA428514706272AA850A82F16B4E81CCD88B24FF0F64C8445B",
+    "GitBlob": "fdb5945da99a3ff42104da50700155e1bf352faa"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/wrong-type.stderr.log",
+    "SHA256": "00268CE504DE57D708FF93631C3DF00969580B09562932CE20957E88ECDF9A63",
+    "GitBlob": "729bb52991c28b547a105fbdb87f56b9b5419eed"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/wrong-type.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/zero-speed.json",
+    "SHA256": "043DC9B5B2C2F7A383B5D68AFA31611CADC4C3689B07E4EF0FB0ECCE5B4964E3",
+    "GitBlob": "a4c089aad362fa3f0219a71e0e371439c8b0b694"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/zero-speed.stderr.log",
+    "SHA256": "B0F94B6595174D306F7B5F092D46A1F0832C9F79A42CFB0DC722909CD177CB27",
+    "GitBlob": "88927c914667a364f0f7b213e1f980e9791e8b97"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-before-01/zero-speed.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-fix-01/.gitattributes",
+    "SHA256": "B555AE3DE6E6D69BC310A2CA9B0BD80DABF6E70927EA52E946F946DFD91BF6A9",
+    "GitBlob": "1089ff32ed11b131197f7159c11c76c6e187eb4b"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-fix-01/after-build.json",
+    "SHA256": "6A35AA79E01BC27E4671DE7732BF65C59913DA29B36AAE8C219E0539CC22B876",
+    "GitBlob": "18a2b483bac97b75820b0d957b196594a8cf6aa9"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-fix-01/after-build.log",
+    "SHA256": "514C8E4C08867C4FD0E37C77687D994D4F80FAB2EB8676679C5603C54C3B3D02",
+    "GitBlob": "6917e7f5fc7b807597490010d0a81d8d1a05ee38"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-fix-01/after-full.json",
+    "SHA256": "C86C3BA428E64236E682F470560512CF44ECBF083430E6F07D7CC3FBBCC0CD76",
+    "GitBlob": "d79cd83674a4267214277fa67d77ed4c81a3bf80"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-fix-01/after-full.log",
+    "SHA256": "C6509E1F58F5BC97D4DF596979186EB9FF8EEB33847D96022E6E5A3425FDEAF3",
+    "GitBlob": "954ff5b84ebe73736e4b2569dd5f5964aae4925a"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-fix-01/after-full.trx",
+    "SHA256": "4268A7C04CCDDC9A90EEDFA3398AEBFDD26F8F17461DFC7FA174609DBABAC3C6",
+    "GitBlob": "ea2db0da2cbf5a0ae95e603fe79cedd0f0e5e49f"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-fix-01/baseline.json",
+    "SHA256": "AAA59D52795A025EC9ADFD9A02BFF96816D4F9B58F00DD0F846036B8014976F0",
+    "GitBlob": "2e3dbff6200980980a4d6658b31f9322f33b4d7c"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-fix-01/before-build-retry.json",
+    "SHA256": "9BBA0562BB9901904CF83963CFF11B72D62377B811B866A964AD0CF3051F6DE4",
+    "GitBlob": "fbc0d2f23d1164620927e7efa9fff0e590e404a4"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-fix-01/before-build-retry.log",
+    "SHA256": "65F2088356EDB7E8428EE725299B176D1D4B2AFF58B5F60DA648D439FC606952",
+    "GitBlob": "25fb7df49acdf856d0ca95804a6bd64212532a13"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-fix-01/before-build.json",
+    "SHA256": "B7896415E7D5FE08DD4CF2C89283081FE7C7EC17E6CBAEEE3B514EAC211E5729",
+    "GitBlob": "a3671ed280ae92db18d7b1e09cec3997d7a2a844"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-fix-01/before-build.log",
+    "SHA256": "8D6466009278A15A44D62A8A8882511448F7D399482933E4A75F938E713EFB39",
+    "GitBlob": "aa366d28e0836a675282ae6cc10ff725f1e610e8"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-fix-01/before-regression.json",
+    "SHA256": "3C011D7EADD8DDA4FA23D7B619937FB7F0DA287AE62B13130C0754FCA41E0D38",
+    "GitBlob": "eab5566166f2c329f9015ddfc8dc1b58840df909"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-fix-01/before-regression.log",
+    "SHA256": "24029642CD892671979CC323B3733A8816FB4B4B385048329F2A686CAA97ACB1",
+    "GitBlob": "335a1aa0bf25e7348870384c6a3dd1851e0eabe4"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-fix-01/before-regression.trx",
+    "SHA256": "13BA2A5E6FD897CFBA8B0BBE82B5FF614B2AF0134E99E270D07FE9E55D1B0336",
+    "GitBlob": "d0efb341bd55cad077a7dc8352c55c785eb464a6"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-fix-01/README.md",
+    "SHA256": "DC16A498868AE342AC105FAC2A07CE3268FF57860448E8C9E3E67B73050D21FC",
+    "GitBlob": "cd29119a81a3f8bacd904de866170836e30c1af4"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-fix-01/source-after.json",
+    "SHA256": "8E60F73EB817D59FB36FAA7C4A51E32B98894A9F3D620BA90C839D5D798E3D48",
+    "GitBlob": "33edb188c542a0c9fbc8bc43323d408ac78c5da8"
+  },
+  {
+    "Path": "evidence/AMR/20261021-pr35-utf8-fix-01/source-before.json",
+    "SHA256": "2BF6352300F3B8832D802CC5B2D84E56297D975E429FF1C2C98BD4A8AC1E4668",
+    "GitBlob": "9e170eab165f4c513897df477e938f6109031c7c"
+  }
+]
