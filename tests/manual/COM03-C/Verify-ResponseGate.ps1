@@ -79,7 +79,7 @@ public static class Com03C3Control {
     exit 0
 }
 
-if ((git branch --show-current) -ne 'feature/6-mqtt-keepalive') { throw 'Use the existing Issue #6 branch.' }
+# Reusable after merge: the actual branch, source hashes and binaries are recorded below.
 if (!$MeasureTimeout -and $BlockDelaySeconds -ne 0) { throw 'BlockDelaySeconds is only for C3b measurement.' }
 if (Test-Path -LiteralPath $run) { throw 'RunId exists; choose a new execution ID.' }
 New-Item -ItemType Directory -Path $run | Out-Null
@@ -121,7 +121,7 @@ try {
         [ordered]@{recordedAtUtc=[DateTimeOffset]::UtcNow.ToString('O');mqttnet='5.2.0.1603';sourceCommit='14463d1ef9f1f119514185c1832905b91bff827d';sourceUrl='https://github.com/dotnet/MQTTnet/blob/14463d1ef9f1f119514185c1832905b91bff827d/Source/MQTTnet/MqttClient.cs#L935';keepAliveSeconds=5;pingResponseTimeoutSeconds=2.5;keepAlivePollingSeconds=0.25;earlyToleranceSeconds=0.1;schedulingAndCallbackAllowanceSeconds=1.0;lastOutgoingToDetectMinimumSeconds=7.4;lastOutgoingToDetectMaximumSeconds=8.75;firstDiscardToDetectMinimumSeconds=2.4;firstDiscardToDetectMaximumSeconds=3.5;blockDelaySeconds=$BlockDelaySeconds;maximumBlockPhaseSeconds=3;faultWatchdogSeconds=15;exitAfterDetectionMaximumSeconds=5;wallClockDriftMaximumMilliseconds=100;origin='proxy ControlApplied(block), not command-file creation';businessPublisher='none';responseResumeAllowed=$false;ctrlCAllowed=$false;expectedExitCode=1;scope='one Windows loopback test, not an operational SLA'} | ConvertTo-Json | Set-Content -LiteralPath "$run/criteria.json" -Encoding utf8
     }
     $dockerVersion=Invoke-Docker -Arguments @('version','--format','{{.Client.Version}} / {{.Server.Version}}')
-    Invoke-Docker -Arguments @('ps','-a','--format','{{json .}}') | Set-Content -LiteralPath "$run/containers-before.jsonl" -Encoding utf8
+    Invoke-Docker -Arguments @('ps','-a','--no-trunc','--format','{{json .}}') | Set-Content -LiteralPath "$run/containers-before.jsonl" -Encoding utf8
     $image='eclipse-mosquitto:2.1.2-alpine'
     $imageId=[string](Invoke-Docker -Arguments @('image','inspect',$image,'--format','{{.Id}}'))
     # Preload OS socket inspection before the brief blocked observation.
@@ -258,11 +258,11 @@ finally {
         catch { $cleanupErrors.Add($_); if (!$failure) { $failure=$_ } }
         try { Invoke-Docker -Arguments @('stop','--time','5',$container) | Set-Content -LiteralPath "$run/broker-stop.log" -Encoding utf8 }
         catch { $cleanupErrors.Add($_); if (!$failure) { $failure=$_ } }
-        try { Invoke-Docker -Arguments @('rm',$container) | Set-Content -LiteralPath "$run/broker-remove.log" -Encoding utf8 }
+        try { Invoke-Docker -Arguments @('rm','--volumes',$container) | Set-Content -LiteralPath "$run/broker-remove.log" -Encoding utf8 }
         catch { $cleanupErrors.Add($_); if (!$failure) { $failure=$_ } }
     }
     try {
-        $after=@(Invoke-Docker -Arguments @('ps','-a','--format','{{json .}}'))
+        $after=@(Invoke-Docker -Arguments @('ps','-a','--no-trunc','--format','{{json .}}'))
         $after | Set-Content -LiteralPath "$run/containers-after.jsonl" -Encoding utf8
         $prior=@(Get-Content -LiteralPath "$run/containers-before.jsonl" | ForEach-Object { $_ | ConvertFrom-Json })
         $current=@($after | ForEach-Object { $_ | ConvertFrom-Json })

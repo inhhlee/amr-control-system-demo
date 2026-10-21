@@ -1,0 +1,15 @@
+  복원할 프로젝트를 확인하는 중...
+  C:\amr-control-system-demo\src\Amr.Simulator\Amr.Simulator.csproj을(를) 900밀리초 동안 복원했습니다.
+  C:\amr-control-system-demo\src\Amr.Communication\Amr.Communication.csproj을(를) 900밀리초 동안 복원했습니다.
+  C:\amr-control-system-demo\tools\Amr.Simulator.Map\Amr.Simulator.Map.csproj을(를) 900밀리초 동안 복원했습니다.
+  C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\Amr.Simulator.Map.Tests.csproj을(를) 900밀리초 동안 복원했습니다.
+  Amr.Communication -> C:\amr-control-system-demo\evidence\AMR\20261021-mqtt-map-01\artifacts\bin\Amr.Communication\debug\Amr.Communication.dll
+  Amr.Simulator -> C:\amr-control-system-demo\evidence\AMR\20261021-mqtt-map-01\artifacts\bin\Amr.Simulator\debug\Amr.Simulator.dll
+  Amr.Simulator.Map -> C:\amr-control-system-demo\evidence\AMR\20261021-mqtt-map-01\artifacts\bin\Amr.Simulator.Map\debug\Amr.Simulator.Map.dll
+  Amr.Simulator.Map.Tests -> C:\amr-control-system-demo\evidence\AMR\20261021-mqtt-map-01\artifacts\bin\Amr.Simulator.Map.Tests\debug\Amr.Simulator.Map.Tests.dll
+
+빌드했습니다.
+    경고 0개
+    오류 0개
+
+경과 시간: 00:00:07.44

@@ -104,7 +104,7 @@ function Invoke-Docker([string[]]$Arguments) {
 }
 try {
     $dockerVersion = Invoke-Docker -Arguments @('version','--format','{{.Client.Version}} / {{.Server.Version}}')
-    Invoke-Docker -Arguments @('ps','-a','--format','{{json .}}') | Set-Content -LiteralPath "$run/containers-before.jsonl" -Encoding utf8
+    Invoke-Docker -Arguments @('ps','-a','--no-trunc','--format','{{json .}}') | Set-Content -LiteralPath "$run/containers-before.jsonl" -Encoding utf8
     $image = 'eclipse-mosquitto:2.1.2-alpine'
     $imageId = [string](Invoke-Docker -Arguments @('image','inspect',$image,'--format','{{.Id}}'))
     & dotnet build src/Amr.Communication.Console/Amr.Communication.Console.csproj --no-restore --verbosity minimal *> "$run/build.log"
@@ -174,11 +174,11 @@ finally {
         catch { $cleanupErrors.Add($_); if (!$failure) { $failure=$_ } }
         try { Invoke-Docker -Arguments @('logs','--timestamps',$container) | Set-Content -LiteralPath "$run/broker-final.log" -Encoding utf8 }
         catch { $cleanupErrors.Add($_); if (!$failure) { $failure=$_ } }
-        try { Invoke-Docker -Arguments @('rm',$container) | Set-Content -LiteralPath "$run/broker-remove.log" -Encoding utf8 }
+        try { Invoke-Docker -Arguments @('rm','--volumes',$container) | Set-Content -LiteralPath "$run/broker-remove.log" -Encoding utf8 }
         catch { $cleanupErrors.Add($_); if (!$failure) { $failure=$_ } }
     }
     try {
-        $after = @(Invoke-Docker -Arguments @('ps','-a','--format','{{json .}}'))
+        $after = @(Invoke-Docker -Arguments @('ps','-a','--no-trunc','--format','{{json .}}'))
         $after | Set-Content -LiteralPath "$run/containers-after.jsonl" -Encoding utf8
         $before = @(Get-Content -LiteralPath "$run/containers-before.jsonl" | ForEach-Object { $_ | ConvertFrom-Json })
         $afterObjects = @($after | ForEach-Object { $_ | ConvertFrom-Json })

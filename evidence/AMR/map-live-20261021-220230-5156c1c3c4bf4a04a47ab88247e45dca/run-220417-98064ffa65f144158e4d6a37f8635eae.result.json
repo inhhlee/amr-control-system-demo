@@ -1,0 +1,85 @@
+{
+  "phase": "Completed",
+  "runId": "run-220417-98064ffa65f144158e4d6a37f8635eae",
+  "sequence": 114,
+  "position": {
+    "x": 1,
+    "y": 2
+  },
+  "amrState": "IDLE",
+  "speed": 0,
+  "elapsedSeconds": 4.042,
+  "waypointsPassed": 2,
+  "exitCode": 0,
+  "updatedAt": "2026-10-21T13:04:21.4165216+00:00",
+  "lastSnapshotLine": "SimulationCompleted AmrId=AMR_001 X=1 Y=2 State=IDLE CurrentSpeedMps=0 ElapsedSeconds=4.042",
+  "logs": [
+    "ConfigurationLoaded AmrId=AMR_001 InitialX=-1 InitialY=0 SpeedMps=1 UpdateIntervalMs=100 WaypointCount=2",
+    "Waypoint Index=0 X=1 Y=0",
+    "Waypoint Index=1 X=1 Y=2",
+    "AmrInitialized AmrId=AMR_001 X=-1 Y=0 State=IDLE CurrentSpeedMps=0",
+    "InitializationCompleted",
+    "SimulationStarted AmrId=AMR_001 X=-1 Y=0 State=IDLE CurrentSpeedMps=0 ElapsedSeconds=0.000",
+    "AmrMoved AmrId=AMR_001 X=-0.8956702999999999 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.104",
+    "AmrMoved AmrId=AMR_001 X=-0.7826449999999999 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.217",
+    "AmrMoved AmrId=AMR_001 X=-0.6808838 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.319",
+    "AmrMoved AmrId=AMR_001 X=-0.5763879000000001 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.424",
+    "AmrMoved AmrId=AMR_001 X=-0.4653052 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.535",
+    "AmrMoved AmrId=AMR_001 X=-0.3597082 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.640",
+    "AmrMoved AmrId=AMR_001 X=-0.2595401 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.740",
+    "AmrMoved AmrId=AMR_001 X=-0.1594628 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.841",
+    "AmrMoved AmrId=AMR_001 X=-0.05934119999999997 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.941",
+    "AmrMoved AmrId=AMR_001 X=0.05269380000000002 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.053",
+    "AmrMoved AmrId=AMR_001 X=0.15673660000000003 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.157",
+    "AmrMoved AmrId=AMR_001 X=0.25690070000000004 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.257",
+    "AmrMoved AmrId=AMR_001 X=0.36565040000000004 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.366",
+    "AmrMoved AmrId=AMR_001 X=0.4729303 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.473",
+    "AmrMoved AmrId=AMR_001 X=0.5731915000000001 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.573",
+    "AmrMoved AmrId=AMR_001 X=0.6867462000000001 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.687",
+    "AmrMoved AmrId=AMR_001 X=0.7916857000000002 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.792",
+    "AmrMoved AmrId=AMR_001 X=0.9068555000000001 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.907",
+    "WaypointReached AmrId=AMR_001 Index=0 X=1 Y=0 ObservedElapsedSeconds=2.010",
+    "AmrMoved AmrId=AMR_001 X=1 Y=0.01031520000000015 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.010",
+    "AmrMoved AmrId=AMR_001 X=1 Y=0.11788250000000015 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.118",
+    "AmrMoved AmrId=AMR_001 X=1 Y=0.22877740000000016 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.229",
+    "AmrMoved AmrId=AMR_001 X=1 Y=0.33882670000000015 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.339",
+    "AmrMoved AmrId=AMR_001 X=1 Y=0.4407165000000002 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.441",
+    "AmrMoved AmrId=AMR_001 X=1 Y=0.5435464000000002 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.544",
+    "AmrMoved AmrId=AMR_001 X=1 Y=0.6556560000000002 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.656",
+    "AmrMoved AmrId=AMR_001 X=1 Y=0.7585750000000002 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.759",
+    "AmrMoved AmrId=AMR_001 X=1 Y=0.8668401000000002 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.867",
+    "AmrMoved AmrId=AMR_001 X=1 Y=0.9756138000000002 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.976",
+    "AmrMoved AmrId=AMR_001 X=1 Y=1.0758337000000002 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.076",
+    "AmrMoved AmrId=AMR_001 X=1 Y=1.1870412000000001 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.187",
+    "AmrMoved AmrId=AMR_001 X=1 Y=1.2905264 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.291",
+    "AmrMoved AmrId=AMR_001 X=1 Y=1.3905964000000002 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.391",
+    "AmrMoved AmrId=AMR_001 X=1 Y=1.4926528000000001 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.493",
+    "AmrMoved AmrId=AMR_001 X=1 Y=1.5930954000000002 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.593",
+    "AmrMoved AmrId=AMR_001 X=1 Y=1.7095673000000002 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.710",
+    "AmrMoved AmrId=AMR_001 X=1 Y=1.8264238000000002 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.826",
+    "AmrMoved AmrId=AMR_001 X=1 Y=1.9264548000000001 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.926",
+    "WaypointReached AmrId=AMR_001 Index=1 X=1 Y=2 ObservedElapsedSeconds=4.042",
+    "SimulationCompleted AmrId=AMR_001 X=1 Y=2 State=IDLE CurrentSpeedMps=0 ElapsedSeconds=4.042"
+  ],
+  "settings": {
+    "amrId": "AMR_001",
+    "initialPosition": {
+      "x": -1,
+      "y": 0
+    },
+    "speedMps": 1,
+    "updateIntervalMs": 100,
+    "waypoints": [
+      {
+        "x": 1,
+        "y": 0
+      },
+      {
+        "x": 1,
+        "y": 2
+      }
+    ]
+  },
+  "evidenceDirectory": "C:\\amr-control-system-demo\\evidence\\AMR\\map-live-20261021-220230-5156c1c3c4bf4a04a47ab88247e45dca",
+  "source": "SimulatorApplication.RunAsync / actual console output"
+}

@@ -1,0 +1,12 @@
+  복원할 프로젝트를 확인하는 중...
+C:\Program Files\dotnet\sdk\10.0.401\NuGet.targets(782,5): error : 'C:\Users\Admin\AppData\Roaming\NuGet\NuGet.Config'의 작업에 있어서는 'C:\Users\Admin\AppData\Local\Temp\NuGetScratch\lock\96f9a535291b4529eb87e24b08f0da13e33aa989'에 대한 잠금 파일 액세스 권한을 가져올 수 없습니다. 즉, 다른 사용자 또는 관리자가 이 잠금 파일을 가지고 있을 수 있으며 이 프로세스에는 잠금 파일에 대한 액세스 권한이 없습니다. 현재 다른 프로세스에서 이 파일에 대한 작업을 수행하고 있지 않은 경우 이전 NuGet 프로세스가 크래시되어 잠금 파일이 액세스할 수 없게 되었을 수 있습니다. 이 경우 'C:\Users\Admin\AppData\Local\Temp\NuGetScratch\lock\96f9a535291b4529eb87e24b08f0da13e33aa989' 파일을 제거하면 NuGet에서 계속할 수 있습니다. [C:\amr-control-system-demo\src\Amr.Simulator\Amr.Simulator.csproj]
+C:\Program Files\dotnet\sdk\10.0.401\NuGet.targets(782,5): error : 'C:\Users\Admin\AppData\Roaming\NuGet\NuGet.Config'의 작업에 있어서는 'C:\Users\Admin\AppData\Local\Temp\NuGetScratch\lock\96f9a535291b4529eb87e24b08f0da13e33aa989'에 대한 잠금 파일 액세스 권한을 가져올 수 없습니다. 즉, 다른 사용자 또는 관리자가 이 잠금 파일을 가지고 있을 수 있으며 이 프로세스에는 잠금 파일에 대한 액세스 권한이 없습니다. 현재 다른 프로세스에서 이 파일에 대한 작업을 수행하고 있지 않은 경우 이전 NuGet 프로세스가 크래시되어 잠금 파일이 액세스할 수 없게 되었을 수 있습니다. 이 경우 'C:\Users\Admin\AppData\Local\Temp\NuGetScratch\lock\96f9a535291b4529eb87e24b08f0da13e33aa989' 파일을 제거하면 NuGet에서 계속할 수 있습니다. [C:\amr-control-system-demo\tools\Amr.Simulator.Map\Amr.Simulator.Map.csproj]
+
+빌드하지 못했습니다.
+
+C:\Program Files\dotnet\sdk\10.0.401\NuGet.targets(782,5): error : 'C:\Users\Admin\AppData\Roaming\NuGet\NuGet.Config'의 작업에 있어서는 'C:\Users\Admin\AppData\Local\Temp\NuGetScratch\lock\96f9a535291b4529eb87e24b08f0da13e33aa989'에 대한 잠금 파일 액세스 권한을 가져올 수 없습니다. 즉, 다른 사용자 또는 관리자가 이 잠금 파일을 가지고 있을 수 있으며 이 프로세스에는 잠금 파일에 대한 액세스 권한이 없습니다. 현재 다른 프로세스에서 이 파일에 대한 작업을 수행하고 있지 않은 경우 이전 NuGet 프로세스가 크래시되어 잠금 파일이 액세스할 수 없게 되었을 수 있습니다. 이 경우 'C:\Users\Admin\AppData\Local\Temp\NuGetScratch\lock\96f9a535291b4529eb87e24b08f0da13e33aa989' 파일을 제거하면 NuGet에서 계속할 수 있습니다. [C:\amr-control-system-demo\src\Amr.Simulator\Amr.Simulator.csproj]
+C:\Program Files\dotnet\sdk\10.0.401\NuGet.targets(782,5): error : 'C:\Users\Admin\AppData\Roaming\NuGet\NuGet.Config'의 작업에 있어서는 'C:\Users\Admin\AppData\Local\Temp\NuGetScratch\lock\96f9a535291b4529eb87e24b08f0da13e33aa989'에 대한 잠금 파일 액세스 권한을 가져올 수 없습니다. 즉, 다른 사용자 또는 관리자가 이 잠금 파일을 가지고 있을 수 있으며 이 프로세스에는 잠금 파일에 대한 액세스 권한이 없습니다. 현재 다른 프로세스에서 이 파일에 대한 작업을 수행하고 있지 않은 경우 이전 NuGet 프로세스가 크래시되어 잠금 파일이 액세스할 수 없게 되었을 수 있습니다. 이 경우 'C:\Users\Admin\AppData\Local\Temp\NuGetScratch\lock\96f9a535291b4529eb87e24b08f0da13e33aa989' 파일을 제거하면 NuGet에서 계속할 수 있습니다. [C:\amr-control-system-demo\tools\Amr.Simulator.Map\Amr.Simulator.Map.csproj]
+    경고 0개
+    오류 2개
+
+경과 시간: 00:01:40.24

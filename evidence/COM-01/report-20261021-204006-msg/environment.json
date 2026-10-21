@@ -1,0 +1,15 @@
+{
+  "startedAtUtc": "2026-10-21T11:40:15.9801653+00:00",
+  "os": "Microsoft Windows 10.0.26200",
+  "sdk": "10.0.401",
+  "dockerVersion": "29.7.2 / 29.7.2",
+  "brokerVersion": "mosquitto version 2.1.2",
+  "endpoint": "127.0.0.1:55993",
+  "brokerContainer": "8152a7348bbdb23e99b2d65297d8ace3e7e9e42860dc1c14f28d7b6bdfa9fa00",
+  "mqttnet": "5.2.0.1603",
+  "qos": 0,
+  "retain": false,
+  "brokerStartedOrRestartedByThisTest": false,
+  "baseCommit": "71160f412624f829f8b5673c409da5a4accf202c",
+  "branch": "feature/33-simulator-movement"
+}

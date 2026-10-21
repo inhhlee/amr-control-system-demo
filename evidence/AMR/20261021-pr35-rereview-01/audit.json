@@ -1,0 +1,348 @@
+{
+  "Started": "2026-10-21T16:23:55.956009+09:00",
+  "Finished": "2026-10-21T16:24:02.3132146+09:00",
+  "Head": "95a43a579630a844d8dfe352717fe78206f39e5b",
+  "Upstream": "95a43a579630a844d8dfe352717fe78206f39e5b",
+  "SourceBlobsVerified": 16,
+  "EvidenceBlobsAndSHA256Verified": 109,
+  "ProductSourceChangesBeforeAfter": [
+    "src/Amr.Simulator/Configuration/SimulatorSettingsLoader.cs"
+  ],
+  "DLLHashesMatchRecordedBuild": true,
+  "ProductDLLSHA256": "EAFF7D7AB5E547FD796935F3B844B7091CDA525777F75EC886DB896C3DCF3D4A",
+  "TestDLLSHA256": "58888E1E4C816AC571BCAA09DCC679AB17C88D0DE316CB6660E322402A5CAF71",
+  "Trx": [
+    {
+      "Name": "before-regression",
+      "Total": 6,
+      "Passed": 4,
+      "Failed": 2,
+      "Skipped": 0,
+      "Regression": [
+        {
+          "Name": "Amr.Simulator.Tests.ApplicationTests.InvalidUtf8InId_WithOrWithoutBom_HasErrorExitAndNoInitialization(withBom: True)",
+          "Outcome": "Failed"
+        },
+        {
+          "Name": "Amr.Simulator.Tests.ConfigurationTests.Utf8File_WithOrWithoutBom_LoadsWithoutChangingValues(withBom: False)",
+          "Outcome": "Passed"
+        },
+        {
+          "Name": "Amr.Simulator.Tests.ConfigurationTests.Utf8File_WithOrWithoutBom_LoadsWithoutChangingValues(withBom: True)",
+          "Outcome": "Passed"
+        },
+        {
+          "Name": "Amr.Simulator.Tests.ApplicationTests.InvalidUtf8InId_WithOrWithoutBom_HasErrorExitAndNoInitialization(withBom: False)",
+          "Outcome": "Passed"
+        },
+        {
+          "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidUtf8InId_WithOrWithoutBom_IsRejectedAsFileError(withBom: False)",
+          "Outcome": "Passed"
+        },
+        {
+          "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidUtf8InId_WithOrWithoutBom_IsRejectedAsFileError(withBom: True)",
+          "Outcome": "Failed"
+        }
+      ]
+    },
+    {
+      "Name": "after-full",
+      "Total": 88,
+      "Passed": 88,
+      "Failed": 0,
+      "Skipped": 0,
+      "Regression": [
+        {
+          "Name": "Amr.Simulator.Tests.ConfigurationTests.Utf8File_WithOrWithoutBom_LoadsWithoutChangingValues(withBom: True)",
+          "Outcome": "Passed"
+        },
+        {
+          "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidUtf8InId_WithOrWithoutBom_IsRejectedAsFileError(withBom: True)",
+          "Outcome": "Passed"
+        },
+        {
+          "Name": "Amr.Simulator.Tests.ApplicationTests.InvalidUtf8InId_WithOrWithoutBom_HasErrorExitAndNoInitialization(withBom: True)",
+          "Outcome": "Passed"
+        },
+        {
+          "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidUtf8InId_WithOrWithoutBom_IsRejectedAsFileError(withBom: False)",
+          "Outcome": "Passed"
+        },
+        {
+          "Name": "Amr.Simulator.Tests.ApplicationTests.InvalidUtf8InId_WithOrWithoutBom_HasErrorExitAndNoInitialization(withBom: False)",
+          "Outcome": "Passed"
+        },
+        {
+          "Name": "Amr.Simulator.Tests.ConfigurationTests.Utf8File_WithOrWithoutBom_LoadsWithoutChangingValues(withBom: False)",
+          "Outcome": "Passed"
+        }
+      ]
+    }
+  ],
+  "Console": [
+    {
+      "Phase": "before",
+      "Total": 15,
+      "Passed": 14,
+      "Cases": [
+        {
+          "Id": "normal",
+          "ExpectedExit": 0,
+          "RecordedExit": 0,
+          "Passed": true,
+          "StdoutLength": 251,
+          "StderrLength": 0
+        },
+        {
+          "Id": "normal-utf8-bom",
+          "ExpectedExit": 0,
+          "RecordedExit": 0,
+          "Passed": true,
+          "StdoutLength": 251,
+          "StderrLength": 0
+        },
+        {
+          "Id": "invalid-utf8",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 68
+        },
+        {
+          "Id": "invalid-utf8-bom",
+          "ExpectedExit": 1,
+          "RecordedExit": 0,
+          "Passed": false,
+          "StdoutLength": 251,
+          "StderrLength": 0
+        },
+        {
+          "Id": "changed",
+          "ExpectedExit": 0,
+          "RecordedExit": 0,
+          "Passed": true,
+          "StdoutLength": 230,
+          "StderrLength": 0
+        },
+        {
+          "Id": "missing-field",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 62
+        },
+        {
+          "Id": "invalid-id",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 91
+        },
+        {
+          "Id": "zero-speed",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 72
+        },
+        {
+          "Id": "negative-speed",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 72
+        },
+        {
+          "Id": "overflow-speed",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 67
+        },
+        {
+          "Id": "wrong-type",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 67
+        },
+        {
+          "Id": "fractional-interval",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 97
+        },
+        {
+          "Id": "invalid-coordinate",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 76
+        },
+        {
+          "Id": "malformed",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 70
+        },
+        {
+          "Id": "missing-file",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 84
+        }
+      ]
+    },
+    {
+      "Phase": "after",
+      "Total": 15,
+      "Passed": 15,
+      "Cases": [
+        {
+          "Id": "normal",
+          "ExpectedExit": 0,
+          "RecordedExit": 0,
+          "Passed": true,
+          "StdoutLength": 251,
+          "StderrLength": 0
+        },
+        {
+          "Id": "normal-utf8-bom",
+          "ExpectedExit": 0,
+          "RecordedExit": 0,
+          "Passed": true,
+          "StdoutLength": 251,
+          "StderrLength": 0
+        },
+        {
+          "Id": "invalid-utf8",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 68
+        },
+        {
+          "Id": "invalid-utf8-bom",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 68
+        },
+        {
+          "Id": "changed",
+          "ExpectedExit": 0,
+          "RecordedExit": 0,
+          "Passed": true,
+          "StdoutLength": 230,
+          "StderrLength": 0
+        },
+        {
+          "Id": "missing-field",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 62
+        },
+        {
+          "Id": "invalid-id",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 91
+        },
+        {
+          "Id": "zero-speed",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 72
+        },
+        {
+          "Id": "negative-speed",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 72
+        },
+        {
+          "Id": "overflow-speed",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 67
+        },
+        {
+          "Id": "wrong-type",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 67
+        },
+        {
+          "Id": "fractional-interval",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 97
+        },
+        {
+          "Id": "invalid-coordinate",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 76
+        },
+        {
+          "Id": "malformed",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 70
+        },
+        {
+          "Id": "missing-file",
+          "ExpectedExit": 1,
+          "RecordedExit": 1,
+          "Passed": true,
+          "StdoutLength": 0,
+          "StderrLength": 84
+        }
+      ]
+    }
+  ],
+  "EncodingInputPairsVerified": true,
+  "ChangedByteOffset": 14,
+  "PreservedLocalFilesAndIndexMatch": true,
+  "ProductTestsRerun": false,
+  "GitHubCI": "No checks/statuses at this head",
+  "PRPinnedLinksVerified": 18,
+  "SourceRawSHA256Verified": 16,
+  "PRFiles": 214,
+  "COM03Files": 0,
+  "D518356AncestryPreserved": true
+}

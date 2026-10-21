@@ -1,0 +1,22 @@
+{
+  "Head": "c9d917a78280346cf5dfcc15dbe871383cf56ad9",
+  "Environment": "default sandbox",
+  "Started": "2026-10-21T15:51:11.3832361+09:00",
+  "Finished": "2026-10-21T15:51:12.8415276+09:00",
+  "ConnectionTimeoutSeconds": 15,
+  "ProcessTimeoutSeconds": 30,
+  "TimedOut": false,
+  "ExitCode": 0,
+  "Arguments": [
+    "test",
+    "tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--logger",
+    "trx;LogFileName=simulator-review.trx",
+    "--results-directory",
+    "C:\\amr-control-system-demo\\evidence\\AMR\\20261021-pr35-review-01"
+  ],
+  "Stdout": "C:\\amr-control-system-demo\\tests\\Amr.Simulator.Tests\\bin\\Debug\\net10.0\\Amr.Simulator.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행\r\n지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.\r\n결과 파일: C:\\amr-control-system-demo\\evidence\\AMR\\20261021-pr35-review-01\\simulator-review.trx\r\n\r\n통과!  - 실패:     0, 통과:    83, 건너뜀:     0, 전체:    83, 기간: 106 ms - Amr.Simulator.Tests.dll (net10.0)",
+  "Stderr": ""
+}

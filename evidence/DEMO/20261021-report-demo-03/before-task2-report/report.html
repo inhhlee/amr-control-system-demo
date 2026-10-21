@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="AMR 기본 통신 기능의 흐름, 저장된 핵심 시험 결과, 다음 개발 범위를 한 장으로 정리한 보고 화면입니다.">
+<title>AMR 기본 통신 — 개발 결과 보고</title>
+<style>
+:root{color-scheme:light;--ink:#182d43;--muted:#53677b;--blue:#255ec6;--line:#dce4ee;--green:#176344}
+*{box-sizing:border-box}
+body{margin:0;background:#f4f6fa;color:var(--ink);font:16px/1.5 'Segoe UI','Malgun Gothic',sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:1240px;margin:auto;padding:24px 32px 16px}
+p,h1,h2,h3,figure{margin:0}
+header{margin-bottom:20px}
+.eyebrow{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:13px;margin-bottom:8px}
+.saved{color:var(--green);font-weight:700}
+h1{font-size:clamp(26px,2.8vw,36px);font-weight:750;line-height:1.35;letter-spacing:-.04em}
+.lead{margin-top:6px;color:var(--muted)}
+section+section{margin-top:20px}
+.section-title{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+.section-title span{font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--blue)}
+h2{font-size:18px;font-weight:700}
+.flow{display:grid;grid-template-columns:minmax(0,1fr) 82px minmax(0,1.1fr) 82px minmax(0,1fr);align-items:center;gap:10px}
+.node{background:#fff;border:1px solid var(--line);border-radius:10px;text-align:center;padding:12px 10px}
+.node.primary{border-color:#b4c9ef;background:#edf3ff}
+.node strong{display:block;font-size:21px;letter-spacing:-.03em}
+.node small{display:block;margin-top:3px;color:var(--muted);font-size:13px}
+.connector{text-align:center;color:var(--blue);font-size:13px;font-weight:700}
+.arrow{display:block;position:relative;margin-top:8px;width:100%;height:2px;background:#8ca9dc}
+.arrow:after{content:'';position:absolute;right:0;top:-4px;width:9px;height:9px;border-top:2px solid #8ca9dc;border-right:2px solid #8ca9dc;transform:rotate(45deg)}
+.results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+article{background:#fff;border:1px solid var(--line);border-top:3px solid var(--blue);border-radius:10px;padding:15px 18px}
+h3{font-size:16px;font-weight:700}
+.metric{display:flex;align-items:baseline;gap:8px;margin:8px 0 5px;color:var(--blue);font-size:18px;font-weight:700}
+.metric strong{font-size:36px;line-height:1.15;font-variant-numeric:tabular-nums;letter-spacing:-.04em}
+.result-note{color:var(--muted);font-size:14px;line-height:1.6}
+.scope{margin-top:10px;font-size:14px;color:var(--muted)}
+.scope strong{color:var(--ink)}
+.next{background:#fbf7ed;border-left:3px solid #b68a37;padding:14px 18px}
+.next .section-title{margin-bottom:8px}
+.next .section-title span{color:#876321}
+.remaining{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px;row-gap:10px}
+.remaining li{font-size:14px;color:var(--muted)}
+.remaining strong{color:var(--ink);margin-right:8px;font-size:15px}
+footer{margin-top:14px;padding-top:10px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:8px 18px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+footer a{color:var(--muted);text-underline-offset:3px}
+footer nav{display:flex;gap:16px;flex-wrap:wrap}
+@media(max-width:800px){main{padding:20px}.flow{grid-template-columns:minmax(0,1fr) 56px minmax(0,1fr) 56px minmax(0,1fr);gap:6px}.node strong{font-size:18px}.node small{font-size:12px}article{padding:13px}.results{gap:10px}.remaining strong{display:block;margin-right:0}}
+@media(max-width:600px){main{padding:18px 16px}.lead{font-size:14px}.flow{grid-template-columns:1fr;gap:0}.connector{display:flex;align-items:center;justify-content:center;gap:16px;min-height:38px}.arrow{width:20px;margin:0;transform:rotate(90deg)}.results,.remaining{grid-template-columns:1fr}.metric strong{font-size:32px}.remaining strong{display:inline;margin-right:8px}.scope{line-height:1.7}section+section{margin-top:18px}}
+@media print{@page{size:A4 landscape;margin:10mm}body{background:#fff;font-size:14px}main{max-width:none;padding:0}header{margin-bottom:14px}h1{font-size:28px}.lead{font-size:14px}section+section{margin-top:14px}h2{font-size:16px}.node strong{font-size:18px}article{padding:12px 14px}.metric strong{font-size:30px}.result-note,.scope,.remaining li{font-size:12px}.remaining strong{font-size:13px}section{break-inside:avoid}footer nav{display:none}}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div class="eyebrow"><p>가상 AMR 관제시스템 · 개발 결과 보고</p><p class="saved">저장된 시험 결과 · 시험용 데이터 사용</p></div>
+  <h1>AMR 기본 통신 기능을 확인했습니다.</h1>
+  <p class="lead">정보를 받고, 잘못된 값을 거르고, 명령을 전달하는 단계까지 확인했습니다.</p>
+</header>
+
+<section aria-labelledby="flow-title">
+  <div class="section-title"><span aria-hidden="true">01</span><h2 id="flow-title">무엇을 만들었나</h2></div>
+  <div class="flow" role="img" aria-label="시험용 AMR 두 대의 정보를 통신 프로그램이 받아 검사하고, 통신 프로그램에서 보낸 이동·정지·초기화 명령을 시험용 수신기가 받는 흐름">
+    <div class="node"><strong>시험용 AMR 정보</strong><small>AMR_001 · AMR_002</small></div>
+    <div class="connector">정보 수신<span class="arrow" aria-hidden="true"></span></div>
+    <div class="node primary"><strong>통신 프로그램</strong><small>정보 검사 · 수신 / 명령 발행</small></div>
+    <div class="connector">명령 전달<span class="arrow" aria-hidden="true"></span></div>
+    <div class="node"><strong>시험용 수신기</strong><small>이동 · 정지 · 초기화</small></div>
+  </div>
+</section>
+
+<section aria-labelledby="results-title">
+  <div class="section-title"><span aria-hidden="true">02</span><h2 id="results-title">실제로 확인한 결과</h2></div>
+  <div class="results">
+    <article>
+      <h3>정상 정보 수신</h3>
+      <p class="metric"><strong>20</strong><span>건 수신</span></p>
+      <p class="result-note">시험용 AMR 두 대의 정보를<br>각각 구분해서 받았습니다.</p>
+    </article>
+    <article>
+      <h3>잘못된 정보 처리</h3>
+      <p class="metric"><strong>4</strong><span>건 거절</span></p>
+      <p class="result-note">잘못된 값은 이유를 남기고 거절하고,<br>이후 정상 정보는 계속 받았습니다.</p>
+    </article>
+    <article>
+      <h3>명령 전달 · 연결 감시</h3>
+      <p class="metric"><strong>3</strong><span>종 명령 전달</span></p>
+      <p class="result-note">이동 · 정지 · 초기화 수신 확인<br>약 12초 연결 유지 · 서버 종료 감지</p>
+    </article>
+  </div>
+  <p class="scope"><strong>확인 범위</strong> &nbsp; 명령은 시험용 수신기까지 전달됐습니다. 서버를 다시 켠 뒤에는 프로그램을 새로 실행해 연결했습니다.</p>
+</section>
+
+<section class="next" aria-labelledby="remaining-title">
+  <div class="section-title"><span aria-hidden="true">03</span><h2 id="remaining-title">남은 일</h2></div>
+  <ul class="remaining">
+    <li><strong>가상 AMR 연동</strong>이동 프로그램과 통신 연결 · 명령대로 동작</li>
+    <li><strong>명령 응답 확인</strong>보낸 명령과 돌아온 응답 맞추기</li>
+    <li><strong>자동 재연결</strong>연결이 끊긴 뒤 접속 · 구독 자동 복구</li>
+    <li><strong>AMR별 정보 중단 감지</strong>한 대가 상태를 보내지 않을 때 알아내기</li>
+  </ul>
+</section>
+
+<footer>
+  <p>시험: 2026-10-21 19:58:27 ~ 19:59:47 (한국 시간) · 실행 ID: 20261021-report-demo-03</p>
+  <nav aria-label="시험 근거"><a href="technical-details.md">상세 시험 근거</a><a href="README.md">결과 문서</a></nav>
+</footer>
+</main>
+</body>
+</html>

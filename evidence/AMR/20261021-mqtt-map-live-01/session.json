@@ -1,0 +1,12 @@
+{
+  "Exe": "C:\\amr-control-system-demo\\evidence\\AMR\\20261021-mqtt-map-01\\artifacts\\bin\\Amr.Simulator.Map\\debug\\Amr.Simulator.Map.exe",
+  "ContainerId": "846d14ded51c7b183a4884f0f640a0d917cab9b541933782e9c66260c8865551",
+  "ServerStartTicks": 639281867163058182,
+  "ProductEvidence": "C:\\amr-control-system-demo\\evidence\\AMR\\map-live-20261021-223836-fc3e2cff91e84b56beb0a4834d5cda1b",
+  "ImageId": "sha256:38c0da4f2ef84284d47b3b3eeea1cb3bdeabe81ee10caf0cd5c5ff61ee3ea408",
+  "RunId": "20261021-mqtt-map-live-01",
+  "BrokerPort": 52123,
+  "Started": "2026-10-21T22:38:36.7086098+09:00",
+  "ServerPid": 24328,
+  "Url": "http://127.0.0.1:52124"
+}

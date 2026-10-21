@@ -70,7 +70,8 @@ foreach ($case in $cases) {
         $null = $process.Start()
         $stdoutTask = $process.StandardOutput.ReadToEndAsync()
         $stderrTask = $process.StandardError.ReadToEndAsync()
-        if (-not $process.WaitForExit(10000)) {
+        # #34는 초기화 후 실제 이동까지 실행한다. changed 경로는 약 10.25초가 필요하다.
+        if (-not $process.WaitForExit(20000)) {
             $process.Kill($true)
             $process.WaitForExit()
             throw "소유한 Simulator 시험 프로세스 시간 초과: $($case.Id)"
@@ -87,6 +88,7 @@ foreach ($case in $cases) {
     $passed = $code -eq $case.Code
     if ($case.Code -eq 0) {
         $passed = $passed -and $stderr.Length -eq 0
+        $passed = $passed -and $stdout.Contains('SimulationCompleted')
         foreach ($expected in $case.Output) { $passed = $passed -and $stdout.Contains($expected) }
     }
     else {

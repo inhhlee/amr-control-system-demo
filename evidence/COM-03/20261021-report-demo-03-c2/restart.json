@@ -1,0 +1,6 @@
+{
+  "restartRequestedAtUtc": "2026-10-21T10:59:16.8848477+00:00",
+  "sameContainerId": "6d6af0253b0beabeb807ef3cc410ffbbd45e1aa7e1beface18900758f1aecdd5",
+  "recoveryEndpoint": "127.0.0.1:53689",
+  "method": "Explicit new process via the existing C1 controller, not automatic reconnect"
+}

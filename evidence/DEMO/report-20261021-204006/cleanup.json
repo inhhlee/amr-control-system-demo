@@ -1,0 +1,13 @@
+{
+  "result": "passed",
+  "testBrokerRemoved": true,
+  "testAnonymousVolumesRemoved": true,
+  "existingVolumesPreserved": true,
+  "volumeCountBefore": 76,
+  "volumeCountAfter": 76,
+  "existingContainerStatesPreserved": true,
+  "containersBefore": 3,
+  "containersAfter": 3,
+  "sourceUnchangedDuringExecution": true,
+  "cleanupErrors": []
+}

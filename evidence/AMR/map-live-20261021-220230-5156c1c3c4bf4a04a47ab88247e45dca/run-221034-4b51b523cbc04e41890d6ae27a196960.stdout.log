@@ -1,0 +1,46 @@
+ConfigurationLoaded AmrId=AMR_001 InitialX=-1 InitialY=0 SpeedMps=1 UpdateIntervalMs=100 WaypointCount=2
+Waypoint Index=0 X=1 Y=0
+Waypoint Index=1 X=1 Y=2
+AmrInitialized AmrId=AMR_001 X=-1 Y=0 State=IDLE CurrentSpeedMps=0
+InitializationCompleted
+SimulationStarted AmrId=AMR_001 X=-1 Y=0 State=IDLE CurrentSpeedMps=0 ElapsedSeconds=0.000
+AmrMoved AmrId=AMR_001 X=-0.8940037999999999 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.106
+AmrMoved AmrId=AMR_001 X=-0.7785449999999998 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.221
+AmrMoved AmrId=AMR_001 X=-0.6721928999999999 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.328
+AmrMoved AmrId=AMR_001 X=-0.5677067999999998 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.432
+AmrMoved AmrId=AMR_001 X=-0.46021619999999974 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.540
+AmrMoved AmrId=AMR_001 X=-0.34701869999999974 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.653
+AmrMoved AmrId=AMR_001 X=-0.23159639999999976 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.768
+AmrMoved AmrId=AMR_001 X=-0.12766069999999974 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.872
+AmrMoved AmrId=AMR_001 X=-0.022379999999999747 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.978
+AmrMoved AmrId=AMR_001 X=0.09019840000000023 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.090
+AmrMoved AmrId=AMR_001 X=0.19735620000000023 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.197
+AmrMoved AmrId=AMR_001 X=0.3021291000000002 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.302
+AmrMoved AmrId=AMR_001 X=0.4070241000000002 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.407
+AmrMoved AmrId=AMR_001 X=0.5169902000000002 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.517
+AmrMoved AmrId=AMR_001 X=0.6207465000000002 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.621
+AmrMoved AmrId=AMR_001 X=0.7227990000000002 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.723
+AmrMoved AmrId=AMR_001 X=0.8384308000000003 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.838
+AmrMoved AmrId=AMR_001 X=0.9401859000000002 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.940
+WaypointReached AmrId=AMR_001 Index=0 X=1 Y=0 ObservedElapsedSeconds=2.050
+AmrMoved AmrId=AMR_001 X=1 Y=0.04979390000000024 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.050
+AmrMoved AmrId=AMR_001 X=1 Y=0.15563610000000022 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.156
+AmrMoved AmrId=AMR_001 X=1 Y=0.25700610000000024 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.257
+AmrMoved AmrId=AMR_001 X=1 Y=0.3572278000000002 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.357
+AmrMoved AmrId=AMR_001 X=1 Y=0.4574436000000002 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.457
+AmrMoved AmrId=AMR_001 X=1 Y=0.5580494000000001 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.558
+AmrMoved AmrId=AMR_001 X=1 Y=0.6748681000000001 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.675
+AmrMoved AmrId=AMR_001 X=1 Y=0.7756400000000001 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.776
+AmrMoved AmrId=AMR_001 X=1 Y=0.8920076000000001 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.892
+AmrMoved AmrId=AMR_001 X=1 Y=1.0054778000000002 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.005
+AmrMoved AmrId=AMR_001 X=1 Y=1.1082953000000002 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.108
+AmrMoved AmrId=AMR_001 X=1 Y=1.2138211 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.214
+AmrMoved AmrId=AMR_001 X=1 Y=1.3235385000000002 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.324
+AmrMoved AmrId=AMR_001 X=1 Y=1.4381766000000002 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.438
+AmrMoved AmrId=AMR_001 X=1 Y=1.5393391000000003 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.539
+AmrMoved AmrId=AMR_001 X=1 Y=1.6412955000000002 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.641
+AmrMoved AmrId=AMR_001 X=1 Y=1.7566961000000003 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.757
+AmrMoved AmrId=AMR_001 X=1 Y=1.8592177000000003 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.859
+AmrMoved AmrId=AMR_001 X=1 Y=1.9753461000000003 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.975
+WaypointReached AmrId=AMR_001 Index=1 X=1 Y=2 ObservedElapsedSeconds=4.076
+SimulationCompleted AmrId=AMR_001 X=1 Y=2 State=IDLE CurrentSpeedMps=0 ElapsedSeconds=4.076

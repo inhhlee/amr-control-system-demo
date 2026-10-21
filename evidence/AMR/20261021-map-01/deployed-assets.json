@@ -1,0 +1,14 @@
+[
+  {
+    "File": "index.html",
+    "Same": true
+  },
+  {
+    "File": "app.js",
+    "Same": true
+  },
+  {
+    "File": "style.css",
+    "Same": true
+  }
+]

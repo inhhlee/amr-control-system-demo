@@ -1,0 +1,91 @@
+{
+  "ExistingContainersPreserved": true,
+  "OwnedBrokerRemoved": true,
+  "Passed": true,
+  "OwnedProcessesExited": true,
+  "Finished": "2026-10-21T13:25:58.0395242+00:00",
+  "Results": [
+    {
+      "AllCoordinatesMatched": true,
+      "Heartbeat": 4,
+      "Passed": true,
+      "Final": {
+        "Id": "AMR_001",
+        "Timestamp": 1792589149399,
+        "Position": {
+          "X": 1,
+          "Y": 2
+        },
+        "Speed": 0,
+        "State": "IDLE",
+        "ReceivedAtUtc": "2026-10-21T22:25:49.4009434+09:00"
+      },
+      "ExitCode": 0,
+      "Telemetry": 21,
+      "Case": "default",
+      "AllPayloadsMatched": true
+    },
+    {
+      "AllCoordinatesMatched": true,
+      "Heartbeat": 2,
+      "Passed": true,
+      "Final": {
+        "Id": "AMR_001",
+        "Timestamp": 1792589151269,
+        "Position": {
+          "X": 7,
+          "Y": 4
+        },
+        "Speed": 0,
+        "State": "IDLE",
+        "ReceivedAtUtc": "2026-10-21T22:25:51.2716332+09:00"
+      },
+      "ExitCode": 0,
+      "Telemetry": 9,
+      "Case": "changed",
+      "AllPayloadsMatched": true
+    },
+    {
+      "AllCoordinatesMatched": true,
+      "Heartbeat": 1,
+      "Passed": true,
+      "Final": {
+        "Id": "AMR_001",
+        "Timestamp": 1792589151464,
+        "Position": {
+          "X": 5,
+          "Y": 3
+        },
+        "Speed": 0,
+        "State": "IDLE",
+        "ReceivedAtUtc": "2026-10-21T22:25:51.4649802+09:00"
+      },
+      "ExitCode": 0,
+      "Telemetry": 2,
+      "Case": "already-arrived",
+      "AllPayloadsMatched": true
+    },
+    {
+      "SubscriberExitCode": 27,
+      "Case": "no-retained-message",
+      "Passed": true
+    },
+    {
+      "Heartbeats": 2,
+      "Case": "long-update-independent-sending-and-cancel",
+      "ExitCode": 0,
+      "Passed": true
+    },
+    {
+      "ReceiverExit": 1,
+      "Case": "broker-loss",
+      "SimulatorExit": 1,
+      "Passed": true
+    },
+    {
+      "Case": "connect-failure-before-movement",
+      "ExitCode": 1,
+      "Passed": true
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "Sections": [
+    "과제1 · 정보를 받고 명령을 전달했습니다",
+    "과제2 · 출발부터 도착·정지까지 확인했습니다",
+    "남은 일"
+  ],
+  "ProductTestsRerun": false,
+  "BrowserVisualCheck": "Not run; local file browser access previously blocked. Content, links and source checked.",
+  "ProtectedFilesUnchanged": 56,
+  "CheckedAt": "2026-10-21T21:15:34.8760155+09:00",
+  "LocalLinksChecked": 27,
+  "IndexUnchanged": true,
+  "UserExitCodeConfirmed": false,
+  "BranchUnchanged": true,
+  "HeadUnchanged": true
+}

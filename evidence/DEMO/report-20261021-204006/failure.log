@@ -1,0 +1,7 @@
+Exception: C:\amr-control-system-demo\tests\manual\DEMO\Invoke-ReportDemo.ps1:53:28
+Line |
+  53 |  … de -ne 0) { throw "$Name failed ($exitCode); see $run/$Name.stderr.lo …
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~에서
+     | messages failed (1); see C:\amr-control-system-demo\evidence\DEMO\report-20261021-204006/messages.stderr.log
+
+

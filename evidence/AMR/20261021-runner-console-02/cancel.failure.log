@@ -1,0 +1,7 @@
+Exception: C:\amr-control-system-demo\tests\manual\AMR01\Verify-Run.ps1:47
+Line |
+  47 |  … orExit(5000)) { throw 'Cancellation did not exit within 5 seconds.' }
+     |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cancellation did not exit within 5 seconds.
+
+

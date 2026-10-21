@@ -1,0 +1,47 @@
+{
+  "phase": "Canceled",
+  "runId": "run-215308-39d9d634d7714c2c917aba0dd7bdc000",
+  "sequence": 69,
+  "position": {
+    "x": 5,
+    "y": 3.209602
+  },
+  "amrState": "BUSY",
+  "speed": 2,
+  "elapsedSeconds": 0.105,
+  "waypointsPassed": 0,
+  "exitCode": 0,
+  "updatedAt": "2026-10-21T12:53:08.84156+00:00",
+  "lastSnapshotLine": "SimulationCanceled AmrId=AMR_001 X=5 Y=3.209602 State=BUSY CurrentSpeedMps=2 ElapsedSeconds=0.105",
+  "logs": [
+    "ConfigurationLoaded AmrId=AMR_001 InitialX=5 InitialY=3 SpeedMps=2 UpdateIntervalMs=100 WaypointCount=2",
+    "Waypoint Index=0 X=5 Y=4",
+    "Waypoint Index=1 X=7 Y=4",
+    "AmrInitialized AmrId=AMR_001 X=5 Y=3 State=IDLE CurrentSpeedMps=0",
+    "InitializationCompleted",
+    "SimulationStarted AmrId=AMR_001 X=5 Y=3 State=IDLE CurrentSpeedMps=0 ElapsedSeconds=0.000",
+    "AmrMoved AmrId=AMR_001 X=5 Y=3.209602 State=BUSY CurrentSpeedMps=2 ElapsedSeconds=0.105",
+    "SimulationCanceled AmrId=AMR_001 X=5 Y=3.209602 State=BUSY CurrentSpeedMps=2 ElapsedSeconds=0.105"
+  ],
+  "settings": {
+    "amrId": "AMR_001",
+    "initialPosition": {
+      "x": 5,
+      "y": 3
+    },
+    "speedMps": 2,
+    "updateIntervalMs": 100,
+    "waypoints": [
+      {
+        "x": 5,
+        "y": 4
+      },
+      {
+        "x": 7,
+        "y": 4
+      }
+    ]
+  },
+  "evidenceDirectory": "C:\\amr-control-system-demo\\evidence\\AMR\\map-live-20261021-215304-40fbc516cbbe4a95a9421819c9d5f814",
+  "source": "SimulatorApplication.RunAsync / actual console output"
+}

@@ -1,0 +1,15 @@
+{
+  "source": "user-pasted-console-output",
+  "amrId": "AMR_001",
+  "initial": "(-1, 0)",
+  "waypoint": "(1, 0)",
+  "destination": "(1, 2)",
+  "speedMps": 1,
+  "waypointObservedSeconds": 2.055,
+  "completedElapsedSeconds": 4.064,
+  "state": "IDLE",
+  "currentSpeedMps": 0,
+  "exitCode": null,
+  "wallClockTime": null,
+  "evidence": "user-movement.md"
+}

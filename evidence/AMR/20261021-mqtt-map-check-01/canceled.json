@@ -1,0 +1,82 @@
+{
+  "phase": "Canceled",
+  "runId": "run-224214-d74259175a6e4ebda06299e9b3cabdba",
+  "sequence": 123,
+  "position": {
+    "x": -0.8860565,
+    "y": 0
+  },
+  "amrState": "BUSY",
+  "speed": 1,
+  "elapsedSeconds": 0.231,
+  "waypointsPassed": 0,
+  "exitCode": 0,
+  "updatedAt": "2026-10-21T22:42:15.1237376+09:00",
+  "lastSnapshotLine": "Received {\"AmrId\":\"AMR_001\",\"Kind\":\"telemetry\",\"Model\":{\"Id\":\"AMR_001\",\"Timestamp\":1792590135066,\"Position\":{\"X\":-0.8860565,\"Y\":0},\"Speed\":1,\"State\":\"BUSY\",\"ReceivedAtUtc\":\"2026-10-21T13:42:15.0685593+00:00\"},\"ReceivedAtUtc\":\"2026-10-21T13:42:15.0685593+00:00\"}",
+  "logs": [
+    "ConfigurationLoaded AmrId=AMR_001 InitialX=-1 InitialY=0 SpeedMps=1 UpdateIntervalMs=100 WaypointCount=2",
+    "Waypoint Index=0 X=1 Y=0",
+    "Waypoint Index=1 X=1 Y=2",
+    "AmrInitialized AmrId=AMR_001 X=-1 Y=0 State=IDLE CurrentSpeedMps=0",
+    "InitializationCompleted",
+    "MqttConnected ClientId=amr-demo-31a1917602d24ddf8a8478a569430bd6 TelemetryMs=200 HeartbeatMs=1000",
+    "HeartbeatPublished Topic=amr/AMR_001/heartbeat Payload={\"id\":\"AMR_001\",\"ts\":1792590134850,\"status\":\"OK\"} Delivery=Unconfirmed",
+    "TelemetryPublished Topic=amr/AMR_001/telemetry Payload={\"id\":\"AMR_001\",\"ts\":1792590134850,\"pos\":{\"x\":-1,\"y\":0},\"sp\":0,\"state\":\"IDLE\"} Delivery=Unconfirmed",
+    "SimulationStarted AmrId=AMR_001 X=-1 Y=0 State=IDLE CurrentSpeedMps=0 ElapsedSeconds=0.000",
+    "Received {\"AmrId\":\"AMR_001\",\"Kind\":\"heartbeat\",\"Model\":{\"Id\":\"AMR_001\",\"Timestamp\":1792590134850,\"Status\":\"OK\",\"ReceivedAtUtc\":\"2026-10-21T13:42:14.8916146+00:00\"},\"ReceivedAtUtc\":\"2026-10-21T13:42:14.8916146+00:00\"}",
+    "Received {\"AmrId\":\"AMR_001\",\"Kind\":\"telemetry\",\"Model\":{\"Id\":\"AMR_001\",\"Timestamp\":1792590134850,\"Position\":{\"X\":-1,\"Y\":0},\"Speed\":0,\"State\":\"IDLE\",\"ReceivedAtUtc\":\"2026-10-21T13:42:14.8917054+00:00\"},\"ReceivedAtUtc\":\"2026-10-21T13:42:14.8917054+00:00\"}",
+    "AmrMoved AmrId=AMR_001 X=-0.8860565 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.114",
+    "TelemetryPublished Topic=amr/AMR_001/telemetry Payload={\"id\":\"AMR_001\",\"ts\":1792590135066,\"pos\":{\"x\":-0.8860565,\"y\":0},\"sp\":1,\"state\":\"BUSY\"} Delivery=Unconfirmed",
+    "Received {\"AmrId\":\"AMR_001\",\"Kind\":\"telemetry\",\"Model\":{\"Id\":\"AMR_001\",\"Timestamp\":1792590135066,\"Position\":{\"X\":-0.8860565,\"Y\":0},\"Speed\":1,\"State\":\"BUSY\",\"ReceivedAtUtc\":\"2026-10-21T13:42:15.0685593+00:00\"},\"ReceivedAtUtc\":\"2026-10-21T13:42:15.0685593+00:00\"}",
+    "AmrMoved AmrId=AMR_001 X=-0.7687691 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.231",
+    "SimulationCanceled AmrId=AMR_001 X=-0.7687691 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.231",
+    "MqttSimulationCanceled Reason=UserCanceled",
+    "MqttSessionEnded ExitCode=0"
+  ],
+  "settings": {
+    "amrId": "AMR_001",
+    "initialPosition": {
+      "x": -1,
+      "y": 0
+    },
+    "speedMps": 1,
+    "updateIntervalMs": 100,
+    "waypoints": [
+      {
+        "x": 1,
+        "y": 0
+      },
+      {
+        "x": 1,
+        "y": 2
+      }
+    ]
+  },
+  "evidenceDirectory": "C:\\amr-control-system-demo\\evidence\\AMR\\map-live-20261021-224137-98856c07fe574c95824134cb65f284e4",
+  "source": "mqtt-control-receiver",
+  "brokerState": "Closed",
+  "receiveFailure": null,
+  "rejectedCount": 0,
+  "receivedTelemetry": {
+    "id": "AMR_001",
+    "timestamp": 1792590135066,
+    "position": {
+      "x": -0.8860565,
+      "y": 0
+    },
+    "speed": 1,
+    "state": "BUSY",
+    "receivedAtUtc": "2026-10-21T22:42:15.0685593+09:00"
+  },
+  "receivedHeartbeat": {
+    "id": "AMR_001",
+    "timestamp": 1792590134850,
+    "status": "OK",
+    "receivedAtUtc": "2026-10-21T22:42:14.8916146+09:00"
+  },
+  "telemetryCount": 2,
+  "heartbeatCount": 1,
+  "ignoredCount": 0,
+  "lastPublishedTimestamp": 1792590135066,
+  "mqttEndpoint": "127.0.0.1:50302"
+}

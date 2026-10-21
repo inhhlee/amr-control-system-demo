@@ -1,0 +1,17 @@
+[
+  {
+    "step": "01-automatic",
+    "title": "Current communication and Simulator build / automated regression",
+    "result": "passed",
+    "startedAtUtc": "2026-10-21T11:38:59.1319508+00:00",
+    "completedAtUtc": "2026-10-21T11:39:06.9017922+00:00"
+  },
+  {
+    "step": "02-messages",
+    "title": "Two AMRs, four message types, malformed inputs and recovery",
+    "result": "failed",
+    "error": "messages failed (1); see C:\\amr-control-system-demo\\evidence\\DEMO\\report-20261021-203858/messages.stderr.log",
+    "startedAtUtc": "2026-10-21T11:39:07.3290731+00:00",
+    "completedAtUtc": "2026-10-21T11:39:08.3004800+00:00"
+  }
+]

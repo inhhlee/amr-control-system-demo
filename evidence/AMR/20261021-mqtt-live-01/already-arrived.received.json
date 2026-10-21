@@ -1,0 +1,45 @@
+[
+  {
+    "AmrId": "AMR_001",
+    "Kind": "heartbeat",
+    "Model": {
+      "Id": "AMR_001",
+      "Timestamp": 1792589075203,
+      "Status": "OK",
+      "ReceivedAtUtc": "2026-10-21T22:24:35.2081296+09:00"
+    },
+    "ReceivedAtUtc": "2026-10-21T22:24:35.2081296+09:00"
+  },
+  {
+    "AmrId": "AMR_001",
+    "Kind": "telemetry",
+    "Model": {
+      "Id": "AMR_001",
+      "Timestamp": 1792589075208,
+      "Position": {
+        "X": 5,
+        "Y": 3
+      },
+      "Speed": 0,
+      "State": "IDLE",
+      "ReceivedAtUtc": "2026-10-21T22:24:35.2088066+09:00"
+    },
+    "ReceivedAtUtc": "2026-10-21T22:24:35.2088066+09:00"
+  },
+  {
+    "AmrId": "AMR_001",
+    "Kind": "telemetry",
+    "Model": {
+      "Id": "AMR_001",
+      "Timestamp": 1792589075212,
+      "Position": {
+        "X": 5,
+        "Y": 3
+      },
+      "Speed": 0,
+      "State": "IDLE",
+      "ReceivedAtUtc": "2026-10-21T22:24:35.2128896+09:00"
+    },
+    "ReceivedAtUtc": "2026-10-21T22:24:35.2128896+09:00"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "stopRequestedAtUtc": "2026-10-21T10:56:09.1026304+00:00",
+  "stopReturnedAtUtc": "2026-10-21T10:56:09.4956302+00:00",
+  "brokerFinishedAtUtc": "2026-10-21T10:56:09.156757429Z",
+  "brokerExitCode": 0,
+  "detectedAtUtc": "2026-10-21T10:56:09.1603311+00:00",
+  "detectionMilliseconds": 57.7007,
+  "productExitMilliseconds": 83.1662,
+  "controllerCompletionMilliseconds": 396.3953,
+  "productProcessGone": true,
+  "establishedSocketsAfterExit": 0,
+  "session": {
+    "clientId": "amr-demo-0ed0f5fd308d46d78ccd9674340f4901",
+    "productPid": 49776,
+    "port": 63430,
+    "detectedAtUtc": "2026-10-21T10:56:09.1603311+00:00",
+    "reason": "NormalDisconnection",
+    "exceptionType": "None",
+    "socketError": "None",
+    "clientWasConnected": true,
+    "connectionLostEvents": 1,
+    "exitCode": 1,
+    "exitedAtUtc": "2026-10-21T10:56:09.1857966+00:00",
+    "queueStopped": true,
+    "subscriptionStopped": true,
+    "disposed": true,
+    "seqEnabled": false
+  }
+}

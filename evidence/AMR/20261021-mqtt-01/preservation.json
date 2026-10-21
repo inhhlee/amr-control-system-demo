@@ -1,0 +1,16 @@
+{
+  "LiveLogFilesWithoutBaselineHash": [
+    "evidence/AMR/20261021-map-01/server.stderr.log",
+    "evidence/AMR/20261021-map-01/server.stdout.log"
+  ],
+  "OtherChanges": [],
+  "IntentionalExistingEdits": [
+    "README.md",
+    "src/Amr.Simulator/SimulatorApplication.cs",
+    "src/Amr.Simulator/Simulation/SimulationRunner.cs"
+  ],
+  "BranchSame": true,
+  "PreservedFiles": 935,
+  "IndexSame": true,
+  "HeadSame": true
+}

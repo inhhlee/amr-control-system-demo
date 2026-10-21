@@ -1,0 +1,2 @@
+PASS: C2 Broker stop detection, exit 1 and cleanup, same Broker restart, new normal console + C1 regression, isolated resource cleanup. C:\amr-control-system-demo\evidence\COM-03\20261021-report-demo-03-c2
+

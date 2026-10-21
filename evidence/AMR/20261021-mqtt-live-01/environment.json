@@ -1,0 +1,10 @@
+{
+  "Sdk": "10.0.401",
+  "Head": "71160f412624f829f8b5673c409da5a4accf202c",
+  "RunId": "20261021-mqtt-live-01",
+  "ContainerId": "376c89ec618415acff542f5f47f3484db46a0c343b86a3f8bf799e84a32bf297",
+  "Branch": "feature/33-simulator-movement",
+  "Started": "2026-10-21T13:24:27.1611771+00:00",
+  "ImageId": "sha256:38c0da4f2ef84284d47b3b3eeea1cb3bdeabe81ee10caf0cd5c5ff61ee3ea408",
+  "Port": 65108
+}

@@ -1,19 +1,23 @@
 using Amr.Simulator.Configuration;
 using Amr.Simulator.Simulation;
+using Amr.Simulator.Telemetry;
 
 namespace Amr.Simulator;
 
 public static class SimulatorApplication
 {
     public static async Task<int> RunAsync(string[] args, TextWriter output, TextWriter error,
-        CancellationToken cancellationToken = default)
+        CancellationToken cancellationToken = default, ISimulationClock? clock = null)
     {
         if (args is ["--help"])
         {
-            await output.WriteLineAsync("Usage: Amr.Simulator --config <JSON file>");
+            await output.WriteLineAsync("Usage: Amr.Simulator --config <JSON file> [--mqtt --host <host> --port <port> --telemetry-ms <ms> --heartbeat-ms <ms>]");
             return 0;
         }
-        if (args.Length != 2 || args[0] != "--config" || string.IsNullOrWhiteSpace(args[1]))
+        string config;
+        SimulatorMqttOptions? mqtt;
+        try { (config, mqtt) = SimulatorMqttOptions.Parse(args); }
+        catch (ArgumentException)
         {
             await error.WriteLineAsync("ConfigurationRejected Field=arguments Reason=--config <JSON file> 옵션을 지정하세요.");
             return 1;
@@ -21,7 +25,7 @@ public static class SimulatorApplication
 
         try
         {
-            var settings = await SimulatorSettingsLoader.LoadAsync(args[1], cancellationToken);
+            var settings = await SimulatorSettingsLoader.LoadAsync(config, cancellationToken);
             cancellationToken.ThrowIfCancellationRequested();
             var amr = new SimulatedAmr(settings);
             await output.WriteLineAsync(FormattableString.Invariant(
@@ -34,6 +38,10 @@ public static class SimulatorApplication
             await output.WriteLineAsync(FormattableString.Invariant(
                 $"AmrInitialized AmrId={amr.Id} X={amr.Position.X:R} Y={amr.Position.Y:R} State={amr.State} CurrentSpeedMps={amr.CurrentSpeedMps:R}"));
             await output.WriteLineAsync("InitializationCompleted");
+            if (mqtt is not null)
+                return await MqttSimulationSession.RunAsync(amr, mqtt, new MqttSimulationTransport(mqtt.Connection),
+                    output, error, cancellationToken, clock);
+            await new SimulationRunner(clock).RunAsync(amr, output, cancellationToken);
             return 0;
         }
         catch (ConfigurationException exception)
@@ -45,6 +53,11 @@ public static class SimulatorApplication
         {
             await output.WriteLineAsync("InitializationCanceled");
             return 0;
+        }
+        catch (Exception exception)
+        {
+            await error.WriteLineAsync($"SimulationFailed Reason={exception.GetType().Name}");
+            return 1;
         }
     }
 }

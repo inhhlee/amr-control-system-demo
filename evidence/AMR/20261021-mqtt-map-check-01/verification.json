@@ -1,0 +1,42 @@
+{
+  "Results": [
+    {
+      "Telemetry": 21,
+      "ReceivedPointsMatched": 21,
+      "Elapsed": 4.015,
+      "Heartbeat": 5,
+      "Case": "arrival",
+      "Run": "run-224210-74e853dba4d54300a62ef42a0e3b05de",
+      "Passed": true
+    },
+    {
+      "Rejected": 1,
+      "Passed": true,
+      "Case": "invalid-and-other-amr-isolation"
+    },
+    {
+      "Passed": true,
+      "Case": "cancel"
+    },
+    {
+      "Telemetry": 21,
+      "ReceivedPointsMatched": 21,
+      "Elapsed": 4.071,
+      "Heartbeat": 5,
+      "Case": "restart",
+      "Run": "run-224215-470d970f33524010b2b16abbbb7915fe",
+      "Passed": true
+    },
+    {
+      "Passed": true,
+      "ExitCode": 1,
+      "Case": "broker-loss-no-false-arrival"
+    }
+  ],
+  "SessionRunId": "20261021-mqtt-map-live-02",
+  "ProductEvidence": "C:\\amr-control-system-demo\\evidence\\AMR\\map-live-20261021-224137-98856c07fe574c95824134cb65f284e4",
+  "Finished": "2026-10-21T22:42:20.0300189+09:00",
+  "Samples": 135,
+  "Url": "http://127.0.0.1:50304",
+  "Passed": true
+}

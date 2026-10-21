@@ -1,0 +1,7 @@
+InvalidOperation: C:\amr-control-system-demo\tests\manual\AMR01\Verify-Run.ps1:31
+Line |
+  31 |              if ($log.Contains($ready)) { break }
+     |                  ~~~~~~~~~~~~~~~~~~~~~
+     | You cannot call a method on a null-valued expression.
+
+

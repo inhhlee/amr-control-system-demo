@@ -1,0 +1,72 @@
+{
+  "result": "passed",
+  "requests": [
+    {
+      "amrId": "COM05_20261021-report-demo-01-cmd_1",
+      "type": "MOVE",
+      "commandId": "CMD-038c5170f8ad44a3889cf21fdabd9616",
+      "topic": "amr/COM05_20261021-report-demo-01-cmd_1/command",
+      "exitCode": 0
+    },
+    {
+      "amrId": "COM05_20261021-report-demo-01-cmd_2",
+      "type": "STOP",
+      "commandId": "CMD-d1e97a4dc9ba4f82be8bc334bafdfd97",
+      "topic": "amr/COM05_20261021-report-demo-01-cmd_2/command",
+      "exitCode": 0
+    },
+    {
+      "amrId": "COM05_20261021-report-demo-01-cmd_3",
+      "type": "RESET",
+      "commandId": "CMD-8561c9c09c9a4de2879c83f18319c023",
+      "topic": "amr/COM05_20261021-report-demo-01-cmd_3/command",
+      "exitCode": 0
+    }
+  ],
+  "received": [
+    {
+      "topic": "amr/COM05_20261021-report-demo-01-cmd_1/command",
+      "qos": 0,
+      "retain": false,
+      "payload": {
+        "cmdId": "CMD-038c5170f8ad44a3889cf21fdabd9616",
+        "type": "MOVE",
+        "ts": 1792579836303,
+        "param": {
+          "x": -30.5,
+          "y": 15.25
+        }
+      }
+    },
+    {
+      "topic": "amr/COM05_20261021-report-demo-01-cmd_2/command",
+      "qos": 0,
+      "retain": false,
+      "payload": {
+        "cmdId": "CMD-d1e97a4dc9ba4f82be8bc334bafdfd97",
+        "type": "STOP",
+        "ts": 1792579836458,
+        "param": {}
+      }
+    },
+    {
+      "topic": "amr/COM05_20261021-report-demo-01-cmd_3/command",
+      "qos": 0,
+      "retain": false,
+      "payload": {
+        "cmdId": "CMD-8561c9c09c9a4de2879c83f18319c023",
+        "type": "RESET",
+        "ts": 1792579836593,
+        "param": {}
+      }
+    }
+  ],
+  "invalidExitCode": 1,
+  "unexpectedCommands": 0,
+  "lateRetainedCommands": 0,
+  "seqTested": false,
+  "seqPublishedEvents": null,
+  "actualAmrExecution": "not tested",
+  "ackCorrelation": "not implemented",
+  "servicesReused": true
+}

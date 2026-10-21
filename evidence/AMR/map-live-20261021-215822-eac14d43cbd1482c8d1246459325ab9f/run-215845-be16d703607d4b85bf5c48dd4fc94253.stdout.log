@@ -1,0 +1,45 @@
+ConfigurationLoaded AmrId=AMR_001 InitialX=-1 InitialY=0 SpeedMps=1 UpdateIntervalMs=100 WaypointCount=2
+Waypoint Index=0 X=1 Y=0
+Waypoint Index=1 X=1 Y=2
+AmrInitialized AmrId=AMR_001 X=-1 Y=0 State=IDLE CurrentSpeedMps=0
+InitializationCompleted
+SimulationStarted AmrId=AMR_001 X=-1 Y=0 State=IDLE CurrentSpeedMps=0 ElapsedSeconds=0.000
+AmrMoved AmrId=AMR_001 X=-0.8871146999999999 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.113
+AmrMoved AmrId=AMR_001 X=-0.7775209999999999 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.222
+AmrMoved AmrId=AMR_001 X=-0.6713472999999999 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.329
+AmrMoved AmrId=AMR_001 X=-0.5711584999999999 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.429
+AmrMoved AmrId=AMR_001 X=-0.4602898999999999 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.540
+AmrMoved AmrId=AMR_001 X=-0.3541431999999999 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.646
+AmrMoved AmrId=AMR_001 X=-0.25350279999999986 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.746
+AmrMoved AmrId=AMR_001 X=-0.15151639999999988 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.848
+AmrMoved AmrId=AMR_001 X=-0.04200729999999987 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.958
+AmrMoved AmrId=AMR_001 X=0.06412230000000013 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.064
+AmrMoved AmrId=AMR_001 X=0.17804510000000012 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.178
+AmrMoved AmrId=AMR_001 X=0.27942120000000015 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.279
+AmrMoved AmrId=AMR_001 X=0.3941949000000001 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.394
+AmrMoved AmrId=AMR_001 X=0.4983342000000001 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.498
+AmrMoved AmrId=AMR_001 X=0.6083009000000001 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.608
+AmrMoved AmrId=AMR_001 X=0.7151363000000002 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.715
+AmrMoved AmrId=AMR_001 X=0.8237461000000001 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.824
+AmrMoved AmrId=AMR_001 X=0.9305640000000002 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.931
+WaypointReached AmrId=AMR_001 Index=0 X=1 Y=0 ObservedElapsedSeconds=2.031
+AmrMoved AmrId=AMR_001 X=1 Y=0.03109180000000017 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.031
+AmrMoved AmrId=AMR_001 X=1 Y=0.14727250000000017 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.147
+AmrMoved AmrId=AMR_001 X=1 Y=0.24765230000000016 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.248
+AmrMoved AmrId=AMR_001 X=1 Y=0.36280420000000013 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.363
+AmrMoved AmrId=AMR_001 X=1 Y=0.46468510000000013 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.465
+AmrMoved AmrId=AMR_001 X=1 Y=0.5764385000000001 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.576
+AmrMoved AmrId=AMR_001 X=1 Y=0.6816154000000001 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.682
+AmrMoved AmrId=AMR_001 X=1 Y=0.7954786 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.795
+AmrMoved AmrId=AMR_001 X=1 Y=0.8976085 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.898
+AmrMoved AmrId=AMR_001 X=1 Y=1.0153648 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.015
+AmrMoved AmrId=AMR_001 X=1 Y=1.1302758 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.130
+AmrMoved AmrId=AMR_001 X=1 Y=1.2489994 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.249
+AmrMoved AmrId=AMR_001 X=1 Y=1.349391 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.349
+AmrMoved AmrId=AMR_001 X=1 Y=1.4668051 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.467
+AmrMoved AmrId=AMR_001 X=1 Y=1.5806523 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.581
+AmrMoved AmrId=AMR_001 X=1 Y=1.6825089999999998 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.683
+AmrMoved AmrId=AMR_001 X=1 Y=1.7838748999999998 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.784
+AmrMoved AmrId=AMR_001 X=1 Y=1.8992808999999997 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.899
+WaypointReached AmrId=AMR_001 Index=1 X=1 Y=2 ObservedElapsedSeconds=4.016
+SimulationCompleted AmrId=AMR_001 X=1 Y=2 State=IDLE CurrentSpeedMps=0 ElapsedSeconds=4.016

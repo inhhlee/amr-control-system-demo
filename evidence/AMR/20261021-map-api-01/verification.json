@@ -1,0 +1,13 @@
+{
+  "CanceledRun": "run-215136-ac972b7e209e4aa68ebde0af0f9c7aea",
+  "SamplesComparedToConsole": 97,
+  "CompletedSeconds": 4.094,
+  "RestartedRun": "run-215136-4ef34784e1534ebdb9f81f870816b4c5",
+  "Finished": "2026-10-21T21:51:40.8312294+09:00",
+  "ProductEvidence": "C:\\amr-control-system-demo\\evidence\\AMR\\map-live-20261021-214745-2a2a481d9a1243fc8cf5858bb6d443de",
+  "CompletedRun": "run-215132-55903c82dde44612bb3de7de3d876987",
+  "OverlapStatus": 409,
+  "BaseUrl": "http://127.0.0.1:65006",
+  "MissingHeaderStatus": 403,
+  "Passed": true
+}

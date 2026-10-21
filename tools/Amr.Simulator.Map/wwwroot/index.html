@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AMR 한 대의 이동 · 2D 시연</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+<main>
+  <header>
+    <div><p class="eyebrow" id="source-title">과제2 · 실제 시뮬레이터 연결</p><h1>출발부터 도착까지, 한눈에</h1><p class="intro" id="source-chain">설정한 경로를 따라 움직이는 AMR의 현재 위치를 보여드립니다.</p></div>
+    <span id="connection" class="badge">연결 확인 중</span>
+  </header>
+  <div class="workspace">
+    <section class="map-card" aria-labelledby="map-title">
+      <div class="map-heading"><h2 id="map-title">2D 좌표 지도</h2><span>단위 m · 위쪽 +Y / 오른쪽 +X</span></div>
+      <svg id="map" viewBox="120 0 580 520" role="img" aria-label="설정 경로와 실제 시뮬레이터의 현재 위치">
+        <g id="grid"></g><g id="route"></g>
+        <g id="robot"><circle r="23" class="robot-halo"></circle><circle r="12" class="robot-dot"></circle><text y="-32" text-anchor="middle" class="robot-label">현재 위치</text></g>
+      </svg>
+      <div class="legend"><span><i class="dot live"></i>현재 AMR</span><span><i class="line"></i>설정 경로</span><span><i class="dot target"></i>경유점·목적지</span></div>
+      <p id="map-note" class="muted">좌표를 불러오고 있습니다.</p>
+    </section>
+    <aside class="status-card">
+      <p class="eyebrow" id="amr-id">AMR</p>
+      <h2 id="phase" aria-live="polite">준비 중</h2>
+      <p id="status-note" class="muted">서버에 연결하고 있습니다.</p>
+      <dl>
+        <div><dt>현재 좌표</dt><dd id="position">—</dd></div>
+        <div><dt>현재 속도</dt><dd><span id="speed">—</span> <small>m/s</small></dd></div>
+        <div><dt>경과 시간</dt><dd><span id="elapsed">—</span> <small>초</small></dd></div>
+        <div><dt>시뮬레이터 상태</dt><dd id="amr-state">—</dd></div>
+        <div><dt>종료 코드</dt><dd id="exit-code">—</dd></div>
+      </dl>
+      <p class="fine" id="receive-metrics" hidden>위치 수신 <strong id="telemetry-count">0</strong>건 · Heartbeat <strong id="heartbeat-count">0</strong>건<br>마지막 위치 수신 <span id="received-time">—</span></p>
+      <div class="controls"><button id="start" disabled>시연 시작</button><button id="cancel" class="secondary" disabled>실행 취소</button></div>
+      <p id="action-error" role="alert"></p>
+      <p class="fine">다시 시작하면 실제 시뮬레이터가 출발 위치부터 새로 실행됩니다. 실행 취소는 로봇의 STOP 명령과 별개입니다.</p>
+    </aside>
+  </div>
+  <section class="explain"><p class="eyebrow">책임님께 이렇게 설명하세요</p><p id="speech">“시연 시작을 누르면 실제 시뮬레이터가 계산한 좌표에 따라 지도 위의 점이 움직입니다.”</p></section>
+  <details><summary>실제 좌표의 근거 · 실행 로그</summary><p class="muted" id="evidence-note">연결 방식을 확인하고 있습니다.</p><pre id="received-payload" hidden></pre><p class="fine">최근 로그 80줄을 표시합니다. 전체 송신·수신 로그·설정 복사본·종료 결과 저장 위치: <span id="evidence">—</span></p><pre id="logs">아직 실행하지 않았습니다.</pre></details>
+  <footer>단일 가상 AMR 시연 · 명령/ACK, 다중 AMR, Core·DB 및 실제 로봇 연동은 후속 범위</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "result": "passed",
+  "session": {
+    "clientId": "amr-demo-6d16d6ac45224391b77aea01976d9020",
+    "keepAliveSeconds": 5.0,
+    "port": 51611,
+    "observedFromUtc": "2026-10-21T19:50:57.1381391+09:00",
+    "observedUntilUtc": "2026-10-21T19:51:09.1740544+09:00",
+    "observedSeconds": 12.0350338,
+    "ctrlCAtUtc": "2026-10-21T19:51:09.1872788+09:00",
+    "exitedAtUtc": "2026-10-21T19:51:09.2273233+09:00",
+    "exitCode": 0,
+    "consolePids": [
+      10692,
+      32760
+    ],
+    "productPid": 32760,
+    "businessMessagesInConsole": 0,
+    "seqEnabled": false
+  },
+  "pingRequests": 2,
+  "pingResponses": 2,
+  "businessPublishes": 0,
+  "brokerNormalDisconnect": true,
+  "completedAtUtc": "2026-10-21T10:51:09.4593107+00:00"
+}

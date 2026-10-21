@@ -1,0 +1,15 @@
+{
+  "baseCommit": "71160f412624f829f8b5673c409da5a4accf202c",
+  "branch": "feature/33-simulator-movement",
+  "sourceState": "working tree; see source-version.json",
+  "startedAtUtc": "2026-10-21T10:55:31.9899791+00:00",
+  "completedAtUtc": "2026-10-21T10:55:49.6287155+00:00",
+  "sdk": "10.0.401",
+  "os": "Microsoft Windows 10.0.26200",
+  "brokerImage": "eclipse-mosquitto:2.1.2-alpine",
+  "endpoint": "127.0.0.1:61658",
+  "brokerContainer": "24b1e5727220e49425c709a9ba0c77cde6596e01e1785de5aeec5a237a7315f9",
+  "seqVersion": null,
+  "seqTested": false,
+  "serviceStartedOrStopped": false
+}

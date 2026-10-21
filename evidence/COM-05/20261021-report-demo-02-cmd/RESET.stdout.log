@@ -1,0 +1,3 @@
+CommandRequested AmrId="COM05_20261021-report-demo-02-cmd_3" CommandId="CMD-b47ba7f3ec584643b83457cf452e5fec" CommandType=RESET
+CommandPublished AmrId="COM05_20261021-report-demo-02-cmd_3" CommandId="CMD-b47ba7f3ec584643b83457cf452e5fec" CommandType=RESET QoS=0 Retain=false Delivery=Unconfirmed Execution=NotTracked
+

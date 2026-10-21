@@ -1,0 +1,51 @@
+[
+  {
+    "step": "01-automatic",
+    "title": "Current communication and Simulator build / automated regression",
+    "result": "passed",
+    "startedAtUtc": "2026-10-21T10:55:21.8766123+00:00",
+    "completedAtUtc": "2026-10-21T10:55:21.9473474+00:00"
+  },
+  {
+    "step": "02-messages",
+    "title": "Two AMRs, four message types, malformed inputs and recovery",
+    "result": "passed",
+    "startedAtUtc": "2026-10-21T10:55:22.6414109+00:00",
+    "completedAtUtc": "2026-10-21T10:55:31.6730549+00:00"
+  },
+  {
+    "step": "03-commands",
+    "title": "MOVE / STOP / RESET, invalid input and no retained commands",
+    "result": "passed",
+    "startedAtUtc": "2026-10-21T10:55:31.6745639+00:00",
+    "completedAtUtc": "2026-10-21T10:55:49.8057465+00:00"
+  },
+  {
+    "step": "04-keepalive",
+    "title": "Idle KeepAlive for 12 seconds, PING pairs, Ctrl+C exit 0",
+    "result": "passed",
+    "startedAtUtc": "2026-10-21T10:55:49.8070591+00:00",
+    "completedAtUtc": "2026-10-21T10:56:06.6801746+00:00"
+  },
+  {
+    "step": "05-disconnect",
+    "title": "Broker stop, disconnect cleanup / exit 1, restart and NEW client",
+    "result": "passed",
+    "startedAtUtc": "2026-10-21T10:56:06.6816215+00:00",
+    "completedAtUtc": "2026-10-21T10:56:25.1824981+00:00"
+  },
+  {
+    "step": "06-no-response",
+    "title": "TCP stays open; discard Broker responses, detect timeout and exit 1",
+    "result": "passed",
+    "startedAtUtc": "2026-10-21T10:56:25.1841456+00:00",
+    "completedAtUtc": "2026-10-21T10:56:38.3704618+00:00"
+  },
+  {
+    "step": "07-simulator",
+    "title": "Actual initialization console regression; movement checked by automated tests",
+    "result": "passed",
+    "startedAtUtc": "2026-10-21T10:56:38.3715788+00:00",
+    "completedAtUtc": "2026-10-21T10:56:39.9829795+00:00"
+  }
+]

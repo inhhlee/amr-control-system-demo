@@ -1,0 +1,91 @@
+{
+  "OwnedBrokerRemoved": true,
+  "ExistingContainersPreserved": true,
+  "OwnedProcessesExited": true,
+  "Passed": true,
+  "Results": [
+    {
+      "Final": {
+        "Id": "AMR_001",
+        "Timestamp": 1792589073205,
+        "Position": {
+          "X": 1,
+          "Y": 2
+        },
+        "Speed": 0,
+        "State": "IDLE",
+        "ReceivedAtUtc": "2026-10-21T22:24:33.2079374+09:00"
+      },
+      "ExitCode": 0,
+      "Case": "default",
+      "Telemetry": 21,
+      "Passed": true,
+      "Heartbeat": 5,
+      "AllCoordinatesMatched": true,
+      "AllPayloadsMatched": true
+    },
+    {
+      "Final": {
+        "Id": "AMR_001",
+        "Timestamp": 1792589075021,
+        "Position": {
+          "X": 7,
+          "Y": 4
+        },
+        "Speed": 0,
+        "State": "IDLE",
+        "ReceivedAtUtc": "2026-10-21T22:24:35.0237436+09:00"
+      },
+      "ExitCode": 0,
+      "Case": "changed",
+      "Telemetry": 9,
+      "Passed": true,
+      "Heartbeat": 2,
+      "AllCoordinatesMatched": true,
+      "AllPayloadsMatched": true
+    },
+    {
+      "Final": {
+        "Id": "AMR_001",
+        "Timestamp": 1792589075212,
+        "Position": {
+          "X": 5,
+          "Y": 3
+        },
+        "Speed": 0,
+        "State": "IDLE",
+        "ReceivedAtUtc": "2026-10-21T22:24:35.2128896+09:00"
+      },
+      "ExitCode": 0,
+      "Case": "already-arrived",
+      "Telemetry": 2,
+      "Passed": true,
+      "Heartbeat": 1,
+      "AllCoordinatesMatched": true,
+      "AllPayloadsMatched": true
+    },
+    {
+      "SubscriberExitCode": 27,
+      "Passed": true,
+      "Case": "no-retained-message"
+    },
+    {
+      "Heartbeats": 2,
+      "ExitCode": 0,
+      "Passed": true,
+      "Case": "long-update-independent-sending-and-cancel"
+    },
+    {
+      "ReceiverExit": 1,
+      "Passed": true,
+      "Case": "broker-loss",
+      "SimulatorExit": 1
+    },
+    {
+      "ExitCode": 1,
+      "Passed": true,
+      "Case": "connect-failure-before-movement"
+    }
+  ],
+  "Finished": "2026-10-21T13:24:41.8427635+00:00"
+}

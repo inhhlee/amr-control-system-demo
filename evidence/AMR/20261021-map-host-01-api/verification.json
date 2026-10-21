@@ -1,0 +1,13 @@
+{
+  "ProductEvidence": "C:\\amr-control-system-demo\\evidence\\AMR\\map-live-20261021-215304-40fbc516cbbe4a95a9421819c9d5f814",
+  "Passed": true,
+  "CompletedSeconds": 1.509,
+  "BaseUrl": "http://127.0.0.1:51145",
+  "RestartedRun": "run-215307-d85fada5a7c441719aa5b7bf36c42abf",
+  "SamplesComparedToConsole": 44,
+  "OverlapStatus": 409,
+  "CanceledRun": "run-215306-1e2f790987b84f6ca6f671bcf6888e05",
+  "Finished": "2026-10-21T21:53:08.6545608+09:00",
+  "CompletedRun": "run-215305-1332d598f0e44c01bb2a5b701da88978",
+  "MissingHeaderStatus": 403
+}

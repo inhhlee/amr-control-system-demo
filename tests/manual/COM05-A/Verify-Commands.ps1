@@ -1,4 +1,9 @@
-param([Parameter(Mandatory)][ValidatePattern('^[a-zA-Z0-9_-]{1,48}$')][string]$RunId)
+param(
+    [Parameter(Mandatory)][ValidatePattern('^[a-zA-Z0-9_-]{1,48}$')][string]$RunId,
+    [string]$BrokerContainer = 'amr-demo-mosquitto-1',
+    [ValidateRange(1,65535)][int]$BrokerPort = 1884,
+    [switch]$SkipSeq
+)
 $ErrorActionPreference = 'Stop'
 $repository = (Resolve-Path (Join-Path $PSScriptRoot '../../..')).Path
 Set-Location -LiteralPath $repository
@@ -38,16 +43,17 @@ function Invoke-Native([string]$File, [string[]]$Arguments, [string]$Name, [int]
 try {
     $started = [DateTimeOffset]::UtcNow
     # Inspect the existing managed service; do not start, stop or reconfigure it.
-    $container = (docker inspect amr-demo-mosquitto-1 | ConvertFrom-Json)[0]
+    $container = (docker inspect $BrokerContainer | ConvertFrom-Json)[0]
     if ($LASTEXITCODE -ne 0 -or !$container.State.Running) { throw 'Existing MQTT Broker is not running.' }
-    if ($container.HostConfig.PortBindings.'1883/tcp'[0].HostPort -ne '1884') { throw 'Unexpected Broker port.' }
-    $env:AMR_SEQ_URL = 'http://127.0.0.1:5341'
+    $binding = @($container.NetworkSettings.Ports.'1883/tcp')
+    if ($binding.Count -ne 1 -or $binding[0].HostIp -ne '127.0.0.1' -or [int]$binding[0].HostPort -ne $BrokerPort) { throw 'Unexpected Broker endpoint.' }
+    $env:AMR_SEQ_URL = if ($SkipSeq) { $null } else { 'http://127.0.0.1:5341' }
     $env:AMR_LOG_RUN_ID = $RunId
-    $seq = Invoke-RestMethod "$env:AMR_SEQ_URL/api" -TimeoutSec 5
+    $seq = if (!$SkipSeq) { Invoke-RestMethod "$env:AMR_SEQ_URL/api" -TimeoutSec 5 } else { $null }
     $dll = Join-Path $repository 'src/Amr.Communication.Console/bin/Debug/net10.0/Amr.Communication.Console.dll'
     $ids = @(1..3 | ForEach-Object { "COM05_${RunId}_$_" })
     $topics = @($ids | ForEach-Object { "amr/$_/command" })
-    $subArgs = @('exec', 'amr-demo-mosquitto-1', 'mosquitto_sub', '-h', '127.0.0.1', '-p', '1883', '-V', 'mqttv5', '-F', '%t %q %r %p')
+    $subArgs = @('exec', $container.Id, 'mosquitto_sub', '-h', '127.0.0.1', '-p', '1883', '-V', 'mqttv5', '-F', '%t %q %r %p')
     foreach ($topic in $topics) { $subArgs += @('-t', $topic) }
     # A fourth command would reveal an unintended publish from an invalid CLI request.
     # A container PTY makes Mosquitto flush debug lines immediately, so SUBACK gates publication.
@@ -63,7 +69,7 @@ try {
     $requests = @()
     $types = @('MOVE','STOP','RESET')
     for ($i = 0; $i -lt 3; $i++) {
-        $commandArgs = @($dll, '--command', $types[$i], '--amr-id', $ids[$i])
+        $commandArgs = @($dll, '--host', '127.0.0.1', '--port', "$BrokerPort", '--command', $types[$i], '--amr-id', $ids[$i])
         if ($i -eq 0) { $commandArgs += @('--x', '-30.5', '--y', '15.25') }
         $result = Invoke-Native 'dotnet' $commandArgs $types[$i]
         if ($result.exitCode -ne 0 -or $result.stdout -notmatch 'CommandPublished' -or $result.stdout -match 'SUCCESS') { throw 'Command run failed or claimed execution success.' }
@@ -72,7 +78,7 @@ try {
         if ($commandIds.Count -ne 1) { throw 'Request/send ID was not preserved.' }
         $requests += [ordered]@{amrId=$ids[$i];type=$types[$i];commandId=$commandIds[0];topic=$topics[$i];exitCode=$result.exitCode}
     }
-    $invalid = Invoke-Native 'dotnet' @($dll,'--command','MOVE','--amr-id',$ids[0],'--x','NaN','--y','1') 'invalid'
+    $invalid = Invoke-Native 'dotnet' @($dll,'--host','127.0.0.1','--port',"$BrokerPort",'--command','MOVE','--amr-id',$ids[0],'--x','NaN','--y','1') 'invalid'
     if ($invalid.exitCode -ne 1 -or $invalid.stderr -notmatch 'InvalidCommandOptions' -or $invalid.stdout -match 'CommandRequested|CommandPublished') { throw 'Invalid input was not rejected before connect.' }
     if (!$subscriber.WaitForExit(20000)) { throw 'Subscriber failed to terminate within test deadline.' }
     $subOutput = ($prefix -join "`n") + "`n" + $remaining.GetAwaiter().GetResult()
@@ -97,6 +103,8 @@ try {
     # A new subscriber must not receive the previous commands as retained messages.
     $late = Invoke-Native 'docker' ($subArgs + @('-C','1','-W','2')) 'late-subscriber' 5000
     if ($late.exitCode -ne 27 -or $late.stdout.Trim().Length -ne 0) { throw 'Unexpected retained command.' }
+    $events = $null
+    if (!$SkipSeq) {
     $filter = [uri]::EscapeDataString("RunId = '$RunId' and EventType = 'CommandPublished'")
     $events = Invoke-RestMethod "$env:AMR_SEQ_URL/api/events?filter=$filter&count=100&render=true" -TimeoutSec 5
     $events | ConvertTo-Json -Depth 12 | Set-Content "$run/seq-events.json" -Encoding utf8
@@ -106,18 +114,19 @@ try {
         $matched = Invoke-RestMethod "$env:AMR_SEQ_URL/api/events?filter=$query&count=100&render=true" -TimeoutSec 5
         if (@($matched).Count -ne 2) { throw 'Expected requested/published pair for each ID in Seq.' }
     }
-    [ordered]@{baseCommit=(git rev-parse HEAD);branch=(git branch --show-current);sourceState='uncommitted #29';
+    }
+    [ordered]@{baseCommit=(git rev-parse HEAD);branch=(git branch --show-current);sourceState='working tree; see source-version.json';
         startedAtUtc=$started.ToString('O');completedAtUtc=[DateTimeOffset]::UtcNow.ToString('O');sdk=(dotnet --version);
         os=[Runtime.InteropServices.RuntimeInformation]::OSDescription;brokerImage=$container.Config.Image;
-        endpoint='127.0.0.1:1884';seqVersion=$seq.Version;serviceStartedOrStopped=$false} |
+        endpoint="127.0.0.1:$BrokerPort";brokerContainer=$container.Id;seqVersion=$seq.Version;seqTested=(!$SkipSeq);serviceStartedOrStopped=$false} |
         ConvertTo-Json -Depth 5 | Set-Content "$run/environment.json" -Encoding utf8
     $files = @(rg --files src tests -g '*.cs' -g '*.csproj' -g '*.ps1')
     @($files | ForEach-Object { [ordered]@{path=$_;sha256=(Get-FileHash -LiteralPath $_ -Algorithm SHA256).Hash} }) |
         ConvertTo-Json -Depth 4 | Set-Content "$run/source-version.json" -Encoding utf8
     [ordered]@{result='passed';requests=$requests;received=$wire;invalidExitCode=$invalid.exitCode;
-        unexpectedCommands=0;lateRetainedCommands=0;seqPublishedEvents=$events.Count;actualAmrExecution='not tested';
+        unexpectedCommands=0;lateRetainedCommands=0;seqTested=(!$SkipSeq);seqPublishedEvents=if($SkipSeq){$null}else{@($events).Count};actualAmrExecution='not tested';
         ackCorrelation='not implemented';servicesReused=$true} | ConvertTo-Json -Depth 8 | Set-Content "$run/verification.json" -Encoding utf8
-    Write-Output "PASS: three real MQTT commands, invalid rejection, no retained command, Seq ID correlation. $run"
+    Write-Output "PASS: three real MQTT commands, invalid rejection, no retained command; Seq tested=$(!$SkipSeq). $run"
 } catch {
     $_ | Out-String | Set-Content "$run/failure.log" -Encoding utf8
     throw

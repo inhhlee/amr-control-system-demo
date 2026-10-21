@@ -1,0 +1,16 @@
+Client null sending CONNECT
+Client auto-20B61E0F-440C-43F8-4B28-81E6242D36FE received CONNACK (0)
+Client auto-20B61E0F-440C-43F8-4B28-81E6242D36FE sending SUBSCRIBE (Mid: 1, Topic: amr/COM05_20261021-report-demo-02-cmd_1/command, QoS: 0, Options: 0x00)
+Client auto-20B61E0F-440C-43F8-4B28-81E6242D36FE sending SUBSCRIBE (Mid: 1, Topic: amr/COM05_20261021-report-demo-02-cmd_2/command, QoS: 0, Options: 0x00)
+Client auto-20B61E0F-440C-43F8-4B28-81E6242D36FE sending SUBSCRIBE (Mid: 1, Topic: amr/COM05_20261021-report-demo-02-cmd_3/command, QoS: 0, Options: 0x00)
+Client auto-20B61E0F-440C-43F8-4B28-81E6242D36FE received SUBACK
+Subscribed (mid: 1): 0, 0, 0
+Client auto-20B61E0F-440C-43F8-4B28-81E6242D36FE received PUBLISH (d0, q0, r0, m0, 'amr/COM05_20261021-report-demo-02-cmd_1/command', ... (111 bytes))
+amr/COM05_20261021-report-demo-02-cmd_1/command 0 0 {"cmdId":"CMD-620cfe60263041a0aec458c36a5df0bc","type":"MOVE","ts":1792580132315,"param":{"x":-30.5,"y":15.25}}
+Client auto-20B61E0F-440C-43F8-4B28-81E6242D36FE received PUBLISH (d0, q0, r0, m0, 'amr/COM05_20261021-report-demo-02-cmd_2/command', ... (92 bytes))
+amr/COM05_20261021-report-demo-02-cmd_2/command 0 0 {"cmdId":"CMD-bb9551636bd648c5891aa5599b372d38","type":"STOP","ts":1792580132461,"param":{}}
+Client auto-20B61E0F-440C-43F8-4B28-81E6242D36FE received PUBLISH (d0, q0, r0, m0, 'amr/COM05_20261021-report-demo-02-cmd_3/command', ... (93 bytes))
+amr/COM05_20261021-report-demo-02-cmd_3/command 0 0 {"cmdId":"CMD-b47ba7f3ec584643b83457cf452e5fec","type":"RESET","ts":1792580132593,"param":{}}
+Client auto-20B61E0F-440C-43F8-4B28-81E6242D36FE sending DISCONNECT
+Timed out
+

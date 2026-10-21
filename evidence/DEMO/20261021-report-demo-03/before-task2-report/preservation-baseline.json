@@ -1,0 +1,231 @@
+{
+  "Branch": "feature/33-simulator-movement",
+  "Index": "4D60DDB96F68F4E60D787F7762767EA196B002292AE5D890C29225B57E90A8E9",
+  "Files": [
+    {
+      "Path": "config/simulator.single.json",
+      "Hash": "623932AA66B3F507171867A4A60186D7339170FB617DF0C9C1BD7E6DDF0C71B5"
+    },
+    {
+      "Path": "evidence/DEMO/20261021-report-demo-03/summary.json",
+      "Hash": "A8407C7A339704CE416ECAD86817EC2C4FF2ECCCB15A4827B4C11CBD72B99C35"
+    },
+    {
+      "Path": "evidence/DEMO/20261021-report-demo-03/technical-details.md",
+      "Hash": "64C3E9AE61A927E022FF12272214D1F2E9A6D3EA0716983F591BAA31B09BE33A"
+    },
+    {
+      "Path": "evidence/DEMO/20261021-report-demo-03/verification.json",
+      "Hash": "BFD2F5C6332BE7BDED4291AE830BF7D811FE5EDCE0F3DBA0606D215E289F2004"
+    },
+    {
+      "Path": "src/Amr.Communication.Console/Amr.Communication.Console.csproj",
+      "Hash": "D2E902231968D3B2214955E0BC2D7FCED4607AA3A08F2B5530D15004093F22F3"
+    },
+    {
+      "Path": "src/Amr.Communication.Console/CommandConsoleRunner.cs",
+      "Hash": "BD211AA52F54CCD31A8B3CBDE504B34BE6EF3FAB73FEFE523C7CFC539962BFFA"
+    },
+    {
+      "Path": "src/Amr.Communication.Console/ConsoleRunner.cs",
+      "Hash": "968646AF29EA5D97AE7650D4061BA2CD6E76C2781C6BB38E4524D66AEE7EE4FE"
+    },
+    {
+      "Path": "src/Amr.Communication.Console/Logging/SeqLogging.cs",
+      "Hash": "18978489BD3DDC3A994BD66FE3B7C5FE5EC7F61FD715CC7438C18046D9BAAF15"
+    },
+    {
+      "Path": "src/Amr.Communication.Console/Logging/SeqLogSink.cs",
+      "Hash": "4752EFE0F1F10B2CA0A8C505CBF2F5AB811F6886B3A727A67814B6A023A9646F"
+    },
+    {
+      "Path": "src/Amr.Communication.Console/Logging/StructuredLog.cs",
+      "Hash": "561668FB1C6182E80B231B7345DECACB7FB761C2C6ED940EF468F28A86DD32F2"
+    },
+    {
+      "Path": "src/Amr.Communication.Console/Program.cs",
+      "Hash": "52DDBCF2CC06B9DE401C41FED418512F8F182E908B0F2831EE567DF5B5BB2C3D"
+    },
+    {
+      "Path": "src/Amr.Communication/Amr.Communication.csproj",
+      "Hash": "EC8DE05434FD0644E9F9424BF0AE3239E38A21022A3DDFA5CA4CEF21A05E8361"
+    },
+    {
+      "Path": "src/Amr.Communication/Command/CommandMessage.cs",
+      "Hash": "6B708F4DC1C0D16F16E56B10A5A3C0B828E8F142409F4AD2D2B531811017A9DC"
+    },
+    {
+      "Path": "src/Amr.Communication/Command/CommandPublisher.cs",
+      "Hash": "96AA8D5A26228895EDC5A1CFEA3BAD9D65D810EB8D7FBA1503CCDD0CAF623FC7"
+    },
+    {
+      "Path": "src/Amr.Communication/Command/CommandValidationResult.cs",
+      "Hash": "B7CFAAAEB25702513F055CD304C72074F2460FBC34EC418382C859EBC6025623"
+    },
+    {
+      "Path": "src/Amr.Communication/Command/CommandValidator.cs",
+      "Hash": "3B672887A0503D44155DCF808DE8D9293CE13AF7F8F01C4FE76A49C84CC9223B"
+    },
+    {
+      "Path": "src/Amr.Communication/Models/AckMessage.cs",
+      "Hash": "D28A532212713B8A86D1AF35F2F542B6B53461D73F92F017CA3AFFFA7CA73821"
+    },
+    {
+      "Path": "src/Amr.Communication/Models/AlarmMessage.cs",
+      "Hash": "E86A417FF8ACD3E76500CAC357BE23DE2FF1BF593742E8C323E0DB172701E93E"
+    },
+    {
+      "Path": "src/Amr.Communication/Models/HeartbeatMessage.cs",
+      "Hash": "4BEDA4DA2B7E45720E0C11779DF09496A34D069655BB1B0E509034BC16E33A4E"
+    },
+    {
+      "Path": "src/Amr.Communication/Models/ReceivedMessage.cs",
+      "Hash": "0A7D983DB5E8185A3760BA57B567A2B0924F9FE0DAD5DD34E39FBE95061C7EBF"
+    },
+    {
+      "Path": "src/Amr.Communication/Models/TelemetryMessage.cs",
+      "Hash": "6D0D5C7B6A8A0E26A8A87DB8AAF5957DCD7E9D8DB46E40225BB324B35467D695"
+    },
+    {
+      "Path": "src/Amr.Communication/Mqtt/Connection/MqttConnection.cs",
+      "Hash": "70BA5CB9000AA2A0C09D6741C81C8347F4FC7D5F23CD95C02BAC75926812FD95"
+    },
+    {
+      "Path": "src/Amr.Communication/Mqtt/Connection/MqttConnectionException.cs",
+      "Hash": "BBD323C8E96884039640BB93A263FEB13A3BB8F7F622BF96DD5F091069C375EB"
+    },
+    {
+      "Path": "src/Amr.Communication/Mqtt/Connection/MqttConnectionSettings.cs",
+      "Hash": "39331CD6BCDA0F09D1A72397A31993972C2C2BC937FD2BB0BADA6DB6B1155F1F"
+    },
+    {
+      "Path": "src/Amr.Communication/Mqtt/Queues/AmrReceiveQueue.cs",
+      "Hash": "182038B55E6AE298CEDBF8EB159B475518619DE962487E722B610BC4383F7625"
+    },
+    {
+      "Path": "src/Amr.Communication/Mqtt/Queues/QueueAdmission.cs",
+      "Hash": "B2E9578282ECE81E1CB6F07119C1D87964D34EDF195A16DB1C6871E2E43D3316"
+    },
+    {
+      "Path": "src/Amr.Communication/Mqtt/Queues/QueueProcessingEvent.cs",
+      "Hash": "F0C065F9289AEC821A19A6E090A4944CF10C155DBA6024B0CF7D9A63975D5789"
+    },
+    {
+      "Path": "src/Amr.Communication/Mqtt/Subscriptions/HeartbeatDiagnostic.cs",
+      "Hash": "C4CBA602462BF67C6FC472895DF0EA3635A46E683CD8B9667D26B22E0918720E"
+    },
+    {
+      "Path": "src/Amr.Communication/Mqtt/Subscriptions/HeartbeatSubscription.cs",
+      "Hash": "A38723932BC0C7B3DA1B4801D2F1650C19A4AA191706D749CE991A3C1DFB1BF2"
+    },
+    {
+      "Path": "src/Amr.Communication/Mqtt/Subscriptions/MessageDiagnostic.cs",
+      "Hash": "5AA07F8F98E5991B407E7F82987D0C1FC0BD8BBCD7CB91DD0119B1E3CAE74291"
+    },
+    {
+      "Path": "src/Amr.Communication/Mqtt/Subscriptions/MessageSubscription.cs",
+      "Hash": "C1103DFC77D3E5B7DD92914A15A6514A3C8F9869EB860324EECD4952A0ADCB47"
+    },
+    {
+      "Path": "src/Amr.Communication/Validation/Ack/AckValidationResult.cs",
+      "Hash": "22A832C7E5FD12E8CEFC636A35760EE629E1C640DA095A49F404ACC8D0BD9131"
+    },
+    {
+      "Path": "src/Amr.Communication/Validation/Ack/AckValidator.cs",
+      "Hash": "35A64751463D3BF49A4C691DB175360E268CC410E80F2401A98B89FD681248ED"
+    },
+    {
+      "Path": "src/Amr.Communication/Validation/Alarm/AlarmValidationResult.cs",
+      "Hash": "B09A032DE262596E065232FFEA7A3BDE00E7517DCF7A58EEBDDD3DFC4C18677C"
+    },
+    {
+      "Path": "src/Amr.Communication/Validation/Alarm/AlarmValidator.cs",
+      "Hash": "E2DFD160B68DC84377807B5D7ABB6620A8F1237E1CC87D79EF36152C97E4D684"
+    },
+    {
+      "Path": "src/Amr.Communication/Validation/Common/MessageValidation.cs",
+      "Hash": "430CB62E5C08D1BAD586F1EBDDCA205FA84D69E2C3D65C1836ABAF9BE36D21D2"
+    },
+    {
+      "Path": "src/Amr.Communication/Validation/Common/ValidationError.cs",
+      "Hash": "3DCF8999E3771B4966872962A45D621BE51F862C1EFB16D268501CD3BE666B71"
+    },
+    {
+      "Path": "src/Amr.Communication/Validation/Heartbeat/HeartbeatValidationResult.cs",
+      "Hash": "1604225131767FC7564E9D42470E976117920FC14DD0732039C91260EB14C9A7"
+    },
+    {
+      "Path": "src/Amr.Communication/Validation/Heartbeat/HeartbeatValidator.cs",
+      "Hash": "71F3AA777BA7A44E405F6B36FFD06D56B78825FE761A07B01C74CD0FE80EEC29"
+    },
+    {
+      "Path": "src/Amr.Communication/Validation/Telemetry/TelemetryValidationResult.cs",
+      "Hash": "3687D86B1B52EEA007F3FEF77BAA48C4E513753782EAC8E0EC284364D529E4C6"
+    },
+    {
+      "Path": "src/Amr.Communication/Validation/Telemetry/TelemetryValidator.cs",
+      "Hash": "9A9D2A46EAD617E6EE9086C54BB738AE0FA1EE30806F18D5BCF790289F66E506"
+    },
+    {
+      "Path": "src/Amr.Simulator/Amr.Simulator.csproj",
+      "Hash": "96118037D4040D2D67496059A40521E51B390867F7CE27BBE028F0A8E92DBF45"
+    },
+    {
+      "Path": "src/Amr.Simulator/Configuration/ConfigurationException.cs",
+      "Hash": "E00CCC37DF6E8B329A88A9E4464B0D475827498C4A14235A57C12DA2E7320C87"
+    },
+    {
+      "Path": "src/Amr.Simulator/Configuration/SimulatorSettings.cs",
+      "Hash": "4481585F3457C64A116AF2E15FE9A759BD0AE3DE6621F0D349C5E5EAC93175F4"
+    },
+    {
+      "Path": "src/Amr.Simulator/Configuration/SimulatorSettingsLoader.cs",
+      "Hash": "0061C8B11AD0FBCF622BF4DC3071579198F047E0909519D76A0426A3F2C0359E"
+    },
+    {
+      "Path": "src/Amr.Simulator/Program.cs",
+      "Hash": "21550BC6BBC9E932A2891C4E76D435D7D428D77F6147B787846C64190A82960B"
+    },
+    {
+      "Path": "src/Amr.Simulator/Simulation/ISimulationClock.cs",
+      "Hash": "0DE60711D46854740CAF05E612FD2DCED9D099B482ECF05C2421A0234B3AF15D"
+    },
+    {
+      "Path": "src/Amr.Simulator/Simulation/Position2D.cs",
+      "Hash": "EF5F0EF9E64C3815B896507C0F94D8C3CE6F9EFC46279DFDDBA5CAC8DEFADB22"
+    },
+    {
+      "Path": "src/Amr.Simulator/Simulation/SimulatedAmr.cs",
+      "Hash": "9F60202E4C488C7D3C75D868088D5ED056ABC80DAA15E4AC93A00C2F720E2902"
+    },
+    {
+      "Path": "src/Amr.Simulator/Simulation/SimulationRunner.cs",
+      "Hash": "644D4A51A2D41F345434C058AF43BABEE2A4FDAC757960F8C8F3B951381E9CBF"
+    },
+    {
+      "Path": "src/Amr.Simulator/SimulatorApplication.cs",
+      "Hash": "2919B6C7784C9F98CB5652C7CB41309A478CD2C37A720502E7C04370A415DEF1"
+    },
+    {
+      "Path": "tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj",
+      "Hash": "28B0645A3392C071381AC25E0F52BCD34502A4D97D8448CC30C5D4B30827A764"
+    },
+    {
+      "Path": "tests/Amr.Simulator.Tests/ApplicationTests.cs",
+      "Hash": "594EB45BEF7E2A13F47035CA6DC61BF60CACA779100E6EF02AAC506F95E6C89A"
+    },
+    {
+      "Path": "tests/Amr.Simulator.Tests/ConfigurationTests.cs",
+      "Hash": "35FFE1EF67C3FCA7599CF318D15118FE973AD8C0F2A98E7EAFA324A393BF8C6C"
+    },
+    {
+      "Path": "tests/Amr.Simulator.Tests/MovementTests.cs",
+      "Hash": "31009CAF62BA9173CFA7805DCFD0DC2B25DABBB10A655F0B17F12622DC72A367"
+    },
+    {
+      "Path": "tests/Amr.Simulator.Tests/RunnerTests.cs",
+      "Hash": "FF822694746183563AE2C38940E6806392F36DCA8E5E9E4A5895509EEC4761F3"
+    }
+  ],
+  "Head": "71160f412624f829f8b5673c409da5a4accf202c"
+}

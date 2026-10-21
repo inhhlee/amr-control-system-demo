@@ -1,0 +1,63 @@
+{
+  "runId": "20261021-report-demo-03",
+  "result": "passed",
+  "startedAtUtc": "2026-10-21T10:58:27.2899445+00:00",
+  "completedAtUtc": "2026-10-21T10:59:47.3662283+00:00",
+  "steps": [
+    {
+      "step": "01-automatic",
+      "title": "Current communication and Simulator build / automated regression",
+      "result": "passed",
+      "startedAtUtc": "2026-10-21T10:58:28.3086077+00:00",
+      "completedAtUtc": "2026-10-21T10:58:28.3612530+00:00"
+    },
+    {
+      "step": "02-messages",
+      "title": "Two AMRs, four message types, malformed inputs and recovery",
+      "result": "passed",
+      "startedAtUtc": "2026-10-21T10:58:29.0613588+00:00",
+      "completedAtUtc": "2026-10-21T10:58:38.2336881+00:00"
+    },
+    {
+      "step": "03-commands",
+      "title": "MOVE / STOP / RESET, invalid input and no retained commands",
+      "result": "passed",
+      "startedAtUtc": "2026-10-21T10:58:38.2352540+00:00",
+      "completedAtUtc": "2026-10-21T10:58:56.3757905+00:00"
+    },
+    {
+      "step": "04-keepalive",
+      "title": "Idle KeepAlive for 12 seconds, PING pairs, Ctrl+C exit 0",
+      "result": "passed",
+      "startedAtUtc": "2026-10-21T10:58:56.3770198+00:00",
+      "completedAtUtc": "2026-10-21T10:59:13.1923797+00:00"
+    },
+    {
+      "step": "05-disconnect",
+      "title": "Broker stop, disconnect cleanup / exit 1, restart and NEW client",
+      "result": "passed",
+      "startedAtUtc": "2026-10-21T10:59:13.1935833+00:00",
+      "completedAtUtc": "2026-10-21T10:59:31.4863031+00:00"
+    },
+    {
+      "step": "06-no-response",
+      "title": "TCP stays open; discard Broker responses, detect timeout and exit 1",
+      "result": "passed",
+      "startedAtUtc": "2026-10-21T10:59:31.4873142+00:00",
+      "completedAtUtc": "2026-10-21T10:59:44.6329996+00:00"
+    },
+    {
+      "step": "07-simulator",
+      "title": "Actual initialization console regression; movement checked by automated tests",
+      "result": "passed",
+      "startedAtUtc": "2026-10-21T10:59:44.6344042+00:00",
+      "completedAtUtc": "2026-10-21T10:59:46.2118443+00:00"
+    }
+  ],
+  "seqTested": false,
+  "guiTested": false,
+  "automaticReconnectTested": false,
+  "amrCommandExecutionTested": false,
+  "ackCorrelationImplemented": false,
+  "simulatorRealtimeMovementTested": false
+}
