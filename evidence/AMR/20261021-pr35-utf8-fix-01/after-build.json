@@ -1,0 +1,9 @@
+{
+  "Command": "dotnet build tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj --no-restore -m:1 -nr:false -p:UseSharedCompilation=false",
+  "Permission": "escalated; existing test output requires write access",
+  "Started": "2026-10-21T16:00:17.2149910+09:00",
+  "Finished": "2026-10-21T16:00:19.1891190+09:00",
+  "ExitCode": 0,
+  "ProductDLLSHA256": "EAFF7D7AB5E547FD796935F3B844B7091CDA525777F75EC886DB896C3DCF3D4A",
+  "TestDLLSHA256": "58888E1E4C816AC571BCAA09DCC679AB17C88D0DE316CB6660E322402A5CAF71"
+}

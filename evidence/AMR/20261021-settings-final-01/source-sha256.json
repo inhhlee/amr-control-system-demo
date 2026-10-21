@@ -1,0 +1,70 @@
+[
+  {
+    "Path": "AmrControlSystem.slnx",
+    "SHA256": "1156BECF4F36CFEE77C46B78DEC7B3776203A406F7A9C41BCFA1CF680AF368E4"
+  },
+  {
+    "Path": "config/simulator.single.json",
+    "SHA256": "503C9C4596B796D41623E6EA8D60B3BD4349D54CC9A80A0179745434295E9828"
+  },
+  {
+    "Path": "global.json",
+    "SHA256": "6A8E9044030D136BD4C04FFF9684111A3478B27559BFB6D19E4D380F0DE91510"
+  },
+  {
+    "Path": "src/Amr.Simulator/Amr.Simulator.csproj",
+    "SHA256": "96118037D4040D2D67496059A40521E51B390867F7CE27BBE028F0A8E92DBF45"
+  },
+  {
+    "Path": "src/Amr.Simulator/Configuration/ConfigurationException.cs",
+    "SHA256": "9DC87A2A85DA7D950C86D0182722BE714EC29F2429653376DA3229B1D823970B"
+  },
+  {
+    "Path": "src/Amr.Simulator/Configuration/SimulatorSettings.cs",
+    "SHA256": "7486196D46D1E9DF5BF6B5CD1EF8C2564F35831A233DFECFEE5658F59E7182F5"
+  },
+  {
+    "Path": "src/Amr.Simulator/Configuration/SimulatorSettingsLoader.cs",
+    "SHA256": "39360C07EF45E15516403E90110D2BAA131B388B632463554620AAE1BF4530F1"
+  },
+  {
+    "Path": "src/Amr.Simulator/Program.cs",
+    "SHA256": "21550BC6BBC9E932A2891C4E76D435D7D428D77F6147B787846C64190A82960B"
+  },
+  {
+    "Path": "src/Amr.Simulator/Simulation/Position2D.cs",
+    "SHA256": "AD8995860F60260818B9E3E220BF7E85F94B47FD2A2189CBA8C0D226DA97176D"
+  },
+  {
+    "Path": "src/Amr.Simulator/Simulation/SimulatedAmr.cs",
+    "SHA256": "68F99C23A39920B683DF01A102AF1CFF2B4EEB487CDF441CFBDCA23A0034482E"
+  },
+  {
+    "Path": "src/Amr.Simulator/SimulatorApplication.cs",
+    "SHA256": "199143F33B277B22C991EE06A5407115FF1D586ED3B01C3A112643DC038032F4"
+  },
+  {
+    "Path": "tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj",
+    "SHA256": "571F23CD6D49C1F73D1BE9D7E85AF1BC8818AAFB44BF524527F858928303C692"
+  },
+  {
+    "Path": "tests/Amr.Simulator.Tests/ApplicationTests.cs",
+    "SHA256": "F3E9B19EACDEA4C1E533201F0D2632CBAADFDC0609F7A026EE9B30519267B3A4"
+  },
+  {
+    "Path": "tests/Amr.Simulator.Tests/ConfigurationTests.cs",
+    "SHA256": "BDAA5245B3981307BA9C3336FA3C7B6747E651E2C8BCFC5B5DCF972BA152EF08"
+  },
+  {
+    "Path": "tests/manual/AMR01/Verify-Settings.ps1",
+    "SHA256": "0BDEC7663DC62A8FFA07BAB3D782D1FA3461B775E66F79A19302193630DF1123"
+  },
+  {
+    "Path": "tools/RunSimulatorTests/Program.cs",
+    "SHA256": "8473BA15051D73FD2B949E8A261D4672BB917B3A655A0C50C3FDEFEC82753BBC"
+  },
+  {
+    "Path": "tools/RunSimulatorTests/RunSimulatorTests.csproj",
+    "SHA256": "8E84C0DD771B96127DADF6C4B92D5904406296023500FB000B58AFC8CE683CF3"
+  }
+]

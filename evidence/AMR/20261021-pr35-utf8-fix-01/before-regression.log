@@ -1,0 +1,22 @@
+C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\Amr.Simulator.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+[xUnit.net 00:00:00.17]     Amr.Simulator.Tests.ApplicationTests.InvalidUtf8InId_WithOrWithoutBom_HasErrorExitAndNoInitialization(withBom: True) [FAIL]
+[xUnit.net 00:00:00.18]     Amr.Simulator.Tests.ConfigurationTests.InvalidUtf8InId_WithOrWithoutBom_IsRejectedAsFileError(withBom: True) [FAIL]
+  실패 Amr.Simulator.Tests.ApplicationTests.InvalidUtf8InId_WithOrWithoutBom_HasErrorExitAndNoInitialization(withBom: True) [17 ms]
+  오류 메시지:
+   Assert.Equal() Failure: Values differ
+Expected: 1
+Actual:   0
+  스택 추적:
+     at Amr.Simulator.Tests.ApplicationTests.InvalidUtf8InId_WithOrWithoutBom_HasErrorExitAndNoInitialization(Boolean withBom) in C:\amr-control-system-demo\tests\Amr.Simulator.Tests\ApplicationTests.cs:line 49
+--- End of stack trace from previous location ---
+  실패 Amr.Simulator.Tests.ConfigurationTests.InvalidUtf8InId_WithOrWithoutBom_IsRejectedAsFileError(withBom: True) [8 ms]
+  오류 메시지:
+   Assert.Throws() Failure: No exception was thrown
+Expected: typeof(Amr.Simulator.Configuration.ConfigurationException)
+  스택 추적:
+     at Amr.Simulator.Tests.ConfigurationTests.InvalidUtf8InId_WithOrWithoutBom_IsRejectedAsFileError(Boolean withBom) in C:\amr-control-system-demo\tests\Amr.Simulator.Tests\ConfigurationTests.cs:line 156
+--- End of stack trace from previous location ---
+결과 파일: C:\amr-control-system-demo\evidence\AMR\20261021-pr35-utf8-fix-01\before-regression.trx
+
+실패!  - 실패:     2, 통과:     4, 건너뜀:     0, 전체:     6, 기간: 49 ms - Amr.Simulator.Tests.dll (net10.0)

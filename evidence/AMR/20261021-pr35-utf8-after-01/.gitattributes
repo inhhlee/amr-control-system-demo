@@ -1,0 +1,2 @@
+# 잘못된 UTF-8 입력과 실제 출력을 원래 바이트 그대로 보존한다.
+* -text whitespace=cr-at-eol

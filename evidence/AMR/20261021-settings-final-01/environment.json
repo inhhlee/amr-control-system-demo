@@ -1,0 +1,19 @@
+{
+  "Issue": 32,
+  "BaseCommit": "d5183566cfba8ced1cdd24218efc48f09472397d",
+  "WorkingBranch": "feature/28-simulator-first-run",
+  "IntendedBranch": "feature/32-simulator-settings",
+  "UncommittedChanges": true,
+  "BranchCreation": "Blocked: .git/FETCH_HEAD Permission denied",
+  "RecordedUtc": "2026-10-21T04:59:42.4247967+00:00",
+  "SDK": "10.0.401",
+  "Runtimes": [
+    "Microsoft.AspNetCore.App 10.0.12 [C:\\Program Files\\dotnet\\shared\\Microsoft.AspNetCore.App]",
+    "Microsoft.NETCore.App 10.0.12 [C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App]",
+    "Microsoft.WindowsDesktop.App 10.0.12 [C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App]"
+  ],
+  "OS": "Microsoft Windows 10.0.26200",
+  "SourceManifest": "source-sha256.json",
+  "ProductDllSHA256": "BBBED90D09DB908F170A8BCAF5E54EE74CC5B81A45AF83399698E7B144ABDA12",
+  "TestsDllSHA256": "AA4B2011E6B18C47BC96443E3F44E89FD0427053FB6131EC6F6A0B5BB96DFB56"
+}

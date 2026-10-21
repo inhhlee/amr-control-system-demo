@@ -1,0 +1,7 @@
+{
+  "Command": "dotnet test tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj --no-build --no-restore --logger 'trx;LogFileName=after-full.trx' --results-directory evidence/AMR/20261021-pr35-utf8-fix-01",
+  "VSTEST_CONNECTION_TIMEOUT": 15,
+  "Started": "2026-10-21T16:00:26.2795089+09:00",
+  "Finished": "2026-10-21T16:00:27.6137824+09:00",
+  "ExitCode": 0
+}
