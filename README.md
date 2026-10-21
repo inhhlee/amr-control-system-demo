@@ -1,9 +1,28 @@
 # amr-control-system-demo
 가상 AMR 기반 관제시스템 구현 및 Issue·PR 개발 절차 실습
 
+## 과제2/2: 경로 이동 계산과 도착 정지 (Issue #33)
+
+`Simulation/SimulatedAmr`의 `Advance(double elapsedSeconds)`에 초 단위 경과 시간을 전달하면 순서 있는 경유점 사이를 직선 이동한다. 실제 대기나 타이머 없이 계산하며, 한 경유점에 도착하고 남은 시간은 다음 구간에 적용한다. 같은 위치의 경유점은 시간 소모 없이 통과한다.
+
+```csharp
+var settings = await SimulatorSettingsLoader.LoadAsync("config/simulator.single.json");
+var amr = new SimulatedAmr(settings); // 초기 (-1,0), IDLE, 현재 속도 0
+amr.Advance(2.5);                   // (1,0.5), BUSY, 현재 속도 1
+amr.Advance(1.5);                   // (1,2), IDLE, 현재 속도 0, 완료
+```
+
+`Position`·`State`·`CurrentSpeedMps`·`IsCompleted`로 결과를 읽는다. `NextWaypointIndex`는 다음 목표의 0부터 시작하는 첨자이며, 완료 시 경유점 수와 같다. 초기 위치와 같은 선행 경유점은 생성 시 건너뛰고, 전체 경로가 초기 위치와 같으면 처음부터 IDLE·현재 속도 0으로 완료한다. 설정 속도와 원래 경유점 목록은 보존한다.
+
+0초는 상태를 유지한다. 음수·NaN·양/음의 무한대는 `ArgumentOutOfRangeException`으로 거부하며 `ParamName=elapsedSeconds`와 이유를 제공하고 위치·상태·현재 속도·진행 순서를 보존한다. 유효한 양수 입력으로 이동하면 BUSY·설정 속도, 최종 도착하면 정확한 목표 좌표·IDLE·현재 속도 0이며 추가 갱신에도 유지된다. 호출자는 같은 AMR의 갱신을 순차 실행한다.
+
+계산 비교의 각 축 오차 기준은 0.000001m이며 도착 반경으로 쓰지 않는다. 속도×시간이나 거리 제곱을 직접 만들지 않고 2의 지수로 분리해 계산한다. 부동소수점 표현 한계로 부분 이동 결과가 목표와 정확히 같아진 경우는 다음 양수 갱신에서 동일 위치 규칙으로 통과한다.
+
+이번 구현·시험 근거는 [이동 계산 검증결과](evidence/AMR/20261021-movement-01/README.md)에 있다. 표준 Simulator 자동시험 129건(기존 88·이동 41), 기존 실제 초기화 콘솔 15건이 통과했다. 실제 타이머·이동 로그·Ctrl+C·실행 루프는 #34에서 연결하며 현재 콘솔 명령은 아래 #32의 초기화·출력·종료 동작을 유지한다.
+
 ## 과제2/1: JSON 설정과 AMR 초기 생성 (Issue #32)
 
-단일 AMR 설정을 검사한 뒤 초기 좌표·`IDLE`·현재 속도 `0`을 출력하고 종료한다. 경로 이동은 #33, 실행 루프·도착·이동 중 Ctrl+C는 #34의 후속 범위다.
+단일 AMR 설정을 검사한 뒤 초기 좌표·`IDLE`·현재 속도 `0`을 출력하고 종료한다. 경로 이동 계산은 위 #33 API에 구현했으며 실제 실행 루프·이동 로그·이동 중 Ctrl+C는 #34의 후속 범위다.
 
 저장소 루트에서 실행한다. `--config`는 필수이며 상대 경로는 실행한 디렉터리를 기준으로 해석한다.
 

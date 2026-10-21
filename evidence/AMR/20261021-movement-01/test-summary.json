@@ -1,0 +1,526 @@
+{
+  "Total": 129,
+  "Passed": 129,
+  "Failed": 0,
+  "Skipped": 0,
+  "MovementCases": 41,
+  "ExistingCases": 88,
+  "Cases": [
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.ChangedSettings_ChangeInitialAmrAndRetainConfiguredSpeedAndRoute",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.ExactIntermediateArrival_RemainsBusyUntilFinalArrival",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.InvalidElapsed_IsRejectedWithParameterAndReasonWithoutChangingState(phase: 1, seconds: ∞)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.FinalArrival_IsExactAndFurtherUpdatesPreserveTheCompletedState",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.initialPosition.x\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.ZeroElapsed_PreservesInitialMovingAndCompletedState(phase: 1)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.InvalidOptions_AreRejectedWithoutInitialization(args: [\"--config\", \"a.json\", \"--config\", \"b.json\"])",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.updateIntervalMs\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.OppositeFiniteExtremes_AllowPartialProgressEvenIfDistanceOrTravelWouldOverflow(seconds: 1.5, expectedFractionOfMax: 0.5)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\r\\n  \\\"amrId\\\": \\\"AMR_001\\\",\\r\\n  \\\"initialPosit\"···, expectedField: \"$.waypoints[1].y\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":null,\\\"initialPosition\\\":{\\\"x\\\":-2,\\\"y\\\"···, expectedField: \"$.amrId\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"3\", expectedField: \"$\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"y\\\":\"···, expectedField: \"$.initialPosition.x\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.InvalidElapsed_IsRejectedWithParameterAndReasonWithoutChangingState(phase: 1, seconds: NaN)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.CoincidentWaypoints_ConsumeNoTimeIncludingTrailingDuplicates",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.waypoints[1].x\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidUtf8InId_WithOrWithoutBom_IsRejectedAsFileError(withBom: True)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.TimePartitioning_PreservesRouteProgressWithinCoordinateTolerance(steps: 1)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.ElapsedTime_ProducesStraightLinePositionAndBusyState(x: 3, y: 4, targetX: 0, targetY: 0, speed: 1, seconds: 2.5, expectedX: 1.5, expectedY: 2)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"initialPosition\\\":{\\\"x\\\":-2,\\\"y\\\":3.5},\\\"speedM\"···, expectedField: \"$.amrId\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.waypoints\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":null,\\\"\"···, expectedField: \"$.initialPosition\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.RoundedIntermediateWaypoint_DoesNotCorruptTheNextUpdate",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.InvalidElapsed_IsRejectedWithParameterAndReasonWithoutChangingState(phase: 1, seconds: -0.10000000000000001)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.speedMps\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.updateIntervalMs\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.InvalidElapsed_IsRejectedWithParameterAndReasonWithoutChangingState(phase: 1, seconds: -∞)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.InvalidElapsed_IsRejectedWithParameterAndReasonWithoutChangingState(phase: 0, seconds: -0.10000000000000001)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\", expectedField: \"$\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.speedMps\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.waypoints[0].y\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.updateIntervalMs\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.InvalidOptions_AreRejectedWithoutInitialization(args: [])",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.speedMps\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.AllWaypointsAtInitialPosition_CompleteWithoutBecomingBusy",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.UpdatingOneAmr_DoesNotMutateSharedSettingsOrAnotherAmr",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.initialPosition.y\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"speedMps\\\":1.25,\\\"updateI\"···, expectedField: \"$.initialPosition\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"\\\",\\\"initialPosition\\\":{\\\"x\\\":-2,\\\"y\\\"···, expectedField: \"$.amrId\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.InvalidElapsed_IsRejectedWithParameterAndReasonWithoutChangingState(phase: 0, seconds: -∞)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.TravelTimeBelowSmallestPositiveDouble_StillCompletesWithoutLooping",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.ElapsedTime_ProducesStraightLinePositionAndBusyState(x: 0, y: 0, targetX: 3, targetY: 4, speed: 1, seconds: 2.5, expectedX: 1.5, expectedY: 2)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.waypoints[0]\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.updateIntervalMs\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"A\\\\u002BB\\\",\\\"initialPosition\\\":{\\\"x\\\"···, expectedField: \"$.amrId\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR 001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.amrId\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.InvalidConfiguration_HasErrorExitAndNoCreatedAmr",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.InvalidUtf8InId_WithOrWithoutBom_HasErrorExitAndNoInitialization(withBom: False)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.Output_UsesInvariantNumbers",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.waypoints\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.InvalidOptions_AreRejectedWithoutInitialization(args: [\"--config\", \"a.json\", \"--extra\"])",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.ConfiguredInitialization_PrintsValuesRouteAndIdleState",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\r\\n  \\\"amrId\\\": \\\"\\\\uD800\\\",\\r\\n  \\\"initialPosit\"···, expectedField: \"$.amrId\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"A#B\\\",\\\"initialPosition\\\":{\\\"x\\\":-2,\\\"···, expectedField: \"$.amrId\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\r\\n  \\\"amrId\\\": \\\"AMR_001\\\",\\r\\n  \\\"initialPosit\"···, expectedField: \"$.updateIntervalMs\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.MissingFile_HasFileError",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\r\\n  \\\"amrId\\\": \\\"AMR_001\\\", \\\"amrId\\\": \\\"AMR_00\"···, expectedField: \"$.amrId\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.InvalidElapsed_IsRejectedWithParameterAndReasonWithoutChangingState(phase: 2, seconds: ∞)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.OppositeFiniteExtremes_AllowPartialProgressEvenIfDistanceOrTravelWouldOverflow(seconds: 1, expectedFractionOfMax: 0)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.initialPosition.x\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.Cancellation_IsNotSuccessfulInitialization",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"A\\\\u0001B\\\",\\\"initialPosition\\\":{\\\"x\\\"···, expectedField: \"$.amrId\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.updateIntervalMs\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.InvalidElapsed_IsRejectedWithParameterAndReasonWithoutChangingState(phase: 0, seconds: NaN)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.InvalidElapsed_IsRejectedWithParameterAndReasonWithoutChangingState(phase: 2, seconds: NaN)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.MissingFile_HasErrorExitAndNoCreatedAmr",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\r\\n  \\\"amrId\\\": \\\"AMR_001\\\",\\r\\n  \\\"initialPosit\"···, expectedField: \"$.initialPosition.x\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\" AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\"\"···, expectedField: \"$.amrId\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\r\\n  \\\"amrId\\\": \\\"AMR_001\\\",\\r\\n  \\\"initialPosit\"···, expectedField: \"$.speedMps\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.waypoints[0].x\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\": \\\"A\\\",}\", expectedField: \"$\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\r\\n  \\\"\\\\uD800\\\": \\\"AMR_001\\\",\\r\\n  \\\"initialPos\"···, expectedField: \"$\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.InvalidOptions_AreRejectedWithoutInitialization(args: [\"--config\"])",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.FiniteLargeAndSmallSegments_DoNotOverflowOrCollapseTheirDistance(scale: 9.9999999999999997E+199)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.CalculationTolerance_IsNotUsedAsAnArrivalRadius",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"[]\", expectedField: \"$\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.InvalidElapsed_IsRejectedWithParameterAndReasonWithoutChangingState(phase: 2, seconds: -0.10000000000000001)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"null\", expectedField: \"$\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.speedMps\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.Help_DoesNotInitializeAmr",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.ElapsedTime_ProducesStraightLinePositionAndBusyState(x: 0, y: 0, targetX: 0, targetY: -2, speed: 2, seconds: 0.5, expectedX: 0, expectedY: -1)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\r\\n  \\\"AmrId\\\": \\\"AMR_001\\\",\\r\\n  \\\"initialPosit\"···, expectedField: \"$\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.waypoints[0]\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.InvalidUtf8InId_WithOrWithoutBom_HasErrorExitAndNoInitialization(withBom: True)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidUtf8InId_WithOrWithoutBom_IsRejectedAsFileError(withBom: False)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"A/B\\\",\\\"initialPosition\\\":{\\\"x\\\":-2,\\\"···, expectedField: \"$.amrId\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.LockedFile_IsRejectedBeforeInitialization",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"A\\\\tB\\\",\\\"initialPosition\\\":{\\\"x\\\":-2\"···, expectedField: \"$.amrId\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"A\\\\u00A0B\\\",\\\"initialPosition\\\":{\\\"x\\\"···, expectedField: \"$.amrId\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.updateIntervalMs\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.RemainingTime_IsAppliedToNextSegmentThenStopsAtFinalWaypoint",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.InvalidOptions_AreRejectedWithoutInitialization(args: [\"--unknown\", \"a.json\"])",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.InvalidElapsed_IsRejectedWithParameterAndReasonWithoutChangingState(phase: 0, seconds: ∞)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":12,\\\"initialPosition\\\":{\\\"x\\\":-2,\\\"y\\\":\"···, expectedField: \"$.amrId\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.speedMps\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.speedMps\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\" \\\",\\\"initialPosition\\\":{\\\"x\\\":-2,\\\"y\"···, expectedField: \"$.amrId\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.ZeroElapsed_PreservesInitialMovingAndCompletedState(phase: 0)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.DiagonalWithUnrepresentableTotalDistance_StillMakesFiniteProgress",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.ValidSettings_CreateIdleAmrWithZeroCurrentSpeedAndPreserveRoute",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.IntegerInterval_IsNotSilentlyClampedToInt32",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.Utf8File_WithOrWithoutBom_LoadsWithoutChangingValues(withBom: False)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.ZeroElapsed_PreservesInitialMovingAndCompletedState(phase: 2)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.initialPosition.y\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.waypoints\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.UnrepresentablySmallFraction_DoesNotJumpToTarget",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.TimePartitioning_PreservesRouteProgressWithinCoordinateTolerance(steps: 10)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.InvalidOptions_AreRejectedWithoutInitialization(args: [\"--config\", \"\"])",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.waypoints\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.speedMps\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.OneUpdate_CrossesMultipleWaypointsWithoutReordering",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.ElapsedTime_ProducesStraightLinePositionAndBusyState(x: -2, y: 3, targetX: 2, targetY: 3, speed: 2, seconds: 0.5, expectedX: -1, expectedY: 3)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.initialPosition\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.FiniteLargeAndSmallSegments_DoNotOverflowOrCollapseTheirDistance(scale: 9.9999999999999998E-201)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":[],\\\"sp\"···, expectedField: \"$.initialPosition\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"A\\\\nB\\\",\\\"initialPosition\\\":{\\\"x\\\":-2\"···, expectedField: \"$.amrId\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidByteEncoding_IsRejected",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.Utf8File_WithOrWithoutBom_LoadsWithoutChangingValues(withBom: True)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"\", expectedField: \"$\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\r\\n  \\\"amrId\\\": \\\"AMR_001\\\",\\r\\n  \\\"initialPosit\"···, expectedField: \"$.waypoints[0].x\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.SamePositionWaypoints_AreValidConfiguration",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.ElapsedTime_ProducesStraightLinePositionAndBusyState(x: -3, y: -4, targetX: 0, targetY: 0, speed: 2, seconds: 1.25, expectedX: -1.5, expectedY: -2)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.InvalidElapsed_IsRejectedWithParameterAndReasonWithoutChangingState(phase: 2, seconds: -∞)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.ElapsedTime_ProducesStraightLinePositionAndBusyState(x: 0, y: 0, targetX: 1, targetY: 0, speed: 1, seconds: 0.5, expectedX: 0.5, expectedY: 0)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.SubnormalDistanceAndSpeed_PreserveRepresentableProgress",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\\"amrId\\\":\\\"AMR_001\\\",\\\"initialPosition\\\":{\\\"x\\\":\"···, expectedField: \"$.speedMps\")",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.MovementTests.TimePartitioning_PreservesRouteProgressWithinCoordinateTolerance(steps: 1000)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \"{\\r\\n  \\\"amrId\\\": \\\"AMR_001\\\",\\r\\n  \\\"initialPosit\"···, expectedField: \"$.initialPosition.x\")",
+      "Outcome": "Passed"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+# 실행별 원시 바이트·로그·해시를 줄바꿈 변환 없이 보존한다.
+* -text whitespace=cr-at-eol

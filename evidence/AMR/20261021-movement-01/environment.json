@@ -1,0 +1,22 @@
+{
+  "RunId": "20261021-movement-01",
+  "Started": "2026-10-21T16:54:06.8212183+09:00",
+  "BaseCommit": "3257f5ee88041cbc03827256b155f5e481c7aed0",
+  "Branch": "feature/33-simulator-movement",
+  "UncommittedChanges": true,
+  "OS": "Microsoft Windows 10.0.26200",
+  "SDK": "10.0.401",
+  "Runtimes": [
+    "Microsoft.AspNetCore.App 10.0.12 [C:\\Program Files\\dotnet\\shared\\Microsoft.AspNetCore.App]",
+    "Microsoft.NETCore.App 10.0.12 [C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App]",
+    "Microsoft.WindowsDesktop.App 10.0.12 [C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App]"
+  ],
+  "SourceDocuments": [
+    "과제2 과제계획 v0.12 초안",
+    "기능명세 v0.9 초안 AMR-02",
+    "공통데이터명세 v0.6 초안 4.2·4.3",
+    "검토 및 결정사항 v0.9 초안 D-02·D-05·D-12와 10/21 보완"
+  ],
+  "ExistingChangesBackup": "C:\\Users\\Admin\\AppData\\Local\\Temp\\amr-issue33-preserve-d0dca88a8b3a4da7a71fc13e6f0fe2c3",
+  "StashBackup": "1fffc4b4fef06b7e63d95f84724f5f2fc96ddc0b"
+}

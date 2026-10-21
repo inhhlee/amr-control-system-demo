@@ -1,0 +1,347 @@
+[
+  {
+    "Path": "evidence/AMR/20261021-movement-01/.gitattributes",
+    "SHA256": "5645F4465DBC645E3F046BF214B150C469463733A5A156DB961C1EA128779EBE",
+    "GitBlob": "1410e1dc417e695bc88c886fa4aa384ac0db2cf8"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/branch-events.log",
+    "SHA256": "2DF7A2736F4B1CAC2E90926A23745E8095AC401A8505A437F803217A74A20AAA",
+    "GitBlob": "7655cfe5064501cc63e58461a011b20684504685"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/build-final.json",
+    "SHA256": "E76A4F2DA5246989E5ADA441D09C5BB1EFC9D88E36625629272C095AD295CB8F",
+    "GitBlob": "15bbc9d7fb7a5773f3d88223b0f5da7508ae5dde"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/build-final.log",
+    "SHA256": "B9E138B3003EB3174DA34E255A1F3A8C403112DB5C3B12E3AE725367E7826C88",
+    "GitBlob": "b330e117f13cba0f226950f65d2dea7905e8b729"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/build-rounding-probe.log",
+    "SHA256": "4B8712BDB235F20B008030BFC0277E945E3626A84413468DB6F09B6B39B905FD",
+    "GitBlob": "23543715149fac594bef098a2ba90388b8fb3186"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/build.json",
+    "SHA256": "9C9A758590C72DC4E62B4E13FD79E5E202890BC790479DAE460202835A66A22B",
+    "GitBlob": "38fcf7a67cb983358860c2357bf700f62288df32"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/build.log",
+    "SHA256": "FAE096987F3B58EC1C0A78A85CBB7DC08F41BBD33B80FAA7EBA86D8F7471E9BE",
+    "GitBlob": "865228c553ea2c27c7a8ded7af3a8a8ea326983f"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/environment.json",
+    "SHA256": "AA3F8A7FDD28164F0ECB6187F86E65BFD13BF8A89C88F0B3ED7CCC9072F75102",
+    "GitBlob": "506065840e02c2ad0b5044659f574f1a027d0442"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/movement-final.trx",
+    "SHA256": "D6D8C779D7574534D63D926B55222DE052CD1889AF1A38577E5D6812F61A570C",
+    "GitBlob": "483fecb8fb6d54f37171532c83d50376ff257298"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/movement-initial.trx",
+    "SHA256": "53DC4D4F0BDD9653A0EE93F197249B8007816A9B2C2EB2FBF014E4925BB94D5F",
+    "GitBlob": "165893841b94881e754ae89d753ec3c9bc5bb118"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/preservation.json",
+    "SHA256": "8DC7A286F855E0C684B37D585DE8BB6364F5DB4F3EDFAAE37E7B6FA4E3C2A320",
+    "GitBlob": "7d2bf3de43607b8273eb1807ea91ac42451691d1"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/README.md",
+    "SHA256": "CF3D6CC1A0F12553DD28E858F011A66CDFEE3B0D7D2D31444E6862D9E63532BB",
+    "GitBlob": "85aba44c43c044fc13b2b38169786bad61eda5dc"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/rounding-before-source.json",
+    "SHA256": "9EE996D788F2C94B46EE5272CAE3EF0522232288A41FFA9FD114520F511A5BB3",
+    "GitBlob": "59af04343c931dfe2eb7a1b85670df2de46c9144"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/rounding-before.json",
+    "SHA256": "4824E62D07055F0875A473C15D43A28532351269C10A20B9C302E673F95A9E4A",
+    "GitBlob": "d6452a50334a95841eb6c07a311c2920e3d6abc6"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/rounding-before.log",
+    "SHA256": "66FD9F0C60C15A30DDE44239B4B8E71DA5EDAD9B9534F8AABD7ACE5B121ACFD2",
+    "GitBlob": "80f3c9ec46a4107ec9ecea7845d265278b4ba9e4"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/rounding-before.SimulatedAmr.cs.txt",
+    "SHA256": "E3637FEBB3D82C506202DC1B6FF70334BDF77E5BA1E103AB3EE204858DF78BD7",
+    "GitBlob": "7297ae81a7c4033132be36819dd42d1ccf8bfa0b"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/rounding-before.trx",
+    "SHA256": "341C5B0021C02EE2CD13F2C613788821AFFD5EAB6CBFB90F4FA9C8EA9433DEDC",
+    "GitBlob": "c5185762f8000d126b642cbb74e1a88692a3c465"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/source-sha256.json",
+    "SHA256": "A98859E2F38746B41A047DC6A681DFED11F690B5EAF18FC15F6F6A25101E504E",
+    "GitBlob": "f59f1645cd46756393c316de5d9036520660b620"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/test-summary.json",
+    "SHA256": "E344D97BF4C9205BF57258E879EBBAD21F8505400A3B9534B85432F2D7038274",
+    "GitBlob": "6b1631b19530a6b19863c5f9a96ec09e32e56438"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/tests-final.json",
+    "SHA256": "AAA201E1BF24FA2D6F4555882B2E1707A1A62B061EF21D05E0D77898B4E51760",
+    "GitBlob": "5b9a08c3dc68fc5456856229e097829760c85bca"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/tests-final.log",
+    "SHA256": "8AC45B88AB9910E4A8E484EE72E0388CA7ACFFC6A6A228905DF101BB35116BA1",
+    "GitBlob": "9ef75ff25d6631a98c69fd35a4ad934d123b949b"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/tests-initial.json",
+    "SHA256": "3B093DD0F28C62D93032431FC3D3CE96408AAE8831345C247074567E40052EE4",
+    "GitBlob": "81cc85fb3807c886067ed2ba42f45797e853a60c"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-01/tests-initial.log",
+    "SHA256": "647DCEB0C01CC614C82AEB46FCCAFD0ECF11122C006DEEFACF17423ECBD6207A",
+    "GitBlob": "fda76bf4e61396dea23a0701464cd5ce912ee396"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/.gitattributes",
+    "SHA256": "AEEFB5E1AFA39119DF4C8B0B1CF670E914C43BD4E98DFDC0CD9A8A96B4F51749",
+    "GitBlob": "200d68c062f916ce6d0c87053b7cfdad8709fb07"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/changed.json",
+    "SHA256": "00DC43F2A2D9AF24A15D7F049E8C40B3DF688003FC04B404E1A858F64B31650C",
+    "GitBlob": "1a40622c7a0f9e98ef65bc9e625e2ca417b8f0a2"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/changed.stderr.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/changed.stdout.log",
+    "SHA256": "39376916C019836AF69B4BB78EFF045E54F28C6D1852F45197B920D42369E3E6",
+    "GitBlob": "003f95a96f9e524facd69e450f3cae758e452816"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/fractional-interval.json",
+    "SHA256": "2B0C131BD4C64610FAEBD87FBEDA1CD0FB8684AE2ACC246996CD2CAE45300142",
+    "GitBlob": "c8c6ad098a4c0320338c769d7d74b180d083c3d3"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/fractional-interval.stderr.log",
+    "SHA256": "AF1AE1AF11A085E2021641726DABABE64965007816FCA80972F4D926B379B35D",
+    "GitBlob": "9166851480679d3e9aad216e937475acc2da3e41"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/fractional-interval.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/invalid-coordinate.json",
+    "SHA256": "D11D19F8361D017C3A59F170D07D8DD40C5DB04369D62C486F4D79B7027440D2",
+    "GitBlob": "e6629046f1d229d5d705b923ebcf2d5a1bd7a00d"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/invalid-coordinate.stderr.log",
+    "SHA256": "5C418856EE41FE8EDC86579AF265700CC9EA973C543B3517E41BBD2C0609C090",
+    "GitBlob": "d734a884f589fbbcfc9ce30db3a3691e80263dc3"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/invalid-coordinate.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/invalid-id.json",
+    "SHA256": "490BBDBE5674404EFD5A0E9732EEC6EF92EF7BA369498099CEB9DBFD61455F8B",
+    "GitBlob": "a06dd41d11b4166a9abe6d16326ce12b56d6b393"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/invalid-id.stderr.log",
+    "SHA256": "31FBF260B1B7C1A0117BF14D388A12C4239203C23A092B93143AD39BA6AC0CD3",
+    "GitBlob": "1778f274d8a1791c4d61c2b2ce8ed1591b269a03"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/invalid-id.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/invalid-utf8-bom.json",
+    "SHA256": "B92A8340A4F1198ADEE2A38CA6F709D410C00F463E22282B056FBC74A823AB4C",
+    "GitBlob": "de36f93814beaa1ba3a42a5c2fa767bcbfb465d6"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/invalid-utf8-bom.stderr.log",
+    "SHA256": "675733763237F425C8A6BC58908E93526A768BCD76B4DB7C4B5B5FAB6D0042D6",
+    "GitBlob": "72308e66484f4ccbe14ddc677dc33387d68d75d4"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/invalid-utf8-bom.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/invalid-utf8.json",
+    "SHA256": "81703C2E4E17A220B3CAB46AAD839E21ACC00F4321AFFA19B5D98E2ADF236FDE",
+    "GitBlob": "e24b763fc53499906af98c87a582a09395fcd30a"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/invalid-utf8.stderr.log",
+    "SHA256": "675733763237F425C8A6BC58908E93526A768BCD76B4DB7C4B5B5FAB6D0042D6",
+    "GitBlob": "72308e66484f4ccbe14ddc677dc33387d68d75d4"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/invalid-utf8.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/malformed.json",
+    "SHA256": "021FB596DB81E6D02BF3D2586EE3981FE519F275C0AC9CA76BBCF2EBB4097D96",
+    "GitBlob": "81750b96f9d83b395f285233d54ec0c9df9ab93d"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/malformed.stderr.log",
+    "SHA256": "356B445221CC144F45BD2EAB7E967C846757FC042C9866F07CC5F147AC76F824",
+    "GitBlob": "b71e58054c211bb000400327a9a73eef6c9b67cf"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/malformed.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/missing-field.json",
+    "SHA256": "6A271697787FCAEFAE4EA3391A2E8DA32300AA102FAB53945B60EFCA3B2FBD01",
+    "GitBlob": "d80ac98c1d337f4c74227777eb4aaae65ccf560c"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/missing-field.stderr.log",
+    "SHA256": "B63A05DB506EAD14D3D782EEE280A0ABD4EAE60813EB0113E53117DF5B36441D",
+    "GitBlob": "ae001a9321b505434397ecf962b4ceb56bda6e44"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/missing-field.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/missing-file.stderr.log",
+    "SHA256": "AAE2F6A26E387D008A0F64292BAA47B8FBBE9634C52846E3E79EE468A563EA13",
+    "GitBlob": "5dd85bac7d01d66cc96eaaff19950dea07ad8dc6"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/missing-file.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/negative-speed.json",
+    "SHA256": "C129F7B1FA191F72ADA0A374EA7EBADC7F17085384A491E96B4C7E83C62386A2",
+    "GitBlob": "5532eb405f19dcff83c56ddc590a9db6a16b46b3"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/negative-speed.stderr.log",
+    "SHA256": "B0F94B6595174D306F7B5F092D46A1F0832C9F79A42CFB0DC722909CD177CB27",
+    "GitBlob": "153e3314d34cabfbcf78dced954095f1d72ccbc8"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/negative-speed.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/normal-utf8-bom.json",
+    "SHA256": "4F0F356AAAF2B6B156A8D44FF71DE7129839998AAA8F17EDEDB7814ECE9F4979",
+    "GitBlob": "5da44d480a286c6577d4643a3cabc142ae882c2e"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/normal-utf8-bom.stderr.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/normal-utf8-bom.stdout.log",
+    "SHA256": "BA26E9DA0E119F8FFC2D96D9E7B6AD4660B67170A83D73BE9E6287634E2AAAAD",
+    "GitBlob": "4379786753e44b7780e2deaa993ecba06e55bf37"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/normal.json",
+    "SHA256": "623932AA66B3F507171867A4A60186D7339170FB617DF0C9C1BD7E6DDF0C71B5",
+    "GitBlob": "fadc76d1b9e656fccb2c4dc480f222a82e2e2de5"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/normal.stderr.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/normal.stdout.log",
+    "SHA256": "BA26E9DA0E119F8FFC2D96D9E7B6AD4660B67170A83D73BE9E6287634E2AAAAD",
+    "GitBlob": "4379786753e44b7780e2deaa993ecba06e55bf37"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/overflow-speed.json",
+    "SHA256": "8E3EFFF3D478D63DEB118CD9CC7F580CB2376B1B75D9AA33AE3EEA2120A2DF79",
+    "GitBlob": "e956228350e5b1f56f0053bf8fa7028b23e87325"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/overflow-speed.stderr.log",
+    "SHA256": "00268CE504DE57D708FF93631C3DF00969580B09562932CE20957E88ECDF9A63",
+    "GitBlob": "430341832f77ac4556e6bd36250a1a99551ca53e"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/overflow-speed.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/verification.json",
+    "SHA256": "E017CBE9EC7AD4D22694F0C86F84B527B4D989E81D637C8E45B98DF90F710EF9",
+    "GitBlob": "9f80e416d07f30d615ac55e110121856e620b62c"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/wrong-type.json",
+    "SHA256": "4E9E1140B8FA72A12EAD98D6E16CDBC1C2EEDDE880260B5816D75D58BC502081",
+    "GitBlob": "3a173fefb6ce9cbaa7cbdf52a804e8ec8218d6a3"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/wrong-type.stderr.log",
+    "SHA256": "00268CE504DE57D708FF93631C3DF00969580B09562932CE20957E88ECDF9A63",
+    "GitBlob": "430341832f77ac4556e6bd36250a1a99551ca53e"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/wrong-type.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/zero-speed.json",
+    "SHA256": "6A6AB73BCC220B40C12F7012986D702CEACCA632D0B2DA43772F1B6364A2BECA",
+    "GitBlob": "56c7770a26eb87f06c7d101923dcbcda96237c63"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/zero-speed.stderr.log",
+    "SHA256": "B0F94B6595174D306F7B5F092D46A1F0832C9F79A42CFB0DC722909CD177CB27",
+    "GitBlob": "153e3314d34cabfbcf78dced954095f1d72ccbc8"
+  },
+  {
+    "Path": "evidence/AMR/20261021-movement-console-01/zero-speed.stdout.log",
+    "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "GitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  }
+]

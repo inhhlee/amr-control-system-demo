@@ -1,0 +1,16 @@
+C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\Amr.Simulator.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+[xUnit.net 00:00:00.16]     Amr.Simulator.Tests.MovementTests.RoundedIntermediateWaypoint_DoesNotCorruptTheNextUpdate [FAIL]
+  실패 Amr.Simulator.Tests.MovementTests.RoundedIntermediateWaypoint_DoesNotCorruptTheNextUpdate [24 ms]
+  오류 메시지:
+   Assert.InRange() Failure: Value not in range
+Range:  (0 - 9.9999999999999995E-07)
+Actual: 0.75
+  스택 추적:
+     at Amr.Simulator.Tests.MovementTests.AssertPosition(Position2D expected, Position2D actual) in C:\amr-control-system-demo\tests\Amr.Simulator.Tests\MovementTests.cs:line 28
+   at Amr.Simulator.Tests.MovementTests.RoundedIntermediateWaypoint_DoesNotCorruptTheNextUpdate() in C:\amr-control-system-demo\tests\Amr.Simulator.Tests\MovementTests.cs:line 173
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+결과 파일: C:\amr-control-system-demo\evidence\AMR\20261021-movement-01\rounding-before.trx
+
+실패!  - 실패:     1, 통과:     0, 건너뜀:     0, 전체:     1, 기간: 32 ms - Amr.Simulator.Tests.dll (net10.0)

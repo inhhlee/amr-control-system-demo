@@ -1,0 +1,7 @@
+{
+  "Command": "dotnet test tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj --no-build --no-restore --logger 'trx;LogFileName=movement-initial.trx' --results-directory evidence/AMR/20261021-movement-01",
+  "Started": "2026-10-21T16:54:24.4522752+09:00",
+  "Finished": "2026-10-21T16:54:25.8192151+09:00",
+  "VSTEST_CONNECTION_TIMEOUT": 15,
+  "ExitCode": 0
+}
