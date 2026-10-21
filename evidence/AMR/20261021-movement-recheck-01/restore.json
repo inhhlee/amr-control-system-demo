@@ -1,0 +1,6 @@
+{
+  "Command": "dotnet restore tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj --disable-parallel",
+  "StartedKst": "2026-10-21T23:29:35.0585917+09:00",
+  "FinishedKst": "2026-10-21T23:29:38.5399565+09:00",
+  "ExitCode": 0
+}

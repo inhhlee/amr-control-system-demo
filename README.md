@@ -1,6 +1,10 @@
 # amr-control-system-demo
 가상 AMR 기반 관제시스템 구현 및 Issue·PR 개발 절차 실습
 
+2026-10-22 현재: #33·#34 첫 실행본에 이어 #38 MQTT 송수신과 리뷰 수정이 [PR #39](https://github.com/inhhlee/amr-control-system-demo/pull/39)로 develop에 반영됐다. 최신 검증은 빌드 경고·오류0, Simulator 자동154건·실제 MQTT7시나리오 통과다. [리뷰·재검증 근거](evidence/AMR/20261022-pr39-review-01/README.md)를 따른다.
+
+앞선 #33 재확인 자료는 당시 a8934f0의 자동151건·설정 콘솔15건을 기록한 과거 실행 근거다. [보존 자료 검토·추적 색인](evidence/AMR/20261022-recheck-curation-01/README.md)에서 당시 버전·실패/재시도·현재 검증과의 차이를 확인한다. 아래 단계별 미반영·미착수·시험 수치는 작성 당시 이력이다.
+
 ## Simulator MQTT 송신과 관제 수신 (Issue #38)
 
 최신 develop의 첫 실행본에 보존된 MQTT 확장만 분리했다. `--mqtt`를 지정하면 실제 이동의 위치·현재 속도·상태를 Telemetry로, 실행 신호를 Heartbeat로 보내고 기존 관제 콘솔에서 검사·수신한다. 옵션을 생략한 독립 이동은 유지한다.
