@@ -1,3 +1,0 @@
-{"atUtc":"2026-10-20T04:05:51.878659+00:00","elapsedMs":0.1025,"eventType":"Listening","data":{"port":52572,"brokerPort":52571,"processId":38392}}
-{"atUtc":"2026-10-20T04:05:51.9175188+00:00","elapsedMs":38.9635,"eventType":"ControlApplied","data":{"sequence":2,"action":"stop"}}
-{"atUtc":"2026-10-20T04:05:51.9178198+00:00","elapsedMs":39.2636,"eventType":"Stopped","data":{}}
