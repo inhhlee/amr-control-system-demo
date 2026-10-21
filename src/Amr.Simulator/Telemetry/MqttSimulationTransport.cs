@@ -6,13 +6,21 @@ namespace Amr.Simulator.Telemetry;
 
 public sealed class MqttSimulationTransport : ISimulationTransport
 {
-    private readonly IMqttClient _client = new MqttClientFactory().CreateMqttClient();
+    private readonly IMqttClient _client;
     private readonly MqttConnection _connection;
     private readonly MqttConnectionSettings _settings;
     private bool _disposed;
 
     public MqttSimulationTransport(MqttConnectionSettings settings)
+        : this(settings, new MqttClientFactory().CreateMqttClient())
     {
+    }
+
+    // 전달받은 Client의 이벤트 해제·정리도 이 전송 객체가 소유한다.
+    public MqttSimulationTransport(MqttConnectionSettings settings, IMqttClient client)
+    {
+        ArgumentNullException.ThrowIfNull(client);
+        _client = client;
         _settings = settings;
         _connection = new MqttConnection(_client);
         _client.DisconnectedAsync += OnDisconnected;
@@ -21,7 +29,7 @@ public sealed class MqttSimulationTransport : ISimulationTransport
     public event Action? ConnectionLost;
     private Task OnDisconnected(MqttClientDisconnectedEventArgs args)
     {
-        ConnectionLost?.Invoke();
+        if (args.ClientWasConnected) ConnectionLost?.Invoke();
         return Task.CompletedTask;
     }
 

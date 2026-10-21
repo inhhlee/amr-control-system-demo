@@ -1,0 +1,19 @@
+{
+  "Started": "2026-10-22T02:04:26.0277151+09:00",
+  "ExitCode": 1,
+  "ExpectedExitCode": 1,
+  "Finished": "2026-10-22T02:04:28.8311482+09:00",
+  "Command": [
+    "dotnet",
+    "test",
+    "tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~ConnectionLossBeforeConnectReturns",
+    "--logger",
+    "trx;LogFileName=before-reproduction.trx",
+    "--results-directory",
+    "C:\\amr-control-system-demo\\evidence\\AMR\\20261022-pr39-review-01"
+  ]
+}

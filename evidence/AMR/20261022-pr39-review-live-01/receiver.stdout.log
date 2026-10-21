@@ -1,0 +1,223 @@
+2026-10-21T17:06:28.6133664+00:00 Settings Host=127.0.0.1 Port=61971 ClientId=amr-demo-5d6d9ae5da9e4c87b6e892faa8f05a99 MQTT=5 CleanStart=true SessionExpiry=0 KeepAliveSeconds=5 ConnectTimeoutSeconds=3 DisconnectTimeoutSeconds=3
+2026-10-21T17:06:28.6204100+00:00 Connecting
+2026-10-21T17:06:28.6961166+00:00 Connected
+2026-10-21T17:06:28.7174380+00:00 QueueReady CapacityPerAmr=256 AmrLimit=64 StopTimeoutSeconds=3 TestDelayAmr=null TestDelayMs=0
+2026-10-21T17:06:28.7185238+00:00 Subscribing TopicFilters=amr/+/heartbeat,amr/+/telemetry,amr/+/alarm,amr/+/ack QoS=0 PayloadPreview=True LimitBytes=256
+2026-10-21T17:06:28.7357840+00:00 Subscribed TopicFilters=amr/+/heartbeat,amr/+/telemetry,amr/+/alarm,amr/+/ack QoS=0
+2026-10-21T17:06:28.7360232+00:00 WaitingForShutdown: Ctrl+C로 정상 종료합니다.
+2026-10-21T17:06:29.8260338+00:00 MessageDiagnostic Topic="amr/AMR_001/heartbeat" TopicTruncated=False PayloadBytes=49 Payload="{\"id\":\"AMR_001\",\"ts\":1792602389792,\"status\":\"OK\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:29.8537480+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=heartbeat
+2026-10-21T17:06:29.8558656+00:00 ProcessingStarted AmrId="AMR_001" Kind=heartbeat
+2026-10-21T17:06:29.8546914+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=78 Payload="{\"id\":\"AMR_001\",\"ts\":1792602389802,\"pos\":{\"x\":-1,\"y\":0},\"sp\":0,\"state\":\"IDLE\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:29.8589992+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:29.8864072+00:00 Received {"AmrId":"AMR_001","Kind":"heartbeat","Model":{"Id":"AMR_001","Timestamp":1792602389792,"Status":"OK","ReceivedAtUtc":"2026-10-21T17:06:29.8260338+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:29.8260338+00:00"}
+2026-10-21T17:06:29.8870046+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:29.8938605+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602389802,"Position":{"X":-1,"Y":0},"Speed":0,"State":"IDLE","ReceivedAtUtc":"2026-10-21T17:06:29.8546914+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:29.8546914+00:00"}
+2026-10-21T17:06:30.0601488+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=95 Payload="{\"id\":\"AMR_001\",\"ts\":1792602390044,\"pos\":{\"x\":-0.8654075999999999,\"y\":0},\"sp\":1,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:30.0616984+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:30.0621604+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:30.0626452+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602390044,"Position":{"X":-0.8654075999999999,"Y":0},"Speed":1,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:30.0601488+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:30.0601488+00:00"}
+2026-10-21T17:06:30.3076435+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=95 Payload="{\"id\":\"AMR_001\",\"ts\":1792602390296,\"pos\":{\"x\":-0.6196115999999999,\"y\":0},\"sp\":1,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:30.3084127+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:30.3087069+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:30.3089831+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602390296,"Position":{"X":-0.6196115999999999,"Y":0},"Speed":1,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:30.3076435+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:30.3076435+00:00"}
+2026-10-21T17:06:30.7146329+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=95 Payload="{\"id\":\"AMR_001\",\"ts\":1792602390543,\"pos\":{\"x\":-0.3801136999999999,\"y\":0},\"sp\":1,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:30.7159963+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:30.7159963+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:30.7164235+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602390543,"Position":{"X":-0.3801136999999999,"Y":0},"Speed":1,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:30.7146329+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:30.7146329+00:00"}
+2026-10-21T17:06:30.9948057+00:00 MessageDiagnostic Topic="amr/AMR_001/heartbeat" TopicTruncated=False PayloadBytes=49 Payload="{\"id\":\"AMR_001\",\"ts\":1792602390924,\"status\":\"OK\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:31.0025101+00:00 ProcessingStarted AmrId="AMR_001" Kind=heartbeat
+2026-10-21T17:06:31.0025101+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=heartbeat
+2026-10-21T17:06:31.0028290+00:00 Received {"AmrId":"AMR_001","Kind":"heartbeat","Model":{"Id":"AMR_001","Timestamp":1792602390924,"Status":"OK","ReceivedAtUtc":"2026-10-21T17:06:30.9948057+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:30.9948057+00:00"}
+2026-10-21T17:06:31.0029730+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=95 Payload="{\"id\":\"AMR_001\",\"ts\":1792602390935,\"pos\":{\"x\":0.09743230000000008,\"y\":0},\"sp\":1,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:31.0035619+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:31.0037682+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:31.0039895+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602390935,"Position":{"X":0.09743230000000008,"Y":0},"Speed":1,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:31.002973+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:31.002973+00:00"}
+2026-10-21T17:06:31.1611390+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=95 Payload="{\"id\":\"AMR_001\",\"ts\":1792602391152,\"pos\":{\"x\":0.32525660000000006,\"y\":0},\"sp\":1,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:31.1624426+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:31.1629520+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:31.1632081+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602391152,"Position":{"X":0.32525660000000006,"Y":0},"Speed":1,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:31.161139+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:31.161139+00:00"}
+2026-10-21T17:06:31.3560559+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=95 Payload="{\"id\":\"AMR_001\",\"ts\":1792602391352,\"pos\":{\"x\":0.43173570000000006,\"y\":0},\"sp\":1,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:31.3568636+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:31.3568786+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:31.3574297+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602391352,"Position":{"X":0.43173570000000006,"Y":0},"Speed":1,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:31.3560559+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:31.3560559+00:00"}
+2026-10-21T17:06:31.5608745+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=83 Payload="{\"id\":\"AMR_001\",\"ts\":1792602391557,\"pos\":{\"x\":0.65759,\"y\":0},\"sp\":1,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:31.5620093+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:31.5621293+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:31.5625947+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602391557,"Position":{"X":0.65759,"Y":0},"Speed":1,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:31.5608745+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:31.5608745+00:00"}
+2026-10-21T17:06:31.7668290+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=94 Payload="{\"id\":\"AMR_001\",\"ts\":1792602391764,\"pos\":{\"x\":0.8703649999999999,\"y\":0},\"sp\":1,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:31.7677145+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:31.7677346+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:31.7681877+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602391764,"Position":{"X":0.8703649999999999,"Y":0},"Speed":1,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:31.766829+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:31.766829+00:00"}
+2026-10-21T17:06:31.9517089+00:00 MessageDiagnostic Topic="amr/AMR_001/heartbeat" TopicTruncated=False PayloadBytes=49 Payload="{\"id\":\"AMR_001\",\"ts\":1792602391948,\"status\":\"OK\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:31.9521728+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=heartbeat
+2026-10-21T17:06:31.9521936+00:00 ProcessingStarted AmrId="AMR_001" Kind=heartbeat
+2026-10-21T17:06:31.9525940+00:00 Received {"AmrId":"AMR_001","Kind":"heartbeat","Model":{"Id":"AMR_001","Timestamp":1792602391948,"Status":"OK","ReceivedAtUtc":"2026-10-21T17:06:31.9517089+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:31.9517089+00:00"}
+2026-10-21T17:06:31.9779040+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=85 Payload="{\"id\":\"AMR_001\",\"ts\":1792602391975,\"pos\":{\"x\":1,\"y\":0.0949397},\"sp\":1,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:31.9789319+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:31.9789624+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:31.9794721+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602391975,"Position":{"X":1,"Y":0.0949397},"Speed":1,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:31.977904+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:31.977904+00:00"}
+2026-10-21T17:06:32.1916247+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=85 Payload="{\"id\":\"AMR_001\",\"ts\":1792602392189,\"pos\":{\"x\":1,\"y\":0.3085297},\"sp\":1,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:32.1923377+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:32.1923665+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:32.1927296+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602392189,"Position":{"X":1,"Y":0.3085297},"Speed":1,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:32.1916247+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:32.1916247+00:00"}
+2026-10-21T17:06:32.3941652+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=85 Payload="{\"id\":\"AMR_001\",\"ts\":1792602392391,\"pos\":{\"x\":1,\"y\":0.5215893},\"sp\":1,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:32.3949577+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:32.3949830+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:32.3953896+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602392391,"Position":{"X":1,"Y":0.5215893},"Speed":1,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:32.3941652+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:32.3941652+00:00"}
+2026-10-21T17:06:32.6377115+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=85 Payload="{\"id\":\"AMR_001\",\"ts\":1792602392618,\"pos\":{\"x\":1,\"y\":0.7375227},\"sp\":1,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:32.6383971+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:32.6385805+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:32.6387980+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602392618,"Position":{"X":1,"Y":0.7375227},"Speed":1,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:32.6377115+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:32.6377115+00:00"}
+2026-10-21T17:06:32.8324582+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=94 Payload="{\"id\":\"AMR_001\",\"ts\":1792602392830,\"pos\":{\"x\":1,\"y\":0.9485437999999999},\"sp\":1,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:32.8331224+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:32.8331431+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:32.8335171+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602392830,"Position":{"X":1,"Y":0.9485437999999999},"Speed":1,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:32.8324582+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:32.8324582+00:00"}
+2026-10-21T17:06:32.9669704+00:00 MessageDiagnostic Topic="amr/AMR_001/heartbeat" TopicTruncated=False PayloadBytes=49 Payload="{\"id\":\"AMR_001\",\"ts\":1792602392963,\"status\":\"OK\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:32.9676942+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=heartbeat
+2026-10-21T17:06:32.9679424+00:00 ProcessingStarted AmrId="AMR_001" Kind=heartbeat
+2026-10-21T17:06:32.9681420+00:00 Received {"AmrId":"AMR_001","Kind":"heartbeat","Model":{"Id":"AMR_001","Timestamp":1792602392963,"Status":"OK","ReceivedAtUtc":"2026-10-21T17:06:32.9669704+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:32.9669704+00:00"}
+2026-10-21T17:06:33.0509913+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=85 Payload="{\"id\":\"AMR_001\",\"ts\":1792602393044,\"pos\":{\"x\":1,\"y\":1.1685268},\"sp\":1,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:33.0518813+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:33.0520882+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:33.0523195+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602393044,"Position":{"X":1,"Y":1.1685268},"Speed":1,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:33.0509913+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:33.0509913+00:00"}
+2026-10-21T17:06:33.2786152+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=84 Payload="{\"id\":\"AMR_001\",\"ts\":1792602393258,\"pos\":{\"x\":1,\"y\":1.383627},\"sp\":1,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:33.2800588+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:33.2802033+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:33.2806478+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602393258,"Position":{"X":1,"Y":1.383627},"Speed":1,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:33.2786152+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:33.2786152+00:00"}
+2026-10-21T17:06:33.4744829+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=94 Payload="{\"id\":\"AMR_001\",\"ts\":1792602393471,\"pos\":{\"x\":1,\"y\":1.6038329999999998},\"sp\":1,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:33.4753763+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:33.4756135+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:33.4758533+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602393471,"Position":{"X":1,"Y":1.6038329999999998},"Speed":1,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:33.4744829+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:33.4744829+00:00"}
+2026-10-21T17:06:33.6790842+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=94 Payload="{\"id\":\"AMR_001\",\"ts\":1792602393676,\"pos\":{\"x\":1,\"y\":1.8187595999999997},\"sp\":1,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:33.6798428+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:33.6801718+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:33.6805056+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602393676,"Position":{"X":1,"Y":1.8187595999999997},"Speed":1,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:33.6790842+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:33.6790842+00:00"}
+2026-10-21T17:06:33.8632303+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=77 Payload="{\"id\":\"AMR_001\",\"ts\":1792602393860,\"pos\":{\"x\":1,\"y\":2},\"sp\":0,\"state\":\"IDLE\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:33.8639172+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:33.8641074+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:33.8643088+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602393860,"Position":{"X":1,"Y":2},"Speed":0,"State":"IDLE","ReceivedAtUtc":"2026-10-21T17:06:33.8632303+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:33.8632303+00:00"}
+2026-10-21T17:06:34.9574340+00:00 MessageDiagnostic Topic="amr/AMR_001/heartbeat" TopicTruncated=False PayloadBytes=49 Payload="{\"id\":\"AMR_001\",\"ts\":1792602394942,\"status\":\"OK\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:34.9605039+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=heartbeat
+2026-10-21T17:06:34.9608487+00:00 ProcessingStarted AmrId="AMR_001" Kind=heartbeat
+2026-10-21T17:06:34.9607530+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=77 Payload="{\"id\":\"AMR_001\",\"ts\":1792602394952,\"pos\":{\"x\":5,\"y\":3},\"sp\":0,\"state\":\"IDLE\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:34.9614151+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:34.9610911+00:00 Received {"AmrId":"AMR_001","Kind":"heartbeat","Model":{"Id":"AMR_001","Timestamp":1792602394942,"Status":"OK","ReceivedAtUtc":"2026-10-21T17:06:34.957434+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:34.957434+00:00"}
+2026-10-21T17:06:34.9617737+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:34.9619719+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602394952,"Position":{"X":5,"Y":3},"Speed":0,"State":"IDLE","ReceivedAtUtc":"2026-10-21T17:06:34.960753+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:34.960753+00:00"}
+2026-10-21T17:06:35.1713754+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=83 Payload="{\"id\":\"AMR_001\",\"ts\":1792602395165,\"pos\":{\"x\":5,\"y\":3.22741},\"sp\":2,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:35.1723587+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:35.1726342+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:35.1728971+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602395165,"Position":{"X":5,"Y":3.22741},"Speed":2,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:35.1713754+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:35.1713754+00:00"}
+2026-10-21T17:06:35.3863775+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=94 Payload="{\"id\":\"AMR_001\",\"ts\":1792602395378,\"pos\":{\"x\":5,\"y\":3.6832675999999998},\"sp\":2,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:35.3871578+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:35.3874951+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:35.3878834+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602395378,"Position":{"X":5,"Y":3.6832675999999998},"Speed":2,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:35.3863775+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:35.3863775+00:00"}
+2026-10-21T17:06:35.5930575+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=85 Payload="{\"id\":\"AMR_001\",\"ts\":1792602395590,\"pos\":{\"x\":5.1127294,\"y\":4},\"sp\":2,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:35.5937918+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:35.5938878+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:35.5942086+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602395590,"Position":{"X":5.1127294,"Y":4},"Speed":2,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:35.5930575+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:35.5930575+00:00"}
+2026-10-21T17:06:35.7956466+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=85 Payload="{\"id\":\"AMR_001\",\"ts\":1792602395793,\"pos\":{\"x\":5.5556736,\"y\":4},\"sp\":2,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:35.7962914+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:35.7963181+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:35.7967027+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602395793,"Position":{"X":5.5556736,"Y":4},"Speed":2,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:35.7956466+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:35.7956466+00:00"}
+2026-10-21T17:06:35.9719354+00:00 MessageDiagnostic Topic="amr/AMR_001/heartbeat" TopicTruncated=False PayloadBytes=49 Payload="{\"id\":\"AMR_001\",\"ts\":1792602395969,\"status\":\"OK\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:35.9724754+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=heartbeat
+2026-10-21T17:06:35.9725040+00:00 ProcessingStarted AmrId="AMR_001" Kind=heartbeat
+2026-10-21T17:06:35.9729719+00:00 Received {"AmrId":"AMR_001","Kind":"heartbeat","Model":{"Id":"AMR_001","Timestamp":1792602395969,"Status":"OK","ReceivedAtUtc":"2026-10-21T17:06:35.9719354+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:35.9719354+00:00"}
+2026-10-21T17:06:36.0063416+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=93 Payload="{\"id\":\"AMR_001\",\"ts\":1792602396004,\"pos\":{\"x\":5.991717000000001,\"y\":4},\"sp\":2,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:36.0070720+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:36.0070968+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:36.0074920+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602396004,"Position":{"X":5.991717000000001,"Y":4},"Speed":2,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:36.0063416+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:36.0063416+00:00"}
+2026-10-21T17:06:36.2208683+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=93 Payload="{\"id\":\"AMR_001\",\"ts\":1792602396217,\"pos\":{\"x\":6.414886800000001,\"y\":4},\"sp\":2,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:36.2219505+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:36.2219731+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:36.2226080+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602396217,"Position":{"X":6.414886800000001,"Y":4},"Speed":2,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:36.2208683+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:36.2208683+00:00"}
+2026-10-21T17:06:36.4344476+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=93 Payload="{\"id\":\"AMR_001\",\"ts\":1792602396432,\"pos\":{\"x\":6.843463000000001,\"y\":4},\"sp\":2,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:36.4348833+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:36.4349029+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:36.4352593+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602396432,"Position":{"X":6.843463000000001,"Y":4},"Speed":2,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:36.4344476+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:36.4344476+00:00"}
+2026-10-21T17:06:36.5029556+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=77 Payload="{\"id\":\"AMR_001\",\"ts\":1792602396501,\"pos\":{\"x\":7,\"y\":4},\"sp\":0,\"state\":\"IDLE\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:36.5035200+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:36.5035384+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:36.5038559+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602396501,"Position":{"X":7,"Y":4},"Speed":0,"State":"IDLE","ReceivedAtUtc":"2026-10-21T17:06:36.5029556+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:36.5029556+00:00"}
+2026-10-21T17:06:36.9805397+00:00 MessageDiagnostic Topic="amr/AMR_001/heartbeat" TopicTruncated=False PayloadBytes=49 Payload="{\"id\":\"AMR_001\",\"ts\":1792602396969,\"status\":\"OK\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:36.9825129+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=heartbeat
+2026-10-21T17:06:36.9828783+00:00 ProcessingStarted AmrId="AMR_001" Kind=heartbeat
+2026-10-21T17:06:36.9831721+00:00 Received {"AmrId":"AMR_001","Kind":"heartbeat","Model":{"Id":"AMR_001","Timestamp":1792602396969,"Status":"OK","ReceivedAtUtc":"2026-10-21T17:06:36.9805397+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:36.9805397+00:00"}
+2026-10-21T17:06:36.9838876+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=77 Payload="{\"id\":\"AMR_001\",\"ts\":1792602396980,\"pos\":{\"x\":5,\"y\":3},\"sp\":0,\"state\":\"IDLE\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:36.9845153+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:36.9845318+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:36.9848807+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602396980,"Position":{"X":5,"Y":3},"Speed":0,"State":"IDLE","ReceivedAtUtc":"2026-10-21T17:06:36.9838876+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:36.9838876+00:00"}
+2026-10-21T17:06:36.9946760+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=77 Payload="{\"id\":\"AMR_001\",\"ts\":1792602396991,\"pos\":{\"x\":5,\"y\":3},\"sp\":0,\"state\":\"IDLE\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:36.9953004+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:36.9953266+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:36.9957248+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602396991,"Position":{"X":5,"Y":3},"Speed":0,"State":"IDLE","ReceivedAtUtc":"2026-10-21T17:06:36.994676+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:36.994676+00:00"}
+2026-10-21T17:06:39.1198282+00:00 MessageDiagnostic Topic="amr/AMR_001/heartbeat" TopicTruncated=False PayloadBytes=49 Payload="{\"id\":\"AMR_001\",\"ts\":1792602399112,\"status\":\"OK\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:39.1201232+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=heartbeat
+2026-10-21T17:06:39.1201412+00:00 ProcessingStarted AmrId="AMR_001" Kind=heartbeat
+2026-10-21T17:06:39.1205913+00:00 Received {"AmrId":"AMR_001","Kind":"heartbeat","Model":{"Id":"AMR_001","Timestamp":1792602399112,"Status":"OK","ReceivedAtUtc":"2026-10-21T17:06:39.1198282+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:39.1198282+00:00"}
+2026-10-21T17:06:39.1209385+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=78 Payload="{\"id\":\"AMR_001\",\"ts\":1792602399119,\"pos\":{\"x\":-1,\"y\":0},\"sp\":0,\"state\":\"IDLE\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:39.1213559+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:39.1213711+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:39.1217682+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602399119,"Position":{"X":-1,"Y":0},"Speed":0,"State":"IDLE","ReceivedAtUtc":"2026-10-21T17:06:39.1209385+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:39.1209385+00:00"}
+2026-10-21T17:06:39.3264645+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=78 Payload="{\"id\":\"AMR_001\",\"ts\":1792602399325,\"pos\":{\"x\":-1,\"y\":0},\"sp\":0,\"state\":\"IDLE\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:39.3269436+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:39.3269653+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:39.3273588+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602399325,"Position":{"X":-1,"Y":0},"Speed":0,"State":"IDLE","ReceivedAtUtc":"2026-10-21T17:06:39.3264645+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:39.3264645+00:00"}
+2026-10-21T17:06:39.5302123+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=78 Payload="{\"id\":\"AMR_001\",\"ts\":1792602399528,\"pos\":{\"x\":-1,\"y\":0},\"sp\":0,\"state\":\"IDLE\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:39.5307168+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:39.5307644+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:39.5311432+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602399528,"Position":{"X":-1,"Y":0},"Speed":0,"State":"IDLE","ReceivedAtUtc":"2026-10-21T17:06:39.5302123+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:39.5302123+00:00"}
+2026-10-21T17:06:39.7461796+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=78 Payload="{\"id\":\"AMR_001\",\"ts\":1792602399738,\"pos\":{\"x\":-1,\"y\":0},\"sp\":0,\"state\":\"IDLE\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:39.7468354+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:39.7468817+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:39.7480424+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602399738,"Position":{"X":-1,"Y":0},"Speed":0,"State":"IDLE","ReceivedAtUtc":"2026-10-21T17:06:39.7461796+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:39.7461796+00:00"}
+2026-10-21T17:06:39.9535757+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=78 Payload="{\"id\":\"AMR_001\",\"ts\":1792602399951,\"pos\":{\"x\":-1,\"y\":0},\"sp\":0,\"state\":\"IDLE\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:39.9540960+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:39.9541086+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:39.9544155+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602399951,"Position":{"X":-1,"Y":0},"Speed":0,"State":"IDLE","ReceivedAtUtc":"2026-10-21T17:06:39.9535757+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:39.9535757+00:00"}
+2026-10-21T17:06:40.1280833+00:00 MessageDiagnostic Topic="amr/AMR_001/heartbeat" TopicTruncated=False PayloadBytes=49 Payload="{\"id\":\"AMR_001\",\"ts\":1792602400126,\"status\":\"OK\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:40.1285485+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=heartbeat
+2026-10-21T17:06:40.1285983+00:00 ProcessingStarted AmrId="AMR_001" Kind=heartbeat
+2026-10-21T17:06:40.1290049+00:00 Received {"AmrId":"AMR_001","Kind":"heartbeat","Model":{"Id":"AMR_001","Timestamp":1792602400126,"Status":"OK","ReceivedAtUtc":"2026-10-21T17:06:40.1280833+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:40.1280833+00:00"}
+2026-10-21T17:06:40.1537957+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=78 Payload="{\"id\":\"AMR_001\",\"ts\":1792602400152,\"pos\":{\"x\":-1,\"y\":0},\"sp\":0,\"state\":\"IDLE\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:40.1543800+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:40.1543940+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:40.1547950+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602400152,"Position":{"X":-1,"Y":0},"Speed":0,"State":"IDLE","ReceivedAtUtc":"2026-10-21T17:06:40.1537957+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:40.1537957+00:00"}
+2026-10-21T17:06:40.3667334+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=78 Payload="{\"id\":\"AMR_001\",\"ts\":1792602400364,\"pos\":{\"x\":-1,\"y\":0},\"sp\":0,\"state\":\"IDLE\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:40.3672625+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:40.3672820+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:40.3675980+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602400364,"Position":{"X":-1,"Y":0},"Speed":0,"State":"IDLE","ReceivedAtUtc":"2026-10-21T17:06:40.3667334+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:40.3667334+00:00"}
+2026-10-21T17:06:40.5671179+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=78 Payload="{\"id\":\"AMR_001\",\"ts\":1792602400565,\"pos\":{\"x\":-1,\"y\":0},\"sp\":0,\"state\":\"IDLE\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:40.5676175+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:40.5676309+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:40.5680716+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602400565,"Position":{"X":-1,"Y":0},"Speed":0,"State":"IDLE","ReceivedAtUtc":"2026-10-21T17:06:40.5671179+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:40.5671179+00:00"}
+2026-10-21T17:06:40.7807041+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=78 Payload="{\"id\":\"AMR_001\",\"ts\":1792602400778,\"pos\":{\"x\":-1,\"y\":0},\"sp\":0,\"state\":\"IDLE\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:40.7812865+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:40.7813093+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:40.7816887+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602400778,"Position":{"X":-1,"Y":0},"Speed":0,"State":"IDLE","ReceivedAtUtc":"2026-10-21T17:06:40.7807041+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:40.7807041+00:00"}
+2026-10-21T17:06:40.9951781+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=78 Payload="{\"id\":\"AMR_001\",\"ts\":1792602400993,\"pos\":{\"x\":-1,\"y\":0},\"sp\":0,\"state\":\"IDLE\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:40.9956978+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:40.9957465+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:40.9961361+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602400993,"Position":{"X":-1,"Y":0},"Speed":0,"State":"IDLE","ReceivedAtUtc":"2026-10-21T17:06:40.9951781+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:40.9951781+00:00"}
+2026-10-21T17:06:41.6533346+00:00 MessageDiagnostic Topic="amr/AMR_001/heartbeat" TopicTruncated=False PayloadBytes=49 Payload="{\"id\":\"AMR_001\",\"ts\":1792602401646,\"status\":\"OK\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:41.6536492+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=heartbeat
+2026-10-21T17:06:41.6536644+00:00 ProcessingStarted AmrId="AMR_001" Kind=heartbeat
+2026-10-21T17:06:41.6539873+00:00 Received {"AmrId":"AMR_001","Kind":"heartbeat","Model":{"Id":"AMR_001","Timestamp":1792602401646,"Status":"OK","ReceivedAtUtc":"2026-10-21T17:06:41.6533346+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:41.6533346+00:00"}
+2026-10-21T17:06:41.6544411+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=78 Payload="{\"id\":\"AMR_001\",\"ts\":1792602401653,\"pos\":{\"x\":-1,\"y\":0},\"sp\":0,\"state\":\"IDLE\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:41.6548366+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:41.6548485+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:41.6551832+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602401653,"Position":{"X":-1,"Y":0},"Speed":0,"State":"IDLE","ReceivedAtUtc":"2026-10-21T17:06:41.6544411+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:41.6544411+00:00"}
+2026-10-21T17:06:41.8744452+00:00 MessageDiagnostic Topic="amr/AMR_001/telemetry" TopicTruncated=False PayloadBytes=86 Payload="{\"id\":\"AMR_001\",\"ts\":1792602401872,\"pos\":{\"x\":-0.7842807,\"y\":0},\"sp\":1,\"state\":\"BUSY\"}" PayloadTruncated=False Validation=Accepted
+2026-10-21T17:06:41.8750421+00:00 QueueAdmission Result=Accepted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:41.8750612+00:00 ProcessingStarted AmrId="AMR_001" Kind=telemetry
+2026-10-21T17:06:41.8754995+00:00 Received {"AmrId":"AMR_001","Kind":"telemetry","Model":{"Id":"AMR_001","Timestamp":1792602401872,"Position":{"X":-0.7842807,"Y":0},"Speed":1,"State":"BUSY","ReceivedAtUtc":"2026-10-21T17:06:41.8744452+00:00"},"ReceivedAtUtc":"2026-10-21T17:06:41.8744452+00:00"}
+2026-10-21T17:06:42.0124963+00:00 ConnectionLost Reason=NormalDisconnection ClientWasConnected=True ExceptionType=None SocketError=None ClientId=amr-demo-5d6d9ae5da9e4c87b6e892faa8f05a99
+2026-10-21T17:06:42.0168310+00:00 ShutdownRequested Reason=ConnectionLost
+2026-10-21T17:06:42.0206820+00:00 QueueEvent {"Code":"Stopped","AmrId":null,"Kind":null,"Count":0,"ExceptionType":null}
+2026-10-21T17:06:42.0209095+00:00 QueueStopped
+2026-10-21T17:06:42.0210444+00:00 Unsubscribing
+2026-10-21T17:06:42.0242143+00:00 SubscriptionStopped
+2026-10-21T17:06:42.0247452+00:00 Disposed
+2026-10-21T17:06:42.0249496+00:00 ExitCode=1

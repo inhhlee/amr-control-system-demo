@@ -1,0 +1,17 @@
+{
+  "Started": "2026-10-22T02:05:43.0956088+09:00",
+  "Finished": "2026-10-22T02:05:47.8224691+09:00",
+  "Command": [
+    "dotnet",
+    "test",
+    "tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--logger",
+    "trx;LogFileName=after-simulator.trx",
+    "--results-directory",
+    "C:\\amr-control-system-demo\\evidence\\AMR\\20261022-pr39-review-01"
+  ],
+  "ExpectedExitCode": 0,
+  "ExitCode": 0
+}

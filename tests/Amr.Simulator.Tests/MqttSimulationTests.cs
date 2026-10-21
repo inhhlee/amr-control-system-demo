@@ -133,6 +133,19 @@ public sealed class MqttSimulationTests
     }
 
     [Fact]
+    public async Task ConnectionLossBeforeConnectReturns_IsNotMissedOrRelabeledAsPublishFailure()
+    {
+        var transport = new FakeTransport { LoseBeforeConnectReturns = true };
+        var result = await Run(transport, clock: new TestSimulationClock(10));
+        Assert.Equal(1, result.Code);
+        Assert.Contains("Reason=ConnectionLost", result.Error);
+        Assert.DoesNotContain("MqttConnected", result.Output);
+        Assert.DoesNotContain("SimulationStarted", result.Output);
+        Assert.Empty(transport.Messages);
+        Assert.True(transport.Disconnected && transport.Disposed);
+    }
+
+    [Fact]
     public async Task ConnectionFailure_DoesNotStartMovement()
     {
         var transport = new FakeTransport { FailConnect = true };
@@ -190,18 +203,26 @@ public sealed class MqttSimulationTests
         public int LoseAt { get; init; }
         public int BlockAt { get; init; }
         public bool FailConnect { get; init; }
+        public bool LoseBeforeConnectReturns { get; init; }
         public bool Disconnected { get; private set; }
         public bool Disposed { get; private set; }
         public bool BlockedPublicationEnded { get; private set; }
         private int _calls;
+        private bool _lostBeforeConnectReturned;
         public Task ConnectAsync(CancellationToken token)
         {
             token.ThrowIfCancellationRequested();
+            if (LoseBeforeConnectReturns)
+            {
+                _lostBeforeConnectReturned = true;
+                ConnectionLost?.Invoke();
+            }
             return FailConnect ? Task.FromException(new IOException()) : Task.CompletedTask;
         }
         public async Task PublishAsync(SimulationPublication message, CancellationToken token)
         {
             token.ThrowIfCancellationRequested();
+            if (_lostBeforeConnectReturned) throw new IOException("Connection already lost.");
             int call = ++_calls;
             if (call == FailAt) throw new IOException();
             if (call == LoseAt) { ConnectionLost?.Invoke(); token.ThrowIfCancellationRequested(); }

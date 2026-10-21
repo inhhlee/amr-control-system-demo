@@ -1,0 +1,222 @@
+diff --git a/src/Amr.Simulator/Telemetry/ISimulationTransport.cs b/src/Amr.Simulator/Telemetry/ISimulationTransport.cs
+index aae161d..1baf6e9 100644
+--- a/src/Amr.Simulator/Telemetry/ISimulationTransport.cs
++++ b/src/Amr.Simulator/Telemetry/ISimulationTransport.cs
+@@ -3,6 +3,7 @@ namespace Amr.Simulator.Telemetry;
+ // 세션이 연결·발행·해제·Dispose를 소유한다. 전송 실패 후 같은 인스턴스를 재사용하지 않는다.
+ public interface ISimulationTransport : IDisposable
+ {
++    // 접속된 연결의 단절만 통지한다. ConnectAsync 반환 직전에도 발생할 수 있다.
+     event Action? ConnectionLost;
+     Task ConnectAsync(CancellationToken token);
+     Task PublishAsync(SimulationPublication message, CancellationToken token);
+diff --git a/src/Amr.Simulator/Telemetry/MqttSimulationSession.cs b/src/Amr.Simulator/Telemetry/MqttSimulationSession.cs
+index d4f85b8..79eac3d 100644
+--- a/src/Amr.Simulator/Telemetry/MqttSimulationSession.cs
++++ b/src/Amr.Simulator/Telemetry/MqttSimulationSession.cs
+@@ -16,13 +16,12 @@ public static class MqttSimulationSession
+         using var publishing = CancellationTokenSource.CreateLinkedTokenSource(stop.Token);
+         int reason = 0; // 1=user, 2=connection loss, 3=failure, 4=final publication completed
+         int code = 0;
+-        bool connected = false;
+         Task? runner = null, sender = null;
+         void RequestStop(int value)
+         {
+             if (Interlocked.CompareExchange(ref reason, value, 0) == 0) stop.Cancel();
+         }
+-        void Lost() { if (Volatile.Read(ref connected)) RequestStop(2); }
++        void Lost() => RequestStop(2);
+         using var registration = userToken.Register(() => RequestStop(1));
+         transport.ConnectionLost += Lost;
+         try
+@@ -31,7 +30,7 @@ public static class MqttSimulationSession
+             _ = SimulationMessages.Create(latest, false, 0);
+             _ = SimulationMessages.Create(latest, true, 0);
+             await transport.ConnectAsync(stop.Token);
+-            Volatile.Write(ref connected, true);
++            stop.Token.ThrowIfCancellationRequested();
+             await output.WriteLineAsync($"MqttConnected ClientId={options.Connection.ClientId} TelemetryMs={options.TelemetryMs} HeartbeatMs={options.HeartbeatMs}");
+             await PublishAsync(true, stop.Token);
+             await PublishAsync(false, stop.Token);
+@@ -67,7 +66,6 @@ public static class MqttSimulationSession
+                 catch (OperationCanceledException) when (stop.IsCancellationRequested) { }
+                 catch (Exception) { Interlocked.CompareExchange(ref reason, 3, 0); }
+             }
+-            Volatile.Write(ref connected, false);
+             transport.ConnectionLost -= Lost;
+             try { await transport.DisconnectAsync(); }
+             catch (Exception exception)
+diff --git a/src/Amr.Simulator/Telemetry/MqttSimulationTransport.cs b/src/Amr.Simulator/Telemetry/MqttSimulationTransport.cs
+index e9fef0b..552ec60 100644
+--- a/src/Amr.Simulator/Telemetry/MqttSimulationTransport.cs
++++ b/src/Amr.Simulator/Telemetry/MqttSimulationTransport.cs
+@@ -6,13 +6,21 @@ namespace Amr.Simulator.Telemetry;
+ 
+ public sealed class MqttSimulationTransport : ISimulationTransport
+ {
+-    private readonly IMqttClient _client = new MqttClientFactory().CreateMqttClient();
++    private readonly IMqttClient _client;
+     private readonly MqttConnection _connection;
+     private readonly MqttConnectionSettings _settings;
+     private bool _disposed;
+ 
+     public MqttSimulationTransport(MqttConnectionSettings settings)
++        : this(settings, new MqttClientFactory().CreateMqttClient())
+     {
++    }
++
++    // 전달받은 Client의 이벤트 해제·정리도 이 전송 객체가 소유한다.
++    public MqttSimulationTransport(MqttConnectionSettings settings, IMqttClient client)
++    {
++        ArgumentNullException.ThrowIfNull(client);
++        _client = client;
+         _settings = settings;
+         _connection = new MqttConnection(_client);
+         _client.DisconnectedAsync += OnDisconnected;
+@@ -21,7 +29,7 @@ public sealed class MqttSimulationTransport : ISimulationTransport
+     public event Action? ConnectionLost;
+     private Task OnDisconnected(MqttClientDisconnectedEventArgs args)
+     {
+-        ConnectionLost?.Invoke();
++        if (args.ClientWasConnected) ConnectionLost?.Invoke();
+         return Task.CompletedTask;
+     }
+ 
+diff --git a/tests/Amr.Simulator.Tests/MqttSimulationTests.cs b/tests/Amr.Simulator.Tests/MqttSimulationTests.cs
+index 21fb257..cab1ae2 100644
+--- a/tests/Amr.Simulator.Tests/MqttSimulationTests.cs
++++ b/tests/Amr.Simulator.Tests/MqttSimulationTests.cs
+@@ -132,6 +132,19 @@ public sealed class MqttSimulationTests
+         Assert.True(transport.Disposed);
+     }
+ 
++    [Fact]
++    public async Task ConnectionLossBeforeConnectReturns_IsNotMissedOrRelabeledAsPublishFailure()
++    {
++        var transport = new FakeTransport { LoseBeforeConnectReturns = true };
++        var result = await Run(transport, clock: new TestSimulationClock(10));
++        Assert.Equal(1, result.Code);
++        Assert.Contains("Reason=ConnectionLost", result.Error);
++        Assert.DoesNotContain("MqttConnected", result.Output);
++        Assert.DoesNotContain("SimulationStarted", result.Output);
++        Assert.Empty(transport.Messages);
++        Assert.True(transport.Disconnected && transport.Disposed);
++    }
++
+     [Fact]
+     public async Task ConnectionFailure_DoesNotStartMovement()
+     {
+@@ -190,18 +203,26 @@ public sealed class MqttSimulationTests
+         public int LoseAt { get; init; }
+         public int BlockAt { get; init; }
+         public bool FailConnect { get; init; }
++        public bool LoseBeforeConnectReturns { get; init; }
+         public bool Disconnected { get; private set; }
+         public bool Disposed { get; private set; }
+         public bool BlockedPublicationEnded { get; private set; }
+         private int _calls;
++        private bool _lostBeforeConnectReturned;
+         public Task ConnectAsync(CancellationToken token)
+         {
+             token.ThrowIfCancellationRequested();
++            if (LoseBeforeConnectReturns)
++            {
++                _lostBeforeConnectReturned = true;
++                ConnectionLost?.Invoke();
++            }
+             return FailConnect ? Task.FromException(new IOException()) : Task.CompletedTask;
+         }
+         public async Task PublishAsync(SimulationPublication message, CancellationToken token)
+         {
+             token.ThrowIfCancellationRequested();
++            if (_lostBeforeConnectReturned) throw new IOException("Connection already lost.");
+             int call = ++_calls;
+             if (call == FailAt) throw new IOException();
+             if (call == LoseAt) { ConnectionLost?.Invoke(); token.ThrowIfCancellationRequested(); }
+diff --git a/tests/Amr.Simulator.Tests/MqttTransportConnectionTests.cs b/tests/Amr.Simulator.Tests/MqttTransportConnectionTests.cs
+new file mode 100644
+--- /dev/null
++++ b/tests/Amr.Simulator.Tests/MqttTransportConnectionTests.cs
+@@ -0,0 +1,82 @@
++using Amr.Communication.Mqtt;
++using Amr.Simulator.Configuration;
++using Amr.Simulator.Simulation;
++using Amr.Simulator.Telemetry;
++using MQTTnet;
++using MQTTnet.Diagnostics.PacketInspection;
++using Xunit;
++using static Amr.Simulator.Tests.ConfigurationTests;
++
++namespace Amr.Simulator.Tests;
++
++public sealed class MqttTransportConnectionTests
++{
++    [Theory]
++    [InlineData(true, "ConnectionLost")]
++    [InlineData(false, "MqttConnectionException")]
++    public async Task DisconnectNotificationDuringConnect_DistinguishesEstablishedLossFromFailedAttempt(
++        bool clientWasConnected, string expectedReason)
++    {
++        using var config = new TemporaryConfig("""
++            {"amrId":"AMR_001","initialPosition":{"x":0,"y":0},"speedMps":1,
++             "updateIntervalMs":100,"waypoints":[{"x":1,"y":0}]}
++            """);
++        var amr = new SimulatedAmr(await SimulatorSettingsLoader.LoadAsync(config.FilePath));
++        var client = new DisconnectingClient(clientWasConnected);
++        var settings = new MqttConnectionSettings();
++        var transport = new MqttSimulationTransport(settings, client);
++        using var output = new StringWriter();
++        using var error = new StringWriter();
++
++        int code = await MqttSimulationSession.RunAsync(amr, new(settings, 20, 30), transport,
++            output, error, default, new TestSimulationClock(10)).WaitAsync(TimeSpan.FromSeconds(5));
++
++        Assert.Equal(1, code);
++        Assert.Contains($"Reason={expectedReason}", error.ToString());
++        if (!clientWasConnected) Assert.DoesNotContain("Reason=ConnectionLost", error.ToString());
++        Assert.DoesNotContain("MqttConnected", output.ToString());
++        Assert.DoesNotContain("SimulationStarted", output.ToString());
++        Assert.Equal(0, client.PublishCalls);
++        Assert.Equal(1, client.DisposeCalls);
++        Assert.Equal(0, client.DisconnectedHandlerCount);
++    }
++
++    // MQTTnet의 알림 순서를 고정해 네트워크 타이밍에 의존하지 않고 접속 경계를 재현한다.
++    private sealed class DisconnectingClient(bool clientWasConnected) : IMqttClient
++    {
++        public bool IsConnected { get; private set; }
++        public MqttClientOptions Options { get; private set; } = new();
++        public int PublishCalls { get; private set; }
++        public int DisposeCalls { get; private set; }
++        public int DisconnectedHandlerCount => DisconnectedAsync?.GetInvocationList().Length ?? 0;
++
++        public async Task<MqttClientConnectResult> ConnectAsync(MqttClientOptions options, CancellationToken token)
++        {
++            token.ThrowIfCancellationRequested();
++            Options = options;
++            IsConnected = false;
++            if (DisconnectedAsync is { } disconnected)
++                await disconnected(new MqttClientDisconnectedEventArgs(clientWasConnected, null,
++                    MqttClientDisconnectReason.UnspecifiedError, null, null, null));
++            return new MqttClientConnectResult { ResultCode = clientWasConnected
++                ? MqttClientConnectResultCode.Success : MqttClientConnectResultCode.ServerUnavailable };
++        }
++
++        public Task<MqttClientPublishResult> PublishAsync(MqttApplicationMessage message, CancellationToken token)
++        {
++            PublishCalls++;
++            throw new InvalidOperationException("A disconnected client cannot publish.");
++        }
++        public void Dispose() { DisposeCalls++; IsConnected = false; }
++        public Task DisconnectAsync(MqttClientDisconnectOptions options, CancellationToken token) => Task.CompletedTask;
++        public event Func<MqttClientDisconnectedEventArgs, Task>? DisconnectedAsync;
++        public event Func<MqttApplicationMessageReceivedEventArgs, Task>? ApplicationMessageReceivedAsync { add { } remove { } }
++        public event Func<MqttClientConnectedEventArgs, Task>? ConnectedAsync { add { } remove { } }
++        public event Func<MqttClientConnectingEventArgs, Task>? ConnectingAsync { add { } remove { } }
++        public event Func<InspectMqttPacketEventArgs, Task>? InspectPacketAsync { add { } remove { } }
++        public Task PingAsync(CancellationToken token) => throw new NotSupportedException();
++        public Task<MqttClientSubscribeResult> SubscribeAsync(MqttClientSubscribeOptions options, CancellationToken token) => throw new NotSupportedException();
++        public Task<MqttClientUnsubscribeResult> UnsubscribeAsync(MqttClientUnsubscribeOptions options, CancellationToken token) => throw new NotSupportedException();
++        public Task SendEnhancedAuthenticationExchangeDataAsync(MqttEnhancedAuthenticationExchangeData data, CancellationToken token) => throw new NotSupportedException();
++    }
++}

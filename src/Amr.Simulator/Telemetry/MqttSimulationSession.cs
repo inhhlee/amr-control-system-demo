@@ -16,13 +16,12 @@ public static class MqttSimulationSession
         using var publishing = CancellationTokenSource.CreateLinkedTokenSource(stop.Token);
         int reason = 0; // 1=user, 2=connection loss, 3=failure, 4=final publication completed
         int code = 0;
-        bool connected = false;
         Task? runner = null, sender = null;
         void RequestStop(int value)
         {
             if (Interlocked.CompareExchange(ref reason, value, 0) == 0) stop.Cancel();
         }
-        void Lost() { if (Volatile.Read(ref connected)) RequestStop(2); }
+        void Lost() => RequestStop(2);
         using var registration = userToken.Register(() => RequestStop(1));
         transport.ConnectionLost += Lost;
         try
@@ -31,7 +30,7 @@ public static class MqttSimulationSession
             _ = SimulationMessages.Create(latest, false, 0);
             _ = SimulationMessages.Create(latest, true, 0);
             await transport.ConnectAsync(stop.Token);
-            Volatile.Write(ref connected, true);
+            stop.Token.ThrowIfCancellationRequested();
             await output.WriteLineAsync($"MqttConnected ClientId={options.Connection.ClientId} TelemetryMs={options.TelemetryMs} HeartbeatMs={options.HeartbeatMs}");
             await PublishAsync(true, stop.Token);
             await PublishAsync(false, stop.Token);
@@ -67,7 +66,6 @@ public static class MqttSimulationSession
                 catch (OperationCanceledException) when (stop.IsCancellationRequested) { }
                 catch (Exception) { Interlocked.CompareExchange(ref reason, 3, 0); }
             }
-            Volatile.Write(ref connected, false);
             transport.ConnectionLost -= Lost;
             try { await transport.DisconnectAsync(); }
             catch (Exception exception)

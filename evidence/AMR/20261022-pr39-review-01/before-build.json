@@ -1,0 +1,15 @@
+{
+  "Started": "2026-10-22T02:04:11.3104746+09:00",
+  "ExitCode": 0,
+  "ExpectedExitCode": 0,
+  "Finished": "2026-10-22T02:04:25.9800388+09:00",
+  "Command": [
+    "dotnet",
+    "build",
+    "AmrControlSystem.slnx",
+    "--no-restore",
+    "-m:1",
+    "-nr:false",
+    "-p:UseSharedCompilation=false"
+  ]
+}
