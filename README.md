@@ -1,6 +1,53 @@
 # amr-control-system-demo
 가상 AMR 기반 관제시스템 구현 및 Issue·PR 개발 절차 실습
 
+## 과제2/1: JSON 설정과 AMR 초기 생성 (Issue #32)
+
+단일 AMR 설정을 검사한 뒤 초기 좌표·`IDLE`·현재 속도 `0`을 출력하고 종료한다. 경로 이동은 #33, 실행 루프·도착·이동 중 Ctrl+C는 #34의 후속 범위다.
+
+저장소 루트에서 실행한다. `--config`는 필수이며 상대 경로는 실행한 디렉터리를 기준으로 해석한다.
+
+```powershell
+dotnet restore AmrControlSystem.slnx
+dotnet build AmrControlSystem.slnx --no-restore
+dotnet run --no-build --project src/Amr.Simulator -- --config config/simulator.single.json
+dotnet test tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj --no-restore
+pwsh -NoProfile -File tests/manual/AMR01/Verify-Settings.ps1 -RunId <새-실행ID>
+```
+
+실제 초기화 검증 스크립트는 빌드한 Simulator를 별도 프로세스로 실행하며 Broker·컨테이너·GUI를 사용하지 않는다. `--help`로 사용법을 확인한다.
+
+| JSON 필드 | 필수값·검사 |
+| --- | --- |
+| `amrId` | 문자열. 빈 값·공백·제어문자·`/`·`+`·`#` 거부 |
+| `initialPosition.x/y` | 유한 숫자, m. 음수 허용 |
+| `speedMps` | 0보다 큰 유한 숫자, m/s. 초기 현재 속도와 별도 보존 |
+| `updateIntervalMs` | 0보다 큰 Int64 JSON 정수, ms. 예시의 100은 명시한 시험값이며 MQTT 송신 주기와 별개 |
+| `waypoints` | X/Y가 유한 숫자인 경유점 1개 이상, 입력 순서 보존 |
+
+모든 필드는 명시해야 한다. 파일 읽기·문법·자료형·필수값·유효성 오류는 `ConfigurationRejected Field=... Reason=...`를 stderr에 출력하고 종료 코드 1로 끝낸다. 설정 오류가 있으면 AMR을 생성하지 않는다. 자동 보정·기본값 대체를 하지 않으며, 구현에서 필드명 대소문자를 구분하고 추가·중복 필드도 거부한다. JSON 숫자 대신 문자열로 쓴 `NaN`·`Infinity`와 double 범위를 넘는 숫자도 거부한다.
+
+정상 실행은 `ConfigurationLoaded`·`Waypoint`·`AmrInitialized`·`InitializationCompleted`를 stdout에 남기고 종료 코드 0으로 끝난다. 출력 숫자는 소수점 `.`을 사용한다. 초기화 중 취소는 `InitializationCanceled`와 코드 0으로 구분한다. 실제 위치 변경은 아직 수행하지 않는다.
+
+설정 파일은 System.Text.Json으로 읽어 항목별로 검사한다. 검사된 설정과 경유점 목록은 외부에서 바꿀 수 없게 보관해 생성 후 설정값이 바뀌지 않도록 했다. 별도의 설정 패키지·통신 참조는 추가하지 않았다.
+
+적용 기준은 과제2 과제계획 v0.10 초안, 기능명세 v0.9 초안 AMR-01, 공통데이터명세 v0.6 초안 4절, 결정사항 v0.9 초안 D-12·10/21 ID 검사 보완이다. #32 게시 당시 버전보다 최신 사용자 승인 보완을 적용하며, 세 Issue 분할은 10/21 사용자 요청에 따른다.
+
+이번 실행의 [검증결과](evidence/AMR/20261021-settings-final-01/README.md): 솔루션 빌드 경고·오류 0, xUnit 프로세스 내 실행 83건 통과, 별도 Simulator 프로세스 12건 통과. 일반 VSTest 실행은 testhost와의 로컬 소켓 통신이 권한 오류 10013으로 차단돼 중단됐으며 통과로 집계하지 않는다. 기존 통신 자동시험은 이번에 다시 실행하지 않았다.
+
+로컬 소켓이 제한된 환경에서는 아래 보조 도구가 동일한 xUnit 2.9.3 엔진으로 Simulator 시험 어셈블리를 프로세스 안에서 실행한다. VSTest 어댑터·testhost 연동 검증을 대신하는 결과로 표시하지 않는다.
+
+```powershell
+dotnet restore tools/RunSimulatorTests/RunSimulatorTests.csproj
+dotnet build tools/RunSimulatorTests --no-restore -m:1 -nr:false -p:UseSharedCompilation=false
+dotnet run --no-build --project tools/RunSimulatorTests -- <결과.json>
+```
+
+단일 MSBuild 노드와 직접 컴파일 옵션은 현재 환경의 빌드 서버 IPC 제한을 피하기 위한 실행 옵션이다. 도구 복원에서는 NuGet 취약성 정보 서버 접근 불가 경고 NU1900이 발생했으며 취약성 확인 성공으로 표시하지 않는다. 기본 솔루션 빌드 결과와 구분한다.
+
+## 기존 과제1 작업 기록
+
+
 현재 #6 작업은 [PR #31의 P2 두 건 수정·회귀 검증](evidence/COM-03/20261020-pr31-p2-fix-01/README.md)까지 진행했다. 검증 도구의 stop 처리·오류 후 Broker 정리를 수정했으며 제품 코드와 기존 합격 기준은 유지했다. 새 도구 시험 30건과 실제 C1·C2·C3a·C3b가 통과했다. 기존 제품 자동시험 768건은 변경 없는 소스의 근거로 재사용한다. 같은 브랜치·PR에서 재검토·develop 병합·Issue 종료가 남아 있다. 아래 게시·구현 단계의 수치는 당시 기록이다.
 
 ## MQTT 명령 발행 (COM05-A / Issue #29)

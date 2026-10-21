@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="1a111907-a8a7-4650-87c0-d770f9faf565" name="Admin@DESKTOP-N1BSNS3 2026-10-21 13:55:02" runUser="DESKTOP-N1BSNS3\Admin" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-21T13:55:02.5853320+09:00" queuing="2026-10-21T13:55:02.5853321+09:00" start="2026-10-21T13:53:32.3832448+09:00" finish="2026-10-21T13:55:02.5856209+09:00" />
+  <TestSettings name="default" id="24d84e05-f67a-46b1-b015-48ffb52cfbae">
+    <Deployment runDeploymentRoot="Admin_DESKTOP-N1BSNS3_2026-10-21_13_55_02" />
+  </TestSettings>
+  <TestLists>
+    <TestList name="목록에 없는 결과" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="로드된 모든 결과" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="0" executed="0" passed="0" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="DESKTOP-N1BSNS3" outcome="Error" timestamp="2026-10-21T13:55:02.4558638+09:00">
+        <Text>vstest.console 프로세스가 90초 후 testhost 프로세스에 연결하지 못했습니다. 이런 오류는 컴퓨터가 느려서 발생할 수 있습니다. 환경 변수 VSTEST_CONNECTION_TIMEOUT을(를) 설정하여 시간 제한을 늘리세요. The process with id 512 was still running when this message was reported.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

@@ -1,0 +1,342 @@
+{
+  "Runner": "xUnit 2.9.3 in-process engine (not VSTest)",
+  "TestsRun": 83,
+  "TestsFailed": 0,
+  "TestsSkipped": 0,
+  "Passed": true,
+  "Tests": [
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.waypoints[0]\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.updateIntervalMs\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022y\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.initialPosition.x\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\n  \\\u0022amrId\\\u0022: \\\u0022AMR_001\\\u0022,\\n  \\\u0022initialPosition\\\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.initialPosition.x\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.waypoints\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.speedMps\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.updateIntervalMs\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022A\\\\nB\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:-2\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.amrId\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.speedMps\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022A#B\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:-2,\\\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.amrId\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.waypoints[1].x\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.speedMps\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.initialPosition\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022 AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.amrId\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.speedMps\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:-2,\\\u0022y\\\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.amrId\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022speedMps\\\u0022:1.25,\\\u0022updateI\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.initialPosition\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.speedMps\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:null,\\\u0022\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.initialPosition\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.updateIntervalMs\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022A\\\\tB\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:-2\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.amrId\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u00223\u0022, expectedField: \u0022$\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022[]\u0022, expectedField: \u0022$\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.waypoints[0]\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\n  \\\u0022\\\\uD800\\\u0022: \\\u0022AMR_001\\\u0022,\\n  \\\u0022initialPositio\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022: \\\u0022A\\\u0022,}\u0022, expectedField: \u0022$\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022A/B\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:-2,\\\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.amrId\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:[],\\\u0022sp\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.initialPosition\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.waypoints\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022A\\\\u00A0B\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.amrId\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.initialPosition.x\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\n  \\\u0022amrId\\\u0022: \\\u0022AMR_001\\\u0022,\\n  \\\u0022initialPosition\\\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.updateIntervalMs\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022A\\\\u002BB\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.amrId\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.initialPosition.y\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:12,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:-2,\\\u0022y\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.amrId\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.waypoints[0].x\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\n  \\\u0022amrId\\\u0022: \\\u0022AMR_001\\\u0022,\\n  \\\u0022initialPosition\\\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.speedMps\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022A\\\\u0001B\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.amrId\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR 001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.amrId\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.waypoints[0].y\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\n  \\\u0022amrId\\\u0022: \\\u0022AMR_001\\\u0022,\\n  \\\u0022initialPosition\\\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.waypoints[0].x\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\n  \\\u0022amrId\\\u0022: \\\u0022AMR_001\\\u0022, \\\u0022amrId\\\u0022: \\\u0022AMR_002\\\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.amrId\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.speedMps\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:-2,\\\u0022y\\\u0022:3.5},\\\u0022speedM\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.amrId\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.updateIntervalMs\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\n  \\\u0022AmrId\\\u0022: \\\u0022AMR_001\\\u0022,\\n  \\\u0022initialPosition\\\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.updateIntervalMs\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.waypoints\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.initialPosition.y\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.speedMps\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\u0022, expectedField: \u0022$\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\n  \\\u0022amrId\\\u0022: \\\u0022\\\\uD800\\\u0022,\\n  \\\u0022initialPosition\\\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.amrId\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\n  \\\u0022amrId\\\u0022: \\\u0022AMR_001\\\u0022,\\n  \\\u0022initialPosition\\\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.waypoints[1].y\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.speedMps\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.initialPosition.x\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022null\u0022, expectedField: \u0022$\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.waypoints\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022\u0022, expectedField: \u0022$\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022 \\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:-2,\\\u0022y\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.amrId\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:null,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:-2,\\\u0022y\\\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.amrId\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\n  \\\u0022amrId\\\u0022: \\\u0022AMR_001\\\u0022,\\n  \\\u0022initialPosition\\\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.initialPosition.x\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidInput_IsRejectedWithFieldAndReason(json: \u0022{\\\u0022amrId\\\u0022:\\\u0022AMR_001\\\u0022,\\\u0022initialPosition\\\u0022:{\\\u0022x\\\u0022:\u0022\u00B7\u00B7\u00B7, expectedField: \u0022$.updateIntervalMs\u0022)",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.ChangedSettings_ChangeInitialAmrAndRetainConfiguredSpeedAndRoute",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.IntegerInterval_IsNotSilentlyClampedToInt32",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.ValidSettings_CreateIdleAmrWithZeroCurrentSpeedAndPreserveRoute",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.LockedFile_IsRejectedBeforeInitialization",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.InvalidConfiguration_HasErrorExitAndNoCreatedAmr",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.InvalidOptions_AreRejectedWithoutInitialization(args: [\u0022--config\u0022])",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.InvalidOptions_AreRejectedWithoutInitialization(args: [\u0022--config\u0022, \u0022\u0022])",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.InvalidOptions_AreRejectedWithoutInitialization(args: [\u0022--config\u0022, \u0022a.json\u0022, \u0022--extra\u0022])",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.InvalidOptions_AreRejectedWithoutInitialization(args: [])",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.InvalidOptions_AreRejectedWithoutInitialization(args: [\u0022--unknown\u0022, \u0022a.json\u0022])",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.InvalidOptions_AreRejectedWithoutInitialization(args: [\u0022--config\u0022, \u0022a.json\u0022, \u0022--config\u0022, \u0022b.json\u0022])",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.BomFile_LoadsWithoutChangingValues",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.MissingFile_HasErrorExitAndNoCreatedAmr",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.Cancellation_IsNotSuccessfulInitialization",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.InvalidByteEncoding_IsRejected",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.SamePositionWaypoints_AreValidConfiguration",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ConfigurationTests.MissingFile_HasFileError",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.Output_UsesInvariantNumbers",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.ConfiguredInitialization_PrintsValuesRouteAndIdleState",
+      "Outcome": "Passed"
+    },
+    {
+      "Name": "Amr.Simulator.Tests.ApplicationTests.Help_DoesNotInitializeAmr",
+      "Outcome": "Passed"
+    }
+  ],
+  "Errors": []
+}

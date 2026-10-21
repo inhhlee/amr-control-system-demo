@@ -1,0 +1,132 @@
+{
+  "RunId": "20261021-settings-console-02",
+  "Started": "2026-10-21T13:59:04.9784346+09:00",
+  "Finished": "2026-10-21T13:59:05.8679822+09:00",
+  "BaseCommit": "d5183566cfba8ced1cdd24218efc48f09472397d",
+  "WorkingBranch": "feature/28-simulator-first-run",
+  "UncommittedChanges": true,
+  "Runtime": "10.0.401",
+  "OS": "Microsoft Windows 10.0.26200",
+  "DllSHA256": "BBBED90D09DB908F170A8BCAF5E54EE74CC5B81A45AF83399698E7B144ABDA12",
+  "SourceConfigSHA256": "503C9C4596B796D41623E6EA8D60B3BD4349D54CC9A80A0179745434295E9828",
+  "Cases": [
+    {
+      "Id": "normal",
+      "Input": "normal.json",
+      "ExpectedExitCode": 0,
+      "ActualExitCode": 0,
+      "ExpectedOutput": [
+        "InitialX=-1 InitialY=0 SpeedMps=1 UpdateIntervalMs=100 WaypointCount=2",
+        "Waypoint Index=1 X=1 Y=2",
+        "X=-1 Y=0 State=IDLE CurrentSpeedMps=0",
+        "InitializationCompleted"
+      ],
+      "ExpectedField": null,
+      "Passed": true
+    },
+    {
+      "Id": "changed",
+      "Input": "changed.json",
+      "ExpectedExitCode": 0,
+      "ActualExitCode": 0,
+      "ExpectedOutput": [
+        "InitialX=12 InitialY=-7 SpeedMps=2.5",
+        "Waypoint Index=0 X=-8 Y=9",
+        "X=12 Y=-7 State=IDLE CurrentSpeedMps=0"
+      ],
+      "ExpectedField": null,
+      "Passed": true
+    },
+    {
+      "Id": "missing-field",
+      "Input": "missing-field.json",
+      "ExpectedExitCode": 1,
+      "ActualExitCode": 1,
+      "ExpectedOutput": null,
+      "ExpectedField": "$.speedMps",
+      "Passed": true
+    },
+    {
+      "Id": "invalid-id",
+      "Input": "invalid-id.json",
+      "ExpectedExitCode": 1,
+      "ActualExitCode": 1,
+      "ExpectedOutput": null,
+      "ExpectedField": "$.amrId",
+      "Passed": true
+    },
+    {
+      "Id": "zero-speed",
+      "Input": "zero-speed.json",
+      "ExpectedExitCode": 1,
+      "ActualExitCode": 1,
+      "ExpectedOutput": null,
+      "ExpectedField": "$.speedMps",
+      "Passed": true
+    },
+    {
+      "Id": "negative-speed",
+      "Input": "negative-speed.json",
+      "ExpectedExitCode": 1,
+      "ActualExitCode": 1,
+      "ExpectedOutput": null,
+      "ExpectedField": "$.speedMps",
+      "Passed": true
+    },
+    {
+      "Id": "overflow-speed",
+      "Input": "overflow-speed.json",
+      "ExpectedExitCode": 1,
+      "ActualExitCode": 1,
+      "ExpectedOutput": null,
+      "ExpectedField": "$.speedMps",
+      "Passed": true
+    },
+    {
+      "Id": "wrong-type",
+      "Input": "wrong-type.json",
+      "ExpectedExitCode": 1,
+      "ActualExitCode": 1,
+      "ExpectedOutput": null,
+      "ExpectedField": "$.speedMps",
+      "Passed": true
+    },
+    {
+      "Id": "fractional-interval",
+      "Input": "fractional-interval.json",
+      "ExpectedExitCode": 1,
+      "ActualExitCode": 1,
+      "ExpectedOutput": null,
+      "ExpectedField": "$.updateIntervalMs",
+      "Passed": true
+    },
+    {
+      "Id": "invalid-coordinate",
+      "Input": "invalid-coordinate.json",
+      "ExpectedExitCode": 1,
+      "ActualExitCode": 1,
+      "ExpectedOutput": null,
+      "ExpectedField": "$.initialPosition.x",
+      "Passed": true
+    },
+    {
+      "Id": "malformed",
+      "Input": "malformed.json",
+      "ExpectedExitCode": 1,
+      "ActualExitCode": 1,
+      "ExpectedOutput": null,
+      "ExpectedField": "$",
+      "Passed": true
+    },
+    {
+      "Id": "missing-file",
+      "Input": "missing-file.json",
+      "ExpectedExitCode": 1,
+      "ActualExitCode": 1,
+      "ExpectedOutput": null,
+      "ExpectedField": "$file",
+      "Passed": true
+    }
+  ],
+  "Passed": true
+}

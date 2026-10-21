@@ -1,0 +1,13 @@
+C:\amr-control-system-demo\tools\RunSimulatorTests\RunSimulatorTests.csproj : warning NU1900: 패키지 취약성 데이터를 가져오는 동안 오류가 발생했습니다. https://api.nuget.org/v3/index.json 소스에 대한 서비스 인덱스를 로드할 수 없습니다.
+  Amr.Simulator -> C:\amr-control-system-demo\src\Amr.Simulator\bin\Debug\net10.0\Amr.Simulator.dll
+  Amr.Simulator.Tests -> C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\Amr.Simulator.Tests.dll
+C:\amr-control-system-demo\tools\RunSimulatorTests\Program.cs(41,14): error xUnit3000: Class ResultsSink must derive directly or indirectly from LongLivedMarshalByRefObject. (https://xunit.net/xunit.analyzers/rules/xUnit3000) [C:\amr-control-system-demo\tools\RunSimulatorTests\RunSimulatorTests.csproj]
+
+빌드하지 못했습니다.
+
+C:\amr-control-system-demo\tools\RunSimulatorTests\RunSimulatorTests.csproj : warning NU1900: 패키지 취약성 데이터를 가져오는 동안 오류가 발생했습니다. https://api.nuget.org/v3/index.json 소스에 대한 서비스 인덱스를 로드할 수 없습니다.
+C:\amr-control-system-demo\tools\RunSimulatorTests\Program.cs(41,14): error xUnit3000: Class ResultsSink must derive directly or indirectly from LongLivedMarshalByRefObject. (https://xunit.net/xunit.analyzers/rules/xUnit3000) [C:\amr-control-system-demo\tools\RunSimulatorTests\RunSimulatorTests.csproj]
+    경고 1개
+    오류 1개
+
+경과 시간: 00:00:01.63
