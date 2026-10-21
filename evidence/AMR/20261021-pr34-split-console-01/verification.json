@@ -1,0 +1,66 @@
+{
+  "Sdk": "10.0.401",
+  "Started": "2026-10-21T23:42:43.1427168+09:00",
+  "Cases": [
+    {
+      "Case": "normal",
+      "ProductPid": 44484,
+      "Passed": true,
+      "Expected": "SimulationCompleted AmrId=AMR_001 X=1 Y=2 State=IDLE CurrentSpeedMps=0",
+      "ExitCode": 0
+    },
+    {
+      "Case": "changed",
+      "ProductPid": 38304,
+      "Passed": true,
+      "Expected": "SimulationCompleted AmrId=AMR_001 X=7 Y=4 State=IDLE CurrentSpeedMps=0",
+      "ExitCode": 0
+    },
+    {
+      "Case": "invalid",
+      "ProductPid": 38156,
+      "Passed": true,
+      "Expected": "ConfigurationRejected Field=$.speedMps",
+      "ExitCode": 1
+    },
+    {
+      "Case": "stationary",
+      "ProductPid": 23436,
+      "Passed": true,
+      "Expected": "SimulationCompleted AmrId=AMR_001 X=-1 Y=0 State=IDLE CurrentSpeedMps=0",
+      "ExitCode": 0
+    },
+    {
+      "Signal": "Windows CTRL_C_EVENT",
+      "Case": "cancel",
+      "ExitCode": 0,
+      "ShutdownMilliseconds": 23.5724,
+      "Exited": true,
+      "ConsolePids": [
+        45188,
+        41912
+      ],
+      "Passed": true,
+      "ProductPid": 41912
+    },
+    {
+      "Passed": true,
+      "ConsolePids": [
+        46628,
+        23888
+      ],
+      "ShutdownMilliseconds": 22.5465,
+      "ExitCode": 0,
+      "Exited": true,
+      "Signal": "Windows CTRL_C_EVENT",
+      "Case": "long-interval",
+      "ProductPid": 23888
+    }
+  ],
+  "Passed": true,
+  "Branch": "main",
+  "Finished": "2026-10-21T23:42:54.2607533+09:00",
+  "Head": "7426d6472f6f3367fdab9be5e22fbfe772bfa076",
+  "DllHash": "CEBFC9BAD879A1F229CC6F9805A889C20F9A7AF9BF1F83968594F764D40ED2D2",
+  "OS": "Microsoft Windows NT 10.0.26200.0"
+}

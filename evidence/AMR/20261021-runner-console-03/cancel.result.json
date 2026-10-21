@@ -1,0 +1,13 @@
+{
+  "ShutdownMilliseconds": 16.9517,
+  "Case": "cancel",
+  "Exited": true,
+  "ExitCode": 0,
+  "Signal": "Windows CTRL_C_EVENT",
+  "ConsolePids": [
+    13648,
+    37868
+  ],
+  "Passed": true,
+  "ProductPid": 37868
+}

@@ -1,0 +1,11 @@
+  Amr.Simulator -> C:\amr-control-system-demo\src\Amr.Simulator\bin\Debug\net10.0\Amr.Simulator.dll
+C:\amr-control-system-demo\tests\Amr.Simulator.Tests\RunnerTests.cs(59,9): warning xUnit2031: Do not use a Where clause to filter before calling Assert.Single. Use the overload of Assert.Single that accepts a filtering function. (https://xunit.net/xunit.analyzers/rules/xUnit2031) [C:\amr-control-system-demo\tests\Amr.Simulator.Tests\Amr.Simulator.Tests.csproj]
+  Amr.Simulator.Tests -> C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\Amr.Simulator.Tests.dll
+
+빌드했습니다.
+
+C:\amr-control-system-demo\tests\Amr.Simulator.Tests\RunnerTests.cs(59,9): warning xUnit2031: Do not use a Where clause to filter before calling Assert.Single. Use the overload of Assert.Single that accepts a filtering function. (https://xunit.net/xunit.analyzers/rules/xUnit2031) [C:\amr-control-system-demo\tests\Amr.Simulator.Tests\Amr.Simulator.Tests.csproj]
+    경고 1개
+    오류 0개
+
+경과 시간: 00:00:02.82

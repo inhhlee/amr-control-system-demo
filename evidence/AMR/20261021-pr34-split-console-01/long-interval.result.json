@@ -1,0 +1,13 @@
+{
+  "Passed": true,
+  "ConsolePids": [
+    46628,
+    23888
+  ],
+  "ShutdownMilliseconds": 22.5465,
+  "ExitCode": 0,
+  "Exited": true,
+  "Signal": "Windows CTRL_C_EVENT",
+  "Case": "long-interval",
+  "ProductPid": 23888
+}

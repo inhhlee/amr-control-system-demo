@@ -1,6 +1,19 @@
 # amr-control-system-demo
 가상 AMR 기반 관제시스템 구현 및 Issue·PR 개발 절차 실습
 
+## 과제2/3: 실제 이동 실행·정상 종료 (Issue #34)
+
+설정 로드와 #33 이동 계산을 순차 실행 루프로 연결한다. 단조 시계로 실제 경과 시간을 측정하고 출발·경유점·도착 로그와 Ctrl+C 취소를 구분한다. Broker·MQTT·지도 없이 실행한다.
+
+```powershell
+dotnet run --project src/Amr.Simulator -- --config config/simulator.single.json
+```
+
+[시연 순서](tests/manual/AMR01/README.md) · [분리 후 135건·실제 6건 확인](evidence/AMR/pr34-split-check/README.md) · [기존 #34 검증 근거](evidence/AMR/20261021-runner-01/README.md)
+
+MQTT·지도·기존 전체 실행 증거는 [보존 브랜치](https://github.com/inhhlee/amr-control-system-demo/tree/codex/preserve-simulator-mqtt-map-20261021)에 유지한다. 이 변경은 #33 다음 검토할 #34이며 develop 병합·과제2 전체 완료를 뜻하지 않는다.
+
+
 ## 과제2/2: 경로 이동 계산과 도착 정지 (Issue #33)
 
 `Simulation/SimulatedAmr`의 `Advance(double elapsedSeconds)`에 초 단위 경과 시간을 전달하면 순서 있는 경유점 사이를 직선 이동한다. 실제 대기나 타이머 없이 계산하며, 한 경유점에 도착하고 남은 시간은 다음 구간에 적용한다. 같은 위치의 경유점은 시간 소모 없이 통과한다.
