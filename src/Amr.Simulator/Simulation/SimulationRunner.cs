@@ -5,13 +5,14 @@ public sealed class SimulationRunner(ISimulationClock? clock = null)
 {
     private readonly ISimulationClock _clock = clock ?? new SystemSimulationClock();
 
-    public async Task RunAsync(SimulatedAmr amr, TextWriter output, CancellationToken cancellationToken)
+    public async Task RunAsync(SimulatedAmr amr, TextWriter output, CancellationToken cancellationToken,
+        Action<SimulationSnapshot>? onSnapshot = null)
     {
         double elapsed = 0;
         try
         {
             cancellationToken.ThrowIfCancellationRequested();
-            await WriteSnapshotAsync(output, "SimulationStarted", amr, elapsed);
+            await WriteAsync("SimulationStarted");
             long previous = _clock.GetTimestamp();
             while (!amr.IsCompleted)
             {
@@ -31,14 +32,20 @@ public sealed class SimulationRunner(ISimulationClock? clock = null)
                         $"WaypointReached AmrId={amr.Id} Index={index} X={point.X:R} Y={point.Y:R} ObservedElapsedSeconds={elapsed:F3}"));
                 }
                 if (!amr.IsCompleted)
-                    await WriteSnapshotAsync(output, "AmrMoved", amr, elapsed);
+                    await WriteAsync("AmrMoved");
             }
-            await WriteSnapshotAsync(output, "SimulationCompleted", amr, elapsed);
+            await WriteAsync("SimulationCompleted");
         }
         catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
         {
             // 마지막으로 계산한 상태를 남긴다. STOP 명령이나 도착으로 표시하지 않는다.
-            await WriteSnapshotAsync(output, "SimulationCanceled", amr, elapsed);
+            await WriteAsync("SimulationCanceled");
+        }
+
+        Task WriteAsync(string name)
+        {
+            onSnapshot?.Invoke(SimulationSnapshot.Capture(amr));
+            return WriteSnapshotAsync(output, name, amr, elapsed);
         }
     }
 

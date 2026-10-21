@@ -1,0 +1,91 @@
+{
+  "OwnedBrokerRemoved": true,
+  "OwnedProcessesExited": true,
+  "ExistingContainersPreserved": true,
+  "Results": [
+    {
+      "Case": "default",
+      "Heartbeat": 4,
+      "AllPayloadsMatched": true,
+      "Passed": true,
+      "Telemetry": 21,
+      "AllCoordinatesMatched": true,
+      "ExitCode": 0,
+      "Final": {
+        "Id": "AMR_001",
+        "Timestamp": 1792600641237,
+        "Position": {
+          "X": 1,
+          "Y": 2
+        },
+        "Speed": 0,
+        "State": "IDLE",
+        "ReceivedAtUtc": "2026-10-22T01:37:21.2417047+09:00"
+      }
+    },
+    {
+      "Case": "changed",
+      "Heartbeat": 2,
+      "AllPayloadsMatched": true,
+      "Passed": true,
+      "Telemetry": 9,
+      "AllCoordinatesMatched": true,
+      "ExitCode": 0,
+      "Final": {
+        "Id": "AMR_001",
+        "Timestamp": 1792600643411,
+        "Position": {
+          "X": 7,
+          "Y": 4
+        },
+        "Speed": 0,
+        "State": "IDLE",
+        "ReceivedAtUtc": "2026-10-22T01:37:23.4295176+09:00"
+      }
+    },
+    {
+      "Case": "already-arrived",
+      "Heartbeat": 1,
+      "AllPayloadsMatched": true,
+      "Passed": true,
+      "Telemetry": 2,
+      "AllCoordinatesMatched": true,
+      "ExitCode": 0,
+      "Final": {
+        "Id": "AMR_001",
+        "Timestamp": 1792600644485,
+        "Position": {
+          "X": 5,
+          "Y": 3
+        },
+        "Speed": 0,
+        "State": "IDLE",
+        "ReceivedAtUtc": "2026-10-22T01:37:24.4922128+09:00"
+      }
+    },
+    {
+      "Passed": true,
+      "SubscriberExitCode": 27,
+      "Case": "no-retained-message"
+    },
+    {
+      "ExitCode": 0,
+      "Passed": true,
+      "Heartbeats": 3,
+      "Case": "long-update-independent-sending-and-cancel"
+    },
+    {
+      "SimulatorExit": 1,
+      "Passed": true,
+      "ReceiverExit": 1,
+      "Case": "broker-loss"
+    },
+    {
+      "ExitCode": 1,
+      "Passed": true,
+      "Case": "connect-failure-before-movement"
+    }
+  ],
+  "Finished": "2026-10-21T16:37:36.1096733+00:00",
+  "Passed": true
+}

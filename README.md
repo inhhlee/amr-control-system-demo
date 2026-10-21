@@ -1,6 +1,20 @@
 # amr-control-system-demo
 가상 AMR 기반 관제시스템 구현 및 Issue·PR 개발 절차 실습
 
+## Simulator MQTT 송신과 관제 수신 (Issue #38)
+
+최신 develop의 첫 실행본에 보존된 MQTT 확장만 분리했다. `--mqtt`를 지정하면 실제 이동의 위치·현재 속도·상태를 Telemetry로, 실행 신호를 Heartbeat로 보내고 기존 관제 콘솔에서 검사·수신한다. 옵션을 생략한 독립 이동은 유지한다.
+
+```powershell
+dotnet run --no-build --project src/Amr.Communication.Console -- --host 127.0.0.1 --port 1884 --show-payload
+# 별도 창, 같은 Broker의 실제 호스트·포트 사용
+dotnet run --no-build --project src/Amr.Simulator -- --config config/simulator.single.json --mqtt --host 127.0.0.1 --port 1884 --telemetry-ms 200 --heartbeat-ms 1000
+```
+
+1884·200/1000ms는 실행 예시다. [실행·격리 Broker 검증 안내](tests/manual/AMR01/MQTT-DEMO.md)와 [이번 분리·검증 근거](evidence/AMR/20261022-mqtt-split-01/README.md)를 따른다. 솔루션 빌드 경고·오류0, Simulator 자동151건·통신 자동768건·실제 MQTT7시나리오 통과다. 기본 경로의 최종 관제 수신은 AMR_001·(1,2)·IDLE·속도0이다. Published 반환은 수신 보장이 아니며 실제 Received와 대조했다.
+
+MQTT 수신 지도·격자 탐색·명령/ACK·Core/DB는 후속이다. 아래 #34의 미반영·MQTT 보존 설명은 해당 작성 당시의 이력이며 첫 실행본은 PR #37로 develop에 반영됐다. 이번 #38의 병합 상태는 해당 Issue/PR을 따른다.
+
 ## 과제2/3: 실제 이동 실행·정상 종료 (Issue #34)
 
 설정 로드와 #33 이동 계산을 순차 실행 루프로 연결한다. 단조 시계로 실제 경과 시간을 측정하고 출발·경유점·도착 로그와 Ctrl+C 취소를 구분한다. Broker·MQTT·지도 없이 실행한다.

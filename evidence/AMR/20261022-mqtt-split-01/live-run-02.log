@@ -1,0 +1,1 @@
+PASS: actual Simulator -> isolated Broker -> validated control receiver. Evidence: C:\amr-control-system-demo\evidence\AMR\20261022-mqtt-split-live-02

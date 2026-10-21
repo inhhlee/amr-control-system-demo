@@ -1,0 +1,16 @@
+{
+  "Finished": "2026-10-22T01:37:09.4581492+09:00",
+  "Command": [
+    "dotnet",
+    "test",
+    "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--logger",
+    "trx;LogFileName=final-communication.trx",
+    "--results-directory",
+    "C:\\amr-control-system-demo\\evidence\\AMR\\20261022-mqtt-split-01"
+  ],
+  "Started": "2026-10-22T01:36:58.7239928+09:00",
+  "ExitCode": 0
+}

@@ -1,0 +1,10 @@
+{
+  "ImageId": "sha256:8c4aa03990b1b9b542d42c0d4daabe03381d3e06c0279f82936eeee81cf2c905",
+  "ContainerId": "29190bd0d8427f2787d391ea5c8634af4c467a0ae86046b5446fa6f03130b92e",
+  "Port": 62518,
+  "Sdk": "10.0.401",
+  "RunId": "20261022-mqtt-split-live-02",
+  "Started": "2026-10-21T16:37:10.6144174+00:00",
+  "Branch": "feature/38-simulator-mqtt",
+  "Head": "2ccdd2511fed8a146f8338250cbaa813198c0fca"
+}
