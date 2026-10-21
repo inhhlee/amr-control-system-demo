@@ -6,10 +6,11 @@
 
 ## 1. 준비
 
-PowerShell을 열고 아래 두 줄을 차례대로 입력한다. 빌드가 성공한 뒤 다음 단계로 간다.
+PowerShell 7을 열고 복제한 저장소 루트에서 실행한다. 새 PC의 도구 준비는 [빌드 안내](../../../BUILDING.md)를 따른다. 복원·빌드가 성공한 뒤 다음 단계로 간다.
 
 ```powershell
-Set-Location C:\amr-control-system-demo
+# 복제한 저장소 루트에서 실행
+dotnet restore AmrControlSystem.slnx
 dotnet build .\src\Amr.Simulator --no-restore
 ```
 

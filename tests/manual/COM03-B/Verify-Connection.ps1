@@ -28,10 +28,10 @@ if (!$Controller) {
             processExitUpperBoundSeconds=8; cancellationExitUpperBoundSeconds=3;
             scenarios=@('refused','timeout-1','timeout-2','recovery-1','cancel','recovery-2') } |
             ConvertTo-Json -Depth 4 | Set-Content -Encoding utf8 "$run/environment.json"
-        $files = @(rg --files src tests -g '*.cs' -g '*.csproj' -g '*.ps1' -g '*.json') + @('global.json','AmrControlSystem.slnx')
+        $files = @(Get-ChildItem src,tests -Recurse -File | Where-Object { $_.Extension -in '.cs','.csproj','.ps1','.json' -and $_.FullName -notmatch '[\\/](bin|obj|TestResults)[\\/]' } | ForEach-Object { [IO.Path]::GetRelativePath($repository, $_.FullName) }) + @('global.json','AmrControlSystem.slnx')
         @($files | ForEach-Object { @{path=$_;sha256=(Get-FileHash -LiteralPath $_ -Algorithm SHA256).Hash} }) |
             ConvertTo-Json | Set-Content -Encoding utf8 "$run/source-version.json"
-        $child = Start-Process -FilePath (Get-Command pwsh).Source -ArgumentList @('-NoProfile','-File',$PSCommandPath,'-RunId',$RunId,'-Controller') `
+        $child = Start-Process -FilePath (Get-Command pwsh).Source -ArgumentList @('-NoProfile','-File',"`"$PSCommandPath`"",'-RunId',$RunId,'-Controller') `
             -WorkingDirectory $repository -WindowStyle Hidden -RedirectStandardOutput "$run/controller.stdout.log" `
             -RedirectStandardError "$run/controller.stderr.log" -PassThru
         $null = $child.Handle

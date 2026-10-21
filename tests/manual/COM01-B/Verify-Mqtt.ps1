@@ -31,12 +31,12 @@ if (!$Controller) {
             endpoint='127.0.0.1:1884'; mqttnet='5.2.0.1603'; qos=0; retain=$false;
             brokerStartedOrRestartedByThisTest=$false; baseCommit=(git rev-parse HEAD); branch=(git branch --show-current) } |
             ConvertTo-Json | Set-Content -Encoding utf8 "$run/environment.json"
-        $files = @(rg --files src tests -g '*.cs' -g '*.csproj' -g '*.ps1' -g '*.json') + @('global.json','AmrControlSystem.slnx')
+        $files = @(Get-ChildItem src,tests -Recurse -File | Where-Object { $_.Extension -in '.cs','.csproj','.ps1','.json' -and $_.FullName -notmatch '[\\/](bin|obj|TestResults)[\\/]' } | ForEach-Object { [IO.Path]::GetRelativePath($repository, $_.FullName) }) + @('global.json','AmrControlSystem.slnx')
         [ordered]@{ baseCommit=(git rev-parse HEAD); sourceState='working tree; see file hashes'; files=@($files | ForEach-Object {
             [ordered]@{path=$_;sha256=(Get-FileHash -LiteralPath $_ -Algorithm SHA256).Hash}
         }) } | ConvertTo-Json -Depth 5 | Set-Content -Encoding utf8 "$run/source-version.json"
         Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'inputs.json') -Destination "$run/inputs.json"
-        $controllerArguments = @('-NoProfile','-File', $PSCommandPath,'-RunId',$RunId,'-Controller')
+        $controllerArguments = @('-NoProfile','-File', "`"$PSCommandPath`"",'-RunId',$RunId,'-Controller')
         if ($SeqUnavailable) { $controllerArguments += '-SeqUnavailable' }
         $child = Start-Process -FilePath (Get-Command pwsh).Source -ArgumentList $controllerArguments `
             -WorkingDirectory $repository -WindowStyle Hidden -RedirectStandardOutput "$run/controller.stdout.log" `

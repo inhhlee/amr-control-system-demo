@@ -7,7 +7,7 @@
 저장소 루트에서 기존 의존성을 복원·빌드한다.
 
 ```powershell
-Set-Location C:\amr-control-system-demo
+# 복제한 저장소 루트에서 실행
 dotnet restore AmrControlSystem.slnx
 dotnet build AmrControlSystem.slnx --no-restore
 ```
@@ -29,6 +29,8 @@ dotnet run --no-build --project src/Amr.Simulator -- --config config/simulator.s
 ## 격리 Broker로 실제 검증
 
 Windows·PowerShell7·실행 중인 Docker 엔진과 로컬 eclipse-mosquitto:2.1.2-alpine 이미지가 필요하다. 도구는 이미지를 자동으로 내려받지 않는다. Docker는 PATH에서 찾으며 필요하면 -DockerPath <docker.exe 절대 경로>를 지정한다.
+
+새 PC에서는 먼저 `docker pull eclipse-mosquitto:2.1.2-alpine`을 실행한다. 일반 도구 설치와 Broker 없는 시험은 [빌드 안내](../../../BUILDING.md)를 따른다.
 
 ```powershell
 pwsh -NoProfile -File tests/manual/AMR01/Verify-MqttTelemetry.ps1 -RunId my-mqtt-001

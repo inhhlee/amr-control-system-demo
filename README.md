@@ -1,6 +1,8 @@
 # amr-control-system-demo
 가상 AMR 기반 관제시스템 구현 및 Issue·PR 개발 절차 실습
 
+**새 PC에서는 [빌드·실행·검증 안내](BUILDING.md)부터 따른다.** Codex 없이 일반 .NET SDK·PowerShell로 실행하며, 저장소 경로는 자유롭게 정할 수 있다. 실제 MQTT 시험에는 Docker가 추가로 필요하다. `C:\process-plan`과 아래 과거 PC 경로는 빌드 필수 조건이 아니다.
+
 2026-10-22 현재: #33·#34 첫 실행본에 이어 #38 MQTT 송수신과 리뷰 수정이 [PR #39](https://github.com/inhhlee/amr-control-system-demo/pull/39)로 develop에 반영됐다. 최신 검증은 빌드 경고·오류0, Simulator 자동154건·실제 MQTT7시나리오 통과다. [리뷰·재검증 근거](evidence/AMR/20261022-pr39-review-01/README.md)를 따른다.
 
 앞선 #33 재확인 자료는 당시 a8934f0의 자동151건·설정 콘솔15건을 기록한 과거 실행 근거다. [보존 자료 검토·추적 색인](evidence/AMR/20261022-recheck-curation-01/README.md)에서 당시 버전·실패/재시도·현재 검증과의 차이를 확인한다. 아래 단계별 미반영·미착수·시험 수치는 작성 당시 이력이다.
@@ -482,11 +484,11 @@ var result = validator.Validate("amr/AMR_001/ack",
 
 `HeartbeatDiagnostic`는 진단용 정보다. 기본 원문은 숨기며 `--show-payload`를 켰을 때도 **정상 시험 입력만** 앞 256바이트를 보여 준다. 거부 입력은 항상 원문을 숨긴다. 검사기는 이 미리보기를 사용하지 않는다. 미리보기 끝의 UTF-8 문자가 잘려 대체문자로 보이더라도 전체 원본 바이트로 내린 검사 결과와는 별개다.
 
-실제 Broker가 실행 중인 PowerShell에서 다음을 수행한다. 현재 확인한 Docker CLI는 사용자 설치 경로이며, 다른 PC에서는 `Get-Command docker`로 위치를 확인한다.
+실제 Broker가 실행 중인 PowerShell에서 다음을 수행한다. Docker CLI는 PATH에서 찾는다.
 
 ```powershell
-Set-Location C:\amr-control-system-demo
-$dockerCli = 'C:\Users\Admin\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe'
+# 복제한 저장소 루트에서 실행
+$dockerCli = @(Get-Command docker -CommandType Application -ErrorAction Stop)[0].Source
 & $dockerCli compose -f docker/compose.yaml ps -a
 dotnet run --project src/Amr.Communication.Console --no-build -- --host 127.0.0.1 --port 1884 --show-payload
 ```
@@ -494,8 +496,8 @@ dotnet run --project src/Amr.Communication.Console --no-build -- --host 127.0.0.
 `Subscribed` 이후 다른 PowerShell에서 오류 → 정상 순서로 발행한다. 호스트 수신 포트는 1884, 컨테이너 내부 발행 포트는 1883이다. QoS 0, `-r` 생략으로 Retain=false, 실행별 Client ID를 사용한다.
 
 ```powershell
-Set-Location C:\amr-control-system-demo
-$dockerCli = 'C:\Users\Admin\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe'
+# 복제한 저장소 루트에서 실행
+$dockerCli = @(Get-Command docker -CommandType Application -ErrorAction Stop)[0].Source
 $bad = '{"id":"AMR_001","status":"OK"}'
 $good = '{"id":"AMR_001","ts":1791195767000,"status":"OK"}'
 foreach ($payload in @($bad, $good)) {
@@ -519,7 +521,7 @@ foreach ($payload in @($bad, $good)) {
 현재 콘솔은 접속 후 `amr/+/heartbeat` 하나를 QoS 0으로 구독한다. Broker의 SUBACK에서 QoS 0 승인을 확인한 뒤 `Subscribed`를 표시한다. 아래는 PowerShell에서 프로젝트 전용 Broker가 실행 중일 때 수행하는 순서다.
 
 ```powershell
-Set-Location C:\amr-control-system-demo
+# 복제한 저장소 루트에서 실행
 docker compose -f docker/compose.yaml ps -a
 dotnet run --project src/Amr.Communication.Console --no-build -- --host 127.0.0.1 --port 1884 --show-payload
 ```
@@ -527,7 +529,7 @@ dotnet run --project src/Amr.Communication.Console --no-build -- --host 127.0.0.
 `Subscribed TopicFilter=amr/+/heartbeat QoS=0`가 나온 뒤 다른 PowerShell에서 아래 명령을 실행한다. `--show-payload`는 **비밀정보 없는 시험 입력 전용**이다. 기본값은 원문 숨김이며, 옵션을 켜도 최대 256바이트만 UTF-8 진단 미리보기로 표시한다. 초과 시 `PayloadTruncated=True`, 제어문자·개행은 이스케이프한다. 잘린 UTF-8 문자는 대체문자로 보일 수 있다. 이것은 메시지 검사기가 아니다.
 
 ```powershell
-Set-Location C:\amr-control-system-demo
+# 복제한 저장소 루트에서 실행
 $sample = '{"id":"AMR_001","ts":1791195767000,"status":"OK"}'
 docker compose -f docker/compose.yaml exec -T mosquitto mosquitto_pub -h 127.0.0.1 -p 1883 -V mqttv5 -i "hb-pub-$([Guid]::NewGuid().ToString('N'))" -q 0 -t amr/AMR_001/heartbeat -m $sample
 $LASTEXITCODE
@@ -563,7 +565,7 @@ echo $?
 docker compose -f docker/compose.yaml logs --no-color --timestamps --tail 50 mosquitto
 ```
 
-Broker 로그의 Client ID와 이번 콘솔의 ID를 대조한다. 다시 실행하면 다른 ID로 연결되어야 한다. Git Bash의 `$?`는 직전 명령의 결과이므로 Docker 조회 후 확인하면 콘솔 결과가 아니다. PowerShell에서는 이동에 `Set-Location C:\amr-control-system-demo`, 종료 코드 확인에 `$LASTEXITCODE`를 사용한다.
+Broker 로그의 Client ID와 이번 콘솔의 ID를 대조한다. 다시 실행하면 다른 ID로 연결되어야 한다. Git Bash의 `$?`는 직전 명령의 결과이므로 Docker 조회 후 확인하면 콘솔 결과가 아니다. PowerShell에서는 복제한 저장소 루트로 이동한 뒤 실행하며, 종료 코드 확인에 `$LASTEXITCODE`를 사용한다.
 
 인자는 생략 가능하며 기본값은 `--host 127.0.0.1 --port 1884 --connect-timeout-seconds 3`이다. 가운데 `--` 앞은 `dotnet run`의 옵션이고 뒤는 우리가 만든 프로그램에 전달할 인자다. MQTT 5, Clean Start, Session Expiry 0, KeepAlive 5초, 해제 제한 3초를 적용한다. Client ID는 실행마다 `amr-demo-<GUID>`로 생성하고 설정·UTC 시각을 출력한다. 최초 접속 제한과 KeepAlive는 별개다. `--help`로 사용법을 확인한다.
 
@@ -598,11 +600,11 @@ A3에서는 `Console.CancelKeyPress` 처리기가 기본 즉시 종료를 막고
 
 모든 마운트의 호스트 경로는 Compose 파일 기준 상대 경로다. 설정 파일이 없으면 디렉터리를 대신 만들지 않도록 구성했다. `amr-demo`라는 이름으로 기존 Compose 프로젝트와 구분하며, 기존 `amr-mosquitto`의 1883 포트와 겹치지 않는다. [Compose 경로·포트 규칙](https://docs.docker.com/reference/compose-file/services/) · [프로젝트 이름](https://docs.docker.com/compose/how-tos/project-name/)
 
-2026-10-08 현재 PC에서는 `docker`가 PATH에서 확인된다. 아래 명령은 확인한 절대 경로를 사용한다. 다른 PC에서는 실제 Docker CLI 경로나 PATH에 등록된 `docker`를 사용한다.
+2026-10-08 당시 PC에서는 `docker`가 PATH에서 확인됐다. 아래 명령도 현재 PC의 PATH에서 Docker CLI를 찾아 사용한다.
 
 ```powershell
-Set-Location C:\amr-control-system-demo
-$dockerCli = 'C:\Program Files\Docker\Docker\resources\bin\docker.exe'
+# 복제한 저장소 루트에서 실행
+$dockerCli = @(Get-Command docker -CommandType Application -ErrorAction Stop)[0].Source
 & $dockerCli version
 & $dockerCli context show
 & $dockerCli compose version

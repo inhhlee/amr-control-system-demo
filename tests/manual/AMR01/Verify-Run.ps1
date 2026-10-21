@@ -64,7 +64,7 @@ public static class AmrRunControl {
 
 if (Test-Path $run) { throw 'Use a new RunId; previous evidence is preserved.' }
 $null = New-Item -ItemType Directory -Path $run
-Set-Location $repo
+Set-Location -LiteralPath $repo
 $started = [DateTimeOffset]::Now
 $normal = Get-Content config/simulator.single.json -Raw
 $changed = $normal | ConvertFrom-Json
