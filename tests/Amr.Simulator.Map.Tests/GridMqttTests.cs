@@ -1,7 +1,8 @@
+using Amr.Simulator.Navigation;
 using System.Text.Json;
 using Amr.Communication.Models;
 using Amr.Communication.Mqtt;
-using Amr.Simulator.Map.Navigation;
+using Amr.Simulator.Map.Control;
 using Amr.Simulator.Telemetry;
 using Xunit;
 
@@ -10,8 +11,8 @@ namespace Amr.Simulator.Map.Tests;
 public sealed class GridMqttTests
 {
     private static SimulatorMqttOptions Options => new(new MqttConnectionSettings(), 50, 80);
-    private static JsonElement Read(GridNavigationSession session) => JsonSerializer.SerializeToElement(session.Read(), new JsonSerializerOptions(JsonSerializerDefaults.Web));
-    private static string Phase(GridNavigationSession session) => Read(session).GetProperty("navigation").GetProperty("phase").GetString()!;
+    private static JsonElement Read(GridMapSession session) => JsonSerializer.SerializeToElement(session.Read(), new JsonSerializerOptions(JsonSerializerDefaults.Web));
+    private static string Phase(GridMapSession session) => Read(session).GetProperty("navigation").GetProperty("phase").GetString()!;
 
     [Fact]
     public async Task ReadyHasNoReceivedPosition()
@@ -32,7 +33,7 @@ public sealed class GridMqttTests
         Assert.Equal("BUSY", snapshot.State);
         Assert.Equal(1 / 0.6, snapshot.Speed, 10);
         var received = new TelemetryMessage("robot", 1, new(snapshot.X, snapshot.Y), snapshot.Speed, snapshot.State, DateTimeOffset.UtcNow);
-        Assert.Equal(navigator.Read().Current, GridTelemetry.ReceivedCell(received));
+        Assert.Equal(navigator.Read().Current, GridMapCoordinates.ReceivedCell(received));
     }
 
     [Theory]
@@ -43,7 +44,7 @@ public sealed class GridMqttTests
     [InlineData(0, -5)]
     [InlineData(0, 1)]
     public void InvalidGridCoordinateIsNotDisplayed(double x, double y) =>
-        Assert.Null(GridTelemetry.ReceivedCell(new("r", 1, new(x, y), 0, "IDLE", DateTimeOffset.UtcNow)));
+        Assert.Null(GridMapCoordinates.ReceivedCell(new("r", 1, new(x, y), 0, "IDLE", DateTimeOffset.UtcNow)));
 
     [Fact]
     public async Task PublishedPositionNeverFillsReceivedPosition()
@@ -256,12 +257,12 @@ public sealed class GridMqttTests
     {
         private readonly string _directory = Path.Combine(Path.GetTempPath(), "grid-mqtt-test-" + Guid.NewGuid().ToString("N"));
         public FakeConnection Connection { get; }
-        public GridNavigationSession Session { get; }
+        public GridMapSession Session { get; }
         public Fixture(FakeConnection? connection = null, GridNavigator? navigator = null)
         {
             Directory.CreateDirectory(_directory);
             Connection = connection ?? new();
-            Session = new(_directory, Options, () => Connection, navigator);
+            Session = new(_directory, Options, () => Connection, navigator, transportFactory: () => new FakeSender(Connection));
         }
         public async ValueTask DisposeAsync()
         {
@@ -271,7 +272,15 @@ public sealed class GridMqttTests
         }
     }
 
-    private sealed class FakeConnection : IGridMqttConnection
+    private sealed class FakeSender(FakeConnection connection) : ISimulationTransport
+    {
+        public event Action? ConnectionLost { add { } remove { } }
+        public Task ConnectAsync(CancellationToken token) => Task.CompletedTask;
+        public Task PublishAsync(SimulationPublication publication, CancellationToken token) => connection.PublishAsync(publication, token);
+        public Task DisconnectAsync() => Task.CompletedTask;
+        public void Dispose() { }
+    }
+    private sealed class FakeConnection : IGridControlConnection
     {
         public event Action<object>? Received;
         public event Action<string>? Failed;

@@ -1,6 +1,6 @@
 using System.Net;
 using Amr.Simulator.Map;
-using Amr.Simulator.Map.Navigation;
+using Amr.Simulator.Map.Control;
 using Amr.Simulator.Telemetry;
 using Amr.Communication.Mqtt;
 using Microsoft.AspNetCore.Hosting.Server;
@@ -43,7 +43,7 @@ catch (Exception exception) when (exception is IOException or UnauthorizedAccess
 port ??= settings.WebPort;
 SimulatorMqttOptions? mqtt = hasMqtt ? new(new MqttConnectionSettings(mqttHost!, mqttPort!.Value), telemetryMs!.Value, heartbeatMs!.Value) : settings.Mqtt;
 
-await using var gridSession = await GridNavigationSession.CreateAsync(config, Path.Combine(repository, "evidence", "AMR"), mqtt, settings);
+await using var gridSession = await GridMapSession.CreateAsync(config, Path.Combine(repository, "evidence", "AMR"), mqtt, settings);
 var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 {
     Args = [],

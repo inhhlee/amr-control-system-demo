@@ -1,0 +1,16 @@
+{
+  "recordedAt": "2026-10-23T10:51:12.9623130+09:00",
+  "branch": "codex/preserve-grid-map-20261023",
+  "baseCommit": "7ae3e0473eb59376882de85f9c75adf2d3353804",
+  "sourceState": "uncommitted refactor",
+  "sdk": "10.0.401",
+  "powershell": "7.6.5",
+  "os": "Microsoft Windows NT 10.0.26200.0",
+  "mqttPackage": "<PackageReference Include=\"MQTTnet\" Version=\"5.2.0.1603\" />",
+  "liveServer": {
+    "pid": 40384,
+    "start": "2026-10-23T10:47:47.8417273+09:00",
+    "path": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\Debug\\net10.0\\Amr.Simulator.Map.exe",
+    "url": "http://127.0.0.1:59344/?mode=grid"
+  }
+}

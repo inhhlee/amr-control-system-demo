@@ -1,0 +1,355 @@
+{
+  "navigation": {
+    "phase": "Completed",
+    "start": {
+      "row": 0,
+      "col": 0
+    },
+    "goal": {
+      "row": 4,
+      "col": 5
+    },
+    "current": {
+      "row": 4,
+      "col": 5
+    },
+    "map": [
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "fixedObstacles": [
+      [
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        true,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        true,
+        true,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    ],
+    "path": [
+      {
+        "row": 4,
+        "col": 5
+      }
+    ],
+    "traveled": [
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 4
+      },
+      {
+        "row": 4,
+        "col": 5
+      }
+    ],
+    "remainingDistance": 0,
+    "moves": 9,
+    "replans": 22,
+    "mapVersion": 8,
+    "waypoints": [
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 5
+      }
+    ],
+    "nextWaypointIndex": 3,
+    "currentTarget": null,
+    "reachedWaypoints": [
+      {
+        "index": 0,
+        "cell": {
+          "row": 2,
+          "col": 3
+        },
+        "moves": 5
+      },
+      {
+        "index": 1,
+        "cell": {
+          "row": 4,
+          "col": 3
+        },
+        "moves": 7
+      },
+      {
+        "index": 2,
+        "cell": {
+          "row": 4,
+          "col": 5
+        },
+        "moves": 9
+      }
+    ]
+  },
+  "stepIntervalMs": 600,
+  "source": "mqtt-grid-control-receiver",
+  "position": {
+    "row": 4,
+    "col": 5
+  },
+  "configurationPath": "C:\\amr-control-system-demo\\config\\map-demo\\settings.json",
+  "amrId": "AMR_001",
+  "cellSizeMeters": 1,
+  "receivedTelemetry": {
+    "id": "AMR_001",
+    "timestamp": 1792720055592,
+    "position": {
+      "x": 5,
+      "y": -4
+    },
+    "speed": 0,
+    "state": "IDLE",
+    "receivedAtUtc": "2026-10-23T10:47:35.5941181+09:00"
+  },
+  "receivedHeartbeat": {
+    "id": "AMR_001",
+    "timestamp": 1792720054813,
+    "status": "OK",
+    "receivedAtUtc": "2026-10-23T10:47:34.814516+09:00"
+  },
+  "receivedTrail": [
+    {
+      "row": 0,
+      "col": 0
+    },
+    {
+      "row": 0,
+      "col": 1
+    },
+    {
+      "row": 1,
+      "col": 1
+    },
+    {
+      "row": 2,
+      "col": 1
+    },
+    {
+      "row": 2,
+      "col": 2
+    },
+    {
+      "row": 2,
+      "col": 3
+    },
+    {
+      "row": 3,
+      "col": 3
+    },
+    {
+      "row": 4,
+      "col": 3
+    },
+    {
+      "row": 4,
+      "col": 4
+    },
+    {
+      "row": 4,
+      "col": 5
+    }
+  ],
+  "telemetryCount": 36,
+  "heartbeatCount": 7,
+  "publishedCount": 43,
+  "rejectedCount": 2,
+  "lastPublishedTimestamp": 1792720055592,
+  "brokerState": "Closed",
+  "failure": null,
+  "mqttEndpoint": "127.0.0.1:61500",
+  "evidencePath": "C:\\amr-control-system-demo\\evidence\\AMR\\mission-live-20261023-104658-3a2d35ba5e6f4b7391e9d7a112242169\\grid-navigation.jsonl",
+  "evidenceDirectory": "C:\\amr-control-system-demo\\evidence\\AMR\\mission-live-20261023-104658-3a2d35ba5e6f4b7391e9d7a112242169",
+  "logs": [
+    "GridControlReceived Phase=Running Position=(2,3) Remaining=2 Moves=5 WaypointsPassed=1/3 Replans=13 MapVersion=5",
+    "GridMoved Phase=Running Position=(3,3) Remaining=1 Moves=6 WaypointsPassed=1/3 Replans=15 MapVersion=5",
+    "GridControlReceived Phase=Running Position=(3,3) Remaining=1 Moves=6 WaypointsPassed=1/3 Replans=15 MapVersion=5",
+    "GridControlReceived Phase=Running Position=(3,3) Remaining=1 Moves=6 WaypointsPassed=1/3 Replans=15 MapVersion=5",
+    "GridControlReceived Phase=Running Position=(3,3) Remaining=1 Moves=6 WaypointsPassed=1/3 Replans=15 MapVersion=5",
+    "GridMoved Phase=Running Position=(4,3) Remaining=2 Moves=7 WaypointsPassed=2/3 Replans=17 MapVersion=5",
+    "GridControlReceived Phase=Running Position=(4,3) Remaining=2 Moves=7 WaypointsPassed=2/3 Replans=17 MapVersion=5",
+    "GridControlReceived Phase=Running Position=(4,3) Remaining=2 Moves=7 WaypointsPassed=2/3 Replans=17 MapVersion=5",
+    "GridControlReceived Phase=Running Position=(4,3) Remaining=2 Moves=7 WaypointsPassed=2/3 Replans=17 MapVersion=5",
+    "GridControlReceived Phase=Running Position=(4,3) Remaining=2 Moves=7 WaypointsPassed=2/3 Replans=17 MapVersion=5",
+    "GridMoved Phase=Running Position=(4,4) Remaining=1 Moves=8 WaypointsPassed=2/3 Replans=19 MapVersion=5",
+    "GridControlReceived Phase=Running Position=(4,4) Remaining=1 Moves=8 WaypointsPassed=2/3 Replans=19 MapVersion=5",
+    "GridControlReceived Phase=Running Position=(4,4) Remaining=1 Moves=8 WaypointsPassed=2/3 Replans=19 MapVersion=5",
+    "GridControlReceived Phase=Running Position=(4,4) Remaining=1 Moves=8 WaypointsPassed=2/3 Replans=19 MapVersion=5",
+    "GridControlReceived Phase=Running Position=(4,4) Remaining=1 Moves=8 WaypointsPassed=2/3 Replans=19 MapVersion=5",
+    "GridMoved Phase=Completed Position=(4,5) Remaining=0 Moves=9 WaypointsPassed=3/3 Replans=21 MapVersion=5",
+    "GridControlReceived Phase=WaitingForTelemetry Position=(4,5) Remaining=0 Moves=9 WaypointsPassed=3/3 Replans=21 MapVersion=5",
+    "GridFinalReceived Phase=WaitingForTelemetry Position=(4,5) Remaining=0 Moves=9 WaypointsPassed=3/3 Replans=21 MapVersion=5",
+    "GridMqttEnded Phase=Completed Position=(4,5) Remaining=0 Moves=9 WaypointsPassed=3/3 Replans=21 MapVersion=5",
+    "GridReset Phase=Ready Position=(0,0) Remaining=5 Moves=0 WaypointsPassed=0/3 Replans=1 MapVersion=6",
+    "GridMapChanged Phase=Ready Position=(0,0) Remaining=none Moves=0 WaypointsPassed=0/3 Replans=2 MapVersion=7",
+    "GridStarted Phase=Connecting Position=(0,0) Remaining=none Moves=0 WaypointsPassed=0/3 Replans=1 MapVersion=7",
+    "GridMqttConnected Phase=Waiting Position=(0,0) Remaining=none Moves=0 WaypointsPassed=0/3 Replans=1 MapVersion=7",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 WaypointsPassed=0/3 Replans=1 MapVersion=7",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 WaypointsPassed=0/3 Replans=1 MapVersion=7",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 WaypointsPassed=0/3 Replans=1 MapVersion=7",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 WaypointsPassed=0/3 Replans=1 MapVersion=7",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 WaypointsPassed=0/3 Replans=1 MapVersion=7",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 WaypointsPassed=0/3 Replans=2 MapVersion=7",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 WaypointsPassed=0/3 Replans=2 MapVersion=7",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 WaypointsPassed=0/3 Replans=2 MapVersion=7",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 WaypointsPassed=0/3 Replans=2 MapVersion=7",
+    "GridMessageRejected Phase=Waiting Position=(0,0) Remaining=none Moves=0 WaypointsPassed=0/3 Replans=2 MapVersion=7",
+    "GridTelemetryRejected Phase=Waiting Position=(0,0) Remaining=none Moves=0 WaypointsPassed=0/3 Replans=3 MapVersion=7",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 WaypointsPassed=0/3 Replans=3 MapVersion=7",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 WaypointsPassed=0/3 Replans=3 MapVersion=7",
+    "GridMapChanged Phase=Running Position=(0,0) Remaining=5 Moves=0 WaypointsPassed=0/3 Replans=4 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=5 Moves=0 WaypointsPassed=0/3 Replans=4 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=5 Moves=0 WaypointsPassed=0/3 Replans=4 MapVersion=8",
+    "GridMoved Phase=Running Position=(0,1) Remaining=4 Moves=1 WaypointsPassed=0/3 Replans=6 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=4 Moves=1 WaypointsPassed=0/3 Replans=6 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=4 Moves=1 WaypointsPassed=0/3 Replans=6 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=4 Moves=1 WaypointsPassed=0/3 Replans=6 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=4 Moves=1 WaypointsPassed=0/3 Replans=6 MapVersion=8",
+    "GridMoved Phase=Running Position=(1,1) Remaining=3 Moves=2 WaypointsPassed=0/3 Replans=8 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(1,1) Remaining=3 Moves=2 WaypointsPassed=0/3 Replans=8 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(1,1) Remaining=3 Moves=2 WaypointsPassed=0/3 Replans=8 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(1,1) Remaining=3 Moves=2 WaypointsPassed=0/3 Replans=8 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(1,1) Remaining=3 Moves=2 WaypointsPassed=0/3 Replans=8 MapVersion=8",
+    "GridMoved Phase=Running Position=(2,1) Remaining=2 Moves=3 WaypointsPassed=0/3 Replans=10 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(2,1) Remaining=2 Moves=3 WaypointsPassed=0/3 Replans=10 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(2,1) Remaining=2 Moves=3 WaypointsPassed=0/3 Replans=10 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(2,1) Remaining=2 Moves=3 WaypointsPassed=0/3 Replans=10 MapVersion=8",
+    "GridMoved Phase=Running Position=(2,2) Remaining=1 Moves=4 WaypointsPassed=0/3 Replans=12 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(2,2) Remaining=1 Moves=4 WaypointsPassed=0/3 Replans=12 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(2,2) Remaining=1 Moves=4 WaypointsPassed=0/3 Replans=12 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(2,2) Remaining=1 Moves=4 WaypointsPassed=0/3 Replans=12 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(2,2) Remaining=1 Moves=4 WaypointsPassed=0/3 Replans=12 MapVersion=8",
+    "GridMoved Phase=Running Position=(2,3) Remaining=2 Moves=5 WaypointsPassed=1/3 Replans=14 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(2,3) Remaining=2 Moves=5 WaypointsPassed=1/3 Replans=14 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(2,3) Remaining=2 Moves=5 WaypointsPassed=1/3 Replans=14 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(2,3) Remaining=2 Moves=5 WaypointsPassed=1/3 Replans=14 MapVersion=8",
+    "GridMoved Phase=Running Position=(3,3) Remaining=1 Moves=6 WaypointsPassed=1/3 Replans=16 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(3,3) Remaining=1 Moves=6 WaypointsPassed=1/3 Replans=16 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(3,3) Remaining=1 Moves=6 WaypointsPassed=1/3 Replans=16 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(3,3) Remaining=1 Moves=6 WaypointsPassed=1/3 Replans=16 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(3,3) Remaining=1 Moves=6 WaypointsPassed=1/3 Replans=16 MapVersion=8",
+    "GridMoved Phase=Running Position=(4,3) Remaining=2 Moves=7 WaypointsPassed=2/3 Replans=18 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(4,3) Remaining=2 Moves=7 WaypointsPassed=2/3 Replans=18 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(4,3) Remaining=2 Moves=7 WaypointsPassed=2/3 Replans=18 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(4,3) Remaining=2 Moves=7 WaypointsPassed=2/3 Replans=18 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(4,3) Remaining=2 Moves=7 WaypointsPassed=2/3 Replans=18 MapVersion=8",
+    "GridMoved Phase=Running Position=(4,4) Remaining=1 Moves=8 WaypointsPassed=2/3 Replans=20 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(4,4) Remaining=1 Moves=8 WaypointsPassed=2/3 Replans=20 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(4,4) Remaining=1 Moves=8 WaypointsPassed=2/3 Replans=20 MapVersion=8",
+    "GridControlReceived Phase=Running Position=(4,4) Remaining=1 Moves=8 WaypointsPassed=2/3 Replans=20 MapVersion=8",
+    "GridMoved Phase=Completed Position=(4,5) Remaining=0 Moves=9 WaypointsPassed=3/3 Replans=22 MapVersion=8",
+    "GridControlReceived Phase=WaitingForTelemetry Position=(4,5) Remaining=0 Moves=9 WaypointsPassed=3/3 Replans=22 MapVersion=8",
+    "GridFinalReceived Phase=WaitingForTelemetry Position=(4,5) Remaining=0 Moves=9 WaypointsPassed=3/3 Replans=22 MapVersion=8",
+    "GridMqttEnded Phase=Completed Position=(4,5) Remaining=0 Moves=9 WaypointsPassed=3/3 Replans=22 MapVersion=8"
+  ]
+}

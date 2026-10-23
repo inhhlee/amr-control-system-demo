@@ -1,0 +1,3448 @@
+diff --git a/README.md b/README.md
+index 50f903f..5cd31e2 100644
+--- a/README.md
++++ b/README.md
+@@ -1,6 +1,8 @@
+ # amr-control-system-demo
+ 가상 AMR 기반 관제시스템 구현 및 Issue·PR 개발 절차 실습
+ 
++**격자 이동 코드 분리(2026-10-23)**: 이동·경유점 순서·장애물 회피·이동 타이머·MQTT 송신은 [src/Amr.Simulator](src/Amr.Simulator/README.md)가 담당한다. [Map 도구](tools/Amr.Simulator.Map/README.md)는 지도와 관제 수신·표시를 맡는다. 설정 파일·실행 주소·MQTT 메시지 형식은 유지한다.
++
+ **지도 시연 설정 편집**: [config/map-demo/settings.json](config/map-demo/settings.json)에서 지도·AMR ID·출발점·경유점·이동 간격·지도 포트·MQTT 접속과 송신 주기를 함께 바꾼다. 저장 후 서버를 다시 시작하면 적용된다. [항목별 수정·실행 안내](config/map-demo/README.md).
+ 
+ **한 AMR의 경유점 이동 + 장애물 우회 + MQTT 수신 지도(2026-10-22 로컬 통합)**: `AMR_001`이 W1 (2,3) → W2 (4,3) → G (4,5)를 순서대로 방문하며 현재 목표까지 최단 경로로 우회한다. 우회 중 후순위 경유점을 먼저 지나도 방문 순서를 바꾸지 않는다. 위치는 MQTT로 보내고 관제가 수신·검사한 좌표로 지도에 표시한다. [실행·경유점 설정 안내](tools/Amr.Simulator.Map/README.md#grid-navigation) · [통합 검증 근거](evidence/AMR/20261022-waypoint-unified-01/README.md). 아래 과거 본문과 [두 모드 당시 MQTT 결과](evidence/AMR/20261022-grid-mqtt-01/README.md)는 당시 이력이다.
+diff --git a/tests/Amr.Simulator.Map.Tests/GridMqttTests.cs b/tests/Amr.Simulator.Map.Tests/GridMqttTests.cs
+index b7c754e..1487f59 100644
+--- a/tests/Amr.Simulator.Map.Tests/GridMqttTests.cs
++++ b/tests/Amr.Simulator.Map.Tests/GridMqttTests.cs
+@@ -1,7 +1,8 @@
++using Amr.Simulator.Navigation;
+ using System.Text.Json;
+ using Amr.Communication.Models;
+ using Amr.Communication.Mqtt;
+-using Amr.Simulator.Map.Navigation;
++using Amr.Simulator.Map.Control;
+ using Amr.Simulator.Telemetry;
+ using Xunit;
+ 
+@@ -10,8 +11,8 @@ namespace Amr.Simulator.Map.Tests;
+ public sealed class GridMqttTests
+ {
+     private static SimulatorMqttOptions Options => new(new MqttConnectionSettings(), 50, 80);
+-    private static JsonElement Read(GridNavigationSession session) => JsonSerializer.SerializeToElement(session.Read(), new JsonSerializerOptions(JsonSerializerDefaults.Web));
+-    private static string Phase(GridNavigationSession session) => Read(session).GetProperty("navigation").GetProperty("phase").GetString()!;
++    private static JsonElement Read(GridMapSession session) => JsonSerializer.SerializeToElement(session.Read(), new JsonSerializerOptions(JsonSerializerDefaults.Web));
++    private static string Phase(GridMapSession session) => Read(session).GetProperty("navigation").GetProperty("phase").GetString()!;
+ 
+     [Fact]
+     public async Task ReadyHasNoReceivedPosition()
+@@ -32,7 +33,7 @@ public sealed class GridMqttTests
+         Assert.Equal("BUSY", snapshot.State);
+         Assert.Equal(1 / 0.6, snapshot.Speed, 10);
+         var received = new TelemetryMessage("robot", 1, new(snapshot.X, snapshot.Y), snapshot.Speed, snapshot.State, DateTimeOffset.UtcNow);
+-        Assert.Equal(navigator.Read().Current, GridTelemetry.ReceivedCell(received));
++        Assert.Equal(navigator.Read().Current, GridMapCoordinates.ReceivedCell(received));
+     }
+ 
+     [Theory]
+@@ -43,7 +44,7 @@ public sealed class GridMqttTests
+     [InlineData(0, -5)]
+     [InlineData(0, 1)]
+     public void InvalidGridCoordinateIsNotDisplayed(double x, double y) =>
+-        Assert.Null(GridTelemetry.ReceivedCell(new("r", 1, new(x, y), 0, "IDLE", DateTimeOffset.UtcNow)));
++        Assert.Null(GridMapCoordinates.ReceivedCell(new("r", 1, new(x, y), 0, "IDLE", DateTimeOffset.UtcNow)));
+ 
+     [Fact]
+     public async Task PublishedPositionNeverFillsReceivedPosition()
+@@ -256,12 +257,12 @@ public sealed class GridMqttTests
+     {
+         private readonly string _directory = Path.Combine(Path.GetTempPath(), "grid-mqtt-test-" + Guid.NewGuid().ToString("N"));
+         public FakeConnection Connection { get; }
+-        public GridNavigationSession Session { get; }
++        public GridMapSession Session { get; }
+         public Fixture(FakeConnection? connection = null, GridNavigator? navigator = null)
+         {
+             Directory.CreateDirectory(_directory);
+             Connection = connection ?? new();
+-            Session = new(_directory, Options, () => Connection, navigator);
++            Session = new(_directory, Options, () => Connection, navigator, transportFactory: () => new FakeSender(Connection));
+         }
+         public async ValueTask DisposeAsync()
+         {
+@@ -271,7 +272,15 @@ public sealed class GridMqttTests
+         }
+     }
+ 
+-    private sealed class FakeConnection : IGridMqttConnection
++    private sealed class FakeSender(FakeConnection connection) : ISimulationTransport
++    {
++        public event Action? ConnectionLost { add { } remove { } }
++        public Task ConnectAsync(CancellationToken token) => Task.CompletedTask;
++        public Task PublishAsync(SimulationPublication publication, CancellationToken token) => connection.PublishAsync(publication, token);
++        public Task DisconnectAsync() => Task.CompletedTask;
++        public void Dispose() { }
++    }
++    private sealed class FakeConnection : IGridControlConnection
+     {
+         public event Action<object>? Received;
+         public event Action<string>? Failed;
+diff --git a/tests/Amr.Simulator.Map.Tests/GridNavigationTests.cs b/tests/Amr.Simulator.Map.Tests/GridNavigationTests.cs
+deleted file mode 100644
+index b839f8c..0000000
+--- a/tests/Amr.Simulator.Map.Tests/GridNavigationTests.cs
++++ /dev/null
+@@ -1,229 +0,0 @@
+-using Amr.Simulator.Map.Navigation;
+-using Xunit;
+-
+-namespace Amr.Simulator.Map.Tests;
+-
+-public sealed class GridNavigationTests
+-{
+-    [Fact]
+-    public void OriginalMapHasNineStepPath()
+-    {
+-        var s = new GridNavigator().Read();
+-        Assert.Equal(9, s.RemainingDistance);
+-        Assert.Equal(s.Start, s.Path[0]);
+-        Assert.Equal(s.Goal, s.Path[^1]);
+-        AssertValid(s);
+-    }
+-
+-    [Fact]
+-    public void StartEqualsGoalReturnsOneCell()
+-    {
+-        var cell = new GridCell(0, 0);
+-        Assert.Equal(new[] { cell }, GridPathfinder.FindPath(new int[1, 1], cell, cell));
+-    }
+-
+-    [Fact]
+-    public void UnreachableReturnsEmptyPath() =>
+-        Assert.Empty(GridPathfinder.FindPath(new[,] { { 0, 1, 0 } }, new(0, 0), new(0, 2)));
+-
+-    [Theory]
+-    [InlineData(0, 2)]
+-    [InlineData(2, 0)]
+-    public void EmptyMapRejected(int rows, int cols) =>
+-        Assert.Throws<ArgumentException>(() => GridPathfinder.FindPath(new int[rows, cols], new(0, 0), new(0, 0)));
+-
+-    [Fact]
+-    public void NullMapRejected() =>
+-        Assert.Throws<ArgumentNullException>(() => GridPathfinder.FindPath(null!, new(0, 0), new(0, 0)));
+-
+-    [Theory]
+-    [InlineData(-1)]
+-    [InlineData(2)]
+-    public void NonBinaryMapRejected(int value) =>
+-        Assert.Throws<ArgumentException>(() => GridPathfinder.FindPath(new[,] { { 0, value, 0 } }, new(0, 0), new(0, 2)));
+-
+-    [Theory]
+-    [InlineData(-1, 0)]
+-    [InlineData(0, -1)]
+-    [InlineData(2, 0)]
+-    [InlineData(0, 2)]
+-    public void InvalidCoordinateRejected(int row, int col) =>
+-        Assert.Throws<ArgumentException>(() => GridPathfinder.FindPath(new int[2, 2], new(row, col), new(0, 0)));
+-
+-    [Theory]
+-    [InlineData(1, 0)]
+-    [InlineData(0, 1)]
+-    public void BlockedEndpointsRejected(int start, int goal) =>
+-        Assert.Throws<ArgumentException>(() => GridPathfinder.FindPath(new[,] { { start, goal } }, new(0, 0), new(0, 1)));
+-
+-    [Fact]
+-    public void CompletesInNineStepsAndThenStaysStopped()
+-    {
+-        var navigator = new GridNavigator();
+-        Assert.True(navigator.Start());
+-        Assert.False(navigator.Start());
+-        for (int i = 0; i < 9; i++) { Assert.True(navigator.Step()); AssertValid(navigator.Read()); }
+-        var s = navigator.Read();
+-        Assert.Equal("Completed", s.Phase);
+-        Assert.Equal(s.Goal, s.Current);
+-        Assert.Equal(9, s.Moves);
+-        Assert.Equal(0, s.RemainingDistance);
+-        Assert.False(navigator.Step());
+-        Assert.Equal(s.Current, navigator.Read().Current);
+-    }
+-
+-    [Fact]
+-    public void NewObstacleDetoursFromCurrentPosition()
+-    {
+-        var navigator = new GridNavigator();
+-        navigator.Start();
+-        for (int i = 0; i < 3; i++) navigator.Step();
+-        Assert.Equal(new GridCell(2, 1), navigator.Read().Current);
+-        navigator.SetObstacle(new(2, 2), true);
+-        var s = navigator.Read();
+-        Assert.Equal(new GridCell(2, 1), s.Current);
+-        Assert.Equal(8, s.RemainingDistance);
+-        Assert.DoesNotContain(new GridCell(2, 2), s.Path);
+-        Assert.Equal(new GridCell(2, 0), s.Path[1]);
+-        for (int i = 0; i < 8; i++) { Assert.True(navigator.Step()); AssertValid(navigator.Read()); }
+-        Assert.Equal("Completed", navigator.Read().Phase);
+-        Assert.Equal(11, navigator.Read().Moves);
+-    }
+-
+-    [Fact]
+-    public void FullyBlockedWaitsThenAutomaticallyResumes()
+-    {
+-        var navigator = new GridNavigator();
+-        navigator.Start(); navigator.Step();
+-        var current = navigator.Read().Current;
+-        navigator.SetObstacle(new(1, 1), true);
+-        Assert.Equal("Waiting", navigator.Read().Phase);
+-        Assert.Null(navigator.Read().RemainingDistance);
+-        for (int i = 0; i < 10; i++) Assert.False(navigator.Step());
+-        Assert.Equal(current, navigator.Read().Current);
+-        Assert.Equal(1, navigator.Read().Moves);
+-        navigator.SetObstacle(new(1, 1), false);
+-        Assert.Equal("Running", navigator.Read().Phase);
+-        Assert.True(navigator.Step());
+-        Assert.Equal(new GridCell(1, 1), navigator.Read().Current);
+-    }
+-
+-    [Fact]
+-    public void RemovingObstacleSelectsShorterRouteImmediately()
+-    {
+-        var navigator = new GridNavigator();
+-        navigator.SetObstacle(new(2, 2), true);
+-        navigator.Start();
+-        for (int i = 0; i < 3; i++) navigator.Step();
+-        Assert.Equal(8, navigator.Read().RemainingDistance);
+-        navigator.SetObstacle(new(2, 2), false);
+-        Assert.Equal(6, navigator.Read().RemainingDistance);
+-        Assert.Equal(new GridCell(2, 2), navigator.Read().Path[1]);
+-    }
+-
+-    [Fact]
+-    public void CancellationStopsMovementAndDoesNotResumeOnMapEdit()
+-    {
+-        var navigator = new GridNavigator();
+-        navigator.Start(); navigator.Step(); navigator.Cancel();
+-        var before = navigator.Read();
+-        navigator.SetObstacle(new(2, 2), true);
+-        Assert.False(navigator.Step());
+-        Assert.Equal("Canceled", navigator.Read().Phase);
+-        Assert.Equal(before.Current, navigator.Read().Current);
+-        Assert.True(navigator.Start());
+-        Assert.Equal(before.Start, navigator.Read().Current);
+-    }
+-
+-    [Fact]
+-    public void ResetRestoresOriginalMapAndStopsActiveRun()
+-    {
+-        var navigator = new GridNavigator();
+-        navigator.Start(); navigator.Step(); navigator.SetObstacle(new(2, 2), true);
+-        navigator.Reset();
+-        var s = navigator.Read();
+-        Assert.Equal("Ready", s.Phase);
+-        Assert.Equal(s.Start, s.Current);
+-        Assert.Equal(0, s.Map[2][2]);
+-        Assert.Equal(9, s.RemainingDistance);
+-        Assert.Equal(0, s.Moves);
+-        Assert.False(navigator.Step());
+-    }
+-
+-    [Theory]
+-    [InlineData(0, 2)]
+-    [InlineData(0, 0)]
+-    [InlineData(4, 5)]
+-    [InlineData(-1, 0)]
+-    [InlineData(5, 0)]
+-    public void ProtectedOrInvalidCellEditRejected(int row, int col)
+-    {
+-        var navigator = new GridNavigator();
+-        Assert.Throws<ArgumentException>(() => navigator.SetObstacle(new(row, col), true));
+-        Assert.Equal(9, navigator.Read().RemainingDistance);
+-        Assert.Equal(0, navigator.Read().MapVersion);
+-    }
+-
+-    [Fact]
+-    public void OccupiedCellEditRejectedAndSnapshotIsIndependent()
+-    {
+-        var navigator = new GridNavigator();
+-        navigator.Start(); navigator.Step();
+-        var s = navigator.Read();
+-        Assert.Throws<ArgumentException>(() => navigator.SetObstacle(s.Current, true));
+-        s.Map[0][1] = 1; s.Path[0] = new(99, 99); s.Traveled[0] = new(99, 99);
+-        Assert.Equal(0, navigator.Read().Map[0][1]);
+-        Assert.Equal(navigator.Read().Current, navigator.Read().Path[0]);
+-        Assert.Equal(navigator.Read().Start, navigator.Read().Traveled[0]);
+-    }
+-
+-    [Fact]
+-    public void DijkstraMatchesBfsOnThreeHundredSeededMaps()
+-    {
+-        var random = new Random(221026);
+-        for (int trial = 0; trial < 300; trial++)
+-        {
+-            var map = new int[6, 7];
+-            for (int r = 0; r < 6; r++)
+-                for (int c = 0; c < 7; c++) map[r, c] = random.Next(100) < 35 ? 1 : 0;
+-            var start = new GridCell(random.Next(6), random.Next(7));
+-            var goal = new GridCell(random.Next(6), random.Next(7));
+-            map[start.Row, start.Col] = map[goal.Row, goal.Col] = 0;
+-            var path = GridPathfinder.FindPath(map, start, goal);
+-            Assert.Equal(BfsDistance(map, start, goal), path.Count == 0 ? (int?)null : path.Count - 1);
+-            for (int i = 0; i < path.Count; i++)
+-            {
+-                Assert.Equal(0, map[path[i].Row, path[i].Col]);
+-                if (i > 0) Assert.Equal(1, Math.Abs(path[i].Row - path[i - 1].Row) + Math.Abs(path[i].Col - path[i - 1].Col));
+-            }
+-        }
+-    }
+-
+-    private static int? BfsDistance(int[,] map, GridCell start, GridCell goal)
+-    {
+-        var queue = new Queue<(GridCell Cell, int Distance)>();
+-        var visited = new HashSet<GridCell> { start };
+-        queue.Enqueue((start, 0));
+-        while (queue.TryDequeue(out var item))
+-        {
+-            if (item.Cell == goal) return item.Distance;
+-            foreach (var d in new[] { new GridCell(-1, 0), new(1, 0), new(0, -1), new(0, 1) })
+-            {
+-                var next = new GridCell(item.Cell.Row + d.Row, item.Cell.Col + d.Col);
+-                if (next.Row < 0 || next.Row >= map.GetLength(0) || next.Col < 0 || next.Col >= map.GetLength(1) || map[next.Row, next.Col] == 1 || !visited.Add(next)) continue;
+-                queue.Enqueue((next, item.Distance + 1));
+-            }
+-        }
+-        return null;
+-    }
+-
+-    private static void AssertValid(GridSnapshot s)
+-    {
+-        Assert.Equal(0, s.Map[s.Current.Row][s.Current.Col]);
+-        for (int i = 0; i < s.Path.Length; i++)
+-        {
+-            Assert.Equal(0, s.Map[s.Path[i].Row][s.Path[i].Col]);
+-            if (i > 0) Assert.Equal(1, Math.Abs(s.Path[i].Row - s.Path[i - 1].Row) + Math.Abs(s.Path[i].Col - s.Path[i - 1].Col));
+-        }
+-    }
+-}
+diff --git a/tests/Amr.Simulator.Map.Tests/MapConfigurationTests.cs b/tests/Amr.Simulator.Map.Tests/MapConfigurationTests.cs
+index 73faa0e..67afe03 100644
+--- a/tests/Amr.Simulator.Map.Tests/MapConfigurationTests.cs
++++ b/tests/Amr.Simulator.Map.Tests/MapConfigurationTests.cs
+@@ -1,7 +1,8 @@
++using Amr.Simulator.Navigation;
+ using System.Text.Json;
+ using System.Text.Json.Nodes;
+ using Amr.Communication.Models;
+-using Amr.Simulator.Map.Navigation;
++using Amr.Simulator.Map.Control;
+ using Xunit;
+ 
+ namespace Amr.Simulator.Map.Tests;
+@@ -81,7 +82,7 @@ public sealed class MapConfigurationTests
+             var settings = await GridMissionSettings.LoadAsync(path);
+             Assert.Null(settings.Mqtt);
+             await File.WriteAllTextAsync(path, "{}");
+-            await using var session = await GridNavigationSession.CreateAsync(path, directory, null, settings);
++            await using var session = await GridMapSession.CreateAsync(path, directory, null, settings);
+             Assert.Equal(original, await File.ReadAllTextAsync(Path.Combine(session.EvidenceDirectory, "config.json")));
+             var state = JsonSerializer.SerializeToElement(session.Read(), new JsonSerializerOptions(JsonSerializerDefaults.Web));
+             Assert.Equal(250, state.GetProperty("stepIntervalMs").GetInt32());
+@@ -96,8 +97,8 @@ public sealed class MapConfigurationTests
+     public void ReceivedCoordinatesUseConfiguredMapDimensionsAndSpeedUsesConfiguredInterval()
+     {
+         var telemetry = new TelemetryMessage("CUSTOM_AMR", 1, new(7, -2), 0, "IDLE", DateTimeOffset.UtcNow);
+-        Assert.Equal(new GridCell(2, 7), GridTelemetry.ReceivedCell(telemetry, 3, 8));
+-        Assert.Null(GridTelemetry.ReceivedCell(telemetry, 3, 7));
++        Assert.Equal(new GridCell(2, 7), GridMapCoordinates.ReceivedCell(telemetry, 3, 8));
++        Assert.Null(GridMapCoordinates.ReceivedCell(telemetry, 3, 7));
+         var navigator = new GridNavigator(new(0, 0), [new(0, 7)], new int[3, 8]);
+         navigator.Start();
+         Assert.Equal(4, GridTelemetry.Capture("CUSTOM_AMR", navigator.Read(), stepIntervalMs: 250).Speed);
+diff --git a/tests/Amr.Simulator.Map.Tests/ProjectionTests.cs b/tests/Amr.Simulator.Map.Tests/ProjectionTests.cs
+index 31269fd..2a321db 100644
+--- a/tests/Amr.Simulator.Map.Tests/ProjectionTests.cs
++++ b/tests/Amr.Simulator.Map.Tests/ProjectionTests.cs
+@@ -73,21 +73,4 @@ public sealed class ProjectionTests
+         Assert.False(view.MatchesFinal(100, 1, 2));
+     }
+ 
+-    [Fact]
+-    public async Task MqttSessionReady_DoesNotUseConfiguredInitialPositionAsReceivedData()
+-    {
+-        string root = Path.Combine(Path.GetTempPath(), "amr-map-test-" + Guid.NewGuid().ToString("N"));
+-        Directory.CreateDirectory(root);
+-        string config = Path.Combine(root, "input.json");
+-        await File.WriteAllTextAsync(config, """{"amrId":"AMR_001","initialPosition":{"x":-1,"y":0},"speedMps":1,"updateIntervalMs":100,"waypoints":[{"x":1,"y":0},{"x":1,"y":2}]}""");
+-        try
+-        {
+-            await using var session = await MapSession.CreateAsync(config, root, new SimulatorMqttOptions(new MqttConnectionSettings(), 200, 1000));
+-            using var state = JsonDocument.Parse(JsonSerializer.Serialize(session.Read()));
+-            Assert.Equal(JsonValueKind.Null, state.RootElement.GetProperty("position").ValueKind);
+-            Assert.Equal("mqtt-control-receiver", state.RootElement.GetProperty("source").GetString());
+-            Assert.Equal(0, state.RootElement.GetProperty("telemetryCount").GetInt32());
+-        }
+-        finally { Directory.Delete(root, true); }
+-    }
+ }
+diff --git a/tests/Amr.Simulator.Map.Tests/WaypointMissionTests.cs b/tests/Amr.Simulator.Map.Tests/WaypointMissionTests.cs
+deleted file mode 100644
+index dae302d..0000000
+--- a/tests/Amr.Simulator.Map.Tests/WaypointMissionTests.cs
++++ /dev/null
+@@ -1,189 +0,0 @@
+-using System.Text;
+-using Amr.Simulator.Map.Navigation;
+-using Xunit;
+-
+-namespace Amr.Simulator.Map.Tests;
+-
+-public sealed class WaypointMissionTests
+-{
+-    private static readonly GridCell[] Route = [new(2, 3), new(4, 3), new(4, 5)];
+-    private static GridNavigator Mission() => new(new(0, 0), Route);
+-
+-    [Fact]
+-    public void NormalMissionVisitsEveryTargetInOrderAndStopsAtFinalGoal()
+-    {
+-        var navigator = Mission();
+-        Assert.Equal(5, navigator.Read().RemainingDistance);
+-        Assert.Equal(Route[0], navigator.Read().CurrentTarget);
+-        navigator.Start();
+-        for (int move = 1; move <= 9; move++)
+-        {
+-            Assert.True(navigator.Step());
+-            Assert.Equal(move < 9 ? "Running" : "Completed", navigator.Read().Phase);
+-        }
+-        var state = navigator.Read();
+-        Assert.Equal(new[] { 0, 1, 2 }, state.ReachedWaypoints.Select(x => x.Index));
+-        Assert.Equal(new[] { 5, 7, 9 }, state.ReachedWaypoints.Select(x => x.Moves));
+-        Assert.Equal(Route, state.ReachedWaypoints.Select(x => x.Cell));
+-        Assert.Equal(3, state.NextWaypointIndex);
+-        Assert.Null(state.CurrentTarget);
+-        Assert.False(navigator.Step());
+-    }
+-
+-    [Fact]
+-    public void DetourCrossingLaterWaypointDoesNotSkipCurrentTarget()
+-    {
+-        var navigator = Mission();
+-        navigator.Start();
+-        for (int i = 0; i < 3; i++) navigator.Step();
+-        navigator.SetObstacle(new(2, 2), true);
+-        Assert.Equal(8, navigator.Read().RemainingDistance);
+-        for (int i = 0; i < 6; i++) navigator.Step();
+-        var crossed = navigator.Read();
+-        Assert.Equal(Route[1], crossed.Current); // W2를 먼저 지나지만 아직 W1이 목표다.
+-        Assert.Equal(0, crossed.NextWaypointIndex);
+-        Assert.Empty(crossed.ReachedWaypoints);
+-        Assert.Equal(Route[0], crossed.CurrentTarget);
+-        for (int i = 0; i < 6; i++) navigator.Step();
+-        var completed = navigator.Read();
+-        Assert.Equal("Completed", completed.Phase);
+-        Assert.Equal(15, completed.Moves);
+-        Assert.Equal(new[] { 11, 13, 15 }, completed.ReachedWaypoints.Select(x => x.Moves));
+-        Assert.DoesNotContain(new GridCell(2, 2), completed.Traveled);
+-    }
+-
+-    [Fact]
+-    public void BlockedCurrentWaypointWaitsAndResumesWithoutSkipping()
+-    {
+-        var navigator = Mission();
+-        navigator.SetObstacle(Route[0], true);
+-        navigator.Start();
+-        for (int i = 0; i < 5; i++) Assert.False(navigator.Step());
+-        Assert.Equal("Waiting", navigator.Read().Phase);
+-        Assert.Equal(0, navigator.Read().Moves);
+-        Assert.Equal(0, navigator.Read().NextWaypointIndex);
+-        navigator.SetObstacle(Route[0], false);
+-        for (int i = 0; i < 9; i++) navigator.Step();
+-        Assert.Equal("Completed", navigator.Read().Phase);
+-    }
+-
+-    [Fact]
+-    public void BlockedFutureWaypointDoesNotPreventReachingCurrentWaypoint()
+-    {
+-        var navigator = Mission();
+-        navigator.SetObstacle(Route[1], true);
+-        navigator.Start();
+-        Assert.Equal("Running", navigator.Read().Phase);
+-        for (int i = 0; i < 5; i++) Assert.True(navigator.Step());
+-        Assert.Equal("Waiting", navigator.Read().Phase);
+-        Assert.Equal(Route[0], navigator.Read().Current);
+-        Assert.Equal(Route[1], navigator.Read().CurrentTarget);
+-        Assert.Equal(1, navigator.Read().NextWaypointIndex);
+-        for (int i = 0; i < 5; i++) Assert.False(navigator.Step());
+-        navigator.SetObstacle(Route[1], false);
+-        for (int i = 0; i < 4; i++) navigator.Step();
+-        Assert.Equal("Completed", navigator.Read().Phase);
+-    }
+-
+-    [Fact]
+-    public void ConsecutiveDuplicateWaypointsConsumeNoExtraMoves()
+-    {
+-        var navigator = new GridNavigator(new(0, 0), [new(0, 0), new(0, 1), new(0, 1), new(4, 5)]);
+-        navigator.Start();
+-        for (int i = 0; i < 9; i++) navigator.Step();
+-        Assert.Equal("Completed", navigator.Read().Phase);
+-        Assert.Equal(new[] { 0, 1, 1, 9 }, navigator.Read().ReachedWaypoints.Select(x => x.Moves));
+-    }
+-
+-    [Fact]
+-    public void AllWaypointsAtStartCompleteWithoutMovement()
+-    {
+-        var navigator = new GridNavigator(new(0, 0), [new(0, 0), new(0, 0)]);
+-        Assert.True(navigator.Start());
+-        Assert.Equal("Completed", navigator.Read().Phase);
+-        Assert.Equal(0, navigator.Read().Moves);
+-        Assert.False(navigator.Step());
+-    }
+-
+-    [Fact]
+-    public void ResetRestoresOrderedProgressAndDoesNotReuseVisits()
+-    {
+-        var navigator = Mission();
+-        navigator.Start();
+-        for (int i = 0; i < 6; i++) navigator.Step();
+-        navigator.Reset();
+-        var state = navigator.Read();
+-        Assert.Equal("Ready", state.Phase);
+-        Assert.Equal(0, state.NextWaypointIndex);
+-        Assert.Empty(state.ReachedWaypoints);
+-        Assert.Equal(Route[0], state.CurrentTarget);
+-        Assert.False(navigator.Step());
+-    }
+-
+-    [Fact]
+-    public void RouteAndSnapshotsCannotMutateMission()
+-    {
+-        var source = Route.ToArray();
+-        var navigator = new GridNavigator(new(0, 0), source);
+-        source[0] = new(99, 99);
+-        navigator.Read().Waypoints[0] = new(99, 99);
+-        Assert.Equal(Route[0], navigator.Read().CurrentTarget);
+-    }
+-
+-    [Theory]
+-    [InlineData(-1, 0)]
+-    [InlineData(5, 0)]
+-    [InlineData(0, 2)]
+-    public void InvalidWaypointRejected(int row, int col) =>
+-        Assert.Throws<ArgumentException>(() => new GridNavigator(new(0, 0), [new(row, col)]));
+-
+-    [Fact]
+-    public void EmptyMissionRejected() => Assert.Throws<ArgumentException>(() => new GridNavigator(new(0, 0), []));
+-
+-    [Theory]
+-    [InlineData(false)]
+-    [InlineData(true)]
+-    public async Task MissionConfigurationPreservesOrderAndAcceptsUtf8Bom(bool bom)
+-    {
+-        await WithFile("""{"amrId":"AMR_001","start":{"row":0,"col":0},"waypoints":[{"row":2,"col":3},{"row":4,"col":3},{"row":4,"col":5}]}""", async path =>
+-        {
+-            if (bom)
+-            {
+-                var original = await File.ReadAllBytesAsync(path);
+-                await File.WriteAllBytesAsync(path, new byte[] { 0xef, 0xbb, 0xbf }.Concat(original).ToArray());
+-            }
+-            var settings = await GridMissionSettings.LoadAsync(path);
+-            Assert.Equal("AMR_001", settings.AmrId);
+-            Assert.Equal(Route, settings.Waypoints);
+-        });
+-    }
+-
+-    [Theory]
+-    [InlineData("{\"amrId\":\"AMR_001\",\"start\":{\"row\":0,\"col\":0},\"waypoints\":[]}")]
+-    [InlineData("{\"amrId\":\"AMR_001\",\"start\":{\"row\":0},\"waypoints\":[{\"row\":4,\"col\":5}]}")]
+-    [InlineData("{\"amrId\":\"bad/id\",\"start\":{\"row\":0,\"col\":0},\"waypoints\":[{\"row\":4,\"col\":5}]}")]
+-    [InlineData("{\"amrId\":\"AMR_001\",\"start\":{\"row\":0,\"col\":0},\"waypoints\":[{\"row\":0,\"col\":2}]}")]
+-    [InlineData("{\"amrId\":\"AMR_001\",\"amrId\":\"other\",\"start\":{\"row\":0,\"col\":0},\"waypoints\":[{\"row\":4,\"col\":5}]}")]
+-    [InlineData("{\"amrId\":\"AMR_001\",\"start\":{\"row\":\"0\",\"col\":0},\"waypoints\":[{\"row\":4,\"col\":5}]}")]
+-    [InlineData("{\"amrId\":\"AMR_001\",\"start\":{\"row\":0,\"col\":0},\"waypoints\":[{\"row\":4,\"col\":5}],\"unknown\":1}")]
+-    public async Task InvalidMissionConfigurationRejected(string json) =>
+-        await WithFile(json, path => Assert.ThrowsAsync<ArgumentException>(() => GridMissionSettings.LoadAsync(path)));
+-
+-    [Fact]
+-    public async Task InvalidUtf8NotSilentlyReplaced()
+-    {
+-        await WithFile("{}", async path =>
+-        {
+-            await File.WriteAllBytesAsync(path, [0xef, 0xbb, 0xbf, 0xff]);
+-            await Assert.ThrowsAsync<DecoderFallbackException>(() => GridMissionSettings.LoadAsync(path));
+-        });
+-    }
+-
+-    private static async Task WithFile(string json, Func<string, Task> action)
+-    {
+-        string path = Path.Combine(Path.GetTempPath(), "mission-config-" + Guid.NewGuid().ToString("N") + ".json");
+-        await File.WriteAllTextAsync(path, json, new UTF8Encoding(false));
+-        try { await action(path); }
+-        finally { File.Delete(path); }
+-    }
+-}
+diff --git a/tools/Amr.Simulator.Map/MapSession.cs b/tools/Amr.Simulator.Map/MapSession.cs
+deleted file mode 100644
+index 4dfaa40..0000000
+--- a/tools/Amr.Simulator.Map/MapSession.cs
++++ /dev/null
+@@ -1,311 +0,0 @@
+-using System.Globalization;
+-using System.Text;
+-using System.Text.Json;
+-using Amr.Simulator.Configuration;
+-using Amr.Simulator.Simulation;
+-using Amr.Simulator.Telemetry;
+-using Amr.Communication.Models;
+-
+-namespace Amr.Simulator.Map;
+-
+-/// <summary>실제 Simulator 실행과 출력 수집을 소유한다. UI는 복사한 상태만 읽는다.</summary>
+-public sealed class MapSession : IAsyncDisposable
+-{
+-    private readonly object _gate = new();
+-    private readonly string _snapshotPath;
+-    private readonly SimulatorSettings _settings;
+-    private readonly Queue<string> _lines = new();
+-    private CancellationTokenSource? _cancellation;
+-    private Task _execution = Task.CompletedTask;
+-    private bool _closing;
+-    private string _phase = "Ready";
+-    private string? _runId;
+-    private Position2D _position;
+-    private string _amrState = "IDLE";
+-    private double _speed;
+-    private double _elapsed;
+-    private int _waypointsPassed;
+-    private long _sequence;
+-    private int? _exitCode;
+-    private string? _lastSnapshotLine;
+-    private string? _terminalEvent;
+-    private DateTimeOffset? _updatedAt;
+-    private readonly SimulatorMqttOptions? _mqtt;
+-    private MqttMapProjection _received;
+-    private string _brokerState = "NotStarted";
+-    private string? _receiveFailure;
+-    private int _rejectedCount;
+-    private long? _lastPublishedTimestamp;
+-    private int _stopReason; // 0=pending, 1=user cancel, 2=receive failure, 3=complete
+-
+-    private MapSession(string snapshotPath, string evidenceDirectory, SimulatorSettings settings, SimulatorMqttOptions? mqtt)
+-    {
+-        _snapshotPath = snapshotPath;
+-        EvidenceDirectory = evidenceDirectory;
+-        _settings = settings;
+-        _position = settings.InitialPosition;
+-        _mqtt = mqtt;
+-        _received = new(settings.AmrId);
+-    }
+-
+-    public string EvidenceDirectory { get; }
+-
+-    public static async Task<MapSession> CreateAsync(string sourceConfig, string evidenceRoot, SimulatorMqttOptions? mqtt = null)
+-    {
+-        // 파일이 시연 중 변경돼도 지도 경로와 실행 입력은 같은 복사본을 사용한다.
+-        string directory = Path.Combine(evidenceRoot, $"map-live-{DateTimeOffset.Now:yyyyMMdd-HHmmss}-{Guid.NewGuid():N}");
+-        Directory.CreateDirectory(directory);
+-        string snapshot = Path.Combine(directory, "config.json");
+-        await File.WriteAllBytesAsync(snapshot, await File.ReadAllBytesAsync(sourceConfig));
+-        var settings = await SimulatorSettingsLoader.LoadAsync(snapshot);
+-        return new MapSession(snapshot, directory, settings, mqtt);
+-    }
+-
+-    public object Read()
+-    {
+-        lock (_gate)
+-        {
+-            var received = _received.Read();
+-            var telemetry = received.Telemetry;
+-            return new
+-            {
+-            phase = _phase, runId = _runId, sequence = _sequence,
+-            position = _mqtt is null ? _position : telemetry is null ? (Position2D?)null : new Position2D(telemetry.Position.X, telemetry.Position.Y),
+-            amrState = _mqtt is null ? _amrState : telemetry?.State,
+-            speed = _mqtt is null ? _speed : telemetry?.Speed,
+-            elapsedSeconds = _elapsed, waypointsPassed = _waypointsPassed,
+-            exitCode = _exitCode, updatedAt = _updatedAt,
+-            lastSnapshotLine = _lastSnapshotLine, logs = _lines.ToArray(),
+-            settings = _settings, evidenceDirectory = EvidenceDirectory,
+-            source = _mqtt is null ? "simulator-output" : "mqtt-control-receiver",
+-            brokerState = _brokerState, receiveFailure = _receiveFailure, rejectedCount = _rejectedCount,
+-            receivedTelemetry = telemetry, receivedHeartbeat = received.Heartbeat,
+-            telemetryCount = received.TelemetryCount, heartbeatCount = received.HeartbeatCount,
+-            ignoredCount = received.IgnoredCount, lastPublishedTimestamp = _lastPublishedTimestamp,
+-            mqttEndpoint = _mqtt is null ? null : $"{_mqtt.Connection.Host}:{_mqtt.Connection.Port}"
+-            };
+-        };
+-    }
+-
+-    public bool Start()
+-    {
+-        lock (_gate)
+-        {
+-            if (_closing || !_execution.IsCompleted) return false;
+-            _cancellation?.Dispose();
+-            _cancellation = new CancellationTokenSource();
+-            var token = _cancellation.Token;
+-            _runId = $"run-{DateTimeOffset.Now:HHmmss}-{Guid.NewGuid():N}";
+-            string runId = _runId;
+-            _phase = "Running";
+-            _position = _settings.InitialPosition;
+-            _amrState = "IDLE";
+-            _speed = _elapsed = 0;
+-            _waypointsPassed = 0;
+-            _exitCode = null;
+-            _lastSnapshotLine = _terminalEvent = null;
+-            _received = new(_settings.AmrId);
+-            _brokerState = "NotStarted";
+-            _receiveFailure = null;
+-            _rejectedCount = _stopReason = 0;
+-            _lastPublishedTimestamp = null;
+-            _lines.Clear();
+-            _sequence++;
+-            _updatedAt = DateTimeOffset.UtcNow;
+-            _execution = Task.Run(() => ExecuteAsync(runId, token));
+-            return true;
+-        }
+-    }
+-
+-    public void Cancel()
+-    {
+-        lock (_gate)
+-        {
+-            if (_execution.IsCompleted) return;
+-            if (_stopReason != 0) return;
+-            _stopReason = 1;
+-            _phase = "Canceling";
+-            _cancellation!.Cancel();
+-        }
+-    }
+-
+-    private async Task ExecuteAsync(string runId, CancellationToken token)
+-    {
+-        int code = 1;
+-        try
+-        {
+-            using var stdout = new StreamWriter(Path.Combine(EvidenceDirectory, runId + ".stdout.log"), false, new UTF8Encoding(false)) { AutoFlush = true };
+-            using var stderr = new StreamWriter(Path.Combine(EvidenceDirectory, runId + ".stderr.log"), false, new UTF8Encoding(false)) { AutoFlush = true };
+-            using var output = new CaptureWriter(line => { stdout.WriteLine(line); Observe(line); });
+-            using var error = new CaptureWriter(line => { stderr.WriteLine(line); Observe(line); });
+-            // 콘솔과 같은 구현·설정·실제 시간의 시계를 사용한다.
+-            code = _mqtt is null
+-                ? await SimulatorApplication.RunAsync(["--config", _snapshotPath], output, error, token)
+-                : await ExecuteMqttAsync(runId, output, error, token);
+-        }
+-        catch (Exception exception)
+-        {
+-            Observe($"MapExecutionFailed Reason={exception.GetType().Name}");
+-        }
+-        lock (_gate)
+-        {
+-            _exitCode = code;
+-            _phase = _mqtt is not null ? (_stopReason == 1 && code == 0 ? "Canceled" : _stopReason == 3 && code == 0 ? "Completed" : "Failed")
+-                : code == 0 && _terminalEvent == "SimulationCompleted" ? "Completed"
+-                : code == 0 && _terminalEvent is "SimulationCanceled" or "InitializationCanceled" ? "Canceled" : "Failed";
+-            _sequence++;
+-            _updatedAt = DateTimeOffset.UtcNow;
+-        }
+-        try
+-        {
+-            await File.WriteAllTextAsync(Path.Combine(EvidenceDirectory, runId + ".result.json"),
+-                JsonSerializer.Serialize(Read(), new JsonSerializerOptions(JsonSerializerDefaults.Web) { WriteIndented = true }));
+-        }
+-        catch (Exception exception)
+-        {
+-            Observe($"EvidenceSaveFailed Reason={exception.GetType().Name}");
+-            lock (_gate) _phase = "Failed";
+-        }
+-    }
+-
+-    private void Observe(string line)
+-    {
+-        lock (_gate)
+-        {
+-            _lines.Enqueue(line);
+-            if (_lines.Count > 80) _lines.Dequeue();
+-            _sequence++;
+-            _updatedAt = DateTimeOffset.UtcNow;
+-            string name = line.Split(' ', 2)[0];
+-            if (name is "SimulationCompleted" or "SimulationCanceled" or "InitializationCanceled") _terminalEvent = name;
+-            if (_mqtt is not null)
+-            {
+-                if (name == "MqttSimulationFailed" && line.Contains("Reason=ConnectionLost", StringComparison.Ordinal))
+-                    FailReceiver("BrokerDisconnected");
+-                if (name == "MqttSimulationFailed" && line.Contains("Reason=ConnectionLost", StringComparison.Ordinal))
+-                    FailReceiver("BrokerDisconnected");
+-                if (name == "MqttSimulationCompleted") _terminalEvent = name;
+-                if (name == "TelemetryPublished")
+-                {
+-                    int start = line.IndexOf("Payload=", StringComparison.Ordinal) + 8;
+-                    int end = line.LastIndexOf(" Delivery=", StringComparison.Ordinal);
+-                    using var payload = JsonDocument.Parse(line[start..end]);
+-                    _lastPublishedTimestamp = payload.RootElement.GetProperty("ts").GetInt64();
+-                }
+-                // stdout는 실행 경과·종료 근거만 제공한다. 지도 위치·속도·State는 절대 갱신하지 않는다.
+-                if (name is "SimulationStarted" or "AmrMoved" or "SimulationCompleted" or "SimulationCanceled")
+-                {
+-                    string elapsed = line.Split("ElapsedSeconds=", 2)[1];
+-                    _elapsed = double.Parse(elapsed, CultureInfo.InvariantCulture);
+-                }
+-                return;
+-            }
+-            var fields = line.Split(' ').Skip(1).Select(part => part.Split('=', 2))
+-                .Where(pair => pair.Length == 2).ToDictionary(pair => pair[0], pair => pair[1]);
+-            if (name == "WaypointReached") _waypointsPassed = int.Parse(fields["Index"], CultureInfo.InvariantCulture) + 1;
+-            if (name is not ("AmrInitialized" or "SimulationStarted" or "AmrMoved" or "SimulationCompleted" or "SimulationCanceled")) return;
+-            _position = new Position2D(Number(fields, "X"), Number(fields, "Y"));
+-            _speed = Number(fields, "CurrentSpeedMps");
+-            _amrState = fields["State"];
+-            _elapsed = fields.ContainsKey("ElapsedSeconds") ? Number(fields, "ElapsedSeconds") : 0;
+-            _lastSnapshotLine = line;
+-            if (name == "SimulationCompleted") _waypointsPassed = _settings.Waypoints.Count;
+-        }
+-    }
+-
+-    private static double Number(Dictionary<string, string> fields, string name) => double.Parse(fields[name], CultureInfo.InvariantCulture);
+-
+-    private async Task<int> ExecuteMqttAsync(string runId, TextWriter output, TextWriter error, CancellationToken token)
+-    {
+-        using var receiveLog = new StreamWriter(Path.Combine(EvidenceDirectory, runId + ".received.jsonl"), false, new UTF8Encoding(false)) { AutoFlush = true };
+-        await using var receiver = new MqttMapReceiver(_mqtt!.Connection.Host, _mqtt.Connection.Port, _settings.AmrId,
+-            message =>
+-            {
+-                lock (_gate)
+-                {
+-                    if (_received.Apply(message.Model))
+-                    {
+-                        _lastSnapshotLine = "Received " + JsonSerializer.Serialize(message);
+-                        _lines.Enqueue(_lastSnapshotLine);
+-                        if (_lines.Count > 80) _lines.Dequeue();
+-                        _sequence++;
+-                        _updatedAt = message.ReceivedAtUtc;
+-                    }
+-                }
+-            }, () => { lock (_gate) _rejectedCount++; },
+-            state => { lock (_gate) _brokerState = state; },
+-            FailReceiver, receiveLog);
+-        try
+-        {
+-            await receiver.StartAsync(token);
+-            int code = await SimulatorApplication.RunAsync(["--config", _snapshotPath, "--mqtt",
+-                "--host", _mqtt.Connection.Host, "--port", _mqtt.Connection.Port.ToString(CultureInfo.InvariantCulture),
+-                "--telemetry-ms", _mqtt.TelemetryMs.ToString(CultureInfo.InvariantCulture),
+-                "--heartbeat-ms", _mqtt.HeartbeatMs.ToString(CultureInfo.InvariantCulture)], output, error, token);
+-            if (code != 0) return code;
+-            if (token.IsCancellationRequested) return _stopReason == 1 ? 0 : 1;
+-            lock (_gate) _phase = "WaitingForTelemetry";
+-            var timeout = System.Diagnostics.Stopwatch.StartNew();
+-            while (timeout.Elapsed < TimeSpan.FromSeconds(3))
+-            {
+-                token.ThrowIfCancellationRequested();
+-                lock (_gate)
+-                {
+-                    var target = _settings.Waypoints[^1];
+-                    if (_stopReason == 0 && _terminalEvent == "MqttSimulationCompleted" && _lastPublishedTimestamp is long stamp &&
+-                        _received.MatchesFinal(stamp, target.X, target.Y))
+-                    {
+-                        _stopReason = 3;
+-                        _waypointsPassed = _settings.Waypoints.Count;
+-                        return 0;
+-                    }
+-                }
+-                await Task.Delay(20, token);
+-            }
+-            FailReceiver("FinalTelemetryNotReceived");
+-            return 1;
+-        }
+-        catch (OperationCanceledException) when (token.IsCancellationRequested) { return _stopReason == 1 ? 0 : 1; }
+-        catch (Exception exception)
+-        {
+-            FailReceiver("ReceiverOrExecution" + exception.GetType().Name);
+-            throw;
+-        }
+-    }
+-
+-    private void FailReceiver(string reason)
+-    {
+-        lock (_gate)
+-        {
+-            if (_stopReason != 0) return;
+-            _stopReason = 2;
+-            _receiveFailure = reason;
+-            _cancellation!.Cancel();
+-        }
+-    }
+-
+-    public async ValueTask DisposeAsync()
+-    {
+-        Task execution;
+-        lock (_gate)
+-        {
+-            _closing = true;
+-            if (_stopReason == 0) _stopReason = 1;
+-            _cancellation?.Cancel();
+-            execution = _execution;
+-        }
+-        await execution;
+-        _cancellation?.Dispose();
+-    }
+-
+-    private sealed class CaptureWriter(Action<string> capture) : TextWriter
+-    {
+-        public override Encoding Encoding => Encoding.UTF8;
+-        public override void WriteLine(string? value) => capture(value ?? "");
+-        public override Task WriteLineAsync(string? value)
+-        {
+-            WriteLine(value);
+-            return Task.CompletedTask;
+-        }
+-    }
+-}
+diff --git a/tools/Amr.Simulator.Map/Navigation/GridMissionSettings.cs b/tools/Amr.Simulator.Map/Navigation/GridMissionSettings.cs
+deleted file mode 100644
+index c2a0758..0000000
+--- a/tools/Amr.Simulator.Map/Navigation/GridMissionSettings.cs
++++ /dev/null
+@@ -1,94 +0,0 @@
+-using System.Text;
+-using System.Text.Json;
+-using Amr.Communication.Mqtt;
+-using Amr.Simulator.Telemetry;
+-
+-namespace Amr.Simulator.Map.Navigation;
+-
+-public sealed record GridMissionSettings(string AmrId, GridCell Start, IReadOnlyList<GridCell> Waypoints)
+-{
+-    private int[,] _map = GridNavigator.CreateDefaultMap();
+-    public int[,] Map => (int[,])_map.Clone();
+-    public int StepIntervalMs { get; private init; } = GridNavigationSession.DefaultStepIntervalMs;
+-    public int WebPort { get; private init; } = 5088;
+-    public SimulatorMqttOptions? Mqtt { get; private init; }
+-    internal ReadOnlyMemory<byte> SourceBytes { get; private init; }
+-
+-    public static async Task<GridMissionSettings> LoadAsync(string path)
+-    {
+-        byte[] bytes = await File.ReadAllBytesAsync(path);
+-        string json = new UTF8Encoding(false, true).GetString(bytes);
+-        if (json.StartsWith('\uFEFF')) json = json[1..];
+-        using var document = JsonDocument.Parse(json);
+-        var root = document.RootElement;
+-        Properties(root, ["amrId", "start", "waypoints"], ["map", "stepIntervalMs", "webPort", "mqtt"]);
+-        var idValue = root.GetProperty("amrId");
+-        if (idValue.ValueKind != JsonValueKind.String) throw new ArgumentException("amrId는 문자열이어야 합니다.");
+-        string id = idValue.GetString()!;
+-        if (string.IsNullOrWhiteSpace(id) || id.Any(c => char.IsWhiteSpace(c) || char.IsControl(c) || c is '/' or '+' or '#') ||
+-            Encoding.UTF8.GetByteCount($"amr/{id}/telemetry") > ushort.MaxValue)
+-            throw new ArgumentException("amrId가 MQTT 식별 기준에 맞지 않습니다.");
+-        var start = Cell(root.GetProperty("start"));
+-        var list = root.GetProperty("waypoints");
+-        if (list.ValueKind != JsonValueKind.Array) throw new ArgumentException("waypoints는 배열이어야 합니다.");
+-        var waypoints = list.EnumerateArray().Select(Cell).ToArray();
+-        int[,] map = root.TryGetProperty("map", out var mapValue) ? ReadMap(mapValue) : GridNavigator.CreateDefaultMap();
+-        _ = new GridNavigator(start, waypoints, map);
+-        int step = root.TryGetProperty("stepIntervalMs", out var stepValue) ? Integer(stepValue, "stepIntervalMs", 1, int.MaxValue) : GridNavigationSession.DefaultStepIntervalMs;
+-        int port = root.TryGetProperty("webPort", out var portValue) ? Integer(portValue, "webPort", 0, 65535) : 5088;
+-        SimulatorMqttOptions? mqtt = null;
+-        if (root.TryGetProperty("mqtt", out var mqttValue))
+-        {
+-            Properties(mqttValue, "enabled", "host", "port", "telemetryMs", "heartbeatMs");
+-            var enabled = mqttValue.GetProperty("enabled");
+-            if (enabled.ValueKind is not (JsonValueKind.True or JsonValueKind.False)) throw new ArgumentException("mqtt.enabled는 true 또는 false여야 합니다.");
+-            var hostValue = mqttValue.GetProperty("host");
+-            if (hostValue.ValueKind != JsonValueKind.String || string.IsNullOrWhiteSpace(hostValue.GetString())) throw new ArgumentException("mqtt.host는 비어 있지 않은 문자열이어야 합니다.");
+-            var connection = new MqttConnectionSettings(hostValue.GetString()!, Integer(mqttValue.GetProperty("port"), "mqtt.port", 1, 65535));
+-            int telemetry = Integer(mqttValue.GetProperty("telemetryMs"), "mqtt.telemetryMs", 1, int.MaxValue);
+-            int heartbeat = Integer(mqttValue.GetProperty("heartbeatMs"), "mqtt.heartbeatMs", 1, int.MaxValue);
+-            if (enabled.GetBoolean()) mqtt = new(connection, telemetry, heartbeat);
+-        }
+-        return new(id, start, Array.AsReadOnly(waypoints)) { _map = map, StepIntervalMs = step, WebPort = port, Mqtt = mqtt, SourceBytes = bytes };
+-    }
+-
+-    private static int[,] ReadMap(JsonElement value)
+-    {
+-        if (value.ValueKind != JsonValueKind.Array || value.GetArrayLength() == 0) throw new ArgumentException("map은 행이 하나 이상인 2차원 배열이어야 합니다.");
+-        var rows = value.EnumerateArray().ToArray();
+-        if (rows[0].ValueKind != JsonValueKind.Array || rows[0].GetArrayLength() == 0) throw new ArgumentException("map의 행은 비어 있을 수 없습니다.");
+-        int cols = rows[0].GetArrayLength();
+-        var map = new int[rows.Length, cols];
+-        for (int row = 0; row < rows.Length; row++)
+-        {
+-            if (rows[row].ValueKind != JsonValueKind.Array || rows[row].GetArrayLength() != cols) throw new ArgumentException("map의 모든 행은 열 수가 같아야 합니다.");
+-            for (int col = 0; col < cols; col++) map[row, col] = Integer(rows[row][col], $"map[{row}][{col}]", 0, 1);
+-        }
+-        return map;
+-    }
+-
+-    private static int Integer(JsonElement value, string name, int min, int max) =>
+-        value.ValueKind == JsonValueKind.Number && value.TryGetInt32(out int number) && number >= min && number <= max
+-            ? number : throw new ArgumentException($"{name}은 {min}~{max} 범위의 정수여야 합니다.");
+-
+-    private static GridCell Cell(JsonElement value)
+-    {
+-        Properties(value, "row", "col");
+-        if (value.GetProperty("row").ValueKind != JsonValueKind.Number || value.GetProperty("col").ValueKind != JsonValueKind.Number ||
+-            !value.GetProperty("row").TryGetInt32(out int row) || !value.GetProperty("col").TryGetInt32(out int col))
+-            throw new ArgumentException("row·col은 정수여야 합니다.");
+-        return new(row, col);
+-    }
+-
+-    private static void Properties(JsonElement value, params string[] names) => Properties(value, names, []);
+-
+-    private static void Properties(JsonElement value, string[] required, string[] optional)
+-    {
+-        if (value.ValueKind != JsonValueKind.Object) throw new ArgumentException("설정 항목은 JSON 객체여야 합니다.");
+-        var found = new HashSet<string>(StringComparer.Ordinal);
+-        foreach (var property in value.EnumerateObject())
+-            if ((!required.Contains(property.Name, StringComparer.Ordinal) && !optional.Contains(property.Name, StringComparer.Ordinal)) || !found.Add(property.Name))
+-                throw new ArgumentException("알 수 없거나 중복된 필드: " + property.Name);
+-        if (required.Any(name => !found.Contains(name))) throw new ArgumentException("설정 필수 필드가 누락됐습니다.");
+-    }
+-}
+diff --git a/tools/Amr.Simulator.Map/Navigation/GridMqttConnection.cs b/tools/Amr.Simulator.Map/Navigation/GridMqttConnection.cs
+deleted file mode 100644
+index fda03e7..0000000
+--- a/tools/Amr.Simulator.Map/Navigation/GridMqttConnection.cs
++++ /dev/null
+@@ -1,54 +0,0 @@
+-using Amr.Simulator.Telemetry;
+-
+-namespace Amr.Simulator.Map.Navigation;
+-
+-public interface IGridMqttConnection : IAsyncDisposable
+-{
+-    event Action<object>? Received;
+-    event Action<string>? Failed;
+-    event Action? Rejected;
+-    Task ConnectAsync(CancellationToken token);
+-    Task PublishAsync(SimulationPublication publication, CancellationToken token);
+-}
+-
+-/// <summary>별도 송신 Client와 기존 관제 구독·검사·AMR별 큐의 수명을 소유한다.</summary>
+-public sealed class GridMqttConnection : IGridMqttConnection
+-{
+-    private readonly MqttMapReceiver _receiver;
+-    private readonly MqttSimulationTransport _sender;
+-
+-    public GridMqttConnection(SimulatorMqttOptions options, string amrId, TextWriter log)
+-    {
+-        _receiver = new(options.Connection.Host, options.Connection.Port, amrId,
+-            message => Received?.Invoke(message.Model), () => Rejected?.Invoke(),
+-            _ => { }, reason => Failed?.Invoke(reason), log);
+-        // 구독자와 발행자는 다른 Client ID를 갖는다.
+-        _sender = new(new(options.Connection.Host, options.Connection.Port));
+-        _sender.ConnectionLost += SenderLost;
+-    }
+-
+-    public event Action<object>? Received;
+-    public event Action<string>? Failed;
+-    public event Action? Rejected;
+-    private void SenderLost() => Failed?.Invoke("SenderDisconnected");
+-
+-    public async Task ConnectAsync(CancellationToken token)
+-    {
+-        await _receiver.StartAsync(token); // SUBACK 뒤에만 발행한다.
+-        await _sender.ConnectAsync(token);
+-        token.ThrowIfCancellationRequested();
+-    }
+-
+-    public Task PublishAsync(SimulationPublication publication, CancellationToken token) => _sender.PublishAsync(publication, token);
+-
+-    public async ValueTask DisposeAsync()
+-    {
+-        _sender.ConnectionLost -= SenderLost;
+-        try { await _sender.DisconnectAsync(); }
+-        finally
+-        {
+-            _sender.Dispose();
+-            await _receiver.DisposeAsync();
+-        }
+-    }
+-}
+diff --git a/tools/Amr.Simulator.Map/Navigation/GridNavigationSession.cs b/tools/Amr.Simulator.Map/Navigation/GridNavigationSession.cs
+deleted file mode 100644
+index 78b3add..0000000
+--- a/tools/Amr.Simulator.Map/Navigation/GridNavigationSession.cs
++++ /dev/null
+@@ -1,361 +0,0 @@
+-using System.Diagnostics;
+-using System.Text;
+-using System.Text.Json;
+-using Amr.Communication.Models;
+-using Amr.Simulator.Telemetry;
+-
+-namespace Amr.Simulator.Map.Navigation;
+-
+-/// <summary>편집·이동은 같은 잠금으로, MQTT I/O는 잠금 밖에서 수행한다.</summary>
+-public sealed class GridNavigationSession : IAsyncDisposable
+-{
+-    public const int DefaultStepIntervalMs = 600;
+-    public int StepIntervalMs { get; }
+-    private readonly int _rows, _cols;
+-    public string? ConfigurationPath { get; private set; }
+-    public string AmrId { get; } = "AMR_GRID_" + Guid.NewGuid().ToString("N");
+-    private readonly object _gate = new();
+-    private readonly GridNavigator _navigator;
+-    private readonly CancellationTokenSource _shutdown = new();
+-    private readonly TextWriter _log;
+-    private readonly Task _loop;
+-    private readonly Queue<string> _recent = new();
+-    private readonly JsonSerializerOptions _json = new(JsonSerializerDefaults.Web);
+-    private readonly SimulatorMqttOptions? _mqtt;
+-    private readonly Func<IGridMqttConnection>? _connectionFactory;
+-    private MqttMapProjection _received;
+-    private readonly List<GridCell> _receivedTrail = [];
+-    private Task _execution = Task.CompletedTask;
+-    private CancellationTokenSource? _runCancellation;
+-    private bool _closing, _resetRequested, _connected;
+-    private string? _phase, _failure;
+-    private string _brokerState = "NotStarted";
+-    private int _stopReason; // 0=active, 1=user, 2=failure, 3=received completion
+-    private int _published, _rejected;
+-    private long? _lastPublishedTimestamp;
+-
+-    public GridNavigationSession(string evidenceDirectory, SimulatorMqttOptions? mqtt = null,
+-        Func<IGridMqttConnection>? connectionFactory = null, GridNavigator? navigator = null, string? amrId = null,
+-        int stepIntervalMs = DefaultStepIntervalMs)
+-    {
+-        if (stepIntervalMs <= 0) throw new ArgumentOutOfRangeException(nameof(stepIntervalMs));
+-        StepIntervalMs = stepIntervalMs;
+-        _navigator = navigator ?? new();
+-        var map = _navigator.Read().Map;
+-        _rows = map.Length;
+-        _cols = map[0].Length;
+-        if (amrId is not null) AmrId = amrId;
+-        _mqtt = mqtt;
+-        _received = new(AmrId);
+-        if (mqtt is not null && (mqtt.TelemetryMs <= 0 || mqtt.HeartbeatMs <= 0))
+-            throw new ArgumentException("송신 주기는 양수여야 합니다.", nameof(mqtt));
+-        EvidencePath = Path.Combine(evidenceDirectory, "grid-navigation.jsonl");
+-        _log = TextWriter.Synchronized(new StreamWriter(EvidencePath, append: false) { AutoFlush = true });
+-        _connectionFactory = connectionFactory ?? (mqtt is null ? null : () => new GridMqttConnection(mqtt, AmrId, _log));
+-        Record("GridReady");
+-        _loop = mqtt is null ? RunLocalAsync() : Task.CompletedTask;
+-    }
+-
+-    public string EvidencePath { get; }
+-    public string EvidenceDirectory => Path.GetDirectoryName(EvidencePath)!;
+-
+-    public static async Task<GridNavigationSession> CreateAsync(string configPath, string evidenceRoot, SimulatorMqttOptions? mqtt,
+-        GridMissionSettings? settings = null)
+-    {
+-        settings ??= await GridMissionSettings.LoadAsync(configPath);
+-        mqtt ??= settings.Mqtt;
+-        string directory = Path.Combine(evidenceRoot, $"mission-live-{DateTimeOffset.Now:yyyyMMdd-HHmmss}-{Guid.NewGuid():N}");
+-        Directory.CreateDirectory(directory);
+-        string snapshot = Path.Combine(directory, "config.json");
+-        await File.WriteAllBytesAsync(snapshot, settings.SourceBytes.ToArray());
+-        await File.WriteAllTextAsync(Path.Combine(directory, "effective-settings.json"), JsonSerializer.Serialize(new {
+-            configurationPath = Path.GetFullPath(configPath), settings.StepIntervalMs,
+-            mqtt = mqtt is null ? null : new { host = mqtt.Connection.Host, port = mqtt.Connection.Port, mqtt.TelemetryMs, mqtt.HeartbeatMs }
+-        }, new JsonSerializerOptions(JsonSerializerDefaults.Web) { WriteIndented = true }));
+-        return new(directory, mqtt, navigator: new(settings.Start, settings.Waypoints, settings.Map),
+-            amrId: settings.AmrId, stepIntervalMs: settings.StepIntervalMs) { ConfigurationPath = Path.GetFullPath(configPath) };
+-    }
+-
+-    public object Read()
+-    {
+-        lock (_gate)
+-        {
+-            var data = _received.Read();
+-            var navigation = _navigator.Read();
+-            if (_phase is not null) navigation = navigation with { Phase = _phase };
+-            return new { navigation, stepIntervalMs = StepIntervalMs,
+-                source = _mqtt is null ? "csharp-grid-navigation" : "mqtt-grid-control-receiver",
+-                position = _mqtt is null ? navigation.Current : ReceivedCell(data.Telemetry),
+-                configurationPath = ConfigurationPath,
+-                amrId = AmrId, cellSizeMeters = GridTelemetry.CellSizeMeters,
+-                receivedTelemetry = data.Telemetry, receivedHeartbeat = data.Heartbeat,
+-                receivedTrail = _receivedTrail.ToArray(),
+-                telemetryCount = data.TelemetryCount, heartbeatCount = data.HeartbeatCount,
+-                publishedCount = _published, rejectedCount = _rejected, lastPublishedTimestamp = _lastPublishedTimestamp,
+-                brokerState = _brokerState, failure = _failure,
+-                mqttEndpoint = _mqtt is null ? null : $"{_mqtt.Connection.Host}:{_mqtt.Connection.Port}",
+-                evidencePath = EvidencePath, evidenceDirectory = EvidenceDirectory, logs = _recent.ToArray() };
+-        }
+-    }
+-
+-    public bool Start()
+-    {
+-        lock (_gate)
+-        {
+-            if (_closing || !_execution.IsCompleted || !_navigator.Start()) return false;
+-            _received = new(AmrId);
+-            _receivedTrail.Clear();
+-            _failure = null;
+-            _published = _rejected = _stopReason = 0;
+-            _lastPublishedTimestamp = null;
+-            _resetRequested = _connected = false;
+-            if (_mqtt is not null)
+-            {
+-                _phase = "Connecting";
+-                _brokerState = "Connecting";
+-                _runCancellation?.Dispose();
+-                _runCancellation = CancellationTokenSource.CreateLinkedTokenSource(_shutdown.Token);
+-                _execution = Task.Run(() => ExecuteMqttAsync(_runCancellation.Token));
+-            }
+-            Record("GridStarted");
+-            return true;
+-        }
+-    }
+-
+-    public void Cancel()
+-    {
+-        lock (_gate)
+-        {
+-            _navigator.Cancel();
+-            if (_mqtt is not null && !_execution.IsCompleted && _stopReason == 0)
+-            {
+-                _stopReason = 1;
+-                _phase = "Canceling";
+-                _runCancellation!.Cancel();
+-            }
+-            Record("GridCanceled");
+-        }
+-    }
+-
+-    public void Reset()
+-    {
+-        lock (_gate)
+-        {
+-            if (_mqtt is not null && !_execution.IsCompleted)
+-            {
+-                _resetRequested = true;
+-                Cancel();
+-                _phase = "Resetting";
+-            }
+-            else ResetCore();
+-        }
+-    }
+-
+-    private void ResetCore()
+-    {
+-        _navigator.Reset();
+-        _received = new(AmrId);
+-        _receivedTrail.Clear();
+-        _phase = _failure = null;
+-        _lastPublishedTimestamp = null;
+-        _published = _rejected = 0;
+-        Record("GridReset");
+-    }
+-
+-    public void SetObstacle(GridCell cell, bool blocked)
+-    {
+-        lock (_gate)
+-            if (_navigator.SetObstacle(cell, blocked)) Record("GridMapChanged");
+-    }
+-
+-    private async Task RunLocalAsync()
+-    {
+-        using var timer = new PeriodicTimer(TimeSpan.FromMilliseconds(StepIntervalMs));
+-        try
+-        {
+-            while (await timer.WaitForNextTickAsync(_shutdown.Token))
+-                lock (_gate)
+-                {
+-                    if (_closing) break;
+-                    if (_navigator.Step()) Record("GridMoved");
+-                }
+-        }
+-        catch (OperationCanceledException) when (_shutdown.IsCancellationRequested) { }
+-    }
+-
+-    private void Receive(object model)
+-    {
+-        lock (_gate)
+-        {
+-            if (model is TelemetryMessage t && (t.Id != AmrId || ReceivedCell(t) is null))
+-            {
+-                _rejected++;
+-                Record("GridTelemetryRejected");
+-                return;
+-            }
+-            if (_received.Apply(model))
+-            {
+-                if (model is TelemetryMessage telemetry && ReceivedCell(telemetry) is { } cell &&
+-                    (_receivedTrail.Count == 0 || _receivedTrail[^1] != cell)) _receivedTrail.Add(cell);
+-                Record("GridControlReceived");
+-            }
+-        }
+-    }
+-
+-    private void Rejected()
+-    {
+-        lock (_gate) { _rejected++; Record("GridMessageRejected"); }
+-    }
+-
+-    private void Fail(string reason)
+-    {
+-        lock (_gate)
+-        {
+-            if (_stopReason != 0) return;
+-            _failure = !_connected ? "ConnectionFailed:" + reason : reason;
+-            _stopReason = 2;
+-            _navigator.Cancel();
+-            _runCancellation!.Cancel();
+-            Record("GridMqttFailed");
+-        }
+-    }
+-
+-    private async Task ExecuteMqttAsync(CancellationToken token)
+-    {
+-        IGridMqttConnection? connection = null;
+-        try
+-        {
+-            connection = _connectionFactory!();
+-            connection.Received += Receive;
+-            connection.Failed += Fail;
+-            connection.Rejected += Rejected;
+-            await connection.ConnectAsync(token);
+-            token.ThrowIfCancellationRequested();
+-            lock (_gate)
+-            {
+-                _connected = true;
+-                _brokerState = "Subscribed";
+-                _phase = _navigator.Read().Phase == "Completed" ? "WaitingForTelemetry" : null;
+-                Record("GridMqttConnected");
+-            }
+-            await Publish(false, true);
+-            await Publish(true, true);
+-            var elapsed = Stopwatch.StartNew();
+-            long nextStep = StepIntervalMs, nextTelemetry = _mqtt!.TelemetryMs, nextHeartbeat = _mqtt.HeartbeatMs;
+-            int lastMoves = 0;
+-            string lastPhase = "Ready";
+-            while (true)
+-            {
+-                token.ThrowIfCancellationRequested();
+-                GridSnapshot current;
+-                lock (_gate)
+-                {
+-                    token.ThrowIfCancellationRequested();
+-                    if (elapsed.ElapsedMilliseconds >= nextStep)
+-                    {
+-                        if (_navigator.Step()) Record("GridMoved");
+-                        nextStep = elapsed.ElapsedMilliseconds + StepIntervalMs;
+-                    }
+-                    current = _navigator.Read();
+-                    // 계산 도착과 최종 좌표 수신 사이에도 외부에 완료를 노출하지 않는다.
+-                    if (current.Phase == "Completed") _phase = "WaitingForTelemetry";
+-                }
+-                if (current.Phase == "Completed") break;
+-                if (current.Moves != lastMoves || current.Phase != lastPhase || elapsed.ElapsedMilliseconds >= nextTelemetry)
+-                {
+-                    await Publish(false, false);
+-                    lastMoves = current.Moves;
+-                    lastPhase = current.Phase;
+-                    nextTelemetry = elapsed.ElapsedMilliseconds + _mqtt.TelemetryMs;
+-                }
+-                if (elapsed.ElapsedMilliseconds >= nextHeartbeat)
+-                {
+-                    await Publish(true, false);
+-                    nextHeartbeat = elapsed.ElapsedMilliseconds + _mqtt.HeartbeatMs;
+-                }
+-                await Task.Delay(20, token);
+-            }
+-            long finalStamp = await Publish(false, true);
+-            lock (_gate) _phase = "WaitingForTelemetry";
+-            var waiting = Stopwatch.StartNew();
+-            while (true)
+-            {
+-                token.ThrowIfCancellationRequested();
+-                lock (_gate)
+-                {
+-                    var final = GridTelemetry.Capture(AmrId, _navigator.Read(), true, StepIntervalMs);
+-                    if (_stopReason == 0 && _received.MatchesFinal(finalStamp, final.X, final.Y))
+-                    {
+-                        _stopReason = 3;
+-                        Record("GridFinalReceived");
+-                        break;
+-                    }
+-                }
+-                if (waiting.Elapsed >= TimeSpan.FromSeconds(3)) throw new TimeoutException("FinalTelemetryNotReceived");
+-                await Task.Delay(20, token);
+-            }
+-        }
+-        catch (OperationCanceledException) when (token.IsCancellationRequested) { }
+-        catch (Exception exception) { Fail(exception is TimeoutException ? exception.Message : exception.GetType().Name); }
+-        finally
+-        {
+-            if (connection is not null)
+-            {
+-                connection.Received -= Receive;
+-                connection.Failed -= Fail;
+-                connection.Rejected -= Rejected;
+-                try { await connection.DisposeAsync(); }
+-                catch (Exception exception)
+-                {
+-                    lock (_gate) { _failure = "CleanupFailed:" + exception.GetType().Name; _stopReason = 2; }
+-                }
+-            }
+-            lock (_gate)
+-            {
+-                _connected = false;
+-                _brokerState = _failure is null ? "Closed" : "Failed";
+-                _phase = _stopReason == 3 ? "Completed" : _stopReason == 1 ? "Canceled" : "Failed";
+-                Record("GridMqttEnded");
+-                if (_resetRequested) { _resetRequested = false; ResetCore(); }
+-            }
+-        }
+-
+-        async Task<long> Publish(bool heartbeat, bool stopped)
+-        {
+-            SimulationPublication publication;
+-            long stamp;
+-            lock (_gate)
+-            {
+-                stamp = Math.Max(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(), (_lastPublishedTimestamp ?? -1) + 1);
+-                publication = SimulationMessages.Create(GridTelemetry.Capture(AmrId, _navigator.Read(), stopped, StepIntervalMs), heartbeat, stamp);
+-            }
+-            await connection!.PublishAsync(publication, token);
+-            lock (_gate)
+-            {
+-                _published++;
+-                if (!heartbeat) _lastPublishedTimestamp = stamp;
+-                _log.WriteLine(JsonSerializer.Serialize(new { @event = "GridPublished", publication.Kind,
+-                    publication.Topic, payload = Encoding.UTF8.GetString(publication.Payload), delivery = "Unconfirmed" }, _json));
+-            }
+-            return stamp;
+-        }
+-    }
+-
+-    private GridCell? ReceivedCell(TelemetryMessage? message) => GridTelemetry.ReceivedCell(message, _rows, _cols);
+-
+-    private void Record(string name)
+-    {
+-        var state = _navigator.Read();
+-        _log.WriteLine(JsonSerializer.Serialize(new { timestamp = DateTimeOffset.UtcNow, name, state, failure = _failure }, _json));
+-        _recent.Enqueue($"{name} Phase={_phase ?? state.Phase} Position=({state.Current.Row},{state.Current.Col}) Remaining={state.RemainingDistance?.ToString() ?? "none"} Moves={state.Moves} WaypointsPassed={state.NextWaypointIndex}/{state.Waypoints.Length} Replans={state.Replans} MapVersion={state.MapVersion}");
+-        while (_recent.Count > 80) _recent.Dequeue();
+-    }
+-
+-    public async ValueTask DisposeAsync()
+-    {
+-        lock (_gate) { _closing = true; Cancel(); }
+-        _shutdown.Cancel();
+-        try { await Task.WhenAll(_loop, _execution); }
+-        finally { _runCancellation?.Dispose(); _shutdown.Dispose(); _log.Dispose(); }
+-    }
+-}
+diff --git a/tools/Amr.Simulator.Map/Navigation/GridNavigator.cs b/tools/Amr.Simulator.Map/Navigation/GridNavigator.cs
+deleted file mode 100644
+index 8872d3d..0000000
+--- a/tools/Amr.Simulator.Map/Navigation/GridNavigator.cs
++++ /dev/null
+@@ -1,162 +0,0 @@
+-namespace Amr.Simulator.Map.Navigation;
+-
+-public sealed record GridSnapshot(
+-    string Phase, GridCell Start, GridCell Goal, GridCell Current,
+-    int[][] Map, bool[][] FixedObstacles, GridCell[] Path, GridCell[] Traveled,
+-    int? RemainingDistance, int Moves, int Replans, long MapVersion,
+-    GridCell[] Waypoints, int NextWaypointIndex, GridCell? CurrentTarget, GridWaypointVisit[] ReachedWaypoints);
+-
+-public sealed record GridWaypointVisit(int Index, GridCell Cell, int Moves);
+-
+-/// <summary>호출 세션이 갱신·이동·읽기를 하나의 잠금으로 직렬화한다.</summary>
+-public sealed class GridNavigator
+-{
+-    private static readonly int[,] DefaultMap =
+-    {
+-        { 0, 0, 1, 0, 0, 0 },
+-        { 1, 0, 1, 0, 1, 0 },
+-        { 0, 0, 0, 0, 1, 0 },
+-        { 0, 1, 1, 0, 1, 0 },
+-        { 0, 0, 0, 0, 0, 0 }
+-    };
+-    public static int[,] CreateDefaultMap() => (int[,])DefaultMap.Clone();
+-    private readonly int[,] _originalMap;
+-    private int[,] _map;
+-    private readonly GridCell _start, _goal;
+-    private readonly GridCell[] _waypoints;
+-    private GridCell _current;
+-    private string _phase = "Ready";
+-    private List<GridCell> _path = [];
+-    private readonly List<GridCell> _traveled = [];
+-    private readonly List<GridWaypointVisit> _reached = [];
+-    private int _nextWaypointIndex;
+-    private int _moves, _replans;
+-    private long _mapVersion;
+-
+-    public GridNavigator() : this(new(0, 0), [new(4, 5)]) { }
+-
+-    public GridNavigator(GridCell start, IReadOnlyList<GridCell> waypoints, int[,]? map = null)
+-    {
+-        ArgumentNullException.ThrowIfNull(waypoints);
+-        if (waypoints.Count == 0) throw new ArgumentException("경유점과 목적지를 하나 이상 지정해야 합니다.", nameof(waypoints));
+-        _originalMap = map is null ? CreateDefaultMap() : (int[,])map.Clone();
+-        _map = (int[,])_originalMap.Clone();
+-        _ = GridPathfinder.FindPath(_map, start, start); // 크기·0/1 값·출발점을 검사한다.
+-        _waypoints = waypoints.ToArray();
+-        foreach (var cell in _waypoints.Prepend(start))
+-            if (cell.Row < 0 || cell.Row >= _map.GetLength(0) || cell.Col < 0 || cell.Col >= _map.GetLength(1) || _map[cell.Row, cell.Col] != 0)
+-                throw new ArgumentException("출발점·경유점·목적지는 맵 안의 통로여야 합니다.");
+-        _start = _current = start;
+-        _goal = _waypoints[^1];
+-        _traveled.Add(start);
+-        ReachTargetsAtCurrent();
+-        Replan();
+-    }
+-
+-    public bool Start()
+-    {
+-        if (_phase is "Running" or "Waiting") return false;
+-        _current = _start;
+-        _traveled.Clear();
+-        _traveled.Add(_start);
+-        _moves = _replans = 0;
+-        _nextWaypointIndex = 0;
+-        _reached.Clear();
+-        _phase = "Running";
+-        ReachTargetsAtCurrent();
+-        Replan();
+-        return true;
+-    }
+-
+-    public void Cancel()
+-    {
+-        if (_phase is "Running" or "Waiting") _phase = "Canceled";
+-    }
+-
+-    public void Reset()
+-    {
+-        _map = (int[,])_originalMap.Clone();
+-        _mapVersion++;
+-        _current = _start;
+-        _phase = "Ready";
+-        _moves = _replans = 0;
+-        _nextWaypointIndex = 0;
+-        _reached.Clear();
+-        _traveled.Clear();
+-        _traveled.Add(_start);
+-        ReachTargetsAtCurrent();
+-        Replan();
+-    }
+-
+-    public bool SetObstacle(GridCell cell, bool blocked)
+-    {
+-        if (cell.Row < 0 || cell.Row >= _map.GetLength(0) || cell.Col < 0 || cell.Col >= _map.GetLength(1))
+-            throw new ArgumentException("좌표가 맵 범위를 벗어났습니다.");
+-        if (_originalMap[cell.Row, cell.Col] == 1) throw new ArgumentException("설정 맵의 고정 장애물은 바꿀 수 없습니다.");
+-        if (cell == _current || cell == _start || cell == _goal)
+-            throw new ArgumentException("현재 위치·출발점·목적지에는 장애물을 놓을 수 없습니다.");
+-        int value = blocked ? 1 : 0;
+-        if (_map[cell.Row, cell.Col] == value) return false;
+-        _map[cell.Row, cell.Col] = value;
+-        _mapVersion++;
+-        Replan();
+-        return true;
+-    }
+-
+-    public bool Step()
+-    {
+-        if (_phase is not ("Running" or "Waiting")) return false;
+-        // 현재 순서의 목표만 탐색한다. 뒤 순서 경유점을 지나도 먼저 완료하지 않는다.
+-        Replan();
+-        if (_path.Count < 2) return false;
+-        _current = _path[1];
+-        _traveled.Add(_current);
+-        _moves++;
+-        ReachTargetsAtCurrent();
+-        Replan();
+-        return true;
+-    }
+-
+-    private void Replan()
+-    {
+-        if (_nextWaypointIndex == _waypoints.Length)
+-            _path = [_current];
+-        else
+-        {
+-            var target = _waypoints[_nextWaypointIndex];
+-            _path = _map[target.Row, target.Col] == 1 ? [] : GridPathfinder.FindPath(_map, _current, target);
+-        }
+-        _replans++;
+-        if (_phase is "Running" or "Waiting")
+-            _phase = _nextWaypointIndex == _waypoints.Length ? "Completed" : _path.Count == 0 ? "Waiting" : "Running";
+-    }
+-
+-    private void ReachTargetsAtCurrent()
+-    {
+-        while (_nextWaypointIndex < _waypoints.Length && _current == _waypoints[_nextWaypointIndex])
+-        {
+-            _reached.Add(new(_nextWaypointIndex, _current, _moves));
+-            _nextWaypointIndex++;
+-        }
+-    }
+-
+-    public GridSnapshot Read()
+-    {
+-        int[][] map = new int[_map.GetLength(0)][];
+-        bool[][] fixedObstacles = new bool[map.Length][];
+-        for (int row = 0; row < map.Length; row++)
+-        {
+-            map[row] = new int[_map.GetLength(1)];
+-            fixedObstacles[row] = new bool[_map.GetLength(1)];
+-            for (int col = 0; col < map[row].Length; col++)
+-            {
+-                map[row][col] = _map[row, col];
+-                fixedObstacles[row][col] = _originalMap[row, col] == 1;
+-            }
+-        }
+-        return new(_phase, _start, _goal, _current, map, fixedObstacles, _path.ToArray(), _traveled.ToArray(),
+-            _path.Count == 0 ? null : _path.Count - 1, _moves, _replans, _mapVersion,
+-            _waypoints.ToArray(), _nextWaypointIndex,
+-            _nextWaypointIndex < _waypoints.Length ? _waypoints[_nextWaypointIndex] : null, _reached.ToArray());
+-    }
+-}
+diff --git a/tools/Amr.Simulator.Map/Navigation/GridPathfinder.cs b/tools/Amr.Simulator.Map/Navigation/GridPathfinder.cs
+deleted file mode 100644
+index b9038f2..0000000
+--- a/tools/Amr.Simulator.Map/Navigation/GridPathfinder.cs
++++ /dev/null
+@@ -1,53 +0,0 @@
+-namespace Amr.Simulator.Map.Navigation;
+-
+-public readonly record struct GridCell(int Row, int Col);
+-
+-/// <summary>0=통로, 1=벽. 상하좌우 이동 비용은 각각 1이다.</summary>
+-public static class GridPathfinder
+-{
+-    public static List<GridCell> FindPath(int[,] map, GridCell start, GridCell goal)
+-    {
+-        ArgumentNullException.ThrowIfNull(map);
+-        int rows = map.GetLength(0), cols = map.GetLength(1);
+-        bool InBounds(GridCell p) => p.Row >= 0 && p.Row < rows && p.Col >= 0 && p.Col < cols;
+-        if (rows == 0 || cols == 0) throw new ArgumentException("맵은 비어 있을 수 없습니다.", nameof(map));
+-        foreach (int value in map)
+-            if (value is not (0 or 1)) throw new ArgumentException("맵은 0과 1만 포함해야 합니다.", nameof(map));
+-        if (!InBounds(start) || !InBounds(goal)) throw new ArgumentException("좌표가 맵 범위를 벗어났습니다.");
+-        if (map[start.Row, start.Col] != 0 || map[goal.Row, goal.Col] != 0)
+-            throw new ArgumentException("출발점과 목적지는 통로여야 합니다.");
+-
+-        var distances = new int[rows, cols];
+-        for (int r = 0; r < rows; r++)
+-            for (int c = 0; c < cols; c++) distances[r, c] = int.MaxValue;
+-        var previous = new Dictionary<GridCell, GridCell>();
+-        // 같은 거리일 때도 이웃 방문 순서를 유지한다.
+-        var queue = new PriorityQueue<GridCell, (int Distance, int Order)>();
+-        int order = 0;
+-        distances[start.Row, start.Col] = 0;
+-        queue.Enqueue(start, (0, order++));
+-        (int Row, int Col)[] directions = [(-1, 0), (1, 0), (0, -1), (0, 1)];
+-        while (queue.TryDequeue(out var current, out var priority))
+-        {
+-            if (priority.Distance != distances[current.Row, current.Col]) continue;
+-            if (current == goal)
+-            {
+-                var path = new List<GridCell> { goal };
+-                while (path[^1] != start) path.Add(previous[path[^1]]);
+-                path.Reverse();
+-                return path;
+-            }
+-            foreach (var (dr, dc) in directions)
+-            {
+-                var next = new GridCell(current.Row + dr, current.Col + dc);
+-                if (!InBounds(next) || map[next.Row, next.Col] != 0) continue;
+-                int candidate = priority.Distance + 1;
+-                if (candidate >= distances[next.Row, next.Col]) continue;
+-                distances[next.Row, next.Col] = candidate;
+-                previous[next] = current;
+-                queue.Enqueue(next, (candidate, order++));
+-            }
+-        }
+-        return [];
+-    }
+-}
+diff --git a/tools/Amr.Simulator.Map/Navigation/GridTelemetry.cs b/tools/Amr.Simulator.Map/Navigation/GridTelemetry.cs
+deleted file mode 100644
+index db0e637..0000000
+--- a/tools/Amr.Simulator.Map/Navigation/GridTelemetry.cs
++++ /dev/null
+@@ -1,23 +0,0 @@
+-using Amr.Communication.Models;
+-using Amr.Simulator.Simulation;
+-
+-namespace Amr.Simulator.Map.Navigation;
+-
+-public static class GridTelemetry
+-{
+-    public const double CellSizeMeters = 1;
+-
+-    public static SimulationSnapshot Capture(string id, GridSnapshot grid, bool stopped = false, int stepIntervalMs = GridNavigationSession.DefaultStepIntervalMs) =>
+-        new(id, grid.Current.Col * CellSizeMeters, -grid.Current.Row * CellSizeMeters,
+-            !stopped && grid.Phase == "Running" ? CellSizeMeters * 1000 / stepIntervalMs : 0,
+-            !stopped && grid.Phase == "Running" ? "BUSY" : "IDLE");
+-
+-    public static GridCell? ReceivedCell(TelemetryMessage? message, int rows = 5, int cols = 6)
+-    {
+-        if (message is null) return null;
+-        double row = -message.Position.Y / CellSizeMeters, col = message.Position.X / CellSizeMeters;
+-        if (!double.IsFinite(row) || !double.IsFinite(col) || row < 0 || row >= rows || col < 0 || col >= cols ||
+-            row != Math.Truncate(row) || col != Math.Truncate(col)) return null;
+-        return new((int)row, (int)col);
+-    }
+-}
+diff --git a/tools/Amr.Simulator.Map/Program.cs b/tools/Amr.Simulator.Map/Program.cs
+index 2bfc33c..74485b2 100644
+--- a/tools/Amr.Simulator.Map/Program.cs
++++ b/tools/Amr.Simulator.Map/Program.cs
+@@ -1,6 +1,6 @@
+ using System.Net;
+ using Amr.Simulator.Map;
+-using Amr.Simulator.Map.Navigation;
++using Amr.Simulator.Map.Control;
+ using Amr.Simulator.Telemetry;
+ using Amr.Communication.Mqtt;
+ using Microsoft.AspNetCore.Hosting.Server;
+@@ -43,7 +43,7 @@ catch (Exception exception) when (exception is IOException or UnauthorizedAccess
+ port ??= settings.WebPort;
+ SimulatorMqttOptions? mqtt = hasMqtt ? new(new MqttConnectionSettings(mqttHost!, mqttPort!.Value), telemetryMs!.Value, heartbeatMs!.Value) : settings.Mqtt;
+ 
+-await using var gridSession = await GridNavigationSession.CreateAsync(config, Path.Combine(repository, "evidence", "AMR"), mqtt, settings);
++await using var gridSession = await GridMapSession.CreateAsync(config, Path.Combine(repository, "evidence", "AMR"), mqtt, settings);
+ var builder = WebApplication.CreateBuilder(new WebApplicationOptions
+ {
+     Args = [],
+diff --git a/tools/Amr.Simulator.Map/README.md b/tools/Amr.Simulator.Map/README.md
+index 5ac9e67..8837a18 100644
+--- a/tools/Amr.Simulator.Map/README.md
++++ b/tools/Amr.Simulator.Map/README.md
+@@ -4,6 +4,22 @@ AMR 한 대가 **S (0,0) → W1 (2,3) → W2 (4,3) → G (4,5)** 순서로 이
+ 
+ 실제 이동 좌표를 MQTT로 보내고, 같은 지도 서버 안의 기존 관제 **구독·메시지 검사·AMR별 큐**가 받은 좌표로 AMR과 이동 흔적을 표시한다. 화면의 경유 진행·다음 목표·경로는 시뮬레이터 계산값이며 현재 AMR 위치는 수신값이다.
+ 
++## 코드 역할
++
++이동·경유점·장애물 우회·이동 타이머·MQTT 송신은 [`src/Amr.Simulator/Navigation`](../../src/Amr.Simulator/Navigation)이 담당한다. 이 도구는 그 Simulator를 호출하는 웹 호스트다.
++
++| 위치 | 역할 |
++| --- | --- |
++| `Program.cs` | HTTP 요청과 화면 제공, 같은 AMR의 출발·취소·장애물 변경 전달 |
++| `Control/GridMapSession.cs` | Simulator 실행 요청, 관제 수신 상태·흔적·로그, 최종 정지 좌표 수신 확인 |
++| `Control/GridControlConnection.cs` | 수신 Client의 구독·해제. 발행 Client는 Simulator가 별도로 소유 |
++| `Control/GridMapCoordinates.cs` | 받은 X/Y 좌표를 지도 칸으로 변환·범위 검사 |
++| `Control/GridMissionSettings.cs` | 웹 포트를 포함한 시연 설정 로드와 시작 시점 설정 복사 |
++| `MqttMapReceiver.cs`, `MqttMapProjection.cs` | 기존 통신 라이브러리를 통한 관제 수신과 수신 모델 보관 |
++| `wwwroot` | HTML·CSS·`grid.js`로 지도·버튼·수신 좌표 표시 |
++
++현재 화면에서 사용하지 않는 이전 `MapSession.cs`·`app.js`는 제거했다. 이전 실행 증거는 그대로 보존한다.
++
+ <a id="grid-navigation"></a>
+ 
+ ## 실행과 사용
+@@ -54,12 +70,14 @@ dotnet run --no-build --project tools/Amr.Simulator.Map
+ - Topic `amr/{amrId}/telemetry`, `amr/{amrId}/heartbeat`, 기존 JSON 계약, MQTT5·QoS0·Retain=false. 관제 구독 완료 뒤 별도 Client로 발행한다. 위치 변경마다 보내고 대기 중에도 Telemetry·Heartbeat 주기를 유지한다.
+ - 첫 수신 전에는 AMR 표시가 없다. 현재 위치·이동 흔적은 수신 모델만 사용하며 계산·발행 값으로 대체하지 않는다. 최종 발행과 같은 시각·좌표·IDLE·속도0을 수신하고 연결 정리까지 끝나야 완료로 표시한다. 3초 최종 수신 대기는 도구용 확인 제한이다.
+ - 최초 접속 실패는 이동0·수신 위치 없음, 연결 후 단절은 이동 정지·마지막 수신 위치다. 취소 중·초기화 중에는 이전 연결이 끝날 때까지 새 실행을 거부한다. 취소 직전 수신 모델의 BUSY는 실제 로봇 STOP 확인이 아니다. 자동 재접속·재전송은 없다.
+-- 편집·이동·경유 순서·수신 모델 읽기는 같은 세션 잠금에서 처리하고 네트워크 I/O는 잠금 밖에서 기다린다. 단일 실행 루프가 이동과 발행 순서를 소유하므로 발행 지연은 다음 이동도 늦출 수 있다.
++- Simulator의 잠금이 편집·이동·경유 순서를 보호하고, Map의 별도 잠금이 관제 수신·표시 상태를 보호한다. Simulator는 잠금을 해제한 뒤 Map에 이벤트를 전달하고 네트워크 I/O도 잠금 밖에서 기다린다. 단일 Simulator 실행 루프가 이동과 발행 순서를 소유하므로 발행 지연은 다음 이동도 늦출 수 있다.
+ 
+ 화면과 서버에 경유점용·우회용 별도 AMR을 만들지 않는다. `/api/state`·`/api/grid/state`, `/api/start`·`/api/grid/start`, 두 cancel 경로도 모두 같은 세션에 연결된다. 기존 URL을 사용해 두 번째 AMR을 시작할 수 없다.
+ 
+ ## 검증과 증거
+ 
++[2026-10-23 Simulator 책임 분리 검증](../../evidence/AMR/20261023-simulator-navigation-01/README.md): Simulator 197건·Map 63건 자동 시험, 실제 MQTT 15개 검증 항목, 실제 브라우저의 이동 중 장애물 추가·15회 최단 우회·수신 좌표 표시를 확인했다.
++
+ ```powershell
+ dotnet test tests/Amr.Simulator.Map.Tests/Amr.Simulator.Map.Tests.csproj
+ pwsh -NoProfile -File tests/manual/AMR01/Start-MqttMap.ps1 -RunId mission-host-new
+diff --git a/tools/Amr.Simulator.Map/wwwroot/app.js b/tools/Amr.Simulator.Map/wwwroot/app.js
+deleted file mode 100644
+index 2c34529..0000000
+--- a/tools/Amr.Simulator.Map/wwwroot/app.js
++++ /dev/null
+@@ -1,115 +0,0 @@
+-'use strict';
+-const byId = id => document.getElementById(id);
+-const ns = 'http://www.w3.org/2000/svg';
+-let state = null, connected = false, pending = false, layoutKey = '', project = null;
+-function fmt(value, digits = 3) { return Number.isFinite(value) ? (Math.abs(value) > 1e6 ? value.toExponential(2) : Number(value.toFixed(digits)).toString()) : '—'; }
+-function node(tag, attrs, text) {
+-  const el = document.createElementNS(ns, tag);
+-  for (const [key, value] of Object.entries(attrs)) el.setAttribute(key, value);
+-  if (text !== undefined) el.textContent = text;
+-  return el;
+-}
+-function drawMap(settings) {
+-  const points = [settings.initialPosition, ...settings.waypoints];
+-  const xs = points.map(p => p.x), ys = points.map(p => p.y);
+-  const minX = Math.min(...xs), maxX = Math.max(...xs), minY = Math.min(...ys), maxY = Math.max(...ys);
+-  const span = Math.max(maxX - minX, maxY - minY, 2) * 1.5;
+-  const cx = minX / 2 + maxX / 2, cy = minY / 2 + maxY / 2;
+-  const lowX = cx - span / 2, lowY = cy - span / 2;
+-  byId('grid').replaceChildren(); byId('route').replaceChildren();
+-  if (![span, lowX, lowY, lowX + span, lowY + span].every(Number.isFinite)) {
+-    project = null; byId('robot').setAttribute('visibility', 'hidden');
+-    byId('map-note').textContent = '이 좌표 범위는 지도에 표시할 수 없습니다. 현재 좌표와 원본 로그를 확인하세요.';
+-    return;
+-  }
+-  project = p => ({ x: 200 + (p.x - lowX) / span * 400, y: 450 - (p.y - lowY) / span * 400 });
+-  for (let i = 0; i <= 6; i++) {
+-    const valueX = lowX + span * i / 6, valueY = lowY + span * i / 6;
+-    const px = 200 + i * 400 / 6, py = 450 - i * 400 / 6;
+-    byId('grid').append(node('line', { x1: px, y1: 50, x2: px, y2: 450, class: Math.abs(valueX) < 1e-9 ? 'axis' : 'grid-line' }),
+-      node('line', { x1: 200, y1: py, x2: 600, y2: py, class: Math.abs(valueY) < 1e-9 ? 'axis' : 'grid-line' }),
+-      node('text', { x: px, y: 476, class: 'tick', 'text-anchor': 'middle' }, fmt(valueX, 2)),
+-      node('text', { x: 183, y: py + 4, class: 'tick', 'text-anchor': 'end' }, fmt(valueY, 2)));
+-  }
+-  byId('grid').append(node('text', { x: 625, y: 476, class: 'tick' }, 'X (m)'), node('text', { x: 165, y: 30, class: 'tick' }, 'Y (m)'));
+-  byId('route').append(node('polyline', { points: points.map(p => { const xy = project(p); return `${xy.x},${xy.y}`; }).join(' '), class: 'route-line' }));
+-  points.forEach((p, i) => {
+-    const xy = project(p), label = i === 0 ? '출발' : i === points.length - 1 ? '목적지' : `경유점 ${i}`;
+-    byId('route').append(node('circle', { cx: xy.x, cy: xy.y, r: 7, class: 'waypoint', 'data-index': i - 1 }),
+-      node('text', { x: xy.x + 15, y: xy.y + 23, class: 'point-label' }, `${label} (${fmt(p.x)}, ${fmt(p.y)})`));
+-  });
+-  byId('map-note').textContent = '좌표 눈금은 m 단위입니다. 건물 도면이나 장애물 지도는 포함하지 않습니다.';
+-}
+-function buttons() {
+-  const active = state && ['Running', 'WaitingForTelemetry', 'Canceling'].includes(state.phase);
+-  byId('start').disabled = !connected || pending || active;
+-  byId('cancel').disabled = !connected || pending || !active || state.phase === 'Canceling';
+-}
+-function render(s) {
+-  state = s;
+-  const mqtt = s.source === 'mqtt-control-receiver';
+-  byId('source-title').textContent = mqtt ? '과제2 · MQTT 관제 수신 연결' : '과제2 · 실제 시뮬레이터 연결';
+-  byId('source-chain').textContent = mqtt ? '시뮬레이터 → MQTT Broker → 관제의 메시지 검사·큐 → 이 지도' : '설정한 경로를 따라 움직이는 AMR의 현재 위치를 보여드립니다.';
+-  const key = JSON.stringify(s.settings);
+-  if (key !== layoutKey) { drawMap(s.settings); layoutKey = key; }
+-  if (project && s.position) {
+-    const xy = project(s.position);
+-    byId('robot').setAttribute('visibility', 'visible');
+-    byId('robot').setAttribute('transform', `translate(${xy.x} ${xy.y})`);
+-    // 실제 수신 좌표를 검사할 수 있도록 보관한다. 보간·별도 이동 타이머는 없다.
+-    byId('robot').dataset.x = s.position.x; byId('robot').dataset.y = s.position.y;
+-    document.querySelectorAll('.waypoint').forEach(el => el.classList.toggle('passed', Number(el.dataset.index) < s.waypointsPassed));
+-  } else {
+-    byId('robot').setAttribute('visibility', 'hidden');
+-    delete byId('robot').dataset.x; delete byId('robot').dataset.y;
+-  }
+-  byId('amr-id').textContent = s.settings.amrId;
+-  const phases = { Ready: '출발 준비', Running: s.position ? '실행 중' : '수신 대기', WaitingForTelemetry: '도착 수신 확인 중', Canceling: '취소 처리 중', Canceled: '실행 취소됨', Completed: '도착 · 정지', Failed: '실행 오류' };
+-  byId('phase').textContent = s.phase === 'Running' && s.amrState === 'BUSY' ? '이동 중' : phases[s.phase] || s.phase;
+-  const notes = { Ready: mqtt ? '시연 시작을 누르면 관제가 먼저 구독하고 AMR이 출발합니다.' : '시연 시작을 누르면 출발합니다.', Running: mqtt ? '관제가 MQTT로 수신·검사한 위치와 상태입니다.' : '실제 시뮬레이터 좌표를 받고 있습니다.', WaitingForTelemetry: '마지막 도착 좌표가 관제에 도착했는지 확인합니다.', Canceling: '실행·송수신 작업이 끝날 때까지 기다립니다.', Canceled: mqtt ? '실행을 취소했습니다. 마지막 수신 위치를 표시합니다.' : '목적지 도착과 구분됩니다. 마지막 계산 좌표를 표시합니다.', Completed: mqtt ? '관제에서 목적지 좌표와 IDLE·속도 0을 받았습니다.' : '목적지에 도착해 속도가 0이 됐습니다.', Failed: s.receiveFailure === 'BrokerDisconnected' ? 'Broker 연결이 끊겼습니다. 마지막 수신 위치가 남아 있습니다.' : s.receiveFailure === 'FinalTelemetryNotReceived' ? '최종 도착 정보의 수신을 확인하지 못했습니다.' : '아래 실행 로그에서 오류를 확인하세요.' };
+-  byId('status-note').textContent = notes[s.phase];
+-  byId('position').textContent = s.position ? `(${fmt(s.position.x)}, ${fmt(s.position.y)})` : '수신 대기';
+-  byId('speed').textContent = fmt(s.speed); byId('elapsed').textContent = s.elapsedSeconds.toFixed(3);
+-  byId('amr-state').textContent = s.amrState || '수신 대기';
+-  byId('receive-metrics').hidden = !mqtt;
+-  byId('telemetry-count').textContent = s.telemetryCount;
+-  byId('heartbeat-count').textContent = s.heartbeatCount;
+-  byId('received-time').textContent = s.receivedTelemetry ? new Date(s.receivedTelemetry.receivedAtUtc).toLocaleTimeString('ko-KR', { hour12: false }) : '—';
+-  byId('received-payload').hidden = !mqtt;
+-  byId('received-payload').textContent = s.receivedTelemetry ? JSON.stringify(s.receivedTelemetry, null, 2) : '아직 MQTT 위치 정보를 받지 않았습니다.';
+-  byId('evidence-note').textContent = mqtt ? '지도 위치·속도·상태는 관제의 MQTT 수신 모델만 사용합니다. 아래에는 마지막 수신 모델과 실행 로그가 있습니다. 경과 시간은 시뮬레이터 실행 로그 기준이며, 화면은 약 100ms마다 조회합니다.' : '현재 콘솔과 같은 SimulatorApplication을 실행해 출력 좌표를 표시합니다. 이동을 따로 계산하지 않으며 약 100ms마다 조회합니다.';
+-  byId('exit-code').textContent = s.exitCode === null ? '—' : String(s.exitCode);
+-  byId('start').textContent = s.phase === 'Ready' ? '시연 시작' : '다시 실행';
+-  byId('logs').textContent = s.logs.length ? s.logs.join('\n') : '아직 실행하지 않았습니다.';
+-  byId('evidence').textContent = s.evidenceDirectory;
+-  byId('speech').textContent = s.phase === 'Completed'
+-    ? mqtt ? `“가상 AMR이 보낸 위치와 상태를 관제가 받아 지도에 표시했습니다. 목적지 (${fmt(s.position.x)}, ${fmt(s.position.y)})와 정지 상태 IDLE, 속도 ${fmt(s.speed)}을 수신한 것까지 확인했습니다.”` : `“실제 시뮬레이터가 설정한 경로를 따라 이동했습니다. ${s.elapsedSeconds.toFixed(3)}초 뒤 목적지 (${fmt(s.position.x)}, ${fmt(s.position.y)})에 도착했고, 현재 속도는 ${fmt(s.speed)}입니다.”`
+-    : s.phase === 'Canceled' ? '“실행을 취소했습니다. 지도에는 취소 전에 마지막으로 계산한 위치가 남아 있습니다.”'
+-    : mqtt ? '“시연 시작을 누르면 AMR이 위치를 MQTT로 보내고, 관제가 받은 값에 따라 점이 움직입니다. 목적지 좌표와 정지 상태가 수신되는지 확인하겠습니다.”' : '“시연 시작을 누르면 실제 시뮬레이터가 계산한 좌표에 따라 점이 움직입니다. 경유점을 지나 목적지에서 멈추는 모습을 확인하겠습니다.”';
+-  byId('connection').textContent = mqtt ? s.receiveFailure === 'BrokerDisconnected' ? 'Broker 연결 끊김 · 마지막 수신' : s.phase === 'Completed' ? 'MQTT 도착 수신 확인' : s.brokerState === 'Subscribed' ? 'MQTT 관제 수신 중' : 'MQTT 시연 준비·종료' : '실제 시뮬레이터 연결';
+-  byId('connection').className = s.phase === 'Failed' ? 'badge offline' : 'badge';
+-  buttons();
+-}
+-async function poll() {
+-  try {
+-    const response = await fetch('/api/state', { cache: 'no-store' });
+-    if (!response.ok) throw new Error('state');
+-    const data = await response.json();
+-    connected = true; render(data);
+-  } catch {
+-    connected = false; buttons();
+-    byId('connection').textContent = '연결 끊김 · 마지막 수신 위치'; byId('connection').className = 'badge offline';
+-    byId('status-note').textContent = '최신 상태를 확인할 수 없습니다. PowerShell의 지도 서버를 확인하세요.';
+-  } finally { setTimeout(poll, 100); }
+-}
+-async function action(name) {
+-  pending = true; buttons(); byId('action-error').textContent = '';
+-  try {
+-    const response = await fetch(`/api/${name}`, { method: 'POST', headers: { 'X-Simulator-Map': '1' } });
+-    if (!response.ok) throw new Error(response.status === 409 ? '아직 실행 또는 마무리 중입니다. 잠시 후 다시 눌러주세요.' : '요청을 처리하지 못했습니다. 서버 상태를 확인하세요.');
+-  } catch (error) { byId('action-error').textContent = error.message; }
+-  finally { pending = false; buttons(); }
+-}
+-byId('start').addEventListener('click', () => action('start'));
+-byId('cancel').addEventListener('click', () => action('cancel'));
+-if (new URLSearchParams(location.search).get('mode') !== 'grid') poll();
+diff --git a/src/Amr.Simulator/Navigation/GridNavigator.cs b/src/Amr.Simulator/Navigation/GridNavigator.cs
+new file mode 100644
+index 0000000..60f9c44
+--- /dev/null
++++ b/src/Amr.Simulator/Navigation/GridNavigator.cs
+@@ -0,0 +1,162 @@
++namespace Amr.Simulator.Navigation;
++
++public sealed record GridSnapshot(
++    string Phase, GridCell Start, GridCell Goal, GridCell Current,
++    int[][] Map, bool[][] FixedObstacles, GridCell[] Path, GridCell[] Traveled,
++    int? RemainingDistance, int Moves, int Replans, long MapVersion,
++    GridCell[] Waypoints, int NextWaypointIndex, GridCell? CurrentTarget, GridWaypointVisit[] ReachedWaypoints);
++
++public sealed record GridWaypointVisit(int Index, GridCell Cell, int Moves);
++
++/// <summary>호출 세션이 갱신·이동·읽기를 하나의 잠금으로 직렬화한다.</summary>
++public sealed class GridNavigator
++{
++    private static readonly int[,] DefaultMap =
++    {
++        { 0, 0, 1, 0, 0, 0 },
++        { 1, 0, 1, 0, 1, 0 },
++        { 0, 0, 0, 0, 1, 0 },
++        { 0, 1, 1, 0, 1, 0 },
++        { 0, 0, 0, 0, 0, 0 }
++    };
++    public static int[,] CreateDefaultMap() => (int[,])DefaultMap.Clone();
++    private readonly int[,] _originalMap;
++    private int[,] _map;
++    private readonly GridCell _start, _goal;
++    private readonly GridCell[] _waypoints;
++    private GridCell _current;
++    private string _phase = "Ready";
++    private List<GridCell> _path = [];
++    private readonly List<GridCell> _traveled = [];
++    private readonly List<GridWaypointVisit> _reached = [];
++    private int _nextWaypointIndex;
++    private int _moves, _replans;
++    private long _mapVersion;
++
++    public GridNavigator() : this(new(0, 0), [new(4, 5)]) { }
++
++    public GridNavigator(GridCell start, IReadOnlyList<GridCell> waypoints, int[,]? map = null)
++    {
++        ArgumentNullException.ThrowIfNull(waypoints);
++        if (waypoints.Count == 0) throw new ArgumentException("경유점과 목적지를 하나 이상 지정해야 합니다.", nameof(waypoints));
++        _originalMap = map is null ? CreateDefaultMap() : (int[,])map.Clone();
++        _map = (int[,])_originalMap.Clone();
++        _ = GridPathfinder.FindPath(_map, start, start); // 크기·0/1 값·출발점을 검사한다.
++        _waypoints = waypoints.ToArray();
++        foreach (var cell in _waypoints.Prepend(start))
++            if (cell.Row < 0 || cell.Row >= _map.GetLength(0) || cell.Col < 0 || cell.Col >= _map.GetLength(1) || _map[cell.Row, cell.Col] != 0)
++                throw new ArgumentException("출발점·경유점·목적지는 맵 안의 통로여야 합니다.");
++        _start = _current = start;
++        _goal = _waypoints[^1];
++        _traveled.Add(start);
++        ReachTargetsAtCurrent();
++        Replan();
++    }
++
++    public bool Start()
++    {
++        if (_phase is "Running" or "Waiting") return false;
++        _current = _start;
++        _traveled.Clear();
++        _traveled.Add(_start);
++        _moves = _replans = 0;
++        _nextWaypointIndex = 0;
++        _reached.Clear();
++        _phase = "Running";
++        ReachTargetsAtCurrent();
++        Replan();
++        return true;
++    }
++
++    public void Cancel()
++    {
++        if (_phase is "Running" or "Waiting") _phase = "Canceled";
++    }
++
++    public void Reset()
++    {
++        _map = (int[,])_originalMap.Clone();
++        _mapVersion++;
++        _current = _start;
++        _phase = "Ready";
++        _moves = _replans = 0;
++        _nextWaypointIndex = 0;
++        _reached.Clear();
++        _traveled.Clear();
++        _traveled.Add(_start);
++        ReachTargetsAtCurrent();
++        Replan();
++    }
++
++    public bool SetObstacle(GridCell cell, bool blocked)
++    {
++        if (cell.Row < 0 || cell.Row >= _map.GetLength(0) || cell.Col < 0 || cell.Col >= _map.GetLength(1))
++            throw new ArgumentException("좌표가 맵 범위를 벗어났습니다.");
++        if (_originalMap[cell.Row, cell.Col] == 1) throw new ArgumentException("설정 맵의 고정 장애물은 바꿀 수 없습니다.");
++        if (cell == _current || cell == _start || cell == _goal)
++            throw new ArgumentException("현재 위치·출발점·목적지에는 장애물을 놓을 수 없습니다.");
++        int value = blocked ? 1 : 0;
++        if (_map[cell.Row, cell.Col] == value) return false;
++        _map[cell.Row, cell.Col] = value;
++        _mapVersion++;
++        Replan();
++        return true;
++    }
++
++    public bool Step()
++    {
++        if (_phase is not ("Running" or "Waiting")) return false;
++        // 현재 순서의 목표만 탐색한다. 뒤 순서 경유점을 지나도 먼저 완료하지 않는다.
++        Replan();
++        if (_path.Count < 2) return false;
++        _current = _path[1];
++        _traveled.Add(_current);
++        _moves++;
++        ReachTargetsAtCurrent();
++        Replan();
++        return true;
++    }
++
++    private void Replan()
++    {
++        if (_nextWaypointIndex == _waypoints.Length)
++            _path = [_current];
++        else
++        {
++            var target = _waypoints[_nextWaypointIndex];
++            _path = _map[target.Row, target.Col] == 1 ? [] : GridPathfinder.FindPath(_map, _current, target);
++        }
++        _replans++;
++        if (_phase is "Running" or "Waiting")
++            _phase = _nextWaypointIndex == _waypoints.Length ? "Completed" : _path.Count == 0 ? "Waiting" : "Running";
++    }
++
++    private void ReachTargetsAtCurrent()
++    {
++        while (_nextWaypointIndex < _waypoints.Length && _current == _waypoints[_nextWaypointIndex])
++        {
++            _reached.Add(new(_nextWaypointIndex, _current, _moves));
++            _nextWaypointIndex++;
++        }
++    }
++
++    public GridSnapshot Read()
++    {
++        int[][] map = new int[_map.GetLength(0)][];
++        bool[][] fixedObstacles = new bool[map.Length][];
++        for (int row = 0; row < map.Length; row++)
++        {
++            map[row] = new int[_map.GetLength(1)];
++            fixedObstacles[row] = new bool[_map.GetLength(1)];
++            for (int col = 0; col < map[row].Length; col++)
++            {
++                map[row][col] = _map[row, col];
++                fixedObstacles[row][col] = _originalMap[row, col] == 1;
++            }
++        }
++        return new(_phase, _start, _goal, _current, map, fixedObstacles, _path.ToArray(), _traveled.ToArray(),
++            _path.Count == 0 ? null : _path.Count - 1, _moves, _replans, _mapVersion,
++            _waypoints.ToArray(), _nextWaypointIndex,
++            _nextWaypointIndex < _waypoints.Length ? _waypoints[_nextWaypointIndex] : null, _reached.ToArray());
++    }
++}
+diff --git a/src/Amr.Simulator/Navigation/GridPathfinder.cs b/src/Amr.Simulator/Navigation/GridPathfinder.cs
+new file mode 100644
+index 0000000..a9dd2a5
+--- /dev/null
++++ b/src/Amr.Simulator/Navigation/GridPathfinder.cs
+@@ -0,0 +1,53 @@
++namespace Amr.Simulator.Navigation;
++
++public readonly record struct GridCell(int Row, int Col);
++
++/// <summary>0=통로, 1=벽. 상하좌우 이동 비용은 각각 1이다.</summary>
++public static class GridPathfinder
++{
++    public static List<GridCell> FindPath(int[,] map, GridCell start, GridCell goal)
++    {
++        ArgumentNullException.ThrowIfNull(map);
++        int rows = map.GetLength(0), cols = map.GetLength(1);
++        bool InBounds(GridCell p) => p.Row >= 0 && p.Row < rows && p.Col >= 0 && p.Col < cols;
++        if (rows == 0 || cols == 0) throw new ArgumentException("맵은 비어 있을 수 없습니다.", nameof(map));
++        foreach (int value in map)
++            if (value is not (0 or 1)) throw new ArgumentException("맵은 0과 1만 포함해야 합니다.", nameof(map));
++        if (!InBounds(start) || !InBounds(goal)) throw new ArgumentException("좌표가 맵 범위를 벗어났습니다.");
++        if (map[start.Row, start.Col] != 0 || map[goal.Row, goal.Col] != 0)
++            throw new ArgumentException("출발점과 목적지는 통로여야 합니다.");
++
++        var distances = new int[rows, cols];
++        for (int r = 0; r < rows; r++)
++            for (int c = 0; c < cols; c++) distances[r, c] = int.MaxValue;
++        var previous = new Dictionary<GridCell, GridCell>();
++        // 같은 거리일 때도 이웃 방문 순서를 유지한다.
++        var queue = new PriorityQueue<GridCell, (int Distance, int Order)>();
++        int order = 0;
++        distances[start.Row, start.Col] = 0;
++        queue.Enqueue(start, (0, order++));
++        (int Row, int Col)[] directions = [(-1, 0), (1, 0), (0, -1), (0, 1)];
++        while (queue.TryDequeue(out var current, out var priority))
++        {
++            if (priority.Distance != distances[current.Row, current.Col]) continue;
++            if (current == goal)
++            {
++                var path = new List<GridCell> { goal };
++                while (path[^1] != start) path.Add(previous[path[^1]]);
++                path.Reverse();
++                return path;
++            }
++            foreach (var (dr, dc) in directions)
++            {
++                var next = new GridCell(current.Row + dr, current.Col + dc);
++                if (!InBounds(next) || map[next.Row, next.Col] != 0) continue;
++                int candidate = priority.Distance + 1;
++                if (candidate >= distances[next.Row, next.Col]) continue;
++                distances[next.Row, next.Col] = candidate;
++                previous[next] = current;
++                queue.Enqueue(next, (candidate, order++));
++            }
++        }
++        return [];
++    }
++}
+diff --git a/src/Amr.Simulator/Navigation/GridSimulation.cs b/src/Amr.Simulator/Navigation/GridSimulation.cs
+new file mode 100644
+index 0000000..cbd4268
+--- /dev/null
++++ b/src/Amr.Simulator/Navigation/GridSimulation.cs
+@@ -0,0 +1,175 @@
++using System.Diagnostics;
++using Amr.Simulator.Telemetry;
++
++namespace Amr.Simulator.Navigation;
++
++public sealed record GridSimulationCompletion(long Timestamp, double X, double Y);
++
++/// <summary>
++/// 격자 AMR의 상태·이동 타이머·송신 Client를 소유한다. 호스트는 Start 후 RunAsync를
++/// 한 번 호출하고 취소·실패 뒤에도 종료를 기다린다. 관제 수신이나 웹 화면에 의존하지 않는다.
++/// </summary>
++public sealed class GridSimulation
++{
++    public const int DefaultStepIntervalMs = 600;
++    private readonly object _gate = new();
++    private readonly GridNavigator _navigator;
++    private readonly Func<ISimulationTransport>? _transportFactory;
++    private bool _executing;
++    private long _lastTimestamp;
++
++    public GridSimulation(string amrId, GridNavigator? navigator = null,
++        int stepIntervalMs = DefaultStepIntervalMs, Func<ISimulationTransport>? transportFactory = null)
++    {
++        if (stepIntervalMs <= 0) throw new ArgumentOutOfRangeException(nameof(stepIntervalMs));
++        AmrId = amrId;
++        StepIntervalMs = stepIntervalMs;
++        _navigator = navigator ?? new();
++        _transportFactory = transportFactory;
++    }
++
++    public string AmrId { get; }
++    public int StepIntervalMs { get; }
++    // 알림은 상태 잠금 밖에서 호출해 관제 잠금과 역순으로 기다리지 않는다.
++    public event Action? Connected;
++    public event Action? Moved;
++    public event Action<SimulationPublication, long>? Published;
++
++    public GridSnapshot Read() { lock (_gate) return _navigator.Read(); }
++    public bool Start()
++    {
++        lock (_gate)
++        {
++            if (_executing || !_navigator.Start()) return false;
++            return true;
++        }
++    }
++    public void Cancel() { lock (_gate) _navigator.Cancel(); }
++    public void Reset()
++    {
++        lock (_gate)
++        {
++            if (_executing) throw new InvalidOperationException("실행 종료 후 초기화해야 합니다.");
++            _navigator.Reset();
++        }
++    }
++    public bool SetObstacle(GridCell cell, bool blocked)
++    {
++        lock (_gate) return _navigator.SetObstacle(cell, blocked);
++    }
++
++    public async Task<GridSimulationCompletion?> RunAsync(SimulatorMqttOptions? mqtt, CancellationToken token)
++    {
++        if (mqtt is not null && (mqtt.TelemetryMs <= 0 || mqtt.HeartbeatMs <= 0))
++            throw new ArgumentException("송신 주기는 양수여야 합니다.", nameof(mqtt));
++        lock (_gate)
++        {
++            if (_executing) throw new InvalidOperationException("이미 실행 중입니다.");
++            if (_navigator.Read().Phase is not ("Running" or "Waiting" or "Completed"))
++                throw new InvalidOperationException("Start 후 실행해야 합니다.");
++            _executing = true;
++        }
++        try
++        {
++            return mqtt is null ? await RunLocalAsync(token) : await RunMqttAsync(mqtt, token);
++        }
++        finally
++        {
++            lock (_gate) { _navigator.Cancel(); _executing = false; }
++        }
++    }
++
++    private bool Step(CancellationToken token)
++    {
++        bool moved;
++        lock (_gate) { token.ThrowIfCancellationRequested(); moved = _navigator.Step(); }
++        if (moved) Moved?.Invoke();
++        return moved;
++    }
++
++    private async Task<GridSimulationCompletion?> RunLocalAsync(CancellationToken token)
++    {
++        using var timer = new PeriodicTimer(TimeSpan.FromMilliseconds(StepIntervalMs));
++        while (Read().Phase is "Running" or "Waiting")
++        {
++            if (!await timer.WaitForNextTickAsync(token)) break;
++            Step(token);
++        }
++        return null;
++    }
++
++    private async Task<GridSimulationCompletion> RunMqttAsync(SimulatorMqttOptions mqtt, CancellationToken token)
++    {
++        using var lifetime = CancellationTokenSource.CreateLinkedTokenSource(token);
++        using var sender = _transportFactory?.Invoke() ?? new MqttSimulationTransport(mqtt.Connection);
++        int disconnected = 0;
++        void Lost() { Interlocked.Exchange(ref disconnected, 1); lifetime.Cancel(); }
++        sender.ConnectionLost += Lost;
++        var runToken = lifetime.Token;
++        try
++        {
++            await sender.ConnectAsync(runToken);
++            runToken.ThrowIfCancellationRequested();
++            Connected?.Invoke();
++            await Publish(false, true);
++            await Publish(true, true);
++            var elapsed = Stopwatch.StartNew();
++            long nextStep = StepIntervalMs, nextTelemetry = mqtt.TelemetryMs, nextHeartbeat = mqtt.HeartbeatMs;
++            int lastMoves = 0;
++            string lastPhase = "Ready";
++            while (true)
++            {
++                runToken.ThrowIfCancellationRequested();
++                if (elapsed.ElapsedMilliseconds >= nextStep)
++                {
++                    Step(runToken);
++                    nextStep = elapsed.ElapsedMilliseconds + StepIntervalMs;
++                }
++                var current = Read();
++                if (current.Phase == "Completed") break;
++                if (current.Phase == "Canceled") throw new OperationCanceledException(runToken);
++                if (current.Moves != lastMoves || current.Phase != lastPhase || elapsed.ElapsedMilliseconds >= nextTelemetry)
++                {
++                    await Publish(false, false);
++                    lastMoves = current.Moves;
++                    lastPhase = current.Phase;
++                    nextTelemetry = elapsed.ElapsedMilliseconds + mqtt.TelemetryMs;
++                }
++                if (elapsed.ElapsedMilliseconds >= nextHeartbeat)
++                {
++                    await Publish(true, false);
++                    nextHeartbeat = elapsed.ElapsedMilliseconds + mqtt.HeartbeatMs;
++                }
++                await Task.Delay(20, runToken);
++            }
++            long timestamp = await Publish(false, true);
++            runToken.ThrowIfCancellationRequested();
++            var final = GridTelemetry.Capture(AmrId, Read(), true, StepIntervalMs);
++            return new(timestamp, final.X, final.Y);
++        }
++        catch (OperationCanceledException) when (!token.IsCancellationRequested && Volatile.Read(ref disconnected) != 0)
++        {
++            throw new IOException("SenderDisconnected");
++        }
++        finally
++        {
++            sender.ConnectionLost -= Lost;
++            await sender.DisconnectAsync();
++        }
++
++        async Task<long> Publish(bool heartbeat, bool stopped)
++        {
++            SimulationPublication publication;
++            long stamp;
++            lock (_gate)
++            {
++                stamp = Math.Max(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(), _lastTimestamp + 1);
++                _lastTimestamp = stamp;
++                publication = SimulationMessages.Create(GridTelemetry.Capture(AmrId, _navigator.Read(), stopped, StepIntervalMs), heartbeat, stamp);
++            }
++            await sender.PublishAsync(publication, runToken);
++            Published?.Invoke(publication, stamp);
++            return stamp;
++        }
++    }
++}
+diff --git a/src/Amr.Simulator/Navigation/GridTelemetry.cs b/src/Amr.Simulator/Navigation/GridTelemetry.cs
+new file mode 100644
+index 0000000..3197c77
+--- /dev/null
++++ b/src/Amr.Simulator/Navigation/GridTelemetry.cs
+@@ -0,0 +1,14 @@
++using Amr.Simulator.Simulation;
++
++namespace Amr.Simulator.Navigation;
++
++public static class GridTelemetry
++{
++    public const double CellSizeMeters = 1;
++
++    public static SimulationSnapshot Capture(string id, GridSnapshot grid, bool stopped = false,
++        int stepIntervalMs = GridSimulation.DefaultStepIntervalMs) =>
++        new(id, grid.Current.Col * CellSizeMeters, -grid.Current.Row * CellSizeMeters,
++            !stopped && grid.Phase == "Running" ? CellSizeMeters * 1000 / stepIntervalMs : 0,
++            !stopped && grid.Phase == "Running" ? "BUSY" : "IDLE");
++}
+diff --git a/src/Amr.Simulator/README.md b/src/Amr.Simulator/README.md
+new file mode 100644
+index 0000000..e09ce48
+--- /dev/null
++++ b/src/Amr.Simulator/README.md
+@@ -0,0 +1,32 @@
++# 가상 AMR
++
++가상 AMR의 이동·경유 순서·장애물 회피와 위치·상태 MQTT 송신을 담당한다. 지도 서버나 브라우저를 참조하지 않는다.
++
++| 폴더 | 역할 |
++| --- | --- |
++| `Configuration` | 기존 연속 X/Y 이동용 JSON 설정과 검사 |
++| `Simulation` | 연속 좌표 이동 계산, 스냅샷, 콘솔 실행 루프 |
++| `Navigation` | 격자 최단 경로, 순서 있는 경유점, 장애물 변경, 이동 실행과 MQTT 발행 |
++| `Telemetry` | 공통 위치·Heartbeat 메시지 생성과 MQTT 송신 전송 계층 |
++
++## 격자 이동
++
++- `GridPathfinder`: 상하좌우 비용 1의 다익스트라 최단 경로 계산.
++- `GridNavigator`: 현재 위치·지도·경유 순서를 관리한다. 경로가 없으면 같은 목표를 유지하고 기다린다. 호출자는 갱신을 직렬화한다.
++- `GridSimulation`: Navigator를 잠금으로 보호하고 이동 타이머·발행 주기·송신 Client의 연결부터 해제까지 소유한다. 이벤트는 잠금 밖에서 전달한다.
++- `GridTelemetry`: 행·열을 X=열, Y=-행으로 변환하고 BUSY/IDLE 및 현재 속도를 만든다.
++
++호스트는 `Start()` 후 `RunAsync(mqttOptions, cancellationToken)`를 한 번 호출하고 반환까지 기다린다. MQTT 옵션이 null이면 로컬 이동만 실행한다. MQTT를 사용할 때 반환하는 `GridSimulationCompletion`은 최종 정지 메시지의 발행 시각·좌표이며 관제 수신 확인은 아니다. 관제 수신 확인은 [Map 도구](../../tools/Amr.Simulator.Map/README.md)가 수행한다.
++
++취소 토큰은 실행 중인 이동·발행을 중단한다. 실행 Task가 끝날 때까지 송신 Client 정리를 기다리며, 정리 중 재출발·초기화를 허용하지 않는다. `Cancel()`은 이동 상태를 취소하고, 호스트는 토큰 취소와 Task 대기도 함께 수행한다. 네트워크 I/O와 이벤트 알림은 이동 상태 잠금 밖에서 실행한다.
++
++## 실행·시험
++
++기존 콘솔 실행은 연속 좌표 설정을 사용한다.
++
++```powershell
++dotnet run --project src/Amr.Simulator -- --config config/simulator.single.json
++dotnet test tests/Amr.Simulator.Tests
++```
++
++격자 화면은 `dotnet run --project tools/Amr.Simulator.Map`으로 실행한다. 이 호스트가 본 프로젝트의 `GridSimulation`을 호출한다. 격자 CLI나 별도 프로세스 간 명령 프로토콜을 새로 추가하지 않았다.
+diff --git a/tests/Amr.Simulator.Map.Tests/WaypointConfigurationTests.cs b/tests/Amr.Simulator.Map.Tests/WaypointConfigurationTests.cs
+new file mode 100644
+index 0000000..277e6ae
+--- /dev/null
++++ b/tests/Amr.Simulator.Map.Tests/WaypointConfigurationTests.cs
+@@ -0,0 +1,59 @@
++using Amr.Simulator.Navigation;
++using System.Text;
++using Amr.Simulator.Map.Control;
++using Xunit;
++
++namespace Amr.Simulator.Map.Tests;
++
++public sealed class WaypointConfigurationTests
++{
++    private static readonly GridCell[] Route = [new(2, 3), new(4, 3), new(4, 5)];
++    private static GridNavigator Mission() => new(new(0, 0), Route);
++
++    [Theory]
++    [InlineData(false)]
++    [InlineData(true)]
++    public async Task MissionConfigurationPreservesOrderAndAcceptsUtf8Bom(bool bom)
++    {
++        await WithFile("""{"amrId":"AMR_001","start":{"row":0,"col":0},"waypoints":[{"row":2,"col":3},{"row":4,"col":3},{"row":4,"col":5}]}""", async path =>
++        {
++            if (bom)
++            {
++                var original = await File.ReadAllBytesAsync(path);
++                await File.WriteAllBytesAsync(path, new byte[] { 0xef, 0xbb, 0xbf }.Concat(original).ToArray());
++            }
++            var settings = await GridMissionSettings.LoadAsync(path);
++            Assert.Equal("AMR_001", settings.AmrId);
++            Assert.Equal(Route, settings.Waypoints);
++        });
++    }
++
++    [Theory]
++    [InlineData("{\"amrId\":\"AMR_001\",\"start\":{\"row\":0,\"col\":0},\"waypoints\":[]}")]
++    [InlineData("{\"amrId\":\"AMR_001\",\"start\":{\"row\":0},\"waypoints\":[{\"row\":4,\"col\":5}]}")]
++    [InlineData("{\"amrId\":\"bad/id\",\"start\":{\"row\":0,\"col\":0},\"waypoints\":[{\"row\":4,\"col\":5}]}")]
++    [InlineData("{\"amrId\":\"AMR_001\",\"start\":{\"row\":0,\"col\":0},\"waypoints\":[{\"row\":0,\"col\":2}]}")]
++    [InlineData("{\"amrId\":\"AMR_001\",\"amrId\":\"other\",\"start\":{\"row\":0,\"col\":0},\"waypoints\":[{\"row\":4,\"col\":5}]}")]
++    [InlineData("{\"amrId\":\"AMR_001\",\"start\":{\"row\":\"0\",\"col\":0},\"waypoints\":[{\"row\":4,\"col\":5}]}")]
++    [InlineData("{\"amrId\":\"AMR_001\",\"start\":{\"row\":0,\"col\":0},\"waypoints\":[{\"row\":4,\"col\":5}],\"unknown\":1}")]
++    public async Task InvalidMissionConfigurationRejected(string json) =>
++        await WithFile(json, path => Assert.ThrowsAsync<ArgumentException>(() => GridMissionSettings.LoadAsync(path)));
++
++    [Fact]
++    public async Task InvalidUtf8NotSilentlyReplaced()
++    {
++        await WithFile("{}", async path =>
++        {
++            await File.WriteAllBytesAsync(path, [0xef, 0xbb, 0xbf, 0xff]);
++            await Assert.ThrowsAsync<DecoderFallbackException>(() => GridMissionSettings.LoadAsync(path));
++        });
++    }
++
++    private static async Task WithFile(string json, Func<string, Task> action)
++    {
++        string path = Path.Combine(Path.GetTempPath(), "mission-config-" + Guid.NewGuid().ToString("N") + ".json");
++        await File.WriteAllTextAsync(path, json, new UTF8Encoding(false));
++        try { await action(path); }
++        finally { File.Delete(path); }
++    }
++}
+diff --git a/tests/Amr.Simulator.Tests/GridNavigationTests.cs b/tests/Amr.Simulator.Tests/GridNavigationTests.cs
+new file mode 100644
+index 0000000..7b49604
+--- /dev/null
++++ b/tests/Amr.Simulator.Tests/GridNavigationTests.cs
+@@ -0,0 +1,229 @@
++using Amr.Simulator.Navigation;
++using Xunit;
++
++namespace Amr.Simulator.Tests;
++
++public sealed class GridNavigationTests
++{
++    [Fact]
++    public void OriginalMapHasNineStepPath()
++    {
++        var s = new GridNavigator().Read();
++        Assert.Equal(9, s.RemainingDistance);
++        Assert.Equal(s.Start, s.Path[0]);
++        Assert.Equal(s.Goal, s.Path[^1]);
++        AssertValid(s);
++    }
++
++    [Fact]
++    public void StartEqualsGoalReturnsOneCell()
++    {
++        var cell = new GridCell(0, 0);
++        Assert.Equal(new[] { cell }, GridPathfinder.FindPath(new int[1, 1], cell, cell));
++    }
++
++    [Fact]
++    public void UnreachableReturnsEmptyPath() =>
++        Assert.Empty(GridPathfinder.FindPath(new[,] { { 0, 1, 0 } }, new(0, 0), new(0, 2)));
++
++    [Theory]
++    [InlineData(0, 2)]
++    [InlineData(2, 0)]
++    public void EmptyMapRejected(int rows, int cols) =>
++        Assert.Throws<ArgumentException>(() => GridPathfinder.FindPath(new int[rows, cols], new(0, 0), new(0, 0)));
++
++    [Fact]
++    public void NullMapRejected() =>
++        Assert.Throws<ArgumentNullException>(() => GridPathfinder.FindPath(null!, new(0, 0), new(0, 0)));
++
++    [Theory]
++    [InlineData(-1)]
++    [InlineData(2)]
++    public void NonBinaryMapRejected(int value) =>
++        Assert.Throws<ArgumentException>(() => GridPathfinder.FindPath(new[,] { { 0, value, 0 } }, new(0, 0), new(0, 2)));
++
++    [Theory]
++    [InlineData(-1, 0)]
++    [InlineData(0, -1)]
++    [InlineData(2, 0)]
++    [InlineData(0, 2)]
++    public void InvalidCoordinateRejected(int row, int col) =>
++        Assert.Throws<ArgumentException>(() => GridPathfinder.FindPath(new int[2, 2], new(row, col), new(0, 0)));
++
++    [Theory]
++    [InlineData(1, 0)]
++    [InlineData(0, 1)]
++    public void BlockedEndpointsRejected(int start, int goal) =>
++        Assert.Throws<ArgumentException>(() => GridPathfinder.FindPath(new[,] { { start, goal } }, new(0, 0), new(0, 1)));
++
++    [Fact]
++    public void CompletesInNineStepsAndThenStaysStopped()
++    {
++        var navigator = new GridNavigator();
++        Assert.True(navigator.Start());
++        Assert.False(navigator.Start());
++        for (int i = 0; i < 9; i++) { Assert.True(navigator.Step()); AssertValid(navigator.Read()); }
++        var s = navigator.Read();
++        Assert.Equal("Completed", s.Phase);
++        Assert.Equal(s.Goal, s.Current);
++        Assert.Equal(9, s.Moves);
++        Assert.Equal(0, s.RemainingDistance);
++        Assert.False(navigator.Step());
++        Assert.Equal(s.Current, navigator.Read().Current);
++    }
++
++    [Fact]
++    public void NewObstacleDetoursFromCurrentPosition()
++    {
++        var navigator = new GridNavigator();
++        navigator.Start();
++        for (int i = 0; i < 3; i++) navigator.Step();
++        Assert.Equal(new GridCell(2, 1), navigator.Read().Current);
++        navigator.SetObstacle(new(2, 2), true);
++        var s = navigator.Read();
++        Assert.Equal(new GridCell(2, 1), s.Current);
++        Assert.Equal(8, s.RemainingDistance);
++        Assert.DoesNotContain(new GridCell(2, 2), s.Path);
++        Assert.Equal(new GridCell(2, 0), s.Path[1]);
++        for (int i = 0; i < 8; i++) { Assert.True(navigator.Step()); AssertValid(navigator.Read()); }
++        Assert.Equal("Completed", navigator.Read().Phase);
++        Assert.Equal(11, navigator.Read().Moves);
++    }
++
++    [Fact]
++    public void FullyBlockedWaitsThenAutomaticallyResumes()
++    {
++        var navigator = new GridNavigator();
++        navigator.Start(); navigator.Step();
++        var current = navigator.Read().Current;
++        navigator.SetObstacle(new(1, 1), true);
++        Assert.Equal("Waiting", navigator.Read().Phase);
++        Assert.Null(navigator.Read().RemainingDistance);
++        for (int i = 0; i < 10; i++) Assert.False(navigator.Step());
++        Assert.Equal(current, navigator.Read().Current);
++        Assert.Equal(1, navigator.Read().Moves);
++        navigator.SetObstacle(new(1, 1), false);
++        Assert.Equal("Running", navigator.Read().Phase);
++        Assert.True(navigator.Step());
++        Assert.Equal(new GridCell(1, 1), navigator.Read().Current);
++    }
++
++    [Fact]
++    public void RemovingObstacleSelectsShorterRouteImmediately()
++    {
++        var navigator = new GridNavigator();
++        navigator.SetObstacle(new(2, 2), true);
++        navigator.Start();
++        for (int i = 0; i < 3; i++) navigator.Step();
++        Assert.Equal(8, navigator.Read().RemainingDistance);
++        navigator.SetObstacle(new(2, 2), false);
++        Assert.Equal(6, navigator.Read().RemainingDistance);
++        Assert.Equal(new GridCell(2, 2), navigator.Read().Path[1]);
++    }
++
++    [Fact]
++    public void CancellationStopsMovementAndDoesNotResumeOnMapEdit()
++    {
++        var navigator = new GridNavigator();
++        navigator.Start(); navigator.Step(); navigator.Cancel();
++        var before = navigator.Read();
++        navigator.SetObstacle(new(2, 2), true);
++        Assert.False(navigator.Step());
++        Assert.Equal("Canceled", navigator.Read().Phase);
++        Assert.Equal(before.Current, navigator.Read().Current);
++        Assert.True(navigator.Start());
++        Assert.Equal(before.Start, navigator.Read().Current);
++    }
++
++    [Fact]
++    public void ResetRestoresOriginalMapAndStopsActiveRun()
++    {
++        var navigator = new GridNavigator();
++        navigator.Start(); navigator.Step(); navigator.SetObstacle(new(2, 2), true);
++        navigator.Reset();
++        var s = navigator.Read();
++        Assert.Equal("Ready", s.Phase);
++        Assert.Equal(s.Start, s.Current);
++        Assert.Equal(0, s.Map[2][2]);
++        Assert.Equal(9, s.RemainingDistance);
++        Assert.Equal(0, s.Moves);
++        Assert.False(navigator.Step());
++    }
++
++    [Theory]
++    [InlineData(0, 2)]
++    [InlineData(0, 0)]
++    [InlineData(4, 5)]
++    [InlineData(-1, 0)]
++    [InlineData(5, 0)]
++    public void ProtectedOrInvalidCellEditRejected(int row, int col)
++    {
++        var navigator = new GridNavigator();
++        Assert.Throws<ArgumentException>(() => navigator.SetObstacle(new(row, col), true));
++        Assert.Equal(9, navigator.Read().RemainingDistance);
++        Assert.Equal(0, navigator.Read().MapVersion);
++    }
++
++    [Fact]
++    public void OccupiedCellEditRejectedAndSnapshotIsIndependent()
++    {
++        var navigator = new GridNavigator();
++        navigator.Start(); navigator.Step();
++        var s = navigator.Read();
++        Assert.Throws<ArgumentException>(() => navigator.SetObstacle(s.Current, true));
++        s.Map[0][1] = 1; s.Path[0] = new(99, 99); s.Traveled[0] = new(99, 99);
++        Assert.Equal(0, navigator.Read().Map[0][1]);
++        Assert.Equal(navigator.Read().Current, navigator.Read().Path[0]);
++        Assert.Equal(navigator.Read().Start, navigator.Read().Traveled[0]);
++    }
++
++    [Fact]
++    public void DijkstraMatchesBfsOnThreeHundredSeededMaps()
++    {
++        var random = new Random(221026);
++        for (int trial = 0; trial < 300; trial++)
++        {
++            var map = new int[6, 7];
++            for (int r = 0; r < 6; r++)
++                for (int c = 0; c < 7; c++) map[r, c] = random.Next(100) < 35 ? 1 : 0;
++            var start = new GridCell(random.Next(6), random.Next(7));
++            var goal = new GridCell(random.Next(6), random.Next(7));
++            map[start.Row, start.Col] = map[goal.Row, goal.Col] = 0;
++            var path = GridPathfinder.FindPath(map, start, goal);
++            Assert.Equal(BfsDistance(map, start, goal), path.Count == 0 ? (int?)null : path.Count - 1);
++            for (int i = 0; i < path.Count; i++)
++            {
++                Assert.Equal(0, map[path[i].Row, path[i].Col]);
++                if (i > 0) Assert.Equal(1, Math.Abs(path[i].Row - path[i - 1].Row) + Math.Abs(path[i].Col - path[i - 1].Col));
++            }
++        }
++    }
++
++    private static int? BfsDistance(int[,] map, GridCell start, GridCell goal)
++    {
++        var queue = new Queue<(GridCell Cell, int Distance)>();
++        var visited = new HashSet<GridCell> { start };
++        queue.Enqueue((start, 0));
++        while (queue.TryDequeue(out var item))
++        {
++            if (item.Cell == goal) return item.Distance;
++            foreach (var d in new[] { new GridCell(-1, 0), new(1, 0), new(0, -1), new(0, 1) })
++            {
++                var next = new GridCell(item.Cell.Row + d.Row, item.Cell.Col + d.Col);
++                if (next.Row < 0 || next.Row >= map.GetLength(0) || next.Col < 0 || next.Col >= map.GetLength(1) || map[next.Row, next.Col] == 1 || !visited.Add(next)) continue;
++                queue.Enqueue((next, item.Distance + 1));
++            }
++        }
++        return null;
++    }
++
++    private static void AssertValid(GridSnapshot s)
++    {
++        Assert.Equal(0, s.Map[s.Current.Row][s.Current.Col]);
++        for (int i = 0; i < s.Path.Length; i++)
++        {
++            Assert.Equal(0, s.Map[s.Path[i].Row][s.Path[i].Col]);
++            if (i > 0) Assert.Equal(1, Math.Abs(s.Path[i].Row - s.Path[i - 1].Row) + Math.Abs(s.Path[i].Col - s.Path[i - 1].Col));
++        }
++    }
++}
+diff --git a/tests/Amr.Simulator.Tests/GridSimulationTests.cs b/tests/Amr.Simulator.Tests/GridSimulationTests.cs
+new file mode 100644
+index 0000000..dfb7dc4
+--- /dev/null
++++ b/tests/Amr.Simulator.Tests/GridSimulationTests.cs
+@@ -0,0 +1,175 @@
++using System.Collections.Concurrent;
++using System.Text.Json;
++using Amr.Communication.Mqtt;
++using Amr.Simulator.Navigation;
++using Amr.Simulator.Telemetry;
++using Xunit;
++
++namespace Amr.Simulator.Tests;
++
++public sealed class GridSimulationTests
++{
++    private static SimulatorMqttOptions Options => new(new MqttConnectionSettings(), 10, 20);
++
++    [Fact]
++    public async Task SimulatorAloneDetoursDuringMovementAndPublishesOrderedMission()
++    {
++        var sender = new Sender();
++        var simulation = Mission(sender);
++        simulation.Moved += () =>
++        {
++            if (simulation.Read().Moves == 1) simulation.SetObstacle(new(2, 2), true);
++        };
++        Assert.True(simulation.Start());
++        using var timeout = new CancellationTokenSource(TimeSpan.FromSeconds(5));
++        var final = await simulation.RunAsync(Options, timeout.Token);
++        var state = simulation.Read();
++        Assert.Equal("Completed", state.Phase);
++        Assert.Equal(15, state.Moves);
++        Assert.Equal(new[] { 11, 13, 15 }, state.ReachedWaypoints.Select(v => v.Moves));
++        Assert.All(state.Traveled, cell => Assert.Equal(0, state.Map[cell.Row][cell.Col]));
++        Assert.Equal(0, state.ReachedWaypoints[0].Index);
++        Assert.Contains(new GridCell(4, 3), state.Traveled.Take(11));
++        Assert.True(sender.Disposed);
++        var points = sender.Publications.Where(p => p.Kind == "Telemetry").Select(p => JsonSerializer.Deserialize<JsonElement>(p.Payload)).ToArray();
++        Assert.NotEmpty(points);
++        Assert.All(points, p => Assert.Equal("AMR_001", p.GetProperty("id").GetString()));
++        var last = points[^1];
++        Assert.Equal(final!.Timestamp, last.GetProperty("ts").GetInt64());
++        Assert.Equal(5, final.X); Assert.Equal(-4, final.Y);
++        Assert.Equal(0, last.GetProperty("sp").GetDouble());
++        Assert.Equal("IDLE", last.GetProperty("state").GetString());
++    }
++
++    [Fact]
++    public async Task BlockedWaypointWaitsAndResumesWithoutSkippingIt()
++    {
++        var sender = new Sender();
++        var simulation = Mission(sender);
++        simulation.SetObstacle(new(4, 3), true);
++        simulation.Start();
++        using var timeout = new CancellationTokenSource(TimeSpan.FromSeconds(5));
++        var run = simulation.RunAsync(Options, timeout.Token);
++        await Wait(() => simulation.Read().Phase == "Waiting" && simulation.Read().NextWaypointIndex == 1);
++        var waiting = simulation.Read();
++        int heartbeats = sender.Publications.Count(p => p.Kind == "Heartbeat");
++        await Wait(() => sender.Publications.Count(p => p.Kind == "Heartbeat") >= heartbeats + 2);
++        Assert.Equal(waiting.Current, simulation.Read().Current);
++        simulation.SetObstacle(new(4, 3), false);
++        await run;
++        Assert.Equal(new[] { 0, 1, 2 }, simulation.Read().ReachedWaypoints.Select(v => v.Index));
++    }
++
++    [Theory]
++    [InlineData(true)]
++    [InlineData(false)]
++    public async Task SenderLossStopsAndDisposesSender(bool duringConnect)
++    {
++        var sender = new Sender { LoseOnConnect = duringConnect };
++        var simulation = Mission(sender);
++        simulation.Start();
++        using var timeout = new CancellationTokenSource(TimeSpan.FromSeconds(5));
++        var run = simulation.RunAsync(Options, timeout.Token);
++        if (!duringConnect)
++        {
++            await Wait(() => sender.Publications.Count > 1);
++            sender.Lose();
++        }
++        var error = await Assert.ThrowsAsync<IOException>(async () => await run);
++        Assert.Equal("SenderDisconnected", error.Message);
++        Assert.Equal("Canceled", simulation.Read().Phase);
++        if (duringConnect) Assert.Equal(0, simulation.Read().Moves);
++        Assert.True(sender.Disposed);
++    }
++
++    [Fact]
++    public async Task CancellationWaitsForSenderCleanupBeforeResetOrRestart()
++    {
++        var sender = new Sender { HoldDisconnect = true };
++        var simulation = Mission(sender);
++        using var cancel = new CancellationTokenSource(TimeSpan.FromSeconds(5));
++        simulation.Start();
++        var run = simulation.RunAsync(Options, cancel.Token);
++        try
++        {
++            await Wait(() => sender.Publications.Count > 1);
++            cancel.Cancel();
++            await Wait(() => sender.Disconnecting);
++            Assert.False(run.IsCompleted);
++            Assert.False(simulation.Start());
++            Assert.Throws<InvalidOperationException>(simulation.Reset);
++        }
++        finally { sender.ReleaseDisconnect(); }
++        await Assert.ThrowsAnyAsync<OperationCanceledException>(async () => await run);
++        Assert.True(sender.Disposed);
++        simulation.Reset();
++        Assert.Equal("Ready", simulation.Read().Phase);
++        Assert.True(simulation.Start());
++    }
++
++    [Fact]
++    public async Task PublishFailureStopsMovementAndCleansUp()
++    {
++        var sender = new Sender { PublishFailure = true };
++        var simulation = Mission(sender);
++        simulation.Start();
++        await Assert.ThrowsAsync<IOException>(() => simulation.RunAsync(Options, CancellationToken.None));
++        Assert.Equal(0, simulation.Read().Moves);
++        Assert.Equal("Canceled", simulation.Read().Phase);
++        Assert.True(sender.Disposed);
++    }
++
++    [Fact]
++    public async Task LocalRunNeedsNoMapOrMqttAndCanRestart()
++    {
++        var simulation = new GridSimulation("local", new(new(0, 0), [new(0, 1), new(0, 2)], new int[1, 3]), 10);
++        using var timeout = new CancellationTokenSource(TimeSpan.FromSeconds(5));
++        for (int run = 0; run < 2; run++)
++        {
++            Assert.True(simulation.Start());
++            Assert.Null(await simulation.RunAsync(null, timeout.Token));
++            Assert.Equal("Completed", simulation.Read().Phase);
++            Assert.Equal(2, simulation.Read().Moves);
++        }
++    }
++
++    private static GridSimulation Mission(Sender sender) => new("AMR_001",
++        new(new(0, 0), [new(2, 3), new(4, 3), new(4, 5)]), 20, () => sender);
++
++    private static async Task Wait(Func<bool> condition)
++    {
++        using var timeout = new CancellationTokenSource(TimeSpan.FromSeconds(4));
++        while (!condition()) await Task.Delay(5, timeout.Token);
++    }
++
++    private sealed class Sender : ISimulationTransport
++    {
++        public event Action? ConnectionLost;
++        public ConcurrentQueue<SimulationPublication> Publications { get; } = new();
++        public bool LoseOnConnect { get; init; }
++        public bool HoldDisconnect { get; init; }
++        public bool PublishFailure { get; init; }
++        public volatile bool Disconnecting, Disposed;
++        private readonly TaskCompletionSource _disconnect = new(TaskCreationOptions.RunContinuationsAsynchronously);
++        public Task ConnectAsync(CancellationToken token)
++        {
++            if (LoseOnConnect) Lose();
++            return Task.CompletedTask;
++        }
++        public Task PublishAsync(SimulationPublication publication, CancellationToken token)
++        {
++            token.ThrowIfCancellationRequested();
++            if (PublishFailure) throw new IOException("PublishFailure");
++            Publications.Enqueue(publication);
++            return Task.CompletedTask;
++        }
++        public void Lose() => ConnectionLost?.Invoke();
++        public void ReleaseDisconnect() => _disconnect.TrySetResult();
++        public async Task DisconnectAsync()
++        {
++            Disconnecting = true;
++            if (HoldDisconnect) await _disconnect.Task;
++        }
++        public void Dispose() => Disposed = true;
++    }
++}
+diff --git a/tests/Amr.Simulator.Tests/WaypointMissionTests.cs b/tests/Amr.Simulator.Tests/WaypointMissionTests.cs
+new file mode 100644
+index 0000000..a00a725
+--- /dev/null
++++ b/tests/Amr.Simulator.Tests/WaypointMissionTests.cs
+@@ -0,0 +1,143 @@
++using Amr.Simulator.Navigation;
++using System.Text;
++using Xunit;
++
++namespace Amr.Simulator.Tests;
++
++public sealed class WaypointMissionTests
++{
++    private static readonly GridCell[] Route = [new(2, 3), new(4, 3), new(4, 5)];
++    private static GridNavigator Mission() => new(new(0, 0), Route);
++
++    [Fact]
++    public void NormalMissionVisitsEveryTargetInOrderAndStopsAtFinalGoal()
++    {
++        var navigator = Mission();
++        Assert.Equal(5, navigator.Read().RemainingDistance);
++        Assert.Equal(Route[0], navigator.Read().CurrentTarget);
++        navigator.Start();
++        for (int move = 1; move <= 9; move++)
++        {
++            Assert.True(navigator.Step());
++            Assert.Equal(move < 9 ? "Running" : "Completed", navigator.Read().Phase);
++        }
++        var state = navigator.Read();
++        Assert.Equal(new[] { 0, 1, 2 }, state.ReachedWaypoints.Select(x => x.Index));
++        Assert.Equal(new[] { 5, 7, 9 }, state.ReachedWaypoints.Select(x => x.Moves));
++        Assert.Equal(Route, state.ReachedWaypoints.Select(x => x.Cell));
++        Assert.Equal(3, state.NextWaypointIndex);
++        Assert.Null(state.CurrentTarget);
++        Assert.False(navigator.Step());
++    }
++
++    [Fact]
++    public void DetourCrossingLaterWaypointDoesNotSkipCurrentTarget()
++    {
++        var navigator = Mission();
++        navigator.Start();
++        for (int i = 0; i < 3; i++) navigator.Step();
++        navigator.SetObstacle(new(2, 2), true);
++        Assert.Equal(8, navigator.Read().RemainingDistance);
++        for (int i = 0; i < 6; i++) navigator.Step();
++        var crossed = navigator.Read();
++        Assert.Equal(Route[1], crossed.Current); // W2를 먼저 지나지만 아직 W1이 목표다.
++        Assert.Equal(0, crossed.NextWaypointIndex);
++        Assert.Empty(crossed.ReachedWaypoints);
++        Assert.Equal(Route[0], crossed.CurrentTarget);
++        for (int i = 0; i < 6; i++) navigator.Step();
++        var completed = navigator.Read();
++        Assert.Equal("Completed", completed.Phase);
++        Assert.Equal(15, completed.Moves);
++        Assert.Equal(new[] { 11, 13, 15 }, completed.ReachedWaypoints.Select(x => x.Moves));
++        Assert.DoesNotContain(new GridCell(2, 2), completed.Traveled);
++    }
++
++    [Fact]
++    public void BlockedCurrentWaypointWaitsAndResumesWithoutSkipping()
++    {
++        var navigator = Mission();
++        navigator.SetObstacle(Route[0], true);
++        navigator.Start();
++        for (int i = 0; i < 5; i++) Assert.False(navigator.Step());
++        Assert.Equal("Waiting", navigator.Read().Phase);
++        Assert.Equal(0, navigator.Read().Moves);
++        Assert.Equal(0, navigator.Read().NextWaypointIndex);
++        navigator.SetObstacle(Route[0], false);
++        for (int i = 0; i < 9; i++) navigator.Step();
++        Assert.Equal("Completed", navigator.Read().Phase);
++    }
++
++    [Fact]
++    public void BlockedFutureWaypointDoesNotPreventReachingCurrentWaypoint()
++    {
++        var navigator = Mission();
++        navigator.SetObstacle(Route[1], true);
++        navigator.Start();
++        Assert.Equal("Running", navigator.Read().Phase);
++        for (int i = 0; i < 5; i++) Assert.True(navigator.Step());
++        Assert.Equal("Waiting", navigator.Read().Phase);
++        Assert.Equal(Route[0], navigator.Read().Current);
++        Assert.Equal(Route[1], navigator.Read().CurrentTarget);
++        Assert.Equal(1, navigator.Read().NextWaypointIndex);
++        for (int i = 0; i < 5; i++) Assert.False(navigator.Step());
++        navigator.SetObstacle(Route[1], false);
++        for (int i = 0; i < 4; i++) navigator.Step();
++        Assert.Equal("Completed", navigator.Read().Phase);
++    }
++
++    [Fact]
++    public void ConsecutiveDuplicateWaypointsConsumeNoExtraMoves()
++    {
++        var navigator = new GridNavigator(new(0, 0), [new(0, 0), new(0, 1), new(0, 1), new(4, 5)]);
++        navigator.Start();
++        for (int i = 0; i < 9; i++) navigator.Step();
++        Assert.Equal("Completed", navigator.Read().Phase);
++        Assert.Equal(new[] { 0, 1, 1, 9 }, navigator.Read().ReachedWaypoints.Select(x => x.Moves));
++    }
++
++    [Fact]
++    public void AllWaypointsAtStartCompleteWithoutMovement()
++    {
++        var navigator = new GridNavigator(new(0, 0), [new(0, 0), new(0, 0)]);
++        Assert.True(navigator.Start());
++        Assert.Equal("Completed", navigator.Read().Phase);
++        Assert.Equal(0, navigator.Read().Moves);
++        Assert.False(navigator.Step());
++    }
++
++    [Fact]
++    public void ResetRestoresOrderedProgressAndDoesNotReuseVisits()
++    {
++        var navigator = Mission();
++        navigator.Start();
++        for (int i = 0; i < 6; i++) navigator.Step();
++        navigator.Reset();
++        var state = navigator.Read();
++        Assert.Equal("Ready", state.Phase);
++        Assert.Equal(0, state.NextWaypointIndex);
++        Assert.Empty(state.ReachedWaypoints);
++        Assert.Equal(Route[0], state.CurrentTarget);
++        Assert.False(navigator.Step());
++    }
++
++    [Fact]
++    public void RouteAndSnapshotsCannotMutateMission()
++    {
++        var source = Route.ToArray();
++        var navigator = new GridNavigator(new(0, 0), source);
++        source[0] = new(99, 99);
++        navigator.Read().Waypoints[0] = new(99, 99);
++        Assert.Equal(Route[0], navigator.Read().CurrentTarget);
++    }
++
++    [Theory]
++    [InlineData(-1, 0)]
++    [InlineData(5, 0)]
++    [InlineData(0, 2)]
++    public void InvalidWaypointRejected(int row, int col) =>
++        Assert.Throws<ArgumentException>(() => new GridNavigator(new(0, 0), [new(row, col)]));
++
++    [Fact]
++    public void EmptyMissionRejected() => Assert.Throws<ArgumentException>(() => new GridNavigator(new(0, 0), []));
++
++}
+diff --git a/tools/Amr.Simulator.Map/Control/GridControlConnection.cs b/tools/Amr.Simulator.Map/Control/GridControlConnection.cs
+new file mode 100644
+index 0000000..50e636f
+--- /dev/null
++++ b/tools/Amr.Simulator.Map/Control/GridControlConnection.cs
+@@ -0,0 +1,30 @@
++using Amr.Simulator.Telemetry;
++
++namespace Amr.Simulator.Map.Control;
++
++public interface IGridControlConnection : IAsyncDisposable
++{
++    event Action<object>? Received;
++    event Action<string>? Failed;
++    event Action? Rejected;
++    Task ConnectAsync(CancellationToken token);
++}
++
++/// <summary>관제 구독·검사·AMR별 큐만 소유한다. 발행 Client는 Simulator가 소유한다.</summary>
++public sealed class GridControlConnection : IGridControlConnection
++{
++    private readonly MqttMapReceiver _receiver;
++
++    public GridControlConnection(SimulatorMqttOptions options, string amrId, TextWriter log)
++    {
++        _receiver = new(options.Connection.Host, options.Connection.Port, amrId,
++            message => Received?.Invoke(message.Model), () => Rejected?.Invoke(),
++            _ => { }, reason => Failed?.Invoke(reason), log);
++    }
++
++    public event Action<object>? Received;
++    public event Action<string>? Failed;
++    public event Action? Rejected;
++    public Task ConnectAsync(CancellationToken token) => _receiver.StartAsync(token);
++    public ValueTask DisposeAsync() => _receiver.DisposeAsync();
++}
+diff --git a/tools/Amr.Simulator.Map/Control/GridMapCoordinates.cs b/tools/Amr.Simulator.Map/Control/GridMapCoordinates.cs
+new file mode 100644
+index 0000000..1dd2170
+--- /dev/null
++++ b/tools/Amr.Simulator.Map/Control/GridMapCoordinates.cs
+@@ -0,0 +1,17 @@
++using Amr.Communication.Models;
++using Amr.Simulator.Navigation;
++
++namespace Amr.Simulator.Map.Control;
++
++/// <summary>관제에서 받은 실좌표를 지도 칸으로 바꾸고 표시 가능한 범위를 검사한다.</summary>
++public static class GridMapCoordinates
++{
++    public static GridCell? ReceivedCell(TelemetryMessage? message, int rows = 5, int cols = 6)
++    {
++        if (message is null) return null;
++        double row = -message.Position.Y / GridTelemetry.CellSizeMeters, col = message.Position.X / GridTelemetry.CellSizeMeters;
++        if (!double.IsFinite(row) || !double.IsFinite(col) || row < 0 || row >= rows || col < 0 || col >= cols ||
++            row != Math.Truncate(row) || col != Math.Truncate(col)) return null;
++        return new((int)row, (int)col);
++    }
++}
+diff --git a/tools/Amr.Simulator.Map/Control/GridMapSession.cs b/tools/Amr.Simulator.Map/Control/GridMapSession.cs
+new file mode 100644
+index 0000000..4de5e68
+--- /dev/null
++++ b/tools/Amr.Simulator.Map/Control/GridMapSession.cs
+@@ -0,0 +1,323 @@
++using System.Diagnostics;
++using System.Text;
++using System.Text.Json;
++using Amr.Communication.Models;
++using Amr.Simulator.Telemetry;
++using Amr.Simulator.Navigation;
++
++namespace Amr.Simulator.Map.Control;
++
++/// <summary>지도 명령을 Simulator에 전달하고 관제 수신·표시·최종 수신 확인을 소유한다.</summary>
++public sealed class GridMapSession : IAsyncDisposable
++{
++    public const int DefaultStepIntervalMs = GridSimulation.DefaultStepIntervalMs;
++    public int StepIntervalMs { get; }
++    private readonly int _rows, _cols;
++    public string? ConfigurationPath { get; private set; }
++    public string AmrId { get; } = "AMR_GRID_" + Guid.NewGuid().ToString("N");
++    private readonly object _gate = new();
++    private readonly GridSimulation _simulation;
++    private readonly CancellationTokenSource _shutdown = new();
++    private readonly TextWriter _log;
++    private readonly Queue<string> _recent = new();
++    private readonly JsonSerializerOptions _json = new(JsonSerializerDefaults.Web);
++    private readonly SimulatorMqttOptions? _mqtt;
++    private readonly Func<IGridControlConnection>? _connectionFactory;
++    private MqttMapProjection _received;
++    private readonly List<GridCell> _receivedTrail = [];
++    private Task _execution = Task.CompletedTask;
++    private CancellationTokenSource? _runCancellation;
++    private bool _closing, _resetRequested, _connected;
++    private string? _phase, _failure;
++    private string _brokerState = "NotStarted";
++    private int _stopReason; // 0=active, 1=user, 2=failure, 3=received completion
++    private int _published, _rejected;
++    private long? _lastPublishedTimestamp;
++
++    public GridMapSession(string evidenceDirectory, SimulatorMqttOptions? mqtt = null,
++        Func<IGridControlConnection>? connectionFactory = null, GridNavigator? navigator = null, string? amrId = null,
++        int stepIntervalMs = DefaultStepIntervalMs, Func<ISimulationTransport>? transportFactory = null)
++    {
++        if (stepIntervalMs <= 0) throw new ArgumentOutOfRangeException(nameof(stepIntervalMs));
++        StepIntervalMs = stepIntervalMs;
++        if (amrId is not null) AmrId = amrId;
++        _simulation = new(AmrId, navigator, stepIntervalMs, transportFactory);
++        _simulation.Moved += OnMoved;
++        _simulation.Connected += OnConnected;
++        _simulation.Published += OnPublished;
++        var map = _simulation.Read().Map;
++        _rows = map.Length;
++        _cols = map[0].Length;
++        _mqtt = mqtt;
++        _received = new(AmrId);
++        if (mqtt is not null && (mqtt.TelemetryMs <= 0 || mqtt.HeartbeatMs <= 0))
++            throw new ArgumentException("송신 주기는 양수여야 합니다.", nameof(mqtt));
++        EvidencePath = Path.Combine(evidenceDirectory, "grid-navigation.jsonl");
++        _log = TextWriter.Synchronized(new StreamWriter(EvidencePath, append: false) { AutoFlush = true });
++        _connectionFactory = connectionFactory ?? (mqtt is null ? null : () => new GridControlConnection(mqtt, AmrId, _log));
++        Record("GridReady");
++    }
++
++    public string EvidencePath { get; }
++    public string EvidenceDirectory => Path.GetDirectoryName(EvidencePath)!;
++
++    public static async Task<GridMapSession> CreateAsync(string configPath, string evidenceRoot, SimulatorMqttOptions? mqtt,
++        GridMissionSettings? settings = null)
++    {
++        settings ??= await GridMissionSettings.LoadAsync(configPath);
++        mqtt ??= settings.Mqtt;
++        string directory = Path.Combine(evidenceRoot, $"mission-live-{DateTimeOffset.Now:yyyyMMdd-HHmmss}-{Guid.NewGuid():N}");
++        Directory.CreateDirectory(directory);
++        string snapshot = Path.Combine(directory, "config.json");
++        await File.WriteAllBytesAsync(snapshot, settings.SourceBytes.ToArray());
++        await File.WriteAllTextAsync(Path.Combine(directory, "effective-settings.json"), JsonSerializer.Serialize(new {
++            configurationPath = Path.GetFullPath(configPath), settings.StepIntervalMs,
++            mqtt = mqtt is null ? null : new { host = mqtt.Connection.Host, port = mqtt.Connection.Port, mqtt.TelemetryMs, mqtt.HeartbeatMs }
++        }, new JsonSerializerOptions(JsonSerializerDefaults.Web) { WriteIndented = true }));
++        return new(directory, mqtt, navigator: new(settings.Start, settings.Waypoints, settings.Map),
++            amrId: settings.AmrId, stepIntervalMs: settings.StepIntervalMs) { ConfigurationPath = Path.GetFullPath(configPath) };
++    }
++
++    public object Read()
++    {
++        lock (_gate)
++        {
++            var data = _received.Read();
++            var navigation = _simulation.Read();
++            if (_phase is not null) navigation = navigation with { Phase = _phase };
++            else if (_mqtt is not null && !_execution.IsCompleted && navigation.Phase == "Completed")
++                navigation = navigation with { Phase = "WaitingForTelemetry" };
++            return new { navigation, stepIntervalMs = StepIntervalMs,
++                source = _mqtt is null ? "csharp-grid-navigation" : "mqtt-grid-control-receiver",
++                position = _mqtt is null ? navigation.Current : ReceivedCell(data.Telemetry),
++                configurationPath = ConfigurationPath,
++                amrId = AmrId, cellSizeMeters = GridTelemetry.CellSizeMeters,
++                receivedTelemetry = data.Telemetry, receivedHeartbeat = data.Heartbeat,
++                receivedTrail = _receivedTrail.ToArray(),
++                telemetryCount = data.TelemetryCount, heartbeatCount = data.HeartbeatCount,
++                publishedCount = _published, rejectedCount = _rejected, lastPublishedTimestamp = _lastPublishedTimestamp,
++                brokerState = _brokerState, failure = _failure,
++                mqttEndpoint = _mqtt is null ? null : $"{_mqtt.Connection.Host}:{_mqtt.Connection.Port}",
++                evidencePath = EvidencePath, evidenceDirectory = EvidenceDirectory, logs = _recent.ToArray() };
++        }
++    }
++
++    public bool Start()
++    {
++        lock (_gate)
++        {
++            if (_closing || !_execution.IsCompleted || !_simulation.Start()) return false;
++            _received = new(AmrId);
++            _receivedTrail.Clear();
++            _failure = null;
++            _published = _rejected = _stopReason = 0;
++            _lastPublishedTimestamp = null;
++            _resetRequested = _connected = false;
++            _phase = _mqtt is null ? null : "Connecting";
++            _brokerState = _mqtt is null ? "NotStarted" : "Connecting";
++            _runCancellation?.Dispose();
++            _runCancellation = CancellationTokenSource.CreateLinkedTokenSource(_shutdown.Token);
++            _execution = Task.Run(() => ExecuteAsync(_runCancellation.Token));
++            Record("GridStarted");
++            return true;
++        }
++    }
++
++    public void Cancel()
++    {
++        lock (_gate)
++        {
++            _simulation.Cancel();
++            if (!_execution.IsCompleted && _stopReason == 0)
++            {
++                _stopReason = 1;
++                _phase = "Canceling";
++                _runCancellation!.Cancel();
++            }
++            Record("GridCanceled");
++        }
++    }
++
++    public void Reset()
++    {
++        lock (_gate)
++        {
++            if (!_execution.IsCompleted)
++            {
++                _resetRequested = true;
++                Cancel();
++                _phase = "Resetting";
++            }
++            else ResetCore();
++        }
++    }
++
++    private void ResetCore()
++    {
++        _simulation.Reset();
++        _received = new(AmrId);
++        _receivedTrail.Clear();
++        _phase = _failure = null;
++        _lastPublishedTimestamp = null;
++        _published = _rejected = 0;
++        Record("GridReset");
++    }
++
++    public void SetObstacle(GridCell cell, bool blocked)
++    {
++        lock (_gate)
++            if (_simulation.SetObstacle(cell, blocked)) Record("GridMapChanged");
++    }
++
++    private void Receive(object model)
++    {
++        lock (_gate)
++        {
++            if (model is TelemetryMessage t && (t.Id != AmrId || ReceivedCell(t) is null))
++            {
++                _rejected++;
++                Record("GridTelemetryRejected");
++                return;
++            }
++            if (_received.Apply(model))
++            {
++                if (model is TelemetryMessage telemetry && ReceivedCell(telemetry) is { } cell &&
++                    (_receivedTrail.Count == 0 || _receivedTrail[^1] != cell)) _receivedTrail.Add(cell);
++                Record("GridControlReceived");
++            }
++        }
++    }
++
++    private void Rejected()
++    {
++        lock (_gate) { _rejected++; Record("GridMessageRejected"); }
++    }
++
++    private void Fail(string reason)
++    {
++        lock (_gate)
++        {
++            if (_stopReason != 0) return;
++            _failure = !_connected ? "ConnectionFailed:" + reason : reason;
++            _stopReason = 2;
++            _simulation.Cancel();
++            _runCancellation!.Cancel();
++            Record("GridMqttFailed");
++        }
++    }
++
++    private void OnMoved() { lock (_gate) Record("GridMoved"); }
++
++    private void OnConnected()
++    {
++        lock (_gate)
++        {
++            _connected = true;
++            _brokerState = "Subscribed";
++            _phase = null;
++            Record("GridMqttConnected");
++        }
++    }
++
++    private void OnPublished(SimulationPublication publication, long stamp)
++    {
++        lock (_gate)
++        {
++            _published++;
++            if (publication.Kind == "Telemetry") _lastPublishedTimestamp = stamp;
++            _log.WriteLine(JsonSerializer.Serialize(new { @event = "GridPublished", publication.Kind,
++                publication.Topic, payload = Encoding.UTF8.GetString(publication.Payload), delivery = "Unconfirmed" }, _json));
++        }
++    }
++
++    private async Task ExecuteAsync(CancellationToken token)
++    {
++        IGridControlConnection? connection = null;
++        try
++        {
++            if (_mqtt is not null)
++            {
++                connection = _connectionFactory!();
++                connection.Received += Receive;
++                connection.Failed += Fail;
++                connection.Rejected += Rejected;
++                // 관제 SUBACK 뒤에 Simulator의 송신 Client와 이동을 시작한다.
++                await connection.ConnectAsync(token);
++                token.ThrowIfCancellationRequested();
++            }
++            var final = await _simulation.RunAsync(_mqtt, token);
++            if (final is not null)
++            {
++                lock (_gate) _phase = "WaitingForTelemetry";
++                var waiting = Stopwatch.StartNew();
++                while (true)
++                {
++                    token.ThrowIfCancellationRequested();
++                    lock (_gate)
++                    {
++                        if (_stopReason == 0 && _received.MatchesFinal(final.Timestamp, final.X, final.Y))
++                        {
++                            _stopReason = 3;
++                            Record("GridFinalReceived");
++                            break;
++                        }
++                    }
++                    if (waiting.Elapsed >= TimeSpan.FromSeconds(3)) throw new TimeoutException("FinalTelemetryNotReceived");
++                    await Task.Delay(20, token);
++                }
++            }
++            else lock (_gate) { if (_stopReason == 0) _stopReason = 3; }
++        }
++        catch (OperationCanceledException) when (token.IsCancellationRequested) { }
++        catch (Exception exception)
++        {
++            Fail(exception is TimeoutException || exception.Message == "SenderDisconnected"
++                ? exception.Message : exception.GetType().Name);
++        }
++        finally
++        {
++            if (connection is not null)
++            {
++                connection.Received -= Receive;
++                connection.Failed -= Fail;
++                connection.Rejected -= Rejected;
++                try { await connection.DisposeAsync(); }
++                catch (Exception exception)
++                {
++                    lock (_gate) { _failure = "CleanupFailed:" + exception.GetType().Name; _stopReason = 2; }
++                }
++            }
++            lock (_gate)
++            {
++                _connected = false;
++                _brokerState = _mqtt is null ? "NotStarted" : _failure is null ? "Closed" : "Failed";
++                _phase = _stopReason == 3 ? "Completed" : _stopReason == 1 ? "Canceled" : "Failed";
++                Record("GridMqttEnded");
++                if (_resetRequested) { _resetRequested = false; ResetCore(); }
++            }
++        }
++    }
++    private GridCell? ReceivedCell(TelemetryMessage? message) => GridMapCoordinates.ReceivedCell(message, _rows, _cols);
++
++    private void Record(string name)
++    {
++        var state = _simulation.Read();
++        _log.WriteLine(JsonSerializer.Serialize(new { timestamp = DateTimeOffset.UtcNow, name, state, failure = _failure }, _json));
++        _recent.Enqueue($"{name} Phase={_phase ?? state.Phase} Position=({state.Current.Row},{state.Current.Col}) Remaining={state.RemainingDistance?.ToString() ?? "none"} Moves={state.Moves} WaypointsPassed={state.NextWaypointIndex}/{state.Waypoints.Length} Replans={state.Replans} MapVersion={state.MapVersion}");
++        while (_recent.Count > 80) _recent.Dequeue();
++    }
++
++    public async ValueTask DisposeAsync()
++    {
++        lock (_gate) { _closing = true; Cancel(); }
++        _shutdown.Cancel();
++        try { await _execution; }
++        finally
++        {
++            _simulation.Moved -= OnMoved;
++            _simulation.Connected -= OnConnected;
++            _simulation.Published -= OnPublished;
++            _runCancellation?.Dispose(); _shutdown.Dispose(); _log.Dispose();
++        }
++    }
++}
+diff --git a/tools/Amr.Simulator.Map/Control/GridMissionSettings.cs b/tools/Amr.Simulator.Map/Control/GridMissionSettings.cs
+new file mode 100644
+index 0000000..0f2d303
+--- /dev/null
++++ b/tools/Amr.Simulator.Map/Control/GridMissionSettings.cs
+@@ -0,0 +1,95 @@
++using Amr.Simulator.Navigation;
++using System.Text;
++using System.Text.Json;
++using Amr.Communication.Mqtt;
++using Amr.Simulator.Telemetry;
++
++namespace Amr.Simulator.Map.Control;
++
++public sealed record GridMissionSettings(string AmrId, GridCell Start, IReadOnlyList<GridCell> Waypoints)
++{
++    private int[,] _map = GridNavigator.CreateDefaultMap();
++    public int[,] Map => (int[,])_map.Clone();
++    public int StepIntervalMs { get; private init; } = GridSimulation.DefaultStepIntervalMs;
++    public int WebPort { get; private init; } = 5088;
++    public SimulatorMqttOptions? Mqtt { get; private init; }
++    internal ReadOnlyMemory<byte> SourceBytes { get; private init; }
++
++    public static async Task<GridMissionSettings> LoadAsync(string path)
++    {
++        byte[] bytes = await File.ReadAllBytesAsync(path);
++        string json = new UTF8Encoding(false, true).GetString(bytes);
++        if (json.StartsWith('\uFEFF')) json = json[1..];
++        using var document = JsonDocument.Parse(json);
++        var root = document.RootElement;
++        Properties(root, ["amrId", "start", "waypoints"], ["map", "stepIntervalMs", "webPort", "mqtt"]);
++        var idValue = root.GetProperty("amrId");
++        if (idValue.ValueKind != JsonValueKind.String) throw new ArgumentException("amrId는 문자열이어야 합니다.");
++        string id = idValue.GetString()!;
++        if (string.IsNullOrWhiteSpace(id) || id.Any(c => char.IsWhiteSpace(c) || char.IsControl(c) || c is '/' or '+' or '#') ||
++            Encoding.UTF8.GetByteCount($"amr/{id}/telemetry") > ushort.MaxValue)
++            throw new ArgumentException("amrId가 MQTT 식별 기준에 맞지 않습니다.");
++        var start = Cell(root.GetProperty("start"));
++        var list = root.GetProperty("waypoints");
++        if (list.ValueKind != JsonValueKind.Array) throw new ArgumentException("waypoints는 배열이어야 합니다.");
++        var waypoints = list.EnumerateArray().Select(Cell).ToArray();
++        int[,] map = root.TryGetProperty("map", out var mapValue) ? ReadMap(mapValue) : GridNavigator.CreateDefaultMap();
++        _ = new GridNavigator(start, waypoints, map);
++        int step = root.TryGetProperty("stepIntervalMs", out var stepValue) ? Integer(stepValue, "stepIntervalMs", 1, int.MaxValue) : GridSimulation.DefaultStepIntervalMs;
++        int port = root.TryGetProperty("webPort", out var portValue) ? Integer(portValue, "webPort", 0, 65535) : 5088;
++        SimulatorMqttOptions? mqtt = null;
++        if (root.TryGetProperty("mqtt", out var mqttValue))
++        {
++            Properties(mqttValue, "enabled", "host", "port", "telemetryMs", "heartbeatMs");
++            var enabled = mqttValue.GetProperty("enabled");
++            if (enabled.ValueKind is not (JsonValueKind.True or JsonValueKind.False)) throw new ArgumentException("mqtt.enabled는 true 또는 false여야 합니다.");
++            var hostValue = mqttValue.GetProperty("host");
++            if (hostValue.ValueKind != JsonValueKind.String || string.IsNullOrWhiteSpace(hostValue.GetString())) throw new ArgumentException("mqtt.host는 비어 있지 않은 문자열이어야 합니다.");
++            var connection = new MqttConnectionSettings(hostValue.GetString()!, Integer(mqttValue.GetProperty("port"), "mqtt.port", 1, 65535));
++            int telemetry = Integer(mqttValue.GetProperty("telemetryMs"), "mqtt.telemetryMs", 1, int.MaxValue);
++            int heartbeat = Integer(mqttValue.GetProperty("heartbeatMs"), "mqtt.heartbeatMs", 1, int.MaxValue);
++            if (enabled.GetBoolean()) mqtt = new(connection, telemetry, heartbeat);
++        }
++        return new(id, start, Array.AsReadOnly(waypoints)) { _map = map, StepIntervalMs = step, WebPort = port, Mqtt = mqtt, SourceBytes = bytes };
++    }
++
++    private static int[,] ReadMap(JsonElement value)
++    {
++        if (value.ValueKind != JsonValueKind.Array || value.GetArrayLength() == 0) throw new ArgumentException("map은 행이 하나 이상인 2차원 배열이어야 합니다.");
++        var rows = value.EnumerateArray().ToArray();
++        if (rows[0].ValueKind != JsonValueKind.Array || rows[0].GetArrayLength() == 0) throw new ArgumentException("map의 행은 비어 있을 수 없습니다.");
++        int cols = rows[0].GetArrayLength();
++        var map = new int[rows.Length, cols];
++        for (int row = 0; row < rows.Length; row++)
++        {
++            if (rows[row].ValueKind != JsonValueKind.Array || rows[row].GetArrayLength() != cols) throw new ArgumentException("map의 모든 행은 열 수가 같아야 합니다.");
++            for (int col = 0; col < cols; col++) map[row, col] = Integer(rows[row][col], $"map[{row}][{col}]", 0, 1);
++        }
++        return map;
++    }
++
++    private static int Integer(JsonElement value, string name, int min, int max) =>
++        value.ValueKind == JsonValueKind.Number && value.TryGetInt32(out int number) && number >= min && number <= max
++            ? number : throw new ArgumentException($"{name}은 {min}~{max} 범위의 정수여야 합니다.");
++
++    private static GridCell Cell(JsonElement value)
++    {
++        Properties(value, "row", "col");
++        if (value.GetProperty("row").ValueKind != JsonValueKind.Number || value.GetProperty("col").ValueKind != JsonValueKind.Number ||
++            !value.GetProperty("row").TryGetInt32(out int row) || !value.GetProperty("col").TryGetInt32(out int col))
++            throw new ArgumentException("row·col은 정수여야 합니다.");
++        return new(row, col);
++    }
++
++    private static void Properties(JsonElement value, params string[] names) => Properties(value, names, []);
++
++    private static void Properties(JsonElement value, string[] required, string[] optional)
++    {
++        if (value.ValueKind != JsonValueKind.Object) throw new ArgumentException("설정 항목은 JSON 객체여야 합니다.");
++        var found = new HashSet<string>(StringComparer.Ordinal);
++        foreach (var property in value.EnumerateObject())
++            if ((!required.Contains(property.Name, StringComparer.Ordinal) && !optional.Contains(property.Name, StringComparer.Ordinal)) || !found.Add(property.Name))
++                throw new ArgumentException("알 수 없거나 중복된 필드: " + property.Name);
++        if (required.Any(name => !found.Contains(name))) throw new ArgumentException("설정 필수 필드가 누락됐습니다.");
++    }
++}

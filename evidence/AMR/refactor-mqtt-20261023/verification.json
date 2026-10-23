@@ -1,0 +1,62 @@
+[
+  {
+    "verdict": "passed",
+    "name": "initial-no-position"
+  },
+  {
+    "verdict": "passed",
+    "name": "single-session-api-and-screen"
+  },
+  {
+    "verdict": "passed",
+    "name": "normal-arrival"
+  },
+  {
+    "verdict": "passed",
+    "name": "later-waypoint-crossed-not-credited"
+  },
+  {
+    "verdict": "passed",
+    "name": "moving-detour"
+  },
+  {
+    "verdict": "passed",
+    "name": "blocked-next-waypoint-keeps-order"
+  },
+  {
+    "verdict": "passed",
+    "name": "waypoint-unblocked-resume"
+  },
+  {
+    "verdict": "passed",
+    "name": "blocked-heartbeat"
+  },
+  {
+    "verdict": "passed",
+    "name": "invalid-isolation"
+  },
+  {
+    "verdict": "passed",
+    "name": "automatic-resume"
+  },
+  {
+    "verdict": "passed",
+    "name": "cancel-cleanup"
+  },
+  {
+    "verdict": "passed",
+    "name": "active-reset-no-stale-position"
+  },
+  {
+    "verdict": "passed",
+    "name": "broker-loss"
+  },
+  {
+    "verdict": "passed",
+    "name": "initial-connect-failure"
+  },
+  {
+    "verdict": "passed",
+    "name": "sender-receiver-api-equality"
+  }
+]

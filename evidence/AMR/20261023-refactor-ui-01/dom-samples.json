@@ -1,0 +1,162 @@
+[
+  {
+    "error": "",
+    "markers": [],
+    "metrics": "관제 위치 수신 0건 · Heartbeat 0건 · 거부 0건\n수신 상태 대기 · 속도 — m/s · Broker 127.0.0.1:1884",
+    "moves": "0회",
+    "observedAt": "2026-10-23T01:48:24.041Z",
+    "obstacles": [],
+    "phase": "출발 준비",
+    "position": "수신 대기",
+    "progress": "0 / 3",
+    "received": null,
+    "target": "W1 (2, 3)",
+    "visited": [],
+    "waypoints": "경유점 1 (2, 3) · 현재 목표경유점 2 (4, 3) · 방문 예정목적지 (4, 5) · 방문 예정"
+  },
+  {
+    "error": "",
+    "markers": [
+      {
+        "col": 0,
+        "label": "0행 0열 현재 AMR",
+        "row": 0
+      }
+    ],
+    "metrics": "관제 위치 수신 3건 · Heartbeat 1건 · 거부 0건\n수신 상태 BUSY · 속도 1.667 m/s · Broker 127.0.0.1:1884",
+    "moves": "0회",
+    "observedAt": "2026-10-23T01:48:24.887Z",
+    "obstacles": [],
+    "phase": "이동 중",
+    "position": "(0, 0)",
+    "progress": "0 / 3",
+    "received": {
+      "id": "AMR_001",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "receivedAtUtc": "2026-10-23T01:48:24.68923+00:00",
+      "speed": 1.6666666666666667,
+      "state": "BUSY",
+      "timestamp": 1792720104688
+    },
+    "target": "W1 (2, 3)",
+    "visited": [
+      {
+        "col": 0,
+        "label": "0행 0열 현재 AMR",
+        "row": 0
+      }
+    ],
+    "waypoints": "경유점 1 (2, 3) · 현재 목표경유점 2 (4, 3) · 방문 예정목적지 (4, 5) · 방문 예정"
+  },
+  {
+    "error": "",
+    "markers": [
+      {
+        "col": 5,
+        "label": "4행 5열 현재 AMR",
+        "row": 4
+      }
+    ],
+    "metrics": "관제 위치 수신 47건 · Heartbeat 10건 · 거부 0건\n수신 상태 IDLE · 속도 0 m/s · Broker 127.0.0.1:1884",
+    "moves": "15회",
+    "observedAt": "2026-10-23T01:48:36.952Z",
+    "obstacles": [
+      {
+        "col": 2,
+        "label": "2행 2열 추가 장애물, 누르면 제거",
+        "row": 2
+      }
+    ],
+    "phase": "도착 · 수신 확인",
+    "position": "(4, 5)",
+    "progress": "3 / 3",
+    "received": {
+      "id": "AMR_001",
+      "position": {
+        "x": 5,
+        "y": -4
+      },
+      "receivedAtUtc": "2026-10-23T01:48:33.8421102+00:00",
+      "speed": 0,
+      "state": "IDLE",
+      "timestamp": 1792720113841
+    },
+    "target": "모두 방문",
+    "visited": [
+      {
+        "col": 0,
+        "label": "0행 0열 출발점",
+        "row": 0
+      },
+      {
+        "col": 1,
+        "label": "0행 1열 통로, 누르면 장애물 추가",
+        "row": 0
+      },
+      {
+        "col": 1,
+        "label": "1행 1열 통로, 누르면 장애물 추가",
+        "row": 1
+      },
+      {
+        "col": 0,
+        "label": "2행 0열 통로, 누르면 장애물 추가",
+        "row": 2
+      },
+      {
+        "col": 1,
+        "label": "2행 1열 통로, 누르면 장애물 추가",
+        "row": 2
+      },
+      {
+        "col": 3,
+        "label": "2행 3열 경유점 1, 누르면 장애물 추가",
+        "row": 2
+      },
+      {
+        "col": 0,
+        "label": "3행 0열 통로, 누르면 장애물 추가",
+        "row": 3
+      },
+      {
+        "col": 3,
+        "label": "3행 3열 통로, 누르면 장애물 추가",
+        "row": 3
+      },
+      {
+        "col": 0,
+        "label": "4행 0열 통로, 누르면 장애물 추가",
+        "row": 4
+      },
+      {
+        "col": 1,
+        "label": "4행 1열 통로, 누르면 장애물 추가",
+        "row": 4
+      },
+      {
+        "col": 2,
+        "label": "4행 2열 통로, 누르면 장애물 추가",
+        "row": 4
+      },
+      {
+        "col": 3,
+        "label": "4행 3열 경유점 2, 누르면 장애물 추가",
+        "row": 4
+      },
+      {
+        "col": 4,
+        "label": "4행 4열 통로, 누르면 장애물 추가",
+        "row": 4
+      },
+      {
+        "col": 5,
+        "label": "4행 5열 현재 AMR",
+        "row": 4
+      }
+    ],
+    "waypoints": "경유점 1 (2, 3) · 방문 완료경유점 2 (4, 3) · 방문 완료목적지 (4, 5) · 방문 완료"
+  }
+]

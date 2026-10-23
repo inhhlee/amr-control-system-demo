@@ -73,21 +73,4 @@ public sealed class ProjectionTests
         Assert.False(view.MatchesFinal(100, 1, 2));
     }
 
-    [Fact]
-    public async Task MqttSessionReady_DoesNotUseConfiguredInitialPositionAsReceivedData()
-    {
-        string root = Path.Combine(Path.GetTempPath(), "amr-map-test-" + Guid.NewGuid().ToString("N"));
-        Directory.CreateDirectory(root);
-        string config = Path.Combine(root, "input.json");
-        await File.WriteAllTextAsync(config, """{"amrId":"AMR_001","initialPosition":{"x":-1,"y":0},"speedMps":1,"updateIntervalMs":100,"waypoints":[{"x":1,"y":0},{"x":1,"y":2}]}""");
-        try
-        {
-            await using var session = await MapSession.CreateAsync(config, root, new SimulatorMqttOptions(new MqttConnectionSettings(), 200, 1000));
-            using var state = JsonDocument.Parse(JsonSerializer.Serialize(session.Read()));
-            Assert.Equal(JsonValueKind.Null, state.RootElement.GetProperty("position").ValueKind);
-            Assert.Equal("mqtt-control-receiver", state.RootElement.GetProperty("source").GetString());
-            Assert.Equal(0, state.RootElement.GetProperty("telemetryCount").GetInt32());
-        }
-        finally { Directory.Delete(root, true); }
-    }
 }

@@ -1,0 +1,8 @@
+  Amr.Communication -> C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll
+  Amr.Simulator -> C:\amr-control-system-demo\src\Amr.Simulator\bin\Debug\net10.0\Amr.Simulator.dll
+  Amr.Simulator.Tests -> C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\Amr.Simulator.Tests.dll
+C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\Amr.Simulator.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+결과 파일: C:\amr-control-system-demo\evidence\AMR\20261023-simulator-navigation-01\simulator-authorized.trx
+
+통과!  - 실패:     0, 통과:   197, 건너뜀:     0, 전체:   197, 기간: 1 s - Amr.Simulator.Tests.dll (net10.0)

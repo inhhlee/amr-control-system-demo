@@ -4,6 +4,22 @@ AMR 한 대가 **S (0,0) → W1 (2,3) → W2 (4,3) → G (4,5)** 순서로 이�
 
 실제 이동 좌표를 MQTT로 보내고, 같은 지도 서버 안의 기존 관제 **구독·메시지 검사·AMR별 큐**가 받은 좌표로 AMR과 이동 흔적을 표시한다. 화면의 경유 진행·다음 목표·경로는 시뮬레이터 계산값이며 현재 AMR 위치는 수신값이다.
 
+## 코드 역할
+
+이동·경유점·장애물 우회·이동 타이머·MQTT 송신은 [`src/Amr.Simulator/Navigation`](../../src/Amr.Simulator/Navigation)이 담당한다. 이 도구는 그 Simulator를 호출하는 웹 호스트다.
+
+| 위치 | 역할 |
+| --- | --- |
+| `Program.cs` | HTTP 요청과 화면 제공, 같은 AMR의 출발·취소·장애물 변경 전달 |
+| `Control/GridMapSession.cs` | Simulator 실행 요청, 관제 수신 상태·흔적·로그, 최종 정지 좌표 수신 확인 |
+| `Control/GridControlConnection.cs` | 수신 Client의 구독·해제. 발행 Client는 Simulator가 별도로 소유 |
+| `Control/GridMapCoordinates.cs` | 받은 X/Y 좌표를 지도 칸으로 변환·범위 검사 |
+| `Control/GridMissionSettings.cs` | 웹 포트를 포함한 시연 설정 로드와 시작 시점 설정 복사 |
+| `MqttMapReceiver.cs`, `MqttMapProjection.cs` | 기존 통신 라이브러리를 통한 관제 수신과 수신 모델 보관 |
+| `wwwroot` | HTML·CSS·`grid.js`로 지도·버튼·수신 좌표 표시 |
+
+현재 화면에서 사용하지 않는 이전 `MapSession.cs`·`app.js`는 제거했다. 이전 실행 증거는 그대로 보존한다.
+
 <a id="grid-navigation"></a>
 
 ## 실행과 사용
@@ -54,11 +70,13 @@ dotnet run --no-build --project tools/Amr.Simulator.Map
 - Topic `amr/{amrId}/telemetry`, `amr/{amrId}/heartbeat`, 기존 JSON 계약, MQTT5·QoS0·Retain=false. 관제 구독 완료 뒤 별도 Client로 발행한다. 위치 변경마다 보내고 대기 중에도 Telemetry·Heartbeat 주기를 유지한다.
 - 첫 수신 전에는 AMR 표시가 없다. 현재 위치·이동 흔적은 수신 모델만 사용하며 계산·발행 값으로 대체하지 않는다. 최종 발행과 같은 시각·좌표·IDLE·속도0을 수신하고 연결 정리까지 끝나야 완료로 표시한다. 3초 최종 수신 대기는 도구용 확인 제한이다.
 - 최초 접속 실패는 이동0·수신 위치 없음, 연결 후 단절은 이동 정지·마지막 수신 위치다. 취소 중·초기화 중에는 이전 연결이 끝날 때까지 새 실행을 거부한다. 취소 직전 수신 모델의 BUSY는 실제 로봇 STOP 확인이 아니다. 자동 재접속·재전송은 없다.
-- 편집·이동·경유 순서·수신 모델 읽기는 같은 세션 잠금에서 처리하고 네트워크 I/O는 잠금 밖에서 기다린다. 단일 실행 루프가 이동과 발행 순서를 소유하므로 발행 지연은 다음 이동도 늦출 수 있다.
+- Simulator의 잠금이 편집·이동·경유 순서를 보호하고, Map의 별도 잠금이 관제 수신·표시 상태를 보호한다. Simulator는 잠금을 해제한 뒤 Map에 이벤트를 전달하고 네트워크 I/O도 잠금 밖에서 기다린다. 단일 Simulator 실행 루프가 이동과 발행 순서를 소유하므로 발행 지연은 다음 이동도 늦출 수 있다.
 
 화면과 서버에 경유점용·우회용 별도 AMR을 만들지 않는다. `/api/state`·`/api/grid/state`, `/api/start`·`/api/grid/start`, 두 cancel 경로도 모두 같은 세션에 연결된다. 기존 URL을 사용해 두 번째 AMR을 시작할 수 없다.
 
 ## 검증과 증거
+
+[2026-10-23 Simulator 책임 분리 검증](../../evidence/AMR/20261023-simulator-navigation-01/README.md): Simulator 197건·Map 63건 자동 시험, 실제 MQTT 15개 검증 항목, 실제 브라우저의 이동 중 장애물 추가·15회 최단 우회·수신 좌표 표시를 확인했다.
 
 ```powershell
 dotnet test tests/Amr.Simulator.Map.Tests/Amr.Simulator.Map.Tests.csproj

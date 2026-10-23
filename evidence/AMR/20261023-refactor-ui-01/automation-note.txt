@@ -1,0 +1,1 @@
+First UI attempt added the obstacle at moves=0 because an unscoped 1회 selector matched the replan count. Product reached the goal with 15 moves. This attempt is not evidence of injection after the first move. Retested with scoped grid-moves selector in 20261023-refactor-ui-02.

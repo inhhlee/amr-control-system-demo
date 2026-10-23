@@ -1,0 +1,8 @@
+{
+  "startedAt": "2026-10-23T10:48:08.0770577+09:00",
+  "branch": "codex/preserve-grid-map-20261023",
+  "commit": "7ae3e0473eb59376882de85f9c75adf2d3353804",
+  "sourceLog": "C:\\amr-control-system-demo\\evidence\\AMR\\mission-live-20261023-104747-531284d2c4834622a0e44fe61a34905b\\grid-navigation.jsonl",
+  "originalLogLines": 1,
+  "sdk": "10.0.401"
+}

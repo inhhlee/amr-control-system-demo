@@ -1,0 +1,12 @@
+{
+  "ProductEvidence": "C:\\amr-control-system-demo\\evidence\\AMR\\mission-live-20261023-104658-3a2d35ba5e6f4b7391e9d7a112242169",
+  "ImageId": "sha256:38c0da4f2ef84284d47b3b3eeea1cb3bdeabe81ee10caf0cd5c5ff61ee3ea408",
+  "RunId": "refactor-host-20261023",
+  "Url": "http://127.0.0.1:53234",
+  "BrokerPort": 61500,
+  "ServerPid": 41060,
+  "ContainerId": "76b473cb83c4c6f5e9664f64471f0fc84f71bbdfb77de19ce49a3d707c2f4d4b",
+  "Started": "2026-10-23T10:46:58.7637604+09:00",
+  "Exe": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\Debug\\net10.0\\Amr.Simulator.Map.exe",
+  "ServerStartTicks": 639283168183667684
+}

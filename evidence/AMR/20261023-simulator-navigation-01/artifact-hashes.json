@@ -1,0 +1,97 @@
+[
+  {
+    "name": "base-commit.txt",
+    "sha256": "6F35945FE17F98920CBC4D462E76FDE5DA0A4517F8EA7213F45E198ED3D37776",
+    "status": "hashed"
+  },
+  {
+    "name": "build.log",
+    "sha256": "5AA0AFCBAA838AB3FFAC9CAC43DFCECD50BE96C858B1B49F3544F46AD95277A1",
+    "status": "hashed"
+  },
+  {
+    "name": "environment.json",
+    "sha256": "A5A605AC8EEFA42D2CE2835BD13E17495435088DFD32DD9DB727EFCEAA865D98",
+    "status": "hashed"
+  },
+  {
+    "name": "live-server.json",
+    "sha256": "9B91BA9EE629B7348467A1891F4EC93246CCB5DC83975170E0CB0776398D520B",
+    "status": "hashed"
+  },
+  {
+    "name": "live-server.stderr.log",
+    "sha256": null,
+    "status": "Excluded: live server still owns this log"
+  },
+  {
+    "name": "live-server.stdout.log",
+    "sha256": null,
+    "status": "Excluded: live server still owns this log"
+  },
+  {
+    "name": "map-authorized.trx",
+    "sha256": "5FE3B854E2F54A3C992911C09888B179B3B08A6CDA5622879E7B1F979295FFFB",
+    "status": "hashed"
+  },
+  {
+    "name": "map-tests-authorized.log",
+    "sha256": "091184805326E050315FB999FD2E9B1121ECC0E00424DE2651BA3478F899E64C",
+    "status": "hashed"
+  },
+  {
+    "name": "map-tests.log",
+    "sha256": "BA2CEF8A2636ADAFC57D0120A9D1B619D48CE18A11A82CEEFAD110919CECC1CF",
+    "status": "hashed"
+  },
+  {
+    "name": "map.trx",
+    "sha256": "906A2C8DEEDF61211A52DD9C51A04100A6D4E0D1EDA575551723F83F05D96071",
+    "status": "hashed"
+  },
+  {
+    "name": "move-comparison.json",
+    "sha256": "7DED023FF0A84493C78C8FBD42231A3EB20B6C7F8F513D4A50B1DAA57925A098",
+    "status": "hashed"
+  },
+  {
+    "name": "README.md",
+    "sha256": "FE1AF6ED88C9B87E8B0B33171FDD250D70C22D588180E4010C0D76102CBFD05F",
+    "status": "hashed"
+  },
+  {
+    "name": "result.json",
+    "sha256": "1388FBCDD597CB5628CCB856D8D09A2F12CBB87C696EEF0093B4DDFB1440FE28",
+    "status": "hashed"
+  },
+  {
+    "name": "simulator-authorized.trx",
+    "sha256": "D54604BE9CB6D4BF385EC410A587F245A9DF2288E87C635ED85F80A09BE46E7F",
+    "status": "hashed"
+  },
+  {
+    "name": "simulator-tests-authorized.log",
+    "sha256": "C9DA1A784729141F38E73EFEAAD7C158990B063081E855E5E94E962B0D3FA347",
+    "status": "hashed"
+  },
+  {
+    "name": "simulator-tests.log",
+    "sha256": "738A5FD957C3D01DFD2669E41E2958ECB6C74823EE8C1AF6E48F046F5539C010",
+    "status": "hashed"
+  },
+  {
+    "name": "simulator.trx",
+    "sha256": "82BCF0205D4C966A898E293827444838E676283B93683B4AC18E06CE81388677",
+    "status": "hashed"
+  },
+  {
+    "name": "source-hashes.json",
+    "sha256": "045BD5A14CF9E1E8BCBCE99264ABF82EE2195E3AA5CBD83C9C44BA455B388537",
+    "status": "hashed"
+  },
+  {
+    "name": "tracked-changes.patch",
+    "sha256": "7B56062961440425C63B01B0F878890EBA0FDB9015A6514DEB299D6E4621EF37",
+    "status": "hashed"
+  }
+]

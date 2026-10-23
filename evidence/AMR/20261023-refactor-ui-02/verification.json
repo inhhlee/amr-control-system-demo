@@ -1,0 +1,91 @@
+{
+  "verifiedAt": "2026-10-23T10:49:43.1491957+09:00",
+  "result": "passed",
+  "scenario": "UI restart then block (2,2) after move 1",
+  "moves": 15,
+  "independentMinimumMoves": 15,
+  "visits": [
+    {
+      "index": 0,
+      "cell": {
+        "row": 2,
+        "col": 3
+      },
+      "moves": 11
+    },
+    {
+      "index": 1,
+      "cell": {
+        "row": 4,
+        "col": 3
+      },
+      "moves": 13
+    },
+    {
+      "index": 2,
+      "cell": {
+        "row": 4,
+        "col": 5
+      },
+      "moves": 15
+    }
+  ],
+  "telemetryReceived": 47,
+  "heartbeatReceived": 10,
+  "rejected": 0,
+  "apiSamples": 459,
+  "domFrames": 4,
+  "receivedDomFrames": 3,
+  "finalReceived": {
+    "id": "AMR_001",
+    "timestamp": 1792720177052,
+    "position": {
+      "x": 5,
+      "y": -4
+    },
+    "speed": 0,
+    "state": "IDLE",
+    "receivedAtUtc": "2026-10-23T10:49:37.0534406+09:00"
+  },
+  "finalMapCell": {
+    "row": 4,
+    "col": 5
+  },
+  "checks": [
+    "15 moves equal the independent BFS minimum with ordered waypoints.",
+    "47 Telemetry and 10 Heartbeat messages were actually received.",
+    "Actual MQTT receiver source and same AMR ID.",
+    "API position is projected from received MQTT coordinates.",
+    "Completed only after final receipt and connection cleanup.",
+    "Displayed Telemetry exists in the actual receiver log.",
+    "DOM AMR marker and displayed coordinates match received Telemetry.",
+    "DOM trail equals positions received by that timestamp.",
+    "Final sent/received timestamp and goal match; IDLE, speed 0, no rejection.",
+    "Final visible UI confirms all waypoints and received completion.",
+    "Movement uses one orthogonal grid step.",
+    "No API marker before first Telemetry.",
+    "No DOM AMR marker before first Telemetry.",
+    "Obstacle (2,2) added during movement after the first step.",
+    "Ordered visits W1/W2/G at moves 11/13/15.",
+    "Passing W2 at move 9 does not skip W1.",
+    "Received Heartbeat status matches the sent payload.",
+    "Received Telemetry coordinates, speed and state match the sent payload.",
+    "Received timestamp and ID match a published message.",
+    "Sampled API Telemetry exists in the actual receiver log.",
+    "Trace cell 0,0 is open.",
+    "Trace cell 0,1 is open.",
+    "Trace cell 1,1 is open.",
+    "Trace cell 2,0 is open.",
+    "Trace cell 2,1 is open.",
+    "Trace cell 2,3 is open.",
+    "Trace cell 3,0 is open.",
+    "Trace cell 3,3 is open.",
+    "Trace cell 4,0 is open.",
+    "Trace cell 4,1 is open.",
+    "Trace cell 4,2 is open.",
+    "Trace cell 4,3 is open.",
+    "Trace cell 4,4 is open.",
+    "Trace cell 4,5 is open."
+  ],
+  "automationNote": "A transient UI locator wait timed out before completion. The same run completed; the subsequent DOM snapshot and receiver logs confirmed it. No scenario rerun or product change."
+}

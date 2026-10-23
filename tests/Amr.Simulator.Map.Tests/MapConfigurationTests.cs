@@ -1,7 +1,8 @@
+using Amr.Simulator.Navigation;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using Amr.Communication.Models;
-using Amr.Simulator.Map.Navigation;
+using Amr.Simulator.Map.Control;
 using Xunit;
 
 namespace Amr.Simulator.Map.Tests;
@@ -81,7 +82,7 @@ public sealed class MapConfigurationTests
             var settings = await GridMissionSettings.LoadAsync(path);
             Assert.Null(settings.Mqtt);
             await File.WriteAllTextAsync(path, "{}");
-            await using var session = await GridNavigationSession.CreateAsync(path, directory, null, settings);
+            await using var session = await GridMapSession.CreateAsync(path, directory, null, settings);
             Assert.Equal(original, await File.ReadAllTextAsync(Path.Combine(session.EvidenceDirectory, "config.json")));
             var state = JsonSerializer.SerializeToElement(session.Read(), new JsonSerializerOptions(JsonSerializerDefaults.Web));
             Assert.Equal(250, state.GetProperty("stepIntervalMs").GetInt32());
@@ -96,8 +97,8 @@ public sealed class MapConfigurationTests
     public void ReceivedCoordinatesUseConfiguredMapDimensionsAndSpeedUsesConfiguredInterval()
     {
         var telemetry = new TelemetryMessage("CUSTOM_AMR", 1, new(7, -2), 0, "IDLE", DateTimeOffset.UtcNow);
-        Assert.Equal(new GridCell(2, 7), GridTelemetry.ReceivedCell(telemetry, 3, 8));
-        Assert.Null(GridTelemetry.ReceivedCell(telemetry, 3, 7));
+        Assert.Equal(new GridCell(2, 7), GridMapCoordinates.ReceivedCell(telemetry, 3, 8));
+        Assert.Null(GridMapCoordinates.ReceivedCell(telemetry, 3, 7));
         var navigator = new GridNavigator(new(0, 0), [new(0, 7)], new int[3, 8]);
         navigator.Start();
         Assert.Equal(4, GridTelemetry.Capture("CUSTOM_AMR", navigator.Read(), stepIntervalMs: 250).Speed);
