@@ -1,6 +1,10 @@
 # amr-control-system-demo
 가상 AMR 기반 관제시스템 구현 및 Issue·PR 개발 절차 실습
 
+**지도 시연 설정 편집**: [config/map-demo/settings.json](config/map-demo/settings.json)에서 지도·AMR ID·출발점·경유점·이동 간격·지도 포트·MQTT 접속과 송신 주기를 함께 바꾼다. 저장 후 서버를 다시 시작하면 적용된다. [항목별 수정·실행 안내](config/map-demo/README.md).
+
+**한 AMR의 경유점 이동 + 장애물 우회 + MQTT 수신 지도(2026-10-22 로컬 통합)**: `AMR_001`이 W1 (2,3) → W2 (4,3) → G (4,5)를 순서대로 방문하며 현재 목표까지 최단 경로로 우회한다. 우회 중 후순위 경유점을 먼저 지나도 방문 순서를 바꾸지 않는다. 위치는 MQTT로 보내고 관제가 수신·검사한 좌표로 지도에 표시한다. [실행·경유점 설정 안내](tools/Amr.Simulator.Map/README.md#grid-navigation) · [통합 검증 근거](evidence/AMR/20261022-waypoint-unified-01/README.md). 아래 과거 본문과 [두 모드 당시 MQTT 결과](evidence/AMR/20261022-grid-mqtt-01/README.md)는 당시 이력이다.
+
 책임님께 보여드릴 때는 [보고 화면](evidence/DEMO/20261021-report-demo-03/report.html)을 열어 **과제1 통신 → 과제2 이동 시연 → 남은 일** 순서로 설명한다. 과제1은 저장된 통신 시험, 과제2는 사용자가 직접 실행해 전달한 로그로 구분했다. [보고 순서와 새 시험 실행 안내](tests/manual/DEMO/README.md), [상세 결과 문서](evidence/DEMO/20261021-report-demo-03/README.md)도 확인할 수 있다. 아래 단계별 본문은 각 작업 당시 기록이다.
 
 ## 현재 과제2 시연: 출발 → 경유점 → 도착·정지 (#34 로컬 구현)

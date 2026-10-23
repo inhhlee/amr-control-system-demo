@@ -1,0 +1,48 @@
+## feature/33-simulator-movement...origin/feature/33-simulator-movement [behind 1]
+ M AmrControlSystem.slnx
+ M README.md
+ M tests/manual/AMR01/Start-MqttMap.ps1
+ M tools/Amr.Simulator.Map/Program.cs
+ M tools/Amr.Simulator.Map/README.md
+ M tools/Amr.Simulator.Map/wwwroot/app.js
+ M tools/Amr.Simulator.Map/wwwroot/index.html
+ M tools/Amr.Simulator.Map/wwwroot/style.css
+?? config/map-demo/
+?? config/simulator.grid.json
+?? evidence/AMR/20261022-editable-settings-01/
+?? evidence/AMR/20261022-grid-01/
+?? evidence/AMR/20261022-grid-live-01/
+?? evidence/AMR/20261022-grid-local-regression-01/
+?? evidence/AMR/20261022-grid-mqtt-01/
+?? evidence/AMR/20261022-grid-mqtt-host-01/
+?? evidence/AMR/20261022-grid-mqtt-live-01/
+?? evidence/AMR/20261022-mission-mqtt-host-01/
+?? evidence/AMR/20261022-mission-mqtt-live-01/
+?? evidence/AMR/20261022-waypoint-unified-01/
+?? evidence/AMR/map-live-20261022-090335-45d93e5c60fa4593b92164d2086f672e/
+?? evidence/AMR/map-live-20261022-090536-464cc32b91a142c58cb614a07ad08336/
+?? evidence/AMR/map-live-20261022-092018-36d2475e0b604426be985307cea1a6d8/
+?? evidence/AMR/map-live-20261022-092151-0ef0e4bfdbe94d709c5ab0c5540bc40b/
+?? evidence/AMR/map-live-20261022-092333-3592bf59c90a4c67b52ea14b7393c91c/
+?? evidence/AMR/mission-live-20261022-093606-4bdd54e278c44c27b4f213145e450bf5/
+?? evidence/AMR/mission-live-20261022-093706-c6aadc9b44da4ca2aac887947b74a006/
+?? evidence/AMR/mission-live-20261022-110928-c56e5d0fc7fa4fea96e35f6887f106c0/
+?? evidence/AMR/mission-live-20261022-111025-ce3e9013813643b1b5c1e5c7feb5916e/
+?? evidence/AMR/mission-live-20261022-111339-78511def6ae9441ba375b7794797832f/
+?? evidence/AMR/mission-live-20261022-111352-2a4443c436d34589b79752231666d17a/
+?? evidence/AMR/mission-live-20261022-111424-27a5f22ea16c498eacc07fa4a385dbef/
+?? evidence/AMR/mission-live-20261022-111426-1f29074facc749009b9434d48b9c28ce/
+?? evidence/AMR/settings-file-live-20261022-01/
+?? evidence/AMR/settings-mqtt-host-20261022-01/
+?? evidence/AMR/settings-mqtt-host-20261022-02/
+?? evidence/AMR/settings-mqtt-live-20261022-01/
+?? evidence/AMR/settings-mqtt-live-20261022-02/
+?? tests/Amr.Simulator.Map.Tests/GridMqttTests.cs
+?? tests/Amr.Simulator.Map.Tests/GridNavigationTests.cs
+?? tests/Amr.Simulator.Map.Tests/MapConfigurationTests.cs
+?? tests/Amr.Simulator.Map.Tests/WaypointMissionTests.cs
+?? tests/manual/AMR01/Verify-GridMqttMap.ps1
+?? tests/manual/AMR01/Verify-GridNavigation.ps1
+?? tests/manual/AMR01/Verify-MapConfiguration.ps1
+?? tools/Amr.Simulator.Map/Navigation/
+?? tools/Amr.Simulator.Map/wwwroot/grid.js

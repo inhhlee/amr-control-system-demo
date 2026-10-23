@@ -1,0 +1,234 @@
+{
+  "navigation": {
+    "phase": "Waiting",
+    "start": {
+      "row": 0,
+      "col": 0
+    },
+    "goal": {
+      "row": 4,
+      "col": 5
+    },
+    "current": {
+      "row": 0,
+      "col": 0
+    },
+    "map": [
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "fixedObstacles": [
+      [
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        true,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        true,
+        true,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    ],
+    "path": [],
+    "traveled": [
+      {
+        "row": 0,
+        "col": 0
+      }
+    ],
+    "remainingDistance": null,
+    "moves": 0,
+    "replans": 3,
+    "mapVersion": 4
+  },
+  "stepIntervalMs": 600,
+  "source": "mqtt-grid-control-receiver",
+  "position": {
+    "row": 0,
+    "col": 0
+  },
+  "amrId": "AMR_GRID_28ab9ce45376471bb0536578b38afcee",
+  "cellSizeMeters": 1,
+  "receivedTelemetry": {
+    "id": "AMR_GRID_28ab9ce45376471bb0536578b38afcee",
+    "timestamp": 1792628537310,
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "speed": 0,
+    "state": "IDLE",
+    "receivedAtUtc": "2026-10-22T09:22:17.3112922+09:00"
+  },
+  "receivedHeartbeat": {
+    "id": "AMR_GRID_28ab9ce45376471bb0536578b38afcee",
+    "timestamp": 1792628536817,
+    "status": "OK",
+    "receivedAtUtc": "2026-10-22T09:22:16.8187166+09:00"
+  },
+  "receivedTrail": [
+    {
+      "row": 0,
+      "col": 0
+    }
+  ],
+  "telemetryCount": 9,
+  "heartbeatCount": 2,
+  "publishedCount": 11,
+  "rejectedCount": 2,
+  "lastPublishedTimestamp": 1792628537310,
+  "brokerState": "Subscribed",
+  "failure": null,
+  "mqttEndpoint": "127.0.0.1:49519",
+  "evidencePath": "C:\\amr-control-system-demo\\evidence\\AMR\\map-live-20261022-092151-0ef0e4bfdbe94d709c5ab0c5540bc40b\\grid-navigation.jsonl",
+  "logs": [
+    "GridMoved Phase=Completed Position=(4,5) Remaining=0 Moves=9 Replans=10 MapVersion=0",
+    "GridControlReceived Phase=WaitingForTelemetry Position=(4,5) Remaining=0 Moves=9 Replans=10 MapVersion=0",
+    "GridFinalReceived Phase=WaitingForTelemetry Position=(4,5) Remaining=0 Moves=9 Replans=10 MapVersion=0",
+    "GridMqttEnded Phase=Completed Position=(4,5) Remaining=0 Moves=9 Replans=10 MapVersion=0",
+    "GridReset Phase=Ready Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=1",
+    "GridStarted Phase=Connecting Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=1",
+    "GridMqttConnected Phase=Running Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=1",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=1",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=1",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=1",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=1",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=1",
+    "GridMoved Phase=Running Position=(0,1) Remaining=8 Moves=1 Replans=2 MapVersion=1",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=8 Moves=1 Replans=2 MapVersion=1",
+    "GridMapChanged Phase=Running Position=(0,1) Remaining=10 Moves=1 Replans=3 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=10 Moves=1 Replans=3 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=10 Moves=1 Replans=3 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=10 Moves=1 Replans=3 MapVersion=2",
+    "GridMoved Phase=Running Position=(1,1) Remaining=9 Moves=2 Replans=4 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(1,1) Remaining=9 Moves=2 Replans=4 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(1,1) Remaining=9 Moves=2 Replans=4 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(1,1) Remaining=9 Moves=2 Replans=4 MapVersion=2",
+    "GridMoved Phase=Running Position=(2,1) Remaining=8 Moves=3 Replans=5 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(2,1) Remaining=8 Moves=3 Replans=5 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(2,1) Remaining=8 Moves=3 Replans=5 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(2,1) Remaining=8 Moves=3 Replans=5 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(2,1) Remaining=8 Moves=3 Replans=5 MapVersion=2",
+    "GridMoved Phase=Running Position=(2,0) Remaining=7 Moves=4 Replans=6 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(2,0) Remaining=7 Moves=4 Replans=6 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(2,0) Remaining=7 Moves=4 Replans=6 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(2,0) Remaining=7 Moves=4 Replans=6 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(2,0) Remaining=7 Moves=4 Replans=6 MapVersion=2",
+    "GridMoved Phase=Running Position=(3,0) Remaining=6 Moves=5 Replans=7 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(3,0) Remaining=6 Moves=5 Replans=7 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(3,0) Remaining=6 Moves=5 Replans=7 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(3,0) Remaining=6 Moves=5 Replans=7 MapVersion=2",
+    "GridMoved Phase=Running Position=(4,0) Remaining=5 Moves=6 Replans=8 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(4,0) Remaining=5 Moves=6 Replans=8 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(4,0) Remaining=5 Moves=6 Replans=8 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(4,0) Remaining=5 Moves=6 Replans=8 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(4,0) Remaining=5 Moves=6 Replans=8 MapVersion=2",
+    "GridMoved Phase=Running Position=(4,1) Remaining=4 Moves=7 Replans=9 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(4,1) Remaining=4 Moves=7 Replans=9 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(4,1) Remaining=4 Moves=7 Replans=9 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(4,1) Remaining=4 Moves=7 Replans=9 MapVersion=2",
+    "GridMoved Phase=Running Position=(4,2) Remaining=3 Moves=8 Replans=10 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(4,2) Remaining=3 Moves=8 Replans=10 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(4,2) Remaining=3 Moves=8 Replans=10 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(4,2) Remaining=3 Moves=8 Replans=10 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(4,2) Remaining=3 Moves=8 Replans=10 MapVersion=2",
+    "GridMoved Phase=Running Position=(4,3) Remaining=2 Moves=9 Replans=11 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(4,3) Remaining=2 Moves=9 Replans=11 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(4,3) Remaining=2 Moves=9 Replans=11 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(4,3) Remaining=2 Moves=9 Replans=11 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(4,3) Remaining=2 Moves=9 Replans=11 MapVersion=2",
+    "GridMoved Phase=Running Position=(4,4) Remaining=1 Moves=10 Replans=12 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(4,4) Remaining=1 Moves=10 Replans=12 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(4,4) Remaining=1 Moves=10 Replans=12 MapVersion=2",
+    "GridControlReceived Phase=Running Position=(4,4) Remaining=1 Moves=10 Replans=12 MapVersion=2",
+    "GridMoved Phase=Completed Position=(4,5) Remaining=0 Moves=11 Replans=13 MapVersion=2",
+    "GridControlReceived Phase=WaitingForTelemetry Position=(4,5) Remaining=0 Moves=11 Replans=13 MapVersion=2",
+    "GridFinalReceived Phase=WaitingForTelemetry Position=(4,5) Remaining=0 Moves=11 Replans=13 MapVersion=2",
+    "GridMqttEnded Phase=Completed Position=(4,5) Remaining=0 Moves=11 Replans=13 MapVersion=2",
+    "GridReset Phase=Ready Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=3",
+    "GridMapChanged Phase=Ready Position=(0,0) Remaining=none Moves=0 Replans=2 MapVersion=4",
+    "GridStarted Phase=Connecting Position=(0,0) Remaining=none Moves=0 Replans=1 MapVersion=4",
+    "GridMqttConnected Phase=Waiting Position=(0,0) Remaining=none Moves=0 Replans=1 MapVersion=4",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 Replans=1 MapVersion=4",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 Replans=1 MapVersion=4",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 Replans=1 MapVersion=4",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 Replans=1 MapVersion=4",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 Replans=1 MapVersion=4",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 Replans=2 MapVersion=4",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 Replans=2 MapVersion=4",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 Replans=2 MapVersion=4",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 Replans=2 MapVersion=4",
+    "GridMessageRejected Phase=Waiting Position=(0,0) Remaining=none Moves=0 Replans=2 MapVersion=4",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 Replans=3 MapVersion=4",
+    "GridTelemetryRejected Phase=Waiting Position=(0,0) Remaining=none Moves=0 Replans=3 MapVersion=4",
+    "GridControlReceived Phase=Waiting Position=(0,0) Remaining=none Moves=0 Replans=3 MapVersion=4"
+  ]
+}

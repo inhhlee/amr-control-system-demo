@@ -1,16 +1,17 @@
 using System.Net;
 using Amr.Simulator.Map;
+using Amr.Simulator.Map.Navigation;
 using Amr.Simulator.Telemetry;
 using Amr.Communication.Mqtt;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Hosting.Server.Features;
 
-// 시연용 호스트. 실제 시뮬레이터와 같은 RunAsync를 호출하며 지도에서 이동을 계산하지 않는다.
+// 경유점 순서·장애물 우회를 한 AMR의 단일 이동·MQTT 세션에서 처리한다.
 string repository = AppContext.BaseDirectory;
 while (!File.Exists(Path.Combine(repository, "config", "simulator.single.json")))
     repository = Directory.GetParent(repository)?.FullName ?? throw new DirectoryNotFoundException("Repository not found.");
-string config = Path.Combine(repository, "config", "simulator.single.json");
-int port = 5088;
+string config = Path.Combine(repository, "config", "map-demo", "settings.json");
+int? port = null;
 string? mqttHost = null;
 int? mqttPort = null, telemetryMs = null, heartbeatMs = null;
 var seen = new HashSet<string>(StringComparer.Ordinal);
@@ -31,9 +32,18 @@ for (int i = 0; i < args.Length; i += 2)
 bool hasMqtt = mqttHost is not null || mqttPort is not null || telemetryMs is not null || heartbeatMs is not null;
 if (hasMqtt && (mqttHost is null || mqttPort is null || telemetryMs is null || heartbeatMs is null))
     throw new ArgumentException("Specify --mqtt-host, --mqtt-port, --telemetry-ms and --heartbeat-ms together.");
-SimulatorMqttOptions? mqtt = hasMqtt ? new(new MqttConnectionSettings(mqttHost!, mqttPort!.Value), telemetryMs!.Value, heartbeatMs!.Value) : null;
+GridMissionSettings settings;
+try { settings = await GridMissionSettings.LoadAsync(config); }
+catch (Exception exception) when (exception is IOException or UnauthorizedAccessException or ArgumentException or System.Text.Json.JsonException)
+{
+    Console.Error.WriteLine($"설정 파일을 확인해 주세요: {config}\n{exception.Message}");
+    Environment.ExitCode = 1;
+    return;
+}
+port ??= settings.WebPort;
+SimulatorMqttOptions? mqtt = hasMqtt ? new(new MqttConnectionSettings(mqttHost!, mqttPort!.Value), telemetryMs!.Value, heartbeatMs!.Value) : settings.Mqtt;
 
-await using var session = await MapSession.CreateAsync(config, Path.Combine(repository, "evidence", "AMR"), mqtt);
+await using var gridSession = await GridNavigationSession.CreateAsync(config, Path.Combine(repository, "evidence", "AMR"), mqtt, settings);
 var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 {
     Args = [],
@@ -41,7 +51,7 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions
     WebRootPath = Path.Combine(AppContext.BaseDirectory, "wwwroot")
 });
 builder.Logging.SetMinimumLevel(LogLevel.Warning);
-builder.WebHost.ConfigureKestrel(options => options.Listen(IPAddress.Loopback, port));
+builder.WebHost.ConfigureKestrel(options => options.Listen(IPAddress.Loopback, port.Value));
 var app = builder.Build();
 app.Use(async (context, next) =>
 {
@@ -63,12 +73,29 @@ app.Use(async (context, next) =>
 });
 app.UseDefaultFiles();
 app.UseStaticFiles();
-app.MapGet("/api/state", () => Results.Json(session.Read()));
-app.MapPost("/api/start", () => session.Start() ? Results.Accepted() : Results.Conflict(new { message = "이미 실행 중입니다." }));
-app.MapPost("/api/cancel", () => { session.Cancel(); return Results.Accepted(); });
-app.Lifetime.ApplicationStopping.Register(session.Cancel);
+app.MapGet("/api/state", () => Results.Json(gridSession.Read()));
+app.MapPost("/api/start", () => gridSession.Start() ? Results.Accepted() : Results.Conflict(new { message = "이미 실행 중입니다." }));
+app.MapPost("/api/cancel", () => { gridSession.Cancel(); return Results.Accepted(); });
+app.MapGet("/api/grid/state", () => Results.Json(gridSession.Read()));
+app.MapPost("/api/grid/start", () => gridSession.Start() ? Results.Accepted() : Results.Conflict(new { message = "이미 이동 중입니다." }));
+app.MapPost("/api/grid/cancel", () => { gridSession.Cancel(); return Results.Accepted(); });
+app.MapPost("/api/grid/reset", () => { gridSession.Reset(); return Results.Accepted(); });
+app.MapPost("/api/grid/obstacle", (GridObstacleRequest request) =>
+{
+    if (request.Row is null || request.Col is null || request.Blocked is null)
+        return Results.BadRequest(new { message = "row·col·blocked는 필수입니다." });
+    try
+    {
+        gridSession.SetObstacle(new(request.Row.Value, request.Col.Value), request.Blocked.Value);
+        return Results.Ok(gridSession.Read());
+    }
+    catch (ArgumentException exception) { return Results.BadRequest(new { message = exception.Message }); }
+});
+app.Lifetime.ApplicationStopping.Register(gridSession.Cancel);
 await app.StartAsync();
 var server = app.Services.GetRequiredService<IServer>();
 string url = server.Features.Get<IServerAddressesFeature>()!.Addresses.Single();
-Console.WriteLine($"MapReady Url={url} Evidence={session.EvidenceDirectory}");
+Console.WriteLine($"MapReady Url={url} Evidence={gridSession.EvidenceDirectory}");
 await app.WaitForShutdownAsync();
+
+internal sealed record GridObstacleRequest(int? Row, int? Col, bool? Blocked);

@@ -1,0 +1,82 @@
+{
+  "recordedAtUtc": "2026-10-22T00:25:36.4137920+00:00",
+  "userTimezone": "Asia/Seoul",
+  "os": "Microsoft Windows 10.0.26200",
+  "sdk": "10.0.401",
+  "baseCommit": "a8934f0bfed803cee47d7c2e13775ba648e0862a",
+  "branch": "feature/33-simulator-movement",
+  "uncommitted": true,
+  "tests": [],
+  "realMqttScenarios": 11,
+  "localRegressionScenarios": 10,
+  "sourceFiles": [
+    {
+      "path": "tools/Amr.Simulator.Map/Program.cs",
+      "sha256": "57AC60DA1A5AFFA62817C366B86E34165E93A371219C6AA25E229BDE3115BEB3"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/Navigation/GridNavigationSession.cs",
+      "sha256": "9CDC2929A7A5F23CB5D8F782A7CAA2F3B1951413CC5C3C877E7067EAE5271A2E"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/Navigation/GridMqttConnection.cs",
+      "sha256": "3658B885DFFAB17EE21865E09F020F6987C5069F8450DDCB6D20F2968DB0D00A"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/Navigation/GridTelemetry.cs",
+      "sha256": "6BBADAE80BBD4A001599DD015503B9A67EA10295875A42ECF99B08022676F89E"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/Navigation/GridNavigator.cs",
+      "sha256": "4FFAA5FAC279C8FB7C8951EAF5672D8B405F9A48AC50B0A291A50DA01E266CD9"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/Navigation/GridPathfinder.cs",
+      "sha256": "4EFE356CD99640A21A98B4576E9B131B25B16256A2CD5D7B5630EEE08C2E973F"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/MqttMapReceiver.cs",
+      "sha256": "B8C5E5AAFFC70C04EC189FF642EF20F301744D8B46FFEF441D63744BE8F5EE65"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/MqttMapProjection.cs",
+      "sha256": "8C2837AD3A3974D3E4675C8292BF9F8D818FBB310D2310F1C917F5B5A237512D"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/wwwroot/index.html",
+      "sha256": "964414FD77E37F822B4D75F2519089C87C12E1A01F8FA65F132316A396E9A405"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/wwwroot/grid.js",
+      "sha256": "808743486EDA3B0911DB7F93937E947942466BC1E78CF352D60F85B94174502B"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/wwwroot/app.js",
+      "sha256": "344EF9B0A47D3EBCAC992FB8C649631436CA637507210AAC681FBCD475014F3B"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/wwwroot/style.css",
+      "sha256": "6FF7C08EA3BF5790FBE1D076E3C44B72DF1DA59B5E58758514CA5A87060B7426"
+    },
+    {
+      "path": "tests/Amr.Simulator.Map.Tests/GridMqttTests.cs",
+      "sha256": "35A961BF8E313208C93532A105C499F85A0E015409EFE1386FB4BCAA261ABFB1"
+    },
+    {
+      "path": "tests/Amr.Simulator.Map.Tests/GridNavigationTests.cs",
+      "sha256": "A69FC05622454529AC1677EEC2784163B9726278257425A23294FA84EC448553"
+    },
+    {
+      "path": "tests/manual/AMR01/Verify-GridMqttMap.ps1",
+      "sha256": "B44720E7CB7D8C83832B07354E8AE925C40913DF03A049FF0139A360B4659681"
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/SimulationMessages.cs",
+      "sha256": "41A55BA28103DB5BDB64DF0FC24AD7BCE957B79322B13977A0302F2B40A1A05D"
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/MqttSimulationTransport.cs",
+      "sha256": "4F6C9F98A040D3F0DFF2918D1AF5EC209FAE6EFC99B487A47C11DA380E0FC6CB"
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "navigation": {
+    "phase": "Ready",
+    "start": {
+      "row": 0,
+      "col": 0
+    },
+    "goal": {
+      "row": 2,
+      "col": 7
+    },
+    "current": {
+      "row": 0,
+      "col": 0
+    },
+    "map": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "fixedObstacles": [
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    ],
+    "path": [
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 3
+      },
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 0,
+        "col": 5
+      },
+      {
+        "row": 0,
+        "col": 6
+      },
+      {
+        "row": 0,
+        "col": 7
+      }
+    ],
+    "traveled": [
+      {
+        "row": 0,
+        "col": 0
+      }
+    ],
+    "remainingDistance": 7,
+    "moves": 0,
+    "replans": 1,
+    "mapVersion": 0,
+    "waypoints": [
+      {
+        "row": 0,
+        "col": 7
+      },
+      {
+        "row": 2,
+        "col": 7
+      }
+    ],
+    "nextWaypointIndex": 0,
+    "currentTarget": {
+      "row": 0,
+      "col": 7
+    },
+    "reachedWaypoints": []
+  },
+  "stepIntervalMs": 100,
+  "source": "mqtt-grid-control-receiver",
+  "position": null,
+  "configurationPath": "C:\\amr-control-system-demo\\evidence\\AMR\\settings-file-live-20261022-01\\settings.json",
+  "amrId": "CONFIG_AMR_A",
+  "cellSizeMeters": 1,
+  "receivedTelemetry": null,
+  "receivedHeartbeat": null,
+  "receivedTrail": [],
+  "telemetryCount": 0,
+  "heartbeatCount": 0,
+  "publishedCount": 0,
+  "rejectedCount": 0,
+  "lastPublishedTimestamp": null,
+  "brokerState": "NotStarted",
+  "failure": null,
+  "mqttEndpoint": "127.0.0.1:52850",
+  "evidencePath": "C:\\amr-control-system-demo\\evidence\\AMR\\mission-live-20261022-111424-27a5f22ea16c498eacc07fa4a385dbef\\grid-navigation.jsonl",
+  "evidenceDirectory": "C:\\amr-control-system-demo\\evidence\\AMR\\mission-live-20261022-111424-27a5f22ea16c498eacc07fa4a385dbef",
+  "logs": [
+    "GridReady Phase=Ready Position=(0,0) Remaining=7 Moves=0 WaypointsPassed=0/2 Replans=1 MapVersion=0"
+  ]
+}

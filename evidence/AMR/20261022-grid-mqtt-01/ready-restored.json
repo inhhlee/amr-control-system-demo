@@ -1,0 +1,136 @@
+{
+  "navigation": {
+    "phase": "Ready",
+    "start": {
+      "row": 0,
+      "col": 0
+    },
+    "goal": {
+      "row": 4,
+      "col": 5
+    },
+    "current": {
+      "row": 0,
+      "col": 0
+    },
+    "map": [
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "fixedObstacles": [
+      [
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        true,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        true,
+        true,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    ],
+    "path": [],
+    "traveled": [
+      {
+        "row": 0,
+        "col": 0
+      }
+    ],
+    "remainingDistance": null,
+    "moves": 0,
+    "replans": 5,
+    "mapVersion": 4
+  },
+  "stepIntervalMs": 600,
+  "source": "mqtt-grid-control-receiver",
+  "position": null,
+  "amrId": "AMR_GRID_c42402873fdd4326b9c9abb9ddad2eaf",
+  "cellSizeMeters": 1,
+  "receivedTelemetry": null,
+  "receivedHeartbeat": null,
+  "receivedTrail": [],
+  "telemetryCount": 0,
+  "heartbeatCount": 0,
+  "publishedCount": 0,
+  "rejectedCount": 0,
+  "lastPublishedTimestamp": null,
+  "brokerState": "NotStarted",
+  "failure": null,
+  "mqttEndpoint": "127.0.0.1:1884",
+  "evidencePath": "C:\\amr-control-system-demo\\evidence\\AMR\\map-live-20261022-092018-36d2475e0b604426be985307cea1a6d8\\grid-navigation.jsonl",
+  "logs": [
+    "GridReady Phase=Ready Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=0",
+    "GridMapChanged Phase=Ready Position=(0,0) Remaining=9 Moves=0 Replans=2 MapVersion=1",
+    "GridMapChanged Phase=Ready Position=(0,0) Remaining=11 Moves=0 Replans=3 MapVersion=2",
+    "GridMapChanged Phase=Ready Position=(0,0) Remaining=11 Moves=0 Replans=4 MapVersion=3",
+    "GridMapChanged Phase=Ready Position=(0,0) Remaining=none Moves=0 Replans=5 MapVersion=4"
+  ]
+}

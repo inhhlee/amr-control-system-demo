@@ -1,0 +1,173 @@
+{
+  "navigation": {
+    "phase": "Ready",
+    "start": {
+      "row": 0,
+      "col": 0
+    },
+    "goal": {
+      "row": 4,
+      "col": 5
+    },
+    "current": {
+      "row": 0,
+      "col": 0
+    },
+    "map": [
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "fixedObstacles": [
+      [
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        true,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        true,
+        true,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    ],
+    "path": [
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 4
+      },
+      {
+        "row": 4,
+        "col": 5
+      }
+    ],
+    "traveled": [
+      {
+        "row": 0,
+        "col": 0
+      }
+    ],
+    "remainingDistance": 9,
+    "moves": 0,
+    "replans": 1,
+    "mapVersion": 0
+  },
+  "stepIntervalMs": 600,
+  "source": "mqtt-grid-control-receiver",
+  "position": null,
+  "amrId": "AMR_GRID_28ab9ce45376471bb0536578b38afcee",
+  "cellSizeMeters": 1,
+  "receivedTelemetry": null,
+  "receivedHeartbeat": null,
+  "receivedTrail": [],
+  "telemetryCount": 0,
+  "heartbeatCount": 0,
+  "publishedCount": 0,
+  "rejectedCount": 0,
+  "lastPublishedTimestamp": null,
+  "brokerState": "NotStarted",
+  "failure": null,
+  "mqttEndpoint": "127.0.0.1:49519",
+  "evidencePath": "C:\\amr-control-system-demo\\evidence\\AMR\\map-live-20261022-092151-0ef0e4bfdbe94d709c5ab0c5540bc40b\\grid-navigation.jsonl",
+  "logs": [
+    "GridReady Phase=Ready Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=0"
+  ]
+}

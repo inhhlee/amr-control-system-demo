@@ -1,0 +1,12 @@
+{
+  "BrokerPort": 49519,
+  "RunId": "20261022-grid-mqtt-host-01",
+  "ProductEvidence": "C:\\amr-control-system-demo\\evidence\\AMR\\map-live-20261022-092151-0ef0e4bfdbe94d709c5ab0c5540bc40b",
+  "Exe": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\Debug\\net10.0\\Amr.Simulator.Map.exe",
+  "ImageId": "sha256:38c0da4f2ef84284d47b3b3eeea1cb3bdeabe81ee10caf0cd5c5ff61ee3ea408",
+  "ServerPid": 23264,
+  "Started": "2026-10-22T09:21:51.9857676+09:00",
+  "ContainerId": "5fea1b9392fea66eab7103aac2aee1d89441c418fd667d5dfd1d918d5e893a2e",
+  "Url": "http://127.0.0.1:49521",
+  "ServerStartTicks": 639282253116684161
+}

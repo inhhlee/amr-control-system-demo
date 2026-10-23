@@ -112,4 +112,4 @@ async function action(name) {
 }
 byId('start').addEventListener('click', () => action('start'));
 byId('cancel').addEventListener('click', () => action('cancel'));
-poll();
+if (new URLSearchParams(location.search).get('mode') !== 'grid') poll();

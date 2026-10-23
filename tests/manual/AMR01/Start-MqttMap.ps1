@@ -1,7 +1,7 @@
 param(
  [Parameter(Mandatory)][ValidatePattern('^[a-zA-Z0-9_-]{1,48}$')][string]$RunId,
  [string]$MapExe,
- [string]$Config='config/simulator.single.json'
+ [string]$Config='config/map-demo/settings.json'
 )
 $ErrorActionPreference='Stop'
 $repo=(Resolve-Path (Join-Path $PSScriptRoot '../../..')).Path
@@ -43,7 +43,7 @@ try {
  }while([DateTimeOffset]::UtcNow -lt $deadline)
  if(!$url){throw 'Map startup timeout'}
  $state=Invoke-RestMethod "$url/api/state"
- if($state.source -ne 'mqtt-control-receiver' -or $state.position){throw 'Unexpected initial MQTT map state'}
+ if($state.source -ne 'mqtt-grid-control-receiver' -or $state.position){throw 'Unexpected initial MQTT map state'}
  @{RunId=$RunId;ContainerId=$container;BrokerPort=$port;ImageId=$image;ServerPid=$server.Id;ServerStartTicks=$server.StartTime.ToUniversalTime().Ticks;Exe=$MapExe;Url=$url;ProductEvidence=$state.evidenceDirectory;Started=[DateTimeOffset]::Now.ToString('o')}|ConvertTo-Json|Set-Content "$root/session.json"
  $ready=$true
  Write-Output "Map ready: $url"

@@ -1,0 +1,588 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="d4b0ffd7-caa1-4923-bafc-80b7a9ba776b" name="Admin@DESKTOP-N1BSNS3 2026-10-22 09:19:41" runUser="DESKTOP-N1BSNS3\Admin" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-22T09:19:41.8647348+09:00" queuing="2026-10-22T09:19:41.8647352+09:00" start="2026-10-22T09:19:41.3386272+09:00" finish="2026-10-22T09:19:42.1863431+09:00" />
+  <TestSettings name="default" id="4c214e12-cf89-472e-98a2-65e2bce44f06">
+    <Deployment runDeploymentRoot="Admin_DESKTOP-N1BSNS3_2026-10-22_09_19_41" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="4b61eaaa-f785-4285-9000-0118bdaa11be" testId="bb820d3c-56b0-fe8d-3238-2c2beee95d20" testName="Amr.Simulator.Map.Tests.GridNavigationTests.ProtectedOrInvalidCellEditRejected(row: 4, col: 5)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0000173" startTime="2026-10-22T09:19:41.8480373+09:00" endTime="2026-10-22T09:19:41.8480634+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4b61eaaa-f785-4285-9000-0118bdaa11be" />
+    <UnitTestResult executionId="f805c37b-21a7-4539-a28e-21325d9e84c1" testId="762cc458-c311-addc-093b-1b682027e6ea" testName="Amr.Simulator.Map.Tests.ProjectionTests.Completion_RequiresMatchingPublicationTimestampPositionAndStop(ts: 99, x: 1, y: 2, speed: 0, state: &quot;IDLE&quot;)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0000030" startTime="2026-10-22T09:19:41.8465302+09:00" endTime="2026-10-22T09:19:41.8465523+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f805c37b-21a7-4539-a28e-21325d9e84c1" />
+    <UnitTestResult executionId="67a3ca56-b6b6-40e2-bd98-ca24139950d8" testId="ce742fc0-c9ee-bd5c-c3de-e92074bee7c0" testName="Amr.Simulator.Map.Tests.GridNavigationTests.StartEqualsGoalReturnsOneCell" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0039017" startTime="2026-10-22T09:19:41.8547740+09:00" endTime="2026-10-22T09:19:41.8547927+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="67a3ca56-b6b6-40e2-bd98-ca24139950d8" />
+    <UnitTestResult executionId="2ade580c-47bf-4edb-9bc2-927334a7245b" testId="aaee78a2-b25c-1704-5aba-ecf3e9703ac3" testName="Amr.Simulator.Map.Tests.GridNavigationTests.EmptyMapRejected(rows: 2, cols: 0)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0001754" startTime="2026-10-22T09:19:41.8543001+09:00" endTime="2026-10-22T09:19:41.8543164+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2ade580c-47bf-4edb-9bc2-927334a7245b" />
+    <UnitTestResult executionId="c004f0b2-63c2-4ee3-b742-39c1db768673" testId="78c36175-d00d-bea7-6d43-f26262757be2" testName="Amr.Simulator.Map.Tests.GridMqttTests.InvalidGridCoordinateIsNotDisplayed(x: 6, y: 0)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0000006" startTime="2026-10-22T09:19:41.8258303+09:00" endTime="2026-10-22T09:19:41.8258798+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c004f0b2-63c2-4ee3-b742-39c1db768673" />
+    <UnitTestResult executionId="066b1c2e-6c51-40af-a9f6-c1f4bb0105d6" testId="b148237e-bb3b-e0b7-1258-299c03a83516" testName="Amr.Simulator.Map.Tests.GridNavigationTests.InvalidCoordinateRejected(row: 0, col: 2)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0001814" startTime="2026-10-22T09:19:41.8550822+09:00" endTime="2026-10-22T09:19:41.8550963+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="066b1c2e-6c51-40af-a9f6-c1f4bb0105d6" />
+    <UnitTestResult executionId="b3a786d7-bbc6-4e50-a082-d62104d8b22e" testId="596e8270-3a17-2061-fcf5-a93ce1bcaf49" testName="Amr.Simulator.Map.Tests.GridNavigationTests.BlockedEndpointsRejected(start: 0, goal: 1)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0001576" startTime="2026-10-22T09:19:41.8548872+09:00" endTime="2026-10-22T09:19:41.8549039+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b3a786d7-bbc6-4e50-a082-d62104d8b22e" />
+    <UnitTestResult executionId="f8c2709f-e3d6-4a26-8777-b3f193bf98ed" testId="08c01044-fdfd-8225-8505-2a345c1ba975" testName="Amr.Simulator.Map.Tests.GridNavigationTests.InvalidCoordinateRejected(row: -1, col: 0)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0000045" startTime="2026-10-22T09:19:41.8554470+09:00" endTime="2026-10-22T09:19:41.8554648+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f8c2709f-e3d6-4a26-8777-b3f193bf98ed" />
+    <UnitTestResult executionId="ba227276-dd17-4c4c-af97-a2f7c02c1576" testId="a01b01e6-02db-4a89-e253-6c01b60c76f5" testName="Amr.Simulator.Map.Tests.GridNavigationTests.InvalidCoordinateRejected(row: 2, col: 0)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0000067" startTime="2026-10-22T09:19:41.8551585+09:00" endTime="2026-10-22T09:19:41.8551716+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ba227276-dd17-4c4c-af97-a2f7c02c1576" />
+    <UnitTestResult executionId="a6b2dd71-10e3-4b18-9f10-1e455c2770d4" testId="91dd3ec3-bc64-5fbf-9ada-4d0bf9921c82" testName="Amr.Simulator.Map.Tests.ProjectionTests.OtherAmr_CannotOverwriteCurrentPosition" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0016970" startTime="2026-10-22T09:19:41.8461508+09:00" endTime="2026-10-22T09:19:41.8461808+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a6b2dd71-10e3-4b18-9f10-1e455c2770d4" />
+    <UnitTestResult executionId="025ec159-2c72-4a47-95fe-a5f773a3cb29" testId="5f7d1b3f-2dd4-d1d9-1b1f-11dd66dcb2a1" testName="Amr.Simulator.Map.Tests.GridMqttTests.PublicationWithoutFinalReceptionCannotCompleteOrMoveMarkerToGoal" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0027185" startTime="2026-10-22T09:19:41.9138525+09:00" endTime="2026-10-22T09:19:41.9166715+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="025ec159-2c72-4a47-95fe-a5f773a3cb29">
+      <Output>
+        <ErrorInfo>
+          <Message>System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.</Message>
+          <StackTrace>   at System.Text.Json.JsonElement.GetProperty(String propertyName)&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 14&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.&lt;&gt;c__DisplayClass16_0.&lt;PublicationWithoutFinalReceptionCannotCompleteOrMoveMarkerToGoal&gt;b__0() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 184&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.Wait(Func`1 condition, Int32 timeoutMs) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 202&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.PublicationWithoutFinalReceptionCannotCompleteOrMoveMarkerToGoal() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 184&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.PublicationWithoutFinalReceptionCannotCompleteOrMoveMarkerToGoal() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 188&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="84ae2db1-38d0-4816-a27b-784af8675f7b" testId="a832fc88-4f71-fed7-4685-556fdc7a1ef4" testName="Amr.Simulator.Map.Tests.GridMqttTests.InvalidGridCoordinateIsNotDisplayed(x: 0, y: -0.5)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0029635" startTime="2026-10-22T09:19:41.8119282+09:00" endTime="2026-10-22T09:19:41.8183463+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="84ae2db1-38d0-4816-a27b-784af8675f7b" />
+    <UnitTestResult executionId="3ed14693-103d-4440-bc88-69469129b72d" testId="5763da1e-5b6a-92a4-3c21-f72f169a5fc9" testName="Amr.Simulator.Map.Tests.GridMqttTests.CancellationWaitsForConnectionCleanup" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0172564" startTime="2026-10-22T09:19:41.9201787+09:00" endTime="2026-10-22T09:19:41.9375530+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3ed14693-103d-4440-bc88-69469129b72d">
+      <Output>
+        <ErrorInfo>
+          <Message>System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.</Message>
+          <StackTrace>   at System.Text.Json.JsonElement.GetProperty(String propertyName)&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 14&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.CancellationWaitsForConnectionCleanup() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 139&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.CancellationWaitsForConnectionCleanup() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 143&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="132bdd60-735e-481f-a298-6f978675953a" testId="b842ef66-3a63-5711-5b30-5aa1d4b9dc94" testName="Amr.Simulator.Map.Tests.GridNavigationTests.OccupiedCellEditRejectedAndSnapshotIsIndependent" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0003065" startTime="2026-10-22T09:19:41.8550310+09:00" endTime="2026-10-22T09:19:41.8550470+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="132bdd60-735e-481f-a298-6f978675953a" />
+    <UnitTestResult executionId="20341c9a-ec7c-44c1-9b97-0b82f62cd537" testId="baf02b84-71b0-3278-df50-1fc5c400a5e2" testName="Amr.Simulator.Map.Tests.GridNavigationTests.CompletesInNineStepsAndThenStaysStopped" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0026109" startTime="2026-10-22T09:19:41.8481172+09:00" endTime="2026-10-22T09:19:41.8541027+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="20341c9a-ec7c-44c1-9b97-0b82f62cd537" />
+    <UnitTestResult executionId="23d160be-11d1-4e78-8f4e-4f93d35e7669" testId="fb38429d-ff58-9a0f-c212-5c2ba95d33dd" testName="Amr.Simulator.Map.Tests.GridNavigationTests.DijkstraMatchesBfsOnThreeHundredSeededMaps" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0121639" startTime="2026-10-22T09:19:41.8110213+09:00" endTime="2026-10-22T09:19:41.8466293+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="23d160be-11d1-4e78-8f4e-4f93d35e7669" />
+    <UnitTestResult executionId="b215ec51-afc0-446f-a627-8346e567f5f0" testId="5f07e57f-5e09-d6ac-b40e-479f180b6430" testName="Amr.Simulator.Map.Tests.ProjectionTests.NoPositionUntilTelemetry_HeartbeatDoesNotMoveRobot" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0025994" startTime="2026-10-22T09:19:41.8255928+09:00" endTime="2026-10-22T09:19:41.8459157+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b215ec51-afc0-446f-a627-8346e567f5f0" />
+    <UnitTestResult executionId="56b5d3a7-be71-4c55-b3f1-a5d1deef9a97" testId="1c6c9d41-1dab-58ad-a486-d324c2e5ad78" testName="Amr.Simulator.Map.Tests.GridMqttTests.BrokerLossStopsMovingAndPreservesLastReceivedPosition" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0737427" startTime="2026-10-22T09:19:41.8458636+09:00" endTime="2026-10-22T09:19:41.8997693+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="56b5d3a7-be71-4c55-b3f1-a5d1deef9a97">
+      <Output>
+        <ErrorInfo>
+          <Message>System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.</Message>
+          <StackTrace>   at System.Text.Json.JsonElement.GetProperty(String propertyName)&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 14&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.&lt;&gt;c__DisplayClass11_0.&lt;BrokerLossStopsMovingAndPreservesLastReceivedPosition&gt;b__1() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 106&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.Wait(Func`1 condition, Int32 timeoutMs) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 202&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.BrokerLossStopsMovingAndPreservesLastReceivedPosition() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 106&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.BrokerLossStopsMovingAndPreservesLastReceivedPosition() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 112&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0c2ce45b-f057-426b-b07e-e57a024ab048" testId="d1efe53a-148d-4dd0-a5cf-6c2d39cf4c73" testName="Amr.Simulator.Map.Tests.GridNavigationTests.FullyBlockedWaitsThenAutomaticallyResumes" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0002184" startTime="2026-10-22T09:19:41.8557353+09:00" endTime="2026-10-22T09:19:41.8557489+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0c2ce45b-f057-426b-b07e-e57a024ab048" />
+    <UnitTestResult executionId="ca0e0dc0-b36e-48b8-9b4e-5e1fd1ab3f4b" testId="6ba7f75b-c28b-0204-3251-98a865d11843" testName="Amr.Simulator.Map.Tests.GridNavigationTests.EmptyMapRejected(rows: 0, cols: 2)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0001884" startTime="2026-10-22T09:19:41.8542548+09:00" endTime="2026-10-22T09:19:41.8542714+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ca0e0dc0-b36e-48b8-9b4e-5e1fd1ab3f4b" />
+    <UnitTestResult executionId="9206d578-9390-42ba-887b-2a7d1ee7e342" testId="7f6bb4fd-3123-514e-07d0-6972613df8a8" testName="Amr.Simulator.Map.Tests.GridNavigationTests.ProtectedOrInvalidCellEditRejected(row: 0, col: 2)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0002150" startTime="2026-10-22T09:19:41.8478422+09:00" endTime="2026-10-22T09:19:41.8478717+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9206d578-9390-42ba-887b-2a7d1ee7e342" />
+    <UnitTestResult executionId="3d7aad8a-874c-48e0-b412-1acc22d1784f" testId="353d56a3-fd4b-6cb0-5766-d42e08b3179c" testName="Amr.Simulator.Map.Tests.GridMqttTests.PublishedPositionNeverFillsReceivedPosition" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0028099" startTime="2026-10-22T09:19:41.9170404+09:00" endTime="2026-10-22T09:19:41.9198198+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3d7aad8a-874c-48e0-b412-1acc22d1784f">
+      <Output>
+        <ErrorInfo>
+          <Message>System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.</Message>
+          <StackTrace>   at System.Text.Json.JsonElement.GetProperty(String propertyName)&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.PublishedPositionNeverFillsReceivedPosition() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 57&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.PublishedPositionNeverFillsReceivedPosition() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 59&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="69c2e56d-a249-45e7-a892-b987d73cdf2d" testId="ce3bdf95-7ca9-e2ef-eb77-fd1b3dee8e9d" testName="Amr.Simulator.Map.Tests.GridMqttTests.InitialConnectionFailureDoesNotMoveAndDisposesConnection" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0023825" startTime="2026-10-22T09:19:41.9379433+09:00" endTime="2026-10-22T09:19:41.9401600+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="69c2e56d-a249-45e7-a892-b987d73cdf2d">
+      <Output>
+        <ErrorInfo>
+          <Message>System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.</Message>
+          <StackTrace>   at System.Text.Json.JsonElement.GetProperty(String propertyName)&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 14&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.&lt;&gt;c__DisplayClass9_0.&lt;InitialConnectionFailureDoesNotMoveAndDisposesConnection&gt;b__0() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 83&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.Wait(Func`1 condition, Int32 timeoutMs) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 202&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.InitialConnectionFailureDoesNotMoveAndDisposesConnection() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 83&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.InitialConnectionFailureDoesNotMoveAndDisposesConnection() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 86&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a0c14f5d-2e0c-44a7-bd09-d8b23733764d" testId="05d4134b-615e-a743-c718-399f2ddcd931" testName="Amr.Simulator.Map.Tests.GridMqttTests.GridCoordinateUsesOneMeterCellsAndUpwardPositiveY" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0036384" startTime="2026-10-22T09:19:41.9042161+09:00" endTime="2026-10-22T09:19:41.9078512+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a0c14f5d-2e0c-44a7-bd09-d8b23733764d" />
+    <UnitTestResult executionId="3914bc8b-c6b5-40e2-8b47-21fc667e2af3" testId="869137db-5252-1f96-bde2-a168a06bd871" testName="Amr.Simulator.Map.Tests.GridNavigationTests.ProtectedOrInvalidCellEditRejected(row: -1, col: 0)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0000236" startTime="2026-10-22T09:19:41.8479151+09:00" endTime="2026-10-22T09:19:41.8479387+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3914bc8b-c6b5-40e2-8b47-21fc667e2af3" />
+    <UnitTestResult executionId="0f583a3f-9463-427a-9ac6-f6b298e0fb5e" testId="bbfc25eb-4ba8-33d2-9f39-11c577af64bd" testName="Amr.Simulator.Map.Tests.ProjectionTests.Completion_RequiresMatchingPublicationTimestampPositionAndStop(ts: 100, x: 0, y: 2, speed: 0, state: &quot;IDLE&quot;)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0002068" startTime="2026-10-22T09:19:41.8464725+09:00" endTime="2026-10-22T09:19:41.8464947+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0f583a3f-9463-427a-9ac6-f6b298e0fb5e" />
+    <UnitTestResult executionId="35f4a32e-3450-410c-9b7e-26837512e77b" testId="9f746508-4b40-4926-00dd-148bd9573eea" testName="Amr.Simulator.Map.Tests.ProjectionTests.ReceivedValuesAndTimestamp_ArePreservedExactly" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0001050" startTime="2026-10-22T09:19:41.8463322+09:00" endTime="2026-10-22T09:19:41.8463556+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="35f4a32e-3450-410c-9b7e-26837512e77b" />
+    <UnitTestResult executionId="8e181347-0dbb-4423-baae-970fd0c36a69" testId="48818f8c-1429-cd25-b8f7-4a2bb3390f9d" testName="Amr.Simulator.Map.Tests.ProjectionTests.Completion_RequiresMatchingPublicationTimestampPositionAndStop(ts: 100, x: 1, y: 2, speed: 1, state: &quot;BUSY&quot;)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0001420" startTime="2026-10-22T09:19:41.8464088+09:00" endTime="2026-10-22T09:19:41.8464313+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8e181347-0dbb-4423-baae-970fd0c36a69" />
+    <UnitTestResult executionId="bb91ee07-b0f8-43ba-bb3b-2916fd9d13fd" testId="247ba3bb-dc73-5688-2005-b281ec0ee633" testName="Amr.Simulator.Map.Tests.ProjectionTests.EqualMillisecondTimestamp_IsAllowedForDistinctUpdates" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0029580" startTime="2026-10-22T09:19:41.8119556+09:00" endTime="2026-10-22T09:19:41.8208247+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bb91ee07-b0f8-43ba-bb3b-2916fd9d13fd" />
+    <UnitTestResult executionId="ee1b2191-8f9f-4f9c-be59-6303cc23e1ee" testId="7b1b07bb-bf7a-9303-2068-8c845c2bc353" testName="Amr.Simulator.Map.Tests.GridNavigationTests.OriginalMapHasNineStepPath" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0001130" startTime="2026-10-22T09:19:41.8556877+09:00" endTime="2026-10-22T09:19:41.8557014+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ee1b2191-8f9f-4f9c-be59-6303cc23e1ee" />
+    <UnitTestResult executionId="57f065d5-8ae1-4704-b09e-d0709b5362d4" testId="e511433a-8d9b-f1a0-2a6a-bffda38550b0" testName="Amr.Simulator.Map.Tests.GridNavigationTests.NonBinaryMapRejected(value: 2)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0001353" startTime="2026-10-22T09:19:41.8555418+09:00" endTime="2026-10-22T09:19:41.8555566+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="57f065d5-8ae1-4704-b09e-d0709b5362d4" />
+    <UnitTestResult executionId="1931bae3-7723-4905-b997-2d78e38c46e0" testId="1371f7ae-08cb-c5c8-3ecf-fa221b4b7bc1" testName="Amr.Simulator.Map.Tests.GridMqttTests.InvalidGridCoordinateIsNotDisplayed(x: -1, y: 0)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0000029" startTime="2026-10-22T09:19:41.8256817+09:00" endTime="2026-10-22T09:19:41.8257056+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1931bae3-7723-4905-b997-2d78e38c46e0" />
+    <UnitTestResult executionId="3fc7d669-ec0a-4fcb-ab1c-1121bc48437a" testId="e44c6d5f-639b-9a8b-18f2-eb1553257672" testName="Amr.Simulator.Map.Tests.GridMqttTests.InvalidGridCoordinateIsNotDisplayed(x: 0, y: 1)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0001589" startTime="2026-10-22T09:19:41.8250818+09:00" endTime="2026-10-22T09:19:41.8256228+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3fc7d669-ec0a-4fcb-ab1c-1121bc48437a" />
+    <UnitTestResult executionId="9e27c2d5-d024-433d-ac05-765020fdb357" testId="8989af72-7b8b-9c6c-d786-60f190420ce6" testName="Amr.Simulator.Map.Tests.GridMqttTests.SeparateServersUseSeparateAmrIds" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0033568" startTime="2026-10-22T09:19:41.9034788+09:00" endTime="2026-10-22T09:19:41.9035013+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9e27c2d5-d024-433d-ac05-765020fdb357" />
+    <UnitTestResult executionId="6aeb9c0e-47da-43a4-9f65-ce483f20a9ef" testId="ac61c8b6-958e-432a-b3d7-6f1cc5f927d0" testName="Amr.Simulator.Map.Tests.GridMqttTests.LossBeforeConnectReturnsIsNotMissed" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0015185" startTime="2026-10-22T09:19:41.9121320+09:00" endTime="2026-10-22T09:19:41.9134857+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6aeb9c0e-47da-43a4-9f65-ce483f20a9ef">
+      <Output>
+        <ErrorInfo>
+          <Message>System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.</Message>
+          <StackTrace>   at System.Text.Json.JsonElement.GetProperty(String propertyName)&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 14&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.&lt;&gt;c__DisplayClass10_0.&lt;LossBeforeConnectReturnsIsNotMissed&gt;b__0() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 94&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.Wait(Func`1 condition, Int32 timeoutMs) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 202&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.LossBeforeConnectReturnsIsNotMissed() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 94&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.LossBeforeConnectReturnsIsNotMissed() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 96&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="889c38ca-e8b1-4f8f-966b-5f30e95f851f" testId="0027396e-f803-0f62-4eb1-de00ebdd65e4" testName="Amr.Simulator.Map.Tests.GridNavigationTests.RemovingObstacleSelectsShorterRouteImmediately" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0001882" startTime="2026-10-22T09:19:41.8548353+09:00" endTime="2026-10-22T09:19:41.8548499+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="889c38ca-e8b1-4f8f-966b-5f30e95f851f" />
+    <UnitTestResult executionId="393a9b67-1cb4-436b-a8e6-9bda5efed456" testId="6834cfb2-66b7-b217-f6ce-a9f290f9d4b1" testName="Amr.Simulator.Map.Tests.GridMqttTests.BlockedRobotContinuesIndependentTelemetryAndHeartbeat" computerName="DESKTOP-N1BSNS3" duration="00:00:00.2002811" startTime="2026-10-22T09:19:41.9409337+09:00" endTime="2026-10-22T09:19:42.1409377+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="393a9b67-1cb4-436b-a8e6-9bda5efed456">
+      <Output>
+        <ErrorInfo>
+          <Message>System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.</Message>
+          <StackTrace>   at System.Text.Json.JsonElement.GetProperty(String propertyName)&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 14&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.BlockedRobotContinuesIndependentTelemetryAndHeartbeat() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 123&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.BlockedRobotContinuesIndependentTelemetryAndHeartbeat() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 127&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="cf60e245-f040-45b1-a806-b8fc2d8ae3e8" testId="2d7ad082-8ede-71a6-4f3b-3e1b2d5d050d" testName="Amr.Simulator.Map.Tests.GridMqttTests.HeartbeatAndRejectedTelemetryDoNotMoveMarker" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0028041" startTime="2026-10-22T09:19:42.1413195+09:00" endTime="2026-10-22T09:19:42.1440611+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cf60e245-f040-45b1-a806-b8fc2d8ae3e8">
+      <Output>
+        <ErrorInfo>
+          <Message>System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.</Message>
+          <StackTrace>   at System.Text.Json.JsonElement.GetProperty(String propertyName)&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 14&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.HeartbeatAndRejectedTelemetryDoNotMoveMarker() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 75&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.HeartbeatAndRejectedTelemetryDoNotMoveMarker() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 75&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b9bc397b-4170-4a2f-bb63-eae21eb558ab" testId="66f3e1f8-9ad5-1004-dd2b-49712324fdd5" testName="Amr.Simulator.Map.Tests.GridMqttTests.ResetClearsReceivedPositionOnlyAfterOldConnectionEnds" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0034243" startTime="2026-10-22T09:19:41.9079469+09:00" endTime="2026-10-22T09:19:41.9117843+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b9bc397b-4170-4a2f-bb63-eae21eb558ab">
+      <Output>
+        <ErrorInfo>
+          <Message>System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.</Message>
+          <StackTrace>   at System.Text.Json.JsonElement.GetProperty(String propertyName)&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 14&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.ResetClearsReceivedPositionOnlyAfterOldConnectionEnds() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 155&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.ResetClearsReceivedPositionOnlyAfterOldConnectionEnds() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 160&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="52c6c755-1f13-4a53-9977-453dca27fcf7" testId="1e470d6a-9629-bcd1-b173-d94830163977" testName="Amr.Simulator.Map.Tests.GridNavigationTests.CancellationStopsMovementAndDoesNotResumeOnMapEdit" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0001635" startTime="2026-10-22T09:19:41.8557820+09:00" endTime="2026-10-22T09:19:41.8557971+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="52c6c755-1f13-4a53-9977-453dca27fcf7" />
+    <UnitTestResult executionId="ee5d7318-da67-4a77-89fa-884ecf138a06" testId="6bb7a635-6745-76a0-3d22-507d966f004b" testName="Amr.Simulator.Map.Tests.GridMqttTests.InvalidGridCoordinateIsNotDisplayed(x: 0.5, y: 0)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0000023" startTime="2026-10-22T09:19:41.8257552+09:00" endTime="2026-10-22T09:19:41.8257890+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ee5d7318-da67-4a77-89fa-884ecf138a06" />
+    <UnitTestResult executionId="a0c9ede6-9b4c-4ccc-b69c-a69fc1e5e220" testId="d406ec0c-fada-fca7-432b-55ae21c562f3" testName="Amr.Simulator.Map.Tests.GridNavigationTests.ProtectedOrInvalidCellEditRejected(row: 0, col: 0)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0022257" startTime="2026-10-22T09:19:41.8477377+09:00" endTime="2026-10-22T09:19:41.8477800+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a0c9ede6-9b4c-4ccc-b69c-a69fc1e5e220" />
+    <UnitTestResult executionId="515bc31e-2858-4825-8d45-043bad996189" testId="f67ab678-5919-46b6-e331-b249cf97a30b" testName="Amr.Simulator.Map.Tests.GridNavigationTests.NewObstacleDetoursFromCurrentPosition" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0029322" startTime="2026-10-22T09:19:41.8541940+09:00" endTime="2026-10-22T09:19:41.8542132+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="515bc31e-2858-4825-8d45-043bad996189" />
+    <UnitTestResult executionId="6b459b28-1877-408e-b615-1ce4db872dc6" testId="ce27f38b-0d1a-ff7b-783d-9661dcce2d8e" testName="Amr.Simulator.Map.Tests.GridNavigationTests.UnreachableReturnsEmptyPath" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0002321" startTime="2026-10-22T09:19:41.8549798+09:00" endTime="2026-10-22T09:19:41.8549950+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6b459b28-1877-408e-b615-1ce4db872dc6" />
+    <UnitTestResult executionId="490082ee-24e5-4b9b-8aef-ddb90f1cfa4c" testId="d7767dbd-10d2-2e30-76e2-49ecee52f2db" testName="Amr.Simulator.Map.Tests.GridMqttTests.CompletionRequiresReceivingFinalStoppedTelemetry" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0021377" startTime="2026-10-22T09:19:42.1443543+09:00" endTime="2026-10-22T09:19:42.1465889+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="490082ee-24e5-4b9b-8aef-ddb90f1cfa4c">
+      <Output>
+        <ErrorInfo>
+          <Message>System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.</Message>
+          <StackTrace>   at System.Text.Json.JsonElement.GetProperty(String propertyName)&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 14&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.&lt;&gt;c__DisplayClass15_0.&lt;CompletionRequiresReceivingFinalStoppedTelemetry&gt;b__0() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 168&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.Wait(Func`1 condition, Int32 timeoutMs) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 202&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.CompletionRequiresReceivingFinalStoppedTelemetry() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 168&#xD;
+   at Amr.Simulator.Map.Tests.GridMqttTests.CompletionRequiresReceivingFinalStoppedTelemetry() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 176&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c9c3ab6e-f3f8-43a7-8da1-65f4e622a4d5" testId="83922001-61ef-c465-fd62-6a54b2bc6d3f" testName="Amr.Simulator.Map.Tests.GridNavigationTests.NullMapRejected" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0003429" startTime="2026-10-22T09:19:41.8555907+09:00" endTime="2026-10-22T09:19:41.8556069+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c9c3ab6e-f3f8-43a7-8da1-65f4e622a4d5" />
+    <UnitTestResult executionId="ed166914-5c12-4e98-9f9a-524dc6acf555" testId="2db86bee-55e4-ab6e-884f-a2d8b7ad936a" testName="Amr.Simulator.Map.Tests.ProjectionTests.ClockCorrection_DoesNotDiscardLaterReceivedPosition" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0000893" startTime="2026-10-22T09:19:41.8462503+09:00" endTime="2026-10-22T09:19:41.8462754+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ed166914-5c12-4e98-9f9a-524dc6acf555" />
+    <UnitTestResult executionId="e0ceac03-d576-41b1-a05b-6ae1df305d8a" testId="29953b49-69b3-ed32-16bd-20ee86812dd4" testName="Amr.Simulator.Map.Tests.GridNavigationTests.InvalidCoordinateRejected(row: 0, col: -1)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0001417" startTime="2026-10-22T09:19:41.8551202+09:00" endTime="2026-10-22T09:19:41.8551338+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e0ceac03-d576-41b1-a05b-6ae1df305d8a" />
+    <UnitTestResult executionId="6edaa11c-2ac6-4ba5-ad20-fdf18b49da9e" testId="0777a544-7187-d59f-3909-33d43f7ad9b9" testName="Amr.Simulator.Map.Tests.GridNavigationTests.ProtectedOrInvalidCellEditRejected(row: 5, col: 0)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0000108" startTime="2026-10-22T09:19:41.8479809+09:00" endTime="2026-10-22T09:19:41.8480016+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6edaa11c-2ac6-4ba5-ad20-fdf18b49da9e" />
+    <UnitTestResult executionId="0d2f1554-153c-4890-845a-00282b14e333" testId="84613782-9338-89c1-9373-4234351986a0" testName="Amr.Simulator.Map.Tests.GridMqttTests.InvalidGridCoordinateIsNotDisplayed(x: 0, y: -5)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0000005" startTime="2026-10-22T09:19:41.8259248+09:00" endTime="2026-10-22T09:19:41.8265328+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0d2f1554-153c-4890-845a-00282b14e333" />
+    <UnitTestResult executionId="f2baa0bf-368b-48f0-a495-155af7edb7b4" testId="67c2663e-7168-5b2a-b078-9cb38b670a90" testName="Amr.Simulator.Map.Tests.GridMqttTests.ReadyHasNoReceivedPosition" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0014032" startTime="2026-10-22T09:19:41.9035535+09:00" endTime="2026-10-22T09:19:41.9041378+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f2baa0bf-368b-48f0-a495-155af7edb7b4" />
+    <UnitTestResult executionId="98f29578-6b26-4e75-ade4-8c4212a1d8af" testId="7d45a98c-b686-b4da-785b-666a2d50f62c" testName="Amr.Simulator.Map.Tests.GridNavigationTests.ResetRestoresOriginalMapAndStopsActiveRun" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0002805" startTime="2026-10-22T09:19:41.8556399+09:00" endTime="2026-10-22T09:19:41.8556553+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="98f29578-6b26-4e75-ade4-8c4212a1d8af" />
+    <UnitTestResult executionId="2edbfd29-bd6f-45e6-89b2-e51ecff30463" testId="edc325fe-5905-9bf2-ab72-7ce18d5e44bd" testName="Amr.Simulator.Map.Tests.GridNavigationTests.NonBinaryMapRejected(value: -1)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0002638" startTime="2026-10-22T09:19:41.8555050+09:00" endTime="2026-10-22T09:19:41.8555189+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2edbfd29-bd6f-45e6-89b2-e51ecff30463" />
+    <UnitTestResult executionId="a012c831-4746-4b17-a692-163fd79fcb6d" testId="0c341e27-4c6f-e085-fc61-ff3c2ba2b426" testName="Amr.Simulator.Map.Tests.GridNavigationTests.BlockedEndpointsRejected(start: 1, goal: 0)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0001395" startTime="2026-10-22T09:19:41.8549327+09:00" endTime="2026-10-22T09:19:41.8549471+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a012c831-4746-4b17-a692-163fd79fcb6d" />
+    <UnitTestResult executionId="d0139da4-cdf9-4cbf-9186-eee26b8732bb" testId="c8794541-23cb-b143-f118-406208c85e08" testName="Amr.Simulator.Map.Tests.ProjectionTests.MqttSessionReady_DoesNotUseConfiguredInitialPositionAsReceivedData" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0448194" startTime="2026-10-22T09:19:41.8466087+09:00" endTime="2026-10-22T09:19:41.8704381+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d0139da4-cdf9-4cbf-9186-eee26b8732bb" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.OriginalMapHasNineStepPath" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="7b1b07bb-bf7a-9303-2068-8c845c2bc353">
+      <Execution id="ee1b2191-8f9f-4f9c-be59-6303cc23e1ee" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="OriginalMapHasNineStepPath" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.CompletesInNineStepsAndThenStaysStopped" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="baf02b84-71b0-3278-df50-1fc5c400a5e2">
+      <Execution id="20341c9a-ec7c-44c1-9b97-0b82f62cd537" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="CompletesInNineStepsAndThenStaysStopped" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.ProjectionTests.Completion_RequiresMatchingPublicationTimestampPositionAndStop(ts: 100, x: 0, y: 2, speed: 0, state: &quot;IDLE&quot;)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="bbfc25eb-4ba8-33d2-9f39-11c577af64bd">
+      <Execution id="0f583a3f-9463-427a-9ac6-f6b298e0fb5e" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.ProjectionTests" name="Completion_RequiresMatchingPublicationTimestampPositionAndStop" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.ProtectedOrInvalidCellEditRejected(row: 0, col: 0)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="d406ec0c-fada-fca7-432b-55ae21c562f3">
+      <Execution id="a0c9ede6-9b4c-4ccc-b69c-a69fc1e5e220" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="ProtectedOrInvalidCellEditRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridMqttTests.InitialConnectionFailureDoesNotMoveAndDisposesConnection" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="ce3bdf95-7ca9-e2ef-eb77-fd1b3dee8e9d">
+      <Execution id="69c2e56d-a249-45e7-a892-b987d73cdf2d" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridMqttTests" name="InitialConnectionFailureDoesNotMoveAndDisposesConnection" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.ProtectedOrInvalidCellEditRejected(row: -1, col: 0)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="869137db-5252-1f96-bde2-a168a06bd871">
+      <Execution id="3914bc8b-c6b5-40e2-8b47-21fc667e2af3" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="ProtectedOrInvalidCellEditRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridMqttTests.InvalidGridCoordinateIsNotDisplayed(x: 0, y: -0.5)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="a832fc88-4f71-fed7-4685-556fdc7a1ef4">
+      <Execution id="84ae2db1-38d0-4816-a27b-784af8675f7b" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridMqttTests" name="InvalidGridCoordinateIsNotDisplayed" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridMqttTests.InvalidGridCoordinateIsNotDisplayed(x: 6, y: 0)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="78c36175-d00d-bea7-6d43-f26262757be2">
+      <Execution id="c004f0b2-63c2-4ee3-b742-39c1db768673" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridMqttTests" name="InvalidGridCoordinateIsNotDisplayed" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.ProtectedOrInvalidCellEditRejected(row: 5, col: 0)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="0777a544-7187-d59f-3909-33d43f7ad9b9">
+      <Execution id="6edaa11c-2ac6-4ba5-ad20-fdf18b49da9e" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="ProtectedOrInvalidCellEditRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.OccupiedCellEditRejectedAndSnapshotIsIndependent" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="b842ef66-3a63-5711-5b30-5aa1d4b9dc94">
+      <Execution id="132bdd60-735e-481f-a298-6f978675953a" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="OccupiedCellEditRejectedAndSnapshotIsIndependent" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridMqttTests.PublishedPositionNeverFillsReceivedPosition" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="353d56a3-fd4b-6cb0-5766-d42e08b3179c">
+      <Execution id="3d7aad8a-874c-48e0-b412-1acc22d1784f" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridMqttTests" name="PublishedPositionNeverFillsReceivedPosition" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.InvalidCoordinateRejected(row: 2, col: 0)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="a01b01e6-02db-4a89-e253-6c01b60c76f5">
+      <Execution id="ba227276-dd17-4c4c-af97-a2f7c02c1576" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="InvalidCoordinateRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.BlockedEndpointsRejected(start: 0, goal: 1)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="596e8270-3a17-2061-fcf5-a93ce1bcaf49">
+      <Execution id="b3a786d7-bbc6-4e50-a082-d62104d8b22e" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="BlockedEndpointsRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.UnreachableReturnsEmptyPath" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="ce27f38b-0d1a-ff7b-783d-9661dcce2d8e">
+      <Execution id="6b459b28-1877-408e-b615-1ce4db872dc6" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="UnreachableReturnsEmptyPath" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.RemovingObstacleSelectsShorterRouteImmediately" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="0027396e-f803-0f62-4eb1-de00ebdd65e4">
+      <Execution id="889c38ca-e8b1-4f8f-966b-5f30e95f851f" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="RemovingObstacleSelectsShorterRouteImmediately" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.ProjectionTests.Completion_RequiresMatchingPublicationTimestampPositionAndStop(ts: 100, x: 1, y: 2, speed: 1, state: &quot;BUSY&quot;)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="48818f8c-1429-cd25-b8f7-4a2bb3390f9d">
+      <Execution id="8e181347-0dbb-4423-baae-970fd0c36a69" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.ProjectionTests" name="Completion_RequiresMatchingPublicationTimestampPositionAndStop" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridMqttTests.HeartbeatAndRejectedTelemetryDoNotMoveMarker" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="2d7ad082-8ede-71a6-4f3b-3e1b2d5d050d">
+      <Execution id="cf60e245-f040-45b1-a806-b8fc2d8ae3e8" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridMqttTests" name="HeartbeatAndRejectedTelemetryDoNotMoveMarker" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.NewObstacleDetoursFromCurrentPosition" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="f67ab678-5919-46b6-e331-b249cf97a30b">
+      <Execution id="515bc31e-2858-4825-8d45-043bad996189" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="NewObstacleDetoursFromCurrentPosition" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.ProjectionTests.MqttSessionReady_DoesNotUseConfiguredInitialPositionAsReceivedData" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="c8794541-23cb-b143-f118-406208c85e08">
+      <Execution id="d0139da4-cdf9-4cbf-9186-eee26b8732bb" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.ProjectionTests" name="MqttSessionReady_DoesNotUseConfiguredInitialPositionAsReceivedData" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridMqttTests.InvalidGridCoordinateIsNotDisplayed(x: 0, y: 1)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="e44c6d5f-639b-9a8b-18f2-eb1553257672">
+      <Execution id="3fc7d669-ec0a-4fcb-ab1c-1121bc48437a" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridMqttTests" name="InvalidGridCoordinateIsNotDisplayed" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridMqttTests.BlockedRobotContinuesIndependentTelemetryAndHeartbeat" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="6834cfb2-66b7-b217-f6ce-a9f290f9d4b1">
+      <Execution id="393a9b67-1cb4-436b-a8e6-9bda5efed456" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridMqttTests" name="BlockedRobotContinuesIndependentTelemetryAndHeartbeat" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridMqttTests.InvalidGridCoordinateIsNotDisplayed(x: 0, y: -5)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="84613782-9338-89c1-9373-4234351986a0">
+      <Execution id="0d2f1554-153c-4890-845a-00282b14e333" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridMqttTests" name="InvalidGridCoordinateIsNotDisplayed" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.ProjectionTests.NoPositionUntilTelemetry_HeartbeatDoesNotMoveRobot" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="5f07e57f-5e09-d6ac-b40e-479f180b6430">
+      <Execution id="b215ec51-afc0-446f-a627-8346e567f5f0" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.ProjectionTests" name="NoPositionUntilTelemetry_HeartbeatDoesNotMoveRobot" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.InvalidCoordinateRejected(row: 0, col: 2)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="b148237e-bb3b-e0b7-1258-299c03a83516">
+      <Execution id="066b1c2e-6c51-40af-a9f6-c1f4bb0105d6" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="InvalidCoordinateRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridMqttTests.BrokerLossStopsMovingAndPreservesLastReceivedPosition" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="1c6c9d41-1dab-58ad-a486-d324c2e5ad78">
+      <Execution id="56b5d3a7-be71-4c55-b3f1-a5d1deef9a97" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridMqttTests" name="BrokerLossStopsMovingAndPreservesLastReceivedPosition" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.NonBinaryMapRejected(value: -1)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="edc325fe-5905-9bf2-ab72-7ce18d5e44bd">
+      <Execution id="2edbfd29-bd6f-45e6-89b2-e51ecff30463" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="NonBinaryMapRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridMqttTests.LossBeforeConnectReturnsIsNotMissed" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="ac61c8b6-958e-432a-b3d7-6f1cc5f927d0">
+      <Execution id="6aeb9c0e-47da-43a4-9f65-ce483f20a9ef" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridMqttTests" name="LossBeforeConnectReturnsIsNotMissed" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.ProjectionTests.OtherAmr_CannotOverwriteCurrentPosition" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="91dd3ec3-bc64-5fbf-9ada-4d0bf9921c82">
+      <Execution id="a6b2dd71-10e3-4b18-9f10-1e455c2770d4" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.ProjectionTests" name="OtherAmr_CannotOverwriteCurrentPosition" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.NonBinaryMapRejected(value: 2)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="e511433a-8d9b-f1a0-2a6a-bffda38550b0">
+      <Execution id="57f065d5-8ae1-4704-b09e-d0709b5362d4" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="NonBinaryMapRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridMqttTests.InvalidGridCoordinateIsNotDisplayed(x: 0.5, y: 0)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="6bb7a635-6745-76a0-3d22-507d966f004b">
+      <Execution id="ee5d7318-da67-4a77-89fa-884ecf138a06" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridMqttTests" name="InvalidGridCoordinateIsNotDisplayed" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.FullyBlockedWaitsThenAutomaticallyResumes" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="d1efe53a-148d-4dd0-a5cf-6c2d39cf4c73">
+      <Execution id="0c2ce45b-f057-426b-b07e-e57a024ab048" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="FullyBlockedWaitsThenAutomaticallyResumes" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridMqttTests.SeparateServersUseSeparateAmrIds" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="8989af72-7b8b-9c6c-d786-60f190420ce6">
+      <Execution id="9e27c2d5-d024-433d-ac05-765020fdb357" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridMqttTests" name="SeparateServersUseSeparateAmrIds" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridMqttTests.ResetClearsReceivedPositionOnlyAfterOldConnectionEnds" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="66f3e1f8-9ad5-1004-dd2b-49712324fdd5">
+      <Execution id="b9bc397b-4170-4a2f-bb63-eae21eb558ab" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridMqttTests" name="ResetClearsReceivedPositionOnlyAfterOldConnectionEnds" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.EmptyMapRejected(rows: 0, cols: 2)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="6ba7f75b-c28b-0204-3251-98a865d11843">
+      <Execution id="ca0e0dc0-b36e-48b8-9b4e-5e1fd1ab3f4b" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="EmptyMapRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.ProjectionTests.ClockCorrection_DoesNotDiscardLaterReceivedPosition" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="2db86bee-55e4-ab6e-884f-a2d8b7ad936a">
+      <Execution id="ed166914-5c12-4e98-9f9a-524dc6acf555" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.ProjectionTests" name="ClockCorrection_DoesNotDiscardLaterReceivedPosition" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.NullMapRejected" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="83922001-61ef-c465-fd62-6a54b2bc6d3f">
+      <Execution id="c9c3ab6e-f3f8-43a7-8da1-65f4e622a4d5" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="NullMapRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.StartEqualsGoalReturnsOneCell" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="ce742fc0-c9ee-bd5c-c3de-e92074bee7c0">
+      <Execution id="67a3ca56-b6b6-40e2-bd98-ca24139950d8" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="StartEqualsGoalReturnsOneCell" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.ProjectionTests.Completion_RequiresMatchingPublicationTimestampPositionAndStop(ts: 99, x: 1, y: 2, speed: 0, state: &quot;IDLE&quot;)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="762cc458-c311-addc-093b-1b682027e6ea">
+      <Execution id="f805c37b-21a7-4539-a28e-21325d9e84c1" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.ProjectionTests" name="Completion_RequiresMatchingPublicationTimestampPositionAndStop" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.ProtectedOrInvalidCellEditRejected(row: 4, col: 5)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="bb820d3c-56b0-fe8d-3238-2c2beee95d20">
+      <Execution id="4b61eaaa-f785-4285-9000-0118bdaa11be" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="ProtectedOrInvalidCellEditRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.ResetRestoresOriginalMapAndStopsActiveRun" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="7d45a98c-b686-b4da-785b-666a2d50f62c">
+      <Execution id="98f29578-6b26-4e75-ade4-8c4212a1d8af" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="ResetRestoresOriginalMapAndStopsActiveRun" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.ProtectedOrInvalidCellEditRejected(row: 0, col: 2)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="7f6bb4fd-3123-514e-07d0-6972613df8a8">
+      <Execution id="9206d578-9390-42ba-887b-2a7d1ee7e342" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="ProtectedOrInvalidCellEditRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.EmptyMapRejected(rows: 2, cols: 0)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="aaee78a2-b25c-1704-5aba-ecf3e9703ac3">
+      <Execution id="2ade580c-47bf-4edb-9bc2-927334a7245b" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="EmptyMapRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridMqttTests.CompletionRequiresReceivingFinalStoppedTelemetry" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="d7767dbd-10d2-2e30-76e2-49ecee52f2db">
+      <Execution id="490082ee-24e5-4b9b-8aef-ddb90f1cfa4c" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridMqttTests" name="CompletionRequiresReceivingFinalStoppedTelemetry" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.InvalidCoordinateRejected(row: 0, col: -1)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="29953b49-69b3-ed32-16bd-20ee86812dd4">
+      <Execution id="e0ceac03-d576-41b1-a05b-6ae1df305d8a" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="InvalidCoordinateRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.ProjectionTests.ReceivedValuesAndTimestamp_ArePreservedExactly" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="9f746508-4b40-4926-00dd-148bd9573eea">
+      <Execution id="35f4a32e-3450-410c-9b7e-26837512e77b" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.ProjectionTests" name="ReceivedValuesAndTimestamp_ArePreservedExactly" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.CancellationStopsMovementAndDoesNotResumeOnMapEdit" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="1e470d6a-9629-bcd1-b173-d94830163977">
+      <Execution id="52c6c755-1f13-4a53-9977-453dca27fcf7" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="CancellationStopsMovementAndDoesNotResumeOnMapEdit" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.InvalidCoordinateRejected(row: -1, col: 0)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="08c01044-fdfd-8225-8505-2a345c1ba975">
+      <Execution id="f8c2709f-e3d6-4a26-8777-b3f193bf98ed" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="InvalidCoordinateRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.DijkstraMatchesBfsOnThreeHundredSeededMaps" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="fb38429d-ff58-9a0f-c212-5c2ba95d33dd">
+      <Execution id="23d160be-11d1-4e78-8f4e-4f93d35e7669" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="DijkstraMatchesBfsOnThreeHundredSeededMaps" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridMqttTests.PublicationWithoutFinalReceptionCannotCompleteOrMoveMarkerToGoal" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="5f7d1b3f-2dd4-d1d9-1b1f-11dd66dcb2a1">
+      <Execution id="025ec159-2c72-4a47-95fe-a5f773a3cb29" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridMqttTests" name="PublicationWithoutFinalReceptionCannotCompleteOrMoveMarkerToGoal" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridNavigationTests.BlockedEndpointsRejected(start: 1, goal: 0)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="0c341e27-4c6f-e085-fc61-ff3c2ba2b426">
+      <Execution id="a012c831-4746-4b17-a692-163fd79fcb6d" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridNavigationTests" name="BlockedEndpointsRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridMqttTests.CancellationWaitsForConnectionCleanup" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="5763da1e-5b6a-92a4-3c21-f72f169a5fc9">
+      <Execution id="3ed14693-103d-4440-bc88-69469129b72d" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridMqttTests" name="CancellationWaitsForConnectionCleanup" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridMqttTests.ReadyHasNoReceivedPosition" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="67c2663e-7168-5b2a-b078-9cb38b670a90">
+      <Execution id="f2baa0bf-368b-48f0-a495-155af7edb7b4" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridMqttTests" name="ReadyHasNoReceivedPosition" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridMqttTests.GridCoordinateUsesOneMeterCellsAndUpwardPositiveY" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="05d4134b-615e-a743-c718-399f2ddcd931">
+      <Execution id="a0c14f5d-2e0c-44a7-bd09-d8b23733764d" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridMqttTests" name="GridCoordinateUsesOneMeterCellsAndUpwardPositiveY" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.GridMqttTests.InvalidGridCoordinateIsNotDisplayed(x: -1, y: 0)" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="1371f7ae-08cb-c5c8-3ecf-fa221b4b7bc1">
+      <Execution id="1931bae3-7723-4905-b997-2d78e38c46e0" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.GridMqttTests" name="InvalidGridCoordinateIsNotDisplayed" />
+    </UnitTest>
+    <UnitTest name="Amr.Simulator.Map.Tests.ProjectionTests.EqualMillisecondTimestamp_IsAllowedForDistinctUpdates" storage="c:\amr-control-system-demo\tests\amr.simulator.map.tests\bin\debug\net10.0\amr.simulator.map.tests.dll" id="247ba3bb-dc73-5688-2005-b281ec0ee633">
+      <Execution id="bb91ee07-b0f8-43ba-bb3b-2916fd9d13fd" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Simulator.Map.Tests.ProjectionTests" name="EqualMillisecondTimestamp_IsAllowedForDistinctUpdates" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="bb820d3c-56b0-fe8d-3238-2c2beee95d20" executionId="4b61eaaa-f785-4285-9000-0118bdaa11be" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="762cc458-c311-addc-093b-1b682027e6ea" executionId="f805c37b-21a7-4539-a28e-21325d9e84c1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ce742fc0-c9ee-bd5c-c3de-e92074bee7c0" executionId="67a3ca56-b6b6-40e2-bd98-ca24139950d8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aaee78a2-b25c-1704-5aba-ecf3e9703ac3" executionId="2ade580c-47bf-4edb-9bc2-927334a7245b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="78c36175-d00d-bea7-6d43-f26262757be2" executionId="c004f0b2-63c2-4ee3-b742-39c1db768673" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b148237e-bb3b-e0b7-1258-299c03a83516" executionId="066b1c2e-6c51-40af-a9f6-c1f4bb0105d6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="596e8270-3a17-2061-fcf5-a93ce1bcaf49" executionId="b3a786d7-bbc6-4e50-a082-d62104d8b22e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="08c01044-fdfd-8225-8505-2a345c1ba975" executionId="f8c2709f-e3d6-4a26-8777-b3f193bf98ed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a01b01e6-02db-4a89-e253-6c01b60c76f5" executionId="ba227276-dd17-4c4c-af97-a2f7c02c1576" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="91dd3ec3-bc64-5fbf-9ada-4d0bf9921c82" executionId="a6b2dd71-10e3-4b18-9f10-1e455c2770d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5f7d1b3f-2dd4-d1d9-1b1f-11dd66dcb2a1" executionId="025ec159-2c72-4a47-95fe-a5f773a3cb29" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a832fc88-4f71-fed7-4685-556fdc7a1ef4" executionId="84ae2db1-38d0-4816-a27b-784af8675f7b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5763da1e-5b6a-92a4-3c21-f72f169a5fc9" executionId="3ed14693-103d-4440-bc88-69469129b72d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b842ef66-3a63-5711-5b30-5aa1d4b9dc94" executionId="132bdd60-735e-481f-a298-6f978675953a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="baf02b84-71b0-3278-df50-1fc5c400a5e2" executionId="20341c9a-ec7c-44c1-9b97-0b82f62cd537" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fb38429d-ff58-9a0f-c212-5c2ba95d33dd" executionId="23d160be-11d1-4e78-8f4e-4f93d35e7669" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5f07e57f-5e09-d6ac-b40e-479f180b6430" executionId="b215ec51-afc0-446f-a627-8346e567f5f0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1c6c9d41-1dab-58ad-a486-d324c2e5ad78" executionId="56b5d3a7-be71-4c55-b3f1-a5d1deef9a97" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d1efe53a-148d-4dd0-a5cf-6c2d39cf4c73" executionId="0c2ce45b-f057-426b-b07e-e57a024ab048" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6ba7f75b-c28b-0204-3251-98a865d11843" executionId="ca0e0dc0-b36e-48b8-9b4e-5e1fd1ab3f4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7f6bb4fd-3123-514e-07d0-6972613df8a8" executionId="9206d578-9390-42ba-887b-2a7d1ee7e342" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="353d56a3-fd4b-6cb0-5766-d42e08b3179c" executionId="3d7aad8a-874c-48e0-b412-1acc22d1784f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ce3bdf95-7ca9-e2ef-eb77-fd1b3dee8e9d" executionId="69c2e56d-a249-45e7-a892-b987d73cdf2d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="05d4134b-615e-a743-c718-399f2ddcd931" executionId="a0c14f5d-2e0c-44a7-bd09-d8b23733764d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="869137db-5252-1f96-bde2-a168a06bd871" executionId="3914bc8b-c6b5-40e2-8b47-21fc667e2af3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bbfc25eb-4ba8-33d2-9f39-11c577af64bd" executionId="0f583a3f-9463-427a-9ac6-f6b298e0fb5e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9f746508-4b40-4926-00dd-148bd9573eea" executionId="35f4a32e-3450-410c-9b7e-26837512e77b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="48818f8c-1429-cd25-b8f7-4a2bb3390f9d" executionId="8e181347-0dbb-4423-baae-970fd0c36a69" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="247ba3bb-dc73-5688-2005-b281ec0ee633" executionId="bb91ee07-b0f8-43ba-bb3b-2916fd9d13fd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7b1b07bb-bf7a-9303-2068-8c845c2bc353" executionId="ee1b2191-8f9f-4f9c-be59-6303cc23e1ee" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e511433a-8d9b-f1a0-2a6a-bffda38550b0" executionId="57f065d5-8ae1-4704-b09e-d0709b5362d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1371f7ae-08cb-c5c8-3ecf-fa221b4b7bc1" executionId="1931bae3-7723-4905-b997-2d78e38c46e0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e44c6d5f-639b-9a8b-18f2-eb1553257672" executionId="3fc7d669-ec0a-4fcb-ab1c-1121bc48437a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8989af72-7b8b-9c6c-d786-60f190420ce6" executionId="9e27c2d5-d024-433d-ac05-765020fdb357" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ac61c8b6-958e-432a-b3d7-6f1cc5f927d0" executionId="6aeb9c0e-47da-43a4-9f65-ce483f20a9ef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0027396e-f803-0f62-4eb1-de00ebdd65e4" executionId="889c38ca-e8b1-4f8f-966b-5f30e95f851f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6834cfb2-66b7-b217-f6ce-a9f290f9d4b1" executionId="393a9b67-1cb4-436b-a8e6-9bda5efed456" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2d7ad082-8ede-71a6-4f3b-3e1b2d5d050d" executionId="cf60e245-f040-45b1-a806-b8fc2d8ae3e8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="66f3e1f8-9ad5-1004-dd2b-49712324fdd5" executionId="b9bc397b-4170-4a2f-bb63-eae21eb558ab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1e470d6a-9629-bcd1-b173-d94830163977" executionId="52c6c755-1f13-4a53-9977-453dca27fcf7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6bb7a635-6745-76a0-3d22-507d966f004b" executionId="ee5d7318-da67-4a77-89fa-884ecf138a06" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d406ec0c-fada-fca7-432b-55ae21c562f3" executionId="a0c9ede6-9b4c-4ccc-b69c-a69fc1e5e220" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f67ab678-5919-46b6-e331-b249cf97a30b" executionId="515bc31e-2858-4825-8d45-043bad996189" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ce27f38b-0d1a-ff7b-783d-9661dcce2d8e" executionId="6b459b28-1877-408e-b615-1ce4db872dc6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d7767dbd-10d2-2e30-76e2-49ecee52f2db" executionId="490082ee-24e5-4b9b-8aef-ddb90f1cfa4c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="83922001-61ef-c465-fd62-6a54b2bc6d3f" executionId="c9c3ab6e-f3f8-43a7-8da1-65f4e622a4d5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2db86bee-55e4-ab6e-884f-a2d8b7ad936a" executionId="ed166914-5c12-4e98-9f9a-524dc6acf555" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="29953b49-69b3-ed32-16bd-20ee86812dd4" executionId="e0ceac03-d576-41b1-a05b-6ae1df305d8a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0777a544-7187-d59f-3909-33d43f7ad9b9" executionId="6edaa11c-2ac6-4ba5-ad20-fdf18b49da9e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="84613782-9338-89c1-9373-4234351986a0" executionId="0d2f1554-153c-4890-845a-00282b14e333" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="67c2663e-7168-5b2a-b078-9cb38b670a90" executionId="f2baa0bf-368b-48f0-a495-155af7edb7b4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7d45a98c-b686-b4da-785b-666a2d50f62c" executionId="98f29578-6b26-4e75-ade4-8c4212a1d8af" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="edc325fe-5905-9bf2-ab72-7ce18d5e44bd" executionId="2edbfd29-bd6f-45e6-89b2-e51ecff30463" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0c341e27-4c6f-e085-fc61-ff3c2ba2b426" executionId="a012c831-4746-4b17-a692-163fd79fcb6d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c8794541-23cb-b143-f118-406208c85e08" executionId="d0139da4-cdf9-4cbf-9186-eee26b8732bb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="목록에 없는 결과" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="로드된 모든 결과" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="55" executed="55" passed="45" failed="10" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.12)&#xD;
+[xUnit.net 00:00:00.12]   Discovering: Amr.Simulator.Map.Tests&#xD;
+[xUnit.net 00:00:00.15]   Discovered:  Amr.Simulator.Map.Tests&#xD;
+[xUnit.net 00:00:00.17]   Starting:    Amr.Simulator.Map.Tests&#xD;
+[xUnit.net 00:00:00.27]       System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.&#xD;
+[xUnit.net 00:00:00.27]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.27]            at System.Text.Json.JsonElement.GetProperty(String propertyName)&#xD;
+[xUnit.net 00:00:00.27]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(14,0): at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session)&#xD;
+[xUnit.net 00:00:00.27]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(106,0): at Amr.Simulator.Map.Tests.GridMqttTests.&lt;&gt;c__DisplayClass11_0.&lt;BrokerLossStopsMovingAndPreservesLastReceivedPosition&gt;b__1()&#xD;
+[xUnit.net 00:00:00.27]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(202,0): at Amr.Simulator.Map.Tests.GridMqttTests.Wait(Func`1 condition, Int32 timeoutMs)&#xD;
+[xUnit.net 00:00:00.27]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(106,0): at Amr.Simulator.Map.Tests.GridMqttTests.BrokerLossStopsMovingAndPreservesLastReceivedPosition()&#xD;
+[xUnit.net 00:00:00.27]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(112,0): at Amr.Simulator.Map.Tests.GridMqttTests.BrokerLossStopsMovingAndPreservesLastReceivedPosition()&#xD;
+[xUnit.net 00:00:00.27]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:00.28]       System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.&#xD;
+[xUnit.net 00:00:00.28]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.28]            at System.Text.Json.JsonElement.GetProperty(String propertyName)&#xD;
+[xUnit.net 00:00:00.28]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(14,0): at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session)&#xD;
+[xUnit.net 00:00:00.28]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(155,0): at Amr.Simulator.Map.Tests.GridMqttTests.ResetClearsReceivedPositionOnlyAfterOldConnectionEnds()&#xD;
+[xUnit.net 00:00:00.28]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(160,0): at Amr.Simulator.Map.Tests.GridMqttTests.ResetClearsReceivedPositionOnlyAfterOldConnectionEnds()&#xD;
+[xUnit.net 00:00:00.28]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:00.28]       System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.&#xD;
+[xUnit.net 00:00:00.28]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.28]            at System.Text.Json.JsonElement.GetProperty(String propertyName)&#xD;
+[xUnit.net 00:00:00.28]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(14,0): at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session)&#xD;
+[xUnit.net 00:00:00.28]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(94,0): at Amr.Simulator.Map.Tests.GridMqttTests.&lt;&gt;c__DisplayClass10_0.&lt;LossBeforeConnectReturnsIsNotMissed&gt;b__0()&#xD;
+[xUnit.net 00:00:00.28]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(202,0): at Amr.Simulator.Map.Tests.GridMqttTests.Wait(Func`1 condition, Int32 timeoutMs)&#xD;
+[xUnit.net 00:00:00.28]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(94,0): at Amr.Simulator.Map.Tests.GridMqttTests.LossBeforeConnectReturnsIsNotMissed()&#xD;
+[xUnit.net 00:00:00.28]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(96,0): at Amr.Simulator.Map.Tests.GridMqttTests.LossBeforeConnectReturnsIsNotMissed()&#xD;
+[xUnit.net 00:00:00.28]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:00.29]       System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.&#xD;
+[xUnit.net 00:00:00.29]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.29]            at System.Text.Json.JsonElement.GetProperty(String propertyName)&#xD;
+[xUnit.net 00:00:00.29]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(14,0): at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session)&#xD;
+[xUnit.net 00:00:00.29]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(184,0): at Amr.Simulator.Map.Tests.GridMqttTests.&lt;&gt;c__DisplayClass16_0.&lt;PublicationWithoutFinalReceptionCannotCompleteOrMoveMarkerToGoal&gt;b__0()&#xD;
+[xUnit.net 00:00:00.29]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(202,0): at Amr.Simulator.Map.Tests.GridMqttTests.Wait(Func`1 condition, Int32 timeoutMs)&#xD;
+[xUnit.net 00:00:00.29]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(184,0): at Amr.Simulator.Map.Tests.GridMqttTests.PublicationWithoutFinalReceptionCannotCompleteOrMoveMarkerToGoal()&#xD;
+[xUnit.net 00:00:00.29]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(188,0): at Amr.Simulator.Map.Tests.GridMqttTests.PublicationWithoutFinalReceptionCannotCompleteOrMoveMarkerToGoal()&#xD;
+[xUnit.net 00:00:00.29]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:00.29]       System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.&#xD;
+[xUnit.net 00:00:00.29]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.29]            at System.Text.Json.JsonElement.GetProperty(String propertyName)&#xD;
+[xUnit.net 00:00:00.29]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(57,0): at Amr.Simulator.Map.Tests.GridMqttTests.PublishedPositionNeverFillsReceivedPosition()&#xD;
+[xUnit.net 00:00:00.29]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(59,0): at Amr.Simulator.Map.Tests.GridMqttTests.PublishedPositionNeverFillsReceivedPosition()&#xD;
+[xUnit.net 00:00:00.29]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:00.31]       System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.&#xD;
+[xUnit.net 00:00:00.31]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.31]            at System.Text.Json.JsonElement.GetProperty(String propertyName)&#xD;
+[xUnit.net 00:00:00.31]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(14,0): at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session)&#xD;
+[xUnit.net 00:00:00.31]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(139,0): at Amr.Simulator.Map.Tests.GridMqttTests.CancellationWaitsForConnectionCleanup()&#xD;
+[xUnit.net 00:00:00.31]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(143,0): at Amr.Simulator.Map.Tests.GridMqttTests.CancellationWaitsForConnectionCleanup()&#xD;
+[xUnit.net 00:00:00.31]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:00.31]       System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.&#xD;
+[xUnit.net 00:00:00.31]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.31]            at System.Text.Json.JsonElement.GetProperty(String propertyName)&#xD;
+[xUnit.net 00:00:00.31]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(14,0): at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session)&#xD;
+[xUnit.net 00:00:00.31]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(83,0): at Amr.Simulator.Map.Tests.GridMqttTests.&lt;&gt;c__DisplayClass9_0.&lt;InitialConnectionFailureDoesNotMoveAndDisposesConnection&gt;b__0()&#xD;
+[xUnit.net 00:00:00.31]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(202,0): at Amr.Simulator.Map.Tests.GridMqttTests.Wait(Func`1 condition, Int32 timeoutMs)&#xD;
+[xUnit.net 00:00:00.31]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(83,0): at Amr.Simulator.Map.Tests.GridMqttTests.InitialConnectionFailureDoesNotMoveAndDisposesConnection()&#xD;
+[xUnit.net 00:00:00.31]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(86,0): at Amr.Simulator.Map.Tests.GridMqttTests.InitialConnectionFailureDoesNotMoveAndDisposesConnection()&#xD;
+[xUnit.net 00:00:00.31]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:00.51]       System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.&#xD;
+[xUnit.net 00:00:00.51]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.51]            at System.Text.Json.JsonElement.GetProperty(String propertyName)&#xD;
+[xUnit.net 00:00:00.51]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(14,0): at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session)&#xD;
+[xUnit.net 00:00:00.51]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(123,0): at Amr.Simulator.Map.Tests.GridMqttTests.BlockedRobotContinuesIndependentTelemetryAndHeartbeat()&#xD;
+[xUnit.net 00:00:00.51]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(127,0): at Amr.Simulator.Map.Tests.GridMqttTests.BlockedRobotContinuesIndependentTelemetryAndHeartbeat()&#xD;
+[xUnit.net 00:00:00.51]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:00.51]       System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.&#xD;
+[xUnit.net 00:00:00.51]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.51]            at System.Text.Json.JsonElement.GetProperty(String propertyName)&#xD;
+[xUnit.net 00:00:00.51]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(14,0): at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session)&#xD;
+[xUnit.net 00:00:00.51]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(75,0): at Amr.Simulator.Map.Tests.GridMqttTests.HeartbeatAndRejectedTelemetryDoNotMoveMarker()&#xD;
+[xUnit.net 00:00:00.51]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(75,0): at Amr.Simulator.Map.Tests.GridMqttTests.HeartbeatAndRejectedTelemetryDoNotMoveMarker()&#xD;
+[xUnit.net 00:00:00.51]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:00.52]       System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.&#xD;
+[xUnit.net 00:00:00.52]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.52]            at System.Text.Json.JsonElement.GetProperty(String propertyName)&#xD;
+[xUnit.net 00:00:00.52]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(14,0): at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session)&#xD;
+[xUnit.net 00:00:00.52]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(168,0): at Amr.Simulator.Map.Tests.GridMqttTests.&lt;&gt;c__DisplayClass15_0.&lt;CompletionRequiresReceivingFinalStoppedTelemetry&gt;b__0()&#xD;
+[xUnit.net 00:00:00.52]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(202,0): at Amr.Simulator.Map.Tests.GridMqttTests.Wait(Func`1 condition, Int32 timeoutMs)&#xD;
+[xUnit.net 00:00:00.52]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(168,0): at Amr.Simulator.Map.Tests.GridMqttTests.CompletionRequiresReceivingFinalStoppedTelemetry()&#xD;
+[xUnit.net 00:00:00.52]         C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs(176,0): at Amr.Simulator.Map.Tests.GridMqttTests.CompletionRequiresReceivingFinalStoppedTelemetry()&#xD;
+[xUnit.net 00:00:00.52]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:00.52]   Finished:    Amr.Simulator.Map.Tests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="DESKTOP-N1BSNS3" outcome="Error" timestamp="2026-10-22T09:19:41.9015881+09:00">
+        <Text>[xUnit.net 00:00:00.27]     Amr.Simulator.Map.Tests.GridMqttTests.BrokerLossStopsMovingAndPreservesLastReceivedPosition [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-N1BSNS3" outcome="Error" timestamp="2026-10-22T09:19:41.9122557+09:00">
+        <Text>[xUnit.net 00:00:00.28]     Amr.Simulator.Map.Tests.GridMqttTests.ResetClearsReceivedPositionOnlyAfterOldConnectionEnds [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-N1BSNS3" outcome="Error" timestamp="2026-10-22T09:19:41.9137708+09:00">
+        <Text>[xUnit.net 00:00:00.28]     Amr.Simulator.Map.Tests.GridMqttTests.LossBeforeConnectReturnsIsNotMissed [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-N1BSNS3" outcome="Error" timestamp="2026-10-22T09:19:41.9169311+09:00">
+        <Text>[xUnit.net 00:00:00.29]     Amr.Simulator.Map.Tests.GridMqttTests.PublicationWithoutFinalReceptionCannotCompleteOrMoveMarkerToGoal [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-N1BSNS3" outcome="Error" timestamp="2026-10-22T09:19:41.9201269+09:00">
+        <Text>[xUnit.net 00:00:00.29]     Amr.Simulator.Map.Tests.GridMqttTests.PublishedPositionNeverFillsReceivedPosition [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-N1BSNS3" outcome="Error" timestamp="2026-10-22T09:19:41.9379206+09:00">
+        <Text>[xUnit.net 00:00:00.31]     Amr.Simulator.Map.Tests.GridMqttTests.CancellationWaitsForConnectionCleanup [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-N1BSNS3" outcome="Error" timestamp="2026-10-22T09:19:41.9404288+09:00">
+        <Text>[xUnit.net 00:00:00.31]     Amr.Simulator.Map.Tests.GridMqttTests.InitialConnectionFailureDoesNotMoveAndDisposesConnection [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-N1BSNS3" outcome="Error" timestamp="2026-10-22T09:19:42.1412979+09:00">
+        <Text>[xUnit.net 00:00:00.51]     Amr.Simulator.Map.Tests.GridMqttTests.BlockedRobotContinuesIndependentTelemetryAndHeartbeat [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-N1BSNS3" outcome="Error" timestamp="2026-10-22T09:19:42.1442381+09:00">
+        <Text>[xUnit.net 00:00:00.51]     Amr.Simulator.Map.Tests.GridMqttTests.HeartbeatAndRejectedTelemetryDoNotMoveMarker [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-N1BSNS3" outcome="Error" timestamp="2026-10-22T09:19:42.1467678+09:00">
+        <Text>[xUnit.net 00:00:00.52]     Amr.Simulator.Map.Tests.GridMqttTests.CompletionRequiresReceivingFinalStoppedTelemetry [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

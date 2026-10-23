@@ -6,6 +6,7 @@
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj" />
+    <Project Path="tests/Amr.Simulator.Map.Tests/Amr.Simulator.Map.Tests.csproj" />
     <Project Path="tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj" />
   </Folder>
   <Folder Name="/tools/">

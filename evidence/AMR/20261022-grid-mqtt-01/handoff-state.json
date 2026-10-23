@@ -1,0 +1,311 @@
+{
+  "navigation": {
+    "phase": "Completed",
+    "start": {
+      "row": 0,
+      "col": 0
+    },
+    "goal": {
+      "row": 4,
+      "col": 5
+    },
+    "current": {
+      "row": 4,
+      "col": 5
+    },
+    "map": [
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "fixedObstacles": [
+      [
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        true,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        true,
+        true,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    ],
+    "path": [
+      {
+        "row": 4,
+        "col": 5
+      }
+    ],
+    "traveled": [
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 4
+      },
+      {
+        "row": 4,
+        "col": 5
+      }
+    ],
+    "remainingDistance": 0,
+    "moves": 9,
+    "replans": 10,
+    "mapVersion": 10
+  },
+  "stepIntervalMs": 600,
+  "source": "mqtt-grid-control-receiver",
+  "position": {
+    "row": 4,
+    "col": 5
+  },
+  "amrId": "AMR_GRID_c42402873fdd4326b9c9abb9ddad2eaf",
+  "cellSizeMeters": 1,
+  "receivedTelemetry": {
+    "id": "AMR_GRID_c42402873fdd4326b9c9abb9ddad2eaf",
+    "timestamp": 1792628541194,
+    "position": {
+      "x": 5,
+      "y": -4
+    },
+    "speed": 0,
+    "state": "IDLE",
+    "receivedAtUtc": "2026-10-22T09:22:21.1956683+09:00"
+  },
+  "receivedHeartbeat": {
+    "id": "AMR_GRID_c42402873fdd4326b9c9abb9ddad2eaf",
+    "timestamp": 1792628540730,
+    "status": "OK",
+    "receivedAtUtc": "2026-10-22T09:22:20.7316794+09:00"
+  },
+  "receivedTrail": [
+    {
+      "row": 0,
+      "col": 0
+    },
+    {
+      "row": 0,
+      "col": 1
+    },
+    {
+      "row": 1,
+      "col": 1
+    },
+    {
+      "row": 2,
+      "col": 1
+    },
+    {
+      "row": 2,
+      "col": 2
+    },
+    {
+      "row": 2,
+      "col": 3
+    },
+    {
+      "row": 3,
+      "col": 3
+    },
+    {
+      "row": 4,
+      "col": 3
+    },
+    {
+      "row": 4,
+      "col": 4
+    },
+    {
+      "row": 4,
+      "col": 5
+    }
+  ],
+  "telemetryCount": 29,
+  "heartbeatCount": 6,
+  "publishedCount": 35,
+  "rejectedCount": 0,
+  "lastPublishedTimestamp": 1792628541194,
+  "brokerState": "Closed",
+  "failure": null,
+  "mqttEndpoint": "127.0.0.1:1884",
+  "evidencePath": "C:\\amr-control-system-demo\\evidence\\AMR\\map-live-20261022-092018-36d2475e0b604426be985307cea1a6d8\\grid-navigation.jsonl",
+  "logs": [
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=11 Moves=0 Replans=1 MapVersion=9",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=11 Moves=0 Replans=1 MapVersion=9",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=11 Moves=0 Replans=1 MapVersion=9",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=11 Moves=0 Replans=1 MapVersion=9",
+    "GridMoved Phase=Running Position=(0,1) Remaining=10 Moves=1 Replans=2 MapVersion=9",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=10 Moves=1 Replans=2 MapVersion=9",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=10 Moves=1 Replans=2 MapVersion=9",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=10 Moves=1 Replans=2 MapVersion=9",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=10 Moves=1 Replans=2 MapVersion=9",
+    "GridMoved Phase=Running Position=(1,1) Remaining=9 Moves=2 Replans=3 MapVersion=9",
+    "GridControlReceived Phase=Running Position=(1,1) Remaining=9 Moves=2 Replans=3 MapVersion=9",
+    "GridControlReceived Phase=Running Position=(1,1) Remaining=9 Moves=2 Replans=3 MapVersion=9",
+    "GridControlReceived Phase=Running Position=(1,1) Remaining=9 Moves=2 Replans=3 MapVersion=9",
+    "GridMoved Phase=Running Position=(2,1) Remaining=8 Moves=3 Replans=4 MapVersion=9",
+    "GridControlReceived Phase=Running Position=(2,1) Remaining=8 Moves=3 Replans=4 MapVersion=9",
+    "GridControlReceived Phase=Running Position=(2,1) Remaining=8 Moves=3 Replans=4 MapVersion=9",
+    "GridControlReceived Phase=Running Position=(2,1) Remaining=8 Moves=3 Replans=4 MapVersion=9",
+    "GridControlReceived Phase=Running Position=(2,1) Remaining=8 Moves=3 Replans=4 MapVersion=9",
+    "GridCanceled Phase=Canceling Position=(2,1) Remaining=8 Moves=3 Replans=4 MapVersion=9",
+    "GridMqttEnded Phase=Canceled Position=(2,1) Remaining=8 Moves=3 Replans=4 MapVersion=9",
+    "GridStarted Phase=Connecting Position=(0,0) Remaining=11 Moves=0 Replans=1 MapVersion=9",
+    "GridMqttConnected Phase=Running Position=(0,0) Remaining=11 Moves=0 Replans=1 MapVersion=9",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=11 Moves=0 Replans=1 MapVersion=9",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=11 Moves=0 Replans=1 MapVersion=9",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=11 Moves=0 Replans=1 MapVersion=9",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=11 Moves=0 Replans=1 MapVersion=9",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=11 Moves=0 Replans=1 MapVersion=9",
+    "GridMoved Phase=Running Position=(0,1) Remaining=10 Moves=1 Replans=2 MapVersion=9",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=10 Moves=1 Replans=2 MapVersion=9",
+    "GridCanceled Phase=Canceling Position=(0,1) Remaining=10 Moves=1 Replans=2 MapVersion=9",
+    "GridMqttEnded Phase=Canceled Position=(0,1) Remaining=10 Moves=1 Replans=2 MapVersion=9",
+    "GridReset Phase=Ready Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=10",
+    "GridStarted Phase=Connecting Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=10",
+    "GridMqttConnected Phase=Running Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=10",
+    "GridMoved Phase=Running Position=(0,1) Remaining=8 Moves=1 Replans=2 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=8 Moves=1 Replans=2 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=8 Moves=1 Replans=2 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=8 Moves=1 Replans=2 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=8 Moves=1 Replans=2 MapVersion=10",
+    "GridMoved Phase=Running Position=(1,1) Remaining=7 Moves=2 Replans=3 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(1,1) Remaining=7 Moves=2 Replans=3 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(1,1) Remaining=7 Moves=2 Replans=3 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(1,1) Remaining=7 Moves=2 Replans=3 MapVersion=10",
+    "GridMoved Phase=Running Position=(2,1) Remaining=6 Moves=3 Replans=4 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(2,1) Remaining=6 Moves=3 Replans=4 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(2,1) Remaining=6 Moves=3 Replans=4 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(2,1) Remaining=6 Moves=3 Replans=4 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(2,1) Remaining=6 Moves=3 Replans=4 MapVersion=10",
+    "GridMoved Phase=Running Position=(2,2) Remaining=5 Moves=4 Replans=5 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(2,2) Remaining=5 Moves=4 Replans=5 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(2,2) Remaining=5 Moves=4 Replans=5 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(2,2) Remaining=5 Moves=4 Replans=5 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(2,2) Remaining=5 Moves=4 Replans=5 MapVersion=10",
+    "GridMoved Phase=Running Position=(2,3) Remaining=4 Moves=5 Replans=6 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(2,3) Remaining=4 Moves=5 Replans=6 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(2,3) Remaining=4 Moves=5 Replans=6 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(2,3) Remaining=4 Moves=5 Replans=6 MapVersion=10",
+    "GridMoved Phase=Running Position=(3,3) Remaining=3 Moves=6 Replans=7 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(3,3) Remaining=3 Moves=6 Replans=7 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(3,3) Remaining=3 Moves=6 Replans=7 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(3,3) Remaining=3 Moves=6 Replans=7 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(3,3) Remaining=3 Moves=6 Replans=7 MapVersion=10",
+    "GridMoved Phase=Running Position=(4,3) Remaining=2 Moves=7 Replans=8 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(4,3) Remaining=2 Moves=7 Replans=8 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(4,3) Remaining=2 Moves=7 Replans=8 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(4,3) Remaining=2 Moves=7 Replans=8 MapVersion=10",
+    "GridMoved Phase=Running Position=(4,4) Remaining=1 Moves=8 Replans=9 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(4,4) Remaining=1 Moves=8 Replans=9 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(4,4) Remaining=1 Moves=8 Replans=9 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(4,4) Remaining=1 Moves=8 Replans=9 MapVersion=10",
+    "GridControlReceived Phase=Running Position=(4,4) Remaining=1 Moves=8 Replans=9 MapVersion=10",
+    "GridMoved Phase=Completed Position=(4,5) Remaining=0 Moves=9 Replans=10 MapVersion=10",
+    "GridControlReceived Phase=WaitingForTelemetry Position=(4,5) Remaining=0 Moves=9 Replans=10 MapVersion=10",
+    "GridFinalReceived Phase=WaitingForTelemetry Position=(4,5) Remaining=0 Moves=9 Replans=10 MapVersion=10",
+    "GridMqttEnded Phase=Completed Position=(4,5) Remaining=0 Moves=9 Replans=10 MapVersion=10"
+  ]
+}

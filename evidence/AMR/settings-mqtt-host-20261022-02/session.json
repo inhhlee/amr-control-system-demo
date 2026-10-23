@@ -1,0 +1,12 @@
+{
+  "ServerPid": 22864,
+  "RunId": "settings-mqtt-host-20261022-02",
+  "Exe": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\Debug\\net10.0\\Amr.Simulator.Map.exe",
+  "ProductEvidence": "C:\\amr-control-system-demo\\evidence\\AMR\\mission-live-20261022-111352-2a4443c436d34589b79752231666d17a",
+  "Started": "2026-10-22T11:13:52.9795558+09:00",
+  "ServerStartTicks": 639282320326312572,
+  "ImageId": "sha256:38c0da4f2ef84284d47b3b3eeea1cb3bdeabe81ee10caf0cd5c5ff61ee3ea408",
+  "Url": "http://127.0.0.1:52852",
+  "BrokerPort": 52850,
+  "ContainerId": "1aa6cfbbbf0db56143c3dd80f4b568f229574d90da40eebc668ba9fa45280663"
+}

@@ -1,0 +1,625 @@
+2026-10-22T00:37:06.019255668Z 1792629426: mosquitto version 2.1.2 starting
+2026-10-22T00:37:06.019276430Z 1792629426: Info: running mosquitto as user: mosquitto.
+2026-10-22T00:37:06.019303204Z 1792629426: Config loaded from /mosquitto/config/mosquitto.conf.
+2026-10-22T00:37:06.019304959Z 1792629426: Bridge support available.
+2026-10-22T00:37:06.019305878Z 1792629426: Persistence support available.
+2026-10-22T00:37:06.019306537Z 1792629426: TLS support available.
+2026-10-22T00:37:06.019307198Z 1792629426: TLS-PSK support available.
+2026-10-22T00:37:06.019307766Z 1792629426: Websockets support available.
+2026-10-22T00:37:06.019313814Z 1792629426: Opening ipv4 listen socket on port 1883.
+2026-10-22T00:37:06.019318923Z 1792629426: mosquitto version 2.1.2 running
+2026-10-22T00:39:38.831138000Z 1792629578: New connection from 172.17.0.1:50388 on port 1883.
+2026-10-22T00:39:38.836708296Z 1792629578: New client connected from 172.17.0.1:50388 as amr-demo-532d089f593b417093fa24d6bca32c74 (p5, c1, k5).
+2026-10-22T00:39:38.836726957Z 1792629578: No will message specified.
+2026-10-22T00:39:38.836728500Z 1792629578: Sending CONNACK to amr-demo-532d089f593b417093fa24d6bca32c74 (0, 0)
+2026-10-22T00:39:38.847859542Z 1792629578: Received SUBSCRIBE from amr-demo-532d089f593b417093fa24d6bca32c74
+2026-10-22T00:39:38.847881187Z 1792629578: 	amr/+/heartbeat (QoS 0)
+2026-10-22T00:39:38.847882994Z 1792629578: amr-demo-532d089f593b417093fa24d6bca32c74 0 amr/+/heartbeat
+2026-10-22T00:39:38.847883982Z 1792629578: 	amr/+/telemetry (QoS 0)
+2026-10-22T00:39:38.847884825Z 1792629578: amr-demo-532d089f593b417093fa24d6bca32c74 0 amr/+/telemetry
+2026-10-22T00:39:38.847885671Z 1792629578: 	amr/+/alarm (QoS 0)
+2026-10-22T00:39:38.847886511Z 1792629578: amr-demo-532d089f593b417093fa24d6bca32c74 0 amr/+/alarm
+2026-10-22T00:39:38.847887327Z 1792629578: 	amr/+/ack (QoS 0)
+2026-10-22T00:39:38.847888087Z 1792629578: amr-demo-532d089f593b417093fa24d6bca32c74 0 amr/+/ack
+2026-10-22T00:39:38.847888900Z 1792629578: Sending SUBACK to amr-demo-532d089f593b417093fa24d6bca32c74
+2026-10-22T00:39:38.854331471Z 1792629578: New connection from 172.17.0.1:50392 on port 1883.
+2026-10-22T00:39:38.854514577Z 1792629578: New client connected from 172.17.0.1:50392 as amr-demo-9949dbdf71b047988b4b2662fe130485 (p5, c1, k5).
+2026-10-22T00:39:38.854524047Z 1792629578: No will message specified.
+2026-10-22T00:39:38.854525361Z 1792629578: Sending CONNACK to amr-demo-9949dbdf71b047988b4b2662fe130485 (0, 0)
+2026-10-22T00:39:38.862509322Z 1792629578: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:39:38.862533884Z 1792629578: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:39:38.864954406Z 1792629578: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:38.864978622Z 1792629578: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:38.865127926Z 1792629578: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:38.865134014Z 1792629578: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:39.085007104Z 1792629579: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:39.085028879Z 1792629579: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:39.303379318Z 1792629579: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:39.303400614Z 1792629579: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:39.491608401Z 1792629579: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:39.491629919Z 1792629579: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:39.711613646Z 1792629579: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:39.711634365Z 1792629579: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:39.867112808Z 1792629579: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:39.867136722Z 1792629579: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:39.928546021Z 1792629579: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:39.928567310Z 1792629579: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:40.106530301Z 1792629580: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:40.106559865Z 1792629580: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:40.321161706Z 1792629580: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:40.321193398Z 1792629580: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:40.550600110Z 1792629580: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:40.550630847Z 1792629580: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:40.708890365Z 1792629580: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:40.708913623Z 1792629580: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:40.888374812Z 1792629580: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:40.888396673Z 1792629580: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:40.919548895Z 1792629580: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:40.919568811Z 1792629580: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:41.139688570Z 1792629581: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:41.139709836Z 1792629581: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:41.323098539Z 1792629581: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:41.323121293Z 1792629581: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:41.541526074Z 1792629581: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:41.541548300Z 1792629581: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:41.763049960Z 1792629581: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:41.763070973Z 1792629581: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:41.891098523Z 1792629581: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:41.891125068Z 1792629581: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:41.952524312Z 1792629581: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:41.952546982Z 1792629581: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:42.168059860Z 1792629582: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:42.168091080Z 1792629582: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:42.388627526Z 1792629582: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:42.388648969Z 1792629582: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:42.578321623Z 1792629582: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:42.578343662Z 1792629582: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:42.798125076Z 1792629582: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:42.798147239Z 1792629582: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:42.892044837Z 1792629582: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:42.892066918Z 1792629582: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:43.016412494Z 1792629583: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:43.016446855Z 1792629583: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:43.199868782Z 1792629583: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:43.199889668Z 1792629583: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:43.419213027Z 1792629583: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:43.419235530Z 1792629583: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:43.631211147Z 1792629583: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:43.631236908Z 1792629583: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:43.814694129Z 1792629583: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:43.814720144Z 1792629583: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:43.908366225Z 1792629583: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:43.908392716Z 1792629583: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:43.942562534Z 1792629583: Received PINGREQ from amr-demo-532d089f593b417093fa24d6bca32c74
+2026-10-22T00:39:43.942585976Z 1792629583: Sending PINGRESP to amr-demo-532d089f593b417093fa24d6bca32c74
+2026-10-22T00:39:44.037990628Z 1792629584: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:44.038011231Z 1792629584: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:44.238743099Z 1792629584: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:44.238764142Z 1792629584: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:44.416584463Z 1792629584: Received PUBLISH from amr-demo-9949dbdf71b047988b4b2662fe130485 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (78 bytes))
+2026-10-22T00:39:44.416605236Z 1792629584: Sending PUBLISH to amr-demo-532d089f593b417093fa24d6bca32c74 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (78 bytes))
+2026-10-22T00:39:44.448425786Z 1792629584: Received DISCONNECT from amr-demo-9949dbdf71b047988b4b2662fe130485
+2026-10-22T00:39:44.448458595Z 1792629584: Client amr-demo-9949dbdf71b047988b4b2662fe130485 [172.17.0.1:50392] disconnected.
+2026-10-22T00:39:44.456205735Z 1792629584: Received UNSUBSCRIBE from amr-demo-532d089f593b417093fa24d6bca32c74
+2026-10-22T00:39:44.456218217Z 1792629584: 	amr/+/heartbeat
+2026-10-22T00:39:44.456219964Z 1792629584: amr-demo-532d089f593b417093fa24d6bca32c74 amr/+/heartbeat
+2026-10-22T00:39:44.456220994Z 1792629584: 	amr/+/telemetry
+2026-10-22T00:39:44.456221790Z 1792629584: amr-demo-532d089f593b417093fa24d6bca32c74 amr/+/telemetry
+2026-10-22T00:39:44.456222469Z 1792629584: 	amr/+/alarm
+2026-10-22T00:39:44.456223165Z 1792629584: amr-demo-532d089f593b417093fa24d6bca32c74 amr/+/alarm
+2026-10-22T00:39:44.456223811Z 1792629584: 	amr/+/ack
+2026-10-22T00:39:44.456224384Z 1792629584: amr-demo-532d089f593b417093fa24d6bca32c74 amr/+/ack
+2026-10-22T00:39:44.456224996Z 1792629584: Sending UNSUBACK to amr-demo-532d089f593b417093fa24d6bca32c74
+2026-10-22T00:39:44.458329383Z 1792629584: Received DISCONNECT from amr-demo-532d089f593b417093fa24d6bca32c74
+2026-10-22T00:39:44.458337498Z 1792629584: Client amr-demo-532d089f593b417093fa24d6bca32c74 [172.17.0.1:50388] disconnected.
+2026-10-22T00:39:44.549805430Z 1792629584: New connection from 172.17.0.1:37992 on port 1883.
+2026-10-22T00:39:44.549898435Z 1792629584: New client connected from 172.17.0.1:37992 as amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (p5, c1, k5).
+2026-10-22T00:39:44.549905114Z 1792629584: No will message specified.
+2026-10-22T00:39:44.549906215Z 1792629584: Sending CONNACK to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (0, 0)
+2026-10-22T00:39:44.550408046Z 1792629584: Received SUBSCRIBE from amr-demo-bc1cfa654bd744f4b28d388aaf6e7120
+2026-10-22T00:39:44.550414076Z 1792629584: 	amr/+/heartbeat (QoS 0)
+2026-10-22T00:39:44.550415921Z 1792629584: amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 0 amr/+/heartbeat
+2026-10-22T00:39:44.550416780Z 1792629584: 	amr/+/telemetry (QoS 0)
+2026-10-22T00:39:44.550417504Z 1792629584: amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 0 amr/+/telemetry
+2026-10-22T00:39:44.550418107Z 1792629584: 	amr/+/alarm (QoS 0)
+2026-10-22T00:39:44.550418754Z 1792629584: amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 0 amr/+/alarm
+2026-10-22T00:39:44.550419377Z 1792629584: 	amr/+/ack (QoS 0)
+2026-10-22T00:39:44.550420031Z 1792629584: amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 0 amr/+/ack
+2026-10-22T00:39:44.550420635Z 1792629584: Sending SUBACK to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120
+2026-10-22T00:39:44.551510779Z 1792629584: New connection from 172.17.0.1:38002 on port 1883.
+2026-10-22T00:39:44.551659986Z 1792629584: New client connected from 172.17.0.1:38002 as amr-demo-a4385386738047abacd2fed6bd64afb6 (p5, c1, k5).
+2026-10-22T00:39:44.551665932Z 1792629584: No will message specified.
+2026-10-22T00:39:44.551667066Z 1792629584: Sending CONNACK to amr-demo-a4385386738047abacd2fed6bd64afb6 (0, 0)
+2026-10-22T00:39:44.552334407Z 1792629584: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:39:44.552340551Z 1792629584: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:39:44.552341771Z 1792629584: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:44.552342565Z 1792629584: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:44.552343190Z 1792629584: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:44.552343932Z 1792629584: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:44.761147269Z 1792629584: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:44.761169356Z 1792629584: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:44.982047346Z 1792629584: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:44.982068369Z 1792629584: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:45.175397151Z 1792629585: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:45.175428311Z 1792629585: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:45.397102639Z 1792629585: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:45.397138726Z 1792629585: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:45.581754607Z 1792629585: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:45.581776672Z 1792629585: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:45.603576982Z 1792629585: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:45.603605566Z 1792629585: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:45.792840320Z 1792629585: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:45.792863211Z 1792629585: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:46.011197545Z 1792629586: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:46.011218161Z 1792629586: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:46.232199627Z 1792629586: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:46.232219884Z 1792629586: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:46.417966571Z 1792629586: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:46.417996700Z 1792629586: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:46.606318905Z 1792629586: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:46.606339715Z 1792629586: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:46.637053456Z 1792629586: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:46.637073952Z 1792629586: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:46.857425529Z 1792629586: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:46.857446555Z 1792629586: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:47.045714817Z 1792629587: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:47.045736818Z 1792629587: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:47.263663778Z 1792629587: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:47.263696502Z 1792629587: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:47.481385452Z 1792629587: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:47.481416091Z 1792629587: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:47.610278786Z 1792629587: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:47.610304314Z 1792629587: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:47.673294428Z 1792629587: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:47.673318316Z 1792629587: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:47.881333404Z 1792629587: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:47.881353936Z 1792629587: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:48.099780795Z 1792629588: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:48.099803032Z 1792629588: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:48.296631454Z 1792629588: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:48.296661151Z 1792629588: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:48.526682751Z 1792629588: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:48.526705185Z 1792629588: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:48.631941011Z 1792629588: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:48.631961388Z 1792629588: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:48.746663274Z 1792629588: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:48.746684472Z 1792629588: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:48.904296800Z 1792629588: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:48.904319533Z 1792629588: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:49.121953557Z 1792629589: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:49.121979260Z 1792629589: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:49.334816289Z 1792629589: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:49.334842686Z 1792629589: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:49.528958052Z 1792629589: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:49.528980992Z 1792629589: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:49.645564597Z 1792629589: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:49.645584856Z 1792629589: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:49.661489303Z 1792629589: Received PINGREQ from amr-demo-bc1cfa654bd744f4b28d388aaf6e7120
+2026-10-22T00:39:49.661519023Z 1792629589: Sending PINGRESP to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120
+2026-10-22T00:39:49.729247239Z 1792629589: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:49.729268861Z 1792629589: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:49.933865323Z 1792629589: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:49.933886774Z 1792629589: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:50.133228985Z 1792629590: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:50.133250554Z 1792629590: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:50.352525066Z 1792629590: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:50.352554813Z 1792629590: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:50.568239798Z 1792629590: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:50.568261279Z 1792629590: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:50.649997510Z 1792629590: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:50.650019805Z 1792629590: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:50.746368469Z 1792629590: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:50.746396982Z 1792629590: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:50.965389248Z 1792629590: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:50.965415711Z 1792629590: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:51.181934485Z 1792629591: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:51.181964158Z 1792629591: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:51.366264992Z 1792629591: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:51.366287736Z 1792629591: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:51.573467730Z 1792629591: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:51.573497736Z 1792629591: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:51.664992769Z 1792629591: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:51.665028168Z 1792629591: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:51.781365589Z 1792629591: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:51.781395562Z 1792629591: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:51.997628162Z 1792629591: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:51.997658872Z 1792629591: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:52.198463098Z 1792629592: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:52.198486332Z 1792629592: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:52.403428554Z 1792629592: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:52.403449508Z 1792629592: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:52.612083441Z 1792629592: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:52.612104473Z 1792629592: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:52.674506983Z 1792629592: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:52.674528090Z 1792629592: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:52.834915930Z 1792629592: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:52.834938316Z 1792629592: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:53.046015404Z 1792629593: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:53.046035373Z 1792629593: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:53.231893822Z 1792629593: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:53.231915608Z 1792629593: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:53.434157667Z 1792629593: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:53.434178938Z 1792629593: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:53.645566204Z 1792629593: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:53.645587037Z 1792629593: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:53.675546933Z 1792629593: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:53.675568430Z 1792629593: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:53.861474321Z 1792629593: Received PUBLISH from amr-demo-a4385386738047abacd2fed6bd64afb6 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (78 bytes))
+2026-10-22T00:39:53.861495163Z 1792629593: Sending PUBLISH to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (78 bytes))
+2026-10-22T00:39:53.891837295Z 1792629593: Received DISCONNECT from amr-demo-a4385386738047abacd2fed6bd64afb6
+2026-10-22T00:39:53.891858566Z 1792629593: Client amr-demo-a4385386738047abacd2fed6bd64afb6 [172.17.0.1:38002] disconnected.
+2026-10-22T00:39:53.891956117Z 1792629593: Received UNSUBSCRIBE from amr-demo-bc1cfa654bd744f4b28d388aaf6e7120
+2026-10-22T00:39:53.891962492Z 1792629593: 	amr/+/heartbeat
+2026-10-22T00:39:53.891963961Z 1792629593: amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 amr/+/heartbeat
+2026-10-22T00:39:53.891964640Z 1792629593: 	amr/+/telemetry
+2026-10-22T00:39:53.891965235Z 1792629593: amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 amr/+/telemetry
+2026-10-22T00:39:53.891965824Z 1792629593: 	amr/+/alarm
+2026-10-22T00:39:53.891966427Z 1792629593: amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 amr/+/alarm
+2026-10-22T00:39:53.891967034Z 1792629593: 	amr/+/ack
+2026-10-22T00:39:53.891969925Z 1792629593: amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 amr/+/ack
+2026-10-22T00:39:53.891970712Z 1792629593: Sending UNSUBACK to amr-demo-bc1cfa654bd744f4b28d388aaf6e7120
+2026-10-22T00:39:53.892428143Z 1792629593: Received DISCONNECT from amr-demo-bc1cfa654bd744f4b28d388aaf6e7120
+2026-10-22T00:39:53.892433974Z 1792629593: Client amr-demo-bc1cfa654bd744f4b28d388aaf6e7120 [172.17.0.1:37992] disconnected.
+2026-10-22T00:39:53.917979088Z 1792629593: New connection from 172.17.0.1:56888 on port 1883.
+2026-10-22T00:39:53.918000977Z 1792629593: New client connected from 172.17.0.1:56888 as amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (p5, c1, k5).
+2026-10-22T00:39:53.918002152Z 1792629593: No will message specified.
+2026-10-22T00:39:53.918002929Z 1792629593: Sending CONNACK to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (0, 0)
+2026-10-22T00:39:53.918278320Z 1792629593: Received SUBSCRIBE from amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f
+2026-10-22T00:39:53.918285766Z 1792629593: 	amr/+/heartbeat (QoS 0)
+2026-10-22T00:39:53.918287331Z 1792629593: amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f 0 amr/+/heartbeat
+2026-10-22T00:39:53.918288078Z 1792629593: 	amr/+/telemetry (QoS 0)
+2026-10-22T00:39:53.918288645Z 1792629593: amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f 0 amr/+/telemetry
+2026-10-22T00:39:53.918289295Z 1792629593: 	amr/+/alarm (QoS 0)
+2026-10-22T00:39:53.918289932Z 1792629593: amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f 0 amr/+/alarm
+2026-10-22T00:39:53.918290528Z 1792629593: 	amr/+/ack (QoS 0)
+2026-10-22T00:39:53.918300414Z 1792629593: amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f 0 amr/+/ack
+2026-10-22T00:39:53.918301113Z 1792629593: Sending SUBACK to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f
+2026-10-22T00:39:53.919088090Z 1792629593: New connection from 172.17.0.1:56904 on port 1883.
+2026-10-22T00:39:53.919246917Z 1792629593: New client connected from 172.17.0.1:56904 as amr-demo-cc76f609063f457aa2aeccec4fda3920 (p5, c1, k5).
+2026-10-22T00:39:53.919253056Z 1792629593: No will message specified.
+2026-10-22T00:39:53.919254026Z 1792629593: Sending CONNACK to amr-demo-cc76f609063f457aa2aeccec4fda3920 (0, 0)
+2026-10-22T00:39:53.919749766Z 1792629593: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:39:53.919756638Z 1792629593: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:39:53.919757953Z 1792629593: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:53.919758842Z 1792629593: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:53.919759654Z 1792629593: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:53.919760401Z 1792629593: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:54.131193503Z 1792629594: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:54.131219329Z 1792629594: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:54.340308401Z 1792629594: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:54.340332386Z 1792629594: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:54.528068871Z 1792629594: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:54.528093535Z 1792629594: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:54.748887069Z 1792629594: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:54.748909391Z 1792629594: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:54.931568018Z 1792629594: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:54.931590328Z 1792629594: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:54.961730200Z 1792629594: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:54.961752215Z 1792629594: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:39:55.138847701Z 1792629595: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:55.138868064Z 1792629595: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:55.369412099Z 1792629595: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:55.369433335Z 1792629595: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:55.569329596Z 1792629595: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:55.569352471Z 1792629595: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:55.752082169Z 1792629595: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:55.752106211Z 1792629595: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:55.935887989Z 1792629595: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:55.935912765Z 1792629595: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:55.965630034Z 1792629595: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:55.965648939Z 1792629595: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:56.167171464Z 1792629596: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:56.167193019Z 1792629596: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:56.360381674Z 1792629596: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:56.360403222Z 1792629596: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:56.583686689Z 1792629596: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:56.583707872Z 1792629596: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:56.803330609Z 1792629596: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:56.803360702Z 1792629596: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:56.953612245Z 1792629596: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:56.953645703Z 1792629596: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:56.984374606Z 1792629596: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (78 bytes))
+2026-10-22T00:39:56.984396464Z 1792629596: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (78 bytes))
+2026-10-22T00:39:57.199113051Z 1792629597: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (78 bytes))
+2026-10-22T00:39:57.199135150Z 1792629597: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (78 bytes))
+2026-10-22T00:39:57.414026039Z 1792629597: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (78 bytes))
+2026-10-22T00:39:57.414045916Z 1792629597: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (78 bytes))
+2026-10-22T00:39:57.617866862Z 1792629597: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (78 bytes))
+2026-10-22T00:39:57.617887383Z 1792629597: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (78 bytes))
+2026-10-22T00:39:57.820125127Z 1792629597: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (78 bytes))
+2026-10-22T00:39:57.820147899Z 1792629597: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (78 bytes))
+2026-10-22T00:39:57.851703587Z 1792629597: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:57.851723264Z 1792629597: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:57.965999422Z 1792629597: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:57.966020946Z 1792629597: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:58.059707115Z 1792629598: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:58.059728412Z 1792629598: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:58.213293240Z 1792629598: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:58.213334175Z 1792629598: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:58.441442088Z 1792629598: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:58.441463782Z 1792629598: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:58.652659558Z 1792629598: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:58.652692390Z 1792629598: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:58.822677695Z 1792629598: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:58.822702383Z 1792629598: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:58.970063598Z 1792629598: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:58.970087504Z 1792629598: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:59.032270802Z 1792629599: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:59.032296044Z 1792629599: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:59.071482619Z 1792629599: Received PINGREQ from amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f
+2026-10-22T00:39:59.071503820Z 1792629599: Sending PINGRESP to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f
+2026-10-22T00:39:59.259617394Z 1792629599: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:59.259638749Z 1792629599: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:59.451846090Z 1792629599: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:59.451867477Z 1792629599: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:59.656157244Z 1792629599: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:59.656180610Z 1792629599: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:59.869491694Z 1792629599: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:59.869525830Z 1792629599: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:39:59.987155465Z 1792629599: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:39:59.987178213Z 1792629599: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:00.055358072Z 1792629600: Received PUBLISH from amr-demo-cc76f609063f457aa2aeccec4fda3920 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (78 bytes))
+2026-10-22T00:40:00.055382594Z 1792629600: Sending PUBLISH to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (78 bytes))
+2026-10-22T00:40:00.088920215Z 1792629600: Received DISCONNECT from amr-demo-cc76f609063f457aa2aeccec4fda3920
+2026-10-22T00:40:00.088937622Z 1792629600: Client amr-demo-cc76f609063f457aa2aeccec4fda3920 [172.17.0.1:56904] disconnected.
+2026-10-22T00:40:00.089182131Z 1792629600: Received UNSUBSCRIBE from amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f
+2026-10-22T00:40:00.089188284Z 1792629600: 	amr/+/heartbeat
+2026-10-22T00:40:00.089189753Z 1792629600: amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f amr/+/heartbeat
+2026-10-22T00:40:00.089190866Z 1792629600: 	amr/+/telemetry
+2026-10-22T00:40:00.089191567Z 1792629600: amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f amr/+/telemetry
+2026-10-22T00:40:00.089192174Z 1792629600: 	amr/+/alarm
+2026-10-22T00:40:00.089192757Z 1792629600: amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f amr/+/alarm
+2026-10-22T00:40:00.089193377Z 1792629600: 	amr/+/ack
+2026-10-22T00:40:00.089206071Z 1792629600: amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f amr/+/ack
+2026-10-22T00:40:00.089211728Z 1792629600: Sending UNSUBACK to amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f
+2026-10-22T00:40:00.090094459Z 1792629600: Received DISCONNECT from amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f
+2026-10-22T00:40:00.090099750Z 1792629600: Client amr-demo-bf7251a5a83a4177aa566ec2a2e29f6f [172.17.0.1:56888] disconnected.
+2026-10-22T00:40:00.141111112Z 1792629600: New connection from 172.17.0.1:56908 on port 1883.
+2026-10-22T00:40:00.141310481Z 1792629600: New client connected from 172.17.0.1:56908 as amr-demo-012151853def4482abade8d71d84811c (p5, c1, k5).
+2026-10-22T00:40:00.141313701Z 1792629600: No will message specified.
+2026-10-22T00:40:00.141314658Z 1792629600: Sending CONNACK to amr-demo-012151853def4482abade8d71d84811c (0, 0)
+2026-10-22T00:40:00.141797330Z 1792629600: Received SUBSCRIBE from amr-demo-012151853def4482abade8d71d84811c
+2026-10-22T00:40:00.141804936Z 1792629600: 	amr/+/heartbeat (QoS 0)
+2026-10-22T00:40:00.141806841Z 1792629600: amr-demo-012151853def4482abade8d71d84811c 0 amr/+/heartbeat
+2026-10-22T00:40:00.141807768Z 1792629600: 	amr/+/telemetry (QoS 0)
+2026-10-22T00:40:00.141808524Z 1792629600: amr-demo-012151853def4482abade8d71d84811c 0 amr/+/telemetry
+2026-10-22T00:40:00.141809247Z 1792629600: 	amr/+/alarm (QoS 0)
+2026-10-22T00:40:00.141820433Z 1792629600: amr-demo-012151853def4482abade8d71d84811c 0 amr/+/alarm
+2026-10-22T00:40:00.141821413Z 1792629600: 	amr/+/ack (QoS 0)
+2026-10-22T00:40:00.141822111Z 1792629600: amr-demo-012151853def4482abade8d71d84811c 0 amr/+/ack
+2026-10-22T00:40:00.141822791Z 1792629600: Sending SUBACK to amr-demo-012151853def4482abade8d71d84811c
+2026-10-22T00:40:00.142883068Z 1792629600: New connection from 172.17.0.1:56916 on port 1883.
+2026-10-22T00:40:00.143199535Z 1792629600: New client connected from 172.17.0.1:56916 as amr-demo-53a1b7dfe5a6421e98df83b993b96bca (p5, c1, k5).
+2026-10-22T00:40:00.143207157Z 1792629600: No will message specified.
+2026-10-22T00:40:00.143208539Z 1792629600: Sending CONNACK to amr-demo-53a1b7dfe5a6421e98df83b993b96bca (0, 0)
+2026-10-22T00:40:00.143719043Z 1792629600: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:00.143724051Z 1792629600: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:00.143725160Z 1792629600: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:00.143726013Z 1792629600: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:00.143726743Z 1792629600: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:00.143727458Z 1792629600: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:00.368324299Z 1792629600: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:00.368346055Z 1792629600: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:00.571476147Z 1792629600: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:00.571494837Z 1792629600: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:00.778852074Z 1792629600: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:00.778873114Z 1792629600: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:00.995818461Z 1792629600: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:00.995839499Z 1792629600: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:01.172731914Z 1792629601: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:01.172762892Z 1792629601: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:01.205584900Z 1792629601: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:01.205607684Z 1792629601: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:01.263859112Z 1792629601: New connection from 127.0.0.1:51252 on port 1883.
+2026-10-22T00:40:01.266247384Z 1792629601: New client connected from 127.0.0.1:51252 as auto-ED75F13A-58E0-C9F8-413A-A96FA303E53C (p4, c1, k60).
+2026-10-22T00:40:01.266256404Z 1792629601: No will message specified.
+2026-10-22T00:40:01.266257658Z 1792629601: Sending CONNACK to auto-ED75F13A-58E0-C9F8-413A-A96FA303E53C (0, 0)
+2026-10-22T00:40:01.266303688Z 1792629601: Received PUBLISH from auto-ED75F13A-58E0-C9F8-413A-A96FA303E53C (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (74 bytes))
+2026-10-22T00:40:01.266309217Z 1792629601: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (74 bytes))
+2026-10-22T00:40:01.266400021Z 1792629601: Received DISCONNECT from auto-ED75F13A-58E0-C9F8-413A-A96FA303E53C
+2026-10-22T00:40:01.266405850Z 1792629601: Client auto-ED75F13A-58E0-C9F8-413A-A96FA303E53C [127.0.0.1:51252] disconnected.
+2026-10-22T00:40:01.421552028Z 1792629601: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:01.421587922Z 1792629601: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:01.437194251Z 1792629601: New connection from 127.0.0.1:40742 on port 1883.
+2026-10-22T00:40:01.437432448Z 1792629601: New client connected from 127.0.0.1:40742 as auto-25D7E2A4-AC01-6A9B-FCF3-C4AA96E75895 (p4, c1, k60).
+2026-10-22T00:40:01.437438497Z 1792629601: No will message specified.
+2026-10-22T00:40:01.437439921Z 1792629601: Sending CONNACK to auto-25D7E2A4-AC01-6A9B-FCF3-C4AA96E75895 (0, 0)
+2026-10-22T00:40:01.437501142Z 1792629601: Received PUBLISH from auto-25D7E2A4-AC01-6A9B-FCF3-C4AA96E75895 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (69 bytes))
+2026-10-22T00:40:01.437514652Z 1792629601: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (69 bytes))
+2026-10-22T00:40:01.437548042Z 1792629601: Received DISCONNECT from auto-25D7E2A4-AC01-6A9B-FCF3-C4AA96E75895
+2026-10-22T00:40:01.437549815Z 1792629601: Client auto-25D7E2A4-AC01-6A9B-FCF3-C4AA96E75895 [127.0.0.1:40742] disconnected.
+2026-10-22T00:40:01.606988519Z 1792629601: New connection from 127.0.0.1:40754 on port 1883.
+2026-10-22T00:40:01.607036886Z 1792629601: New client connected from 127.0.0.1:40754 as auto-7D7BC79E-14B5-9E7F-98B3-49CB1488509D (p4, c1, k60).
+2026-10-22T00:40:01.607039615Z 1792629601: No will message specified.
+2026-10-22T00:40:01.607047320Z 1792629601: Sending CONNACK to auto-7D7BC79E-14B5-9E7F-98B3-49CB1488509D (0, 0)
+2026-10-22T00:40:01.607117501Z 1792629601: Received PUBLISH from auto-7D7BC79E-14B5-9E7F-98B3-49CB1488509D (d0, q0, r0, m0, 'amr/OTHER_GRID_AMR/telemetry', ... (78 bytes))
+2026-10-22T00:40:01.607119385Z 1792629601: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/OTHER_GRID_AMR/telemetry', ... (78 bytes))
+2026-10-22T00:40:01.607212563Z 1792629601: Received DISCONNECT from auto-7D7BC79E-14B5-9E7F-98B3-49CB1488509D
+2026-10-22T00:40:01.607219006Z 1792629601: Client auto-7D7BC79E-14B5-9E7F-98B3-49CB1488509D [127.0.0.1:40754] disconnected.
+2026-10-22T00:40:01.623868329Z 1792629601: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:01.623929148Z 1792629601: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:01.748770405Z 1792629601: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:40:01.748793125Z 1792629601: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:40:01.974617368Z 1792629601: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:40:01.974639291Z 1792629601: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:40:02.189947930Z 1792629602: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:40:02.189968771Z 1792629602: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:40:02.189970021Z 1792629602: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:02.189970860Z 1792629602: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:02.402179653Z 1792629602: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:40:02.402201002Z 1792629602: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:40:02.583031191Z 1792629602: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:02.583052053Z 1792629602: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:02.798193526Z 1792629602: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:02.798214608Z 1792629602: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:03.007840277Z 1792629603: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:03.007859842Z 1792629603: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:03.187937995Z 1792629603: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:03.187970075Z 1792629603: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:03.209269330Z 1792629603: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:03.209282650Z 1792629603: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:03.388760021Z 1792629603: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:03.388780765Z 1792629603: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:03.591424300Z 1792629603: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:03.591444898Z 1792629603: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:03.804538250Z 1792629603: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:03.804561074Z 1792629603: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:04.020791654Z 1792629604: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:04.020821489Z 1792629604: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:04.223065769Z 1792629604: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:04.223087902Z 1792629604: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:04.223089134Z 1792629604: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:04.223089880Z 1792629604: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:04.409566826Z 1792629604: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:04.409589877Z 1792629604: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:04.609943233Z 1792629604: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:04.609967843Z 1792629604: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:04.816476331Z 1792629604: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:04.816499183Z 1792629604: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:05.027011799Z 1792629605: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:05.027035280Z 1792629605: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:05.227431354Z 1792629605: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:05.227473053Z 1792629605: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:05.227481248Z 1792629605: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:05.227482436Z 1792629605: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:05.306242057Z 1792629605: Received PINGREQ from amr-demo-012151853def4482abade8d71d84811c
+2026-10-22T00:40:05.306276009Z 1792629605: Sending PINGRESP to amr-demo-012151853def4482abade8d71d84811c
+2026-10-22T00:40:05.427733849Z 1792629605: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:05.427753918Z 1792629605: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:05.637324478Z 1792629605: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:05.637345911Z 1792629605: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:05.845140805Z 1792629605: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:05.845162143Z 1792629605: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:06.057381145Z 1792629606: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:06.057402131Z 1792629606: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:06.244016062Z 1792629606: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:06.244044292Z 1792629606: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:06.244332957Z 1792629606: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:06.244339840Z 1792629606: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:06.457144146Z 1792629606: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:06.457173974Z 1792629606: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:06.658027861Z 1792629606: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:06.658048317Z 1792629606: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (95 bytes))
+2026-10-22T00:40:06.844509899Z 1792629606: Received PUBLISH from amr-demo-53a1b7dfe5a6421e98df83b993b96bca (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (78 bytes))
+2026-10-22T00:40:06.844530591Z 1792629606: Sending PUBLISH to amr-demo-012151853def4482abade8d71d84811c (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (78 bytes))
+2026-10-22T00:40:06.877375059Z 1792629606: Received UNSUBSCRIBE from amr-demo-012151853def4482abade8d71d84811c
+2026-10-22T00:40:06.877396247Z 1792629606: 	amr/+/heartbeat
+2026-10-22T00:40:06.877397646Z 1792629606: amr-demo-012151853def4482abade8d71d84811c amr/+/heartbeat
+2026-10-22T00:40:06.877398439Z 1792629606: 	amr/+/telemetry
+2026-10-22T00:40:06.877399026Z 1792629606: amr-demo-012151853def4482abade8d71d84811c amr/+/telemetry
+2026-10-22T00:40:06.877399648Z 1792629606: 	amr/+/alarm
+2026-10-22T00:40:06.877400216Z 1792629606: amr-demo-012151853def4482abade8d71d84811c amr/+/alarm
+2026-10-22T00:40:06.877400811Z 1792629606: 	amr/+/ack
+2026-10-22T00:40:06.877401401Z 1792629606: amr-demo-012151853def4482abade8d71d84811c amr/+/ack
+2026-10-22T00:40:06.877402021Z 1792629606: Sending UNSUBACK to amr-demo-012151853def4482abade8d71d84811c
+2026-10-22T00:40:06.877402622Z 1792629606: Received DISCONNECT from amr-demo-53a1b7dfe5a6421e98df83b993b96bca
+2026-10-22T00:40:06.877403235Z 1792629606: Client amr-demo-53a1b7dfe5a6421e98df83b993b96bca [172.17.0.1:56916] disconnected.
+2026-10-22T00:40:06.877988721Z 1792629606: Received DISCONNECT from amr-demo-012151853def4482abade8d71d84811c
+2026-10-22T00:40:06.877991262Z 1792629606: Client amr-demo-012151853def4482abade8d71d84811c [172.17.0.1:56908] disconnected.
+2026-10-22T00:40:06.899119627Z 1792629606: New connection from 172.17.0.1:37422 on port 1883.
+2026-10-22T00:40:06.899140412Z 1792629606: New client connected from 172.17.0.1:37422 as amr-demo-db1c89a801ec40f49048f65610609cdc (p5, c1, k5).
+2026-10-22T00:40:06.899141737Z 1792629606: No will message specified.
+2026-10-22T00:40:06.899149617Z 1792629606: Sending CONNACK to amr-demo-db1c89a801ec40f49048f65610609cdc (0, 0)
+2026-10-22T00:40:06.899534904Z 1792629606: Received SUBSCRIBE from amr-demo-db1c89a801ec40f49048f65610609cdc
+2026-10-22T00:40:06.899541794Z 1792629606: 	amr/+/heartbeat (QoS 0)
+2026-10-22T00:40:06.899543293Z 1792629606: amr-demo-db1c89a801ec40f49048f65610609cdc 0 amr/+/heartbeat
+2026-10-22T00:40:06.899544188Z 1792629606: 	amr/+/telemetry (QoS 0)
+2026-10-22T00:40:06.899544857Z 1792629606: amr-demo-db1c89a801ec40f49048f65610609cdc 0 amr/+/telemetry
+2026-10-22T00:40:06.899545478Z 1792629606: 	amr/+/alarm (QoS 0)
+2026-10-22T00:40:06.899546071Z 1792629606: amr-demo-db1c89a801ec40f49048f65610609cdc 0 amr/+/alarm
+2026-10-22T00:40:06.899546646Z 1792629606: 	amr/+/ack (QoS 0)
+2026-10-22T00:40:06.899547225Z 1792629606: amr-demo-db1c89a801ec40f49048f65610609cdc 0 amr/+/ack
+2026-10-22T00:40:06.899547846Z 1792629606: Sending SUBACK to amr-demo-db1c89a801ec40f49048f65610609cdc
+2026-10-22T00:40:06.900300285Z 1792629606: New connection from 172.17.0.1:37426 on port 1883.
+2026-10-22T00:40:06.900443359Z 1792629606: New client connected from 172.17.0.1:37426 as amr-demo-d32e0d931df946ba8b64287313c59d9b (p5, c1, k5).
+2026-10-22T00:40:06.900448691Z 1792629606: No will message specified.
+2026-10-22T00:40:06.900449780Z 1792629606: Sending CONNACK to amr-demo-d32e0d931df946ba8b64287313c59d9b (0, 0)
+2026-10-22T00:40:06.900988399Z 1792629606: Received PUBLISH from amr-demo-d32e0d931df946ba8b64287313c59d9b (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:06.900997565Z 1792629606: Sending PUBLISH to amr-demo-db1c89a801ec40f49048f65610609cdc (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:06.900998741Z 1792629606: Received PUBLISH from amr-demo-d32e0d931df946ba8b64287313c59d9b (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:06.900999620Z 1792629606: Sending PUBLISH to amr-demo-db1c89a801ec40f49048f65610609cdc (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:06.901146468Z 1792629606: Received PUBLISH from amr-demo-d32e0d931df946ba8b64287313c59d9b (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:40:06.901150645Z 1792629606: Sending PUBLISH to amr-demo-db1c89a801ec40f49048f65610609cdc (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:40:06.965055135Z 1792629606: Received UNSUBSCRIBE from amr-demo-db1c89a801ec40f49048f65610609cdc
+2026-10-22T00:40:06.965094703Z 1792629606: 	amr/+/heartbeat
+2026-10-22T00:40:06.965099465Z 1792629606: amr-demo-db1c89a801ec40f49048f65610609cdc amr/+/heartbeat
+2026-10-22T00:40:06.965101903Z 1792629606: 	amr/+/telemetry
+2026-10-22T00:40:06.965104056Z 1792629606: amr-demo-db1c89a801ec40f49048f65610609cdc amr/+/telemetry
+2026-10-22T00:40:06.965106190Z 1792629606: 	amr/+/alarm
+2026-10-22T00:40:06.965108231Z 1792629606: amr-demo-db1c89a801ec40f49048f65610609cdc amr/+/alarm
+2026-10-22T00:40:06.965127778Z 1792629606: 	amr/+/ack
+2026-10-22T00:40:06.965130403Z 1792629606: amr-demo-db1c89a801ec40f49048f65610609cdc amr/+/ack
+2026-10-22T00:40:06.965132446Z 1792629606: Sending UNSUBACK to amr-demo-db1c89a801ec40f49048f65610609cdc
+2026-10-22T00:40:06.965134382Z 1792629606: Received DISCONNECT from amr-demo-d32e0d931df946ba8b64287313c59d9b
+2026-10-22T00:40:06.965136370Z 1792629606: Client amr-demo-d32e0d931df946ba8b64287313c59d9b [172.17.0.1:37426] disconnected.
+2026-10-22T00:40:06.965692768Z 1792629606: Received DISCONNECT from amr-demo-db1c89a801ec40f49048f65610609cdc
+2026-10-22T00:40:06.965702220Z 1792629606: Client amr-demo-db1c89a801ec40f49048f65610609cdc [172.17.0.1:37422] disconnected.
+2026-10-22T00:40:07.859737670Z 1792629607: New connection from 172.17.0.1:37440 on port 1883.
+2026-10-22T00:40:07.859757959Z 1792629607: New client connected from 172.17.0.1:37440 as amr-demo-5ea646a6cf364c79bd5240b01d084209 (p5, c1, k5).
+2026-10-22T00:40:07.859759187Z 1792629607: No will message specified.
+2026-10-22T00:40:07.859759877Z 1792629607: Sending CONNACK to amr-demo-5ea646a6cf364c79bd5240b01d084209 (0, 0)
+2026-10-22T00:40:07.860075744Z 1792629607: Received SUBSCRIBE from amr-demo-5ea646a6cf364c79bd5240b01d084209
+2026-10-22T00:40:07.860083229Z 1792629607: 	amr/+/heartbeat (QoS 0)
+2026-10-22T00:40:07.860084678Z 1792629607: amr-demo-5ea646a6cf364c79bd5240b01d084209 0 amr/+/heartbeat
+2026-10-22T00:40:07.860085450Z 1792629607: 	amr/+/telemetry (QoS 0)
+2026-10-22T00:40:07.860086189Z 1792629607: amr-demo-5ea646a6cf364c79bd5240b01d084209 0 amr/+/telemetry
+2026-10-22T00:40:07.860086889Z 1792629607: 	amr/+/alarm (QoS 0)
+2026-10-22T00:40:07.860087541Z 1792629607: amr-demo-5ea646a6cf364c79bd5240b01d084209 0 amr/+/alarm
+2026-10-22T00:40:07.860088148Z 1792629607: 	amr/+/ack (QoS 0)
+2026-10-22T00:40:07.860088735Z 1792629607: amr-demo-5ea646a6cf364c79bd5240b01d084209 0 amr/+/ack
+2026-10-22T00:40:07.860089341Z 1792629607: Sending SUBACK to amr-demo-5ea646a6cf364c79bd5240b01d084209
+2026-10-22T00:40:07.860847663Z 1792629607: New connection from 172.17.0.1:37448 on port 1883.
+2026-10-22T00:40:07.861066158Z 1792629607: New client connected from 172.17.0.1:37448 as amr-demo-8afc91a5dceb47f8af274531d92f8be3 (p5, c1, k5).
+2026-10-22T00:40:07.861071820Z 1792629607: No will message specified.
+2026-10-22T00:40:07.861073220Z 1792629607: Sending CONNACK to amr-demo-8afc91a5dceb47f8af274531d92f8be3 (0, 0)
+2026-10-22T00:40:07.861456742Z 1792629607: Received PUBLISH from amr-demo-8afc91a5dceb47f8af274531d92f8be3 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:07.861470882Z 1792629607: Sending PUBLISH to amr-demo-5ea646a6cf364c79bd5240b01d084209 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:07.861472170Z 1792629607: Received PUBLISH from amr-demo-8afc91a5dceb47f8af274531d92f8be3 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:07.861479962Z 1792629607: Sending PUBLISH to amr-demo-5ea646a6cf364c79bd5240b01d084209 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:07.861481888Z 1792629607: Received PUBLISH from amr-demo-8afc91a5dceb47f8af274531d92f8be3 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:40:07.861482626Z 1792629607: Sending PUBLISH to amr-demo-5ea646a6cf364c79bd5240b01d084209 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:40:07.932334406Z 1792629607: Received UNSUBSCRIBE from amr-demo-5ea646a6cf364c79bd5240b01d084209
+2026-10-22T00:40:07.932353497Z 1792629607: 	amr/+/heartbeat
+2026-10-22T00:40:07.932355107Z 1792629607: amr-demo-5ea646a6cf364c79bd5240b01d084209 amr/+/heartbeat
+2026-10-22T00:40:07.932356068Z 1792629607: 	amr/+/telemetry
+2026-10-22T00:40:07.932356797Z 1792629607: amr-demo-5ea646a6cf364c79bd5240b01d084209 amr/+/telemetry
+2026-10-22T00:40:07.932357459Z 1792629607: 	amr/+/alarm
+2026-10-22T00:40:07.932358044Z 1792629607: amr-demo-5ea646a6cf364c79bd5240b01d084209 amr/+/alarm
+2026-10-22T00:40:07.932358612Z 1792629607: 	amr/+/ack
+2026-10-22T00:40:07.932359155Z 1792629607: amr-demo-5ea646a6cf364c79bd5240b01d084209 amr/+/ack
+2026-10-22T00:40:07.932359746Z 1792629607: Sending UNSUBACK to amr-demo-5ea646a6cf364c79bd5240b01d084209
+2026-10-22T00:40:07.932360312Z 1792629607: Received DISCONNECT from amr-demo-8afc91a5dceb47f8af274531d92f8be3
+2026-10-22T00:40:07.932360869Z 1792629607: Client amr-demo-8afc91a5dceb47f8af274531d92f8be3 [172.17.0.1:37448] disconnected.
+2026-10-22T00:40:07.932995082Z 1792629607: Received DISCONNECT from amr-demo-5ea646a6cf364c79bd5240b01d084209
+2026-10-22T00:40:07.933002224Z 1792629607: Client amr-demo-5ea646a6cf364c79bd5240b01d084209 [172.17.0.1:37440] disconnected.
+2026-10-22T00:40:08.012411739Z 1792629608: New connection from 172.17.0.1:37458 on port 1883.
+2026-10-22T00:40:08.012618873Z 1792629608: New client connected from 172.17.0.1:37458 as amr-demo-ee4980df07e14b30b5b7ca22600a4e2b (p5, c1, k5).
+2026-10-22T00:40:08.012626121Z 1792629608: No will message specified.
+2026-10-22T00:40:08.012627454Z 1792629608: Sending CONNACK to amr-demo-ee4980df07e14b30b5b7ca22600a4e2b (0, 0)
+2026-10-22T00:40:08.013474799Z 1792629608: Received SUBSCRIBE from amr-demo-ee4980df07e14b30b5b7ca22600a4e2b
+2026-10-22T00:40:08.013481154Z 1792629608: 	amr/+/heartbeat (QoS 0)
+2026-10-22T00:40:08.013482621Z 1792629608: amr-demo-ee4980df07e14b30b5b7ca22600a4e2b 0 amr/+/heartbeat
+2026-10-22T00:40:08.013483887Z 1792629608: 	amr/+/telemetry (QoS 0)
+2026-10-22T00:40:08.013484695Z 1792629608: amr-demo-ee4980df07e14b30b5b7ca22600a4e2b 0 amr/+/telemetry
+2026-10-22T00:40:08.013485344Z 1792629608: 	amr/+/alarm (QoS 0)
+2026-10-22T00:40:08.013485910Z 1792629608: amr-demo-ee4980df07e14b30b5b7ca22600a4e2b 0 amr/+/alarm
+2026-10-22T00:40:08.013486613Z 1792629608: 	amr/+/ack (QoS 0)
+2026-10-22T00:40:08.013497475Z 1792629608: amr-demo-ee4980df07e14b30b5b7ca22600a4e2b 0 amr/+/ack
+2026-10-22T00:40:08.013498287Z 1792629608: Sending SUBACK to amr-demo-ee4980df07e14b30b5b7ca22600a4e2b
+2026-10-22T00:40:08.014917572Z 1792629608: New connection from 172.17.0.1:37466 on port 1883.
+2026-10-22T00:40:08.015124539Z 1792629608: New client connected from 172.17.0.1:37466 as amr-demo-c65238b57bee4246a8ed9df15c1b9e73 (p5, c1, k5).
+2026-10-22T00:40:08.015130218Z 1792629608: No will message specified.
+2026-10-22T00:40:08.015131593Z 1792629608: Sending CONNACK to amr-demo-c65238b57bee4246a8ed9df15c1b9e73 (0, 0)
+2026-10-22T00:40:08.015635725Z 1792629608: Received PUBLISH from amr-demo-c65238b57bee4246a8ed9df15c1b9e73 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:08.015639527Z 1792629608: Sending PUBLISH to amr-demo-ee4980df07e14b30b5b7ca22600a4e2b (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (77 bytes))
+2026-10-22T00:40:08.015640688Z 1792629608: Received PUBLISH from amr-demo-c65238b57bee4246a8ed9df15c1b9e73 (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:08.015641555Z 1792629608: Sending PUBLISH to amr-demo-ee4980df07e14b30b5b7ca22600a4e2b (d0, q0, r0, m0, 'amr/AMR_001/heartbeat', ... (49 bytes))
+2026-10-22T00:40:08.015642331Z 1792629608: Received PUBLISH from amr-demo-c65238b57bee4246a8ed9df15c1b9e73 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:40:08.015643051Z 1792629608: Sending PUBLISH to amr-demo-ee4980df07e14b30b5b7ca22600a4e2b (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:40:08.230446258Z 1792629608: Received PUBLISH from amr-demo-c65238b57bee4246a8ed9df15c1b9e73 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:40:08.230467461Z 1792629608: Sending PUBLISH to amr-demo-ee4980df07e14b30b5b7ca22600a4e2b (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:40:08.447525186Z 1792629608: Received PUBLISH from amr-demo-c65238b57bee4246a8ed9df15c1b9e73 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:40:08.447546667Z 1792629608: Sending PUBLISH to amr-demo-ee4980df07e14b30b5b7ca22600a4e2b (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:40:08.626194951Z 1792629608: Received PUBLISH from amr-demo-c65238b57bee4246a8ed9df15c1b9e73 (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:40:08.626227625Z 1792629608: Sending PUBLISH to amr-demo-ee4980df07e14b30b5b7ca22600a4e2b (d0, q0, r0, m0, 'amr/AMR_001/telemetry', ... (94 bytes))
+2026-10-22T00:40:08.719214760Z 1792629608: mosquitto version 2.1.2 terminating

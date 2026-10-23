@@ -1,0 +1,209 @@
+{
+  "navigation": {
+    "phase": "Completed",
+    "start": {
+      "row": 0,
+      "col": 0
+    },
+    "goal": {
+      "row": 4,
+      "col": 5
+    },
+    "current": {
+      "row": 4,
+      "col": 5
+    },
+    "map": [
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "fixedObstacles": [
+      [
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        true,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        true,
+        true,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    ],
+    "path": [
+      {
+        "row": 4,
+        "col": 5
+      }
+    ],
+    "traveled": [
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 4,
+        "col": 0
+      },
+      {
+        "row": 4,
+        "col": 1
+      },
+      {
+        "row": 4,
+        "col": 2
+      },
+      {
+        "row": 4,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 4
+      },
+      {
+        "row": 4,
+        "col": 5
+      }
+    ],
+    "remainingDistance": 0,
+    "moves": 11,
+    "replans": 13,
+    "mapVersion": 3
+  },
+  "stepIntervalMs": 600,
+  "source": "csharp-grid-navigation",
+  "position": {
+    "row": 4,
+    "col": 5
+  },
+  "amrId": "AMR_GRID_0be80fc3918143dca6c84e4b9866e441",
+  "cellSizeMeters": 1,
+  "receivedTelemetry": null,
+  "receivedHeartbeat": null,
+  "receivedTrail": [],
+  "telemetryCount": 0,
+  "heartbeatCount": 0,
+  "publishedCount": 0,
+  "rejectedCount": 0,
+  "lastPublishedTimestamp": null,
+  "brokerState": "NotStarted",
+  "failure": null,
+  "mqttEndpoint": null,
+  "evidencePath": "C:\\amr-control-system-demo\\evidence\\AMR\\map-live-20261022-092333-3592bf59c90a4c67b52ea14b7393c91c\\grid-navigation.jsonl",
+  "logs": [
+    "GridReady Phase=Ready Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=0",
+    "GridReset Phase=Ready Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=1",
+    "GridStarted Phase=Running Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=1",
+    "GridMoved Phase=Running Position=(0,1) Remaining=8 Moves=1 Replans=2 MapVersion=1",
+    "GridMoved Phase=Running Position=(1,1) Remaining=7 Moves=2 Replans=3 MapVersion=1",
+    "GridMoved Phase=Running Position=(2,1) Remaining=6 Moves=3 Replans=4 MapVersion=1",
+    "GridMoved Phase=Running Position=(2,2) Remaining=5 Moves=4 Replans=5 MapVersion=1",
+    "GridMoved Phase=Running Position=(2,3) Remaining=4 Moves=5 Replans=6 MapVersion=1",
+    "GridMoved Phase=Running Position=(3,3) Remaining=3 Moves=6 Replans=7 MapVersion=1",
+    "GridMoved Phase=Running Position=(4,3) Remaining=2 Moves=7 Replans=8 MapVersion=1",
+    "GridMoved Phase=Running Position=(4,4) Remaining=1 Moves=8 Replans=9 MapVersion=1",
+    "GridMoved Phase=Completed Position=(4,5) Remaining=0 Moves=9 Replans=10 MapVersion=1",
+    "GridReset Phase=Ready Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=2",
+    "GridStarted Phase=Running Position=(0,0) Remaining=9 Moves=0 Replans=1 MapVersion=2",
+    "GridMoved Phase=Running Position=(0,1) Remaining=8 Moves=1 Replans=2 MapVersion=2",
+    "GridMapChanged Phase=Running Position=(0,1) Remaining=10 Moves=1 Replans=3 MapVersion=3",
+    "GridMoved Phase=Running Position=(1,1) Remaining=9 Moves=2 Replans=4 MapVersion=3",
+    "GridMoved Phase=Running Position=(2,1) Remaining=8 Moves=3 Replans=5 MapVersion=3",
+    "GridMoved Phase=Running Position=(2,0) Remaining=7 Moves=4 Replans=6 MapVersion=3",
+    "GridMoved Phase=Running Position=(3,0) Remaining=6 Moves=5 Replans=7 MapVersion=3",
+    "GridMoved Phase=Running Position=(4,0) Remaining=5 Moves=6 Replans=8 MapVersion=3",
+    "GridMoved Phase=Running Position=(4,1) Remaining=4 Moves=7 Replans=9 MapVersion=3",
+    "GridMoved Phase=Running Position=(4,2) Remaining=3 Moves=8 Replans=10 MapVersion=3",
+    "GridMoved Phase=Running Position=(4,3) Remaining=2 Moves=9 Replans=11 MapVersion=3",
+    "GridMoved Phase=Running Position=(4,4) Remaining=1 Moves=10 Replans=12 MapVersion=3",
+    "GridMoved Phase=Completed Position=(4,5) Remaining=0 Moves=11 Replans=13 MapVersion=3"
+  ]
+}

@@ -1,0 +1,15 @@
+[
+  {
+    "name": "initial-no-position",
+    "verdict": "passed"
+  },
+  {
+    "name": "single-session-api-and-screen",
+    "verdict": "passed"
+  },
+  {
+    "verdict": "failed",
+    "reason": "Wrong arrival or movement count.",
+    "name": "failure"
+  }
+]

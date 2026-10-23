@@ -1,0 +1,118 @@
+  Amr.Communication -> C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll
+  Amr.Simulator -> C:\amr-control-system-demo\src\Amr.Simulator\bin\Debug\net10.0\Amr.Simulator.dll
+  Amr.Simulator.Map -> C:\amr-control-system-demo\tools\Amr.Simulator.Map\bin\Debug\net10.0\Amr.Simulator.Map.dll
+  Amr.Simulator.Map.Tests -> C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll
+C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+[xUnit.net 00:00:00.27]     Amr.Simulator.Map.Tests.GridMqttTests.BrokerLossStopsMovingAndPreservesLastReceivedPosition [FAIL]
+  실패 Amr.Simulator.Map.Tests.GridMqttTests.BrokerLossStopsMovingAndPreservesLastReceivedPosition [73 ms]
+  오류 메시지:
+   System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.
+  스택 추적:
+     at System.Text.Json.JsonElement.GetProperty(String propertyName)
+   at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 14
+   at Amr.Simulator.Map.Tests.GridMqttTests.<>c__DisplayClass11_0.<BrokerLossStopsMovingAndPreservesLastReceivedPosition>b__1() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 106
+   at Amr.Simulator.Map.Tests.GridMqttTests.Wait(Func`1 condition, Int32 timeoutMs) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 202
+   at Amr.Simulator.Map.Tests.GridMqttTests.BrokerLossStopsMovingAndPreservesLastReceivedPosition() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 106
+   at Amr.Simulator.Map.Tests.GridMqttTests.BrokerLossStopsMovingAndPreservesLastReceivedPosition() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 112
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:00.28]     Amr.Simulator.Map.Tests.GridMqttTests.ResetClearsReceivedPositionOnlyAfterOldConnectionEnds [FAIL]
+[xUnit.net 00:00:00.28]     Amr.Simulator.Map.Tests.GridMqttTests.LossBeforeConnectReturnsIsNotMissed [FAIL]
+[xUnit.net 00:00:00.29]     Amr.Simulator.Map.Tests.GridMqttTests.PublicationWithoutFinalReceptionCannotCompleteOrMoveMarkerToGoal [FAIL]
+[xUnit.net 00:00:00.29]     Amr.Simulator.Map.Tests.GridMqttTests.PublishedPositionNeverFillsReceivedPosition [FAIL]
+[xUnit.net 00:00:00.31]     Amr.Simulator.Map.Tests.GridMqttTests.CancellationWaitsForConnectionCleanup [FAIL]
+[xUnit.net 00:00:00.31]     Amr.Simulator.Map.Tests.GridMqttTests.InitialConnectionFailureDoesNotMoveAndDisposesConnection [FAIL]
+  실패 Amr.Simulator.Map.Tests.GridMqttTests.ResetClearsReceivedPositionOnlyAfterOldConnectionEnds [3 ms]
+  오류 메시지:
+   System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.
+  스택 추적:
+     at System.Text.Json.JsonElement.GetProperty(String propertyName)
+   at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 14
+   at Amr.Simulator.Map.Tests.GridMqttTests.ResetClearsReceivedPositionOnlyAfterOldConnectionEnds() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 155
+   at Amr.Simulator.Map.Tests.GridMqttTests.ResetClearsReceivedPositionOnlyAfterOldConnectionEnds() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 160
+--- End of stack trace from previous location ---
+  실패 Amr.Simulator.Map.Tests.GridMqttTests.LossBeforeConnectReturnsIsNotMissed [1 ms]
+  오류 메시지:
+   System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.
+  스택 추적:
+     at System.Text.Json.JsonElement.GetProperty(String propertyName)
+   at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 14
+   at Amr.Simulator.Map.Tests.GridMqttTests.<>c__DisplayClass10_0.<LossBeforeConnectReturnsIsNotMissed>b__0() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 94
+   at Amr.Simulator.Map.Tests.GridMqttTests.Wait(Func`1 condition, Int32 timeoutMs) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 202
+   at Amr.Simulator.Map.Tests.GridMqttTests.LossBeforeConnectReturnsIsNotMissed() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 94
+   at Amr.Simulator.Map.Tests.GridMqttTests.LossBeforeConnectReturnsIsNotMissed() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 96
+--- End of stack trace from previous location ---
+  실패 Amr.Simulator.Map.Tests.GridMqttTests.PublicationWithoutFinalReceptionCannotCompleteOrMoveMarkerToGoal [2 ms]
+  오류 메시지:
+   System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.
+  스택 추적:
+     at System.Text.Json.JsonElement.GetProperty(String propertyName)
+   at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 14
+   at Amr.Simulator.Map.Tests.GridMqttTests.<>c__DisplayClass16_0.<PublicationWithoutFinalReceptionCannotCompleteOrMoveMarkerToGoal>b__0() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 184
+   at Amr.Simulator.Map.Tests.GridMqttTests.Wait(Func`1 condition, Int32 timeoutMs) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 202
+   at Amr.Simulator.Map.Tests.GridMqttTests.PublicationWithoutFinalReceptionCannotCompleteOrMoveMarkerToGoal() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 184
+   at Amr.Simulator.Map.Tests.GridMqttTests.PublicationWithoutFinalReceptionCannotCompleteOrMoveMarkerToGoal() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 188
+--- End of stack trace from previous location ---
+  실패 Amr.Simulator.Map.Tests.GridMqttTests.PublishedPositionNeverFillsReceivedPosition [2 ms]
+  오류 메시지:
+   System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.
+  스택 추적:
+     at System.Text.Json.JsonElement.GetProperty(String propertyName)
+   at Amr.Simulator.Map.Tests.GridMqttTests.PublishedPositionNeverFillsReceivedPosition() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 57
+   at Amr.Simulator.Map.Tests.GridMqttTests.PublishedPositionNeverFillsReceivedPosition() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 59
+--- End of stack trace from previous location ---
+  실패 Amr.Simulator.Map.Tests.GridMqttTests.CancellationWaitsForConnectionCleanup [17 ms]
+  오류 메시지:
+   System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.
+  스택 추적:
+     at System.Text.Json.JsonElement.GetProperty(String propertyName)
+   at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 14
+   at Amr.Simulator.Map.Tests.GridMqttTests.CancellationWaitsForConnectionCleanup() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 139
+   at Amr.Simulator.Map.Tests.GridMqttTests.CancellationWaitsForConnectionCleanup() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 143
+--- End of stack trace from previous location ---
+  실패 Amr.Simulator.Map.Tests.GridMqttTests.InitialConnectionFailureDoesNotMoveAndDisposesConnection [2 ms]
+  오류 메시지:
+   System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.
+  스택 추적:
+     at System.Text.Json.JsonElement.GetProperty(String propertyName)
+   at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 14
+   at Amr.Simulator.Map.Tests.GridMqttTests.<>c__DisplayClass9_0.<InitialConnectionFailureDoesNotMoveAndDisposesConnection>b__0() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 83
+   at Amr.Simulator.Map.Tests.GridMqttTests.Wait(Func`1 condition, Int32 timeoutMs) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 202
+   at Amr.Simulator.Map.Tests.GridMqttTests.InitialConnectionFailureDoesNotMoveAndDisposesConnection() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 83
+   at Amr.Simulator.Map.Tests.GridMqttTests.InitialConnectionFailureDoesNotMoveAndDisposesConnection() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 86
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:00.51]     Amr.Simulator.Map.Tests.GridMqttTests.BlockedRobotContinuesIndependentTelemetryAndHeartbeat [FAIL]
+[xUnit.net 00:00:00.51]     Amr.Simulator.Map.Tests.GridMqttTests.HeartbeatAndRejectedTelemetryDoNotMoveMarker [FAIL]
+[xUnit.net 00:00:00.52]     Amr.Simulator.Map.Tests.GridMqttTests.CompletionRequiresReceivingFinalStoppedTelemetry [FAIL]
+  실패 Amr.Simulator.Map.Tests.GridMqttTests.BlockedRobotContinuesIndependentTelemetryAndHeartbeat [200 ms]
+  오류 메시지:
+   System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.
+  스택 추적:
+     at System.Text.Json.JsonElement.GetProperty(String propertyName)
+   at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 14
+   at Amr.Simulator.Map.Tests.GridMqttTests.BlockedRobotContinuesIndependentTelemetryAndHeartbeat() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 123
+   at Amr.Simulator.Map.Tests.GridMqttTests.BlockedRobotContinuesIndependentTelemetryAndHeartbeat() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 127
+--- End of stack trace from previous location ---
+  실패 Amr.Simulator.Map.Tests.GridMqttTests.HeartbeatAndRejectedTelemetryDoNotMoveMarker [2 ms]
+  오류 메시지:
+   System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.
+  스택 추적:
+     at System.Text.Json.JsonElement.GetProperty(String propertyName)
+   at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 14
+   at Amr.Simulator.Map.Tests.GridMqttTests.HeartbeatAndRejectedTelemetryDoNotMoveMarker() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 75
+   at Amr.Simulator.Map.Tests.GridMqttTests.HeartbeatAndRejectedTelemetryDoNotMoveMarker() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 75
+--- End of stack trace from previous location ---
+  실패 Amr.Simulator.Map.Tests.GridMqttTests.CompletionRequiresReceivingFinalStoppedTelemetry [2 ms]
+  오류 메시지:
+   System.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.
+  스택 추적:
+     at System.Text.Json.JsonElement.GetProperty(String propertyName)
+   at Amr.Simulator.Map.Tests.GridMqttTests.Phase(GridNavigationSession session) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 14
+   at Amr.Simulator.Map.Tests.GridMqttTests.<>c__DisplayClass15_0.<CompletionRequiresReceivingFinalStoppedTelemetry>b__0() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 168
+   at Amr.Simulator.Map.Tests.GridMqttTests.Wait(Func`1 condition, Int32 timeoutMs) in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 202
+   at Amr.Simulator.Map.Tests.GridMqttTests.CompletionRequiresReceivingFinalStoppedTelemetry() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 168
+   at Amr.Simulator.Map.Tests.GridMqttTests.CompletionRequiresReceivingFinalStoppedTelemetry() in C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\GridMqttTests.cs:line 176
+--- End of stack trace from previous location ---
+결과 파일: C:\amr-control-system-demo\evidence\AMR\20261022-grid-mqtt-01\grid-mqtt-tests.trx
+
+실패!  - 실패:    10, 통과:    45, 건너뜀:     0, 전체:    55, 기간: 335 ms - Amr.Simulator.Map.Tests.dll (net10.0)

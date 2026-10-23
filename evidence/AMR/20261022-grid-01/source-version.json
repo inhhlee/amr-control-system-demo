@@ -1,0 +1,71 @@
+{
+  "recordedAtUtc": "2026-10-22T00:08:43.9078455+00:00",
+  "userTimezone": "Asia/Seoul",
+  "operatingSystem": "Microsoft Windows 10.0.26200",
+  "sdk": "10.0.401",
+  "baseCommit": "a8934f0bfed803cee47d7c2e13775ba648e0862a",
+  "branch": "feature/33-simulator-movement",
+  "uncommitted": true,
+  "actualHttpBase": "http://127.0.0.1:59344",
+  "actualHttpVerification": "../20261022-grid-live-01/verification.json",
+  "gridTests": [],
+  "simulatorTests": [],
+  "sourceFiles": [
+    {
+      "sha256": "A5C3C3DD83899AAFC21300E5405F0E4FCC33A4E707C422F2B31DBDCB7AC67F21",
+      "path": "tools/Amr.Simulator.Map/Program.cs"
+    },
+    {
+      "sha256": "6EA8E41E3B94D7D88830FDA9E76E6D56C4274063F233F4F2B12B03467FCD37A5",
+      "path": "tools/Amr.Simulator.Map/MapSession.cs"
+    },
+    {
+      "sha256": "244EBDC75AF26645A5A3AB4F93709B1AE314AB119C61B4F2DB5ABA8D0C112F0D",
+      "path": "tools/Amr.Simulator.Map/Amr.Simulator.Map.csproj"
+    },
+    {
+      "sha256": "5D780394052E0A88C69602F33F81FA38D858EA9D566D40703EED0C8403DDA9B5",
+      "path": "tools/Amr.Simulator.Map/wwwroot/index.html"
+    },
+    {
+      "sha256": "6FF7C08EA3BF5790FBE1D076E3C44B72DF1DA59B5E58758514CA5A87060B7426",
+      "path": "tools/Amr.Simulator.Map/wwwroot/style.css"
+    },
+    {
+      "sha256": "344EF9B0A47D3EBCAC992FB8C649631436CA637507210AAC681FBCD475014F3B",
+      "path": "tools/Amr.Simulator.Map/wwwroot/app.js"
+    },
+    {
+      "sha256": "EA7E68DF017E22365740C455518E60C238751828B9CAACD0514A71F5DF0363D5",
+      "path": "tools/Amr.Simulator.Map/wwwroot/grid.js"
+    },
+    {
+      "sha256": "4EFE356CD99640A21A98B4576E9B131B25B16256A2CD5D7B5630EEE08C2E973F",
+      "path": "tools/Amr.Simulator.Map/Navigation/GridPathfinder.cs"
+    },
+    {
+      "sha256": "4FFAA5FAC279C8FB7C8951EAF5672D8B405F9A48AC50B0A291A50DA01E266CD9",
+      "path": "tools/Amr.Simulator.Map/Navigation/GridNavigator.cs"
+    },
+    {
+      "sha256": "68741821CE993B49E3457EBCF0E3B935878B0C0794D7A78DA1BCB15458D5B4CA",
+      "path": "tools/Amr.Simulator.Map/Navigation/GridNavigationSession.cs"
+    },
+    {
+      "sha256": "A69FC05622454529AC1677EEC2784163B9726278257425A23294FA84EC448553",
+      "path": "tests/Amr.Simulator.Map.Tests/GridNavigationTests.cs"
+    },
+    {
+      "sha256": "9C03886EEBFAD79AE213A8A216B0E2241935BE1ACD4D338D5824F18489F78744",
+      "path": "tests/Amr.Simulator.Map.Tests/ProjectionTests.cs"
+    },
+    {
+      "sha256": "C5F9B6555204C136FF5FA8CBA72D6E5CF77A6863CC9778FD48F930915454CC9C",
+      "path": "tests/Amr.Simulator.Map.Tests/Amr.Simulator.Map.Tests.csproj"
+    },
+    {
+      "sha256": "CF1DB321BF19493C0E5F04E4464556042B8B8AF11F6B624B8BA166CD6D8270B5",
+      "path": "tests/manual/AMR01/Verify-GridNavigation.ps1"
+    }
+  ]
+}

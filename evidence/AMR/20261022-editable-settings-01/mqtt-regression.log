@@ -1,0 +1,5 @@
+Exception: C:\amr-control-system-demo\tests\manual\AMR01\Verify-GridMqttMap.ps1:16
+Line |
+  16 |  … e([bool]$value, [string]$message) { if (!$value) { throw $message } }
+     |                                                       ~~~~~~~~~~~~~~
+     | Wrong arrival or movement count.
