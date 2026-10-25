@@ -1,0 +1,25 @@
+{
+  "CodeVersion": "67c6d2829e256ab3d8ef428a4479cc59cc524734",
+  "Scenario": "Show form at its declared minimum size with one successful Mock command",
+  "Expected": "At least one full command result row is visible",
+  "Window": {
+    "Width": 1200,
+    "Height": 900,
+    "DeviceDpi": 96
+  },
+  "CommandGrid": {
+    "ClientHeight": 214,
+    "HeaderHeight": 26,
+    "HorizontalScrollbarHeight": 17,
+    "RequiredRowHeight": 25,
+    "AvailableRowHeight": 171,
+    "DisplayedRowHeight": 25,
+    "FullResultRowVisible": true
+  },
+  "SelectedDetails": {
+    "Height": 330,
+    "PreferredTextHeight": 150
+  },
+  "Result": "PASS",
+  "ExecutedAt": "2026-10-25T21:56:32.6351881+09:00"
+}

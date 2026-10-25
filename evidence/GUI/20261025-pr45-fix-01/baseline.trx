@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="a43c17fa-f046-44bd-844d-9fcdd9b3c7e0" name="user@DESKTOP-BLNVKRS 2026-10-25 22:01:22" runUser="DESKTOP-BLNVKRS\user" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-25T22:01:22.9615410+09:00" queuing="2026-10-25T22:01:22.9615415+09:00" start="2026-10-25T22:01:19.3861749+09:00" finish="2026-10-25T22:01:22.9699682+09:00" />
+  <TestSettings name="default" id="8a192546-6e0d-41b1-9f2d-85b13bf23e07">
+    <Deployment runDeploymentRoot="user_DESKTOP-BLNVKRS_2026-10-25_22_01_22" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="cf069a19-04a1-40b1-9666-6f793904f2ab" testId="23d875e6-cfa3-91fb-da47-4df1b61d3f43" testName="Amr.ControlGui.Tests.DashboardMapTests.CommandResultsAndControlsFitAfterResizingTheShownWindow" computerName="DESKTOP-BLNVKRS" duration="00:00:01.9218979" startTime="2026-10-25T22:01:20.8517503+09:00" endTime="2026-10-25T22:01:22.7923749+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cf069a19-04a1-40b1-9666-6f793904f2ab">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Single() Failure: The collection did not contain any matching items&#xD;
+Expected:   (predicate expression)&#xD;
+Collection: [System.Windows.Forms.HScrollBar, Minimum: 0, Maximum: 1, Value: 0]</Message>
+          <StackTrace>   at Amr.ControlGui.Tests.DashboardMapTests.&lt;&gt;c.&lt;CommandResultsAndControlsFitAfterResizingTheShownWindow&gt;b__7_0() in C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs:line 165&#xD;
+   at Amr.ControlGui.Tests.DashboardMapTests.&lt;&gt;c__DisplayClass13_0.&lt;OnSta&gt;b__0() in C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs:line 217&#xD;
+--- End of stack trace from previous location ---&#xD;
+   at Amr.ControlGui.Tests.DashboardMapTests.OnSta(Action action) in C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs:line 221&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Amr.ControlGui.Tests.DashboardMapTests.CommandResultsAndControlsFitAfterResizingTheShownWindow" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="23d875e6-cfa3-91fb-da47-4df1b61d3f43">
+      <Execution id="cf069a19-04a1-40b1-9666-6f793904f2ab" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.DashboardMapTests" name="CommandResultsAndControlsFitAfterResizingTheShownWindow" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="23d875e6-cfa3-91fb-da47-4df1b61d3f43" executionId="cf069a19-04a1-40b1-9666-6f793904f2ab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="목록에 없는 결과" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="로드된 모든 결과" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" passed="0" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.12)&#xD;
+[xUnit.net 00:00:00.45]   Discovering: Amr.ControlGui.Tests&#xD;
+[xUnit.net 00:00:00.51]   Discovered:  Amr.ControlGui.Tests&#xD;
+[xUnit.net 00:00:00.54]   Starting:    Amr.ControlGui.Tests&#xD;
+[xUnit.net 00:00:02.51]       Assert.Single() Failure: The collection did not contain any matching items&#xD;
+[xUnit.net 00:00:02.51]       Expected:   (predicate expression)&#xD;
+[xUnit.net 00:00:02.51]       Collection: [System.Windows.Forms.HScrollBar, Minimum: 0, Maximum: 1, Value: 0]&#xD;
+[xUnit.net 00:00:02.51]       Stack Trace:&#xD;
+[xUnit.net 00:00:02.51]         C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs(165,0): at Amr.ControlGui.Tests.DashboardMapTests.&lt;&gt;c.&lt;CommandResultsAndControlsFitAfterResizingTheShownWindow&gt;b__7_0()&#xD;
+[xUnit.net 00:00:02.51]         C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs(217,0): at Amr.ControlGui.Tests.DashboardMapTests.&lt;&gt;c__DisplayClass13_0.&lt;OnSta&gt;b__0()&#xD;
+[xUnit.net 00:00:02.51]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:02.51]         C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs(221,0): at Amr.ControlGui.Tests.DashboardMapTests.OnSta(Action action)&#xD;
+[xUnit.net 00:00:02.51]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:02.53]   Finished:    Amr.ControlGui.Tests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="DESKTOP-BLNVKRS" outcome="Error" timestamp="2026-10-25T22:01:22.7961894+09:00">
+        <Text>[xUnit.net 00:00:02.51]     Amr.ControlGui.Tests.DashboardMapTests.CommandResultsAndControlsFitAfterResizingTheShownWindow [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

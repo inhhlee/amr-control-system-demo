@@ -1,0 +1,127 @@
+Window: "AMR 관제 · 대시보드와 지도", App: Amr.ControlGui.exe.
+	0 창 AMR 관제 · 대시보드와 지도 Secondary Actions: Raise
+		1 창
+			2 창
+				3 창
+					4 창
+						5 창
+							6 창
+								7 텍스트 통신 상태
+								8 텍스트 연결 미확인 ID: communicationValue
+								9 텍스트 연결 0 · 끊김 0 · 미확인 2 ID: communicationDetail
+						10 창 연결 0 · 끊김 0 · 미확인 2
+							11 창 연결 0 · 끊김 0 · 미확인 2
+								12 텍스트 AMR 연결 현황
+								13 텍스트 전체 2대 ID: devicesValue
+								14 텍스트 생존 확인 0 · 응답 없음 0 미확인 2 ID: devicesDetail
+						15 창 생존 확인 0 · 응답 없음 0 미확인 2
+							16 창 생존 확인 0 · 응답 없음 0 미확인 2
+								17 텍스트 AMR 운행 상태
+								18 텍스트 대기 2 · 이동 0 ID: operationValue
+								19 텍스트 정지 0 · 오류 0 ID: operationDetail
+						20 창 정지 0 · 오류 0
+							21 창 정지 0 · 오류 0
+								22 텍스트 알람 · 명령 요약
+								23 텍스트 현재 0건 ID: alarmsValue
+								24 텍스트 명령 대기 0 · 성공 0 · 실패 0 ID: alarmsDetail
+					25 창 명령 대기 0 · 성공 0 · 실패 0
+						26 텍스트 공급자의 현재 상태 기준 ID: summarySource
+						27 텍스트 MOCK · 시험 데이터 ID: modeLabel
+				28 텍스트 대시보드
+			29 창 대시보드
+				30 창 대시보드
+					31 창 대시보드
+						32 창 대시보드
+							33 텍스트 AMR 위치 · 단위 m · 전체 좌표 자동 맞춤 ID: mapCaption
+							34 창 AMR 위치 · 단위 m · 전체 좌표 자동 맞춤
+								35 이미지 AMR 위치 지도 ID: mapCanvas
+								36 창
+									37 텍스트 선택한 AMR 정보 ID: selectedTitle
+									38 텍스트 AMR_002 X 5 m / Y 2 m 속도 0 m/s 운행 대기 Broker 미확인 생존 미확인 Heartbeat 미관측 Telemetry 미관측 ID: detailsLabel
+							39 창 AMR_002 X 5 m / Y 2 m 속도 0 m/s 운행 대기 Broker 미확인 생존 미확인 Heartbeat 미관측 Telemetry 미관측 ID: mapLegend
+								40 창 AMR_002 X 5 m / Y 2 m 속도 0 m/s 운행 대기 Broker 미확인 생존 미확인 Heartbeat 미관측 Telemetry 미관측
+									41 텍스트 ● 대기
+									42 텍스트 ● 이동
+									43 텍스트 ● 정지
+									44 텍스트 ● 오류
+									45 텍스트 ◎ 선택
+									46 텍스트 ◌ 연결 끊김/응답 없음
+								47 텍스트 좌표 출처: Mock · 경로 데이터 없음 ID: mapSource
+					48 텍스트 지도
+				49 창 지도
+					50 창 지도
+						51 창 지도
+							52 텍스트 현재 알람 없음 수신된 알람 0건 ID: alarmSummary
+						53 텍스트 알람
+					54 창 알람
+						55 창 알람
+							56 창 알람
+								57 창 알람
+									58 텍스트 X
+									59 돌기 목표 X ID: targetX
+										60 돌기 위쪽/아래쪽
+											61 단추 (disabled) 위쪽
+											62 단추 (disabled) 아래쪽
+										63 편집 (settable, string) 목표 X Value: 10.00
+									64 텍스트 Y
+									65 돌기 목표 Y ID: targetY
+										66 돌기 위쪽/아래쪽
+											67 단추 (disabled) 위쪽
+											68 단추 (disabled) 아래쪽
+										69 편집 (settable, string) 목표 Y Value: 5.00
+									70 단추 MOVE 요청 ID: submitButton
+									71 단추 다음 상태 (Mock) ID: advanceButton
+									72 단추 (disabled) 성공 (Mock) ID: completeSuccessButton
+									73 단추 (disabled) 실패 (Mock) ID: completeFailureButton
+								74 텍스트 MOVE 접수 후 별도 시험 결과를 지정하세요. ID: submissionLabel
+								75 데이터 그리드 명령 결과 목록 ID: commandGrid
+									76 스크롤 막대 (settable, float) 가로 Value: 0
+										77 단추 왼쪽 스크롤 화살표
+										78 위치 조정 위치
+										79 단추 페이지 오른쪽으로
+										80 단추 오른쪽 스크롤 화살표
+									81 custom 상위 행
+										82 머리글 장비 ID: 4230479632
+										83 머리글 결과 ID: 4260690907
+										84 머리글 접수 ID: 4250784294
+										85 머리글 요청 ID ID: 4256216055
+										86 머리글 설명 ID: 4259720082
+						87 텍스트 명령 · Mock 확인
+			88 창 명령 · Mock 확인
+				89 창 명령 · Mock 확인
+					90 창 명령 · Mock 확인
+						91 데이터 그리드 장비 목록 ID: deviceGrid
+							92 custom 상위 행
+								93 머리글 장비 ID ID: 4226364313
+								94 머리글 X (m) ID: 427191757
+								95 머리글 Y (m) ID: 4226383986
+								96 머리글 속도 (m/s) ID: 427447507
+								97 머리글 운행 상태 ID: 4229708739
+							98 custom 행 1
+								99 항목 장비 ID 행 1, 정렬되지 않았습니다. Value: AMR_001 ID: 4254721058
+								100 항목 X (m) 행 1, 정렬되지 않았습니다. Value: 0 ID: 4240285116
+								101 항목 Y (m) 행 1, 정렬되지 않았습니다. Value: 0 ID: 4253944468
+								102 항목 속도 (m/s) 행 1, 정렬되지 않았습니다. Value: 0 ID: 4230189451
+								103 항목 운행 상태 행 1, 정렬되지 않았습니다. Value: 대기 ID: 4256918544
+							104 custom 행 2
+								105 항목 장비 ID 행 2, 정렬되지 않았습니다. Value: AMR_002 ID: 4222666492
+								106 항목 X (m) 행 2, 정렬되지 않았습니다. Value: 5 ID: 4226228946
+								107 항목 Y (m) 행 2, 정렬되지 않았습니다. Value: 2 ID: 425431982
+								108 항목 속도 (m/s) 행 2, 정렬되지 않았습니다. Value: 0 ID: 423506903
+								109 항목 운행 상태 행 2, 정렬되지 않았습니다. Value: 대기 ID: 4245589739
+					110 텍스트 장비 목록 · 지도와 선택 연동
+				111 창 장비 목록 · 지도와 선택 연동
+					112 창 장비 목록 · 지도와 선택 연동
+						113 텍스트 현재 Mock 이력 0건 이력 조회 화면은 후속 구현 ID: historyNote
+					114 텍스트 이력
+			115 텍스트 장비 2대 · 알람 0건 · 요청 0건 · 상태 버전 0 ID: statusLabel
+		116 제목 표시줄 (settable, string) Value: AMR 관제 · 대시보드와 지도
+			117 메뉴 모음 시스템 ID: MenuBar
+				118 메뉴 항목 시스템
+			119 단추 최소화
+			120 단추 최대화
+			121 단추 닫기
+
+Document text: ```
+5.00
+```

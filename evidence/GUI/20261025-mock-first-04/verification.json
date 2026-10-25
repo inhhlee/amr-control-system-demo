@@ -1,0 +1,121 @@
+{
+  "runId": "20261025-mock-first-04",
+  "feature": "GUI-05 first Mock foundation; GUI-01/04 contact points",
+  "baseCommit": "246d2556ece4c424146c1957293778b61942c294",
+  "uncommitted": true,
+  "build": {
+    "warnings": 0,
+    "errors": 0
+  },
+  "testRuns": [
+    {
+      "assembly": "Amr.Simulator.Tests.dll",
+      "counts": {
+        "total": "154",
+        "executed": "154",
+        "passed": "154",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "times": {
+        "creation": "2026-10-25T01:43:14.0335571+09:00",
+        "queuing": "2026-10-25T01:43:14.0335573+09:00",
+        "start": "2026-10-25T01:43:12.9071920+09:00",
+        "finish": "2026-10-25T01:43:14.4383991+09:00"
+      },
+      "trx": "tests/user_DESKTOP-BLNVKRS_2026-10-25_01_43_14_net10.0.trx"
+    },
+    {
+      "assembly": "Amr.ControlGui.Tests.dll",
+      "counts": {
+        "total": "23",
+        "executed": "23",
+        "passed": "23",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "times": {
+        "creation": "2026-10-25T01:43:14.2361222+09:00",
+        "queuing": "2026-10-25T01:43:14.2361226+09:00",
+        "start": "2026-10-25T01:43:13.0427325+09:00",
+        "finish": "2026-10-25T01:43:15.1054856+09:00"
+      },
+      "trx": "tests/user_DESKTOP-BLNVKRS_2026-10-25_01_43_14_net10.0[1].trx"
+    },
+    {
+      "assembly": "Amr.Communication.Tests.dll",
+      "counts": {
+        "total": "768",
+        "executed": "768",
+        "passed": "768",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "times": {
+        "creation": "2026-10-25T01:43:16.5131310+09:00",
+        "queuing": "2026-10-25T01:43:16.5131312+09:00",
+        "start": "2026-10-25T01:43:12.8795003+09:00",
+        "finish": "2026-10-25T01:43:19.6739088+09:00"
+      },
+      "trx": "tests/user_DESKTOP-BLNVKRS_2026-10-25_01_43_16_net10.0.trx"
+    }
+  ],
+  "passedTotal": 945,
+  "guiTests": 23,
+  "communicationTests": 768,
+  "simulatorTests": 154,
+  "guiObservationRun": "20261025-mock-first-03",
+  "guiEvidence": "../20261025-mock-first-03/ui/",
+  "guiObserved": [
+    "Mock badge",
+    "AMR_002 selection",
+    "AMR_002 X 5 to 6, BUSY speed 1; AMR_001 unchanged",
+    "MOVE accepted and initially Unconfirmed",
+    "separate request Success and Failure",
+    "window closed"
+  ],
+  "finalCodeChangeAfterGuiObservation": "Await all in-flight form work at close; covered by added real WinForms message-loop test in this final run.",
+  "sourceManifest": "source-manifest.json",
+  "postTestDocumentationChange": "BUILDING.md wording: test-specific wait limits, no product source changes.",
+  "notVerified": [
+    "Full five-area GUI",
+    "Actual Core/MQTT/SQLite integration",
+    "Visual Studio designer editing",
+    "Operational capacity/performance",
+    "STOP/RESET business rules",
+    "Full alarm/history and timeout scenarios"
+  ]
+}

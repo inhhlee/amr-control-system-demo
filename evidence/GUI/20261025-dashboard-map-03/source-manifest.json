@@ -1,0 +1,38 @@
+[
+  {
+    "source": "MainForm.cs",
+    "target": "src/Amr.ControlGui/MainForm.cs",
+    "before": "f65973cbee57dc778079917950606e6cf14b3357c536c4bae648df88856d2c86",
+    "after": "f726cf3c49bb0554fc1af183030f3b1e8f60289f9bc47e46594d2a586dac4cf3"
+  },
+  {
+    "source": "MainForm.Designer.cs",
+    "target": "src/Amr.ControlGui/MainForm.Designer.cs",
+    "before": "da22ca53c1afdc8c8a05957c1f3f6c8b6195ce5dece2d468b7f1c70d450fec67",
+    "after": "c0c4af79cca12fabbb1344f7c653e93b208acc323c25dd61f230d28125a0991c"
+  },
+  {
+    "source": "MapCanvas.cs",
+    "target": "src/Amr.ControlGui/MapCanvas.cs",
+    "before": null,
+    "after": "1c79a3b6dd0e401fc553437f3e74a9d41dbf1e147afee0943950c6d9cf57c4db"
+  },
+  {
+    "source": "DashboardMapTests.cs",
+    "target": "tests/Amr.ControlGui.Tests/DashboardMapTests.cs",
+    "before": null,
+    "after": "a8101b86758e38c89488ee422fcaf7bed83ad47f19ff9e79590a76023a41e80c"
+  },
+  {
+    "source": "BUILDING.md",
+    "target": "BUILDING.md",
+    "before": "641684b6eede6c6fe897c465eca20a716cfd9db3ba9595fd73ef0e0654788e75",
+    "after": "01a4156a86b2d455b3bf5ca29e80cd518b28e84757e199942757d0140902f481"
+  },
+  {
+    "source": "README.md",
+    "target": "README.md",
+    "before": "535273a5d58689c807a17422a5824ba66f965e4e486be3c1912040a62e970005",
+    "after": "f9c2b2c1f4d6300761d64024eb8cc7d9e2eb82a614dc61437064202f07a484c0"
+  }
+]

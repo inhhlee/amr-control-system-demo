@@ -1,0 +1,73 @@
+{
+  "BaseCommit": "67c6d2829e256ab3d8ef428a4479cc59cc524734",
+  "WorkingChanges": "See source-manifest.json for the tested source hashes",
+  "ExecutedAt": "2026-10-25T22:02:59.2684245+09:00",
+  "Result": "PASS",
+  "Failure": null,
+  "Closed": true,
+  "Observations": [
+    {
+      "filename": "01-minimum-success.png",
+      "Width": 1000,
+      "Height": 720,
+      "DeviceDpi": 96,
+      "GridHeight": 72,
+      "HeaderHeight": 26,
+      "HorizontalScrollbarHeight": 17,
+      "AvailableRowHeight": 29,
+      "RequiredRowHeight": 25,
+      "Summary": "\uBA85\uB839 \uB300\uAE30 0 \u00B7 \uC131\uACF5 1 \u00B7 \uC2E4\uD328 0",
+      "Results": [
+        "\uC131\uACF5 (Mock)"
+      ]
+    },
+    {
+      "filename": "02-minimum-failure.png",
+      "Width": 1000,
+      "Height": 720,
+      "DeviceDpi": 96,
+      "GridHeight": 72,
+      "HeaderHeight": 26,
+      "HorizontalScrollbarHeight": 17,
+      "AvailableRowHeight": 29,
+      "RequiredRowHeight": 25,
+      "Summary": "\uBA85\uB839 \uB300\uAE30 0 \u00B7 \uC131\uACF5 1 \u00B7 \uC2E4\uD328 1",
+      "Results": [
+        "\uC2E4\uD328 (Mock)",
+        "\uC131\uACF5 (Mock)"
+      ]
+    },
+    {
+      "filename": "03-expanded.png",
+      "Width": 1200,
+      "Height": 900,
+      "DeviceDpi": 96,
+      "GridHeight": 252,
+      "HeaderHeight": 26,
+      "HorizontalScrollbarHeight": 17,
+      "AvailableRowHeight": 209,
+      "RequiredRowHeight": 25,
+      "Summary": "\uBA85\uB839 \uB300\uAE30 0 \u00B7 \uC131\uACF5 1 \u00B7 \uC2E4\uD328 1",
+      "Results": [
+        "\uC2E4\uD328 (Mock)",
+        "\uC131\uACF5 (Mock)"
+      ]
+    },
+    {
+      "filename": "04-minimum-again.png",
+      "Width": 1000,
+      "Height": 720,
+      "DeviceDpi": 96,
+      "GridHeight": 72,
+      "HeaderHeight": 26,
+      "HorizontalScrollbarHeight": 17,
+      "AvailableRowHeight": 29,
+      "RequiredRowHeight": 25,
+      "Summary": "\uBA85\uB839 \uB300\uAE30 0 \u00B7 \uC131\uACF5 1 \u00B7 \uC2E4\uD328 1",
+      "Results": [
+        "\uC2E4\uD328 (Mock)",
+        "\uC131\uACF5 (Mock)"
+      ]
+    }
+  ]
+}

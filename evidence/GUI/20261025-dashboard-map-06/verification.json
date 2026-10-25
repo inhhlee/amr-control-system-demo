@@ -1,0 +1,147 @@
+{
+  "runId": "20261025-dashboard-map-06",
+  "baseCommit": "246d2556ece4c424146c1957293778b61942c294",
+  "uncommitted": true,
+  "buildWarnings": 0,
+  "buildErrors": 0,
+  "passed": 953,
+  "gui": 31,
+  "communication": 768,
+  "simulator": 154,
+  "trx": [
+    {
+      "trx": "tests/user_DESKTOP-BLNVKRS_2026-10-25_02_07_07_net10.0.trx",
+      "times": {
+        "creation": "2026-10-25T02:07:07.3768053+09:00",
+        "queuing": "2026-10-25T02:07:07.3768054+09:00",
+        "start": "2026-10-25T02:07:06.0717864+09:00",
+        "finish": "2026-10-25T02:07:07.8112175+09:00"
+      },
+      "counters": {
+        "total": "154",
+        "executed": "154",
+        "passed": "154",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    },
+    {
+      "trx": "tests/user_DESKTOP-BLNVKRS_2026-10-25_02_07_07_net10.0[1].trx",
+      "times": {
+        "creation": "2026-10-25T02:07:07.7159863+09:00",
+        "queuing": "2026-10-25T02:07:07.7159868+09:00",
+        "start": "2026-10-25T02:07:06.2165406+09:00",
+        "finish": "2026-10-25T02:07:10.0659267+09:00"
+      },
+      "counters": {
+        "total": "31",
+        "executed": "31",
+        "passed": "31",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    },
+    {
+      "trx": "tests/user_DESKTOP-BLNVKRS_2026-10-25_02_07_10_net10.0.trx",
+      "times": {
+        "creation": "2026-10-25T02:07:10.3152295+09:00",
+        "queuing": "2026-10-25T02:07:10.3152300+09:00",
+        "start": "2026-10-25T02:07:06.0668581+09:00",
+        "finish": "2026-10-25T02:07:13.4118554+09:00"
+      },
+      "counters": {
+        "total": "768",
+        "executed": "768",
+        "passed": "768",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    }
+  ],
+  "uiSteps": [
+    {
+      "step": "01-initial",
+      "time": "2026-10-24T17:07:29.459Z",
+      "run": "20261025-dashboard-map-06"
+    },
+    {
+      "step": "02-marker-selection",
+      "time": "2026-10-24T17:07:33.353Z",
+      "run": "20261025-dashboard-map-06"
+    },
+    {
+      "step": "03-position-summary-update",
+      "time": "2026-10-24T17:07:40.196Z",
+      "run": "20261025-dashboard-map-06"
+    },
+    {
+      "step": "04-list-selection",
+      "time": "2026-10-24T17:07:55.007Z",
+      "run": "20261025-dashboard-map-06"
+    },
+    {
+      "step": "05-command-pending",
+      "time": "2026-10-24T17:08:08.262Z",
+      "run": "20261025-dashboard-map-06"
+    },
+    {
+      "step": "06-command-success",
+      "time": "2026-10-24T17:08:22.696Z",
+      "run": "20261025-dashboard-map-06"
+    }
+  ],
+  "windowClose": {
+    "time": "2026-10-24T17:09:35.427Z",
+    "remainingWindows": []
+  },
+  "figma": {
+    "file": "ZyTPFPyj2CGcYygMxBGajo",
+    "nodes": [
+      "3:294",
+      "3:2"
+    ],
+    "source": "Chrome UI observation; MCP quota exhausted"
+  },
+  "notVerified": [
+    "Actual Core/MQTT/SQLite integration",
+    "full alarm/history screens",
+    "path/obstacle/target rendering",
+    "grid comparison",
+    "operational load",
+    "Visual Studio designer editing"
+  ],
+  "minimumSize": "Native form layout regression at 1000x720; final manual screenshot is default fitted window, not a claimed manual minimum-size resize."
+}

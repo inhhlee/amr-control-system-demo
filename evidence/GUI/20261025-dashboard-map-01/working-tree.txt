@@ -1,0 +1,7 @@
+﻿ M AmrControlSystem.slnx
+ M BUILDING.md
+ M README.md
+?? evidence/GUI/
+?? src/Amr.ControlGui/
+?? src/Amr.Core/
+?? tests/Amr.ControlGui.Tests/

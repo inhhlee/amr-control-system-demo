@@ -3,9 +3,12 @@
     <Project Path="src/Amr.Communication/Amr.Communication.csproj" />
     <Project Path="src/Amr.Communication.Console/Amr.Communication.Console.csproj" />
     <Project Path="src/Amr.Simulator/Amr.Simulator.csproj" />
+    <Project Path="src/Amr.Core/Amr.Core.csproj" />
+    <Project Path="src/Amr.ControlGui/Amr.ControlGui.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj" />
     <Project Path="tests/Amr.Simulator.Tests/Amr.Simulator.Tests.csproj" />
+    <Project Path="tests/Amr.ControlGui.Tests/Amr.ControlGui.Tests.csproj" />
   </Folder>
 </Solution>

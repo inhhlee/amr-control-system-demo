@@ -1,0 +1,12 @@
+  Amr.Core -> C:\amr-control-system-demo\src\Amr.Core\bin\Debug\net10.0\Amr.Core.dll
+  Amr.ControlGui -> C:\amr-control-system-demo\src\Amr.ControlGui\bin\Debug\net10.0-windows\Amr.ControlGui.dll
+C:\amr-control-system-demo\evidence\GUI\20261025-pr45-review-01\Program.cs(11,9): warning CS0436: 'C:\amr-control-system-demo\evidence\GUI\20261025-pr45-review-01\obj\Debug\net10.0-windows\System.Windows.Forms.Analyzers.CSharp\System.Windows.Forms.CSharp.Generators.ApplicationConfiguration.ApplicationConfigurationGenerator\ApplicationConfiguration.g.cs'의 'ApplicationConfiguration' 형식이 'Amr.ControlGui, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'에서 가져온 형식 'ApplicationConfiguration'과(와) 충돌합니다. 'C:\amr-control-system-demo\evidence\GUI\20261025-pr45-review-01\obj\Debug\net10.0-windows\System.Windows.Forms.Analyzers.CSharp\System.Windows.Forms.CSharp.Generators.ApplicationConfiguration.ApplicationConfigurationGenerator\ApplicationConfiguration.g.cs'에 정의된 형식을 사용합니다. [C:\amr-control-system-demo\evidence\GUI\20261025-pr45-review-01\Review45.csproj]
+  Review45 -> C:\amr-control-system-demo\evidence\GUI\20261025-pr45-review-01\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll
+
+빌드했습니다.
+
+C:\amr-control-system-demo\evidence\GUI\20261025-pr45-review-01\Program.cs(11,9): warning CS0436: 'C:\amr-control-system-demo\evidence\GUI\20261025-pr45-review-01\obj\Debug\net10.0-windows\System.Windows.Forms.Analyzers.CSharp\System.Windows.Forms.CSharp.Generators.ApplicationConfiguration.ApplicationConfigurationGenerator\ApplicationConfiguration.g.cs'의 'ApplicationConfiguration' 형식이 'Amr.ControlGui, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'에서 가져온 형식 'ApplicationConfiguration'과(와) 충돌합니다. 'C:\amr-control-system-demo\evidence\GUI\20261025-pr45-review-01\obj\Debug\net10.0-windows\System.Windows.Forms.Analyzers.CSharp\System.Windows.Forms.CSharp.Generators.ApplicationConfiguration.ApplicationConfigurationGenerator\ApplicationConfiguration.g.cs'에 정의된 형식을 사용합니다. [C:\amr-control-system-demo\evidence\GUI\20261025-pr45-review-01\Review45.csproj]
+    경고 1개
+    오류 0개
+
+경과 시간: 00:00:06.60
