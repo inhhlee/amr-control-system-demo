@@ -1,0 +1,107 @@
+[
+  {
+    "path": "AmrControlSystem.slnx",
+    "before": "1156becf4f36cfee77c46b78dec7b3776203a406f7a9c41bcfa1cf680af368e4",
+    "after": "643697c2a5cf067b71b68f0b679ed0f53642f336d23c565d66ba60fba07b812a"
+  },
+  {
+    "path": "BUILDING.md",
+    "before": "34a73b61a1fcd95b22177321d0234ff8cfbdf3babf8ce6f553c11c4f864e5c05",
+    "after": "641684b6eede6c6fe897c465eca20a716cfd9db3ba9595fd73ef0e0654788e75"
+  },
+  {
+    "path": "README.md",
+    "before": "53e8abfb4705359e759c3347d7b436294ccfc31fa59a31eafd41bc428bdce0d3",
+    "after": "535273a5d58689c807a17422a5824ba66f965e4e486be3c1912040a62e970005"
+  },
+  {
+    "path": "src/Amr.ControlGui/Amr.ControlGui.csproj",
+    "before": null,
+    "after": "2a8d36a596c676f084f4ed75e6a140cd326e7ffb5004b2792967f742bdc083f2"
+  },
+  {
+    "path": "src/Amr.ControlGui/MainForm.cs",
+    "before": null,
+    "after": "f65973cbee57dc778079917950606e6cf14b3357c536c4bae648df88856d2c86"
+  },
+  {
+    "path": "src/Amr.ControlGui/MainForm.Designer.cs",
+    "before": null,
+    "after": "da22ca53c1afdc8c8a05957c1f3f6c8b6195ce5dece2d468b7f1c70d450fec67"
+  },
+  {
+    "path": "src/Amr.ControlGui/MainForm.resx",
+    "before": null,
+    "after": "118d1ad87f61485f2937b85001de8378aa6758398b6468c4a6fff23e755ea58c"
+  },
+  {
+    "path": "src/Amr.ControlGui/MockAmrDataProvider.cs",
+    "before": null,
+    "after": "cb6bb7320b891c89e51c3941d2a9e5deb56a276e39bffa641c99586987bbc451"
+  },
+  {
+    "path": "src/Amr.ControlGui/MockCommandDispatcher.cs",
+    "before": null,
+    "after": "341ec082037bb8585d7c90295b56591a22ad8bbba3f45aefe6e8baa4fb7b49c4"
+  },
+  {
+    "path": "src/Amr.ControlGui/Program.cs",
+    "before": null,
+    "after": "310957a9f9d7eefd4c2913642ccf8c91685499069e3a333fe7f85fbee2cee306"
+  },
+  {
+    "path": "src/Amr.Core/Amr.Core.csproj",
+    "before": null,
+    "after": "3472fccce5613343d3b55f6c2bbc48cbfd3de01f9cf32fd8607b8ac3a7e26395"
+  },
+  {
+    "path": "src/Amr.Core/AmrChange.cs",
+    "before": null,
+    "after": "651b1f5707f16de71c02e0281f3bc2d9c87f930ddd03117e7d957eab7d5e644a"
+  },
+  {
+    "path": "src/Amr.Core/AmrSnapshot.cs",
+    "before": null,
+    "after": "e9ded7c12ba9930c76b300f27225a113c3cac1653bf1ebabf07be0750db0781d"
+  },
+  {
+    "path": "src/Amr.Core/CommandModels.cs",
+    "before": null,
+    "after": "9a8b4a4356d30dc2e34102e7df17896f6b96ee853151476815f0044e31005307"
+  },
+  {
+    "path": "src/Amr.Core/IAmrDataProvider.cs",
+    "before": null,
+    "after": "96b61cb4fc99f43d3fd461e7cbfa456295b3948f668c154e474f85ea4822a42a"
+  },
+  {
+    "path": "src/Amr.Core/ICommandDispatcher.cs",
+    "before": null,
+    "after": "235b53a4a329826d69745bc96c475023afb2c48f899c674010ebbf2873e398db"
+  },
+  {
+    "path": "src/Amr.Core/QueryModels.cs",
+    "before": null,
+    "after": "61c35be9bdca82ad89a2930f9ebffe531509594a3f4c18fa4c315df4a102f2d2"
+  },
+  {
+    "path": "tests/Amr.ControlGui.Tests/Amr.ControlGui.Tests.csproj",
+    "before": null,
+    "after": "6e736baf1a18ad64b6a6d349913c82a61ed092f9648d2b354184c8b58ef0fec0"
+  },
+  {
+    "path": "tests/Amr.ControlGui.Tests/MainFormTests.cs",
+    "before": null,
+    "after": "39ffc2db0b624756556e1aff9296a30599ccccd476c45905ad53ee977bc9efd4"
+  },
+  {
+    "path": "tests/Amr.ControlGui.Tests/MockCommandDispatcherTests.cs",
+    "before": null,
+    "after": "b4e200afbb04e6c21b5b64c79bbc9c7141f3ec9445b150c807f005d0c2845b1a"
+  },
+  {
+    "path": "tests/Amr.ControlGui.Tests/MockDataProviderTests.cs",
+    "before": null,
+    "after": "e355aa6a9d240a64d4392e08ec99251aa86edb41ce6bc6a8b4fbb5babadcd978"
+  }
+]

@@ -1,0 +1,59 @@
+{
+  "runId": "20261025-publication-44-01",
+  "issue": 44,
+  "branch": "feature/44-core-mock-gui",
+  "baseCommit": "246d2556ece4c424146c1957293778b61942c294",
+  "checkedAtKst": "2026-10-25T21:30:41.5934851+09:00",
+  "originalChangedFiles": 144,
+  "originalEvidenceFiles": 121,
+  "productAndTestSourceChangedInPublication": false,
+  "latestTestedFiles": 23,
+  "latestTestedFilesMatched": 23,
+  "currentSdk": "10.0.401",
+  "reusedRun": "20261025-dashboard-map-06",
+  "productTestsExecutedInPublication": false,
+  "reusedPassed": 953,
+  "reusedTrx": [
+    {
+      "path": "evidence/GUI/20261025-dashboard-map-06/tests/user_DESKTOP-BLNVKRS_2026-10-25_02_07_07_net10.0.trx",
+      "total": 154,
+      "passed": 154,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    {
+      "path": "evidence/GUI/20261025-dashboard-map-06/tests/user_DESKTOP-BLNVKRS_2026-10-25_02_07_07_net10.0[1].trx",
+      "total": 31,
+      "passed": 31,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    {
+      "path": "evidence/GUI/20261025-dashboard-map-06/tests/user_DESKTOP-BLNVKRS_2026-10-25_02_07_10_net10.0.trx",
+      "total": 768,
+      "passed": 768,
+      "failed": 0,
+      "notExecuted": 0
+    }
+  ],
+  "parsedJson": 17,
+  "parsedXml": 31,
+  "strictUtf8Checked": 42,
+  "existingLocalEvidenceLinks": 23,
+  "sensitivePatternMatches": 0,
+  "stagedComparison": {
+    "originalFilesChecked": 144,
+    "originalEvidenceRawBlobsMatched": 121,
+    "originalSourceAndGuideFilesChecked": 23,
+    "crlfToLfOnly": [
+      "AmrControlSystem.slnx",
+      "BUILDING.md",
+      "README.md"
+    ],
+    "stagedFiles": 147,
+    "unexpectedFiles": 0,
+    "originalWorkingBytesPreserved": true
+  },
+  "note": "Existing product/test results are reused after exact raw source comparison; no new product build, test, GUI or MQTT execution.",
+  "publicationCheckCorrection": "Initial new publication JSON used Windows CRLF and failed the added whitespace check before commit. New publication JSON now uses LF. Original 144 working files and product/test source remained unchanged."
+}

@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="2276c9d5-895e-4bda-9c97-e6737b500d05" name="user@DESKTOP-BLNVKRS 2026-10-25 02:01:01" runUser="DESKTOP-BLNVKRS\user" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-25T02:01:01.7054829+09:00" queuing="2026-10-25T02:01:01.7054837+09:00" start="2026-10-25T02:01:00.6392704+09:00" finish="2026-10-25T02:01:02.6083514+09:00" />
+  <TestSettings name="default" id="defc62dc-69b9-49b7-8b00-66d07d617fa1">
+    <Deployment runDeploymentRoot="user_DESKTOP-BLNVKRS_2026-10-25_02_01_01" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="d745f002-a4d1-4010-81f5-352442c2917d" testId="98ba159c-bfd8-5195-446d-e3c8e0c9cb50" testName="Amr.ControlGui.Tests.MockDataProviderTests.InvalidIdentifiersAreFailuresRatherThanMissingDevices(id: &quot;&quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0000309" startTime="2026-10-25T02:01:01.6512266+09:00" endTime="2026-10-25T02:01:01.6515287+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d745f002-a4d1-4010-81f5-352442c2917d" />
+    <UnitTestResult executionId="bffebcc0-aa83-4ba5-8b67-0878c1aec848" testId="6d2a2c70-c0d8-c52d-518f-71a7e780361f" testName="Amr.ControlGui.Tests.MockCommandDispatcherTests.InitialAndLaterNotificationsContainTrackedRequests" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0109389" startTime="2026-10-25T02:01:01.6516492+09:00" endTime="2026-10-25T02:01:01.6523649+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bffebcc0-aa83-4ba5-8b67-0878c1aec848" />
+    <UnitTestResult executionId="55315b2a-e6df-4136-95eb-c921c7ce2b40" testId="aa51865c-e5e9-c2f3-41fa-3f2063969090" testName="Amr.ControlGui.Tests.MockDataProviderTests.InvalidIdentifiersAreFailuresRatherThanMissingDevices(id: &quot;AMR/001&quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0000227" startTime="2026-10-25T02:01:01.6519994+09:00" endTime="2026-10-25T02:01:01.6520861+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="55315b2a-e6df-4136-95eb-c921c7ce2b40" />
+    <UnitTestResult executionId="bd60899b-f94e-4555-b592-f77a35c00d21" testId="287f36fe-0291-a694-5399-1495376ee08d" testName="Amr.ControlGui.Tests.DashboardMapTests.DashboardSeparatesOperationalStateFromConnectionAndLiveness" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0291352" startTime="2026-10-25T02:01:01.8313650+09:00" endTime="2026-10-25T02:01:01.8397463+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bd60899b-f94e-4555-b592-f77a35c00d21" />
+    <UnitTestResult executionId="db673777-2ea1-4949-bbfb-a3fc831d3ce7" testId="eb71a1ab-2d0d-7d5f-bf5b-1ed2ac733842" testName="Amr.ControlGui.Tests.DashboardMapTests.OverlappingMarkersCanBothBeSelectedAndInvalidCoordinatesDoNotPaintAsValidPositions" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0482980" startTime="2026-10-25T02:01:01.7384115+09:00" endTime="2026-10-25T02:01:01.7849990+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="db673777-2ea1-4949-bbfb-a3fc831d3ce7" />
+    <UnitTestResult executionId="3ea7ab76-e4f2-42ff-9a6b-15e50128dcea" testId="4679d54e-a66a-fea9-4792-42908e204c56" testName="Amr.ControlGui.Tests.MockDataProviderTests.SlowConsumerOverflowDoesNotInterruptAHealthyConsumer" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0022391" startTime="2026-10-25T02:01:01.6802714+09:00" endTime="2026-10-25T02:01:01.6823868+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3ea7ab76-e4f2-42ff-9a6b-15e50128dcea" />
+    <UnitTestResult executionId="af06b4a3-708d-4696-90b3-5771a99d4762" testId="bef4c180-ee6b-72cc-6a2c-0de1b33df39d" testName="Amr.ControlGui.Tests.MainFormTests.ClosingWaitsForAnInFlightQueryCleanupAndLeavesTheSharedProviderAlive" computerName="DESKTOP-BLNVKRS" duration="00:00:00.7100683" startTime="2026-10-25T02:01:01.7384506+09:00" endTime="2026-10-25T02:01:02.4471870+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="af06b4a3-708d-4696-90b3-5771a99d4762" />
+    <UnitTestResult executionId="5bb3c49c-c741-4a4e-ac69-3ca0668ae431" testId="d614f668-fe4f-469c-14b9-9553c40f6895" testName="Amr.ControlGui.Tests.DashboardMapTests.EmptyAndUnknownDataAreNotReportedAsConnected" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0229794" startTime="2026-10-25T02:01:01.8400397+09:00" endTime="2026-10-25T02:01:01.8639846+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5bb3c49c-c741-4a4e-ac69-3ca0668ae431" />
+    <UnitTestResult executionId="d3dbf6d9-10d5-4c50-8064-0d1c341e3adc" testId="1ae0bfa0-ed5d-9e9a-4e52-13363386c7b3" testName="Amr.ControlGui.Tests.MockCommandDispatcherTests.CancellationAfterAcceptanceBoundaryStillReturnsTheRecordedId" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0014541" startTime="2026-10-25T02:01:01.6551310+09:00" endTime="2026-10-25T02:01:01.6552628+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d3dbf6d9-10d5-4c50-8064-0d1c341e3adc" />
+    <UnitTestResult executionId="d7158c09-910b-4710-96d3-4fa51c4d7bc6" testId="b96802c8-21cc-5726-cbb2-97c2d0c014ae" testName="Amr.ControlGui.Tests.DashboardMapTests.MapCoordinatesUseEqualScaleAndPositiveYPointsUp" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0013482" startTime="2026-10-25T02:01:01.8642335+09:00" endTime="2026-10-25T02:01:01.8655032+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d7158c09-910b-4710-96d3-4fa51c4d7bc6" />
+    <UnitTestResult executionId="a00b4fe5-df4e-4ae0-8d00-4fcac0ff2b1e" testId="bb8c93b2-d84f-32e8-032d-da68fc73666f" testName="Amr.ControlGui.Tests.MockDataProviderTests.DisposingDropsBufferedChangesAndRejectsNewSubscriptions" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0032136" startTime="2026-10-25T02:01:01.5721598+09:00" endTime="2026-10-25T02:01:01.5752099+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a00b4fe5-df4e-4ae0-8d00-4fcac0ff2b1e" />
+    <UnitTestResult executionId="d2d9e183-a6cf-46cc-bddc-fcfa3477683f" testId="d8692135-817b-e308-e6d8-9391dc623630" testName="Amr.ControlGui.Tests.MockDataProviderTests.InvalidIdentifiersAreFailuresRatherThanMissingDevices(id: &quot;AMR#001&quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0002780" startTime="2026-10-25T02:01:01.6507209+09:00" endTime="2026-10-25T02:01:01.6508083+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d2d9e183-a6cf-46cc-bddc-fcfa3477683f" />
+    <UnitTestResult executionId="9b3f1585-9fd4-4624-adb1-203462d4e8e8" testId="4137e56b-9550-da14-51ab-698da8492e0b" testName="Amr.ControlGui.Tests.MainFormTests.LateQueriesAndOlderNotificationsCannotOverwriteNewerDisplayedPosition" computerName="DESKTOP-BLNVKRS" duration="00:00:00.2541995" startTime="2026-10-25T02:01:01.4728982+09:00" endTime="2026-10-25T02:01:01.7363131+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9b3f1585-9fd4-4624-adb1-203462d4e8e8" />
+    <UnitTestResult executionId="4803ae19-030c-45c3-a4ac-5e1aca57fc1f" testId="e1f320ad-207b-a059-7ff8-b68a3d0ef5df" testName="Amr.ControlGui.Tests.MockDataProviderTests.QueriesReturnImmutableIndependentSnapshotsAndUnknownRealConnections" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0553396" startTime="2026-10-25T02:01:01.6600558+09:00" endTime="2026-10-25T02:01:01.6734460+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4803ae19-030c-45c3-a4ac-5e1aca57fc1f" />
+    <UnitTestResult executionId="c6827fd9-0e74-4bd8-bcbd-4e25f1ebcccb" testId="761c0532-b1f2-c247-4a42-6178ec11adf4" testName="Amr.ControlGui.Tests.DashboardMapTests.MarkerAndGridSelectionStayTogetherAfterPositionChangeAndResize" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0151570" startTime="2026-10-25T02:01:01.7852552+09:00" endTime="2026-10-25T02:01:01.8106742+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c6827fd9-0e74-4bd8-bcbd-4e25f1ebcccb">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Contains() Failure: Sub-string not found&#xD;
+String:    "AMR_001\n\n현재 좌표 (m)\nX 0 m / Y 0 m\n\n속도  0 m"···&#xD;
+Not found: "AMR_002"</Message>
+          <StackTrace>   at Amr.ControlGui.Tests.DashboardMapTests.&lt;&gt;c.&lt;MarkerAndGridSelectionStayTogetherAfterPositionChangeAndResize&gt;b__3_0() in C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs:line 70&#xD;
+   at Amr.ControlGui.Tests.DashboardMapTests.&lt;&gt;c__DisplayClass11_0.&lt;OnSta&gt;b__0() in C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs:line 150&#xD;
+--- End of stack trace from previous location ---&#xD;
+   at Amr.ControlGui.Tests.DashboardMapTests.OnSta(Action action) in C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs:line 154&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e884a252-f97d-45be-ae70-6324a9fdcb17" testId="2ec54bcb-d2e2-e839-1ac7-14e1cbd1e8b7" testName="Amr.ControlGui.Tests.MockDataProviderTests.SlowConsumerGetsExplicitOverflowAndCanResynchronize" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0050305" startTime="2026-10-25T02:01:01.6738505+09:00" endTime="2026-10-25T02:01:01.6749993+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e884a252-f97d-45be-ae70-6324a9fdcb17" />
+    <UnitTestResult executionId="7713ff0a-c2e6-4b18-9d4b-1e641074a36f" testId="3c55752c-1482-f4e8-7952-1efc0712004d" testName="Amr.ControlGui.Tests.MockCommandDispatcherTests.ConcurrentRequestsHaveUniqueIdsAndOutOfOrderResultsStayWithTheirTargets" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0309842" startTime="2026-10-25T02:01:01.5275710+09:00" endTime="2026-10-25T02:01:01.5669033+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7713ff0a-c2e6-4b18-9d4b-1e641074a36f" />
+    <UnitTestResult executionId="bfdc03ce-7ba0-4dd8-b54c-e9c732215a9a" testId="3e2fead4-ab18-e35f-ee51-2be92b54a5f4" testName="Amr.ControlGui.Tests.MockCommandDispatcherTests.AcceptanceIsRecordedBeforeReturnAndFinalResultIsSeparate(success: False, expected: Failure)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0005100" startTime="2026-10-25T02:01:01.6495685+09:00" endTime="2026-10-25T02:01:01.6513125+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bfdc03ce-7ba0-4dd8-b54c-e9c732215a9a" />
+    <UnitTestResult executionId="f2a6439e-b683-46ad-be08-1b0f6fc682fc" testId="612e75f8-1d30-05d1-607f-3ed8d406bbac" testName="Amr.ControlGui.Tests.MockDataProviderTests.ConcurrentRegistrationNeverLosesTheChangeAtTheBoundary" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0854312" startTime="2026-10-25T02:01:01.4728097+09:00" endTime="2026-10-25T02:01:01.5718226+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f2a6439e-b683-46ad-be08-1b0f6fc682fc" />
+    <UnitTestResult executionId="9965e5c6-d46d-4ce9-8030-86ef3d21eee8" testId="c8dd6ed6-3c9d-fd56-7784-5fcde4d49c25" testName="Amr.ControlGui.Tests.MockDataProviderTests.InvalidQueriesAndCancellationAreNotEmptySuccesses" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0023413" startTime="2026-10-25T02:01:01.6778473+09:00" endTime="2026-10-25T02:01:01.6800130+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9965e5c6-d46d-4ce9-8030-86ef3d21eee8" />
+    <UnitTestResult executionId="a5f3f178-54fc-4da9-a5df-7efdbf65e329" testId="543d7d3f-7ac9-5c86-5388-f5fc27bb5cb7" testName="Amr.ControlGui.Tests.MockDataProviderTests.InvalidIdentifiersAreFailuresRatherThanMissingDevices(id: &quot; &quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0092886" startTime="2026-10-25T02:01:01.5757901+09:00" endTime="2026-10-25T02:01:01.6502256+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a5f3f178-54fc-4da9-a5df-7efdbf65e329" />
+    <UnitTestResult executionId="49f6ce84-1fcb-4089-ab6e-8948b37708e2" testId="39d0dc6b-3a95-3260-2c15-215c929f3317" testName="Amr.ControlGui.Tests.MockDataProviderTests.InvalidIdentifiersAreFailuresRatherThanMissingDevices(id: &quot;AMR\n001&quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0000241" startTime="2026-10-25T02:01:01.6517811+09:00" endTime="2026-10-25T02:01:01.6518547+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="49f6ce84-1fcb-4089-ab6e-8948b37708e2" />
+    <UnitTestResult executionId="3c7f7457-1b0d-4898-84c7-f9b4896f8f4f" testId="d4c0d286-fcf7-bded-199b-4e22c22d695f" testName="Amr.ControlGui.Tests.MockCommandDispatcherTests.AcceptanceIsRecordedBeforeReturnAndFinalResultIsSeparate(success: True, expected: Success)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0158025" startTime="2026-10-25T02:01:01.5692245+09:00" endTime="2026-10-25T02:01:01.5851513+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3c7f7457-1b0d-4898-84c7-f9b4896f8f4f" />
+    <UnitTestResult executionId="d9357fdd-222d-4b67-ab3a-22eb5f08fc22" testId="c4496d13-c33e-fce8-de36-52c342a310ba" testName="Amr.ControlGui.Tests.MockCommandDispatcherTests.RejectionIsSeparateFromCancellationAndRequestsStayWithinCapacity" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0432023" startTime="2026-10-25T02:01:01.4704540+09:00" endTime="2026-10-25T02:01:01.5249405+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d9357fdd-222d-4b67-ab3a-22eb5f08fc22" />
+    <UnitTestResult executionId="28762722-2a51-49e9-828c-9eba4fba900b" testId="50282b10-7656-8846-8c0d-c898ab8ca1a2" testName="Amr.ControlGui.Tests.DashboardMapTests.RequestCountersFollowSeparateMockAcceptanceAndCompletion" computerName="DESKTOP-BLNVKRS" duration="00:00:00.2382980" startTime="2026-10-25T02:01:01.5138274+09:00" endTime="2026-10-25T02:01:01.7362116+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="28762722-2a51-49e9-828c-9eba4fba900b" />
+    <UnitTestResult executionId="47dbe794-30bb-49f8-810e-ce6b21255634" testId="9a088eed-4c12-cb38-a800-51248ca05d46" testName="Amr.ControlGui.Tests.MockDataProviderTests.InvalidIdentifiersAreFailuresRatherThanMissingDevices(id: &quot;AMR+001&quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0000251" startTime="2026-10-25T02:01:01.6509633+09:00" endTime="2026-10-25T02:01:01.6510678+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="47dbe794-30bb-49f8-810e-ce6b21255634" />
+    <UnitTestResult executionId="8a0bf473-117f-4365-8186-5daaf840e942" testId="5454f150-1aae-f9dc-8586-9734ca029e1f" testName="Amr.ControlGui.Tests.MockDataProviderTests.SubscriptionStartsAtCurrentSnapshotThenPreservesEachChange" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0024079" startTime="2026-10-25T02:01:01.6753694+09:00" endTime="2026-10-25T02:01:01.6775268+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8a0bf473-117f-4365-8186-5daaf840e942" />
+    <UnitTestResult executionId="3f385870-8340-45df-9705-93c1eddf8f69" testId="9291c987-845d-bc2c-bc1a-8d4a8ca6cf2c" testName="Amr.ControlGui.Tests.MockDataProviderTests.CancelingOneConsumerLeavesOtherConsumersRunning" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0265962" startTime="2026-10-25T02:01:01.6522908+09:00" endTime="2026-10-25T02:01:01.6597970+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3f385870-8340-45df-9705-93c1eddf8f69" />
+    <UnitTestResult executionId="6e655b91-e3ac-40ea-ac71-d99017a44588" testId="144913a9-2242-fd20-1cb2-849af02340fa" testName="Amr.ControlGui.Tests.DashboardMapTests.ExtremeRangesAndTooSmallAreasAreExplicitlyUnrenderable" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0107828" startTime="2026-10-25T02:01:01.4729378+09:00" endTime="2026-10-25T02:01:01.4961967+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6e655b91-e3ac-40ea-ac71-d99017a44588" />
+    <UnitTestResult executionId="81fab68c-6d32-4c72-bf2a-d7927f4f1f33" testId="1db6148a-860c-4dbb-8559-411fca0d6694" testName="Amr.ControlGui.Tests.MockDataProviderTests.EndingEnumerationDetachesAndDisposalUnblocksWaitingReaders" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0163536" startTime="2026-10-25T02:01:01.6827202+09:00" endTime="2026-10-25T02:01:01.7070478+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="81fab68c-6d32-4c72-bf2a-d7927f4f1f33" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Amr.ControlGui.Tests.MockDataProviderTests.SubscriptionStartsAtCurrentSnapshotThenPreservesEachChange" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="5454f150-1aae-f9dc-8586-9734ca029e1f">
+      <Execution id="8a0bf473-117f-4365-8186-5daaf840e942" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockDataProviderTests" name="SubscriptionStartsAtCurrentSnapshotThenPreservesEachChange" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MockDataProviderTests.InvalidIdentifiersAreFailuresRatherThanMissingDevices(id: &quot; &quot;)" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="543d7d3f-7ac9-5c86-5388-f5fc27bb5cb7">
+      <Execution id="a5f3f178-54fc-4da9-a5df-7efdbf65e329" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockDataProviderTests" name="InvalidIdentifiersAreFailuresRatherThanMissingDevices" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.DashboardMapTests.MapCoordinatesUseEqualScaleAndPositiveYPointsUp" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="b96802c8-21cc-5726-cbb2-97c2d0c014ae">
+      <Execution id="d7158c09-910b-4710-96d3-4fa51c4d7bc6" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.DashboardMapTests" name="MapCoordinatesUseEqualScaleAndPositiveYPointsUp" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MockDataProviderTests.InvalidIdentifiersAreFailuresRatherThanMissingDevices(id: &quot;AMR/001&quot;)" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="aa51865c-e5e9-c2f3-41fa-3f2063969090">
+      <Execution id="55315b2a-e6df-4136-95eb-c921c7ce2b40" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockDataProviderTests" name="InvalidIdentifiersAreFailuresRatherThanMissingDevices" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MainFormTests.LateQueriesAndOlderNotificationsCannotOverwriteNewerDisplayedPosition" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="4137e56b-9550-da14-51ab-698da8492e0b">
+      <Execution id="9b3f1585-9fd4-4624-adb1-203462d4e8e8" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MainFormTests" name="LateQueriesAndOlderNotificationsCannotOverwriteNewerDisplayedPosition" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.DashboardMapTests.DashboardSeparatesOperationalStateFromConnectionAndLiveness" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="287f36fe-0291-a694-5399-1495376ee08d">
+      <Execution id="bd60899b-f94e-4555-b592-f77a35c00d21" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.DashboardMapTests" name="DashboardSeparatesOperationalStateFromConnectionAndLiveness" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MockDataProviderTests.EndingEnumerationDetachesAndDisposalUnblocksWaitingReaders" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="1db6148a-860c-4dbb-8559-411fca0d6694">
+      <Execution id="81fab68c-6d32-4c72-bf2a-d7927f4f1f33" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockDataProviderTests" name="EndingEnumerationDetachesAndDisposalUnblocksWaitingReaders" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MockDataProviderTests.InvalidIdentifiersAreFailuresRatherThanMissingDevices(id: &quot;&quot;)" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="98ba159c-bfd8-5195-446d-e3c8e0c9cb50">
+      <Execution id="d745f002-a4d1-4010-81f5-352442c2917d" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockDataProviderTests" name="InvalidIdentifiersAreFailuresRatherThanMissingDevices" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MockDataProviderTests.QueriesReturnImmutableIndependentSnapshotsAndUnknownRealConnections" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="e1f320ad-207b-a059-7ff8-b68a3d0ef5df">
+      <Execution id="4803ae19-030c-45c3-a4ac-5e1aca57fc1f" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockDataProviderTests" name="QueriesReturnImmutableIndependentSnapshotsAndUnknownRealConnections" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MainFormTests.ClosingWaitsForAnInFlightQueryCleanupAndLeavesTheSharedProviderAlive" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="bef4c180-ee6b-72cc-6a2c-0de1b33df39d">
+      <Execution id="af06b4a3-708d-4696-90b3-5771a99d4762" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MainFormTests" name="ClosingWaitsForAnInFlightQueryCleanupAndLeavesTheSharedProviderAlive" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MockCommandDispatcherTests.RejectionIsSeparateFromCancellationAndRequestsStayWithinCapacity" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="c4496d13-c33e-fce8-de36-52c342a310ba">
+      <Execution id="d9357fdd-222d-4b67-ab3a-22eb5f08fc22" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockCommandDispatcherTests" name="RejectionIsSeparateFromCancellationAndRequestsStayWithinCapacity" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MockDataProviderTests.InvalidIdentifiersAreFailuresRatherThanMissingDevices(id: &quot;AMR\n001&quot;)" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="39d0dc6b-3a95-3260-2c15-215c929f3317">
+      <Execution id="49f6ce84-1fcb-4089-ab6e-8948b37708e2" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockDataProviderTests" name="InvalidIdentifiersAreFailuresRatherThanMissingDevices" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.DashboardMapTests.EmptyAndUnknownDataAreNotReportedAsConnected" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="d614f668-fe4f-469c-14b9-9553c40f6895">
+      <Execution id="5bb3c49c-c741-4a4e-ac69-3ca0668ae431" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.DashboardMapTests" name="EmptyAndUnknownDataAreNotReportedAsConnected" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.DashboardMapTests.RequestCountersFollowSeparateMockAcceptanceAndCompletion" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="50282b10-7656-8846-8c0d-c898ab8ca1a2">
+      <Execution id="28762722-2a51-49e9-828c-9eba4fba900b" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.DashboardMapTests" name="RequestCountersFollowSeparateMockAcceptanceAndCompletion" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MockCommandDispatcherTests.InitialAndLaterNotificationsContainTrackedRequests" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="6d2a2c70-c0d8-c52d-518f-71a7e780361f">
+      <Execution id="bffebcc0-aa83-4ba5-8b67-0878c1aec848" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockCommandDispatcherTests" name="InitialAndLaterNotificationsContainTrackedRequests" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.DashboardMapTests.OverlappingMarkersCanBothBeSelectedAndInvalidCoordinatesDoNotPaintAsValidPositions" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="eb71a1ab-2d0d-7d5f-bf5b-1ed2ac733842">
+      <Execution id="db673777-2ea1-4949-bbfb-a3fc831d3ce7" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.DashboardMapTests" name="OverlappingMarkersCanBothBeSelectedAndInvalidCoordinatesDoNotPaintAsValidPositions" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MockDataProviderTests.CancelingOneConsumerLeavesOtherConsumersRunning" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="9291c987-845d-bc2c-bc1a-8d4a8ca6cf2c">
+      <Execution id="3f385870-8340-45df-9705-93c1eddf8f69" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockDataProviderTests" name="CancelingOneConsumerLeavesOtherConsumersRunning" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MockCommandDispatcherTests.ConcurrentRequestsHaveUniqueIdsAndOutOfOrderResultsStayWithTheirTargets" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="3c55752c-1482-f4e8-7952-1efc0712004d">
+      <Execution id="7713ff0a-c2e6-4b18-9d4b-1e641074a36f" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockCommandDispatcherTests" name="ConcurrentRequestsHaveUniqueIdsAndOutOfOrderResultsStayWithTheirTargets" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MockDataProviderTests.DisposingDropsBufferedChangesAndRejectsNewSubscriptions" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="bb8c93b2-d84f-32e8-032d-da68fc73666f">
+      <Execution id="a00b4fe5-df4e-4ae0-8d00-4fcac0ff2b1e" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockDataProviderTests" name="DisposingDropsBufferedChangesAndRejectsNewSubscriptions" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.DashboardMapTests.MarkerAndGridSelectionStayTogetherAfterPositionChangeAndResize" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="761c0532-b1f2-c247-4a42-6178ec11adf4">
+      <Execution id="c6827fd9-0e74-4bd8-bcbd-4e25f1ebcccb" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.DashboardMapTests" name="MarkerAndGridSelectionStayTogetherAfterPositionChangeAndResize" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MockDataProviderTests.InvalidQueriesAndCancellationAreNotEmptySuccesses" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="c8dd6ed6-3c9d-fd56-7784-5fcde4d49c25">
+      <Execution id="9965e5c6-d46d-4ce9-8030-86ef3d21eee8" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockDataProviderTests" name="InvalidQueriesAndCancellationAreNotEmptySuccesses" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MockCommandDispatcherTests.AcceptanceIsRecordedBeforeReturnAndFinalResultIsSeparate(success: True, expected: Success)" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="d4c0d286-fcf7-bded-199b-4e22c22d695f">
+      <Execution id="3c7f7457-1b0d-4898-84c7-f9b4896f8f4f" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockCommandDispatcherTests" name="AcceptanceIsRecordedBeforeReturnAndFinalResultIsSeparate" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MockDataProviderTests.InvalidIdentifiersAreFailuresRatherThanMissingDevices(id: &quot;AMR#001&quot;)" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="d8692135-817b-e308-e6d8-9391dc623630">
+      <Execution id="d2d9e183-a6cf-46cc-bddc-fcfa3477683f" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockDataProviderTests" name="InvalidIdentifiersAreFailuresRatherThanMissingDevices" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MockDataProviderTests.SlowConsumerGetsExplicitOverflowAndCanResynchronize" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="2ec54bcb-d2e2-e839-1ac7-14e1cbd1e8b7">
+      <Execution id="e884a252-f97d-45be-ae70-6324a9fdcb17" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockDataProviderTests" name="SlowConsumerGetsExplicitOverflowAndCanResynchronize" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MockDataProviderTests.InvalidIdentifiersAreFailuresRatherThanMissingDevices(id: &quot;AMR+001&quot;)" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="9a088eed-4c12-cb38-a800-51248ca05d46">
+      <Execution id="47dbe794-30bb-49f8-810e-ce6b21255634" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockDataProviderTests" name="InvalidIdentifiersAreFailuresRatherThanMissingDevices" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.DashboardMapTests.ExtremeRangesAndTooSmallAreasAreExplicitlyUnrenderable" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="144913a9-2242-fd20-1cb2-849af02340fa">
+      <Execution id="6e655b91-e3ac-40ea-ac71-d99017a44588" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.DashboardMapTests" name="ExtremeRangesAndTooSmallAreasAreExplicitlyUnrenderable" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MockCommandDispatcherTests.CancellationAfterAcceptanceBoundaryStillReturnsTheRecordedId" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="1ae0bfa0-ed5d-9e9a-4e52-13363386c7b3">
+      <Execution id="d3dbf6d9-10d5-4c50-8064-0d1c341e3adc" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockCommandDispatcherTests" name="CancellationAfterAcceptanceBoundaryStillReturnsTheRecordedId" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MockDataProviderTests.SlowConsumerOverflowDoesNotInterruptAHealthyConsumer" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="4679d54e-a66a-fea9-4792-42908e204c56">
+      <Execution id="3ea7ab76-e4f2-42ff-9a6b-15e50128dcea" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockDataProviderTests" name="SlowConsumerOverflowDoesNotInterruptAHealthyConsumer" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MockCommandDispatcherTests.AcceptanceIsRecordedBeforeReturnAndFinalResultIsSeparate(success: False, expected: Failure)" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="3e2fead4-ab18-e35f-ee51-2be92b54a5f4">
+      <Execution id="bfdc03ce-7ba0-4dd8-b54c-e9c732215a9a" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockCommandDispatcherTests" name="AcceptanceIsRecordedBeforeReturnAndFinalResultIsSeparate" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MockDataProviderTests.ConcurrentRegistrationNeverLosesTheChangeAtTheBoundary" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="612e75f8-1d30-05d1-607f-3ed8d406bbac">
+      <Execution id="f2a6439e-b683-46ad-be08-1b0f6fc682fc" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MockDataProviderTests" name="ConcurrentRegistrationNeverLosesTheChangeAtTheBoundary" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="98ba159c-bfd8-5195-446d-e3c8e0c9cb50" executionId="d745f002-a4d1-4010-81f5-352442c2917d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6d2a2c70-c0d8-c52d-518f-71a7e780361f" executionId="bffebcc0-aa83-4ba5-8b67-0878c1aec848" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aa51865c-e5e9-c2f3-41fa-3f2063969090" executionId="55315b2a-e6df-4136-95eb-c921c7ce2b40" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="287f36fe-0291-a694-5399-1495376ee08d" executionId="bd60899b-f94e-4555-b592-f77a35c00d21" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="eb71a1ab-2d0d-7d5f-bf5b-1ed2ac733842" executionId="db673777-2ea1-4949-bbfb-a3fc831d3ce7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4679d54e-a66a-fea9-4792-42908e204c56" executionId="3ea7ab76-e4f2-42ff-9a6b-15e50128dcea" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bef4c180-ee6b-72cc-6a2c-0de1b33df39d" executionId="af06b4a3-708d-4696-90b3-5771a99d4762" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d614f668-fe4f-469c-14b9-9553c40f6895" executionId="5bb3c49c-c741-4a4e-ac69-3ca0668ae431" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1ae0bfa0-ed5d-9e9a-4e52-13363386c7b3" executionId="d3dbf6d9-10d5-4c50-8064-0d1c341e3adc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b96802c8-21cc-5726-cbb2-97c2d0c014ae" executionId="d7158c09-910b-4710-96d3-4fa51c4d7bc6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bb8c93b2-d84f-32e8-032d-da68fc73666f" executionId="a00b4fe5-df4e-4ae0-8d00-4fcac0ff2b1e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d8692135-817b-e308-e6d8-9391dc623630" executionId="d2d9e183-a6cf-46cc-bddc-fcfa3477683f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4137e56b-9550-da14-51ab-698da8492e0b" executionId="9b3f1585-9fd4-4624-adb1-203462d4e8e8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e1f320ad-207b-a059-7ff8-b68a3d0ef5df" executionId="4803ae19-030c-45c3-a4ac-5e1aca57fc1f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="761c0532-b1f2-c247-4a42-6178ec11adf4" executionId="c6827fd9-0e74-4bd8-bcbd-4e25f1ebcccb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2ec54bcb-d2e2-e839-1ac7-14e1cbd1e8b7" executionId="e884a252-f97d-45be-ae70-6324a9fdcb17" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3c55752c-1482-f4e8-7952-1efc0712004d" executionId="7713ff0a-c2e6-4b18-9d4b-1e641074a36f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3e2fead4-ab18-e35f-ee51-2be92b54a5f4" executionId="bfdc03ce-7ba0-4dd8-b54c-e9c732215a9a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="612e75f8-1d30-05d1-607f-3ed8d406bbac" executionId="f2a6439e-b683-46ad-be08-1b0f6fc682fc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c8dd6ed6-3c9d-fd56-7784-5fcde4d49c25" executionId="9965e5c6-d46d-4ce9-8030-86ef3d21eee8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="543d7d3f-7ac9-5c86-5388-f5fc27bb5cb7" executionId="a5f3f178-54fc-4da9-a5df-7efdbf65e329" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="39d0dc6b-3a95-3260-2c15-215c929f3317" executionId="49f6ce84-1fcb-4089-ab6e-8948b37708e2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d4c0d286-fcf7-bded-199b-4e22c22d695f" executionId="3c7f7457-1b0d-4898-84c7-f9b4896f8f4f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c4496d13-c33e-fce8-de36-52c342a310ba" executionId="d9357fdd-222d-4b67-ab3a-22eb5f08fc22" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="50282b10-7656-8846-8c0d-c898ab8ca1a2" executionId="28762722-2a51-49e9-828c-9eba4fba900b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9a088eed-4c12-cb38-a800-51248ca05d46" executionId="47dbe794-30bb-49f8-810e-ce6b21255634" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5454f150-1aae-f9dc-8586-9734ca029e1f" executionId="8a0bf473-117f-4365-8186-5daaf840e942" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9291c987-845d-bc2c-bc1a-8d4a8ca6cf2c" executionId="3f385870-8340-45df-9705-93c1eddf8f69" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="144913a9-2242-fd20-1cb2-849af02340fa" executionId="6e655b91-e3ac-40ea-ac71-d99017a44588" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1db6148a-860c-4dbb-8559-411fca0d6694" executionId="81fab68c-6d32-4c72-bf2a-d7927f4f1f33" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="30" executed="30" passed="29" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.12)&#xD;
+[xUnit.net 00:00:00.11]   Discovering: Amr.ControlGui.Tests&#xD;
+[xUnit.net 00:00:00.18]   Discovered:  Amr.ControlGui.Tests&#xD;
+[xUnit.net 00:00:00.22]   Starting:    Amr.ControlGui.Tests&#xD;
+[xUnit.net 00:00:00.60]       Assert.Contains() Failure: Sub-string not found&#xD;
+[xUnit.net 00:00:00.60]       String:    "AMR_001\n\n현재 좌표 (m)\nX 0 m / Y 0 m\n\n속도  0 m"···&#xD;
+[xUnit.net 00:00:00.60]       Not found: "AMR_002"&#xD;
+[xUnit.net 00:00:00.61]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.61]         C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs(70,0): at Amr.ControlGui.Tests.DashboardMapTests.&lt;&gt;c.&lt;MarkerAndGridSelectionStayTogetherAfterPositionChangeAndResize&gt;b__3_0()&#xD;
+[xUnit.net 00:00:00.61]         C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs(150,0): at Amr.ControlGui.Tests.DashboardMapTests.&lt;&gt;c__DisplayClass11_0.&lt;OnSta&gt;b__0()&#xD;
+[xUnit.net 00:00:00.61]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:00.61]         C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs(154,0): at Amr.ControlGui.Tests.DashboardMapTests.OnSta(Action action)&#xD;
+[xUnit.net 00:00:00.61]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.24]   Finished:    Amr.ControlGui.Tests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="DESKTOP-BLNVKRS" outcome="Error" timestamp="2026-10-25T02:01:01.8135568+09:00">
+        <Text>[xUnit.net 00:00:00.60]     Amr.ControlGui.Tests.DashboardMapTests.MarkerAndGridSelectionStayTogetherAfterPositionChangeAndResize [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

@@ -1,0 +1,68 @@
+Window: "AMR 관제 · Mock 확인", App: Amr.ControlGui.exe.
+	0 창 AMR 관제 · Mock 확인 Secondary Actions: Raise
+		1 창
+			2 창
+				3 텍스트 AMR 관제 · 첫 실행 확인
+				4 텍스트 MOCK · 시험 데이터 ID: modeLabel
+			5 창 MOCK · 시험 데이터
+				6 그룹 장비 목록
+					7 데이터 그리드 장비 목록 ID: deviceGrid
+						8 custom 상위 행
+							9 머리글 장비 ID ID: 4253732296
+							10 머리글 X (m) ID: 4227431215
+							11 머리글 Y (m) ID: 4221061484
+							12 머리글 속도 (m/s) ID: 425363843
+							13 머리글 운행 상태 ID: 422621099
+						63 custom 행 1
+							64 항목 장비 ID 행 1, 정렬되지 않았습니다. Value: AMR_001 ID: 4224678187
+							65 항목 X (m) 행 1, 정렬되지 않았습니다. Value: 0 ID: 4252380986
+							66 항목 Y (m) 행 1, 정렬되지 않았습니다. Value: 0 ID: 429864185
+							67 항목 속도 (m/s) 행 1, 정렬되지 않았습니다. Value: 0 ID: 4261125550
+							68 항목 운행 상태 행 1, 정렬되지 않았습니다. Value: IDLE ID: 4256434653
+						69 custom 행 2
+							70 항목 장비 ID 행 2, 정렬되지 않았습니다. Value: AMR_002 ID: 427997724
+							71 항목 X (m) 행 2, 정렬되지 않았습니다. Value: 6 ID: 4236861556
+							72 항목 Y (m) 행 2, 정렬되지 않았습니다. Value: 2 ID: 429438189
+							73 항목 속도 (m/s) 행 2, 정렬되지 않았습니다. Value: 1 ID: 4255587602
+							74 항목 운행 상태 행 2, 정렬되지 않았습니다. Value: BUSY ID: 4251550198
+				26 그룹 선택 장비
+					27 텍스트 AMR_002 위치 X 6 m / Y 2 m 속도 1 m/s 운행 BUSY Broker 미확인 AMR 생존 미확인 Heartbeat 수신 미관측 Telemetry 수신 미관측 ID: detailsLabel
+			28 그룹 명령 접수와 후속 결과 확인
+				29 창 AMR_002 위치 X 6 m / Y 2 m 속도 1 m/s 운행 BUSY Broker 미확인 AMR 생존 미확인 Heartbeat 수신 미관측 Telemetry 수신 미관측
+					30 창 AMR_002 위치 X 6 m / Y 2 m 속도 1 m/s 운행 BUSY Broker 미확인 AMR 생존 미확인 Heartbeat 수신 미관측 Telemetry 수신 미관측
+						31 단추 다음 상태 (Mock) ID: advanceButton
+						32 텍스트 목표 X
+						33 돌기 목표 X ID: targetX
+							34 돌기 위쪽/아래쪽
+								35 단추 (disabled) 위쪽
+								36 단추 (disabled) 아래쪽
+							37 편집 (settable, string) 목표 X Value: 10.00
+						38 텍스트 Y
+						39 돌기 목표 Y ID: targetY
+							40 돌기 위쪽/아래쪽
+								41 단추 (disabled) 위쪽
+								42 단추 (disabled) 아래쪽
+							43 편집 (settable, string) 목표 Y Value: 5.00
+						44 단추 MOVE 요청 ID: submitButton
+						45 단추 (disabled) 성공 결과 (Mock) ID: completeSuccessButton
+						46 단추 (disabled) 실패 결과 (Mock) ID: completeFailureButton
+					47 텍스트 장비를 선택하고 MOVE를 요청하세요. 접수와 실행 결과를 따로 표시합니다. ID: submissionLabel
+					48 데이터 그리드 명령 결과 목록 ID: commandGrid
+						49 custom 상위 행
+							50 머리글 장비 ID ID: 4215487060
+							51 머리글 요청 ID ID: 425188
+							52 머리글 접수 ID: 4267449
+							53 머리글 후속 결과 ID: 42876843
+							54 머리글 설명 ID: 4211398965
+					55 텍스트 Mock 전용 확인 화면 · 실제 이동 / MQTT / DB 연결은 후속 구현입니다.
+			56 텍스트 장비 2대 · 알람 0건 · 요청 0건 · 상태 버전 1 ID: statusLabel
+		57 제목 표시줄 (settable, string) Value: AMR 관제 · Mock 확인
+			58 메뉴 모음 시스템 ID: MenuBar
+				59 메뉴 항목 시스템
+			60 단추 최소화
+			61 단추 최대화
+			62 단추 닫기
+
+Document text: ```
+5.00
+```

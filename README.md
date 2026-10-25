@@ -1,6 +1,8 @@
 # amr-control-system-demo
 가상 AMR 기반 관제시스템 구현 및 Issue·PR 개발 절차 실습
 
+
+**Windows Forms Mock 대시보드·지도:** [실행·조작·계약 안내](BUILDING.md#windows-forms-mock-대시보드지도). 기존 최소 Core 계약·Mock을 연결해 네 요약 카드, 2D 장비 위치, Marker/목록 선택과 상세를 표시한다. 상태 변경·명령 접수/후속 결과를 확인한다. 전체 알람/이력·격자/경로·실제 Core/MQTT/DB 연결은 후속이다. 아래 날짜별 결과는 각 실행 당시의 근거다.
 **새 PC에서는 [빌드·실행·검증 안내](BUILDING.md)부터 따른다.** Codex 없이 일반 .NET SDK·PowerShell로 실행하며, 저장소 경로는 자유롭게 정할 수 있다. 실제 MQTT 시험에는 Docker가 추가로 필요하다. `C:\process-plan`과 아래 과거 PC 경로는 빌드 필수 조건이 아니다.
 
 2026-10-22 현재: #33·#34 첫 실행본에 이어 #38 MQTT 송수신과 리뷰 수정이 [PR #39](https://github.com/inhhlee/amr-control-system-demo/pull/39)로 develop에 반영됐다. 최신 검증은 빌드 경고·오류0, Simulator 자동154건·실제 MQTT7시나리오 통과다. [리뷰·재검증 근거](evidence/AMR/20261022-pr39-review-01/README.md)를 따른다.

@@ -1,0 +1,22 @@
+[
+  {
+    "step": "01-start",
+    "time": "2026-10-24T16:40:28.467Z"
+  },
+  {
+    "step": "02-selected-device-change",
+    "time": "2026-10-24T16:40:56.568Z"
+  },
+  {
+    "step": "03-command-accepted",
+    "time": "2026-10-24T16:41:04.786Z"
+  },
+  {
+    "step": "04-command-success",
+    "time": "2026-10-24T16:41:52.908Z"
+  },
+  {
+    "step": "05-success-and-failure",
+    "time": "2026-10-24T16:42:26.201Z"
+  }
+]
