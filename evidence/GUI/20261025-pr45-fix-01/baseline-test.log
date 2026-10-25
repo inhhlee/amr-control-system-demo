@@ -1,0 +1,20 @@
+  Amr.Core -> C:\amr-control-system-demo\src\Amr.Core\bin\Debug\net10.0\Amr.Core.dll
+  Amr.ControlGui -> C:\amr-control-system-demo\src\Amr.ControlGui\bin\Debug\net10.0-windows\Amr.ControlGui.dll
+  Amr.ControlGui.Tests -> C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll
+C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+[xUnit.net 00:00:02.51]     Amr.ControlGui.Tests.DashboardMapTests.CommandResultsAndControlsFitAfterResizingTheShownWindow [FAIL]
+  실패 Amr.ControlGui.Tests.DashboardMapTests.CommandResultsAndControlsFitAfterResizingTheShownWindow [1 s]
+  오류 메시지:
+   Assert.Single() Failure: The collection did not contain any matching items
+Expected:   (predicate expression)
+Collection: [System.Windows.Forms.HScrollBar, Minimum: 0, Maximum: 1, Value: 0]
+  스택 추적:
+     at Amr.ControlGui.Tests.DashboardMapTests.<>c.<CommandResultsAndControlsFitAfterResizingTheShownWindow>b__7_0() in C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs:line 165
+   at Amr.ControlGui.Tests.DashboardMapTests.<>c__DisplayClass13_0.<OnSta>b__0() in C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs:line 217
+--- End of stack trace from previous location ---
+   at Amr.ControlGui.Tests.DashboardMapTests.OnSta(Action action) in C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs:line 221
+--- End of stack trace from previous location ---
+결과 파일: C:\amr-control-system-demo\evidence\GUI\20261025-pr45-fix-01\baseline.trx
+
+실패!  - 실패:     1, 통과:     0, 건너뜀:     0, 전체:     1, 기간: 1 s - Amr.ControlGui.Tests.dll (net10.0)

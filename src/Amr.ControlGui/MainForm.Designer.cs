@@ -104,14 +104,14 @@ partial class MainForm
         alarmBody.Controls.Add(alarmSummary);
         var commandSection = Section("명령 · Mock 확인", out var commandBody);
         var commandLayout = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 3, Margin = Padding.Empty };
-        commandLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 96));
+        commandLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         commandLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 42));
         commandLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
-        var inputs = new FlowLayoutPanel { Dock = DockStyle.Fill, WrapContents = true, Margin = Padding.Empty };
+        var inputs = new FlowLayoutPanel { Dock = DockStyle.Fill, AutoSize = true, WrapContents = true, Margin = Padding.Empty };
         targetX = CoordinateInput("targetX", "목표 X", 10);
         targetY = CoordinateInput("targetY", "목표 Y", 5);
         submitButton = ActionButton("submitButton", "MOVE 요청", SubmitClicked, 88);
-        advanceButton = ActionButton("advanceButton", "다음 상태 (Mock)", AdvanceClicked, 118);
+        advanceButton = ActionButton("advanceButton", "다음 상태", AdvanceClicked, 76);
         completeSuccessButton = ActionButton("completeSuccessButton", "성공 (Mock)", CompleteSuccessClicked, 90);
         completeFailureButton = ActionButton("completeFailureButton", "실패 (Mock)", CompleteFailureClicked, 90);
         inputs.Controls.Add(new Label { Text = "X", AutoSize = true, Margin = new Padding(0, 9, 2, 0) });
@@ -121,12 +121,13 @@ partial class MainForm
         inputs.Controls.Add(submitButton);
         inputs.SetFlowBreak(submitButton, true);
         inputs.Controls.Add(advanceButton);
-        inputs.SetFlowBreak(advanceButton, true);
         inputs.Controls.Add(completeSuccessButton);
         inputs.Controls.Add(completeFailureButton);
         submissionLabel = TextLabel("submissionLabel", "MOVE 접수 후 별도 시험 결과를 지정하세요.", 8, Color.SlateGray);
         submissionLabel.AutoEllipsis = true;
         commandGrid = ReadOnlyGrid("commandGrid", "명령 결과 목록");
+        // 두 줄의 입력에 필요한 높이만 쓰고 나머지는 결과 행과 스크롤바에 배정한다.
+        commandGrid.Margin = Padding.Empty;
         commandGrid.Columns.Add("AmrId", "장비");
         commandGrid.Columns.Add("CommandId", "요청 ID");
         commandGrid.Columns.Add("Submission", "접수");

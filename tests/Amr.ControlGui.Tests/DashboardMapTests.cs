@@ -119,6 +119,7 @@ public sealed class DashboardMapTests
     {
         using var form = new MainForm();
         form.Show();
+        Application.DoEvents();
         form.Size = form.MinimumSize;
         form.ApplyChange(Change(1, Device("AMR_001", 0, 0), Device("AMR_002", 5, 2)));
         foreach (string name in new[] { "communicationDetail", "devicesDetail", "operationDetail", "alarmsDetail" })
@@ -131,6 +132,47 @@ public sealed class DashboardMapTests
         var grid = (DataGridView)form.Controls.Find("deviceGrid", true).Single();
         Assert.True(grid.ClientSize.Height >= grid.ColumnHeadersHeight + grid.Rows.Cast<DataGridViewRow>().Sum(x => x.Height));
         Assert.True(Map(form).TryGetViewport(out _));
+        form.Close();
+    });
+
+    [Fact]
+    public Task CommandResultsAndControlsFitAfterResizingTheShownWindow() => OnSta(() =>
+    {
+        using var form = new MainForm();
+        form.Show();
+        Application.DoEvents(); // OnShown chooses the initial size before the user resizes it.
+        var commands = ImmutableArray.Create(
+            new CommandSnapshot("AMR_001", "MOCK-success", CommandKind.MOVE, 10, 5,
+                DateTimeOffset.UtcNow, PublishObservation.MockOnly, CommandResult.Success,
+                false, null, "Mock 성공 시나리오", null, null, false, 1),
+            new CommandSnapshot("AMR_002", "MOCK-failure", CommandKind.MOVE, 10, 5,
+                DateTimeOffset.UtcNow, PublishObservation.MockOnly, CommandResult.Failure,
+                false, null, "Mock 실패 시나리오", null, null, false, 2));
+        form.ApplyChange(new(2, AmrChangeKind.InitialSnapshot,
+            [Device("AMR_001", 0, 0), Device("AMR_002", 5, 2)], [], commands));
+        var grid = (DataGridView)form.Controls.Find("commandGrid", true).Single();
+        foreach (var size in new[] { form.MinimumSize, new Size(1200, 900), form.MinimumSize })
+        {
+            form.Size = size;
+            Application.DoEvents();
+            Assert.Equal(size, form.Size);
+            foreach (string name in new[] { "targetX", "targetY", "submitButton", "advanceButton", "completeSuccessButton", "completeFailureButton", "submissionLabel", "commandGrid" })
+            {
+                var control = form.Controls.Find(name, true).Single();
+                for (Control child = control; child.Parent is not null; child = child.Parent)
+                    Assert.True(child.Parent.ClientRectangle.Contains(child.Bounds), name + " clipped by " + child.Parent.GetType().Name);
+            }
+            var scrollbar = Assert.Single(grid.Controls.OfType<HScrollBar>(), x => x.Visible);
+            foreach (DataGridViewRow row in grid.Rows)
+            {
+                grid.FirstDisplayedScrollingRowIndex = row.Index;
+                Assert.True(grid.ClientSize.Height - grid.ColumnHeadersHeight - scrollbar.Height >= row.Height);
+                Assert.Equal(row.Height, grid.GetRowDisplayRectangle(row.Index, true).Height);
+            }
+            grid.FirstDisplayedScrollingColumnIndex = grid.Columns["Reason"]!.Index;
+            Assert.True(grid.Columns["Reason"]!.Displayed);
+            grid.FirstDisplayedScrollingColumnIndex = grid.Columns["AmrId"]!.Index;
+        }
         form.Close();
     });
 

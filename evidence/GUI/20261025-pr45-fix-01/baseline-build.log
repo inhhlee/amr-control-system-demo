@@ -1,0 +1,18 @@
+  Amr.Core -> C:\amr-control-system-demo\src\Amr.Core\bin\Debug\net10.0\Amr.Core.dll
+  Amr.ControlGui -> C:\amr-control-system-demo\src\Amr.ControlGui\bin\Debug\net10.0-windows\Amr.ControlGui.dll
+C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs(172,55): warning CS8602: null 가능 참조에 대한 역참조입니다. [C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\Amr.ControlGui.Tests.csproj]
+C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs(173,25): warning CS8602: null 가능 참조에 대한 역참조입니다. [C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\Amr.ControlGui.Tests.csproj]
+C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs(174,55): warning CS8602: null 가능 참조에 대한 역참조입니다. [C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\Amr.ControlGui.Tests.csproj]
+C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs(165,29): warning xUnit2031: Do not use a Where clause to filter before calling Assert.Single. Use the overload of Assert.Single that accepts a filtering function. (https://xunit.net/xunit.analyzers/rules/xUnit2031) [C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\Amr.ControlGui.Tests.csproj]
+  Amr.ControlGui.Tests -> C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll
+
+빌드했습니다.
+
+C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs(172,55): warning CS8602: null 가능 참조에 대한 역참조입니다. [C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\Amr.ControlGui.Tests.csproj]
+C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs(173,25): warning CS8602: null 가능 참조에 대한 역참조입니다. [C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\Amr.ControlGui.Tests.csproj]
+C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs(174,55): warning CS8602: null 가능 참조에 대한 역참조입니다. [C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\Amr.ControlGui.Tests.csproj]
+C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\DashboardMapTests.cs(165,29): warning xUnit2031: Do not use a Where clause to filter before calling Assert.Single. Use the overload of Assert.Single that accepts a filtering function. (https://xunit.net/xunit.analyzers/rules/xUnit2031) [C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\Amr.ControlGui.Tests.csproj]
+    경고 4개
+    오류 0개
+
+경과 시간: 00:00:06.61
