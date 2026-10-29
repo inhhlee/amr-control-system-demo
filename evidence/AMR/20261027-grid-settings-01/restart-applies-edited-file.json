@@ -1,0 +1,103 @@
+{
+  "navigation": {
+    "phase": "Ready",
+    "start": {
+      "row": 0,
+      "col": 0
+    },
+    "goal": {
+      "row": 1,
+      "col": 2
+    },
+    "current": {
+      "row": 0,
+      "col": 0
+    },
+    "map": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "fixedObstacles": [
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        true,
+        false
+      ]
+    ],
+    "path": [
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 1,
+        "col": 2
+      }
+    ],
+    "traveled": [
+      {
+        "row": 0,
+        "col": 0
+      }
+    ],
+    "remainingDistance": 3,
+    "moves": 0,
+    "replans": 1,
+    "mapVersion": 0,
+    "waypoints": [
+      {
+        "row": 1,
+        "col": 2
+      }
+    ],
+    "nextWaypointIndex": 0,
+    "currentTarget": {
+      "row": 1,
+      "col": 2
+    },
+    "reachedWaypoints": []
+  },
+  "stepIntervalMs": 180,
+  "source": "mqtt-grid-control-receiver",
+  "position": null,
+  "configurationPath": "C:\\amr-control-system-demo\\evidence\\AMR\\20261027-grid-settings-01\\settings.json",
+  "amrId": "CONFIG_AMR_B",
+  "cellSizeMeters": 1,
+  "receivedTelemetry": null,
+  "receivedHeartbeat": null,
+  "receivedTrail": [],
+  "telemetryCount": 0,
+  "heartbeatCount": 0,
+  "publishedCount": 0,
+  "rejectedCount": 0,
+  "lastPublishedTimestamp": null,
+  "brokerState": "NotStarted",
+  "failure": null,
+  "mqttEndpoint": "127.0.0.1:50693",
+  "evidencePath": "C:\\amr-control-system-demo\\evidence\\AMR\\mission-live-20261027-111313-d650a26cd8e34ea0975a9fe542ab1101\\grid-navigation.jsonl",
+  "evidenceDirectory": "C:\\amr-control-system-demo\\evidence\\AMR\\mission-live-20261027-111313-d650a26cd8e34ea0975a9fe542ab1101",
+  "logs": [
+    "GridReady Phase=Ready Position=(0,0) Remaining=3 Moves=0 WaypointsPassed=0/1 Replans=1 MapVersion=0"
+  ]
+}

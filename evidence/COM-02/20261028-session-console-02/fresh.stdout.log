@@ -1,0 +1,7 @@
+2026-10-28T02:17:51.5132992+00:00 ControlSession Host=127.0.0.1 Port=49649 AmrId="CONSOLE_ONE" TimeoutMs=5000 CheckIntervalMs=500
+2026-10-28T02:17:51.5310890+00:00 Connecting null
+2026-10-28T02:17:51.5763426+00:00 Subscribed {"ClientId":"amr-demo-c8fa0c3dfbc04e5eb6ef42bef5af3eec","Host":"127.0.0.1","Port":49649}
+WaitingForShutdown: Ctrl+C로 정상 종료합니다.
+2026-10-28T02:17:52.2066828+00:00 QueueEvent {"Code":"Stopped","AmrId":null,"Kind":null,"Count":0,"ExceptionType":null}
+2026-10-28T02:17:52.2282918+00:00 Closed null
+ExitCode=0

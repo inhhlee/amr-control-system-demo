@@ -1,0 +1,16 @@
+2026-10-28T02:17:43.9116930+00:00 ControlSession Host=127.0.0.1 Port=49602 AmrId="CONSOLE_ONE" TimeoutMs=5000 CheckIntervalMs=500
+2026-10-28T02:17:43.9295212+00:00 Connecting null
+2026-10-28T02:17:43.9754149+00:00 Subscribed {"ClientId":"amr-demo-2464da520d7448288c838698a00ef851","Host":"127.0.0.1","Port":49602}
+WaitingForShutdown: Ctrl+C로 정상 종료합니다.
+2026-10-28T02:17:44.0876849+00:00 HeartbeatMonitoringStarted {"AmrId":"CONSOLE_ONE","State":"Alive","Monitoring":true,"LastReceivedAtUtc":"2026-10-28T02:17:44.0840926+00:00","ElapsedMilliseconds":3.5128,"TimeoutMilliseconds":5000,"CheckIntervalMilliseconds":500,"TimeoutCount":0,"RecoveryCount":0}
+2026-10-28T02:17:44.1077190+00:00 Received {"AmrId":"CONSOLE_ONE","Kind":"heartbeat","Model":{"Id":"CONSOLE_ONE","Timestamp":123,"Status":"OK","ReceivedAtUtc":"2026-10-28T02:17:44.0840926+00:00"},"ReceivedAtUtc":"2026-10-28T02:17:44.0840926+00:00"}
+2026-10-28T02:17:44.2669531+00:00 Received {"AmrId":"CONSOLE_ONE","Kind":"telemetry","Model":{"Id":"CONSOLE_ONE","Timestamp":123,"Position":{"X":1,"Y":2},"Speed":0,"State":"IDLE","ReceivedAtUtc":"2026-10-28T02:17:44.2654371+00:00"},"ReceivedAtUtc":"2026-10-28T02:17:44.2654371+00:00"}
+2026-10-28T02:17:44.4449215+00:00 Rejected {"Code":8,"Field":"$.status","Reason":"Status must be OK."}
+2026-10-28T02:17:44.6208331+00:00 IgnoredAmr {"AmrId":"OTHER","Kind":"heartbeat"}
+2026-10-28T02:17:49.4788107+00:00 HeartbeatTimedOut {"AmrId":"CONSOLE_ONE","State":"Unresponsive","Monitoring":true,"LastReceivedAtUtc":"2026-10-28T02:17:44.0840926+00:00","ElapsedMilliseconds":5394.7081,"TimeoutMilliseconds":5000,"CheckIntervalMilliseconds":500,"TimeoutCount":1,"RecoveryCount":0}
+2026-10-28T02:17:50.1728031+00:00 HeartbeatRecovered {"AmrId":"CONSOLE_ONE","State":"Alive","Monitoring":true,"LastReceivedAtUtc":"2026-10-28T02:17:50.1726729+00:00","ElapsedMilliseconds":0.1252,"TimeoutMilliseconds":5000,"CheckIntervalMilliseconds":500,"TimeoutCount":1,"RecoveryCount":1}
+2026-10-28T02:17:50.1766391+00:00 Received {"AmrId":"CONSOLE_ONE","Kind":"heartbeat","Model":{"Id":"CONSOLE_ONE","Timestamp":123,"Status":"OK","ReceivedAtUtc":"2026-10-28T02:17:50.1726729+00:00"},"ReceivedAtUtc":"2026-10-28T02:17:50.1726729+00:00"}
+2026-10-28T02:17:50.5030114+00:00 QueueEvent {"Code":"Stopped","AmrId":null,"Kind":null,"Count":0,"ExceptionType":null}
+2026-10-28T02:17:50.5159559+00:00 Failed "BrokerDisconnected"
+2026-10-28T02:17:50.5244301+00:00 Closed null
+ExitCode=1

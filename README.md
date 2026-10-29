@@ -1,6 +1,20 @@
 # amr-control-system-demo
 가상 AMR 기반 관제시스템 구현 및 Issue·PR 개발 절차 실습
 
+**2026-10-28 후속 — AMR 2대·Core 도메인 연결:** 기존 AMR별 독립 큐와 하나의 관제 수신 세션으로 두 장비를 각각 감시한다. **통신 관측 이벤트 → Core AMR 도메인 관리자 → 조회 상태·업무 경보 → GUI**로 연결했다. 한 대의 무응답은 해당 관제 미션만 보류하며, 통신 복구 후 명시적으로 재개한다. 기존 단일 AMR·Mock 경로는 유지한다. [실행·구조·검증·보존 근거](evidence/COM-02/20261028-two-amr-domain-01/README.md).
+
+**2026-10-28 후속 — 관제 통신 세션 분리:** `Amr.Communication/Mqtt/Sessions/ControlCommunicationSession`이 단일 AMR의 MQTT 수신·큐·Heartbeat 시작/주기 검사/종료를 소유한다. 지도 수신부는 결과 전달 어댑터이며, 지도 없는 콘솔에서도 `--monitor-amr AMR_001`로 같은 세션을 실행한다. 기존 Core·Mock·F5 설정을 유지했다. [구조·실행·검증·보존 근거](evidence/COM-02/20261028-control-session-01/README.md).
+
+**Visual Studio F5 실행:** `AmrControlSystem.slnx`의 **AMR Grid + GUI** 시작 프로필로 격자 시뮬레이터와 GUI를 함께 실행한다. [F5 설정·Broker 준비·종료 안내](BUILDING.md#visual-studio에서-f5로-함께-실행).
+
+**2026-10-27 후속 — 단일 AMR Heartbeat 감시:** 첫 정상 수신부터 5초 Timeout·500ms 확인으로 생존/응답 없음을 표시한다. 출발 전·차단 대기·도착·이동 중단 중에도 MQTT 송신을 유지한다. Broker 단절에는 감시를 중지하고 생존을 미확인으로 표시한다. [구현·실제 MQTT/GUI 검증](evidence/COM-02/20261027-heartbeat-one-01/README.md). 기존 Core·Mock·보존 자료를 유지한 미커밋 변경이다.
+
+**2026-10-27 후속 — Figma 목업의 Windows Forms GUI에 격자 연결:** 기존 다섯 영역 배치와 Mock 모드를 유지하고 `--grid-url`로 격자 호스트의 관제 MQTT 수신 상태를 연결한다. 지도·경로·수신 궤적·목록·선택 상세·요약 카드와 출발/중단/초기화를 지원한다. [실행 안내](BUILDING.md#windows-forms에-격자-mqtt-상태-연결) · [GUI 연결 검증](evidence/GUI/20261027-grid-dashboard-01/README.md). 로컬 변경이며 게시 전이다.
+
+**2026-10-27 격자 지도 선별 이관 — Issue #46:** 최신 develop `4e44fa8`에서 `feature/46-grid-map-integration`을 만들고 보존 `4b9f950`의 격자 이동·MQTT 수신 지도·설정·시험만 복원했다. [격자 지도 실행 안내](tools/Amr.Simulator.Map/README.md) · [이번 통합 검증](evidence/AMR/20261027-grid-integration-01/README.md). 기존 MQTT 수정·Core·Windows Forms Mock GUI는 유지한다. 현재 로컬 변경이며 커밋·푸시·PR·병합 전이다. 아래 날짜별 설명은 당시 이력이다.
+
+이번 격자 화면은 단일 AMR의 다익스트라 경유점 이동·동적 장애물 우회 시연이다. `X=열, Y=-행, 1칸=1m` 계약을 유지한다. 승인된 후속 다익스트라/A* 비교·셀 중심 좌표 계약과 전체 관제 GUI의 격자 통합은 별도 작업이다.
+
 
 **Windows Forms Mock 대시보드·지도:** [실행·조작·계약 안내](BUILDING.md#windows-forms-mock-대시보드지도). 기존 최소 Core 계약·Mock을 연결해 네 요약 카드, 2D 장비 위치, Marker/목록 선택과 상세를 표시한다. 상태 변경·명령 접수/후속 결과를 확인한다. 전체 알람/이력·격자/경로·실제 Core/MQTT/DB 연결은 후속이다. 아래 날짜별 결과는 각 실행 당시의 근거다.
 **새 PC에서는 [빌드·실행·검증 안내](BUILDING.md)부터 따른다.** Codex 없이 일반 .NET SDK·PowerShell로 실행하며, 저장소 경로는 자유롭게 정할 수 있다. 실제 MQTT 시험에는 Docker가 추가로 필요하다. `C:\process-plan`과 아래 과거 PC 경로는 빌드 필수 조건이 아니다.

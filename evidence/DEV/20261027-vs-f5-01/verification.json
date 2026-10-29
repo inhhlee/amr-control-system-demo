@@ -1,0 +1,17 @@
+{
+  "broker": "127.0.0.1:1884",
+  "guiPid": 25468,
+  "state": "Subscribed",
+  "heartbeat": "Alive",
+  "checkedAt": "2026-10-27T14:55:37.2245663+09:00",
+  "mapPid": 49076,
+  "solutionReopened": true,
+  "oldMapPids": [
+    29664,
+    15464,
+    20932
+  ],
+  "profile": "AMR Grid + GUI",
+  "heartbeatCount": 101,
+  "keptRunning": true
+}

@@ -27,16 +27,17 @@ public partial class MainForm : Form
     // Visual Studio 디자이너용. 실행 시에는 아래 생성자로 계약과 Mock 동작을 주입한다.
     public MainForm() => InitializeComponent();
 
-    public MainForm(IAmrDataProvider provider, ICommandDispatcher dispatcher,
+    public MainForm(IAmrDataProvider provider, ICommandDispatcher? dispatcher,
         Func<string, CancellationToken, Task>? advanceScenario = null,
         Func<string, string, bool, CancellationToken, Task>? completeScenario = null) : this()
     {
         _provider = provider ?? throw new ArgumentNullException(nameof(provider));
-        _dispatcher = dispatcher ?? throw new ArgumentNullException(nameof(dispatcher));
+        _dispatcher = dispatcher;
         _advanceScenario = advanceScenario;
         _completeScenario = completeScenario;
         modeLabel.Text = provider.Mode == ProviderMode.Mock ? "MOCK · 시험 데이터" : "ACTUAL · 실제 공급자";
         advanceButton.Visible = completeSuccessButton.Visible = completeFailureButton.Visible = provider.Mode == ProviderMode.Mock;
+        if (provider is GridMapDataProvider) ConfigureGridMode();
     }
 
     protected override void OnShown(EventArgs e)
@@ -46,7 +47,8 @@ public partial class MainForm : Form
         var area = Screen.FromControl(this).WorkingArea;
         Size = new Size(Math.Min(1200, area.Width - 40), Math.Min(900, area.Height - 40));
         Location = new Point(area.Left + (area.Width - Width) / 2, area.Top + (area.Height - Height) / 2);
-        if (_provider is not null) _watchTask = ObserveAsync(_lifetime.Token);
+        if (_provider is GridMapDataProvider grid) _watchTask = ObserveGridAsync(grid, _lifetime.Token);
+        else if (_provider is not null) _watchTask = ObserveAsync(_lifetime.Token);
     }
 
     private async Task ObserveAsync(CancellationToken token)
@@ -114,6 +116,7 @@ public partial class MainForm : Form
         if (_rendering || _closing || _provider is null || SelectedAmrId is not string id) return;
         ShowSelectedDevice();
         UpdateButtons();
+        if (_provider is GridMapDataProvider) return; // 같은 프레임의 위치와 격자 상태를 함께 유지한다.
         long request = ++_selectionRequest;
         await TrackAsync(async token =>
         {
@@ -180,6 +183,15 @@ public partial class MainForm : Form
             return;
         }
         detailsLabel.Text = $"{device.AmrId}\n\nX {Number(device.X)} m / Y {Number(device.Y)} m\n속도  {Number(device.SpeedMps)} m/s\n운행  {StateText(device.State)}\n\nBroker  {ConnectionText(device.BrokerConnection)}\n생존  {LivenessText(device.Liveness)}\nHeartbeat  {TimeText(device.LastHeartbeatReceivedAt)}\nTelemetry  {TimeText(device.LastTelemetryReceivedAt)}";
+        if (CurrentGridState is { } grid)
+        {
+            mapCanvas.SetGridState(grid);
+            detailsLabel.Text = $"{device.AmrId}\nX {Number(device.X)} m / Y {Number(device.Y)} m\n속도 {Number(device.SpeedMps)} m/s · {StateText(device.State)}\n" +
+                $"수신 세션 {grid.BrokerState}\n생존 {LivenessText(device.Liveness)} · Heartbeat {TimeText(device.LastHeartbeatReceivedAt)}\nTelemetry {TimeText(device.LastTelemetryReceivedAt)}\n" +
+                $"다음 목표 {(grid.Navigation.CurrentTarget is { } cell ? $"({cell.Row},{cell.Col})" : "모두 방문")}\n{DistanceText(grid.Navigation.RemainingDistance)}";
+            if (CurrentDomainStatus is { } domainStatus) detailsLabel.Text += "\n" + DomainStatusText(domainStatus);
+            if (_gridFrame?.Error is not null) detailsLabel.Text += "\n마지막 수신값 · 갱신 오류";
+        }
     }
 
     private async void AdvanceClicked(object? sender, EventArgs e)
@@ -243,6 +255,24 @@ public partial class MainForm : Form
         submitButton.Enabled = ready && _dispatcher is not null;
         bool pending = ready && _completeScenario is not null && _commands.Any(x => x.AmrId == SelectedAmrId && x.Result == CommandResult.Unconfirmed);
         completeSuccessButton.Enabled = completeFailureButton.Enabled = pending;
+        bool gridReady = !_closing && !_actionBusy && _gridFrame is { Error: null, State: not null };
+        string? phase = CurrentGridState?.Navigation.Phase;
+        bool active = phase is "Connecting" or "Running" or "Waiting" or "WaitingForTelemetry" or "Canceling" or "Resetting";
+        gridStartButton.Enabled = gridReady && !active && phase != "AmrUnavailable";
+        gridCancelButton.Enabled = gridReady && active && phase is not ("Canceling" or "Resetting");
+        gridResetButton.Enabled = gridReady && phase is not ("Canceling" or "Resetting");
+        mapCanvas.GridEditingEnabled = gridReady && phase is not ("Canceling" or "Resetting");
+        if (_gridFrame?.State?.Domain is not null)
+        {
+            var status = CurrentDomainStatus;
+            bool held = status?.Mission.State == AmrMissionState.OnHold;
+            gridStartButton.Text = held ? "미션 재개" : "출발";
+            gridStartButton.Enabled = gridReady && status?.Communication == AmrCommunicationState.CONNECTED &&
+                (held || (!active && status.Mission.State != AmrMissionState.Running));
+            gridCancelButton.Enabled = gridReady && (active || held);
+            if (CurrentGridState?.BrokerState != "Subscribed")
+                gridStartButton.Enabled = gridCancelButton.Enabled = gridResetButton.Enabled = mapCanvas.GridEditingEnabled = false;
+        }
     }
 
     private async void MainFormClosing(object? sender, FormClosingEventArgs e)

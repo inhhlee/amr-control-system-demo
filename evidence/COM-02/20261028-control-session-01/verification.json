@@ -1,0 +1,58 @@
+{
+  "guiStates": [
+    "Alive",
+    "Unresponsive",
+    "BrokerDisconnected/Stopped"
+  ],
+  "realConsoleEvidence": "../20261028-session-console-final/verification.json",
+  "finalProductDifferenceAfterGuiEvidence": "One startup cancellation check; final automatic and real console tests rerun",
+  "head": "4e44fa880cb0d1fcccb000dbc53e634fd90381b5",
+  "redRegressionEvidence": "timer-shutdown-before-fix.trx",
+  "mockGuiVerified": true,
+  "runId": "20261028-control-session-01",
+  "separateGuiCleanup": "Owned process termination after Computer Use input guards",
+  "realGridCases": 15,
+  "newConsoleTests": 5,
+  "unitTestRuns": [
+    {
+      "outcome": "Completed",
+      "passed": 202,
+      "failed": 0,
+      "file": "regression-verified_net10.0_20261028112711.trx",
+      "total": 202
+    },
+    {
+      "outcome": "Completed",
+      "passed": 49,
+      "failed": 0,
+      "file": "regression-verified_net10.0_20261028112712.trx",
+      "total": 49
+    },
+    {
+      "outcome": "Completed",
+      "passed": 799,
+      "failed": 0,
+      "file": "regression-verified_net10.0_20261028112714.trx",
+      "total": 799
+    },
+    {
+      "outcome": "Completed",
+      "passed": 66,
+      "failed": 0,
+      "file": "regression-verified_net10.0_20261028112741.trx",
+      "total": 66
+    }
+  ],
+  "realHeartbeatEvidence": "../20261028-control-session-mqtt-01",
+  "clientDate": "2026-10-28",
+  "branch": "feature/46-grid-map-integration",
+  "passed": 1116.0,
+  "f5StartVerified": true,
+  "newTestsIncludedInTotal": 21,
+  "commitPushPrMergePerformed": false,
+  "separateGuiGracefulCloseVerified": false,
+  "f5StopVerified": true,
+  "earlierAbortedRun": "regression-final.log",
+  "realSettingsCases": 6,
+  "newSessionTests": 16
+}

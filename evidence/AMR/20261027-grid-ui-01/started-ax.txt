@@ -1,0 +1,8 @@
+Browser tab: 1, Title: "AMR 경유점 이동 · 장애물 우회", URL: "http://127.0.0.1:50695/".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+~				95 heading MQTT 연결 중, Value: 2, ID: grid-phase
+~					159 text MQTT 연결 중
+~				160 text 관제가 먼저 구독한 뒤 AMR이 위치 송신을 시작합니다.
+~				128 button (disabled) 다시 출발, ID: grid-start
+~				129 button 이동 중단, ID: grid-cancel
+The focused UI element is 0 AXWebArea AMR 경유점 이동 · 장애물 우회, URL: 127.0.0.1:50695/

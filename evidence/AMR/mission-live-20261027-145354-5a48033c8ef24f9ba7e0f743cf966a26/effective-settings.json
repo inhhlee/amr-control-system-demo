@@ -1,0 +1,14 @@
+{
+  "configurationPath": "C:\\amr-control-system-demo\\config\\map-demo\\settings.json",
+  "stepIntervalMs": 600,
+  "mqtt": {
+    "host": "127.0.0.1",
+    "port": 1884,
+    "telemetryMs": 200,
+    "heartbeatMs": 1000
+  },
+  "heartbeatMonitor": {
+    "timeoutMs": 5000,
+    "checkIntervalMs": 500
+  }
+}

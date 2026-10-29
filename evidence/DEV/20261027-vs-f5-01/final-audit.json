@@ -1,0 +1,27 @@
+{
+  "restorableSourceEntries": 178,
+  "authorizedExistingChanges": [
+    "BUILDING.md",
+    "README.md"
+  ],
+  "existingLiveLogGrowth": [
+    {
+      "afterBytes": 14967639,
+      "reason": "Previously running AMR session continues writing; not edited by this setup.",
+      "path": "evidence/AMR/mission-live-20261027-143426-1239add92ff342f79ae3c104f1470944/grid-navigation.jsonl",
+      "beforeBytes": 6342794
+    }
+  ],
+  "committed": false,
+  "branch": "feature/46-grid-map-integration",
+  "originalFiles": 2987,
+  "merged": false,
+  "stagedFiles": 0,
+  "pushed": false,
+  "prCreated": false,
+  "stashAndPreservedBranchUnchanged": true,
+  "unchangedFiles": 2984,
+  "head": "4e44fa880cb0d1fcccb000dbc53e634fd90381b5",
+  "existingContainersPreserved": true,
+  "beforeSourceZipSha256": "4513B82195B01076A85294A2D0A226975F22152687A08A1212C5BA7D871BF72C"
+}

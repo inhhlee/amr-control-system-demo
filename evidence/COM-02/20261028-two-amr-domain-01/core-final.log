@@ -1,0 +1,7 @@
+  Amr.Core -> C:\amr-control-system-demo\src\Amr.Core\bin\TwoAmrFinal\Amr.Core.dll
+  Amr.Core.Tests -> C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\TwoAmrFinal\Amr.Core.Tests.dll
+C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\TwoAmrFinal\Amr.Core.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+결과 파일: C:\amr-control-system-demo\evidence\COM-02\20261028-two-amr-domain-01\core-final.trx
+
+통과!  - 실패:     0, 통과:     9, 건너뜀:     0, 전체:     9, 기간: 135 ms - Amr.Core.Tests.dll (net10.0)

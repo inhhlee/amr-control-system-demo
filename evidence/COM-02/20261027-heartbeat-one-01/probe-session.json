@@ -1,0 +1,11 @@
+{
+  "url": "http://127.0.0.1:62342",
+  "processId": 46200,
+  "amrId": "HB_ONE",
+  "brokerPort": 62338,
+  "telemetryMs": 100,
+  "heartbeatMs": 200,
+  "timeoutMs": 5000,
+  "checkIntervalMs": 500,
+  "evidenceDirectory": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261027-heartbeat-one-01"
+}

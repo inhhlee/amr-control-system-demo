@@ -1,0 +1,23 @@
+[
+  {
+    "Exited": true,
+    "Reason": "Hidden launch or repeated Computer Use user-input guard",
+    "Method": "Owned process cleanup",
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.ControlGui\\bin\\ControlSessionVerify\\Amr.ControlGui.exe",
+    "Pid": 13892
+  },
+  {
+    "Exited": true,
+    "Reason": "Hidden launch or repeated Computer Use user-input guard",
+    "Method": "Owned process cleanup",
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.ControlGui\\bin\\ControlSessionVerify\\Amr.ControlGui.exe",
+    "Pid": 54044
+  },
+  {
+    "Exited": true,
+    "Reason": "Hidden launch or repeated Computer Use user-input guard",
+    "Method": "Owned process cleanup",
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.ControlGui\\bin\\ControlSessionVerify\\Amr.ControlGui.exe",
+    "Pid": 41236
+  }
+]

@@ -1,0 +1,5 @@
+Exception: C:\amr-control-system-demo\tests\manual\COM02-A\Verify-TwoAmr.ps1:12
+Line |
+  12 |  … unction Require([bool]$ok,[string]$message){if(!$ok){throw $message}}
+     |                                                         ~~~~~~~~~~~~~~
+     | Broker loss did not hold active missions.

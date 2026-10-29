@@ -1,0 +1,313 @@
+Window: "AmrControlSystem (실행) - Microsoft Visual Studio", App: devenv.exe.
+	0 window AmrControlSystem (실행) - Microsoft Visual Studio Secondary Actions: Raise ID: VisualStudioMainWindow
+		1 title bar AmrControlSystem (실행) - Microsoft Visual Studio ID: TitleBar
+			2 menu bar 메뉴 모음 ID: MenuBar
+				3 menu item 파일
+				4 menu item 편집
+				5 menu item 보기
+				6 menu item Git
+				129 menu item 프로젝트
+				130 menu item 빌드
+				7 menu item 디버그
+				131 menu item 테스트
+				8 menu item 도구
+				9 menu item 확장
+				10 menu item 창
+				11 menu item 도움말
+				12 menu item 검색
+			132 text AmrControlSystem
+			13 button 연결된 사용자 정보
+				14 image
+			15 button 최소화 Description: 최소화 ID: Minimize
+			16 button 최대화 Description: 최대화 ID: Maximize
+			17 button 닫기 Description: 닫기 ID: Close
+		18 split button GitHub Copilot Description: 채팅을 사용하려면 로그인
+			19 button ID: ActionButton
+				20 image
+			21 button ID: DropDownButton
+		22 드롭다운 단추 피드백 Description: 피드백 보내기 ID: Feedback
+			23 image
+		24 pane
+			25 tool bar 표준
+				26 split button (disabled) 뒤로 탐색 Description: 뒤로 탐색 (Ctrl+-) ID: PART_FocusTarget
+				27 button (disabled) 앞으로 탐색 Description: 앞으로 탐색 (Ctrl+Shift+-)
+					28 image (disabled)
+				29 split button 새 프로젝트/파일 Description: 새 파일 (Ctrl+N) ID: PART_FocusTarget
+				30 split button 프로젝트/폴더/파일 열기 Description: 파일 열기 (Ctrl+O) ID: PART_FocusTarget
+				31 button AmrControlSystem.slnx 저장 Description: AmrControlSystem.slnx 저장 (Ctrl+S)
+					32 image
+				33 button 모두 저장 Description: 모두 저장 (Ctrl+Shift+S)
+					34 image
+				35 split button (disabled) 실행 취소 ID: PART_FocusTarget
+					36 button (disabled)
+						37 image (disabled)
+				38 split button (disabled) 다시 실행 ID: PART_FocusTarget
+					39 button (disabled)
+						40 image (disabled)
+				133 combo box (disabled) 솔루션 구성 Description: 솔루션 구성 ID: PART_FocusTarget
+					134 list item (selectable, disabled) Debug
+				135 combo box (disabled) 솔루션 플랫폼 Description: 솔루션 플랫폼 ID: PART_FocusTarget
+					136 list item (selectable, disabled) Any CPU
+				137 split button AMR Grid + GUI Description: 시작 프로젝트 또는 프로필 ID: PART_FocusTarget
+				41 split button (disabled) 디버그 대상 Description: 계속 ID: PART_FocusTarget
+				140 split button 핫 다시 로드 Description: 핫 다시 로드(Alt+F10) ID: PART_FocusTarget
+				42 button 시작 창 Description: 시작 창
+					43 image
+				44 button 표준 도구 모음 옵션 Description: 표준 도구 모음 옵션 ID: Additional Toolbar Items
+			423 tool bar 디버그
+				424 button 모두 중단 Description: 모두 중단 (Ctrl+Alt+Break)
+					425 image
+				426 button 디버깅 중지 Description: 디버깅 중지 (Shift+F5)
+					427 image
+				428 button 다시 시작 Description: 다시 시작 (Ctrl+Shift+F5)
+					429 image
+				430 button (disabled) 다음 문 표시 Description: 다음 문 표시 (Alt+Num *)
+					431 image (disabled)
+				432 button (disabled) 한 단계씩 코드 실행 Description: 한 단계씩 코드 실행 (F11)
+					433 image (disabled)
+				434 button (disabled) 프로시저 단위 실행 Description: 프로시저 단위 실행 (F10)
+					435 image (disabled)
+				436 button (disabled) 프로시저 나가기 Description: 프로시저 나가기 (Shift+F11)
+					437 image (disabled)
+				438 button 소스의 스레드 표시 Description: 소스의 스레드 표시
+					439 image
+				440 button 디버그 도구 모음 옵션 Description: 디버그 도구 모음 옵션 ID: Additional Toolbar Items
+			441 tool bar 디버그 위치
+				442 combo box 프로세스: Description: 프로세스 (Ctrl+5) ID: PART_FocusTarget
+					443 list item (selectable, disabled) [13656] Amr.Simulator.Map.exe
+				444 button (disabled) 일시 중단
+					445 menu (disabled) 일시 중단
+						446 split button (disabled) 일시 중단 Description: 수명 주기 이벤트 ID: PART_FocusTarget
+				447 button (disabled) 스레드:
+					448 text (disabled) ID: Label
+						449 text (disabled) 스레드:
+					450 combo box (disabled) 스레드: Description: 스레드 (Ctrl+6) ID: PART_FocusTarget
+				451 button (disabled) 현재 스레드 플래그 지정 상태 표시/숨기기 Description: 현재 스레드 플래그 지정 상태 표시/숨기기 (Ctrl+8)
+					452 image (disabled)
+				453 button (disabled) 플래그가 지정된 스레드만 표시 Description: 플래그가 지정된 스레드만 표시 (Ctrl+9)
+					454 image (disabled)
+				455 button (disabled) 현재 프로세스만 표시 Description: 현재 프로세스만 표시
+					456 image (disabled)
+				457 button (disabled) 스택 프레임:
+					458 text (disabled) ID: Label
+						459 text (disabled) 스택 프레임:
+					460 combo box (disabled) 스택 프레임: Description: 스택 프레임 (Ctrl+7) ID: PART_FocusTarget
+				461 button 디버그 위치 도구 모음 옵션 Description: 디버그 위치 도구 모음 옵션 ID: Additional Toolbar Items
+		45 pane
+		462 pane
+			463 pane 자동 ID: TabGroup|ST:0:0:{f2e84780-2af1-11d1-a7fa-00a0c9110051}|ST:0:0:{4a18f9d0-b838-11d0-93eb-00a0c90f2734}|ST:1:0:{90243340-bd7a-11d0-93ef-00a0c90f2734}
+				464 title bar 자동 ID: PART_Header
+					465 title bar TabGroup, Children = 12, VisibleChildren = 3, DockedWidth = 512, DockedHeight = 192 ID: DragHeader
+						466 text 자동
+						467 드롭다운 단추 창 위치(Alt+-) Description: 창 위치(Alt+-) ID: HeaderDropDown
+						468 button 자동 숨기기 Description: 자동 숨기기 ID: AutoHideButton
+						469 button 닫기(Shift+Esc) Description: 닫기(Shift+Esc) ID: HideButton
+				470 tab ID: TabGroup|ST:0:0:{f2e84780-2af1-11d1-a7fa-00a0c9110051}|ST:0:0:{4a18f9d0-b838-11d0-93eb-00a0c90f2734}|ST:1:0:{90243340-bd7a-11d0-93ef-00a0c90f2734}
+					471 tab item (selectable) 자동 ID: TAB_ST:0:0:{f2e84780-2af1-11d1-a7fa-00a0c9110051}
+						472 title bar 자동 ID: Content
+							473 text 자동 ID: Text
+						474 pane 자동 ID: ST:0:0:{f2e84780-2af1-11d1-a7fa-00a0c9110051}
+							475 pane
+								476 combo box 검색 ID: SearchControl
+									477 edit (settable, string) 검색(Ctrl+E) Description: Alt+Down을 눌러 최근 검색어 탐색 ID: PART_SearchBox
+									478 button 검색 Description: 검색 ID: PART_SearchButton
+										479 image ID: Image
+									480 button Dropdown Description: 드롭다운 표시 ID: PART_SearchDropdownButton
+								481 pane
+									482 tool bar 자동
+										483 button (disabled) 이전 찾기 Description: 이전 찾기(Shift+F3)
+											484 image (disabled)
+										485 button (disabled) 다음 찾기 Description: 다음 찾기(F3)
+											486 image (disabled)
+										487 combo box (disabled) 검색 심도: Description: 검색 심도 ID: PART_FocusTarget
+										488 button 자동 도구 모음 옵션 Description: 자동 도구 모음 옵션 ID: Additional Toolbar Items
+							489 pane
+								490 창 자동
+									491 창 자동 ID: -867940960
+										492 트리 (disabled) 자동
+					493 tab item (selectable) 로컬 ID: TAB_ST:0:0:{4a18f9d0-b838-11d0-93eb-00a0c90f2734}
+						494 title bar 로컬 ID: Content
+							495 text 로컬 ID: Text
+					496 tab item (selectable) 조사식 1 ID: TAB_ST:1:0:{90243340-bd7a-11d0-93ef-00a0c90f2734}
+						497 title bar 조사식 1 ID: Content
+							498 text 조사식 1 ID: Text
+			499 pane 오류 목록 ID: TabGroup|ST:0:0:{0504ff91-9d61-11d0-a794-00a0c9110051}|ST:0:0:{be4d7042-ba3f-11d2-840e-00c04f9902c1}|ST:0:0:{605322a2-17ae-43f4-b60f-766556e46c87}|ST:0:0:{28836128-fc2c-11d2-a433-00c04f72d18a}|ST:0:0:{ecb7191a-597b-41f5-9843-03a4cf275dde}|ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}|ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}
+				500 title bar 오류 목록 ID: PART_Header
+					501 title bar TabGroup, Children = 24, VisibleChildren = 7, DockedWidth = 512, DockedHeight = 192 ID: DragHeader
+						502 text 오류 목록
+						503 드롭다운 단추 창 위치(Alt+-) Description: 창 위치(Alt+-) ID: HeaderDropDown
+						504 button 자동 숨기기 Description: 자동 숨기기 ID: AutoHideButton
+						505 button 닫기(Shift+Esc) Description: 닫기(Shift+Esc) ID: HideButton
+				506 tab ID: TabGroup|ST:0:0:{0504ff91-9d61-11d0-a794-00a0c9110051}|ST:0:0:{be4d7042-ba3f-11d2-840e-00c04f9902c1}|ST:0:0:{605322a2-17ae-43f4-b60f-766556e46c87}|ST:0:0:{28836128-fc2c-11d2-a433-00c04f72d18a}|ST:0:0:{ecb7191a-597b-41f5-9843-03a4cf275dde}|ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}|ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}
+					507 tab item (selectable) 호출 스택 ID: TAB_ST:0:0:{0504ff91-9d61-11d0-a794-00a0c9110051}
+						508 title bar 호출 스택 ID: Content
+							509 text 호출 스택 ID: Text
+					510 tab item (selectable) 중단점 ID: TAB_ST:0:0:{be4d7042-ba3f-11d2-840e-00c04f9902c1}
+						511 title bar 중단점 ID: Content
+							512 text 중단점 ID: Text
+					513 tab item (selectable) 예외 설정 ID: TAB_ST:0:0:{605322a2-17ae-43f4-b60f-766556e46c87}
+						514 title bar 예외 설정 ID: Content
+							515 text 예외 설정 ID: Text
+					516 tab item (selectable) 명령 창 ID: TAB_ST:0:0:{28836128-fc2c-11d2-a433-00c04f72d18a}
+						517 title bar 명령 창 ID: Content
+							518 text 명령 창 ID: Text
+					519 tab item (selectable) 직접 실행 창 ID: TAB_ST:0:0:{ecb7191a-597b-41f5-9843-03a4cf275dde}
+						520 title bar 직접 실행 창 ID: Content
+							521 text 직접 실행 창 ID: Text
+					522 tab item (selectable) 출력 ID: TAB_ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}
+						523 title bar 출력 ID: Content
+							524 text 출력 ID: Text
+					525 tab item (selectable) 오류 목록 ID: TAB_ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}
+						526 title bar 오류 목록 ID: Content
+							527 text 오류 목록 ID: Text
+						528 pane 오류 목록 ID: ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}
+							529 pane
+								530 tool bar 오류 목록
+									531 combo box 다음에 포함된 항목 표시 Description: 다음에 포함된 항목 표시 ID: PART_FocusTarget
+										532 list item (selectable, disabled) 전체 솔루션
+									533 button 4 오류 Description: 4 오류
+										534 image
+										535 text 4 오류
+									536 button 20 경고 Description: 20 경고
+										537 image
+										538 text 20 경고
+									539 button 0 메시지 Description: 0 메시지
+										540 image
+										541 text 0 메시지
+									542 button (disabled) 모든 필터 지우기 Description: 모든 필터 지우기
+										543 image (disabled)
+									544 combo box 생성된 문제 표시 Description: 생성된 문제 표시 ID: PART_FocusTarget
+										545 list item (selectable, disabled) 빌드 + IntelliSense
+									546 button 오류 목록 도구 모음 옵션 Description: 오류 목록 도구 모음 옵션 ID: Additional Toolbar Items
+							547 combo box 검색 ID: SearchControl
+								548 edit (settable, string) 검색 오류 목록 Description: Alt+Down을 눌러 최근 검색어 탐색 ID: PART_SearchBox
+								549 button 검색 Description: 검색 ID: PART_SearchButton
+									550 image ID: Image
+								551 button Dropdown Description: 드롭다운 표시 ID: PART_SearchDropdownButton
+							552 pane 오류 목록
+								553 custom
+									554 table 결과 ID: Tracking List View
+										555 header Header Row ID: Header Row
+											556 header item ID: detailsexpander
+												557 thumb ID: PART_HeaderGripper
+											558 header item ID: fixer
+												559 thumb ID: PART_HeaderGripper
+											560 header item 심각도(1/6), 정렬되지 않음 Description: 오름차순으로 정렬하려면 스페이스바를 누르세요., 필터를 열려면 <Ctrl+아래쪽 화살표>를 누르세요. ID: errorseverity
+												561 thumb ID: PART_HeaderGripper
+											562 header item 코드(2/6), 정렬되지 않음 Description: 오름차순으로 정렬하려면 스페이스바를 누르세요., 필터를 열려면 <Ctrl+아래쪽 화살표>를 누르세요. ID: errorcode
+												563 thumb ID: PART_HeaderGripper
+											564 header item 설명(3/6), 정렬되지 않음 Description: 오름차순으로 정렬하려면 스페이스바를 누르세요. ID: text
+												565 thumb ID: PART_HeaderGripper
+											566 header item 프로젝트(4/6), 정렬되지 않음 Description: 오름차순으로 정렬하려면 스페이스바를 누르세요., 필터를 열려면 <Ctrl+아래쪽 화살표>를 누르세요. ID: projectname
+												567 thumb ID: PART_HeaderGripper
+											568 header item 파일(5/6), 정렬되지 않음 Description: 오름차순으로 정렬하려면 스페이스바를 누르세요., 필터를 열려면 <Ctrl+아래쪽 화살표>를 누르세요. ID: documentname
+												569 thumb ID: PART_HeaderGripper
+											570 header item 줄(6/6), 정렬되지 않음 Description: 오름차순으로 정렬하려면 스페이스바를 누르세요. ID: line
+												571 thumb ID: PART_HeaderGripper
+										572 dataitem (selectable) MSB3027. "C:\amr-control-system-demo\src\Amr.Simulator\bin\Debug\net10.0\Amr.Simulator.dll"을(를) "bin\Debug\net10.0\Amr.Simulator.dll"(으)로 복사할 수 없습니다. 재시도 횟수(10)를 초과하여 작업을 수행하지 못했습니다. 파일이 "Amr.Simulator.Map (29664)"에 의해 잠겨 있습니다.. : 오류(활성). 프로젝트: Amr.Simulator.Map. 파일: Microsoft.Common.CurrentVersion.targets. 줄: 5116
+											618 custom
+												619 image Description: Copilot에 설명 및 수정 요청
+											573 custom
+												574 image
+											575 custom
+												576 text MSB3027 ID: MSB3027
+											577 custom
+												578 text "C:\amr-control-system-demo\src\Amr.Simulator\bin\Debug\net10.0\Amr.Simulator.dll"을(를) "bin\Debug\net10.0\Amr.Simulator.dll"(으)로 복사할 수 없습니다. 재시도 횟수(10)를 초과하여 작업을 수행하지 못했습니다. 파일이 "Amr.Simulator.Map (29664)"에 의해 잠겨 있습니다. ID: "C:\amr-control-system-demo\src\Amr.Simulator\bin\Debug\net10.0\Amr.Simulator.dll"을(를) "bin\Debug\net10.0\Amr.Simulator.dll"(으)로 복사할 수 없습니다. 재시도 횟수(10)를 초과하여 작업을 수행하지 못했습니다. 파일이 "Amr.Simulator.Map (29664)"에 의해 잠겨 있습니다.
+											579 custom
+												580 text Amr.Simulator.Map ID: Amr.Simulator.Map
+											581 custom
+												582 text Microsoft.Common.CurrentVersion.targets ID: Microsoft.Common.CurrentVersion.targets
+											583 custom
+												584 text 5116 ID: 5116
+										585 dataitem (selectable) MSB3027. "C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll"을(를) "bin\Debug\net10.0\Amr.Communication.dll"(으)로 복사할 수 없습니다. 재시도 횟수(10)를 초과하여 작업을 수행하지 못했습니다. 파일이 "Amr.Simulator.Map (29664)"에 의해 잠겨 있습니다.. : 오류(활성). 프로젝트: Amr.Simulator.Map. 파일: Microsoft.Common.CurrentVersion.targets. 줄: 5116
+											586 custom
+												587 image
+											588 custom
+												589 text MSB3027 ID: MSB3027
+											590 custom
+												591 text "C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll"을(를) "bin\Debug\net10.0\Amr.Communication.dll"(으)로 복사할 수 없습니다. 재시도 횟수(10)를 초과하여 작업을 수행하지 못했습니다. 파일이 "Amr.Simulator.Map (29664)"에 의해 잠겨 있습니다. ID: "C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll"을(를) "bin\Debug\net10.0\Amr.Communication.dll"(으)로 복사할 수 없습니다. 재시도 횟수(10)를 초과하여 작업을 수행하지 못했습니다. 파일이 "Amr.Simulator.Map (29664)"에 의해 잠겨 있습니다.
+											592 custom
+												593 text Amr.Simulator.Map ID: Amr.Simulator.Map
+											594 custom
+												595 text Microsoft.Common.CurrentVersion.targets ID: Microsoft.Common.CurrentVersion.targets
+											596 custom
+												597 text 5116 ID: 5116
+										598 dataitem (selectable) MSB3021. "C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll" 파일을 "bin\Debug\net10.0\Amr.Communication.dll"(으)로 복사할 수 없습니다. 'C:\amr-control-system-demo\tools\Amr.Simulator.Map\bin\Debug\net10.0\Amr.Communication.dll' 파일은 다른 프로세스에서 사용 중이므로 프로세스에서 액세스할 수 없습니다.. : 오류(활성). 프로젝트: Amr.Simulator.Map. 파일: Microsoft.Common.CurrentVersion.targets. 줄: 5116
+											599 custom
+												600 image
+											601 custom
+												602 text MSB3021 ID: MSB3021
+											603 custom
+												604 text "C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll" 파일을 "bin\Debug\net10.0\Amr.Communication.dll"(으)로 복사할 수 없습니다. 'C:\amr-control-system-demo\tools\Amr.Simulator.Map\bin\Debug\net10.0\Amr.Communication.dll' 파일은 다른 프로세스에서 사용 중이므로 프로세스에서 액세스할 수 없습니다. ID: "C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll" 파일을 "bin\Debug\net10.0\Amr.Communication.dll"(으)로 복사할 수 없습니다. 'C:\amr-control-system-demo\tools\Amr.Simulator.Map\bin\Debug\net10.0\Amr.Communication.dll' 파일은 다른 프로세스에서 사용 중이므로 프로세스에서 액세스할 수 없습니다.
+											605 custom
+												606 text Amr.Simulator.Map ID: Amr.Simulator.Map
+											607 custom
+												608 text Microsoft.Common.CurrentVersion.targets ID: Microsoft.Common.CurrentVersion.targets
+											609 custom
+												610 text 5116 ID: 5116
+		611 button 솔루션 탐색기 ID: AUTOHIDE_ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}
+		612 button Git 변경 내용 ID: AUTOHIDE_ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}
+		47 pane
+		48 pane
+		51 status bar ID: SccStatusBar
+			191 button 0/0 Description: 나가는 0/들어오는 0 커밋(Ctrl+E, Ctrl+C) ID: UnpublishedCommitsSccCompartment
+				192 image ID: PART_SccCompartmentImage
+				193 text 0/0
+			194 button 99개 초과 Description: 501개 변경 사항(Ctrl+Alt+F7) ID: PendingChangesSccCompartment
+				195 image ID: PART_SccCompartmentImage
+				196 text 99개 초과
+			197 button feature/46-grid-map-integration Description: 이름: feature/46-grid-map-integration(Ctrl+Alt+F3) ID: CurrentBranchSccCompartment
+				198 image ID: PART_SccCompartmentImage
+				199 text feature/46-grid-map-integration
+			200 button amr-control-system-demo Description: 경로: C:\amr-control-system-demo(Ctrl+Alt+F4) ID: CurrentRepositorysSccCompartment
+				201 image ID: PART_SccCompartmentImage
+				202 text amr-control-system-demo
+		55 button 알림 ID: Control_1
+			56 image
+		57 button 백그라운드 작업(Ctrl+E, Ctrl+T)
+			58 image
+		613 text 준비
+		60 status bar ID: StatusBarContainer
+			614 text 준비 ID: TextCompartment
+			615 text ID: XYWidthHeightCompartment
+			616 text ID: SelectionModeCompartment
+			617 text ID: InsertionModeCompartment
+
+Document text: ```
+자세한 정보 표시
+Fixer
+심각도
+코드
+설명
+프로젝트
+파일
+줄
+MSB3027
+"C:\amr-control-system-demo\src\Amr.Simulator\bin\Debug\net10.0\Amr.Simulator.dll"을(를) "bin\Debug\net10.0\Amr.Simulator.dll"(으)로 복사할 수 없습니다. 재시도 횟수(10)를 초과하여 작업을 수행하지 못했습니다. 파일이 "Amr.Simulator.Map (29664)"에 의해 잠겨 있습니다.
+Amr.Simulator.Map
+Microsoft.Common.CurrentVersion.targets
+5116
+"C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll"을(를) "bin\Debug\net10.0\Amr.Communication.dll"(으)로 복사할 수 없습니다. 재시도 횟수(10)를 초과하여 작업을 수행하지 못했습니다. 파일이 "Amr.Simulator.Map (29664)"에 의해 잠겨 있습니다.
+MSB3021
+"C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll" 파일을 "bin\Debug\net10.0\Amr.Communication.dll"(으)로 복사할 수 없습니다. 'C:\amr-control-system-demo\tools\Amr.Simulator.Map\bin\Debug\net10.0\Amr.Communication.dll' 파일은 다른 프로세스에서 사용 중이므로 프로세스에서 액세스할 수 없습니다.
+```
+
+Focused element: 477 edit (settable, string) 검색(Ctrl+E) Description: Alt+Down을 눌러 최근 검색어 탐색 ID: PART_SearchBox
+
+Document text:
+자세한 정보 표시
+Fixer
+심각도
+코드
+설명
+프로젝트
+파일
+줄
+MSB3027
+"C:\amr-control-system-demo\src\Amr.Simulator\bin\Debug\net10.0\Amr.Simulator.dll"을(를) "bin\Debug\net10.0\Amr.Simulator.dll"(으)로 복사할 수 없습니다. 재시도 횟수(10)를 초과하여 작업을 수행하지 못했습니다. 파일이 "Amr.Simulator.Map (29664)"에 의해 잠겨 있습니다.
+Amr.Simulator.Map
+Microsoft.Common.CurrentVersion.targets
+5116
+"C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll"을(를) "bin\Debug\net10.0\Amr.Communication.dll"(으)로 복사할 수 없습니다. 재시도 횟수(10)를 초과하여 작업을 수행하지 못했습니다. 파일이 "Amr.Simulator.Map (29664)"에 의해 잠겨 있습니다.
+MSB3021
+"C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll" 파일을 "bin\Debug\net10.0\Amr.Communication.dll"(으)로 복사할 수 없습니다. 'C:\amr-control-system-demo\tools\Amr.Simulator.Map\bin\Debug\net10.0\Amr.Communication.dll' 파일은 다른 프로세스에서 사용 중이므로 프로세스에서 액세스할 수 없습니다.

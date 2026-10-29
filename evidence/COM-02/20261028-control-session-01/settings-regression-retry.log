@@ -1,0 +1,5 @@
+Exception: C:\amr-control-system-demo\tests\manual\AMR01\Verify-MapConfiguration.ps1:21
+Line |
+  21 |  … e([bool]$condition,[string]$message){if(!$condition){throw $message}}
+     |                                                         ~~~~~~~~~~~~~~
+     | Configured AMR session is not ready.

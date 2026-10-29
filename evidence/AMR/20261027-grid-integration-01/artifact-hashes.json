@@ -1,0 +1,127 @@
+[
+  {
+    "path": "Amr.Communication.Tests.log",
+    "bytes": 480,
+    "sha256": "1F2DF2F63C639B8EFD108FFDCCF61CEBE87EFE0F02419663DC2E2A33F1E7181E"
+  },
+  {
+    "path": "Amr.ControlGui.Tests.log",
+    "bytes": 476,
+    "sha256": "250786E9BC5D73913F3A887E380B8BA5BC79DB39ACCCA138F0079159B6DE3DCC"
+  },
+  {
+    "path": "Amr.Simulator.Map.Tests.log",
+    "bytes": 481,
+    "sha256": "06822387EB08CDEF8DAE02FC43AE368412F7E539102FC3BE4D7926AD8A68A0B7"
+  },
+  {
+    "path": "Amr.Simulator.Tests.log",
+    "bytes": 464,
+    "sha256": "88AF4ACD8F0A24005CC22ABF653040634F3937FDF2DD27B1CCB6C41891BDB1DB"
+  },
+  {
+    "path": "baseline.json",
+    "bytes": 16653,
+    "sha256": "816889BA1AC5E9E095D1EFB94F09D16AAB437020A7F47AB990CD7A88F835FBE2"
+  },
+  {
+    "path": "build.log",
+    "bytes": 1270,
+    "sha256": "F1893ABACD193E69CCFACB589F81C0F37437A90EB13778F567B0225D3434623A"
+  },
+  {
+    "path": "document-checks.json",
+    "bytes": 354,
+    "sha256": "FE24C528CC39DCFD48786D313D10B059E898FC4350E534BB911EE278DB15296A"
+  },
+  {
+    "path": "document-hashes.json",
+    "bytes": 681,
+    "sha256": "4A07CFFE0476C173870608C5BE0245B5A9195B4C6D63DECFF75C070A37B262A5"
+  },
+  {
+    "path": "environment-authorized.log",
+    "bytes": 1457,
+    "sha256": "616525219683115D54021491BEBB5D21C6C582BE10CBD1783E397E1003F7AF8F"
+  },
+  {
+    "path": "environment-dotnet.log",
+    "bytes": 913,
+    "sha256": "CEFE46747767E8F79B7B78F9F9A68479D1B4CCACABB0406299A7B26CE088CC4D"
+  },
+  {
+    "path": "final-audit.json",
+    "bytes": 39902,
+    "sha256": "687AE5E451B34FE725D9CB780906A3010C5B5949F1D491406110A17D439CECA8"
+  },
+  {
+    "path": "import-manifest.json",
+    "bytes": 9001,
+    "sha256": "00486F5C7DEF2AE39C11735D80BDEAB4933E4BD83C14CEA7C50930311F33A9DC"
+  },
+  {
+    "path": "mqtt-live.log",
+    "bytes": 131,
+    "sha256": "692A8BDBE9DA969C985A964AC3DE208769DCFDDC0816ACC5E8586DE2CFD21F11"
+  },
+  {
+    "path": "normalized-import-audit.json",
+    "bytes": 6441,
+    "sha256": "AEFD3A8E08167D40B2A595BD14C90140AF321279ABE63F5F5D42118D5C4E53A7"
+  },
+  {
+    "path": "README.md",
+    "bytes": 10293,
+    "sha256": "5CFED7C28AD020B86B8001BB7878C7028FBAB086FC6421FC5744E4F2995EEC4D"
+  },
+  {
+    "path": "restore-authorized.log",
+    "bytes": 109,
+    "sha256": "719B488D51188664633CD40B2627A644EB063F4E85323D5419C84A20FB3B3678"
+  },
+  {
+    "path": "restore.log",
+    "bytes": 0,
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "path": "Run-Automated.ps1",
+    "bytes": 1102,
+    "sha256": "BFB221916D442570A3C221985895493A1CC757C333B9A7E397C21E26DE47D3D2"
+  },
+  {
+    "path": "selected-source.zip",
+    "bytes": 63528,
+    "sha256": "18E20E312156F671B6F5A189E51BD9ABB16F27F613ED9E818AEE33502DFB7E30"
+  },
+  {
+    "path": "settings-live.log",
+    "bytes": 474,
+    "sha256": "85EF26382A0F5B099FBFD732921ECF2967D561E38017647EE6B9EC93231D651F"
+  },
+  {
+    "path": "Verify-Preservation.ps1",
+    "bytes": 6181,
+    "sha256": "B8D3CD21E8DE7D0A859A3DAC58283184081A9F2D7A2653693854FF1B38811C57"
+  },
+  {
+    "path": "tests\\Amr.Communication.Tests.trx",
+    "bytes": 1158666,
+    "sha256": "CFDDC2507CBCB3129FAA5AF93AF35B57DA9BB8B9AA31C4150FB6ECF0C2D6CFA4"
+  },
+  {
+    "path": "tests\\Amr.ControlGui.Tests.trx",
+    "bytes": 46900,
+    "sha256": "FE79CD6FDFF55912FD796FA7067653ADB657A6D02509D2412705143C3A0E881F"
+  },
+  {
+    "path": "tests\\Amr.Simulator.Map.Tests.trx",
+    "bytes": 91535,
+    "sha256": "65A0D868AE28B47DF262BE8654B035FECAD46FB3185EF3B7CFB5616320FB29FC"
+  },
+  {
+    "path": "tests\\Amr.Simulator.Tests.trx",
+    "bytes": 291179,
+    "sha256": "78BEDCD585BB998E532663804AC590E7D39483B43F34EF477471DC21D8D28D69"
+  }
+]

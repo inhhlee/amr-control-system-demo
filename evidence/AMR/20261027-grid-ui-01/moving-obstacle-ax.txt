@@ -1,0 +1,147 @@
+Browser tab: 1, Title: "AMR 경유점 이동 · 장애물 우회", URL: "http://127.0.0.1:52051/".
+1 AXWebArea AMR 경유점 이동 · 장애물 우회, URL: 127.0.0.1:52051/
+	2 container
+		138 text 단일 AMR · 경유점과 장애물 우회 · MQTT 관제 수신
+		4 heading 경유점은 순서대로, 장애물은 돌아서, Value: 1, ID: main-title
+			5 text 경유점은 순서대로, 장애물은 돌아서
+		139 text 경유점 순서대로 우회 이동 → MQTT → 관제의 메시지 검사·큐 → 수신 좌표로 지도 표시
+		140 text MQTT 관제 수신 중
+		8 container Description: 경유점 순차 이동과 장애물 우회, ID: grid-demo
+			9 container
+				10 heading 경유점 · 장애물 지도, Value: 2
+					11 text 경유점 · 장애물 지도
+				141 text 5행 × 6열 · 상하좌우 이동 · 1칸 = 1m
+				13 text 빈 칸을 눌러 장애물을 추가하고, 주황색 장애물을 다시 눌러 제거하세요.
+				14 container Description: 행과 열이 0부터 시작하는 장애물 지도, ID: navigation-grid
+					15 button (disabled) Description: 0행 0열 출발점, Help: (0, 0) 출발점
+						16 text (0, 0)
+						142 text S
+					18 button (disabled) Description: 0행 1열 현재 AMR, Help: (0, 1) 현재 AMR
+						19 text (0, 1)
+						143 text AMR
+					21 button (disabled) Description: 0행 2열 고정 벽, Help: (0, 2) 고정 벽
+						22 text (0, 2)
+						144 text ■
+					24 button Description: 0행 3열 통로, 누르면 장애물 추가, Help: (0, 3) 통로, 누르면 장애물 추가
+						25 text (0, 3)
+					26 button Description: 0행 4열 통로, 누르면 장애물 추가, Help: (0, 4) 통로, 누르면 장애물 추가
+						27 text (0, 4)
+					28 button Description: 0행 5열 통로, 누르면 장애물 추가, Help: (0, 5) 통로, 누르면 장애물 추가
+						29 text (0, 5)
+					30 button (disabled) Description: 1행 0열 고정 벽, Help: (1, 0) 고정 벽
+						31 text (1, 0)
+						145 text ■
+					33 button Description: 1행 1열 통로, 누르면 장애물 추가, Help: (1, 1) 통로, 누르면 장애물 추가
+						34 text (1, 1)
+						146 text 1
+					36 button (disabled) Description: 1행 2열 고정 벽, Help: (1, 2) 고정 벽
+						37 text (1, 2)
+						147 text ■
+					39 button Description: 1행 3열 통로, 누르면 장애물 추가, Help: (1, 3) 통로, 누르면 장애물 추가
+						40 text (1, 3)
+					41 button (disabled) Description: 1행 4열 고정 벽, Help: (1, 4) 고정 벽
+						42 text (1, 4)
+						148 text ■
+					44 button Description: 1행 5열 통로, 누르면 장애물 추가, Help: (1, 5) 통로, 누르면 장애물 추가
+						45 text (1, 5)
+					46 button Description: 2행 0열 통로, 누르면 장애물 추가, Help: (2, 0) 통로, 누르면 장애물 추가
+						47 text (2, 0)
+						149 text 3
+					48 button Description: 2행 1열 통로, 누르면 장애물 추가, Help: (2, 1) 통로, 누르면 장애물 추가
+						49 text (2, 1)
+						150 text 2
+					51 button Description: 2행 2열 추가 장애물, 누르면 제거, Help: (2, 2) 추가 장애물, 누르면 제거
+						52 text (2, 2)
+						151 text ■
+					54 button Description: 2행 3열 경유점 1, 누르면 장애물 추가, Help: (2, 3) 경유점 1, 누르면 장애물 추가
+						55 text (2, 3)
+						152 text W1
+					57 button (disabled) Description: 2행 4열 고정 벽, Help: (2, 4) 고정 벽
+						58 text (2, 4)
+						153 text ■
+					60 button Description: 2행 5열 통로, 누르면 장애물 추가, Help: (2, 5) 통로, 누르면 장애물 추가
+						61 text (2, 5)
+					62 button Description: 3행 0열 통로, 누르면 장애물 추가, Help: (3, 0) 통로, 누르면 장애물 추가
+						63 text (3, 0)
+						154 text 4
+					64 button (disabled) Description: 3행 1열 고정 벽, Help: (3, 1) 고정 벽
+						65 text (3, 1)
+						155 text ■
+					67 button (disabled) Description: 3행 2열 고정 벽, Help: (3, 2) 고정 벽
+						68 text (3, 2)
+						156 text ■
+					70 button Description: 3행 3열 통로, 누르면 장애물 추가, Help: (3, 3) 통로, 누르면 장애물 추가
+						71 text (3, 3)
+						157 text 9
+					72 button (disabled) Description: 3행 4열 고정 벽, Help: (3, 4) 고정 벽
+						73 text (3, 4)
+						158 text ■
+					75 button Description: 3행 5열 통로, 누르면 장애물 추가, Help: (3, 5) 통로, 누르면 장애물 추가
+						76 text (3, 5)
+					77 button Description: 4행 0열 통로, 누르면 장애물 추가, Help: (4, 0) 통로, 누르면 장애물 추가
+						78 text (4, 0)
+						159 text 5
+					79 button Description: 4행 1열 통로, 누르면 장애물 추가, Help: (4, 1) 통로, 누르면 장애물 추가
+						80 text (4, 1)
+						160 text 6
+					81 button Description: 4행 2열 통로, 누르면 장애물 추가, Help: (4, 2) 통로, 누르면 장애물 추가
+						82 text (4, 2)
+						161 text 7
+					83 button Description: 4행 3열 경유점 2, 누르면 장애물 추가, Help: (4, 3) 경유점 2, 누르면 장애물 추가
+						84 text (4, 3)
+						162 text W2
+					86 button Description: 4행 4열 통로, 누르면 장애물 추가, Help: (4, 4) 통로, 누르면 장애물 추가
+						87 text (4, 4)
+					88 button (disabled) Description: 4행 5열 목적지, Help: (4, 5) 목적지
+						89 text (4, 5)
+						163 text G
+				91 text 수신한 AMR 위치 다음 목표까지 경로 고정 벽 추가 장애물
+				164 text S (0, 0) → W1 (2, 3) → W2 (4, 3) → G (4, 5)
+				165 text 한 칸 이동 0.6초 · 설정: C:\amr-control-system-demo\config\map-demo\settings.json · 파일 변경 후 서버를 다시 시작해 주세요.
+			94 container
+				95 text 한 AMR · 경유 순서 유지 · 최단 경로 재탐색
+				96 heading 이동 중, Value: 2, ID: grid-phase
+					166 text 이동 중
+				167 text 같은 AMR이 현재 위치에서 다음 경유점까지의 최단 경로를 찾습니다.
+				99 content list Description: 방문할 경유점과 목적지, ID: grid-waypoints
+					168 container
+						169 AXListMarker 1. 
+						170 text 경유점 1 (2, 3) · 현재 목표
+					171 container
+						172 AXListMarker 2. 
+						173 text 경유점 2 (4, 3) · 방문 예정
+					174 container
+						175 AXListMarker 3. 
+						176 text 목적지 (4, 5) · 방문 예정
+				109 definition list
+					110 container 수신 (행, 열), ID: grid-position-label
+						177 text 수신 (행, 열)
+					178 text (0, 1)
+					113 container 현재 목표
+						114 text 현재 목표
+					179 text W1 (2, 3)
+					116 container 목표까지 최단 거리
+						117 text 목표까지 최단 거리
+					180 text 10칸
+					119 container 경유 진행 (계산)
+						120 text 경유 진행 (계산)
+					181 text 0 / 3
+					122 container 실제 이동
+						123 text 실제 이동
+					182 text 1회
+					125 container 경로 계산
+						126 text 경로 계산
+					183 text 4회
+				184 text 관제 위치 수신 6건 · Heartbeat 1건 · 거부 0건
+수신 상태 BUSY · 속도 1.667 m/s · Broker 127.0.0.1:62328
+				129 button (disabled) 다시 출발, ID: grid-start
+				130 button 이동 중단, ID: grid-cancel
+				131 button 원래 지도로 초기화, ID: grid-reset
+				132 text 다음 경유점까지 이동할 수 없으면 대기합니다. 길이 열리면 같은 경유 순서로 다시 이동합니다. 경유점을 모두 방문한 뒤 목적지에서 정지합니다.
+			133 container
+				134 text 이렇게 확인하세요 다음 목표로 가는 길에 장애물을 놓아보세요. AMR은 현재 순서의 경유점까지 돌아가는 길을 찾습니다. 다른 경유점을 먼저 지나가도 방문 순서를 바꾸지 않습니다.
+			135 button (collapsed) 경유 순서 · 송수신·이동 기록, Secondary Actions: Expand
+				136 text 경유 순서 · 송수신·이동 기록
+		137 text 단일 가상 AMR 시연 · 명령/ACK·Core·DB·실제 로봇·다중 AMR 충돌 처리는 후속 범위
+
+The focused UI element is 1 AXWebArea AMR 경유점 이동 · 장애물 우회, URL: 127.0.0.1:52051/

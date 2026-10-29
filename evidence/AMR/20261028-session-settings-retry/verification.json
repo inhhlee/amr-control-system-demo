@@ -1,0 +1,11 @@
+[
+  {
+    "name": "file-only-settings-applied",
+    "verdict": "passed"
+  },
+  {
+    "verdict": "failed",
+    "reason": "Configured AMR session is not ready.",
+    "name": "failure"
+  }
+]

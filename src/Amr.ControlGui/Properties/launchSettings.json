@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Mock": {
+      "commandName": "Project"
+    },
+    "Grid MQTT": {
+      "commandName": "Project",
+      "commandLineArgs": "--grid-url http://127.0.0.1:59344"
+    }
+  }
+}

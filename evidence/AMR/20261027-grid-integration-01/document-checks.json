@@ -1,0 +1,7 @@
+{
+  "fullRenderer": "blocked by pre-existing task3 overview shape mismatch before any HTML write",
+  "focusedRenderer": "same renderer validates template and task2 and writes task2 only",
+  "otherViewsUnchanged": true,
+  "task2ViewSha256": "D03F17C1C3EFC5EF77AB569AFC955F86486B7CE17FBE90DBB9EA9EA4B3AC0C0B",
+  "originalRendererUnmodified": true
+}

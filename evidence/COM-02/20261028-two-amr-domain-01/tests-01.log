@@ -1,0 +1,32 @@
+C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\TwoAmrVerify\Amr.Core.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\TwoAmrVerify\Amr.Simulator.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\TwoAmrVerify\Amr.Simulator.Map.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\TwoAmrVerify\Amr.Communication.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\TwoAmrVerify\Amr.ControlGui.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+결과 파일: C:\amr-control-system-demo\evidence\COM-02\20261028-two-amr-domain-01\baseline-extension_net10.0_20261028120911.trx
+
+통과!  - 실패:     0, 통과:     9, 건너뜀:     0, 전체:     9, 기간: 143 ms - Amr.Core.Tests.dll (net10.0)
+결과 파일: C:\amr-control-system-demo\evidence\COM-02\20261028-two-amr-domain-01\baseline-extension_net10.0_20261028120913.trx
+
+통과!  - 실패:     0, 통과:   202, 건너뜀:     0, 전체:   202, 기간: 1 s - Amr.Simulator.Tests.dll (net10.0)
+결과 파일: C:\amr-control-system-demo\evidence\COM-02\20261028-two-amr-domain-01\baseline-extension_net10.0_20261028120916.trx
+
+통과!  - 실패:     0, 통과:   799, 건너뜀:     0, 전체:   799, 기간: 3 s - Amr.Communication.Tests.dll (net10.0)
+[xUnit.net 00:00:11.15]     Amr.ControlGui.Tests.GridDashboardTests.LiveControlsAndSelectedDetailsFitTheMinimumWindow [FAIL]
+  실패 Amr.ControlGui.Tests.GridDashboardTests.LiveControlsAndSelectedDetailsFitTheMinimumWindow [9 s]
+  오류 메시지:
+   System.TimeoutException : The operation has timed out.
+  스택 추적:
+     at Amr.ControlGui.Tests.GridDashboardTests.OnSta(Action action) in C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\GridDashboardTests.cs:line 308
+--- End of stack trace from previous location ---
+결과 파일: C:\amr-control-system-demo\evidence\COM-02\20261028-two-amr-domain-01\baseline-extension_net10.0_20261028120922.trx
+
+실패!  - 실패:     1, 통과:    48, 건너뜀:     0, 전체:    49, 기간: 10 s - Amr.ControlGui.Tests.dll (net10.0)
+결과 파일: C:\amr-control-system-demo\evidence\COM-02\20261028-two-amr-domain-01\baseline-extension_net10.0_20261028120943.trx
+
+통과!  - 실패:     0, 통과:    66, 건너뜀:     0, 전체:    66, 기간: 31 s - Amr.Simulator.Map.Tests.dll (net10.0)

@@ -1,0 +1,3 @@
+  복원할 프로젝트를 확인하는 중...
+C:\amr-control-system-demo\tests\manual\COM02-A\HeartbeatProbe\HeartbeatProbe.csproj : warning NU1900: 패키지 취약성 데이터를 가져오는 동안 오류가 발생했습니다. https://api.nuget.org/v3/index.json 소스에 대한 서비스 인덱스를 로드할 수 없습니다.
+  복원할 모든 프로젝트가 최신 상태입니다.

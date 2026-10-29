@@ -1,0 +1,16 @@
+{
+  "repository": "inhhlee/amr-control-system-demo",
+  "base": "develop",
+  "baseSha": "4e44fa880cb0d1fcccb000dbc53e634fd90381b5",
+  "defaultBranch": "main",
+  "allowMergeCommit": true,
+  "branchProtected": false,
+  "requiredChecks": [],
+  "rulesetCount": 0,
+  "observedClientDate": "2026-10-29",
+  "sources": [
+    "https://api.github.com/repos/inhhlee/amr-control-system-demo/branches/develop",
+    "https://api.github.com/repos/inhhlee/amr-control-system-demo/rulesets?includes_parents=true"
+  ],
+  "mergeGate": "Recheck PR head, base, mergeability, reviews, threads, statuses and checks immediately before merge. No admin bypass requested."
+}

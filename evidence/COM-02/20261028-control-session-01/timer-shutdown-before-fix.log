@@ -1,0 +1,18 @@
+  Amr.Communication -> C:\amr-control-system-demo\src\Amr.Communication\bin\ControlSessionVerify\Amr.Communication.dll
+  Amr.Communication.Console -> C:\amr-control-system-demo\src\Amr.Communication.Console\bin\ControlSessionVerify\Amr.Communication.Console.dll
+  Amr.Communication.Tests -> C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\ControlSessionVerify\Amr.Communication.Tests.dll
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\ControlSessionVerify\Amr.Communication.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+[xUnit.net 00:00:00.59]     Amr.Communication.Tests.ControlCommunicationSessionTests.BrokerLossWhileTimerStartsCannotPublishSubscribedAfterFailure [FAIL]
+  실패 Amr.Communication.Tests.ControlCommunicationSessionTests.BrokerLossWhileTimerStartsCannotPublishSubscribedAfterFailure [20 ms]
+  오류 메시지:
+   Assert.DoesNotContain() Failure: Filter matched in collection
+                                                                                                                                                 ↓ (pos 2)
+Collection: [CommunicationSessionEvent { Name = Connecting, Value =  }, CommunicationSessionEvent { Name = Failed, Value = BrokerDisconnected }, CommunicationSessionEvent { Name = Subscribed, Value = { ClientId = amr-demo-e575629ad4cf4978a350992d487feb06, Host = 127.0.0.1, Port = 1884 } }, CommunicationSessionEvent { Name = QueueEvent, Value = QueueProcessingEvent { Code = Stopped, AmrId = , Kind = , Count = 0, ExceptionType =  } }, CommunicationSessionEvent { Name = Closed, Value =  }]
+  스택 추적:
+     at Amr.Communication.Tests.ControlCommunicationSessionTests.BrokerLossWhileTimerStartsCannotPublishSubscribedAfterFailure() in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Mqtt\Sessions\ControlCommunicationSessionTests.cs:line 211
+   at Amr.Communication.Tests.ControlCommunicationSessionTests.BrokerLossWhileTimerStartsCannotPublishSubscribedAfterFailure() in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Mqtt\Sessions\ControlCommunicationSessionTests.cs:line 212
+--- End of stack trace from previous location ---
+결과 파일: C:\amr-control-system-demo\evidence\COM-02\20261028-control-session-01\timer-shutdown-before-fix.trx
+
+실패!  - 실패:     1, 통과:     0, 건너뜀:     0, 전체:     1, 기간: 31 ms - Amr.Communication.Tests.dll (net10.0)

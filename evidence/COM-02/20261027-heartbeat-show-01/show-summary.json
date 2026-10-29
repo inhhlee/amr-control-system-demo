@@ -1,0 +1,18 @@
+{
+  "activePreviewRunId": "20261027-heartbeat-live-01",
+  "sourceUnchanged": true,
+  "sameSourceFiles": 172,
+  "prCreated": false,
+  "stagedFiles": 0,
+  "branch": "feature/46-grid-map-integration",
+  "activePreviewUrl": "http://127.0.0.1:65526",
+  "screens": [
+    "normal.png",
+    "unresponsive.png",
+    "broker-down.png"
+  ],
+  "pushed": false,
+  "committed": false,
+  "head": "4e44fa880cb0d1fcccb000dbc53e634fd90381b5",
+  "merged": false
+}

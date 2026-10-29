@@ -1,0 +1,287 @@
+[
+  {
+    "path": "baseline.json",
+    "bytes": 8421,
+    "sha256": "FEF9C637D76D07CB87213E0F9A195A169AC034398D4CE716B7594465FCCFE481"
+  },
+  {
+    "path": "build-02.log",
+    "bytes": 1736,
+    "sha256": "22AC6CD29938FF879273D33AE32AF02B4EF992BF3A030CC01F2BB27440698481"
+  },
+  {
+    "path": "build-03.log",
+    "bytes": 1270,
+    "sha256": "8A1768584A67FCC14E86A9CACE19A29B733B6F0A3C893973898F06C9FFB7A11F"
+  },
+  {
+    "path": "build-05.log",
+    "bytes": 1270,
+    "sha256": "23B228133C9381D9FB5D5F8D071BD3E75ECF9BB87D0C5E9D15C03BCF48DCC82E"
+  },
+  {
+    "path": "build-06.log",
+    "bytes": 1270,
+    "sha256": "48F0B2DCB9D0B539E90CCB8CF80AA875F183A729A4FE64403BA210DF31D5551D"
+  },
+  {
+    "path": "build-contract-compile-failed.log",
+    "bytes": 10655,
+    "sha256": "1C487047D89A935302387CF740ACEB4A7C97BFC6AF6CDAE168F31A2725326C5C"
+  },
+  {
+    "path": "build-final.log",
+    "bytes": 1290,
+    "sha256": "ECD245F10EC22161C4A4BB6CD641B3B1D7144D8699D6F5AB7C677FC2F28B175A"
+  },
+  {
+    "path": "build-initial.log",
+    "bytes": 1660,
+    "sha256": "74DA48A24E9CC4C1AA63AACB2120A12F795CFB02CC2F26AB44F919BF4ABC99ED"
+  },
+  {
+    "path": "build-query-contract-passed.log",
+    "bytes": 1290,
+    "sha256": "552EB37188EEE6FD744B9B07E3B978234F47F2DE7ABF717AA308AB1263E9BC9B"
+  },
+  {
+    "path": "build-release-07.log",
+    "bytes": 1290,
+    "sha256": "91D02BB4D3D57ADD436545EF5AD4204FCB77DDD07A1A0D5370CFB067F82C2F73"
+  },
+  {
+    "path": "cancel-state.json",
+    "bytes": 13540,
+    "sha256": "94E6EE8FC3311B22A6B974D644F894CADC0A84CBDC7C34390218FBD4B79D2616"
+  },
+  {
+    "path": "cancel-still.json",
+    "bytes": 13540,
+    "sha256": "94E6EE8FC3311B22A6B974D644F894CADC0A84CBDC7C34390218FBD4B79D2616"
+  },
+  {
+    "path": "check-session.json",
+    "bytes": 285,
+    "sha256": "CDECCA1749442B6BB9B1BC0A392F66BE12B4335D2D359D9520CDDEE18388FA03"
+  },
+  {
+    "path": "detour-final.json",
+    "bytes": 14816,
+    "sha256": "13568E78D9C5C3B588973C0331FF9E5044FCFCB976067AB3EA2C2E0BF37D2DED"
+  },
+  {
+    "path": "detour-final.png",
+    "bytes": 125785,
+    "sha256": "8F8C1906542B6A6CAE525035EB5D2EF44B8A71F0D5116BA86D211DAB6C951A9A"
+  },
+  {
+    "path": "detour-final.txt",
+    "bytes": 5815,
+    "sha256": "D2AAE2192BF7802566E0EB540FF9408C492B6158C15C07B90A3B0937048AA290"
+  },
+  {
+    "path": "detour-input.json",
+    "bytes": 12947,
+    "sha256": "72039F6670F003E2D4A5904F53D7DC8A57001F5EF4926616B96898B6E7D28CC9"
+  },
+  {
+    "path": "detour-samples.jsonl",
+    "bytes": 83857,
+    "sha256": "5BFFEBA3F1D76BC1453A4FACE2577849243607B5015A2E8B0E26D9E52CE687AC"
+  },
+  {
+    "path": "document-checks.json",
+    "bytes": 186,
+    "sha256": "C6DCD1A0C5FBDC25EEE28D2985A9A8F8B5D4356062ACC15029CE359B649437F0"
+  },
+  {
+    "path": "figma-map-reference.png",
+    "bytes": 84613,
+    "sha256": "C4DC1AEADD767D7981462CDFC1231E66AD8A534898BC5A2389A3AF5623F3F2DE"
+  },
+  {
+    "path": "final-audit.json",
+    "bytes": 13461,
+    "sha256": "93D88554FA0BBA6C872016CA9DD55E020A813A8DF0D18DD132AB9038B2333F91"
+  },
+  {
+    "path": "final-source-manifest.json",
+    "bytes": 3543,
+    "sha256": "5B05342412672BE115A1AC64AB5DA2A9DD164A2AF48E33C2233E3373A1A4959B"
+  },
+  {
+    "path": "final-ui-session.json",
+    "bytes": 280,
+    "sha256": "C4653BC14BF47AFD57EE264BAB8F6923BCA93CF920855E8DADF0FB7B9EB0202E"
+  },
+  {
+    "path": "final-ui-settings.json",
+    "bytes": 814,
+    "sha256": "C3E78347546A0584A7D963EC8C4A6EC6DE3DBBD6D0396032921C6FAE3C37AF44"
+  },
+  {
+    "path": "gui-03.log",
+    "bytes": 234,
+    "sha256": "56F4EBDD1A8B00986D67352F0A0BBE30C61187D072F3B653EA37D254C8CC77AE"
+  },
+  {
+    "path": "gui-04.log",
+    "bytes": 1594,
+    "sha256": "3A402FF2AC6EB873A562250AB6495E2EC1FFBC54DFEC65DD8FDD1904B43B8AF9"
+  },
+  {
+    "path": "gui-05.log",
+    "bytes": 460,
+    "sha256": "54F936B0A7BF05EDB4EFE445767E54897D7440CA6B17D4A3F66E8842257C7B2F"
+  },
+  {
+    "path": "gui-06.log",
+    "bytes": 460,
+    "sha256": "9A0F7227283429A896AF485C85AE8887CD30468AE90B8CE61F2AD9DC61813B8E"
+  },
+  {
+    "path": "gui-final.log",
+    "bytes": 596,
+    "sha256": "0DAF705BA2C54F68A24EAE7F7ABEA0BDCAC27FABC5837ED3F8DBE97E312793C8"
+  },
+  {
+    "path": "gui-query-contract-passed.log",
+    "bytes": 465,
+    "sha256": "1AB5ED3AF51F0C1F19652E3FA7C4A7E72DB2CE82C267066BCF12739A9FDBD8C5"
+  },
+  {
+    "path": "gui-release-07.log",
+    "bytes": 605,
+    "sha256": "1F9B4A773C7EAE1A8D4DFF5A3576BAE45B3A9095754EBE4FC26411344EB7EF7F"
+  },
+  {
+    "path": "gui-session.json",
+    "bytes": 250,
+    "sha256": "A81DBDB7424270501DE15EA1AE5C79CF318908D95A8E8F3EAEBC8D25E7D63662"
+  },
+  {
+    "path": "gui.stderr.log",
+    "bytes": 0,
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "path": "gui.stdout.log",
+    "bytes": 0,
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "path": "initial-api-error.json",
+    "bytes": 3106,
+    "sha256": "854610464E7DE744BDCD27DCD09E8F0ACF56F1788B1D3872BF732085D9A3665F"
+  },
+  {
+    "path": "initial-format-error.png",
+    "bytes": 117643,
+    "sha256": "A8CD57AB7467B1C03EC9D410D28023E08D9D3418E151963B9E192DB9F554FA3E"
+  },
+  {
+    "path": "initial-format-error.txt",
+    "bytes": 4679,
+    "sha256": "8295ED2EB913F113221715B7EA867A1EE6057630012E3DAB1606C61CC76288AE"
+  },
+  {
+    "path": "latest-final.json",
+    "bytes": 9769,
+    "sha256": "3BFD81BD895B4BA4CD4BE3F66855039BA5DCF28025A22B207E74DB12FE3E31C5"
+  },
+  {
+    "path": "latest-final.png",
+    "bytes": 173249,
+    "sha256": "B5211D489143764DEEECEC63214C8A24CC25558696EE6AD991F86C8818166744"
+  },
+  {
+    "path": "latest-final.txt",
+    "bytes": 5818,
+    "sha256": "2E06BB9FA0E68ECE24FF7D5E056D24369B192116EAD2CC3345C66E40518E702F"
+  },
+  {
+    "path": "latest-visible.png",
+    "bytes": 126970,
+    "sha256": "65A5095745488BE186902E266E95E0E926E1947528F1769540D88D94236D88B4"
+  },
+  {
+    "path": "link-checks.json",
+    "bytes": 185,
+    "sha256": "6415341933A1D9C690A4666F6D4D2020D88DF2F4A2A2D9ADAA329D1E6A6BD9E2"
+  },
+  {
+    "path": "no-path.png",
+    "bytes": 115274,
+    "sha256": "CDFF8A9B7C1F5B257401BC53F25DF41DDDF9960DAECBFCEF0574429F9DADE5CA"
+  },
+  {
+    "path": "no-path.txt",
+    "bytes": 4567,
+    "sha256": "D9420A07F150A021107C0E94A4F65894BFE0ADFC307EBA42688226F50A18B6EB"
+  },
+  {
+    "path": "normal-arrival.png",
+    "bytes": 123641,
+    "sha256": "6068DED46251253B858DE229AF4D67544F4B8350318E9A4E3E56CB54CA2355DA"
+  },
+  {
+    "path": "README.md",
+    "bytes": 10611,
+    "sha256": "8D8E4995AD9B093E84547648B3307255C8969C6FE214C960C6717BFC78DF5FD7"
+  },
+  {
+    "path": "ready.png",
+    "bytes": 112138,
+    "sha256": "80E7DE16F02B824195A9BC446A9771A8F83A727728DA62FDAF6101B3096B10D7"
+  },
+  {
+    "path": "ready.txt",
+    "bytes": 4512,
+    "sha256": "1420A4A05EB1016FF48E504BEBD9355FAECBCAD420D01ECA3402BF8E87CB32D0"
+  },
+  {
+    "path": "server-stopped.png",
+    "bytes": 127049,
+    "sha256": "0B7660524BDF32CEA0FAE6BB45B1F2191644819EC9DA51471F0EEE7FA88AF32E"
+  },
+  {
+    "path": "server-stopped.txt",
+    "bytes": 5870,
+    "sha256": "6D571F5CA8A2B4E107FE441F53C10CD3C3E8BBF83514A5383F91106607CEB7E8"
+  },
+  {
+    "path": "ui-settings.json",
+    "bytes": 815,
+    "sha256": "77BC0E6D701138DA7A4828FD20E0A4A8253CE9BE17ED776E36079E4417919A31"
+  },
+  {
+    "path": "tests\\gui-04.trx",
+    "bytes": 66484,
+    "sha256": "4C294A3EF011E6E976D84DCA9293D1282B68CAEAB274930E123D423944130D80"
+  },
+  {
+    "path": "tests\\gui-05.trx",
+    "bytes": 63947,
+    "sha256": "659109F51D50926CB54B0CB92AC15AED9D6C11159CD193C227157E9106E85CDC"
+  },
+  {
+    "path": "tests\\gui-06.trx",
+    "bytes": 65348,
+    "sha256": "6C9F4E4206B3548CF94FBC5EBFA7B1F8F8AE721BF33D7FB26A9E663E7B90EE91"
+  },
+  {
+    "path": "tests\\gui-final.trx",
+    "bytes": 69734,
+    "sha256": "1B60C765894F3795E43FB9B3B378ABDD807B40662B6468B3C8887ABF3265EF05"
+  },
+  {
+    "path": "tests\\gui-query-contract-passed.trx",
+    "bytes": 69734,
+    "sha256": "3653FF2F09A8DD543A202DC565E8E82A16E8F79903316499B73B9851F33BC06F"
+  },
+  {
+    "path": "tests\\gui-release-07.trx",
+    "bytes": 68597,
+    "sha256": "B749DFC0C89F1B27AD027EB9A8C534A39B31530412E5808AF102B7FC1C9BA6CD"
+  }
+]

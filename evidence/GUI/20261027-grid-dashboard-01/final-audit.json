@@ -1,0 +1,465 @@
+{
+  "verifiedAt": "2026-10-27T13:35:34.5940603+09:00",
+  "head": "4e44fa880cb0d1fcccb000dbc53e634fd90381b5",
+  "branch": "feature/46-grid-map-integration",
+  "staged": 0,
+  "protectedSourceAudit": [
+    {
+      "path": "src/Amr.Communication.Console/Amr.Communication.Console.csproj",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication.Console/CommandConsoleRunner.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication.Console/ConsoleRunner.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication.Console/Logging/SeqLogSink.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication.Console/Logging/SeqLogging.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication.Console/Logging/StructuredLog.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication.Console/Program.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Amr.Communication.csproj",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandMessage.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandPublisher.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandValidationResult.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandValidator.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Models/AckMessage.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Models/AlarmMessage.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Models/HeartbeatMessage.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Models/ReceivedMessage.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Models/TelemetryMessage.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Connection/MqttConnection.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Connection/MqttConnectionException.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Connection/MqttConnectionSettings.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Queues/AmrReceiveQueue.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Queues/QueueAdmission.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Queues/QueueProcessingEvent.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/HeartbeatDiagnostic.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/HeartbeatSubscription.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/MessageDiagnostic.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/MessageSubscription.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Ack/AckValidationResult.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Ack/AckValidator.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Alarm/AlarmValidationResult.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Alarm/AlarmValidator.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Common/MessageValidation.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Common/ValidationError.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Heartbeat/HeartbeatValidationResult.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Heartbeat/HeartbeatValidator.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Telemetry/TelemetryValidationResult.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Telemetry/TelemetryValidator.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.ControlGui/Amr.ControlGui.csproj",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.ControlGui/MainForm.Designer.cs",
+      "unchanged": false,
+      "expectedGuiEdit": true
+    },
+    {
+      "path": "src/Amr.ControlGui/MainForm.cs",
+      "unchanged": false,
+      "expectedGuiEdit": true
+    },
+    {
+      "path": "src/Amr.ControlGui/MainForm.resx",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.ControlGui/MapCanvas.cs",
+      "unchanged": false,
+      "expectedGuiEdit": true
+    },
+    {
+      "path": "src/Amr.ControlGui/MockAmrDataProvider.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.ControlGui/MockCommandDispatcher.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.ControlGui/Program.cs",
+      "unchanged": false,
+      "expectedGuiEdit": true
+    },
+    {
+      "path": "src/Amr.Core/Amr.Core.csproj",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Core/AmrChange.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Core/AmrSnapshot.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Core/CommandModels.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Core/IAmrDataProvider.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Core/ICommandDispatcher.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Core/QueryModels.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/ISimulationTransport.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/MqttSimulationSession.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/MqttSimulationTransport.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/SimulationMessages.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/SimulatorMqttOptions.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Command/CommandPublisherTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Command/CommandValidationTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/CommandConsoleTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/ConsoleConnectionFailureTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/Logging/ConsoleShutdownReasonTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/Logging/SeqLoggingTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Connection/MqttConnectionFailureTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Connection/MqttConnectionTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueBoundaryTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueShutdownTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Subscriptions/HeartbeatSubscriptionTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Subscriptions/MessageSubscriptionTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/TestDoubles/FakeMqttClient.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/AckValidatorTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/AlarmValidatorTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/HeartbeatValidatorTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/MessageFieldValidationTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/MessageValidationRegressionTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/TelemetryValidatorTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/Amr.ControlGui.Tests.csproj",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/DashboardMapTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/MainFormTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/MockCommandDispatcherTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/MockDataProviderTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/MqttSimulationTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/MqttTransportConnectionTests.cs",
+      "unchanged": true,
+      "expectedGuiEdit": false
+    }
+  ],
+  "unchangedProtected": 81,
+  "expectedGuiEdits": 4,
+  "oldUntrackedUnchanged": 50,
+  "gridImportUnchanged": 31,
+  "stashUnchanged": true,
+  "preservationBranchUnchanged": true,
+  "backupArtifactsUnchanged": true,
+  "guiTestsPassed": 48,
+  "actualDetourMoves": 15,
+  "received": {
+    "id": "AMR_001",
+    "timestamp": 1793075514206,
+    "position": {
+      "x": 5,
+      "y": -4
+    },
+    "speed": 0,
+    "state": "IDLE",
+    "receivedAtUtc": "2026-10-27T13:31:54.2076219+09:00"
+  },
+  "verificationGuiClosed": true,
+  "verificationHostCleanup": {
+    "OwnedBrokerRemoved": true,
+    "HostExitCode": 0,
+    "Finished": "2026-10-27T11:54:34.5187904+09:00",
+    "ExistingContainersPreserved": true,
+    "HostPortClosed": true
+  },
+  "retainedPreviews": [
+    "20261027-gui-grid-host-01",
+    "20261027-gui-grid-final-01"
+  ]
+}

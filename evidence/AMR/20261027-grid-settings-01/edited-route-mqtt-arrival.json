@@ -1,0 +1,164 @@
+{
+  "navigation": {
+    "phase": "Completed",
+    "start": {
+      "row": 0,
+      "col": 0
+    },
+    "goal": {
+      "row": 1,
+      "col": 2
+    },
+    "current": {
+      "row": 1,
+      "col": 2
+    },
+    "map": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "fixedObstacles": [
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        true,
+        false
+      ]
+    ],
+    "path": [
+      {
+        "row": 1,
+        "col": 2
+      }
+    ],
+    "traveled": [
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 1,
+        "col": 2
+      }
+    ],
+    "remainingDistance": 0,
+    "moves": 3,
+    "replans": 7,
+    "mapVersion": 0,
+    "waypoints": [
+      {
+        "row": 1,
+        "col": 2
+      }
+    ],
+    "nextWaypointIndex": 1,
+    "currentTarget": null,
+    "reachedWaypoints": [
+      {
+        "index": 0,
+        "cell": {
+          "row": 1,
+          "col": 2
+        },
+        "moves": 3
+      }
+    ]
+  },
+  "stepIntervalMs": 180,
+  "source": "mqtt-grid-control-receiver",
+  "position": {
+    "row": 1,
+    "col": 2
+  },
+  "configurationPath": "C:\\amr-control-system-demo\\evidence\\AMR\\20261027-grid-settings-01\\settings.json",
+  "amrId": "CONFIG_AMR_B",
+  "cellSizeMeters": 1,
+  "receivedTelemetry": {
+    "id": "CONFIG_AMR_B",
+    "timestamp": 1793067194390,
+    "position": {
+      "x": 2,
+      "y": -1
+    },
+    "speed": 0,
+    "state": "IDLE",
+    "receivedAtUtc": "2026-10-27T11:13:14.3914315+09:00"
+  },
+  "receivedHeartbeat": {
+    "id": "CONFIG_AMR_B",
+    "timestamp": 1793067194220,
+    "status": "OK",
+    "receivedAtUtc": "2026-10-27T11:13:14.2219244+09:00"
+  },
+  "receivedTrail": [
+    {
+      "row": 0,
+      "col": 0
+    },
+    {
+      "row": 0,
+      "col": 1
+    },
+    {
+      "row": 0,
+      "col": 2
+    },
+    {
+      "row": 1,
+      "col": 2
+    }
+  ],
+  "telemetryCount": 10,
+  "heartbeatCount": 3,
+  "publishedCount": 13,
+  "rejectedCount": 0,
+  "lastPublishedTimestamp": 1793067194390,
+  "brokerState": "Closed",
+  "failure": null,
+  "mqttEndpoint": "127.0.0.1:50693",
+  "evidencePath": "C:\\amr-control-system-demo\\evidence\\AMR\\mission-live-20261027-111313-d650a26cd8e34ea0975a9fe542ab1101\\grid-navigation.jsonl",
+  "evidenceDirectory": "C:\\amr-control-system-demo\\evidence\\AMR\\mission-live-20261027-111313-d650a26cd8e34ea0975a9fe542ab1101",
+  "logs": [
+    "GridReady Phase=Ready Position=(0,0) Remaining=3 Moves=0 WaypointsPassed=0/1 Replans=1 MapVersion=0",
+    "GridStarted Phase=Connecting Position=(0,0) Remaining=3 Moves=0 WaypointsPassed=0/1 Replans=1 MapVersion=0",
+    "GridMqttConnected Phase=Running Position=(0,0) Remaining=3 Moves=0 WaypointsPassed=0/1 Replans=1 MapVersion=0",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=3 Moves=0 WaypointsPassed=0/1 Replans=1 MapVersion=0",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=3 Moves=0 WaypointsPassed=0/1 Replans=1 MapVersion=0",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=3 Moves=0 WaypointsPassed=0/1 Replans=1 MapVersion=0",
+    "GridControlReceived Phase=Running Position=(0,0) Remaining=3 Moves=0 WaypointsPassed=0/1 Replans=1 MapVersion=0",
+    "GridMoved Phase=Running Position=(0,1) Remaining=2 Moves=1 WaypointsPassed=0/1 Replans=3 MapVersion=0",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=2 Moves=1 WaypointsPassed=0/1 Replans=3 MapVersion=0",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=2 Moves=1 WaypointsPassed=0/1 Replans=3 MapVersion=0",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=2 Moves=1 WaypointsPassed=0/1 Replans=3 MapVersion=0",
+    "GridControlReceived Phase=Running Position=(0,1) Remaining=2 Moves=1 WaypointsPassed=0/1 Replans=3 MapVersion=0",
+    "GridMoved Phase=Running Position=(0,2) Remaining=1 Moves=2 WaypointsPassed=0/1 Replans=5 MapVersion=0",
+    "GridControlReceived Phase=Running Position=(0,2) Remaining=1 Moves=2 WaypointsPassed=0/1 Replans=5 MapVersion=0",
+    "GridControlReceived Phase=Running Position=(0,2) Remaining=1 Moves=2 WaypointsPassed=0/1 Replans=5 MapVersion=0",
+    "GridControlReceived Phase=Running Position=(0,2) Remaining=1 Moves=2 WaypointsPassed=0/1 Replans=5 MapVersion=0",
+    "GridControlReceived Phase=Running Position=(0,2) Remaining=1 Moves=2 WaypointsPassed=0/1 Replans=5 MapVersion=0",
+    "GridMoved Phase=Completed Position=(1,2) Remaining=0 Moves=3 WaypointsPassed=1/1 Replans=7 MapVersion=0",
+    "GridControlReceived Phase=Completed Position=(1,2) Remaining=0 Moves=3 WaypointsPassed=1/1 Replans=7 MapVersion=0",
+    "GridFinalReceived Phase=WaitingForTelemetry Position=(1,2) Remaining=0 Moves=3 WaypointsPassed=1/1 Replans=7 MapVersion=0",
+    "GridMqttEnded Phase=Completed Position=(1,2) Remaining=0 Moves=3 WaypointsPassed=1/1 Replans=7 MapVersion=0"
+  ]
+}

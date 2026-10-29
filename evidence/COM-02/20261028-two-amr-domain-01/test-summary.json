@@ -1,0 +1,42 @@
+[
+  {
+    "total": 9,
+    "file": "verified_net10.0_20261028122535.trx",
+    "outcome": "Completed",
+    "notExecuted": 0,
+    "failed": 0,
+    "passed": 9
+  },
+  {
+    "total": 202,
+    "file": "verified_net10.0_20261028122536.trx",
+    "outcome": "Completed",
+    "notExecuted": 0,
+    "failed": 0,
+    "passed": 202
+  },
+  {
+    "total": 53,
+    "file": "verified_net10.0_20261028122537.trx",
+    "outcome": "Completed",
+    "notExecuted": 0,
+    "failed": 0,
+    "passed": 53
+  },
+  {
+    "total": 805,
+    "file": "verified_net10.0_20261028122539.trx",
+    "outcome": "Completed",
+    "notExecuted": 0,
+    "failed": 0,
+    "passed": 805
+  },
+  {
+    "total": 72,
+    "file": "verified_net10.0_20261028122606.trx",
+    "outcome": "Completed",
+    "notExecuted": 0,
+    "failed": 0,
+    "passed": 72
+  }
+]

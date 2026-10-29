@@ -23,11 +23,14 @@ internal static class ConsoleRunner
     {
         if (args.Contains("--command", StringComparer.Ordinal))
             return await CommandConsoleRunner.RunAsync(args, clientFactory, userCancellation, output, error, log);
+        if (args.Contains("--monitor-amr", StringComparer.Ordinal))
+            return await HeartbeatConsoleRunner.RunAsync(args, clientFactory, userCancellation, output, error, log);
         if (args.Length == 1 && args[0] == "--help")
         {
             output.WriteLine("사용법: --host 127.0.0.1 --port 1884 --connect-timeout-seconds 3 [--show-payload]");
             output.WriteLine("Heartbeat·Telemetry·Alarm·ACK 검사 후 대상 AMR과 정상 모델을 전달합니다. --show-payload는 비밀정보 없는 정상 시험 입력의 앞 256바이트만 표시합니다. Ctrl+C로 종료합니다.");
             output.WriteLine("순서·독립성 시험: --test-delay-amr AMR_001 --test-delay-ms 5000 (해당 AMR의 처리만 지연)");
+            output.WriteLine("단일 AMR 관제 세션: --monitor-amr AMR_001 (정상 Heartbeat부터 5초/500ms 감시, Ctrl+C 종료)");
             output.WriteLine("명령 발행: --command MOVE --amr-id AMR_001 --x 30 --y 15 [--publish-timeout-seconds 3]");
             output.WriteLine("STOP/RESET은 --x/--y를 생략합니다. --host/--port/--connect-timeout-seconds 사용 가능. 한 명령 발행 후 종료하며 ACK·실제 동작 완료는 확인하지 않습니다.");
             return 0;
@@ -266,54 +269,55 @@ internal static class ConsoleRunner
             log?.Event("Rejected", LogEventLevel.Warning, ("Code", error.Code.ToString()), ("Field", error.Field), ("Reason", error.Reason));
         }
 
-        static (MqttConnectionSettings Settings, bool ShowPayload, string? DelayAmr, int DelayMs) ReadSettings(string[] arguments)
+    }
+
+    internal static (MqttConnectionSettings Settings, bool ShowPayload, string? DelayAmr, int DelayMs) ReadSettings(string[] arguments)
+    {
+        string host = "127.0.0.1";
+        int port = 1884;
+        int connectTimeoutSeconds = 3;
+        bool showPayload = false;
+        string? delayAmr = null;
+        int delayMs = 0;
+
+        for (int index = 0; index < arguments.Length; index++)
         {
-            string host = "127.0.0.1";
-            int port = 1884;
-            int connectTimeoutSeconds = 3;
-            bool showPayload = false;
-            string? delayAmr = null;
-            int delayMs = 0;
-
-            for (int index = 0; index < arguments.Length; index++)
+            if (arguments[index] == "--show-payload")
             {
-                if (arguments[index] == "--show-payload")
-                {
-                    showPayload = true;
-                    continue;
-                }
-                if (index + 1 >= arguments.Length)
-                {
-                    throw new ArgumentException("인자 값이 필요합니다.", "arguments");
-                }
-
-                string value = arguments[index + 1];
-                switch (arguments[index])
-                {
-                    case "--host":
-                        host = value;
-                        break;
-                    case "--port":
-                        port = int.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
-                        break;
-                    case "--connect-timeout-seconds":
-                        connectTimeoutSeconds = int.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
-                        break;
-                    case "--test-delay-amr":
-                        delayAmr = value;
-                        break;
-                    case "--test-delay-ms":
-                        delayMs = int.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
-                        if (delayMs < 0 || delayMs > 60000) throw new ArgumentOutOfRangeException(nameof(delayMs));
-                        break;
-                    default:
-                        throw new ArgumentException("알 수 없는 인자입니다.", "arguments");
-                }
-                index++;
+                showPayload = true;
+                continue;
+            }
+            if (index + 1 >= arguments.Length)
+            {
+                throw new ArgumentException("인자 값이 필요합니다.", "arguments");
             }
 
-            if ((delayAmr is null) != (delayMs == 0)) throw new ArgumentException("시험 지연 AMR과 1~60000ms를 함께 지정하세요.");
-            return (new MqttConnectionSettings(host, port, connectTimeoutSeconds), showPayload, delayAmr, delayMs);
+            string value = arguments[index + 1];
+            switch (arguments[index])
+            {
+                case "--host":
+                    host = value;
+                    break;
+                case "--port":
+                    port = int.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
+                    break;
+                case "--connect-timeout-seconds":
+                    connectTimeoutSeconds = int.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
+                    break;
+                case "--test-delay-amr":
+                    delayAmr = value;
+                    break;
+                case "--test-delay-ms":
+                    delayMs = int.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
+                    if (delayMs < 0 || delayMs > 60000) throw new ArgumentOutOfRangeException(nameof(delayMs));
+                    break;
+                default:
+                    throw new ArgumentException("알 수 없는 인자입니다.", "arguments");
+            }
+            index++;
         }
+
+        if ((delayAmr is null) != (delayMs == 0)) throw new ArgumentException("시험 지연 AMR과 1~60000ms를 함께 지정하세요.");
+        return (new MqttConnectionSettings(host, port, connectTimeoutSeconds), showPayload, delayAmr, delayMs);
     }
 }

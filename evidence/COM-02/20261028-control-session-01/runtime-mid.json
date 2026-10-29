@@ -1,0 +1,20 @@
+[
+  {
+    "Name": "HeartbeatProbe.exe",
+    "ProcessId": 54324,
+    "ParentProcessId": 18676,
+    "CommandLine": "\"C:\\amr-control-system-demo\\tests\\manual\\COM02-A\\HeartbeatProbe\\bin\\ControlSessionVerify\\HeartbeatProbe.exe\" 59874 \"C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-control-session-mqtt-01\""
+  },
+  {
+    "Name": "Amr.ControlGui.exe",
+    "ProcessId": 13892,
+    "ParentProcessId": 36000,
+    "CommandLine": "\"C:\\amr-control-system-demo\\src\\Amr.ControlGui\\bin\\ControlSessionVerify\\Amr.ControlGui.exe\" --grid-url http://127.0.0.1:59878"
+  },
+  {
+    "Name": "Amr.Simulator.Map.exe",
+    "ProcessId": 1420,
+    "ParentProcessId": 22388,
+    "CommandLine": "\"C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\ControlSessionVerify\\Amr.Simulator.Map.exe\" --port 0 --config \"C:\\amr-control-system-demo\\config\\map-demo\\settings.json\" --mqtt-host 127.0.0.1 --mqtt-port 51553 --telemetry-ms 200 --heartbeat-ms 1000"
+  }
+]

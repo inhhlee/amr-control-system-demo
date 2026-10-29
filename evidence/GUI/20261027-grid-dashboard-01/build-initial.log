@@ -1,0 +1,17 @@
+  Amr.Communication -> C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll
+  Amr.Communication.Console -> C:\amr-control-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.dll
+  Amr.Core -> C:\amr-control-system-demo\src\Amr.Core\bin\Debug\net10.0\Amr.Core.dll
+C:\amr-control-system-demo\src\Amr.ControlGui\MapCanvas.Grid.cs(8,19): error WFO1000: 'GridEditingEnabled'속성은 해당 속성 콘텐츠에 대한 코드 직렬화를 구성하지 않습니다. (https://aka.ms/winforms-warnings/wfo1000) [C:\amr-control-system-demo\src\Amr.ControlGui\Amr.ControlGui.csproj]
+  Amr.Simulator -> C:\amr-control-system-demo\src\Amr.Simulator\bin\Debug\net10.0\Amr.Simulator.dll
+  Amr.Communication.Tests -> C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll
+  Amr.Simulator.Map -> C:\amr-control-system-demo\tools\Amr.Simulator.Map\bin\Debug\net10.0\Amr.Simulator.Map.dll
+  Amr.Simulator.Map.Tests -> C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll
+  Amr.Simulator.Tests -> C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\Amr.Simulator.Tests.dll
+
+빌드하지 못했습니다.
+
+C:\amr-control-system-demo\src\Amr.ControlGui\MapCanvas.Grid.cs(8,19): error WFO1000: 'GridEditingEnabled'속성은 해당 속성 콘텐츠에 대한 코드 직렬화를 구성하지 않습니다. (https://aka.ms/winforms-warnings/wfo1000) [C:\amr-control-system-demo\src\Amr.ControlGui\Amr.ControlGui.csproj]
+    경고 0개
+    오류 1개
+
+경과 시간: 00:00:02.81

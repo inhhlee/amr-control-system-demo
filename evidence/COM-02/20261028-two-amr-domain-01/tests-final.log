@@ -1,0 +1,25 @@
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\TwoAmrVerify\Amr.Communication.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\TwoAmrVerify\Amr.Simulator.Map.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\TwoAmrVerify\Amr.ControlGui.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\TwoAmrVerify\Amr.Core.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\TwoAmrVerify\Amr.Simulator.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+결과 파일: C:\amr-control-system-demo\evidence\COM-02\20261028-two-amr-domain-01\final_net10.0_20261028121627.trx
+
+통과!  - 실패:     0, 통과:     9, 건너뜀:     0, 전체:     9, 기간: 39 ms - Amr.Core.Tests.dll (net10.0)
+결과 파일: C:\amr-control-system-demo\evidence\COM-02\20261028-two-amr-domain-01\final_net10.0_20261028121629.trx
+
+통과!  - 실패:     0, 통과:   202, 건너뜀:     0, 전체:   202, 기간: 1 s - Amr.Simulator.Tests.dll (net10.0)
+결과 파일: C:\amr-control-system-demo\evidence\COM-02\20261028-two-amr-domain-01\final_net10.0_20261028121631.trx
+
+통과!  - 실패:     0, 통과:    53, 건너뜀:     0, 전체:    53, 기간: 3 s - Amr.ControlGui.Tests.dll (net10.0)
+결과 파일: C:\amr-control-system-demo\evidence\COM-02\20261028-two-amr-domain-01\final_net10.0_20261028121632.trx
+
+통과!  - 실패:     0, 통과:   805, 건너뜀:     0, 전체:   805, 기간: 3 s - Amr.Communication.Tests.dll (net10.0)
+결과 파일: C:\amr-control-system-demo\evidence\COM-02\20261028-two-amr-domain-01\final_net10.0_20261028121658.trx
+
+통과!  - 실패:     0, 통과:    72, 건너뜀:     0, 전체:    72, 기간: 30 s - Amr.Simulator.Map.Tests.dll (net10.0)

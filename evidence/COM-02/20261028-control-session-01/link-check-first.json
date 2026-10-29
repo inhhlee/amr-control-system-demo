@@ -1,0 +1,21 @@
+{
+  "missing": [
+    {
+      "file": "README.md",
+      "target": "C:/process-plan/README.md"
+    },
+    {
+      "file": "README.md",
+      "target": "C:/process-plan/AGENTS.md"
+    },
+    {
+      "file": "README.md",
+      "target": "C:/process-plan/관제시스템 과제 진행/AGENTS.md"
+    },
+    {
+      "file": "README.md",
+      "target": "C:/process-plan/기준/개발 진행 절차.md"
+    }
+  ],
+  "checkedLocalLinks": 191
+}

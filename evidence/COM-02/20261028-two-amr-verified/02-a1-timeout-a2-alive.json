@@ -1,0 +1,2113 @@
+{
+  "before": {
+    "navigation": {
+      "phase": "Running",
+      "start": {
+        "row": 0,
+        "col": 0
+      },
+      "goal": {
+        "row": 4,
+        "col": 5
+      },
+      "current": {
+        "row": 0,
+        "col": 0
+      },
+      "map": [
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "fixedObstacles": [
+        [
+          false,
+          false,
+          true,
+          false,
+          false,
+          false
+        ],
+        [
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          true,
+          false
+        ],
+        [
+          false,
+          true,
+          true,
+          false,
+          true,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "path": [
+        {
+          "row": 0,
+          "col": 0
+        },
+        {
+          "row": 0,
+          "col": 1
+        },
+        {
+          "row": 1,
+          "col": 1
+        },
+        {
+          "row": 2,
+          "col": 1
+        },
+        {
+          "row": 2,
+          "col": 2
+        },
+        {
+          "row": 2,
+          "col": 3
+        }
+      ],
+      "traveled": [
+        {
+          "row": 0,
+          "col": 0
+        }
+      ],
+      "remainingDistance": 5,
+      "moves": 0,
+      "replans": 1,
+      "mapVersion": 1,
+      "waypoints": [
+        {
+          "row": 2,
+          "col": 3
+        },
+        {
+          "row": 4,
+          "col": 3
+        },
+        {
+          "row": 4,
+          "col": 5
+        }
+      ],
+      "nextWaypointIndex": 0,
+      "currentTarget": {
+        "row": 2,
+        "col": 3
+      },
+      "reachedWaypoints": []
+    },
+    "source": "mqtt-grid-control-receiver",
+    "position": {
+      "row": 0,
+      "col": 0
+    },
+    "amrId": "AMR_001",
+    "receivedTelemetry": {
+      "id": "AMR_001",
+      "timestamp": 1793157913155,
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "speed": 0,
+      "state": "IDLE",
+      "receivedAtUtc": "2026-10-28T12:25:13.1559809+09:00"
+    },
+    "receivedHeartbeat": {
+      "id": "AMR_001",
+      "timestamp": 1793157913022,
+      "status": "OK",
+      "receivedAtUtc": "2026-10-28T12:25:13.0229497+09:00"
+    },
+    "receivedTrail": [],
+    "telemetryCount": 541,
+    "heartbeatCount": 287,
+    "rejectedCount": 0,
+    "lastPublishedTimestamp": null,
+    "brokerState": "Subscribed",
+    "failure": null,
+    "mqttEndpoint": "127.0.0.1:63917",
+    "logs": [
+      "Published",
+      "Communication",
+      "Delivered",
+      "MissionStarted",
+      "MissionStarted"
+    ],
+    "heartbeatMonitor": {
+      "amrId": "AMR_001",
+      "state": "Alive",
+      "monitoring": true,
+      "lastReceivedAtUtc": "2026-10-28T12:25:13.0229497+09:00",
+      "elapsedMilliseconds": 152.4007,
+      "timeoutMilliseconds": 5000,
+      "checkIntervalMilliseconds": 500,
+      "timeoutCount": 0,
+      "recoveryCount": 0
+    },
+    "missionFinalReceived": false,
+    "fleet": [
+      {
+        "navigation": {
+          "phase": "Running",
+          "start": {
+            "row": 0,
+            "col": 0
+          },
+          "goal": {
+            "row": 4,
+            "col": 5
+          },
+          "current": {
+            "row": 0,
+            "col": 0
+          },
+          "map": [
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "fixedObstacles": [
+            [
+              false,
+              false,
+              true,
+              false,
+              false,
+              false
+            ],
+            [
+              true,
+              false,
+              true,
+              false,
+              true,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              true,
+              false
+            ],
+            [
+              false,
+              true,
+              true,
+              false,
+              true,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "path": [
+            {
+              "row": 0,
+              "col": 0
+            },
+            {
+              "row": 0,
+              "col": 1
+            },
+            {
+              "row": 1,
+              "col": 1
+            },
+            {
+              "row": 2,
+              "col": 1
+            },
+            {
+              "row": 2,
+              "col": 2
+            },
+            {
+              "row": 2,
+              "col": 3
+            }
+          ],
+          "traveled": [
+            {
+              "row": 0,
+              "col": 0
+            }
+          ],
+          "remainingDistance": 5,
+          "moves": 0,
+          "replans": 1,
+          "mapVersion": 1,
+          "waypoints": [
+            {
+              "row": 2,
+              "col": 3
+            },
+            {
+              "row": 4,
+              "col": 3
+            },
+            {
+              "row": 4,
+              "col": 5
+            }
+          ],
+          "nextWaypointIndex": 0,
+          "currentTarget": {
+            "row": 2,
+            "col": 3
+          },
+          "reachedWaypoints": []
+        },
+        "source": "mqtt-grid-control-receiver",
+        "position": {
+          "row": 0,
+          "col": 0
+        },
+        "amrId": "AMR_001",
+        "receivedTelemetry": {
+          "id": "AMR_001",
+          "timestamp": 1793157913155,
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "speed": 0,
+          "state": "IDLE",
+          "receivedAtUtc": "2026-10-28T12:25:13.1559809+09:00"
+        },
+        "receivedHeartbeat": {
+          "id": "AMR_001",
+          "timestamp": 1793157913022,
+          "status": "OK",
+          "receivedAtUtc": "2026-10-28T12:25:13.0229497+09:00"
+        },
+        "receivedTrail": [],
+        "telemetryCount": 541,
+        "heartbeatCount": 287,
+        "rejectedCount": 0,
+        "lastPublishedTimestamp": null,
+        "brokerState": "Subscribed",
+        "failure": null,
+        "mqttEndpoint": "127.0.0.1:63917",
+        "logs": [
+          "Published",
+          "Communication",
+          "Delivered",
+          "MissionStarted",
+          "MissionStarted"
+        ],
+        "heartbeatMonitor": {
+          "amrId": "AMR_001",
+          "state": "Alive",
+          "monitoring": true,
+          "lastReceivedAtUtc": "2026-10-28T12:25:13.0229497+09:00",
+          "elapsedMilliseconds": 152.4007,
+          "timeoutMilliseconds": 5000,
+          "checkIntervalMilliseconds": 500,
+          "timeoutCount": 0,
+          "recoveryCount": 0
+        },
+        "missionFinalReceived": false
+      },
+      {
+        "navigation": {
+          "phase": "Running",
+          "start": {
+            "row": 4,
+            "col": 5
+          },
+          "goal": {
+            "row": 0,
+            "col": 0
+          },
+          "current": {
+            "row": 4,
+            "col": 5
+          },
+          "map": [
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "fixedObstacles": [
+            [
+              false,
+              false,
+              true,
+              false,
+              false,
+              false
+            ],
+            [
+              true,
+              false,
+              true,
+              false,
+              true,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              true,
+              false
+            ],
+            [
+              false,
+              true,
+              true,
+              false,
+              true,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "path": [
+            {
+              "row": 4,
+              "col": 5
+            },
+            {
+              "row": 4,
+              "col": 4
+            },
+            {
+              "row": 4,
+              "col": 3
+            }
+          ],
+          "traveled": [
+            {
+              "row": 4,
+              "col": 5
+            }
+          ],
+          "remainingDistance": 2,
+          "moves": 0,
+          "replans": 1,
+          "mapVersion": 1,
+          "waypoints": [
+            {
+              "row": 4,
+              "col": 3
+            },
+            {
+              "row": 2,
+              "col": 3
+            },
+            {
+              "row": 0,
+              "col": 0
+            }
+          ],
+          "nextWaypointIndex": 0,
+          "currentTarget": {
+            "row": 4,
+            "col": 3
+          },
+          "reachedWaypoints": []
+        },
+        "source": "mqtt-grid-control-receiver",
+        "position": {
+          "row": 4,
+          "col": 5
+        },
+        "amrId": "AMR_002",
+        "receivedTelemetry": {
+          "id": "AMR_002",
+          "timestamp": 1793157913088,
+          "position": {
+            "x": 5,
+            "y": -4
+          },
+          "speed": 0.3333333333333333,
+          "state": "BUSY",
+          "receivedAtUtc": "2026-10-28T12:25:13.0893436+09:00"
+        },
+        "receivedHeartbeat": {
+          "id": "AMR_002",
+          "timestamp": 1793157913021,
+          "status": "OK",
+          "receivedAtUtc": "2026-10-28T12:25:13.0230173+09:00"
+        },
+        "receivedTrail": [],
+        "telemetryCount": 537,
+        "heartbeatCount": 287,
+        "rejectedCount": 0,
+        "lastPublishedTimestamp": null,
+        "brokerState": "Subscribed",
+        "failure": null,
+        "mqttEndpoint": "127.0.0.1:63917",
+        "logs": [
+          "Published",
+          "Communication",
+          "Delivered",
+          "MissionStarted",
+          "MissionStarted"
+        ],
+        "heartbeatMonitor": {
+          "amrId": "AMR_002",
+          "state": "Alive",
+          "monitoring": true,
+          "lastReceivedAtUtc": "2026-10-28T12:25:13.0230173+09:00",
+          "elapsedMilliseconds": 152.3388,
+          "timeoutMilliseconds": 5000,
+          "checkIntervalMilliseconds": 500,
+          "timeoutCount": 0,
+          "recoveryCount": 0
+        },
+        "missionFinalReceived": false
+      }
+    ],
+    "domain": {
+      "revision": 1661,
+      "devices": [
+        {
+          "amrId": "AMR_001",
+          "x": 0,
+          "y": 0,
+          "speedMps": 0,
+          "state": 0,
+          "brokerConnection": 1,
+          "liveness": 1,
+          "lastHeartbeatReceivedAt": "2026-10-28T12:25:13.0229497+09:00",
+          "lastTelemetryReceivedAt": "2026-10-28T12:25:13.1559809+09:00",
+          "revision": 1661
+        },
+        {
+          "amrId": "AMR_002",
+          "x": 5,
+          "y": -4,
+          "speedMps": 0.3333333333333333,
+          "state": 1,
+          "brokerConnection": 1,
+          "liveness": 1,
+          "lastHeartbeatReceivedAt": "2026-10-28T12:25:13.0230173+09:00",
+          "lastTelemetryReceivedAt": "2026-10-28T12:25:13.0893436+09:00",
+          "revision": 1661
+        }
+      ],
+      "statuses": [
+        {
+          "amrId": "AMR_001",
+          "communication": "CONNECTED",
+          "brokerConnection": 1,
+          "liveness": 1,
+          "lastHeartbeatReceivedAt": "2026-10-28T12:25:13.0229497+09:00",
+          "mission": {
+            "missionId": "AMR_001:3",
+            "state": "Running",
+            "completionObserved": false
+          },
+          "reason": null
+        },
+        {
+          "amrId": "AMR_002",
+          "communication": "CONNECTED",
+          "brokerConnection": 1,
+          "liveness": 1,
+          "lastHeartbeatReceivedAt": "2026-10-28T12:25:13.0230173+09:00",
+          "mission": {
+            "missionId": "AMR_002:3",
+            "state": "Running",
+            "completionObserved": false
+          },
+          "reason": null
+        }
+      ],
+      "alarms": []
+    },
+    "evidenceDirectory": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-verified"
+  },
+  "faultToFirstObservedMs": 5110,
+  "scenarioElapsedMs": 6349,
+  "firstTimeout": {
+    "navigation": {
+      "phase": "Running",
+      "start": {
+        "row": 0,
+        "col": 0
+      },
+      "goal": {
+        "row": 4,
+        "col": 5
+      },
+      "current": {
+        "row": 0,
+        "col": 1
+      },
+      "map": [
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "fixedObstacles": [
+        [
+          false,
+          false,
+          true,
+          false,
+          false,
+          false
+        ],
+        [
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          true,
+          false
+        ],
+        [
+          false,
+          true,
+          true,
+          false,
+          true,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "path": [
+        {
+          "row": 0,
+          "col": 1
+        },
+        {
+          "row": 1,
+          "col": 1
+        },
+        {
+          "row": 2,
+          "col": 1
+        },
+        {
+          "row": 2,
+          "col": 2
+        },
+        {
+          "row": 2,
+          "col": 3
+        }
+      ],
+      "traveled": [
+        {
+          "row": 0,
+          "col": 0
+        },
+        {
+          "row": 0,
+          "col": 1
+        }
+      ],
+      "remainingDistance": 4,
+      "moves": 1,
+      "replans": 3,
+      "mapVersion": 1,
+      "waypoints": [
+        {
+          "row": 2,
+          "col": 3
+        },
+        {
+          "row": 4,
+          "col": 3
+        },
+        {
+          "row": 4,
+          "col": 5
+        }
+      ],
+      "nextWaypointIndex": 0,
+      "currentTarget": {
+        "row": 2,
+        "col": 3
+      },
+      "reachedWaypoints": []
+    },
+    "source": "mqtt-grid-control-receiver",
+    "position": {
+      "row": 0,
+      "col": 1
+    },
+    "amrId": "AMR_001",
+    "receivedTelemetry": {
+      "id": "AMR_001",
+      "timestamp": 1793157918242,
+      "position": {
+        "x": 1,
+        "y": 0
+      },
+      "speed": 0.3333333333333333,
+      "state": "BUSY",
+      "receivedAtUtc": "2026-10-28T12:25:18.2435789+09:00"
+    },
+    "receivedHeartbeat": {
+      "id": "AMR_001",
+      "timestamp": 1793157913022,
+      "status": "OK",
+      "receivedAtUtc": "2026-10-28T12:25:13.0229497+09:00"
+    },
+    "receivedTrail": [
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 1
+      }
+    ],
+    "telemetryCount": 587,
+    "heartbeatCount": 287,
+    "rejectedCount": 0,
+    "lastPublishedTimestamp": null,
+    "brokerState": "Subscribed",
+    "failure": null,
+    "mqttEndpoint": "127.0.0.1:63917",
+    "logs": [
+      "Published",
+      "Communication",
+      "Delivered",
+      "Communication",
+      "DomainObserved"
+    ],
+    "heartbeatMonitor": {
+      "amrId": "AMR_001",
+      "state": "Unresponsive",
+      "monitoring": true,
+      "lastReceivedAtUtc": "2026-10-28T12:25:13.0229497+09:00",
+      "elapsedMilliseconds": 5271.7723,
+      "timeoutMilliseconds": 5000,
+      "checkIntervalMilliseconds": 500,
+      "timeoutCount": 1,
+      "recoveryCount": 0
+    },
+    "missionFinalReceived": false,
+    "fleet": [
+      {
+        "navigation": {
+          "phase": "Running",
+          "start": {
+            "row": 0,
+            "col": 0
+          },
+          "goal": {
+            "row": 4,
+            "col": 5
+          },
+          "current": {
+            "row": 0,
+            "col": 1
+          },
+          "map": [
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "fixedObstacles": [
+            [
+              false,
+              false,
+              true,
+              false,
+              false,
+              false
+            ],
+            [
+              true,
+              false,
+              true,
+              false,
+              true,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              true,
+              false
+            ],
+            [
+              false,
+              true,
+              true,
+              false,
+              true,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "path": [
+            {
+              "row": 0,
+              "col": 1
+            },
+            {
+              "row": 1,
+              "col": 1
+            },
+            {
+              "row": 2,
+              "col": 1
+            },
+            {
+              "row": 2,
+              "col": 2
+            },
+            {
+              "row": 2,
+              "col": 3
+            }
+          ],
+          "traveled": [
+            {
+              "row": 0,
+              "col": 0
+            },
+            {
+              "row": 0,
+              "col": 1
+            }
+          ],
+          "remainingDistance": 4,
+          "moves": 1,
+          "replans": 3,
+          "mapVersion": 1,
+          "waypoints": [
+            {
+              "row": 2,
+              "col": 3
+            },
+            {
+              "row": 4,
+              "col": 3
+            },
+            {
+              "row": 4,
+              "col": 5
+            }
+          ],
+          "nextWaypointIndex": 0,
+          "currentTarget": {
+            "row": 2,
+            "col": 3
+          },
+          "reachedWaypoints": []
+        },
+        "source": "mqtt-grid-control-receiver",
+        "position": {
+          "row": 0,
+          "col": 1
+        },
+        "amrId": "AMR_001",
+        "receivedTelemetry": {
+          "id": "AMR_001",
+          "timestamp": 1793157918242,
+          "position": {
+            "x": 1,
+            "y": 0
+          },
+          "speed": 0.3333333333333333,
+          "state": "BUSY",
+          "receivedAtUtc": "2026-10-28T12:25:18.2435789+09:00"
+        },
+        "receivedHeartbeat": {
+          "id": "AMR_001",
+          "timestamp": 1793157913022,
+          "status": "OK",
+          "receivedAtUtc": "2026-10-28T12:25:13.0229497+09:00"
+        },
+        "receivedTrail": [
+          {
+            "row": 0,
+            "col": 0
+          },
+          {
+            "row": 0,
+            "col": 1
+          }
+        ],
+        "telemetryCount": 587,
+        "heartbeatCount": 287,
+        "rejectedCount": 0,
+        "lastPublishedTimestamp": null,
+        "brokerState": "Subscribed",
+        "failure": null,
+        "mqttEndpoint": "127.0.0.1:63917",
+        "logs": [
+          "Published",
+          "Communication",
+          "Delivered",
+          "Communication",
+          "DomainObserved"
+        ],
+        "heartbeatMonitor": {
+          "amrId": "AMR_001",
+          "state": "Unresponsive",
+          "monitoring": true,
+          "lastReceivedAtUtc": "2026-10-28T12:25:13.0229497+09:00",
+          "elapsedMilliseconds": 5271.7723,
+          "timeoutMilliseconds": 5000,
+          "checkIntervalMilliseconds": 500,
+          "timeoutCount": 1,
+          "recoveryCount": 0
+        },
+        "missionFinalReceived": false
+      },
+      {
+        "navigation": {
+          "phase": "Running",
+          "start": {
+            "row": 4,
+            "col": 5
+          },
+          "goal": {
+            "row": 0,
+            "col": 0
+          },
+          "current": {
+            "row": 4,
+            "col": 4
+          },
+          "map": [
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "fixedObstacles": [
+            [
+              false,
+              false,
+              true,
+              false,
+              false,
+              false
+            ],
+            [
+              true,
+              false,
+              true,
+              false,
+              true,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              true,
+              false
+            ],
+            [
+              false,
+              true,
+              true,
+              false,
+              true,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "path": [
+            {
+              "row": 4,
+              "col": 4
+            },
+            {
+              "row": 4,
+              "col": 3
+            }
+          ],
+          "traveled": [
+            {
+              "row": 4,
+              "col": 5
+            },
+            {
+              "row": 4,
+              "col": 4
+            }
+          ],
+          "remainingDistance": 1,
+          "moves": 1,
+          "replans": 3,
+          "mapVersion": 1,
+          "waypoints": [
+            {
+              "row": 4,
+              "col": 3
+            },
+            {
+              "row": 2,
+              "col": 3
+            },
+            {
+              "row": 0,
+              "col": 0
+            }
+          ],
+          "nextWaypointIndex": 0,
+          "currentTarget": {
+            "row": 4,
+            "col": 3
+          },
+          "reachedWaypoints": []
+        },
+        "source": "mqtt-grid-control-receiver",
+        "position": {
+          "row": 4,
+          "col": 4
+        },
+        "amrId": "AMR_002",
+        "receivedTelemetry": {
+          "id": "AMR_002",
+          "timestamp": 1793157918209,
+          "position": {
+            "x": 4,
+            "y": -4
+          },
+          "speed": 0.3333333333333333,
+          "state": "BUSY",
+          "receivedAtUtc": "2026-10-28T12:25:18.2108136+09:00"
+        },
+        "receivedHeartbeat": {
+          "id": "AMR_002",
+          "timestamp": 1793157918112,
+          "status": "OK",
+          "receivedAtUtc": "2026-10-28T12:25:18.1136409+09:00"
+        },
+        "receivedTrail": [
+          {
+            "row": 4,
+            "col": 5
+          },
+          {
+            "row": 4,
+            "col": 4
+          }
+        ],
+        "telemetryCount": 582,
+        "heartbeatCount": 311,
+        "rejectedCount": 0,
+        "lastPublishedTimestamp": null,
+        "brokerState": "Subscribed",
+        "failure": null,
+        "mqttEndpoint": "127.0.0.1:63917",
+        "logs": [
+          "Published",
+          "Communication",
+          "Delivered",
+          "Communication",
+          "DomainObserved"
+        ],
+        "heartbeatMonitor": {
+          "amrId": "AMR_002",
+          "state": "Alive",
+          "monitoring": true,
+          "lastReceivedAtUtc": "2026-10-28T12:25:18.1136409+09:00",
+          "elapsedMilliseconds": 181.0873,
+          "timeoutMilliseconds": 5000,
+          "checkIntervalMilliseconds": 500,
+          "timeoutCount": 0,
+          "recoveryCount": 0
+        },
+        "missionFinalReceived": false
+      }
+    ],
+    "domain": {
+      "revision": 1777,
+      "devices": [
+        {
+          "amrId": "AMR_001",
+          "x": 1,
+          "y": 0,
+          "speedMps": 0.3333333333333333,
+          "state": 1,
+          "brokerConnection": 1,
+          "liveness": 2,
+          "lastHeartbeatReceivedAt": "2026-10-28T12:25:13.0229497+09:00",
+          "lastTelemetryReceivedAt": "2026-10-28T12:25:18.2435789+09:00",
+          "revision": 1777
+        },
+        {
+          "amrId": "AMR_002",
+          "x": 4,
+          "y": -4,
+          "speedMps": 0.3333333333333333,
+          "state": 1,
+          "brokerConnection": 1,
+          "liveness": 1,
+          "lastHeartbeatReceivedAt": "2026-10-28T12:25:18.1136409+09:00",
+          "lastTelemetryReceivedAt": "2026-10-28T12:25:18.2108136+09:00",
+          "revision": 1777
+        }
+      ],
+      "statuses": [
+        {
+          "amrId": "AMR_001",
+          "communication": "COMM_LOST",
+          "brokerConnection": 1,
+          "liveness": 2,
+          "lastHeartbeatReceivedAt": "2026-10-28T12:25:13.0229497+09:00",
+          "mission": {
+            "missionId": "AMR_001:3",
+            "state": "OnHold",
+            "completionObserved": false
+          },
+          "reason": null
+        },
+        {
+          "amrId": "AMR_002",
+          "communication": "CONNECTED",
+          "brokerConnection": 1,
+          "liveness": 1,
+          "lastHeartbeatReceivedAt": "2026-10-28T12:25:18.1136409+09:00",
+          "mission": {
+            "missionId": "AMR_002:3",
+            "state": "Running",
+            "completionObserved": false
+          },
+          "reason": null
+        }
+      ],
+      "alarms": [
+        {
+          "amrId": "AMR_001",
+          "code": "COMM_LOST",
+          "message": "AMR Heartbeat 응답 없음",
+          "observedAt": "2026-10-28T12:25:18.2927567+09:00",
+          "revision": 1777
+        }
+      ]
+    },
+    "evidenceDirectory": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-verified"
+  },
+  "after": {
+    "navigation": {
+      "phase": "Running",
+      "start": {
+        "row": 0,
+        "col": 0
+      },
+      "goal": {
+        "row": 4,
+        "col": 5
+      },
+      "current": {
+        "row": 1,
+        "col": 1
+      },
+      "map": [
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "fixedObstacles": [
+        [
+          false,
+          false,
+          true,
+          false,
+          false,
+          false
+        ],
+        [
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          true,
+          false
+        ],
+        [
+          false,
+          true,
+          true,
+          false,
+          true,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "path": [
+        {
+          "row": 1,
+          "col": 1
+        },
+        {
+          "row": 2,
+          "col": 1
+        },
+        {
+          "row": 2,
+          "col": 2
+        },
+        {
+          "row": 2,
+          "col": 3
+        }
+      ],
+      "traveled": [
+        {
+          "row": 0,
+          "col": 0
+        },
+        {
+          "row": 0,
+          "col": 1
+        },
+        {
+          "row": 1,
+          "col": 1
+        }
+      ],
+      "remainingDistance": 3,
+      "moves": 2,
+      "replans": 5,
+      "mapVersion": 1,
+      "waypoints": [
+        {
+          "row": 2,
+          "col": 3
+        },
+        {
+          "row": 4,
+          "col": 3
+        },
+        {
+          "row": 4,
+          "col": 5
+        }
+      ],
+      "nextWaypointIndex": 0,
+      "currentTarget": {
+        "row": 2,
+        "col": 3
+      },
+      "reachedWaypoints": []
+    },
+    "source": "mqtt-grid-control-receiver",
+    "position": {
+      "row": 1,
+      "col": 1
+    },
+    "amrId": "AMR_001",
+    "receivedTelemetry": {
+      "id": "AMR_001",
+      "timestamp": 1793157919460,
+      "position": {
+        "x": 1,
+        "y": -1
+      },
+      "speed": 0.3333333333333333,
+      "state": "BUSY",
+      "receivedAtUtc": "2026-10-28T12:25:19.4616861+09:00"
+    },
+    "receivedHeartbeat": {
+      "id": "AMR_001",
+      "timestamp": 1793157913022,
+      "status": "OK",
+      "receivedAtUtc": "2026-10-28T12:25:13.0229497+09:00"
+    },
+    "receivedTrail": [
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 1
+      }
+    ],
+    "telemetryCount": 598,
+    "heartbeatCount": 287,
+    "rejectedCount": 0,
+    "lastPublishedTimestamp": null,
+    "brokerState": "Subscribed",
+    "failure": null,
+    "mqttEndpoint": "127.0.0.1:63917",
+    "logs": [
+      "Published",
+      "Communication",
+      "Delivered",
+      "Communication",
+      "Delivered"
+    ],
+    "heartbeatMonitor": {
+      "amrId": "AMR_001",
+      "state": "Unresponsive",
+      "monitoring": true,
+      "lastReceivedAtUtc": "2026-10-28T12:25:13.0229497+09:00",
+      "elapsedMilliseconds": 6507.6305,
+      "timeoutMilliseconds": 5000,
+      "checkIntervalMilliseconds": 500,
+      "timeoutCount": 1,
+      "recoveryCount": 0
+    },
+    "missionFinalReceived": false,
+    "fleet": [
+      {
+        "navigation": {
+          "phase": "Running",
+          "start": {
+            "row": 0,
+            "col": 0
+          },
+          "goal": {
+            "row": 4,
+            "col": 5
+          },
+          "current": {
+            "row": 1,
+            "col": 1
+          },
+          "map": [
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "fixedObstacles": [
+            [
+              false,
+              false,
+              true,
+              false,
+              false,
+              false
+            ],
+            [
+              true,
+              false,
+              true,
+              false,
+              true,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              true,
+              false
+            ],
+            [
+              false,
+              true,
+              true,
+              false,
+              true,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "path": [
+            {
+              "row": 1,
+              "col": 1
+            },
+            {
+              "row": 2,
+              "col": 1
+            },
+            {
+              "row": 2,
+              "col": 2
+            },
+            {
+              "row": 2,
+              "col": 3
+            }
+          ],
+          "traveled": [
+            {
+              "row": 0,
+              "col": 0
+            },
+            {
+              "row": 0,
+              "col": 1
+            },
+            {
+              "row": 1,
+              "col": 1
+            }
+          ],
+          "remainingDistance": 3,
+          "moves": 2,
+          "replans": 5,
+          "mapVersion": 1,
+          "waypoints": [
+            {
+              "row": 2,
+              "col": 3
+            },
+            {
+              "row": 4,
+              "col": 3
+            },
+            {
+              "row": 4,
+              "col": 5
+            }
+          ],
+          "nextWaypointIndex": 0,
+          "currentTarget": {
+            "row": 2,
+            "col": 3
+          },
+          "reachedWaypoints": []
+        },
+        "source": "mqtt-grid-control-receiver",
+        "position": {
+          "row": 1,
+          "col": 1
+        },
+        "amrId": "AMR_001",
+        "receivedTelemetry": {
+          "id": "AMR_001",
+          "timestamp": 1793157919460,
+          "position": {
+            "x": 1,
+            "y": -1
+          },
+          "speed": 0.3333333333333333,
+          "state": "BUSY",
+          "receivedAtUtc": "2026-10-28T12:25:19.4616861+09:00"
+        },
+        "receivedHeartbeat": {
+          "id": "AMR_001",
+          "timestamp": 1793157913022,
+          "status": "OK",
+          "receivedAtUtc": "2026-10-28T12:25:13.0229497+09:00"
+        },
+        "receivedTrail": [
+          {
+            "row": 0,
+            "col": 0
+          },
+          {
+            "row": 0,
+            "col": 1
+          },
+          {
+            "row": 1,
+            "col": 1
+          }
+        ],
+        "telemetryCount": 598,
+        "heartbeatCount": 287,
+        "rejectedCount": 0,
+        "lastPublishedTimestamp": null,
+        "brokerState": "Subscribed",
+        "failure": null,
+        "mqttEndpoint": "127.0.0.1:63917",
+        "logs": [
+          "Published",
+          "Communication",
+          "Delivered",
+          "Communication",
+          "Delivered"
+        ],
+        "heartbeatMonitor": {
+          "amrId": "AMR_001",
+          "state": "Unresponsive",
+          "monitoring": true,
+          "lastReceivedAtUtc": "2026-10-28T12:25:13.0229497+09:00",
+          "elapsedMilliseconds": 6507.6305,
+          "timeoutMilliseconds": 5000,
+          "checkIntervalMilliseconds": 500,
+          "timeoutCount": 1,
+          "recoveryCount": 0
+        },
+        "missionFinalReceived": false
+      },
+      {
+        "navigation": {
+          "phase": "Running",
+          "start": {
+            "row": 4,
+            "col": 5
+          },
+          "goal": {
+            "row": 0,
+            "col": 0
+          },
+          "current": {
+            "row": 4,
+            "col": 3
+          },
+          "map": [
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "fixedObstacles": [
+            [
+              false,
+              false,
+              true,
+              false,
+              false,
+              false
+            ],
+            [
+              true,
+              false,
+              true,
+              false,
+              true,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              true,
+              false
+            ],
+            [
+              false,
+              true,
+              true,
+              false,
+              true,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "path": [
+            {
+              "row": 4,
+              "col": 3
+            },
+            {
+              "row": 3,
+              "col": 3
+            },
+            {
+              "row": 2,
+              "col": 3
+            }
+          ],
+          "traveled": [
+            {
+              "row": 4,
+              "col": 5
+            },
+            {
+              "row": 4,
+              "col": 4
+            },
+            {
+              "row": 4,
+              "col": 3
+            }
+          ],
+          "remainingDistance": 2,
+          "moves": 2,
+          "replans": 5,
+          "mapVersion": 1,
+          "waypoints": [
+            {
+              "row": 4,
+              "col": 3
+            },
+            {
+              "row": 2,
+              "col": 3
+            },
+            {
+              "row": 0,
+              "col": 0
+            }
+          ],
+          "nextWaypointIndex": 1,
+          "currentTarget": {
+            "row": 2,
+            "col": 3
+          },
+          "reachedWaypoints": [
+            {
+              "index": 0,
+              "cell": {
+                "row": 4,
+                "col": 3
+              },
+              "moves": 2
+            }
+          ]
+        },
+        "source": "mqtt-grid-control-receiver",
+        "position": {
+          "row": 4,
+          "col": 3
+        },
+        "amrId": "AMR_002",
+        "receivedTelemetry": {
+          "id": "AMR_002",
+          "timestamp": 1793157919460,
+          "position": {
+            "x": 3,
+            "y": -4
+          },
+          "speed": 0.3333333333333333,
+          "state": "BUSY",
+          "receivedAtUtc": "2026-10-28T12:25:19.4616672+09:00"
+        },
+        "receivedHeartbeat": {
+          "id": "AMR_002",
+          "timestamp": 1793157919363,
+          "status": "OK",
+          "receivedAtUtc": "2026-10-28T12:25:19.3644046+09:00"
+        },
+        "receivedTrail": [
+          {
+            "row": 4,
+            "col": 5
+          },
+          {
+            "row": 4,
+            "col": 4
+          },
+          {
+            "row": 4,
+            "col": 3
+          }
+        ],
+        "telemetryCount": 593,
+        "heartbeatCount": 317,
+        "rejectedCount": 0,
+        "lastPublishedTimestamp": null,
+        "brokerState": "Subscribed",
+        "failure": null,
+        "mqttEndpoint": "127.0.0.1:63917",
+        "logs": [
+          "Published",
+          "Communication",
+          "Delivered",
+          "Communication",
+          "Delivered"
+        ],
+        "heartbeatMonitor": {
+          "amrId": "AMR_002",
+          "state": "Alive",
+          "monitoring": true,
+          "lastReceivedAtUtc": "2026-10-28T12:25:19.3644046+09:00",
+          "elapsedMilliseconds": 166.1774,
+          "timeoutMilliseconds": 5000,
+          "checkIntervalMilliseconds": 500,
+          "timeoutCount": 0,
+          "recoveryCount": 0
+        },
+        "missionFinalReceived": false
+      }
+    ],
+    "domain": {
+      "revision": 1805,
+      "devices": [
+        {
+          "amrId": "AMR_001",
+          "x": 1,
+          "y": -1,
+          "speedMps": 0.3333333333333333,
+          "state": 1,
+          "brokerConnection": 1,
+          "liveness": 2,
+          "lastHeartbeatReceivedAt": "2026-10-28T12:25:13.0229497+09:00",
+          "lastTelemetryReceivedAt": "2026-10-28T12:25:19.4616861+09:00",
+          "revision": 1805
+        },
+        {
+          "amrId": "AMR_002",
+          "x": 3,
+          "y": -4,
+          "speedMps": 0.3333333333333333,
+          "state": 1,
+          "brokerConnection": 1,
+          "liveness": 1,
+          "lastHeartbeatReceivedAt": "2026-10-28T12:25:19.3644046+09:00",
+          "lastTelemetryReceivedAt": "2026-10-28T12:25:19.4616672+09:00",
+          "revision": 1805
+        }
+      ],
+      "statuses": [
+        {
+          "amrId": "AMR_001",
+          "communication": "COMM_LOST",
+          "brokerConnection": 1,
+          "liveness": 2,
+          "lastHeartbeatReceivedAt": "2026-10-28T12:25:13.0229497+09:00",
+          "mission": {
+            "missionId": "AMR_001:3",
+            "state": "OnHold",
+            "completionObserved": false
+          },
+          "reason": null
+        },
+        {
+          "amrId": "AMR_002",
+          "communication": "CONNECTED",
+          "brokerConnection": 1,
+          "liveness": 1,
+          "lastHeartbeatReceivedAt": "2026-10-28T12:25:19.3644046+09:00",
+          "mission": {
+            "missionId": "AMR_002:3",
+            "state": "Running",
+            "completionObserved": false
+          },
+          "reason": null
+        }
+      ],
+      "alarms": [
+        {
+          "amrId": "AMR_001",
+          "code": "COMM_LOST",
+          "message": "AMR Heartbeat 응답 없음",
+          "observedAt": "2026-10-28T12:25:18.2927567+09:00",
+          "revision": 1777
+        }
+      ]
+    },
+    "evidenceDirectory": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-verified"
+  }
+}

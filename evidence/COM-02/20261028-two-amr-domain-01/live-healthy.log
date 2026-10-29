@@ -1,0 +1,6 @@
+Exception: C:\amr-control-system-demo\tests\manual\COM02-A\Verify-TwoAmr.ps1:19
+Line |
+  19 |  …  $deadline);throw "State timeout: $($s.domain.statuses|ConvertTo-Json …
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | State timeout:
+     | [{"amrId":"AMR_001","communication":"BROKER_LOST","brokerConnection":2,"liveness":0,"lastHeartbeatReceivedAt":null,"mission":{"missionId":null,"state":"None","completionObserved":false},"reason":"BrokerDisconnected"},{"amrId":"AMR_002","communication":"BROKER_LOST","brokerConnection":2,"liveness":0,"lastHeartbeatReceivedAt":null,"mission":{"missionId":null,"state":"None","completionObserved":false},"reason":"BrokerDisconnected"}]

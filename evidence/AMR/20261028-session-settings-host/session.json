@@ -1,0 +1,12 @@
+{
+  "RunId": "20261028-session-settings-host",
+  "Url": "http://127.0.0.1:58019",
+  "ContainerId": "4215a98b626aa4605b5feecea9349e3c3ac7e0195ebe86d75c4bce6b239f772d",
+  "ServerStartTicks": 639287506172467310,
+  "ImageId": "sha256:38c0da4f2ef84284d47b3b3eeea1cb3bdeabe81ee10caf0cd5c5ff61ee3ea408",
+  "Exe": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\ControlSessionVerify\\Amr.Simulator.Map.exe",
+  "ProductEvidence": "C:\\amr-control-system-demo\\evidence\\AMR\\mission-live-20261028-111657-1d5c0562e900485b9d2d89ff188ff71f",
+  "BrokerPort": 58006,
+  "Started": "2026-10-28T11:16:57.6080981+09:00",
+  "ServerPid": 5964
+}

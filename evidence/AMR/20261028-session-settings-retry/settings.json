@@ -1,0 +1,58 @@
+{
+  "webPort": 0,
+  "waypoints": [
+    {
+      "row": 0,
+      "col": 7
+    },
+    {
+      "row": 2,
+      "col": 7
+    }
+  ],
+  "start": {
+    "row": 0,
+    "col": 0
+  },
+  "mqtt": {
+    "port": 51553,
+    "telemetryMs": 70,
+    "enabled": true,
+    "host": "127.0.0.1",
+    "heartbeatMs": 200
+  },
+  "stepIntervalMs": 100,
+  "map": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "amrId": "CONFIG_AMR_A"
+}

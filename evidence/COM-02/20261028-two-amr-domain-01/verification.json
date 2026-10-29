@@ -1,0 +1,76 @@
+{
+  "newNativeF5Executed": false,
+  "missionPolicy": "Core hold + active alarm; recovery clears alarm but explicit resume required; no physical STOP",
+  "projectResults": [
+    {
+      "total": 9,
+      "file": "verified_net10.0_20261028122535.trx",
+      "outcome": "Completed",
+      "notExecuted": 0,
+      "failed": 0,
+      "passed": 9
+    },
+    {
+      "total": 202,
+      "file": "verified_net10.0_20261028122536.trx",
+      "outcome": "Completed",
+      "notExecuted": 0,
+      "failed": 0,
+      "passed": 202
+    },
+    {
+      "total": 53,
+      "file": "verified_net10.0_20261028122537.trx",
+      "outcome": "Completed",
+      "notExecuted": 0,
+      "failed": 0,
+      "passed": 53
+    },
+    {
+      "total": 805,
+      "file": "verified_net10.0_20261028122539.trx",
+      "outcome": "Completed",
+      "notExecuted": 0,
+      "failed": 0,
+      "passed": 805
+    },
+    {
+      "total": 72,
+      "file": "verified_net10.0_20261028122606.trx",
+      "outcome": "Completed",
+      "notExecuted": 0,
+      "failed": 0,
+      "passed": 72
+    }
+  ],
+  "guiStates": [
+    "TwoAlive",
+    "A1Unresponsive/A2Alive",
+    "RecoveredAndHeld",
+    "BrokerLostBothHeld"
+  ],
+  "realFleetRun": "../20261028-two-amr-verified",
+  "firstTimeoutHeartbeatElapsedMs": 5271.7723,
+  "legacyGridCases": 15,
+  "head": "4e44fa880cb0d1fcccb000dbc53e634fd90381b5",
+  "guiGracefulCloseVerified": false,
+  "totalPassed": 1141.0,
+  "newTests": 25,
+  "firstTimeoutObservedMs": 5110,
+  "originalF5ProfilePreserved": true,
+  "independentQueues": {
+    "after": {
+      "AMR_001": 903,
+      "AMR_002": 955
+    },
+    "before": {
+      "AMR_001": 903,
+      "AMR_002": 935
+    }
+  },
+  "clientDate": "2026-10-28",
+  "commitPushPrMergePerformed": false,
+  "branch": "feature/46-grid-map-integration",
+  "runId": "20261028-two-amr-domain-01",
+  "documentationAndFinalSourceVerified": true
+}

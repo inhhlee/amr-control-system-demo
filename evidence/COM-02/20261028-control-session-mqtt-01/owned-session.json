@@ -1,0 +1,7 @@
+{
+  "BrokerPort": 59874,
+  "Exe": "C:\\amr-control-system-demo\\tests\\manual\\COM02-A\\HeartbeatProbe\\bin\\ControlSessionVerify\\HeartbeatProbe.exe",
+  "ProcessId": 54324,
+  "ContainerId": "ec65e524b41bb637a391e934207ab3eb3d75bc536d773dd37bf6d5a9b26deb7f",
+  "ProcessStartTicks": 639287502129173759
+}

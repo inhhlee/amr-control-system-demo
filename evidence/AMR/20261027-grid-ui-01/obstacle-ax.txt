@@ -1,0 +1,41 @@
+Browser tab: 1, Title: "AMR 경유점 이동 · 장애물 우회", URL: "http://127.0.0.1:50695/".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 148-166, 170-177
++						148 text 4
++						149 text 3
+~					50 button Description: 2행 2열 추가 장애물, 누르면 제거, Help: (2, 2) 추가 장애물, 누르면 제거
++						150 text ■
++						151 text W1
++						152 text ■
++						153 text 5
++						154 text ■
++						155 text ■
++						156 text 10
++						157 text ■
++						158 text 6
++						159 text 7
++						160 text 8
++						161 text W2
++						162 text G
++				163 text S (0, 0) → W1 (2, 3) → W2 (4, 3) → G (4, 5)
++				164 text 한 칸 이동 0.6초 · 설정: C:\amr-control-system-demo\config\map-demo\settings.json · 파일 변경 후 서버를 다시 시작해 주세요.
++					165 text MQTT 연결 중
++				166 text 관제가 먼저 구독한 뒤 AMR이 위치 송신을 시작합니다.
+~						168 AXListMarker 1. 
+~						169 text 경유점 1 (2, 3) · 현재 목표
++					170 container
++						171 AXListMarker 2. 
++						172 text 경유점 2 (4, 3) · 방문 예정
++					173 container
++						174 AXListMarker 3. 
++						175 text 목적지 (4, 5) · 방문 예정
++						176 text 수신 (행, 열)
++					177 text 수신 대기
++					178 text W1 (2, 3)
++					179 text 11칸
++					180 text 0 / 3
++					181 text 0회
++					182 text 2회
++				183 text 관제 위치 수신 0건 · Heartbeat 0건 · 거부 0건
+수신 상태 대기 · 속도 — m/s · Broker 127.0.0.1:50693
+The focused UI element is 0 AXWebArea AMR 경유점 이동 · 장애물 우회, URL: 127.0.0.1:50695/

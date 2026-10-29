@@ -1,0 +1,13 @@
+  Amr.Communication -> C:\amr-control-system-demo\src\Amr.Communication\bin\TwoAmrVerify\Amr.Communication.dll
+  Amr.Simulator -> C:\amr-control-system-demo\src\Amr.Simulator\bin\TwoAmrVerify\Amr.Simulator.dll
+  Amr.Core -> C:\amr-control-system-demo\src\Amr.Core\bin\TwoAmrVerify\Amr.Core.dll
+  Amr.Simulator.Map -> C:\amr-control-system-demo\tools\Amr.Simulator.Map\bin\TwoAmrVerify\Amr.Simulator.Map.dll
+C:\amr-control-system-demo\tests\manual\COM02-A\FleetProbe\Program.cs(58,70): error CS0535: 'GatedTransport'은(는) 'IDisposable.Dispose()' 인터페이스 멤버를 구현하지 않습니다. [C:\amr-control-system-demo\tests\manual\COM02-A\FleetProbe\FleetProbe.csproj]
+
+빌드하지 못했습니다.
+
+C:\amr-control-system-demo\tests\manual\COM02-A\FleetProbe\Program.cs(58,70): error CS0535: 'GatedTransport'은(는) 'IDisposable.Dispose()' 인터페이스 멤버를 구현하지 않습니다. [C:\amr-control-system-demo\tests\manual\COM02-A\FleetProbe\FleetProbe.csproj]
+    경고 0개
+    오류 1개
+
+경과 시간: 00:00:02.40

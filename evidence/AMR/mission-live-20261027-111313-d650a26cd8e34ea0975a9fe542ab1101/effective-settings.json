@@ -1,0 +1,10 @@
+{
+  "configurationPath": "C:\\amr-control-system-demo\\evidence\\AMR\\20261027-grid-settings-01\\settings.json",
+  "stepIntervalMs": 180,
+  "mqtt": {
+    "host": "127.0.0.1",
+    "port": 50693,
+    "telemetryMs": 70,
+    "heartbeatMs": 200
+  }
+}

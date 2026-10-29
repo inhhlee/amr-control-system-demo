@@ -1,0 +1,12 @@
+{
+  "Started": "2026-10-27T14:18:04.2556247+09:00",
+  "ImageId": "sha256:38c0da4f2ef84284d47b3b3eeea1cb3bdeabe81ee10caf0cd5c5ff61ee3ea408",
+  "Url": "http://127.0.0.1:61271",
+  "BrokerPort": 61267,
+  "ServerStartTicks": 639286750837096216,
+  "RunId": "20261027-hb-grid-regression-host",
+  "ServerPid": 14460,
+  "ProductEvidence": "C:\\amr-control-system-demo\\evidence\\AMR\\mission-live-20261027-141803-d3fdba9e97db4494a2d9ba7dcf6133fc",
+  "Exe": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\HeartbeatVerify\\Amr.Simulator.Map.exe",
+  "ContainerId": "0486062d2a8b852fa9481b7d0a825ce4889103a553341c0a35a4ad44db8e8dc4"
+}

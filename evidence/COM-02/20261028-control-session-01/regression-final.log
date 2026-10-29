@@ -1,0 +1,26 @@
+C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\ControlSessionVerify\Amr.Simulator.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\ControlSessionVerify\Amr.Communication.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\ControlSessionVerify\Amr.Simulator.Map.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\ControlSessionVerify\Amr.ControlGui.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+결과 파일: C:\amr-control-system-demo\evidence\COM-02\20261028-control-session-01\regression-final_net10.0_20261028112523.trx
+
+통과!  - 실패:     0, 통과:   202, 건너뜀:     0, 전체:   202, 기간: 1 s - Amr.Simulator.Tests.dll (net10.0)
+결과 파일: C:\amr-control-system-demo\evidence\COM-02\20261028-control-session-01\regression-final_net10.0_20261028112524.trx
+
+통과!  - 실패:     0, 통과:    49, 건너뜀:     0, 전체:    49, 기간: 2 s - Amr.ControlGui.Tests.dll (net10.0)
+활성 테스트 실행이 중단되었습니다. 이유: 테스트 호스트 프로세스 작동이 중단됨 : Unhandled exception. System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.Threading.PeriodicTimer.Dispose()
+   at System.Threading.PeriodicTimer.Finalize()
+   at System.GC.RunFinalizers()
+
+결과 파일: C:\amr-control-system-demo\evidence\COM-02\20261028-control-session-01\regression-final_net10.0_20261028112525.trx
+
+통과!  - 실패:     0, 통과:   765, 건너뜀:     0, 전체:   765, 기간: 1 s - Amr.Communication.Tests.dll (net10.0)
+테스트 실행이 중단되었습니다.
+결과 파일: C:\amr-control-system-demo\evidence\COM-02\20261028-control-session-01\regression-final_net10.0_20261028112553.trx
+
+통과!  - 실패:     0, 통과:    66, 건너뜀:     0, 전체:    66, 기간: 30 s - Amr.Simulator.Map.Tests.dll (net10.0)

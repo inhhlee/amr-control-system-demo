@@ -1,0 +1,7 @@
+{
+  "webPort": 0,
+  "missions": [
+    "settings.json",
+    "settings.amr002.json"
+  ]
+}
