@@ -1,0 +1,11 @@
+{
+  "url": "http://127.0.0.1:62325",
+  "processId": 44444,
+  "sessionId": "c102a475-5d6d-459b-9b11-5a3b5f9ac98a",
+  "amrIds": [
+    "AMR_001",
+    "AMR_002"
+  ],
+  "brokerPort": 62322,
+  "evidenceDirectory": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-live-final"
+}

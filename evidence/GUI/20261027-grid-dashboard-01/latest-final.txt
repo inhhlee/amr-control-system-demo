@@ -1,0 +1,99 @@
+Window: "AMR 관제 · 격자 MQTT · http://127.0.0.1:49201/", App: Amr.ControlGui.exe.
+	0 창 AMR 관제 · 격자 MQTT · http://127.0.0.1:49201/ Secondary Actions: Raise
+		1 창
+			2 창
+				3 창
+					4 창
+						5 창
+							6 창
+								7 텍스트 통신 상태
+								8 텍스트 연결 미확인 ID: communicationValue
+								9 텍스트 연결 0 · 끊김 0 · 미확인 1 ID: communicationDetail
+						10 창 연결 0 · 끊김 0 · 미확인 1
+							11 창 연결 0 · 끊김 0 · 미확인 1
+								12 텍스트 AMR 연결 현황
+								13 텍스트 전체 1대 ID: devicesValue
+								14 텍스트 생존 확인 0 · 응답 없음 0 미확인 1 ID: devicesDetail
+						15 창 생존 확인 0 · 응답 없음 0 미확인 1
+							16 창 생존 확인 0 · 응답 없음 0 미확인 1
+								17 텍스트 AMR 운행 상태
+								18 텍스트 대기 1 · 이동 0 ID: operationValue
+								19 텍스트 정지 0 · 오류 0 ID: operationDetail
+						20 창 정지 0 · 오류 0
+							21 창 정지 0 · 오류 0
+								22 텍스트 알람 · 명령 요약
+								23 텍스트 미확인 ID: alarmsValue
+								24 텍스트 알람 · 업무 명령 데이터 미연결 ID: alarmsDetail
+					25 창 알람 · 업무 명령 데이터 미연결
+						26 텍스트 공급자의 현재 상태 기준 ID: summarySource
+						27 텍스트 MQTT · 격자 시연 ID: modeLabel
+				28 텍스트 대시보드
+			29 창 대시보드
+				30 창 대시보드
+					31 창 대시보드
+						32 창 대시보드
+							33 텍스트 격자 · MQTT 수신 위치 · 장애물 클릭 편집 ID: mapCaption
+							34 창 격자 · MQTT 수신 위치 · 장애물 클릭 편집
+								35 이미지 AMR 위치 지도 ID: mapCanvas
+								36 창
+									37 텍스트 선택한 AMR 정보 ID: selectedTitle
+									38 텍스트 AMR_001 X 5 m / Y -4 m 속도 0 m/s · 대기 수신 세션 Closed 생존 미판정 · Heartbeat 13:31:53 Telemetry 13:31:54 다음 목표 모두 방문 남은 0칸 (0m) ID: detailsLabel
+							39 창 AMR_001 X 5 m / Y -4 m 속도 0 m/s · 대기 수신 세션 Closed 생존 미판정 · Heartbeat 13:31:53 Telemetry 13:31:54 다음 목표 모두 방문 남은 0칸 (0m) ID: mapLegend
+								40 창 AMR_001 X 5 m / Y -4 m 속도 0 m/s · 대기 수신 세션 Closed 생존 미판정 · Heartbeat 13:31:53 Telemetry 13:31:54 다음 목표 모두 방문 남은 0칸 (0m)
+									41 텍스트 ● 대기
+									42 텍스트 ● 이동
+									43 텍스트 ● 정지
+									44 텍스트 ● 오류
+									45 텍스트 ◎ 선택
+									46 텍스트 ◌ 연결 끊김/응답 없음
+								47 텍스트 청록: 수신 궤적 · 파랑 점선: 예정 · 주황: 추가 장애물 ID: mapSource
+					48 텍스트 지도
+				49 창 지도
+					50 창 지도
+						51 창 지도
+							52 텍스트 격자 시연에서 알람 데이터를 제공하지 않습니다. ID: alarmSummary
+						53 텍스트 알람
+					54 창 알람
+						55 창 알람
+							56 창 알람
+								57 창 알람
+									58 창 Y
+										59 단추 출발 ID: gridStartButton
+										60 단추 (disabled) 이동 중단 ID: gridCancelButton
+										61 단추 지도 초기화 ID: gridResetButton
+								62 텍스트 출발/중단/초기화는 시연 제어입니다. MQTT Command/ACK 업무와 구분합니다. ID: submissionLabel
+								63 창 출발/중단/초기화는 시연 제어입니다. MQTT Command/ACK 업무와 구분합니다.
+									64 텍스트 도착 · 수신 확인 · 15회 이동 다음 목표 모두 방문 · 남은 0칸 (0m) 경유 3/3 · 위치 수신 17 · Heartbeat 2 수신 세션 Closed · 127.0.0.1:49200 ID: gridDetails
+						65 텍스트 명령 · 격자 시연 제어
+			66 창 명령 · 격자 시연 제어
+				67 창 명령 · 격자 시연 제어
+					68 창 명령 · 격자 시연 제어
+						69 데이터 그리드 장비 목록 ID: deviceGrid
+							70 custom 상위 행
+								71 머리글 장비 ID ID: 4252446498
+								72 머리글 X (m) ID: 4210715840
+								73 머리글 Y (m) ID: 425088196
+								74 머리글 속도 (m/s) ID: 4266146549
+								75 머리글 운행 상태 ID: 4254598769
+							76 custom 행 1
+								77 항목 장비 ID 행 1, 정렬되지 않았습니다. Value: AMR_001 ID: 4233277664
+								78 항목 X (m) 행 1, 정렬되지 않았습니다. Value: 5 ID: 4229956454
+								79 항목 Y (m) 행 1, 정렬되지 않았습니다. Value: -4 ID: 4253889591
+								80 항목 속도 (m/s) 행 1, 정렬되지 않았습니다. Value: 0 ID: 4229476047
+								81 항목 운행 상태 행 1, 정렬되지 않았습니다. Value: 대기 ID: 4247644299
+					82 텍스트 장비 목록 · 지도와 선택 연동
+				83 창 장비 목록 · 지도와 선택 연동
+					84 창 장비 목록 · 지도와 선택 연동
+						85 텍스트 격자 세션 로그 (DB 업무 이력 아님) GridControlReceived Phase=Completed Position=(4,5) Remaining=0 Moves=15 WaypointsPassed=3/3 Replans=31 MapVersion=1 GridFinalReceived Phase=WaitingForTelemetry Position=(4,5) Remaining=0 Moves=15 WaypointsPassed=3/3 Replans=31 MapVersion=1 GridMqttEnded Phase=Completed Position=(4,5) Remaining=0 Moves=15 WaypointsPassed=3/3 Replans=31 MapVersion=1 ID: historyNote
+					86 텍스트 이력
+			87 텍스트 AMR_001 · 도착 · 수신 확인 · 15회 · MQTT 수신 (4,5) ID: statusLabel
+		88 제목 표시줄 (settable, string) Value: AMR 관제 · 격자 MQTT · http://127.0.0.1:49201/
+			89 메뉴 모음 시스템 ID: MenuBar
+				90 메뉴 항목 시스템
+			91 단추 최소화
+			92 단추 최대화
+			93 단추 닫기
+
+The focused UI element is 77 항목 장비 ID 행 1, 정렬되지 않았습니다. Value: AMR_001 ID: 4233277664.
+
+Focused element: 77 항목 장비 ID 행 1, 정렬되지 않았습니다. Value: AMR_001 ID: 4233277664

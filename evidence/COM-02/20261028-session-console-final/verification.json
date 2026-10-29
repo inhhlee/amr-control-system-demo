@@ -1,0 +1,24 @@
+[
+  {
+    "verdict": "passed",
+    "name": "map-free-valid-heartbeat"
+  },
+  {
+    "verdict": "passed",
+    "name": "timeout-valid-target-only"
+  },
+  {
+    "exitCode": 1,
+    "name": "recovery-and-broker-loss-exit",
+    "verdict": "passed"
+  },
+  {
+    "exitCode": 0,
+    "name": "fresh-session-and-owner-cancel",
+    "verdict": "passed"
+  },
+  {
+    "verdict": "passed",
+    "name": "owned-cleanup-existing-containers"
+  }
+]

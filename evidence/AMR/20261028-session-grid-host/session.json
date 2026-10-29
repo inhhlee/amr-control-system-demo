@@ -1,0 +1,12 @@
+{
+  "BrokerPort": 51553,
+  "RunId": "20261028-session-grid-host",
+  "Url": "http://127.0.0.1:51557",
+  "ImageId": "sha256:38c0da4f2ef84284d47b3b3eeea1cb3bdeabe81ee10caf0cd5c5ff61ee3ea408",
+  "Started": "2026-10-28T11:12:55.0086387+09:00",
+  "Exe": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\ControlSessionVerify\\Amr.Simulator.Map.exe",
+  "ServerPid": 1420,
+  "ContainerId": "8633fd708184d8b165c7525e7e883535730b40315e1b16f6e093ba9c920512a7",
+  "ServerStartTicks": 639287503744871347,
+  "ProductEvidence": "C:\\amr-control-system-demo\\evidence\\AMR\\mission-live-20261028-111254-9c7db4ef187f43d288d96cf13dd397d4"
+}

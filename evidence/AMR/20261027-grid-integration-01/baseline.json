@@ -1,0 +1,383 @@
+{
+  "issue": "https://github.com/inhhlee/amr-control-system-demo/issues/46",
+  "branch": "feature/46-grid-map-integration",
+  "base": "4e44fa880cb0d1fcccb000dbc53e634fd90381b5",
+  "source": "4b9f950555aff6ad23e67495b5d0ec9cb9371b3b",
+  "stash": "1fffc4b4fef06b7e63d95f84724f5f2fc96ddc0b",
+  "protectedFiles": [
+    {
+      "path": "src/Amr.Communication.Console/Amr.Communication.Console.csproj",
+      "sha256": "D2E902231968D3B2214955E0BC2D7FCED4607AA3A08F2B5530D15004093F22F3"
+    },
+    {
+      "path": "src/Amr.Communication.Console/CommandConsoleRunner.cs",
+      "sha256": "BD211AA52F54CCD31A8B3CBDE504B34BE6EF3FAB73FEFE523C7CFC539962BFFA"
+    },
+    {
+      "path": "src/Amr.Communication.Console/ConsoleRunner.cs",
+      "sha256": "968646AF29EA5D97AE7650D4061BA2CD6E76C2781C6BB38E4524D66AEE7EE4FE"
+    },
+    {
+      "path": "src/Amr.Communication.Console/Logging/SeqLogSink.cs",
+      "sha256": "4752EFE0F1F10B2CA0A8C505CBF2F5AB811F6886B3A727A67814B6A023A9646F"
+    },
+    {
+      "path": "src/Amr.Communication.Console/Logging/SeqLogging.cs",
+      "sha256": "18978489BD3DDC3A994BD66FE3B7C5FE5EC7F61FD715CC7438C18046D9BAAF15"
+    },
+    {
+      "path": "src/Amr.Communication.Console/Logging/StructuredLog.cs",
+      "sha256": "561668FB1C6182E80B231B7345DECACB7FB761C2C6ED940EF468F28A86DD32F2"
+    },
+    {
+      "path": "src/Amr.Communication.Console/Program.cs",
+      "sha256": "52DDBCF2CC06B9DE401C41FED418512F8F182E908B0F2831EE567DF5B5BB2C3D"
+    },
+    {
+      "path": "src/Amr.Communication/Amr.Communication.csproj",
+      "sha256": "EC8DE05434FD0644E9F9424BF0AE3239E38A21022A3DDFA5CA4CEF21A05E8361"
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandMessage.cs",
+      "sha256": "6B708F4DC1C0D16F16E56B10A5A3C0B828E8F142409F4AD2D2B531811017A9DC"
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandPublisher.cs",
+      "sha256": "96AA8D5A26228895EDC5A1CFEA3BAD9D65D810EB8D7FBA1503CCDD0CAF623FC7"
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandValidationResult.cs",
+      "sha256": "B7CFAAAEB25702513F055CD304C72074F2460FBC34EC418382C859EBC6025623"
+    },
+    {
+      "path": "src/Amr.Communication/Command/CommandValidator.cs",
+      "sha256": "3B672887A0503D44155DCF808DE8D9293CE13AF7F8F01C4FE76A49C84CC9223B"
+    },
+    {
+      "path": "src/Amr.Communication/Models/AckMessage.cs",
+      "sha256": "D28A532212713B8A86D1AF35F2F542B6B53461D73F92F017CA3AFFFA7CA73821"
+    },
+    {
+      "path": "src/Amr.Communication/Models/AlarmMessage.cs",
+      "sha256": "E86A417FF8ACD3E76500CAC357BE23DE2FF1BF593742E8C323E0DB172701E93E"
+    },
+    {
+      "path": "src/Amr.Communication/Models/HeartbeatMessage.cs",
+      "sha256": "4BEDA4DA2B7E45720E0C11779DF09496A34D069655BB1B0E509034BC16E33A4E"
+    },
+    {
+      "path": "src/Amr.Communication/Models/ReceivedMessage.cs",
+      "sha256": "0A7D983DB5E8185A3760BA57B567A2B0924F9FE0DAD5DD34E39FBE95061C7EBF"
+    },
+    {
+      "path": "src/Amr.Communication/Models/TelemetryMessage.cs",
+      "sha256": "6D0D5C7B6A8A0E26A8A87DB8AAF5957DCD7E9D8DB46E40225BB324B35467D695"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Connection/MqttConnection.cs",
+      "sha256": "70BA5CB9000AA2A0C09D6741C81C8347F4FC7D5F23CD95C02BAC75926812FD95"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Connection/MqttConnectionException.cs",
+      "sha256": "BBD323C8E96884039640BB93A263FEB13A3BB8F7F622BF96DD5F091069C375EB"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Connection/MqttConnectionSettings.cs",
+      "sha256": "39331CD6BCDA0F09D1A72397A31993972C2C2BC937FD2BB0BADA6DB6B1155F1F"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Queues/AmrReceiveQueue.cs",
+      "sha256": "182038B55E6AE298CEDBF8EB159B475518619DE962487E722B610BC4383F7625"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Queues/QueueAdmission.cs",
+      "sha256": "B2E9578282ECE81E1CB6F07119C1D87964D34EDF195A16DB1C6871E2E43D3316"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Queues/QueueProcessingEvent.cs",
+      "sha256": "F0C065F9289AEC821A19A6E090A4944CF10C155DBA6024B0CF7D9A63975D5789"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/HeartbeatDiagnostic.cs",
+      "sha256": "C4CBA602462BF67C6FC472895DF0EA3635A46E683CD8B9667D26B22E0918720E"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/HeartbeatSubscription.cs",
+      "sha256": "A38723932BC0C7B3DA1B4801D2F1650C19A4AA191706D749CE991A3C1DFB1BF2"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/MessageDiagnostic.cs",
+      "sha256": "5AA07F8F98E5991B407E7F82987D0C1FC0BD8BBCD7CB91DD0119B1E3CAE74291"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Subscriptions/MessageSubscription.cs",
+      "sha256": "C1103DFC77D3E5B7DD92914A15A6514A3C8F9869EB860324EECD4952A0ADCB47"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Ack/AckValidationResult.cs",
+      "sha256": "22A832C7E5FD12E8CEFC636A35760EE629E1C640DA095A49F404ACC8D0BD9131"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Ack/AckValidator.cs",
+      "sha256": "35A64751463D3BF49A4C691DB175360E268CC410E80F2401A98B89FD681248ED"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Alarm/AlarmValidationResult.cs",
+      "sha256": "B09A032DE262596E065232FFEA7A3BDE00E7517DCF7A58EEBDDD3DFC4C18677C"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Alarm/AlarmValidator.cs",
+      "sha256": "E2DFD160B68DC84377807B5D7ABB6620A8F1237E1CC87D79EF36152C97E4D684"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Common/MessageValidation.cs",
+      "sha256": "430CB62E5C08D1BAD586F1EBDDCA205FA84D69E2C3D65C1836ABAF9BE36D21D2"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Common/ValidationError.cs",
+      "sha256": "3DCF8999E3771B4966872962A45D621BE51F862C1EFB16D268501CD3BE666B71"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Heartbeat/HeartbeatValidationResult.cs",
+      "sha256": "1604225131767FC7564E9D42470E976117920FC14DD0732039C91260EB14C9A7"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Heartbeat/HeartbeatValidator.cs",
+      "sha256": "71F3AA777BA7A44E405F6B36FFD06D56B78825FE761A07B01C74CD0FE80EEC29"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Telemetry/TelemetryValidationResult.cs",
+      "sha256": "3687D86B1B52EEA007F3FEF77BAA48C4E513753782EAC8E0EC284364D529E4C6"
+    },
+    {
+      "path": "src/Amr.Communication/Validation/Telemetry/TelemetryValidator.cs",
+      "sha256": "9A9D2A46EAD617E6EE9086C54BB738AE0FA1EE30806F18D5BCF790289F66E506"
+    },
+    {
+      "path": "src/Amr.ControlGui/Amr.ControlGui.csproj",
+      "sha256": "BCCC561F41D0ED04FC4F45B80C13C154C1F19FDAF95C36F8DBA08A0191F76C02"
+    },
+    {
+      "path": "src/Amr.ControlGui/MainForm.Designer.cs",
+      "sha256": "5BA10D37FE94B21EB86D4E878F62EEE9483F804C1B1B859392A85E68666EC086"
+    },
+    {
+      "path": "src/Amr.ControlGui/MainForm.cs",
+      "sha256": "BFC1AACBCBFB11C121967562F1DC1B0C0BF85A38A1C291E81E4ADF4977E845EC"
+    },
+    {
+      "path": "src/Amr.ControlGui/MainForm.resx",
+      "sha256": "B96E988EBCF14F62545A683B0A3FEDF3AF58D36D2B94AAFED4C9EB61DBD58A46"
+    },
+    {
+      "path": "src/Amr.ControlGui/MapCanvas.cs",
+      "sha256": "915F9168B4B1C39D8DFD3A3238D31529F4E9CDDA449B0A693B91F71A34150145"
+    },
+    {
+      "path": "src/Amr.ControlGui/MockAmrDataProvider.cs",
+      "sha256": "18AB2D91526077D08A395BDAAD56707FD129E0700F4C3DD84095719D15290AEF"
+    },
+    {
+      "path": "src/Amr.ControlGui/MockCommandDispatcher.cs",
+      "sha256": "9598D5E0810E21BE0CB5C4840C29F74FF5DC2098B052934CFBCA8C220DAA5BE9"
+    },
+    {
+      "path": "src/Amr.ControlGui/Program.cs",
+      "sha256": "3CB8DE240CA20219A743F90FE7B7D8DCEAEB355C0945AEDCA02F54732E8B85BF"
+    },
+    {
+      "path": "src/Amr.Core/Amr.Core.csproj",
+      "sha256": "C5FC3EB64AE56FC55EAF04C20E143C231A8EAFBFC5A6BD797F140931BF8E2DBF"
+    },
+    {
+      "path": "src/Amr.Core/AmrChange.cs",
+      "sha256": "273DEA3CFDEABAA17FD5FB0FB111FF8D03B5AEFEF9A0FDCF9AE78474BD50B201"
+    },
+    {
+      "path": "src/Amr.Core/AmrSnapshot.cs",
+      "sha256": "1CAA13B25BB5A8AF29202C30DFB7B151FB1833F91428B8FFCAC6BABCC5A811FB"
+    },
+    {
+      "path": "src/Amr.Core/CommandModels.cs",
+      "sha256": "D66AD50C73F3CC5B9C1427A800D6AD3E76B3FD25E106CEE262AF3357203908AE"
+    },
+    {
+      "path": "src/Amr.Core/IAmrDataProvider.cs",
+      "sha256": "B20BE27FD4DE7AE3E0B35D6165FCBDBE4476E56CC1EB60593EBC4149E8E1E6C5"
+    },
+    {
+      "path": "src/Amr.Core/ICommandDispatcher.cs",
+      "sha256": "E541779A98B2251278F01927EC881FA4049AE86FE5ADFF25E1EDEDBE7BABFE10"
+    },
+    {
+      "path": "src/Amr.Core/QueryModels.cs",
+      "sha256": "4E6B548D9B195B46FEE52F38C3DBCE66BDCF8D1CB9692FA06D5499532B7E319E"
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/ISimulationTransport.cs",
+      "sha256": "520FF410B282FCB3E5E42CB41B1490305ABEC58EC9C0E5FE9A81254547F36961"
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/MqttSimulationSession.cs",
+      "sha256": "9E39A15EA759940660184952AA168EBB28C75703A2E1223D527F930979371E58"
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/MqttSimulationTransport.cs",
+      "sha256": "53283E281A529931C39BFE2269ED32D225317B47D979B62258E20579F8059FC3"
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/SimulationMessages.cs",
+      "sha256": "874C9BC2DEC5F46B0EA5437133414F8AEBDF5FFB87CE540A4DA9930A1FDDC13B"
+    },
+    {
+      "path": "src/Amr.Simulator/Telemetry/SimulatorMqttOptions.cs",
+      "sha256": "39020994A915111657C98C2FB16DAC9005A2A95EF12E93D3A61FA5E660E912A3"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj",
+      "sha256": "0BB622C8930E883F570DD8DCFA7D4055CCD4722555C8B2F2FF972798A22E8699"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Command/CommandPublisherTests.cs",
+      "sha256": "737C9B02695DA77486CA60B494119BECEAF47A7B124603CDD5238C2D6E717F7E"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Command/CommandValidationTests.cs",
+      "sha256": "D46034A32A23874B921E2D84F5DAF0AAC2E82402C6FBA77D444F07EB8A904DEA"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/CommandConsoleTests.cs",
+      "sha256": "2C6BE32CD789014ECC68EBFCF202E7AE7C3607C5DA920F35BE85433667A58366"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/ConsoleConnectionFailureTests.cs",
+      "sha256": "350ED8A675D54A7960169F652BB1D99CFB31B9985CCD34E275F8FA4F18C825C8"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/Logging/ConsoleShutdownReasonTests.cs",
+      "sha256": "8CC649EEB22F698C2733472995299690A3E97AE69B3BEE2A8C814276C69633B4"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Console/Logging/SeqLoggingTests.cs",
+      "sha256": "17530FCDCEC2D59F4268393C93D2E709991BF6733D65EC65E85BFE7145CC6D56"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Connection/MqttConnectionFailureTests.cs",
+      "sha256": "C90E243665956EE3267D7767A4DE94D86382322C7CC16EF8B1A5FC85CA200229"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Connection/MqttConnectionTests.cs",
+      "sha256": "56D70E386AEA42EB11F533A7D2313896BD89E7E68D88550AD23908390CD3D394"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueBoundaryTests.cs",
+      "sha256": "4DB676AB1C6ECBAF3D474C8201211F9243DBC9C4B57198792B3AE3E0758E38D9"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueShutdownTests.cs",
+      "sha256": "F4D564CFC5E7D3A29A32F06EFB5D0FCB2929A710B632568878C2F17E88F60CCE"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueTests.cs",
+      "sha256": "D4BAEDD8ACA2F15660F2730FD3433AA75FCCF882EDF8E46F4C0D47E8D2A4DFFA"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Subscriptions/HeartbeatSubscriptionTests.cs",
+      "sha256": "F2C98E620E2EC01166A0D1D2A06EF324E9C75B0D298ED80434562F8E34871E07"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Subscriptions/MessageSubscriptionTests.cs",
+      "sha256": "620D55AE24DAE636BC93137D498ECC2E5F5B6BB8460AB7B86FEA72F7523FE71C"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/TestDoubles/FakeMqttClient.cs",
+      "sha256": "191CBE4B02410B354DCAEFA46AB02F538A796FBD0E7E383B388C0CD98C11041A"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/AckValidatorTests.cs",
+      "sha256": "BB727F21F3290D691053663CE44EA4D145E6E3DD243F844D9AB7E14DCF6ACA17"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/AlarmValidatorTests.cs",
+      "sha256": "B7D1CF7A60639CE9427B791EC9ADB8CBB5E318F98741F5F70382BCA7417D9533"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/HeartbeatValidatorTests.cs",
+      "sha256": "FAA761D201B0A94778633B28EFFCE1FED4243689CA30DF2EA083AF9B813B842D"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/MessageFieldValidationTests.cs",
+      "sha256": "6D9096C1AB067EB6833929CDD7EC05978A93E250B3A73518829C6AE879DC8205"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/MessageValidationRegressionTests.cs",
+      "sha256": "4C277CD69DEC818F0F0A876D661E37520DEC421F7BB9B7B76EA9B259A510D96A"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Validation/TelemetryValidatorTests.cs",
+      "sha256": "7C09035A772D947ACF7C70802255F0911785DA7FFFCFF290E645FCF67A2793C1"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/Amr.ControlGui.Tests.csproj",
+      "sha256": "42D65AE81A78121442155E4F808159E88283BB5CD8E6106BCA32188F6804E887"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/DashboardMapTests.cs",
+      "sha256": "E83E7ADB463CF63693EEDC07C2D231471E2D85894CDE07F88F9B0BDE68BE66C7"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/MainFormTests.cs",
+      "sha256": "D0FD8C67786298327A9169435074A6D338AD3AF8650DA315D07DE58A57CD9B5C"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/MockCommandDispatcherTests.cs",
+      "sha256": "6B899A7359F00DCECFE11C44E7377735AE413B51BC4E8743022B9FAA3AE42E1B"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/MockDataProviderTests.cs",
+      "sha256": "3D33525C4D54A03ACE2C51AD1FD2234526F9FA09EF6881FFBE69AD2C10043A52"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/MqttSimulationTests.cs",
+      "sha256": "5792F0FD3572F2E113BD76DC768D7B8297FDD5B995F0E39E9B73D8C0A6909F5C"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/MqttTransportConnectionTests.cs",
+      "sha256": "F0E90EE5DEE504B51B2630CD2AA28D4B4EFD4400899A826318752C7B3CC1C4C2"
+    }
+  ],
+  "importedFiles": [
+    "config/map-demo/README.md",
+    "config/map-demo/settings.json",
+    "src/Amr.Simulator/Navigation/GridNavigator.cs",
+    "src/Amr.Simulator/Navigation/GridPathfinder.cs",
+    "src/Amr.Simulator/Navigation/GridSimulation.cs",
+    "src/Amr.Simulator/Navigation/GridTelemetry.cs",
+    "src/Amr.Simulator/README.md",
+    "tests/Amr.Simulator.Map.Tests/Amr.Simulator.Map.Tests.csproj",
+    "tests/Amr.Simulator.Map.Tests/GridMqttTests.cs",
+    "tests/Amr.Simulator.Map.Tests/MapConfigurationTests.cs",
+    "tests/Amr.Simulator.Map.Tests/ProjectionTests.cs",
+    "tests/Amr.Simulator.Map.Tests/WaypointConfigurationTests.cs",
+    "tests/Amr.Simulator.Tests/GridNavigationTests.cs",
+    "tests/Amr.Simulator.Tests/GridSimulationTests.cs",
+    "tests/Amr.Simulator.Tests/WaypointMissionTests.cs",
+    "tests/manual/AMR01/Start-MqttMap.ps1",
+    "tests/manual/AMR01/Stop-MqttMap.ps1",
+    "tests/manual/AMR01/Verify-GridMqttMap.ps1",
+    "tests/manual/AMR01/Verify-GridNavigation.ps1",
+    "tests/manual/AMR01/Verify-MapConfiguration.ps1",
+    "tools/Amr.Simulator.Map/Amr.Simulator.Map.csproj",
+    "tools/Amr.Simulator.Map/Control/GridControlConnection.cs",
+    "tools/Amr.Simulator.Map/Control/GridMapCoordinates.cs",
+    "tools/Amr.Simulator.Map/Control/GridMapSession.cs",
+    "tools/Amr.Simulator.Map/Control/GridMissionSettings.cs",
+    "tools/Amr.Simulator.Map/MqttMapProjection.cs",
+    "tools/Amr.Simulator.Map/MqttMapReceiver.cs",
+    "tools/Amr.Simulator.Map/Program.cs",
+    "tools/Amr.Simulator.Map/README.md",
+    "tools/Amr.Simulator.Map/wwwroot/grid.js",
+    "tools/Amr.Simulator.Map/wwwroot/index.html",
+    "tools/Amr.Simulator.Map/wwwroot/style.css"
+  ]
+}

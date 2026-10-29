@@ -1,0 +1,34 @@
+{
+  "waypoints": [
+    {
+      "col": 2,
+      "row": 1
+    }
+  ],
+  "mqtt": {
+    "port": 58006,
+    "telemetryMs": 70,
+    "host": "127.0.0.1",
+    "enabled": true,
+    "heartbeatMs": 200
+  },
+  "map": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ]
+  ],
+  "start": {
+    "col": 0,
+    "row": 0
+  },
+  "stepIntervalMs": 180,
+  "amrId": "CONFIG_AMR_B",
+  "webPort": 0
+}

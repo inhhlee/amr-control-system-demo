@@ -1,0 +1,17 @@
+  Amr.Communication -> C:\amr-control-system-demo\src\Amr.Communication\bin\ControlSessionVerify\Amr.Communication.dll
+  Amr.Communication.Console -> C:\amr-control-system-demo\src\Amr.Communication.Console\bin\ControlSessionVerify\Amr.Communication.Console.dll
+  Amr.Core -> C:\amr-control-system-demo\src\Amr.Core\bin\ControlSessionVerify\Amr.Core.dll
+  Amr.ControlGui -> C:\amr-control-system-demo\src\Amr.ControlGui\bin\ControlSessionVerify\Amr.ControlGui.dll
+  Amr.Simulator -> C:\amr-control-system-demo\src\Amr.Simulator\bin\ControlSessionVerify\Amr.Simulator.dll
+  Amr.Communication.Tests -> C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\ControlSessionVerify\Amr.Communication.Tests.dll
+  Amr.ControlGui.Tests -> C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\ControlSessionVerify\Amr.ControlGui.Tests.dll
+C:\amr-control-system-demo\tools\Amr.Simulator.Map\MqttMapReceiver.cs(12,72): error CS0246: 'ReceivedMessage' 형식 또는 네임스페이스 이름을 찾을 수 없습니다. using 지시문 또는 어셈블리 참조가 있는지 확인하세요. [C:\amr-control-system-demo\tools\Amr.Simulator.Map\Amr.Simulator.Map.csproj]
+  Amr.Simulator.Tests -> C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\ControlSessionVerify\Amr.Simulator.Tests.dll
+
+빌드하지 못했습니다.
+
+C:\amr-control-system-demo\tools\Amr.Simulator.Map\MqttMapReceiver.cs(12,72): error CS0246: 'ReceivedMessage' 형식 또는 네임스페이스 이름을 찾을 수 없습니다. using 지시문 또는 어셈블리 참조가 있는지 확인하세요. [C:\amr-control-system-demo\tools\Amr.Simulator.Map\Amr.Simulator.Map.csproj]
+    경고 0개
+    오류 1개
+
+경과 시간: 00:00:13.08

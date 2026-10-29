@@ -1,0 +1,1752 @@
+{
+  "passed": true,
+  "missing": [],
+  "checkedReferences": 218,
+  "scope": "All local file targets in 5 repository guides; current two-AMR cross-references in 7 originals; explicit new anchors. Historical original links and general heading slugs excluded.",
+  "results": [
+    {
+      "target": "evidence/COM-02/20261028-two-amr-domain-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-02/20261028-control-session-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-control-session-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "BUILDING.md#visual-studio에서-f5로-함께-실행",
+      "resolved": "C:\\amr-control-system-demo\\BUILDING.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-02/20261027-heartbeat-one-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261027-heartbeat-one-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "BUILDING.md#windows-forms에-격자-mqtt-상태-연결",
+      "resolved": "C:\\amr-control-system-demo\\BUILDING.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/GUI/20261027-grid-dashboard-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\GUI\\20261027-grid-dashboard-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "tools/Amr.Simulator.Map/README.md",
+      "resolved": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/AMR/20261027-grid-integration-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\AMR\\20261027-grid-integration-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "BUILDING.md#windows-forms-mock-대시보드지도",
+      "resolved": "C:\\amr-control-system-demo\\BUILDING.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "BUILDING.md",
+      "resolved": "C:\\amr-control-system-demo\\BUILDING.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/AMR/20261022-pr39-review-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\AMR\\20261022-pr39-review-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/AMR/20261022-recheck-curation-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\AMR\\20261022-recheck-curation-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "tests/manual/AMR01/MQTT-DEMO.md",
+      "resolved": "C:\\amr-control-system-demo\\tests\\manual\\AMR01\\MQTT-DEMO.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/AMR/20261022-mqtt-split-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\AMR\\20261022-mqtt-split-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "tests/manual/AMR01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\tests\\manual\\AMR01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/AMR/pr34-split-check/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\AMR\\pr34-split-check\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/AMR/20261021-runner-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\AMR\\20261021-runner-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/AMR/20261021-movement-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\AMR\\20261021-movement-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/AMR/20261021-pr35-utf8-fix-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\AMR\\20261021-pr35-utf8-fix-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/AMR/20261021-settings-final-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\AMR\\20261021-settings-final-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-pr31-p2-fix-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-pr31-p2-fix-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-ac-summary-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-ac-summary-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication/Command/CommandValidator.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Command\\CommandValidator.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication/Command/CommandPublisher.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Command\\CommandPublisher.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-05/20261020-command-full-02/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-05\\20261020-command-full-02\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/LOG/20261020-p2-green-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\LOG\\20261020-p2-green-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/LOG/20261020-seq-unit-03/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\LOG\\20261020-seq-unit-03\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "AGENTS.md",
+      "resolved": "C:\\amr-control-system-demo\\AGENTS.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "CONTRIBUTING.md",
+      "resolved": "C:\\amr-control-system-demo\\CONTRIBUTING.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "C:/process-plan/README.md",
+      "resolved": "C:\\process-plan\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "C:/process-plan/AGENTS.md",
+      "resolved": "C:\\process-plan\\AGENTS.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "C:/process-plan/관제시스템 과제 진행/AGENTS.md",
+      "resolved": "C:\\process-plan\\관제시스템 과제 진행\\AGENTS.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "C:/process-plan/기준/개발 진행 절차.md",
+      "resolved": "C:\\process-plan\\기준\\개발 진행 절차.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "AGENTS.md#작업별-스킬",
+      "resolved": "C:\\amr-control-system-demo\\AGENTS.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261019-connect-failure-unit-03/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261019-connect-failure-unit-03\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-01/20261019-queue-pr-unit-02/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-01\\20261019-queue-pr-unit-02\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-01/20261019-queue-pr-unit-02/PR.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-01\\20261019-queue-pr-unit-02\\PR.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-01/20261019-multi-mqtt-03/report.html",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-01\\20261019-multi-mqtt-03\\report.html",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-04/20261019-ack-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-04\\20261019-ack-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-04/20261019-final-06/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-04\\20261019-final-06\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-01/20261012-heartbeat-05/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-01\\20261012-heartbeat-05\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261012-a-summary-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261012-a-summary-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "global.json",
+      "resolved": "C:\\amr-control-system-demo\\global.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "AmrControlSystem.slnx",
+      "resolved": "C:\\amr-control-system-demo\\AmrControlSystem.slnx",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication/Amr.Communication.csproj",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Amr.Communication.csproj",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication.Console/Amr.Communication.Console.csproj",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication.Console\\Amr.Communication.Console.csproj",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj",
+      "resolved": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Amr.Communication.Tests.csproj",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/setup/",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\setup\\",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/setup/20261007-docker-local-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\setup\\20261007-docker-local-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/setup/20261007-setup-02/README.md#1-목표와-적용-기준",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\setup\\20261007-setup-02\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-c4-unit-02/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c4-unit-02\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-ac-summary-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-ac-summary-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-pr-publication-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-pr-publication-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-ac-summary-01/PR.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-ac-summary-01\\PR.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "tools/COM-03/README.md#c3b-무응답-감지-시간-측정",
+      "resolved": "C:\\amr-control-system-demo\\tools\\COM-03\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-c3b-noresponse-02/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c3b-noresponse-02\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-c3b-noresponse-02/criteria.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c3b-noresponse-02\\criteria.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-c3b-noresponse-02/measurement.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c3b-noresponse-02\\measurement.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-c3b-noresponse-02/proxy.jsonl",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c3b-noresponse-02\\proxy.jsonl",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "tools/COM-03/README.md",
+      "resolved": "C:\\amr-control-system-demo\\tools\\COM-03\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-c3a-proxy-03/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c3a-proxy-03\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-c3a-proxy-03/proxy.jsonl",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c3a-proxy-03\\proxy.jsonl",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-c3a-proxy-03/sockets-blocked.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c3a-proxy-03\\sockets-blocked.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "tools/COM-03/README.md",
+      "resolved": "C:\\amr-control-system-demo\\tools\\COM-03\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-c2-mqtt-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c2-mqtt-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-c2-mqtt-01/lost.stdout.log",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c2-mqtt-01\\lost.stdout.log",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-c2-mqtt-01/shutdown.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c2-mqtt-01\\shutdown.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-c2-unit-02/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c2-unit-02\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-c1-keepalive-02/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c1-keepalive-02\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-c1-keepalive-02/ping.log",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c1-keepalive-02\\ping.log",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-c1-keepalive-02/broker.log",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c1-keepalive-02\\broker.log",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261020-c1-keepalive-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261020-c1-keepalive-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication/Mqtt/Connection/MqttConnection.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Connection\\MqttConnection.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication.Console/ConsoleRunner.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication.Console\\ConsoleRunner.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "tests/manual/COM03-B/Verify-Connection.ps1",
+      "resolved": "C:\\amr-control-system-demo\\tests\\manual\\COM03-B\\Verify-Connection.ps1",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261019-connect-failure-unit-03/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261019-connect-failure-unit-03\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261019-connect-failure-mqtt-02/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261019-connect-failure-mqtt-02\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-01/20261019-mqtt-layout-02/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-01\\20261019-mqtt-layout-02\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication/Mqtt/Subscriptions/MessageSubscription.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Subscriptions\\MessageSubscription.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication/Models/ReceivedMessage.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Models\\ReceivedMessage.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "tests/manual/COM01-B/inputs.json",
+      "resolved": "C:\\amr-control-system-demo\\tests\\manual\\COM01-B\\inputs.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "tests/manual/COM01-B/Verify-Mqtt.ps1",
+      "resolved": "C:\\amr-control-system-demo\\tests\\manual\\COM01-B\\Verify-Mqtt.ps1",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-01/20261019-multi-mqtt-03/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-01\\20261019-multi-mqtt-03\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-01/20261019-multi-mqtt-03/report.html",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-01\\20261019-multi-mqtt-03\\report.html",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication/Validation/Telemetry/TelemetryValidator.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Telemetry\\TelemetryValidator.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication/Validation/Common/MessageValidation.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Common\\MessageValidation.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-04/20261019-validation-layout-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-04\\20261019-validation-layout-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication/Models/TelemetryMessage.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Models\\TelemetryMessage.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "tests/Amr.Communication.Tests/Validation/TelemetryValidatorTests.cs",
+      "resolved": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Validation\\TelemetryValidatorTests.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "tests/Amr.Communication.Tests/Validation/MessageValidationRegressionTests.cs",
+      "resolved": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Validation\\MessageValidationRegressionTests.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication/Validation/Alarm/AlarmValidator.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Alarm\\AlarmValidator.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "tests/Amr.Communication.Tests/Validation/AlarmValidatorTests.cs",
+      "resolved": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Validation\\AlarmValidatorTests.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "tests/Amr.Communication.Tests/Validation/MessageValidationRegressionTests.cs",
+      "resolved": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Validation\\MessageValidationRegressionTests.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-04/20261019-alarm-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-04\\20261019-alarm-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication/Models/AlarmMessage.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Models\\AlarmMessage.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication/Validation/Ack/AckValidator.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Ack\\AckValidator.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication/Models/AckMessage.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Models\\AckMessage.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "tests/Amr.Communication.Tests/Validation/AckValidatorTests.cs",
+      "resolved": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Validation\\AckValidatorTests.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "tests/Amr.Communication.Tests/Validation/MessageValidationRegressionTests.cs",
+      "resolved": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Validation\\MessageValidationRegressionTests.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-04/20261019-ack-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-04\\20261019-ack-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication/Models/HeartbeatMessage.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Models\\HeartbeatMessage.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-04/20261019-mqtt-05/",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-04\\20261019-mqtt-05\\",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-04/20261019-integration-03/tests.trx",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-04\\20261019-integration-03\\tests.trx",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-04/20261019-final-06/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-04\\20261019-final-06\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-01/20261012-heartbeat-05/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-01\\20261012-heartbeat-05\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-01/20261012-heartbeat-05/report.html",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-01\\20261012-heartbeat-05\\report.html",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261011-a3-shutdown-03/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261011-a3-shutdown-03\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261011-a2-connect-02/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261011-a2-connect-02\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication.Console/Program.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication.Console\\Program.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication/Mqtt/Connection/MqttConnection.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Connection\\MqttConnection.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication/Mqtt/Connection/MqttConnectionSettings.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Connection\\MqttConnectionSettings.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/setup/20261007-setup-03/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\setup\\20261007-setup-03\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/setup/20261007-setup-03/console.log",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\setup\\20261007-setup-03\\console.log",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/setup/20261007-setup-02/console.log",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\setup\\20261007-setup-02\\console.log",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/setup/20261007-setup-02/code-integrity.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\setup\\20261007-setup-02\\code-integrity.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "docker/compose.yaml",
+      "resolved": "C:\\amr-control-system-demo\\docker\\compose.yaml",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "docker/mosquitto/config/mosquitto.conf",
+      "resolved": "C:\\amr-control-system-demo\\docker\\mosquitto\\config\\mosquitto.conf",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261008-a1-broker-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261008-a1-broker-01/commands.jsonl",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\commands.jsonl",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261008-a1-broker-01/24-logs-restarted.log",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\24-logs-restarted.log",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261008-a1-broker-01/report.html",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\report.html",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/setup/20261007-setup-02/docker-broker.log",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\setup\\20261007-setup-02\\docker-broker.log",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/setup/20261007-docker-local-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\setup\\20261007-docker-local-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/setup/20261007-setup-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\setup\\20261007-setup-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/setup/20261007-setup-02/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\setup\\20261007-setup-02\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/setup/20261007-setup-03/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\setup\\20261007-setup-03\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-01/20261019-queue-pr-mqtt-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-01\\20261019-queue-pr-mqtt-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-01/20261019-queue-pr-disconnect-03/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-01\\20261019-queue-pr-disconnect-03\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-01/20261019-queue-pr-unit-02/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-01\\20261019-queue-pr-unit-02\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication/Mqtt/Queues/AmrReceiveQueue.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Queues\\AmrReceiveQueue.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "src/Amr.Communication/Mqtt/Queues/QueueAdmission.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Queues\\QueueAdmission.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueTests.cs",
+      "resolved": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\Mqtt\\Queues\\AmrReceiveQueueTests.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-01/20261019-queue-order-02/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-01\\20261019-queue-order-02\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-03/20261008-a1-broker-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-03\\20261008-a1-broker-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "tools/Amr.Simulator.Map/README.md",
+      "resolved": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\BUILDING.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-02/20261028-two-amr-domain-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\BUILDING.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-02/20261028-control-session-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-control-session-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\BUILDING.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/DEV/20261027-vs-f5-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\DEV\\20261027-vs-f5-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\BUILDING.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/GUI/20261027-grid-dashboard-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\GUI\\20261027-grid-dashboard-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\BUILDING.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "evidence/COM-02/20261027-heartbeat-one-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261027-heartbeat-one-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\BUILDING.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "tests/manual/AMR01/MQTT-DEMO.md",
+      "resolved": "C:\\amr-control-system-demo\\tests\\manual\\AMR01\\MQTT-DEMO.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\BUILDING.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../../evidence/COM-02/20261028-two-amr-domain-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../../src/Amr.Communication/Mqtt/Sessions/ControlCommunicationSession.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Sessions\\ControlCommunicationSession.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../../evidence/COM-02/20261028-control-session-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-control-session-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../../src/Amr.Simulator/Navigation",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Navigation",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../../config/map-demo/README.md",
+      "resolved": "C:\\amr-control-system-demo\\config\\map-demo\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../../evidence/COM-02/20261027-heartbeat-one-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261027-heartbeat-one-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../../evidence/AMR/20261027-grid-integration-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\AMR\\20261027-grid-integration-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../../evidence/COM-02/20261028-two-amr-domain-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\config\\map-demo\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "final-source.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\final-source.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "verification.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\verification.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "final-audit.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\final-audit.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../../../src/Amr.Communication/Mqtt/Sessions/ControlCommunicationSession.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Sessions\\ControlCommunicationSession.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../../../src/Amr.Communication/Mqtt/Sessions/AmrCommunicationObservation.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Sessions\\AmrCommunicationObservation.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../../../tools/Amr.Simulator.Map/Control/FleetCommunicationBridge.cs",
+      "resolved": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\Control\\FleetCommunicationBridge.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../../../src/Amr.Core/AmrDomainManager.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Core\\AmrDomainManager.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../../../src/Amr.Core/AmrDomainModels.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.Core\\AmrDomainModels.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../../../tools/Amr.Simulator.Map/Control/FleetMapSession.cs",
+      "resolved": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\Control\\FleetMapSession.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../../../tools/Amr.Simulator.Map/Control/FleetMapHost.cs",
+      "resolved": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\Control\\FleetMapHost.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../../../src/Amr.ControlGui/GridMapDataProvider.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.ControlGui\\GridMapDataProvider.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../../../src/Amr.ControlGui/MainForm.Grid.cs",
+      "resolved": "C:\\amr-control-system-demo\\src\\Amr.ControlGui\\MainForm.Grid.cs",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "build-verified.log",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\build-verified.log",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "test-summary.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\test-summary.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "tests-verified.log",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\tests-verified.log",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../20261028-two-amr-verified/01-two-alive-running.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-verified\\01-two-alive-running.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../20261028-two-amr-verified/02-a1-timeout-a2-alive.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-verified\\02-a1-timeout-a2-alive.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../20261028-two-amr-verified/03-recovered-still-held.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-verified\\03-recovered-still-held.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../20261028-two-amr-verified/04-explicit-resume.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-verified\\04-explicit-resume.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../20261028-two-amr-verified/05-independent-queues.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-verified\\05-independent-queues.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../20261028-two-amr-verified/06-broker-loss-both-stopped.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-verified\\06-broker-loss-both-stopped.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../../AMR/20261028-two-amr-legacy-check/verification.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\AMR\\20261028-two-amr-legacy-check\\verification.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "legacy-check.log",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\legacy-check.log",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../../AMR/20261028-two-amr-legacy-host/cleanup.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\AMR\\20261028-two-amr-legacy-host\\cleanup.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "final-audit.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\final-audit.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "gui-two-alive.png",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\gui-two-alive.png",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "gui-a1-timeout.png",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\gui-a1-timeout.png",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "gui-recovered-held.png",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\gui-recovered-held.png",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "gui-broker-both-held-final.png",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\gui-broker-both-held-final.png",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "final-audit.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\final-audit.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "before-source.zip",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\before-source.zip",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "containers-before.jsonl",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\containers-before.jsonl",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "containers-after.jsonl",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\containers-after.jsonl",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "processes-after.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\processes-after.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "live-healthy.log",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\live-healthy.log",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "first-broker-client-collision.log",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\first-broker-client-collision.log",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "broker-down-first-failure-state.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\broker-down-first-failure-state.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../20261028-two-amr-verified/control-requests.jsonl",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-verified\\control-requests.jsonl",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "documents-after-finalization.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\documents-after-finalization.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "documents-verification.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\documents-verification.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "final-document-source-check.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\final-document-source-check.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "../../../BUILDING.md",
+      "resolved": "C:\\amr-control-system-demo\\BUILDING.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "scope": "full",
+      "exists": true
+    },
+    {
+      "target": "C:/amr-control-system-demo/evidence/COM-02/20261028-two-amr-domain-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\과제1\\과제계획.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "../명세/검토%20및%20결정사항.md#two-amr-core-policy-20261028",
+      "resolved": "C:\\process-plan\\관제시스템 과제 진행\\명세\\검토 및 결정사항.md",
+      "explicitAnchorPresent": true,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\과제1\\과제계획.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "../과제4/과제계획.md#two-amr-domain-20261028",
+      "resolved": "C:\\process-plan\\관제시스템 과제 진행\\과제4\\과제계획.md",
+      "explicitAnchorPresent": true,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\과제1\\과제계획.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "../과제3/과제계획.md#two-amr-domain-20261028",
+      "resolved": "C:\\process-plan\\관제시스템 과제 진행\\과제3\\과제계획.md",
+      "explicitAnchorPresent": true,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\과제1\\과제계획.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "C:/amr-control-system-demo/evidence/COM-02/20261028-two-amr-domain-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\과제3\\과제계획.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "../명세/검토%20및%20결정사항.md#two-amr-core-policy-20261028",
+      "resolved": "C:\\process-plan\\관제시스템 과제 진행\\명세\\검토 및 결정사항.md",
+      "explicitAnchorPresent": true,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\과제3\\과제계획.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "../../일일업무/2026-10-28.md#two-amr-domain-20261028",
+      "resolved": "C:\\process-plan\\일일업무\\2026-10-28.md",
+      "explicitAnchorPresent": true,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\과제4\\과제계획.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "../../일일업무/2026-10-25.md#gui-first-implementation",
+      "resolved": "C:\\process-plan\\일일업무\\2026-10-25.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\과제4\\과제계획.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "../명세/검토%20및%20결정사항.md#two-amr-core-policy-20261028",
+      "resolved": "C:\\process-plan\\관제시스템 과제 진행\\명세\\검토 및 결정사항.md",
+      "explicitAnchorPresent": true,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\과제4\\과제계획.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "C:/amr-control-system-demo/evidence/COM-02/20261028-two-amr-domain-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\과제4\\과제계획.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "../과제3/과제계획.md#two-amr-domain-20261028",
+      "resolved": "C:\\process-plan\\관제시스템 과제 진행\\과제3\\과제계획.md",
+      "explicitAnchorPresent": true,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\과제4\\과제계획.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "../과제1/과제계획.md#two-amr-domain-20261028",
+      "resolved": "C:\\process-plan\\관제시스템 과제 진행\\과제1\\과제계획.md",
+      "explicitAnchorPresent": true,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\명세\\검토 및 결정사항.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "../과제3/과제계획.md#two-amr-domain-20261028",
+      "resolved": "C:\\process-plan\\관제시스템 과제 진행\\과제3\\과제계획.md",
+      "explicitAnchorPresent": true,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\명세\\검토 및 결정사항.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "../과제4/과제계획.md#two-amr-domain-20261028",
+      "resolved": "C:\\process-plan\\관제시스템 과제 진행\\과제4\\과제계획.md",
+      "explicitAnchorPresent": true,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\명세\\검토 및 결정사항.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "C:/amr-control-system-demo/evidence/COM-02/20261028-two-amr-domain-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\명세\\검토 및 결정사항.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "검토%20및%20결정사항.md#two-amr-core-policy-20261028",
+      "resolved": "C:\\process-plan\\관제시스템 과제 진행\\명세\\검토 및 결정사항.md",
+      "explicitAnchorPresent": true,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\명세\\기능명세.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "검토%20및%20결정사항.md#two-amr-core-policy-20261028",
+      "resolved": "C:\\process-plan\\관제시스템 과제 진행\\명세\\검토 및 결정사항.md",
+      "explicitAnchorPresent": true,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\명세\\기능명세.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "검토%20및%20결정사항.md#two-amr-core-policy-20261028",
+      "resolved": "C:\\process-plan\\관제시스템 과제 진행\\명세\\검토 및 결정사항.md",
+      "explicitAnchorPresent": true,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\명세\\기능명세.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "과제1/과제계획.md#two-amr-domain-20261028",
+      "resolved": "C:\\process-plan\\관제시스템 과제 진행\\과제1\\과제계획.md",
+      "explicitAnchorPresent": true,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\전체일정.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "과제3/과제계획.md#two-amr-domain-20261028",
+      "resolved": "C:\\process-plan\\관제시스템 과제 진행\\과제3\\과제계획.md",
+      "explicitAnchorPresent": true,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\전체일정.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "과제4/과제계획.md#two-amr-domain-20261028",
+      "resolved": "C:\\process-plan\\관제시스템 과제 진행\\과제4\\과제계획.md",
+      "explicitAnchorPresent": true,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\전체일정.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "../일일업무/2026-10-28.md#two-amr-domain-20261028",
+      "resolved": "C:\\process-plan\\일일업무\\2026-10-28.md",
+      "explicitAnchorPresent": true,
+      "source": "C:\\process-plan\\관제시스템 과제 진행\\전체일정.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "../관제시스템%20과제%20진행/명세/검토%20및%20결정사항.md#two-amr-core-policy-20261028",
+      "resolved": "C:\\process-plan\\관제시스템 과제 진행\\명세\\검토 및 결정사항.md",
+      "explicitAnchorPresent": true,
+      "source": "C:\\process-plan\\일일업무\\2026-10-28.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "C:/amr-control-system-demo/evidence/COM-02/20261028-two-amr-domain-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\process-plan\\일일업무\\2026-10-28.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "C:/amr-control-system-demo/evidence/COM-02/20261028-two-amr-domain-01/README.md",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\README.md",
+      "explicitAnchorPresent": null,
+      "source": "C:\\process-plan\\일일업무\\2026-10-28.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "C:/amr-control-system-demo/evidence/COM-02/20261028-two-amr-domain-01/verification.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\verification.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\process-plan\\일일업무\\2026-10-28.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    },
+    {
+      "target": "C:/amr-control-system-demo/evidence/COM-02/20261028-two-amr-domain-01/final-audit.json",
+      "resolved": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-domain-01\\final-audit.json",
+      "explicitAnchorPresent": null,
+      "source": "C:\\process-plan\\일일업무\\2026-10-28.md",
+      "scope": "currentTwoAmrReferences",
+      "exists": true
+    }
+  ]
+}

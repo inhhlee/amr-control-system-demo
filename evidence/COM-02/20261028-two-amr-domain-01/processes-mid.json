@@ -1,0 +1,30 @@
+[
+  {
+    "Name": "FleetProbe.exe",
+    "ProcessId": 44444,
+    "ParentProcessId": 11612,
+    "ExecutablePath": "C:\\amr-control-system-demo\\tests\\manual\\COM02-A\\FleetProbe\\bin\\TwoAmrFinal\\FleetProbe.exe",
+    "CommandLine": "\"C:\\amr-control-system-demo\\tests\\manual\\COM02-A\\FleetProbe\\bin\\TwoAmrFinal\\FleetProbe.exe\" \"C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-live-final/fleet.json\" \"C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-live-final\""
+  },
+  {
+    "Name": "FleetProbe.exe",
+    "ProcessId": 40196,
+    "ParentProcessId": 25808,
+    "ExecutablePath": "C:\\amr-control-system-demo\\tests\\manual\\COM02-A\\FleetProbe\\bin\\TwoAmrFinal2\\FleetProbe.exe",
+    "CommandLine": "\"C:\\amr-control-system-demo\\tests\\manual\\COM02-A\\FleetProbe\\bin\\TwoAmrFinal2\\FleetProbe.exe\" \"C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-verified/fleet.json\" \"C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-two-amr-verified\""
+  },
+  {
+    "Name": "Amr.ControlGui.exe",
+    "ProcessId": 19880,
+    "ParentProcessId": 37300,
+    "ExecutablePath": "C:\\amr-control-system-demo\\src\\Amr.ControlGui\\bin\\TwoAmrFinal2\\Amr.ControlGui.exe",
+    "CommandLine": "\"C:\\amr-control-system-demo\\src\\Amr.ControlGui\\bin\\TwoAmrFinal2\\Amr.ControlGui.exe\" --grid-url http://127.0.0.1:63920"
+  },
+  {
+    "Name": "Amr.ControlGui.exe",
+    "ProcessId": 36680,
+    "ParentProcessId": 12296,
+    "ExecutablePath": "C:\\amr-control-system-demo\\src\\Amr.ControlGui\\bin\\TwoAmrFinal2\\Amr.ControlGui.exe",
+    "CommandLine": "\"C:\\amr-control-system-demo\\src\\Amr.ControlGui\\bin\\TwoAmrFinal2\\Amr.ControlGui.exe\" --grid-url http://127.0.0.1:63920"
+  }
+]

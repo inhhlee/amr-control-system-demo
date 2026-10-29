@@ -1,0 +1,37 @@
+[
+  {
+    "Name": "Amr.ControlGui.exe",
+    "ProcessId": 13892,
+    "ParentProcessId": 36000,
+    "ExecutablePath": "C:\\amr-control-system-demo\\src\\Amr.ControlGui\\bin\\ControlSessionVerify\\Amr.ControlGui.exe",
+    "CommandLine": "\"C:\\amr-control-system-demo\\src\\Amr.ControlGui\\bin\\ControlSessionVerify\\Amr.ControlGui.exe\" --grid-url http://127.0.0.1:59878"
+  },
+  {
+    "Name": "Amr.Simulator.Map.exe",
+    "ProcessId": 1420,
+    "ParentProcessId": 22388,
+    "ExecutablePath": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\ControlSessionVerify\\Amr.Simulator.Map.exe",
+    "CommandLine": "\"C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\ControlSessionVerify\\Amr.Simulator.Map.exe\" --port 0 --config \"C:\\amr-control-system-demo\\config\\map-demo\\settings.json\" --mqtt-host 127.0.0.1 --mqtt-port 51553 --telemetry-ms 200 --heartbeat-ms 1000"
+  },
+  {
+    "Name": "Amr.ControlGui.exe",
+    "ProcessId": 54044,
+    "ParentProcessId": 24304,
+    "ExecutablePath": "C:\\amr-control-system-demo\\src\\Amr.ControlGui\\bin\\ControlSessionVerify\\Amr.ControlGui.exe",
+    "CommandLine": "\"C:\\amr-control-system-demo\\src\\Amr.ControlGui\\bin\\ControlSessionVerify\\Amr.ControlGui.exe\" --grid-url http://127.0.0.1:59878"
+  },
+  {
+    "Name": "Amr.Simulator.Map.exe",
+    "ProcessId": 41288,
+    "ParentProcessId": 2244,
+    "ExecutablePath": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\VisualStudio\\Debug\\net10.0\\Amr.Simulator.Map.exe",
+    "CommandLine": "\"C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\VisualStudio\\Debug\\net10.0\\Amr.Simulator.Map.exe\" "
+  },
+  {
+    "Name": "Amr.ControlGui.exe",
+    "ProcessId": 42860,
+    "ParentProcessId": 23204,
+    "ExecutablePath": "C:\\amr-control-system-demo\\src\\Amr.ControlGui\\bin\\Debug\\net10.0-windows\\Amr.ControlGui.exe",
+    "CommandLine": "\"C:\\amr-control-system-demo\\src\\Amr.ControlGui\\bin\\Debug\\net10.0-windows\\Amr.ControlGui.exe\"  --grid-url http://127.0.0.1:59344"
+  }
+]

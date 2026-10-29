@@ -1,0 +1,26 @@
+[
+  {
+    "file": "Amr.Communication.Tests-03.trx",
+    "passed": 778,
+    "total": 778,
+    "failed": 0
+  },
+  {
+    "file": "Amr.Simulator.Tests-04.trx",
+    "passed": 202,
+    "total": 202,
+    "failed": 0
+  },
+  {
+    "file": "Gui-final.trx",
+    "passed": 49,
+    "total": 49,
+    "failed": 0
+  },
+  {
+    "file": "Map-final.trx",
+    "passed": 66,
+    "total": 66,
+    "failed": 0
+  }
+]

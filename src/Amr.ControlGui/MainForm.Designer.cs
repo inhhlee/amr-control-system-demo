@@ -12,6 +12,9 @@ partial class MainForm
     private Button advanceButton = null!, submitButton = null!, completeSuccessButton = null!, completeFailureButton = null!;
     private NumericUpDown targetX = null!, targetY = null!;
     private MapCanvas mapCanvas = null!;
+    private Label mapCaption = null!, mapSource = null!, commandTitle = null!, historyNote = null!, gridDetails = null!;
+    private FlowLayoutPanel mockInputs = null!, gridActions = null!;
+    private Button gridStartButton = null!, gridCancelButton = null!, gridResetButton = null!;
 
     protected override void Dispose(bool disposing)
     {
@@ -64,12 +67,13 @@ partial class MainForm
         mapLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 24));
         mapLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
         mapLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 45));
-        var mapCaption = TextLabel("mapCaption", "AMR 위치 · 단위 m · 전체 좌표 자동 맞춤", 8, Color.SlateGray);
+        mapCaption = TextLabel("mapCaption", "AMR 위치 · 단위 m · 전체 좌표 자동 맞춤", 8, Color.SlateGray);
         var mapSplit = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 2, RowCount = 1, Margin = Padding.Empty };
         mapSplit.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 66));
         mapSplit.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 34));
         mapCanvas = new MapCanvas { Name = "mapCanvas", Dock = DockStyle.Fill, Margin = Padding.Empty };
         mapCanvas.DeviceSelected += MapDeviceSelected;
+        mapCanvas.GridObstacleRequested += GridObstacleRequested;
         var detailSection = new TableLayoutPanel { Dock = DockStyle.Fill, BackColor = Color.FromArgb(248, 250, 252),
             Padding = new Padding(10), ColumnCount = 1, RowCount = 2, Margin = new Padding(6, 0, 0, 0), AutoScroll = true };
         detailSection.RowStyles.Add(new RowStyle(SizeType.Absolute, 25));
@@ -86,7 +90,7 @@ partial class MainForm
             ("● 정지", Color.FromArgb(217, 119, 6)), ("● 오류", Color.FromArgb(220, 38, 38)),
             ("◎ 선택", Color.FromArgb(37, 99, 235)), ("◌ 연결 끊김/응답 없음", Color.SlateGray) })
             legendItems.Controls.Add(new Label { Text = item.Item1, ForeColor = item.Item2, Font = new Font("맑은 고딕", 8), AutoSize = true, Margin = new Padding(0, 1, 8, 0) });
-        var mapSource = TextLabel("mapSource", "좌표 출처: Mock · 경로 데이터 없음", 8, Color.SlateGray);
+        mapSource = TextLabel("mapSource", "좌표 출처: Mock · 경로 데이터 없음", 8, Color.SlateGray);
         mapSource.Dock = DockStyle.Bottom;
         mapSource.Height = 22;
         legend.Controls.Add(legendItems);
@@ -103,11 +107,13 @@ partial class MainForm
         alarmSummary = TextLabel("alarmSummary", "현재 알람 없음\n수신된 알람 0건", 9, Color.SlateGray);
         alarmBody.Controls.Add(alarmSummary);
         var commandSection = Section("명령 · Mock 확인", out var commandBody);
+        commandTitle = commandSection.Controls.OfType<Label>().Single();
         var commandLayout = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 3, Margin = Padding.Empty };
         commandLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         commandLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 42));
         commandLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
         var inputs = new FlowLayoutPanel { Dock = DockStyle.Fill, AutoSize = true, WrapContents = true, Margin = Padding.Empty };
+        mockInputs = inputs;
         targetX = CoordinateInput("targetX", "목표 X", 10);
         targetY = CoordinateInput("targetY", "목표 Y", 5);
         submitButton = ActionButton("submitButton", "MOVE 요청", SubmitClicked, 88);
@@ -142,9 +148,26 @@ partial class MainForm
         // 작은 명령 영역에서도 접수/결과를 먼저 확인하고 ID는 가로 스크롤로 조회한다.
         commandGrid.Columns[3].DisplayIndex = 1;
         commandGrid.Columns[2].DisplayIndex = 2;
-        commandLayout.Controls.Add(inputs, 0, 0);
+        var actionHost = new TableLayoutPanel { Dock = DockStyle.Fill, AutoSize = true, ColumnCount = 1, RowCount = 2, Margin = Padding.Empty };
+        actionHost.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        actionHost.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        gridActions = new FlowLayoutPanel { Dock = DockStyle.Fill, AutoSize = true, WrapContents = true, Visible = false, Margin = Padding.Empty };
+        gridStartButton = ActionButton("gridStartButton", "출발", GridStartClicked, 70);
+        gridCancelButton = ActionButton("gridCancelButton", "이동 중단", GridCancelClicked, 80);
+        gridResetButton = ActionButton("gridResetButton", "지도 초기화", GridResetClicked, 90);
+        gridActions.Controls.AddRange([gridStartButton, gridCancelButton, gridResetButton]);
+        actionHost.Controls.Add(inputs, 0, 0);
+        actionHost.Controls.Add(gridActions, 0, 1);
+        commandLayout.Controls.Add(actionHost, 0, 0);
         commandLayout.Controls.Add(submissionLabel, 0, 1);
-        commandLayout.Controls.Add(commandGrid, 0, 2);
+        var resultHost = new Panel { Dock = DockStyle.Fill, Margin = Padding.Empty };
+        resultHost.Controls.Add(commandGrid);
+        gridDetails = TextLabel("gridDetails", "", 8, Color.FromArgb(51, 65, 85));
+        gridDetails.TextAlign = ContentAlignment.TopLeft;
+        gridDetails.Visible = false;
+        gridDetails.AutoEllipsis = true;
+        resultHost.Controls.Add(gridDetails);
+        commandLayout.Controls.Add(resultHost, 0, 2);
         commandBody.Controls.Add(commandLayout);
         right.Controls.Add(alarmSection, 0, 0);
         right.Controls.Add(commandSection, 0, 1);
@@ -165,7 +188,9 @@ partial class MainForm
         deviceGrid.SelectionChanged += DeviceSelectionChanged;
         listBody.Controls.Add(deviceGrid);
         var historySection = Section("이력", out var historyBody);
-        historyBody.Controls.Add(TextLabel("historyNote", "현재 Mock 이력 0건\n이력 조회 화면은 후속 구현", 8, Color.SlateGray));
+        historyNote = TextLabel("historyNote", "현재 Mock 이력 0건\n이력 조회 화면은 후속 구현", 8, Color.SlateGray);
+        historyNote.AutoEllipsis = true;
+        historyBody.Controls.Add(historyNote);
         bottom.Controls.Add(listSection, 0, 0);
         bottom.Controls.Add(historySection, 1, 0);
         statusLabel = TextLabel("statusLabel", "초기 상태를 기다리는 중입니다.", 8, Color.SlateGray);

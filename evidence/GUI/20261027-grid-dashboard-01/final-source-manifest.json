@@ -1,0 +1,98 @@
+[
+  {
+    "path": "src/Amr.ControlGui/Amr.ControlGui.csproj",
+    "sha256": "BCCC561F41D0ED04FC4F45B80C13C154C1F19FDAF95C36F8DBA08A0191F76C02"
+  },
+  {
+    "path": "src/Amr.ControlGui/GridMapDataProvider.cs",
+    "sha256": "C9DF90C7F6A2BFE0A27A19F5C2C00CC40072C3A98F0E4B7F1A9EB4BF56E6BD14"
+  },
+  {
+    "path": "src/Amr.ControlGui/MainForm.cs",
+    "sha256": "CAD667008F8C5249FAAB0BB722F8D28623D4840DBA1519620AD1B362E3A63560"
+  },
+  {
+    "path": "src/Amr.ControlGui/MainForm.Designer.cs",
+    "sha256": "4327994CD20D337FC89576B971A085A2C5A648C54EFCC5807A83F2457070AA32"
+  },
+  {
+    "path": "src/Amr.ControlGui/MainForm.Grid.cs",
+    "sha256": "765A57C5B3F4BB4350B1CAECCE31C497124DFB07BF9233CC51C9360815AFBEF3"
+  },
+  {
+    "path": "src/Amr.ControlGui/MainForm.resx",
+    "sha256": "B96E988EBCF14F62545A683B0A3FEDF3AF58D36D2B94AAFED4C9EB61DBD58A46"
+  },
+  {
+    "path": "src/Amr.ControlGui/MapCanvas.cs",
+    "sha256": "3E20589E27468B86F5E62AA797F96EC7FCA93D92311025BAA2C79E84A2CC4AF0"
+  },
+  {
+    "path": "src/Amr.ControlGui/MapCanvas.Grid.cs",
+    "sha256": "EF2647AE857F33BCB906B5975E71132370FBB289E41874592A7BADD24462FDD8"
+  },
+  {
+    "path": "src/Amr.ControlGui/MockAmrDataProvider.cs",
+    "sha256": "18AB2D91526077D08A395BDAAD56707FD129E0700F4C3DD84095719D15290AEF"
+  },
+  {
+    "path": "src/Amr.ControlGui/MockCommandDispatcher.cs",
+    "sha256": "9598D5E0810E21BE0CB5C4840C29F74FF5DC2098B052934CFBCA8C220DAA5BE9"
+  },
+  {
+    "path": "src/Amr.ControlGui/Program.cs",
+    "sha256": "1E6A66FDE546F0A665ABFB638FE657A28EDEB9B5ECAF887E23CAB6CEBF836163"
+  },
+  {
+    "path": "src/Amr.Core/Amr.Core.csproj",
+    "sha256": "C5FC3EB64AE56FC55EAF04C20E143C231A8EAFBFC5A6BD797F140931BF8E2DBF"
+  },
+  {
+    "path": "src/Amr.Core/AmrChange.cs",
+    "sha256": "273DEA3CFDEABAA17FD5FB0FB111FF8D03B5AEFEF9A0FDCF9AE78474BD50B201"
+  },
+  {
+    "path": "src/Amr.Core/AmrSnapshot.cs",
+    "sha256": "1CAA13B25BB5A8AF29202C30DFB7B151FB1833F91428B8FFCAC6BABCC5A811FB"
+  },
+  {
+    "path": "src/Amr.Core/CommandModels.cs",
+    "sha256": "D66AD50C73F3CC5B9C1427A800D6AD3E76B3FD25E106CEE262AF3357203908AE"
+  },
+  {
+    "path": "src/Amr.Core/IAmrDataProvider.cs",
+    "sha256": "B20BE27FD4DE7AE3E0B35D6165FCBDBE4476E56CC1EB60593EBC4149E8E1E6C5"
+  },
+  {
+    "path": "src/Amr.Core/ICommandDispatcher.cs",
+    "sha256": "E541779A98B2251278F01927EC881FA4049AE86FE5ADFF25E1EDEDBE7BABFE10"
+  },
+  {
+    "path": "src/Amr.Core/QueryModels.cs",
+    "sha256": "4E6B548D9B195B46FEE52F38C3DBCE66BDCF8D1CB9692FA06D5499532B7E319E"
+  },
+  {
+    "path": "tests/Amr.ControlGui.Tests/Amr.ControlGui.Tests.csproj",
+    "sha256": "42D65AE81A78121442155E4F808159E88283BB5CD8E6106BCA32188F6804E887"
+  },
+  {
+    "path": "tests/Amr.ControlGui.Tests/DashboardMapTests.cs",
+    "sha256": "E83E7ADB463CF63693EEDC07C2D231471E2D85894CDE07F88F9B0BDE68BE66C7"
+  },
+  {
+    "path": "tests/Amr.ControlGui.Tests/GridDashboardTests.cs",
+    "sha256": "2D9C6B6B52787CDA9B17D33D0DD054DF130A3BB543C6762F8B557918D612B6E0"
+  },
+  {
+    "path": "tests/Amr.ControlGui.Tests/MainFormTests.cs",
+    "sha256": "D0FD8C67786298327A9169435074A6D338AD3AF8650DA315D07DE58A57CD9B5C"
+  },
+  {
+    "path": "tests/Amr.ControlGui.Tests/MockCommandDispatcherTests.cs",
+    "sha256": "6B899A7359F00DCECFE11C44E7377735AE413B51BC4E8743022B9FAA3AE42E1B"
+  },
+  {
+    "path": "tests/Amr.ControlGui.Tests/MockDataProviderTests.cs",
+    "sha256": "3D33525C4D54A03ACE2C51AD1FD2234526F9FA09EF6881FFBE69AD2C10043A52"
+  }
+]

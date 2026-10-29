@@ -7,11 +7,38 @@ using MQTTnet;
 using MQTTnet.Packets;
 using MQTTnet.Protocol;
 using Xunit;
+using Amr.Communication.Monitoring;
 
 namespace Amr.Communication.Tests;
 
 public sealed class MessageSubscriptionTests
 {
+    [Fact]
+    public async Task NormalHeartbeatReceiptUpdatesMonitorBeforeFailedCoreDeliveryButInvalidAndTelemetryDoNot()
+    {
+        var client=new FakeMqttClient{IsConnected=true};
+        var monitor=new SingleAmrHeartbeatMonitor("AMR_001");monitor.Start();
+        int observations=0,failures=0;
+        using var subscription=new MessageSubscription(client,_=>throw new IOException("slow/failed Core"),_=>{},_=>failures++,
+            normalHeartbeat:(message,stamp)=>{observations++;monitor.Observe(message.Id,message.ReceivedAtUtc,stamp);});
+        Approve(client);await subscription.SubscribeAsync();
+        await client.ReceiveAsync(Message("telemetry"));
+        await client.ReceiveAsync(Message("heartbeat",json:"{}"));
+        Assert.Equal(0,observations);Assert.Equal(HeartbeatObservationState.AwaitingFirst,monitor.Read().State);
+        await client.ReceiveAsync(Message("heartbeat"));
+        Assert.Equal(1,observations);Assert.Equal(HeartbeatObservationState.Alive,monitor.Read().State);
+        Assert.True(failures>=1);
+    }
+    [Fact]
+    public async Task HeartbeatTimestampIsCapturedBeforeValidationCallbacksInsteadOfAfterQueueWork()
+    {
+        var client=new FakeMqttClient{IsConnected=true};var clock=new ReceiptClock();long observed=-1;
+        using var subscription=new MessageSubscription(client,_=>{},_=>{},_=>Assert.Fail("unexpected failure"),
+            diagnostic:_=>clock.Stamp=999,normalHeartbeat:(_,stamp)=>observed=stamp,clock:clock);
+        Approve(client);await subscription.SubscribeAsync();await client.ReceiveAsync(Message("heartbeat"));
+        Assert.Equal(100,observed);
+    }
+    private sealed class ReceiptClock:TimeProvider{public long Stamp=100;public override long GetTimestamp()=>Stamp;}
     private static readonly string[] Kinds = ["heartbeat", "telemetry", "alarm", "ack"];
 
     [Fact]

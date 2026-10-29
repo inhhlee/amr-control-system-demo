@@ -1,0 +1,11 @@
+  Amr.Communication -> C:\amr-control-system-demo\src\Amr.Communication\bin\TwoAmrVerify\Amr.Communication.dll
+  Amr.Simulator -> C:\amr-control-system-demo\src\Amr.Simulator\bin\TwoAmrVerify\Amr.Simulator.dll
+  Amr.Core -> C:\amr-control-system-demo\src\Amr.Core\bin\TwoAmrVerify\Amr.Core.dll
+  Amr.Simulator.Map -> C:\amr-control-system-demo\tools\Amr.Simulator.Map\bin\TwoAmrVerify\Amr.Simulator.Map.dll
+  FleetProbe -> C:\amr-control-system-demo\tests\manual\COM02-A\FleetProbe\bin\TwoAmrVerify\FleetProbe.dll
+
+빌드했습니다.
+    경고 0개
+    오류 0개
+
+경과 시간: 00:00:02.72

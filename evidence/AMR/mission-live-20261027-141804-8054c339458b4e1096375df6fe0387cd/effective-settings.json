@@ -1,0 +1,14 @@
+{
+  "configurationPath": "C:\\amr-control-system-demo\\evidence\\AMR\\20261027-hb-grid-settings\\settings.json",
+  "stepIntervalMs": 100,
+  "mqtt": {
+    "host": "127.0.0.1",
+    "port": 61267,
+    "telemetryMs": 70,
+    "heartbeatMs": 200
+  },
+  "heartbeatMonitor": {
+    "timeoutMs": 5000,
+    "checkIntervalMs": 500
+  }
+}

@@ -1,0 +1,18 @@
+C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+[xUnit.net 00:00:00.32]     Amr.ControlGui.Tests.GridDashboardTests.GridMarkersEditsAndPendingCompletionMatchTheSameReceivedFrame [FAIL]
+  실패 Amr.ControlGui.Tests.GridDashboardTests.GridMarkersEditsAndPendingCompletionMatchTheSameReceivedFrame [117 ms]
+  오류 메시지:
+   Assert.True() Failure
+Expected: True
+Actual:   False
+  스택 추적:
+     at Amr.ControlGui.Tests.GridDashboardTests.<>c.<GridMarkersEditsAndPendingCompletionMatchTheSameReceivedFrame>b__8_0() in C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\GridDashboardTests.cs:line 167
+   at Amr.ControlGui.Tests.GridDashboardTests.<>c__DisplayClass14_0.<OnSta>b__0() in C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\GridDashboardTests.cs:line 196
+--- End of stack trace from previous location ---
+   at Amr.ControlGui.Tests.GridDashboardTests.OnSta(Action action) in C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\GridDashboardTests.cs:line 198
+--- End of stack trace from previous location ---
+데이터 수집기 'Blame' 메시지: 모든 테스트 실행이 완료되었지만, 시퀀스 파일이 생성되지 않습니다..
+결과 파일: C:\amr-control-system-demo\evidence\GUI\20261027-grid-dashboard-01\tests\gui-04.trx
+
+실패!  - 실패:     1, 통과:    43, 건너뜀:     0, 전체:    44, 기간: 1 s - Amr.ControlGui.Tests.dll (net10.0)

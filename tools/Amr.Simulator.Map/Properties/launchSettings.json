@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Grid MQTT": {
+      "commandName": "Project",
+      "launchBrowser": false
+    },
+    "Fleet MQTT": {
+      "commandName": "Project",
+      "launchBrowser": false,
+      "commandLineArgs": "--fleet-config config/map-demo/fleet.json"
+    }
+  }
+}

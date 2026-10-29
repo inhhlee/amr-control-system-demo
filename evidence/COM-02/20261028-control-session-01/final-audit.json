@@ -1,0 +1,27 @@
+{
+  "prCreated": false,
+  "pushed": false,
+  "beforeSourceZipSha256": "B7BF8A51BBA74EA5A74477BDC01FD114CA68F928708A155AC0D816618071FCE9",
+  "head": "4e44fa880cb0d1fcccb000dbc53e634fd90381b5",
+  "restorableSourceEntries": 182,
+  "preservedAppendOnlyFiles": [],
+  "ownedTestContainersRemaining": 0,
+  "originalFiles": 3026,
+  "committed": false,
+  "original50Verified": 50,
+  "stashAndPreservedBranchUnchanged": true,
+  "branch": "feature/46-grid-map-integration",
+  "merged": false,
+  "authorizedExistingChanges": [
+    "tests/manual/COM02-A/Verify-Heartbeat.ps1",
+    "tools/Amr.Simulator.Map/Control/GridControlConnection.cs",
+    "tools/Amr.Simulator.Map/MqttMapReceiver.cs",
+    "tools/Amr.Simulator.Map/README.md",
+    "BUILDING.md",
+    "README.md",
+    "src/Amr.Communication.Console/ConsoleRunner.cs"
+  ],
+  "existingContainersPreserved": true,
+  "unchangedFiles": 3019,
+  "stagedFiles": 0
+}

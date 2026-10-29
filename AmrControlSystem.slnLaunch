@@ -1,0 +1,24 @@
+[
+  {
+    "Name": "AMR Grid + GUI",
+    "Projects": [
+      {
+        "Path": "tools\\Amr.Simulator.Map\\Amr.Simulator.Map.csproj",
+        "Action": "Start",
+        "DebugTarget": "Grid MQTT"
+      },
+      {
+        "Path": "src\\Amr.ControlGui\\Amr.ControlGui.csproj",
+        "Action": "Start",
+        "DebugTarget": "Grid MQTT"
+      }
+    ]
+  },
+  {
+    "Name": "AMR Fleet + GUI",
+    "Projects": [
+      { "Path": "tools\\Amr.Simulator.Map\\Amr.Simulator.Map.csproj", "Action": "Start", "DebugTarget": "Fleet MQTT" },
+      { "Path": "src\\Amr.ControlGui\\Amr.ControlGui.csproj", "Action": "Start", "DebugTarget": "Grid MQTT" }
+    ]
+  }
+]

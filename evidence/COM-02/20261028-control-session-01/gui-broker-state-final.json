@@ -1,0 +1,294 @@
+{
+  "navigation": {
+    "phase": "Failed",
+    "start": {
+      "row": 0,
+      "col": 0
+    },
+    "goal": {
+      "row": 4,
+      "col": 5
+    },
+    "current": {
+      "row": 0,
+      "col": 0
+    },
+    "map": [
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "fixedObstacles": [
+      [
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        true,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        true,
+        true,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    ],
+    "path": [
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 3
+      }
+    ],
+    "traveled": [
+      {
+        "row": 0,
+        "col": 0
+      }
+    ],
+    "remainingDistance": 5,
+    "moves": 0,
+    "replans": 15,
+    "mapVersion": 17,
+    "waypoints": [
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 5
+      }
+    ],
+    "nextWaypointIndex": 0,
+    "currentTarget": {
+      "row": 2,
+      "col": 3
+    },
+    "reachedWaypoints": []
+  },
+  "stepIntervalMs": 100,
+  "source": "mqtt-grid-control-receiver",
+  "position": {
+    "row": 0,
+    "col": 0
+  },
+  "configurationPath": null,
+  "amrId": "HB_ONE",
+  "cellSizeMeters": 1,
+  "receivedTelemetry": {
+    "id": "HB_ONE",
+    "timestamp": 1793153919103,
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "speed": 0,
+    "state": "IDLE",
+    "receivedAtUtc": "2026-10-28T11:18:39.1056807+09:00"
+  },
+  "receivedHeartbeat": {
+    "id": "HB_ONE",
+    "timestamp": 1793153919165,
+    "status": "OK",
+    "receivedAtUtc": "2026-10-28T11:18:39.1660179+09:00"
+  },
+  "receivedTrail": [
+    {
+      "row": 0,
+      "col": 0
+    }
+  ],
+  "telemetryCount": 4267,
+  "heartbeatCount": 2074,
+  "publishedCount": 6804,
+  "rejectedCount": 1,
+  "lastPublishedTimestamp": 1793153919103,
+  "missionFinalTelemetry": null,
+  "missionFinalReceived": false,
+  "heartbeatMonitor": {
+    "amrId": "HB_ONE",
+    "state": "Stopped",
+    "monitoring": false,
+    "lastReceivedAtUtc": null,
+    "elapsedMilliseconds": null,
+    "timeoutMilliseconds": 5000,
+    "checkIntervalMilliseconds": 500,
+    "timeoutCount": 2,
+    "recoveryCount": 2
+  },
+  "brokerState": "Failed",
+  "failure": "BrokerDisconnected",
+  "mqttEndpoint": "127.0.0.1:59874",
+  "evidencePath": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-control-session-mqtt-01\\grid-navigation.jsonl",
+  "evidenceDirectory": "C:\\amr-control-system-demo\\evidence\\COM-02\\20261028-control-session-mqtt-01",
+  "logs": [
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridHeartbeatChanged Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridHeartbeatChanged Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridMapChanged Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridMapChanged Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridControlReceived Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridSenderStopped:IOException Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridMqttFailed Phase=Ready Position=(0,0) Moves=0 WaypointsPassed=0/3",
+    "GridMqttEnded Phase=Failed Position=(0,0) Moves=0 WaypointsPassed=0/3"
+  ]
+}

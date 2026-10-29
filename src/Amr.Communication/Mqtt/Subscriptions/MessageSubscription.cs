@@ -4,6 +4,7 @@ using Amr.Communication.Models;
 using Amr.Communication.Validation;
 using MQTTnet;
 using MQTTnet.Protocol;
+using Amr.Communication.Monitoring;
 
 namespace Amr.Communication.Mqtt;
 
@@ -31,6 +32,8 @@ public sealed class MessageSubscription : IDisposable
     private readonly Action<CallbackFailure> _callbackFailed;
     private readonly Action<MessageDiagnostic>? _diagnostic;
     private readonly bool _showPayload;
+    private readonly Action<HeartbeatMessage, long>? _normalHeartbeat;
+    private readonly TimeProvider _clock;
     private readonly object _gate = new();
     private bool _started;
     private bool _ready;
@@ -44,7 +47,8 @@ public sealed class MessageSubscription : IDisposable
     /// </remarks>
     public MessageSubscription(IMqttClient client, Action<ReceivedMessage> received,
         Action<ValidationError> rejected, Action<CallbackFailure> callbackFailed,
-        Action<MessageDiagnostic>? diagnostic = null, bool showPayload = false)
+        Action<MessageDiagnostic>? diagnostic = null, bool showPayload = false,
+        Action<HeartbeatMessage, long>? normalHeartbeat = null, TimeProvider? clock = null)
     {
         ArgumentNullException.ThrowIfNull(client);
         ArgumentNullException.ThrowIfNull(received);
@@ -56,6 +60,8 @@ public sealed class MessageSubscription : IDisposable
         _callbackFailed = callbackFailed;
         _diagnostic = diagnostic;
         _showPayload = showPayload;
+        _normalHeartbeat = normalHeartbeat;
+        _clock = clock ?? TimeProvider.System;
         _client.ApplicationMessageReceivedAsync += OnMessageAsync;
     }
 
@@ -130,7 +136,8 @@ public sealed class MessageSubscription : IDisposable
 
     private Task OnMessageAsync(MqttApplicationMessageReceivedEventArgs args)
     {
-        var receivedAt = DateTimeOffset.UtcNow;
+        var receivedAt = _clock.GetUtcNow();
+        long receivedTimestamp = _clock.GetTimestamp();
         lock (_gate)
         {
             if (!_ready || _disposed) return Task.CompletedTask;
@@ -151,7 +158,11 @@ public sealed class MessageSubscription : IDisposable
             if (error is not null)
                 Invoke(() => _rejected(error), "Rejected");
             else
+            {
+                if (model is HeartbeatMessage heartbeat && _normalHeartbeat is not null)
+                    Invoke(() => _normalHeartbeat(heartbeat, receivedTimestamp), "HeartbeatObservation");
                 Invoke(() => _received(new(parts[1], kind, model!, receivedAt)), "Received");
+            }
         }
         return Task.CompletedTask;
     }

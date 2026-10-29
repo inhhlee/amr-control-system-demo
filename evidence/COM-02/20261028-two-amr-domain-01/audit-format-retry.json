@@ -1,0 +1,5 @@
+{
+  "correction": "Repeat read with --no-trunc; compare exact full IDs and states.",
+  "firstRepeatAudit": "Inventory format mismatch: 12-character IDs compared against full SHA IDs. No container change inferred.",
+  "containerMutationsPerformed": false
+}

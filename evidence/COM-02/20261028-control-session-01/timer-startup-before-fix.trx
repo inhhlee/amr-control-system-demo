@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="8eaf591f-ddfa-424f-80f3-e5cedc67ae63" name="Admin@DESKTOP-N1BSNS3 2026-10-28 11:24:59" runUser="DESKTOP-N1BSNS3\Admin" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-28T11:24:59.5972258+09:00" queuing="2026-10-28T11:24:59.5972260+09:00" start="2026-10-28T11:24:58.6936963+09:00" finish="2026-10-28T11:24:59.6009864+09:00" />
+  <TestSettings name="default" id="47472bcf-c2c5-48ec-8e0b-e6b6b09c7c20">
+    <Deployment runDeploymentRoot="Admin_DESKTOP-N1BSNS3_2026-10-28_11_24_59" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="0f4f6c92-9c55-4f7a-b228-4483402a8b0e" testId="37fc9a2c-0573-eefa-506e-31c5497e78fd" testName="Amr.Communication.Tests.ControlCommunicationSessionTests.TimerStartupFailureCannotPublishSubscribedAfterFailure" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0214495" startTime="2026-10-28T11:24:59.4865079+09:00" endTime="2026-10-28T11:24:59.5184376+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0f4f6c92-9c55-4f7a-b228-4483402a8b0e">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.DoesNotContain() Failure: Filter matched in collection&#xD;
+                                                                                                                                                     ↓ (pos 2)&#xD;
+Collection: [CommunicationSessionEvent { Name = Connecting, Value =  }, CommunicationSessionEvent { Name = Failed, Value = HeartbeatMonitorFailed }, CommunicationSessionEvent { Name = Subscribed, Value = { ClientId = amr-demo-65bb86fd83f7445e93847f3faba7d405, Host = 127.0.0.1, Port = 1884 } }, CommunicationSessionEvent { Name = QueueEvent, Value = QueueProcessingEvent { Code = Stopped, AmrId = , Kind = , Count = 0, ExceptionType =  } }, CommunicationSessionEvent { Name = Closed, Value =  }]</Message>
+          <StackTrace>   at Amr.Communication.Tests.ControlCommunicationSessionTests.TimerStartupFailureCannotPublishSubscribedAfterFailure() in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Mqtt\Sessions\ControlCommunicationSessionTests.cs:line 208&#xD;
+   at Amr.Communication.Tests.ControlCommunicationSessionTests.TimerStartupFailureCannotPublishSubscribedAfterFailure() in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Mqtt\Sessions\ControlCommunicationSessionTests.cs:line 209&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Amr.Communication.Tests.ControlCommunicationSessionTests.TimerStartupFailureCannotPublishSubscribedAfterFailure" storage="c:\amr-control-system-demo\tests\amr.communication.tests\bin\controlsessionverify\amr.communication.tests.dll" id="37fc9a2c-0573-eefa-506e-31c5497e78fd">
+      <Execution id="0f4f6c92-9c55-4f7a-b228-4483402a8b0e" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\ControlSessionVerify\Amr.Communication.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Communication.Tests.ControlCommunicationSessionTests" name="TimerStartupFailureCannotPublishSubscribedAfterFailure" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="37fc9a2c-0573-eefa-506e-31c5497e78fd" executionId="0f4f6c92-9c55-4f7a-b228-4483402a8b0e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="목록에 없는 결과" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="로드된 모든 결과" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" passed="0" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.12)&#xD;
+[xUnit.net 00:00:00.06]   Discovering: Amr.Communication.Tests&#xD;
+[xUnit.net 00:00:00.47]   Discovered:  Amr.Communication.Tests&#xD;
+[xUnit.net 00:00:00.49]   Starting:    Amr.Communication.Tests&#xD;
+[xUnit.net 00:00:00.53]       Assert.DoesNotContain() Failure: Filter matched in collection&#xD;
+[xUnit.net 00:00:00.53]                                                                                                                                                            ↓ (pos 2)&#xD;
+[xUnit.net 00:00:00.53]       Collection: [CommunicationSessionEvent { Name = Connecting, Value =  }, CommunicationSessionEvent { Name = Failed, Value = HeartbeatMonitorFailed }, CommunicationSessionEvent { Name = Subscribed, Value = { ClientId = amr-demo-65bb86fd83f7445e93847f3faba7d405, Host = 127.0.0.1, Port = 1884 } }, CommunicationSessionEvent { Name = QueueEvent, Value = QueueProcessingEvent { Code = Stopped, AmrId = , Kind = , Count = 0, ExceptionType =  } }, CommunicationSessionEvent { Name = Closed, Value =  }]&#xD;
+[xUnit.net 00:00:00.53]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.53]         C:\amr-control-system-demo\tests\Amr.Communication.Tests\Mqtt\Sessions\ControlCommunicationSessionTests.cs(208,0): at Amr.Communication.Tests.ControlCommunicationSessionTests.TimerStartupFailureCannotPublishSubscribedAfterFailure()&#xD;
+[xUnit.net 00:00:00.53]         C:\amr-control-system-demo\tests\Amr.Communication.Tests\Mqtt\Sessions\ControlCommunicationSessionTests.cs(209,0): at Amr.Communication.Tests.ControlCommunicationSessionTests.TimerStartupFailureCannotPublishSubscribedAfterFailure()&#xD;
+[xUnit.net 00:00:00.53]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:00.54]   Finished:    Amr.Communication.Tests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="DESKTOP-N1BSNS3" outcome="Error" timestamp="2026-10-28T11:24:59.5203155+09:00">
+        <Text>[xUnit.net 00:00:00.53]     Amr.Communication.Tests.ControlCommunicationSessionTests.TimerStartupFailureCannotPublishSubscribedAfterFailure [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

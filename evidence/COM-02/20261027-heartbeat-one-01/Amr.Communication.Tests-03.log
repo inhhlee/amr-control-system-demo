@@ -1,0 +1,5 @@
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\HeartbeatVerify\Amr.Communication.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+결과 파일: C:\amr-control-system-demo\evidence\COM-02\20261027-heartbeat-one-01\tests\Amr.Communication.Tests-03.trx
+
+통과!  - 실패:     0, 통과:   778, 건너뜀:     0, 전체:   778, 기간: 3 s - Amr.Communication.Tests.dll (net10.0)

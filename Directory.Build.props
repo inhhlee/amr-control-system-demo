@@ -1,0 +1,6 @@
+<Project>
+  <!-- 실행 중인 기존 CLI 시연의 bin/Debug 파일을 Visual Studio가 덮지 않는다. -->
+  <PropertyGroup Condition="'$(BuildingInsideVisualStudio)' == 'true' and '$(MSBuildProjectName)' == 'Amr.Simulator.Map'">
+    <OutputPath>bin\VisualStudio\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+</Project>

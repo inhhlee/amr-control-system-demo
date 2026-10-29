@@ -1,0 +1,5 @@
+{
+  "priorFalsePositives": "Absolute Windows paths were incorrectly joined to the Markdown directory; scanner corrected.",
+  "missing": [],
+  "checkedLocalLinks": 191
+}

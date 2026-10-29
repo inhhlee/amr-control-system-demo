@@ -1,0 +1,5 @@
+C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\HeartbeatVerify\Amr.Simulator.Map.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+결과 파일: C:\amr-control-system-demo\evidence\COM-02\20261027-heartbeat-one-01\tests\Amr.Simulator.Map.Tests-04.trx
+
+통과!  - 실패:     0, 통과:    64, 건너뜀:     0, 전체:    64, 기간: 25 s - Amr.Simulator.Map.Tests.dll (net10.0)

@@ -1,0 +1,12 @@
+{
+  "ServerPid": 15464,
+  "ContainerId": "9d9a58d1caf2c4b3738f34728408ff6e754234a341eddce7429b432cc2b181bc",
+  "Url": "http://127.0.0.1:49201",
+  "ImageId": "sha256:38c0da4f2ef84284d47b3b3eeea1cb3bdeabe81ee10caf0cd5c5ff61ee3ea408",
+  "ProductEvidence": "C:\\amr-control-system-demo\\evidence\\AMR\\mission-live-20261027-133151-a11d504065844a59b562048056da76e7",
+  "RunId": "20261027-gui-grid-final-01",
+  "Exe": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\Release\\net10.0\\Amr.Simulator.Map.exe",
+  "BrokerPort": 49200,
+  "ServerStartTicks": 639286723117620797,
+  "Started": "2026-10-27T13:31:52.0943359+09:00"
+}

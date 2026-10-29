@@ -1,0 +1,8 @@
+{
+  "pid": 41140,
+  "startTicks": 639286723122496794,
+  "exe": "C:\\amr-control-system-demo\\src\\Amr.ControlGui\\bin\\Release\\net10.0-windows\\Amr.ControlGui.exe",
+  "url": "http://127.0.0.1:49201",
+  "hostRunId": "20261027-gui-grid-final-01",
+  "stepIntervalMs": 100
+}

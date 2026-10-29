@@ -1,0 +1,5 @@
+{
+  "ownedBrokerRemoved": true,
+  "gracefulShutdown": true,
+  "existingContainersPreserved": true
+}

@@ -1,0 +1,7 @@
+{
+  "BrokerPort": 52693,
+  "Pid": 18652,
+  "StartTicks": 639287541224211682,
+  "Exe": "C:\\amr-control-system-demo\\tests\\manual\\COM02-A\\FleetProbe\\bin\\TwoAmrVerify\\FleetProbe.exe",
+  "ContainerId": "19e6f96e56c375ef39e5683afa1e0ebfe404ba042f99df0048cb40a7e87ba23d"
+}

@@ -1,0 +1,74 @@
+{
+  "configurationRegression": 6,
+  "merged": false,
+  "prCreated": false,
+  "gridRegression": 15,
+  "guiScreens": [
+    "gui-alive.png",
+    "gui-unresponsive-visible.png",
+    "gui-recovered.png",
+    "gui-broker-down.png"
+  ],
+  "pushed": false,
+  "dirty": true,
+  "committed": false,
+  "runId": "20261027-heartbeat-one-01",
+  "head": "4e44fa880cb0d1fcccb000dbc53e634fd90381b5",
+  "mqttCases": [
+    {
+      "evidence": "01-ready.json",
+      "verdict": "passed",
+      "name": "01-ready"
+    },
+    {
+      "evidence": "02-waiting.json",
+      "verdict": "passed",
+      "name": "02-waiting"
+    },
+    {
+      "evidence": "03-arrival-alive.json",
+      "verdict": "passed",
+      "name": "03-arrival-alive"
+    },
+    {
+      "evidence": "04-NoHeartbeat.json",
+      "verdict": "passed",
+      "name": "04-NoHeartbeat"
+    },
+    {
+      "evidence": "05-invalid-other-isolation.json",
+      "verdict": "passed",
+      "name": "05-invalid-other-isolation"
+    },
+    {
+      "evidence": "06-Recovery.json",
+      "verdict": "passed",
+      "name": "06-Recovery"
+    },
+    {
+      "evidence": "04-Silent.json",
+      "verdict": "passed",
+      "name": "04-Silent"
+    },
+    {
+      "evidence": "06-Recovery2.json",
+      "verdict": "passed",
+      "name": "06-Recovery2"
+    },
+    {
+      "evidence": "07-broker-loss-stopped-monitor.json",
+      "verdict": "passed",
+      "name": "07-broker-loss-stopped-monitor"
+    }
+  ],
+  "unitTests": {
+    "simulator": 202,
+    "communication": 778,
+    "failed": 0,
+    "map": 66,
+    "total": 1095,
+    "skipped": 0,
+    "gui": 49
+  },
+  "scope": "single-AMR"
+}

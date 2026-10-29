@@ -1,0 +1,5 @@
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\ControlSessionVerify\Amr.Communication.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+결과 파일: C:\amr-control-system-demo\evidence\COM-02\20261028-control-session-01\session-unit-01.trx
+
+통과!  - 실패:     0, 통과:    15, 건너뜀:     0, 전체:    15, 기간: 153 ms - Amr.Communication.Tests.dll (net10.0)

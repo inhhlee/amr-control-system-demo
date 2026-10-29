@@ -1,0 +1,33 @@
+.NET SDK:
+ Version:           10.0.401
+ Commit:            e34a38d2ae
+
+Host:
+  Version:      10.0.12
+  Architecture: x64
+  Commit:       95017c711e
+  RID:          win-x64
+
+.NET SDKs installed:
+  10.0.401 [C:\Program Files\dotnet\sdk]
+
+.NET runtimes installed:
+  Microsoft.AspNetCore.App 10.0.12 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App]
+  Microsoft.NETCore.App 10.0.12 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
+  Microsoft.WindowsDesktop.App 10.0.12 [C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App]
+
+Other architectures found:
+  x86   [C:\Program Files (x86)\dotnet]
+    registered at [HKLM\SOFTWARE\dotnet\Setup\InstalledVersions\x86\InstallLocation]
+
+Environment variables:
+  Not set
+
+global.json file:
+  C:\amr-control-system-demo\global.json
+
+Learn more:
+  https://aka.ms/dotnet/info
+
+Download .NET:
+  https://aka.ms/dotnet/download

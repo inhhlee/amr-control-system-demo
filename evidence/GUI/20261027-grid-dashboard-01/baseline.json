@@ -1,0 +1,212 @@
+{
+  "head": "4e44fa880cb0d1fcccb000dbc53e634fd90381b5",
+  "branch": "feature/46-grid-map-integration",
+  "figma": "https://www.figma.com/design/ZyTPFPyj2CGcYygMxBGajo?node-id=3-2",
+  "figmaAccess": "MCP Starter limit; browser frame 3:2 observed; existing layout reused",
+  "files": [
+    {
+      "path": "config/map-demo/README.md",
+      "sha256": "E3686655AFFC74BBAFE9B618ACCBBB76BA0695159EEDBB69F9FEB37EE207A130"
+    },
+    {
+      "path": "config/map-demo/settings.json",
+      "sha256": "29AC69C67CB119B461116C9FA4A2FB091F92E5839FC6B3BFB78ED3F43D1192FD"
+    },
+    {
+      "path": "src/Amr.ControlGui/Amr.ControlGui.csproj",
+      "sha256": "BCCC561F41D0ED04FC4F45B80C13C154C1F19FDAF95C36F8DBA08A0191F76C02"
+    },
+    {
+      "path": "src/Amr.ControlGui/MainForm.cs",
+      "sha256": "BFC1AACBCBFB11C121967562F1DC1B0C0BF85A38A1C291E81E4ADF4977E845EC"
+    },
+    {
+      "path": "src/Amr.ControlGui/MainForm.Designer.cs",
+      "sha256": "5BA10D37FE94B21EB86D4E878F62EEE9483F804C1B1B859392A85E68666EC086"
+    },
+    {
+      "path": "src/Amr.ControlGui/MainForm.resx",
+      "sha256": "B96E988EBCF14F62545A683B0A3FEDF3AF58D36D2B94AAFED4C9EB61DBD58A46"
+    },
+    {
+      "path": "src/Amr.ControlGui/MapCanvas.cs",
+      "sha256": "915F9168B4B1C39D8DFD3A3238D31529F4E9CDDA449B0A693B91F71A34150145"
+    },
+    {
+      "path": "src/Amr.ControlGui/MockAmrDataProvider.cs",
+      "sha256": "18AB2D91526077D08A395BDAAD56707FD129E0700F4C3DD84095719D15290AEF"
+    },
+    {
+      "path": "src/Amr.ControlGui/MockCommandDispatcher.cs",
+      "sha256": "9598D5E0810E21BE0CB5C4840C29F74FF5DC2098B052934CFBCA8C220DAA5BE9"
+    },
+    {
+      "path": "src/Amr.ControlGui/Program.cs",
+      "sha256": "3CB8DE240CA20219A743F90FE7B7D8DCEAEB355C0945AEDCA02F54732E8B85BF"
+    },
+    {
+      "path": "src/Amr.Core/Amr.Core.csproj",
+      "sha256": "C5FC3EB64AE56FC55EAF04C20E143C231A8EAFBFC5A6BD797F140931BF8E2DBF"
+    },
+    {
+      "path": "src/Amr.Core/AmrChange.cs",
+      "sha256": "273DEA3CFDEABAA17FD5FB0FB111FF8D03B5AEFEF9A0FDCF9AE78474BD50B201"
+    },
+    {
+      "path": "src/Amr.Core/AmrSnapshot.cs",
+      "sha256": "1CAA13B25BB5A8AF29202C30DFB7B151FB1833F91428B8FFCAC6BABCC5A811FB"
+    },
+    {
+      "path": "src/Amr.Core/CommandModels.cs",
+      "sha256": "D66AD50C73F3CC5B9C1427A800D6AD3E76B3FD25E106CEE262AF3357203908AE"
+    },
+    {
+      "path": "src/Amr.Core/IAmrDataProvider.cs",
+      "sha256": "B20BE27FD4DE7AE3E0B35D6165FCBDBE4476E56CC1EB60593EBC4149E8E1E6C5"
+    },
+    {
+      "path": "src/Amr.Core/ICommandDispatcher.cs",
+      "sha256": "E541779A98B2251278F01927EC881FA4049AE86FE5ADFF25E1EDEDBE7BABFE10"
+    },
+    {
+      "path": "src/Amr.Core/QueryModels.cs",
+      "sha256": "4E6B548D9B195B46FEE52F38C3DBCE66BDCF8D1CB9692FA06D5499532B7E319E"
+    },
+    {
+      "path": "src/Amr.Simulator/Navigation/GridNavigator.cs",
+      "sha256": "2D3FD92A78018B80D927BAB1EC3BE61AA39876B7EAD343BF68DE4BD94BE39267"
+    },
+    {
+      "path": "src/Amr.Simulator/Navigation/GridPathfinder.cs",
+      "sha256": "44C08FFBDFCBF5962BAE85A3E3BC37322AAA0AD4A375206EC2D82F9A96B9A36A"
+    },
+    {
+      "path": "src/Amr.Simulator/Navigation/GridSimulation.cs",
+      "sha256": "B938E39FD3A18042B2ECDBD563C18135710F2B29AF7EB2EF571A720777414DD2"
+    },
+    {
+      "path": "src/Amr.Simulator/Navigation/GridTelemetry.cs",
+      "sha256": "B3B7B40F7F8F3F20B1F494C65335B34A9F94DDA4C4321D708F2F0AA37AAC451A"
+    },
+    {
+      "path": "src/Amr.Simulator/README.md",
+      "sha256": "3E02DF95C430340E9BF315D52B25C205619A1A030A7AF16BDD807D894DABCF07"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/Amr.ControlGui.Tests.csproj",
+      "sha256": "42D65AE81A78121442155E4F808159E88283BB5CD8E6106BCA32188F6804E887"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/DashboardMapTests.cs",
+      "sha256": "E83E7ADB463CF63693EEDC07C2D231471E2D85894CDE07F88F9B0BDE68BE66C7"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/MainFormTests.cs",
+      "sha256": "D0FD8C67786298327A9169435074A6D338AD3AF8650DA315D07DE58A57CD9B5C"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/MockCommandDispatcherTests.cs",
+      "sha256": "6B899A7359F00DCECFE11C44E7377735AE413B51BC4E8743022B9FAA3AE42E1B"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/MockDataProviderTests.cs",
+      "sha256": "3D33525C4D54A03ACE2C51AD1FD2234526F9FA09EF6881FFBE69AD2C10043A52"
+    },
+    {
+      "path": "tests/Amr.Simulator.Map.Tests/Amr.Simulator.Map.Tests.csproj",
+      "sha256": "03855092BB2A9A1501E2AFDB61D27A952556F5E0E64269FA700933A521869DC1"
+    },
+    {
+      "path": "tests/Amr.Simulator.Map.Tests/GridMqttTests.cs",
+      "sha256": "9F8048C6A73F2B6C140640A19D2582CB20CDF2A7E4BA2F714BE7CFB2E14F3B8E"
+    },
+    {
+      "path": "tests/Amr.Simulator.Map.Tests/MapConfigurationTests.cs",
+      "sha256": "22F5B387F19FD148774F4DA7726F5466B7CD39CB08F988055C46BBCB0FD641FC"
+    },
+    {
+      "path": "tests/Amr.Simulator.Map.Tests/ProjectionTests.cs",
+      "sha256": "2299928DAEC187C8015EE62D34FAE43652D94EEE0AE63E46FB87A26BC3B81D95"
+    },
+    {
+      "path": "tests/Amr.Simulator.Map.Tests/WaypointConfigurationTests.cs",
+      "sha256": "5FBBE0443D4BBBB67D079493B5D15494B91DD9E801134D268EF94572268512D1"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/GridNavigationTests.cs",
+      "sha256": "1FD1F4AF0FD3717179484031EBB6B13FC2B97840BDC8084C23EF3CE6D52D2A47"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/GridSimulationTests.cs",
+      "sha256": "3BAD20EAAC168CC160966E0F54C3CEBF9C621262DE9F47ABD97D66F88DC3CA4A"
+    },
+    {
+      "path": "tests/Amr.Simulator.Tests/WaypointMissionTests.cs",
+      "sha256": "DA4B66D3671B4F996BA28E6D39ACEC149CDB3576B8590942387ABB6FB0604C3D"
+    },
+    {
+      "path": "tests/manual/AMR01/Start-MqttMap.ps1",
+      "sha256": "344133FF22F7C6BDAEB162FF0E942EF81237BC6F2C09779DDB7C01CCDB08582F"
+    },
+    {
+      "path": "tests/manual/AMR01/Stop-MqttMap.ps1",
+      "sha256": "887AB0C8F7192B189C8758E3BB3484D678CA59DE1E0D3C6806DA2C90CF7A81F4"
+    },
+    {
+      "path": "tests/manual/AMR01/Verify-GridMqttMap.ps1",
+      "sha256": "615DA88247C9987C441797F09A187D580EB10725CD2AFA6B313909694FCB332D"
+    },
+    {
+      "path": "tests/manual/AMR01/Verify-MapConfiguration.ps1",
+      "sha256": "5C6C16ACCF83E1D808D17D9BDC34E3E0A97682C00784DF745785AD30F1E5383B"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/Amr.Simulator.Map.csproj",
+      "sha256": "31791EDB17677F5D3CF74A77CD0ECE5232B27C5737DF040B637DA87E61E62960"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/Control/GridControlConnection.cs",
+      "sha256": "639CE72476E78828B9D3C5B156021919FD21F5352FFD337BC272D94624087750"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/Control/GridMapCoordinates.cs",
+      "sha256": "D830DA0059AD6C26D2127DD3CE7181B14FD272698BE1F52A5C7A3955B67ED488"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/Control/GridMapSession.cs",
+      "sha256": "6D86084FF61DD0AAFFE52ABDC9534B01218AC6ED651E5CFF0B07D947BFFE7937"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/Control/GridMissionSettings.cs",
+      "sha256": "02D51E2818BFA725A1FFD6C2261964D257FB7B1563E13D96CA0F5E574E4AC67A"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/MqttMapProjection.cs",
+      "sha256": "0CFBAB5F330F1CF85320DFC7021867632E607EF69836A0D6F270564B0D0004CD"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/MqttMapReceiver.cs",
+      "sha256": "C6F6FD385591BB312BBA14EEBB443D98A80086E453D69682B2C8BDCD1C2FF6A9"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/Program.cs",
+      "sha256": "D7AD7745DB9AF396F24BBCC4443745EBE564A200FC82AA416A62B8261267C832"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/README.md",
+      "sha256": "A038CFDD45994FAC9A5AF537FDAFCC679A07FD90FABBEC082E3069AD5B2EDE20"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/wwwroot/grid.js",
+      "sha256": "AED38442DC54BD5A726372866B8E8ED212721DF8BCA9E476F28EB4C19BA45A9F"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/wwwroot/index.html",
+      "sha256": "BF8F08212ACFD428308856D9575962530A139C205AB2CD3E3902F97D2694B93A"
+    },
+    {
+      "path": "tools/Amr.Simulator.Map/wwwroot/style.css",
+      "sha256": "86B5CDB0430D9D2E3175D15460AB5BA65BC19D530E28DB540F435FE42DDF5942"
+    }
+  ]
+}

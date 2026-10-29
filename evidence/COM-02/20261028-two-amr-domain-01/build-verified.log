@@ -1,0 +1,17 @@
+  Amr.Communication -> C:\amr-control-system-demo\src\Amr.Communication\bin\TwoAmrFinal2\Amr.Communication.dll
+  Amr.Communication.Console -> C:\amr-control-system-demo\src\Amr.Communication.Console\bin\TwoAmrFinal2\Amr.Communication.Console.dll
+  Amr.Core -> C:\amr-control-system-demo\src\Amr.Core\bin\TwoAmrFinal2\Amr.Core.dll
+  Amr.ControlGui -> C:\amr-control-system-demo\src\Amr.ControlGui\bin\TwoAmrFinal2\Amr.ControlGui.dll
+  Amr.Simulator -> C:\amr-control-system-demo\src\Amr.Simulator\bin\TwoAmrFinal2\Amr.Simulator.dll
+  Amr.Communication.Tests -> C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\TwoAmrFinal2\Amr.Communication.Tests.dll
+  Amr.ControlGui.Tests -> C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\TwoAmrFinal2\Amr.ControlGui.Tests.dll
+  Amr.Core.Tests -> C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\TwoAmrFinal2\Amr.Core.Tests.dll
+  Amr.Simulator.Map -> C:\amr-control-system-demo\tools\Amr.Simulator.Map\bin\TwoAmrFinal2\Amr.Simulator.Map.dll
+  Amr.Simulator.Map.Tests -> C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\TwoAmrFinal2\Amr.Simulator.Map.Tests.dll
+  Amr.Simulator.Tests -> C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\TwoAmrFinal2\Amr.Simulator.Tests.dll
+
+빌드했습니다.
+    경고 0개
+    오류 0개
+
+경과 시간: 00:00:10.88

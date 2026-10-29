@@ -1,0 +1,19 @@
+[
+  {
+    "verdict": "passed",
+    "name": "initial-ready-received-position"
+  },
+  {
+    "verdict": "passed",
+    "name": "single-session-api-and-screen"
+  },
+  {
+    "verdict": "passed",
+    "name": "normal-arrival"
+  },
+  {
+    "verdict": "failed",
+    "reason": "A moved cell was not received.",
+    "name": "failure"
+  }
+]

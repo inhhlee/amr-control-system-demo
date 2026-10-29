@@ -1,0 +1,44 @@
+[
+  {
+    "ProcessId": 29664,
+    "ParentProcessId": 48024,
+    "Name": "Amr.Simulator.Map.exe",
+    "ExecutablePath": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\Debug\\net10.0\\Amr.Simulator.Map.exe",
+    "CommandLine": "\"C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\Debug\\net10.0\\Amr.Simulator.Map.exe\" --port 0 --config \"C:\\amr-control-system-demo\\evidence\\GUI\\20261027-grid-dashboard-01\\ui-settings.json\" --mqtt-host 127.0.0.1 --mqtt-port 60291 --telemetry-ms 200 --heartbeat-ms 1000"
+  },
+  {
+    "ProcessId": 15464,
+    "ParentProcessId": 49432,
+    "Name": "Amr.Simulator.Map.exe",
+    "ExecutablePath": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\Release\\net10.0\\Amr.Simulator.Map.exe",
+    "CommandLine": "\"C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\Release\\net10.0\\Amr.Simulator.Map.exe\" --port 0 --config \"C:\\amr-control-system-demo\\evidence\\GUI\\20261027-grid-dashboard-01\\final-ui-settings.json\" --mqtt-host 127.0.0.1 --mqtt-port 49200 --telemetry-ms 200 --heartbeat-ms 1000"
+  },
+  {
+    "ProcessId": 20932,
+    "ParentProcessId": 49824,
+    "Name": "Amr.Simulator.Map.exe",
+    "ExecutablePath": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\HeartbeatVerify\\Amr.Simulator.Map.exe",
+    "CommandLine": "\"C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\HeartbeatVerify\\Amr.Simulator.Map.exe\" --port 0 --config \"C:\\amr-control-system-demo\\config\\map-demo\\settings.json\" --mqtt-host 127.0.0.1 --mqtt-port 65521 --telemetry-ms 200 --heartbeat-ms 1000"
+  },
+  {
+    "ProcessId": 53400,
+    "ParentProcessId": 48040,
+    "Name": "devenv.exe",
+    "ExecutablePath": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\devenv.exe",
+    "CommandLine": "\"C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\devenv.exe\" C:\\amr-control-system-demo\\AmrControlSystem.slnx"
+  },
+  {
+    "ProcessId": 13588,
+    "ParentProcessId": 55052,
+    "Name": "Amr.Simulator.Map.exe",
+    "ExecutablePath": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\VisualStudio\\Debug\\net10.0\\Amr.Simulator.Map.exe",
+    "CommandLine": "\"C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\VisualStudio\\Debug\\net10.0\\Amr.Simulator.Map.exe\"  --port 59344"
+  },
+  {
+    "ProcessId": 18840,
+    "ParentProcessId": 53400,
+    "Name": "Amr.ControlGui.exe",
+    "ExecutablePath": "C:\\amr-control-system-demo\\src\\Amr.ControlGui\\bin\\Debug\\net10.0-windows\\Amr.ControlGui.exe",
+    "CommandLine": "\"C:\\amr-control-system-demo\\src\\Amr.ControlGui\\bin\\Debug\\net10.0-windows\\Amr.ControlGui.exe\"  --grid-url http://127.0.0.1:59344"
+  }
+]

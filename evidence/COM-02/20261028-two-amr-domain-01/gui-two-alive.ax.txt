@@ -1,0 +1,103 @@
+Window: "AMR 관제 · 격자 MQTT · http://127.0.0.1:52695/", App: Amr.ControlGui.exe.
+	0 창 AMR 관제 · 격자 MQTT · http://127.0.0.1:52695/ Secondary Actions: Raise
+		1 창
+			2 창
+				3 창
+					4 창
+						5 창
+							6 창
+								7 텍스트 통신 상태
+								8 텍스트 연결 관측됨 ID: communicationValue
+								9 텍스트 연결 2 · 끊김 0 · 미확인 0 ID: communicationDetail
+						10 창 연결 2 · 끊김 0 · 미확인 0
+							11 창 연결 2 · 끊김 0 · 미확인 0
+								12 텍스트 AMR 연결 현황
+								13 텍스트 전체 2대 ID: devicesValue
+								14 텍스트 생존 확인 2 · 응답 없음 0 미확인 0 ID: devicesDetail
+						15 창 생존 확인 2 · 응답 없음 0 미확인 0
+							16 창 생존 확인 2 · 응답 없음 0 미확인 0
+								17 텍스트 AMR 운행 상태
+								18 텍스트 대기 2 · 이동 0 ID: operationValue
+								19 텍스트 정지 0 · 오류 0 ID: operationDetail
+						20 창 정지 0 · 오류 0
+							21 창 정지 0 · 오류 0
+								22 텍스트 알람 · 명령 요약
+								23 텍스트 업무 경보 0건 ID: alarmsValue
+								24 텍스트 관제 미션 보류 0대 · 업무 Command/ACK 미연결 ID: alarmsDetail
+					25 창 관제 미션 보류 0대 · 업무 Command/ACK 미연결
+						26 텍스트 공급자의 현재 상태 기준 ID: summarySource
+						27 텍스트 MQTT · Core 관제 · AMR 2대 ID: modeLabel
+				28 텍스트 대시보드
+			29 창 대시보드
+				30 창 대시보드
+					31 창 대시보드
+						32 창 대시보드
+							33 텍스트 격자 · MQTT 수신 위치 · 장애물 클릭 편집 ID: mapCaption
+							34 창 격자 · MQTT 수신 위치 · 장애물 클릭 편집
+								35 이미지 AMR 위치 지도 ID: mapCanvas
+								36 창
+									37 텍스트 선택한 AMR 정보 ID: selectedTitle
+									38 텍스트 AMR_001 X 5 m / Y -4 m 속도 0 m/s · 대기 수신 세션 Subscribed 생존 확인됨 · Heartbeat 12:17:26 Telemetry 12:17:26 다음 목표 모두 방문 남은 0칸 (0m) 관제 통신 CONNECTED 관제 미션 완료 ID: detailsLabel
+							39 창 AMR_001 X 5 m / Y -4 m 속도 0 m/s · 대기 수신 세션 Subscribed 생존 확인됨 · Heartbeat 12:17:26 Telemetry 12:17:26 다음 목표 모두 방문 남은 0칸 (0m) 관제 통신 CONNECTED 관제 미션 완료 ID: mapLegend
+								40 창 AMR_001 X 5 m / Y -4 m 속도 0 m/s · 대기 수신 세션 Subscribed 생존 확인됨 · Heartbeat 12:17:26 Telemetry 12:17:26 다음 목표 모두 방문 남은 0칸 (0m) 관제 통신 CONNECTED 관제 미션 완료
+									41 텍스트 ● 대기
+									42 텍스트 ● 이동
+									43 텍스트 ● 정지
+									44 텍스트 ● 오류
+									45 텍스트 ◎ 선택
+									46 텍스트 ◌ 연결 끊김/응답 없음
+								47 텍스트 청록: 수신 궤적 · 파랑 점선: 예정 · 주황: 추가 장애물 ID: mapSource
+					48 텍스트 지도
+				49 창 지도
+					50 창 지도
+						51 창 지도
+							52 텍스트 현재 통신 업무 경보 없음 ID: alarmSummary
+						53 텍스트 알람
+					54 창 알람
+						55 창 알람
+							56 창 알람
+								57 창 알람
+									58 창 Y
+										59 단추 출발 ID: gridStartButton
+										60 단추 (disabled) 이동 중단 ID: gridCancelButton
+										61 단추 지도 초기화 ID: gridResetButton
+								62 텍스트 선택 AMR 제어 · 통신 복구 후 미션 재개는 명시적으로 요청합니다. 관제 미션 보류는 차량의 물리적 정지 명령이 아닙니다. ID: submissionLabel
+								63 창 선택 AMR 제어 · 통신 복구 후 미션 재개는 명시적으로 요청합니다. 관제 미션 보류는 차량의 물리적 정지 명령이 아닙니다.
+									64 텍스트 도착 · 수신 확인 · 9회 이동 다음 목표 모두 방문 · 남은 0칸 (0m) 경유 3/3 · 위치 수신 1041 · Heartbeat 576 AMR 생존 신호 정상 수신 세션 Subscribed · 127.0.0.1:52693 관제 통신 CONNECTED 관제 미션 완료 ID: gridDetails
+						65 텍스트 명령 · 격자 시연 제어
+			66 창 명령 · 격자 시연 제어
+				67 창 명령 · 격자 시연 제어
+					68 창 명령 · 격자 시연 제어
+						69 데이터 그리드 장비 목록 ID: deviceGrid
+							70 custom 상위 행
+								71 머리글 장비 ID ID: 4228311387
+								72 머리글 X (m) ID: 4232503717
+								73 머리글 Y (m) ID: 4219895143
+								74 머리글 속도 (m/s) ID: 4257310276
+								75 머리글 운행 상태 ID: 426836088
+							76 custom 행 1
+								77 항목 장비 ID 행 1, 정렬되지 않았습니다. Value: AMR_001 ID: 4217501309
+								78 항목 X (m) 행 1, 정렬되지 않았습니다. Value: 5 ID: 4226190430
+								79 항목 Y (m) 행 1, 정렬되지 않았습니다. Value: -4 ID: 424931281
+								80 항목 속도 (m/s) 행 1, 정렬되지 않았습니다. Value: 0 ID: 4264106663
+								81 항목 운행 상태 행 1, 정렬되지 않았습니다. Value: 대기 ID: 4228080255
+							82 custom 행 2
+								83 항목 장비 ID 행 2, 정렬되지 않았습니다. Value: AMR_002 ID: 4247942765
+								84 항목 X (m) 행 2, 정렬되지 않았습니다. Value: 0 ID: 4219276178
+								85 항목 Y (m) 행 2, 정렬되지 않았습니다. Value: 0 ID: 4249263729
+								86 항목 속도 (m/s) 행 2, 정렬되지 않았습니다. Value: 0 ID: 4236448705
+								87 항목 운행 상태 행 2, 정렬되지 않았습니다. Value: 대기 ID: 424071120
+					88 텍스트 장비 목록 · 지도와 선택 연동
+				89 창 장비 목록 · 지도와 선택 연동
+					90 창 장비 목록 · 지도와 선택 연동
+						91 텍스트 격자 세션 로그 (DB 업무 이력 아님) Published Communication Delivered ID: historyNote
+					92 텍스트 이력
+			93 텍스트 AMR_001 · 도착 · 수신 확인 · 9회 · MQTT 수신 (4,5) ID: statusLabel
+		94 제목 표시줄 (settable, string) Value: AMR 관제 · 격자 MQTT · http://127.0.0.1:52695/
+			95 메뉴 모음 시스템 ID: MenuBar
+				96 메뉴 항목 시스템
+			97 단추 최소화
+			98 단추 최대화
+			99 단추 닫기
+
+The focused UI element is 0 창 AMR 관제 · 격자 MQTT · http://127.0.0.1:52695/ Secondary Actions: Raise.

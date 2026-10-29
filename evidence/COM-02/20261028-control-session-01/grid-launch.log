@@ -1,0 +1,2 @@
+Map ready: http://127.0.0.1:51557
+Stop: pwsh -NoProfile -File tests/manual/AMR01/Stop-MqttMap.ps1 -RunId 20261028-session-grid-host

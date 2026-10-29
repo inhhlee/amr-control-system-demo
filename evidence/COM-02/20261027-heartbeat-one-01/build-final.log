@@ -1,0 +1,16 @@
+  Amr.Communication -> C:\amr-control-system-demo\src\Amr.Communication\bin\HeartbeatVerify\Amr.Communication.dll
+  Amr.Communication.Console -> C:\amr-control-system-demo\src\Amr.Communication.Console\bin\HeartbeatVerify\Amr.Communication.Console.dll
+  Amr.Core -> C:\amr-control-system-demo\src\Amr.Core\bin\HeartbeatVerify\Amr.Core.dll
+  Amr.ControlGui -> C:\amr-control-system-demo\src\Amr.ControlGui\bin\HeartbeatVerify\Amr.ControlGui.dll
+  Amr.Simulator -> C:\amr-control-system-demo\src\Amr.Simulator\bin\HeartbeatVerify\Amr.Simulator.dll
+  Amr.Communication.Tests -> C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\HeartbeatVerify\Amr.Communication.Tests.dll
+  Amr.ControlGui.Tests -> C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\HeartbeatVerify\Amr.ControlGui.Tests.dll
+  Amr.Simulator.Map -> C:\amr-control-system-demo\tools\Amr.Simulator.Map\bin\HeartbeatVerify\Amr.Simulator.Map.dll
+  Amr.Simulator.Map.Tests -> C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\HeartbeatVerify\Amr.Simulator.Map.Tests.dll
+  Amr.Simulator.Tests -> C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\HeartbeatVerify\Amr.Simulator.Tests.dll
+
+빌드했습니다.
+    경고 0개
+    오류 0개
+
+경과 시간: 00:00:04.14

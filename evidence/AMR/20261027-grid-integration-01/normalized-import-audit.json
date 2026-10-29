@@ -1,0 +1,162 @@
+[
+  {
+    "path": "config/map-demo/README.md",
+    "sourceBlob": "de23ee544caa0b5b7e92fb0ae3d429b00aaca2a2",
+    "normalizedBlob": "de23ee544caa0b5b7e92fb0ae3d429b00aaca2a2"
+  },
+  {
+    "path": "config/map-demo/settings.json",
+    "sourceBlob": "77c90bfee2e0147f77e04fa72ea5086516bbae47",
+    "normalizedBlob": "77c90bfee2e0147f77e04fa72ea5086516bbae47"
+  },
+  {
+    "path": "src/Amr.Simulator/Navigation/GridNavigator.cs",
+    "sourceBlob": "60f9c44a612b908f4d64d19df54cfeab5db1cd88",
+    "normalizedBlob": "60f9c44a612b908f4d64d19df54cfeab5db1cd88"
+  },
+  {
+    "path": "src/Amr.Simulator/Navigation/GridPathfinder.cs",
+    "sourceBlob": "a9dd2a5b1fd5f3972c434a0fac149d64011b85df",
+    "normalizedBlob": "a9dd2a5b1fd5f3972c434a0fac149d64011b85df"
+  },
+  {
+    "path": "src/Amr.Simulator/Navigation/GridSimulation.cs",
+    "sourceBlob": "cbd426819cf4e379becfb83e334a736c5b9e8fee",
+    "normalizedBlob": "cbd426819cf4e379becfb83e334a736c5b9e8fee"
+  },
+  {
+    "path": "src/Amr.Simulator/Navigation/GridTelemetry.cs",
+    "sourceBlob": "3197c774a055857f94700e01844fd37dfd5349b2",
+    "normalizedBlob": "3197c774a055857f94700e01844fd37dfd5349b2"
+  },
+  {
+    "path": "src/Amr.Simulator/README.md",
+    "sourceBlob": "e09ce485e0809f078132fa0969c75ea08c076096",
+    "normalizedBlob": "e09ce485e0809f078132fa0969c75ea08c076096"
+  },
+  {
+    "path": "tests/Amr.Simulator.Map.Tests/Amr.Simulator.Map.Tests.csproj",
+    "sourceBlob": "53ff2cb4b3fa843dca4d08f69923c2b695fb444e",
+    "normalizedBlob": "53ff2cb4b3fa843dca4d08f69923c2b695fb444e"
+  },
+  {
+    "path": "tests/Amr.Simulator.Map.Tests/GridMqttTests.cs",
+    "sourceBlob": "1487f591cc190833781e628938679deb3b4ee03a",
+    "normalizedBlob": "1487f591cc190833781e628938679deb3b4ee03a"
+  },
+  {
+    "path": "tests/Amr.Simulator.Map.Tests/MapConfigurationTests.cs",
+    "sourceBlob": "67afe03358ae2430a9782eb9d2749ed6dd288cd6",
+    "normalizedBlob": "67afe03358ae2430a9782eb9d2749ed6dd288cd6"
+  },
+  {
+    "path": "tests/Amr.Simulator.Map.Tests/ProjectionTests.cs",
+    "sourceBlob": "2a321db369da50ae0374ab19c838aada3acb1a4c",
+    "normalizedBlob": "2a321db369da50ae0374ab19c838aada3acb1a4c"
+  },
+  {
+    "path": "tests/Amr.Simulator.Map.Tests/WaypointConfigurationTests.cs",
+    "sourceBlob": "277e6ae9ff9823d5435a49c8192393322081cebe",
+    "normalizedBlob": "277e6ae9ff9823d5435a49c8192393322081cebe"
+  },
+  {
+    "path": "tests/Amr.Simulator.Tests/GridNavigationTests.cs",
+    "sourceBlob": "7b49604ee22fdee40de2ec52150254753d7c4760",
+    "normalizedBlob": "7b49604ee22fdee40de2ec52150254753d7c4760"
+  },
+  {
+    "path": "tests/Amr.Simulator.Tests/GridSimulationTests.cs",
+    "sourceBlob": "dfb7dc492e9d4f83180bc450d4544f20c9ec8667",
+    "normalizedBlob": "dfb7dc492e9d4f83180bc450d4544f20c9ec8667"
+  },
+  {
+    "path": "tests/Amr.Simulator.Tests/WaypointMissionTests.cs",
+    "sourceBlob": "a00a725e537b289d42ec5543de54e6bb6c4965f7",
+    "normalizedBlob": "a00a725e537b289d42ec5543de54e6bb6c4965f7"
+  },
+  {
+    "path": "tests/manual/AMR01/Start-MqttMap.ps1",
+    "sourceBlob": "ec2e4ba58ec845b7e45b47d608e4c8e9e0efd8b6",
+    "normalizedBlob": "dc8e8ed2d5d9eb7f42015efa7555a7f36c388fb6"
+  },
+  {
+    "path": "tests/manual/AMR01/Stop-MqttMap.ps1",
+    "sourceBlob": "c59a92644238bd6df3e059477a28eeb4100a391f",
+    "normalizedBlob": "6f100e0aba8726102f7506af51cbd357bbe73b34"
+  },
+  {
+    "path": "tests/manual/AMR01/Verify-GridMqttMap.ps1",
+    "sourceBlob": "bcc78314238843db52516efea1c1795470fad1bb",
+    "normalizedBlob": "bcc78314238843db52516efea1c1795470fad1bb"
+  },
+  {
+    "path": "tests/manual/AMR01/Verify-GridNavigation.ps1",
+    "sourceBlob": "40edb24a73303ff929450440f999f4e4884f1ff9",
+    "normalizedBlob": "40edb24a73303ff929450440f999f4e4884f1ff9"
+  },
+  {
+    "path": "tests/manual/AMR01/Verify-MapConfiguration.ps1",
+    "sourceBlob": "86c24dfa33bab7fd2ba169c6647983f93140a4d6",
+    "normalizedBlob": "86c24dfa33bab7fd2ba169c6647983f93140a4d6"
+  },
+  {
+    "path": "tools/Amr.Simulator.Map/Amr.Simulator.Map.csproj",
+    "sourceBlob": "696f2d97d7b3c66bec779aa953c655aecfed2d0a",
+    "normalizedBlob": "696f2d97d7b3c66bec779aa953c655aecfed2d0a"
+  },
+  {
+    "path": "tools/Amr.Simulator.Map/Control/GridControlConnection.cs",
+    "sourceBlob": "50e636fcd885439d2f48b64de50283cf251ccee5",
+    "normalizedBlob": "50e636fcd885439d2f48b64de50283cf251ccee5"
+  },
+  {
+    "path": "tools/Amr.Simulator.Map/Control/GridMapCoordinates.cs",
+    "sourceBlob": "1dd2170436987e9f471c87f5d3253105513446f3",
+    "normalizedBlob": "1dd2170436987e9f471c87f5d3253105513446f3"
+  },
+  {
+    "path": "tools/Amr.Simulator.Map/Control/GridMapSession.cs",
+    "sourceBlob": "4de5e68465593e416c5d566716ea0639dd9a7637",
+    "normalizedBlob": "4de5e68465593e416c5d566716ea0639dd9a7637"
+  },
+  {
+    "path": "tools/Amr.Simulator.Map/Control/GridMissionSettings.cs",
+    "sourceBlob": "0f2d303bb50509033744a61afecf090a63183be4",
+    "normalizedBlob": "0f2d303bb50509033744a61afecf090a63183be4"
+  },
+  {
+    "path": "tools/Amr.Simulator.Map/MqttMapProjection.cs",
+    "sourceBlob": "cd88f42e3c6da94d03bd30d1fbeadb696ecd2871",
+    "normalizedBlob": "cd88f42e3c6da94d03bd30d1fbeadb696ecd2871"
+  },
+  {
+    "path": "tools/Amr.Simulator.Map/MqttMapReceiver.cs",
+    "sourceBlob": "76d12ea96a93884c9a26673c5f40d9f1bafdf16e",
+    "normalizedBlob": "76d12ea96a93884c9a26673c5f40d9f1bafdf16e"
+  },
+  {
+    "path": "tools/Amr.Simulator.Map/Program.cs",
+    "sourceBlob": "74485b22fb6493ca4335a0efa226d446ded9d983",
+    "normalizedBlob": "74485b22fb6493ca4335a0efa226d446ded9d983"
+  },
+  {
+    "path": "tools/Amr.Simulator.Map/README.md",
+    "sourceBlob": "8837a18d7fd20eeb0003c21cff2de5f308432416",
+    "normalizedBlob": "8837a18d7fd20eeb0003c21cff2de5f308432416"
+  },
+  {
+    "path": "tools/Amr.Simulator.Map/wwwroot/grid.js",
+    "sourceBlob": "a5933b0eeb538a10484ccbd0eddfd304105a6b91",
+    "normalizedBlob": "a5933b0eeb538a10484ccbd0eddfd304105a6b91"
+  },
+  {
+    "path": "tools/Amr.Simulator.Map/wwwroot/index.html",
+    "sourceBlob": "390db116a72a3361341ea32466f3a08fb94c95ed",
+    "normalizedBlob": "390db116a72a3361341ea32466f3a08fb94c95ed"
+  },
+  {
+    "path": "tools/Amr.Simulator.Map/wwwroot/style.css",
+    "sourceBlob": "a18ffaf2ad09bd096d114f085b7b34987373c8c8",
+    "normalizedBlob": "a18ffaf2ad09bd096d114f085b7b34987373c8c8"
+  }
+]

@@ -6,7 +6,7 @@ using Amr.Core;
 namespace Amr.ControlGui;
 
 // 좌표 표시와 Marker 선택만 담당한다. 이동·경로·연결 상태를 계산하지 않는다.
-public sealed class MapCanvas : Control
+public sealed partial class MapCanvas : Control
 {
     private ImmutableArray<AmrSnapshot> _devices = [];
     public string? SelectedAmrId { get; private set; }
@@ -34,7 +34,7 @@ public sealed class MapCanvas : Control
         Invalidate();
     }
 
-    internal bool TryGetViewport(out MapViewport viewport) => MapViewport.TryCreate(
+    internal bool TryGetViewport(out MapViewport viewport) => _gridState is not null ? TryGetGridViewport(out viewport) : MapViewport.TryCreate(
         new RectangleF(44, 24, ClientSize.Width - 62, ClientSize.Height - 66), _devices.Where(ValidPosition).ToArray(), out viewport);
 
     internal PointF? MarkerPoint(string id) => TryGetViewport(out var viewport) && _devices.FirstOrDefault(x => x.AmrId == id) is { } device && ValidPosition(device)
@@ -62,6 +62,7 @@ public sealed class MapCanvas : Control
         base.OnMouseClick(e);
         if (e.Button != MouseButtons.Left) return;
         Focus();
+        if (_gridState is not null && TryEditGrid(e.Location)) return;
         SelectMarkerAt(e.Location);
     }
 
@@ -84,6 +85,7 @@ public sealed class MapCanvas : Control
         base.OnPaint(e);
         var graphics = e.Graphics;
         graphics.SmoothingMode = SmoothingMode.AntiAlias;
+        if (_gridState is not null) { DrawGrid(graphics); return; }
         if (_devices.IsEmpty) { DrawMessage(graphics, "표시할 장비가 없습니다."); return; }
         if (!TryGetViewport(out var view)) { DrawMessage(graphics, "좌표 범위를 표시할 수 없습니다."); return; }
         using var gridPen = new Pen(Color.FromArgb(226, 232, 240));

@@ -1,0 +1,411 @@
+Window: "AmrControlSystem - HeartbeatSubscription.cs - Microsoft Visual Studio", App: devenv.exe.
+	0 window AmrControlSystem - HeartbeatSubscription.cs - Microsoft Visual Studio Secondary Actions: Raise ID: VisualStudioMainWindow
+		334 window Microsoft Visual Studio Secondary Actions: Raise ID: Microsoft.VisualStudio.MessageBox
+			335 제목 표시줄 (settable, string) Value: Microsoft Visual Studio
+				336 메뉴 모음 시스템 ID: MenuBar
+					337 메뉴 항목 시스템
+				338 단추 닫기
+			339 image ID: Image
+			340 pane 'C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll' 프로그램을 시작할 수 없습니다. C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll은(는) 올바른 Win32 애플리케이션이 아닙니다.
+				341 text 'C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll' 프로그램을 시작할 수 없습니다. C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll은(는) 올바른 Win32 애플리케이션이 아닙니다. ID: Microsoft.VisualStudio.MessageContent
+			342 button 확인 ID: OKButton
+				343 text 확인
+			344 button Copy Description: 복사 ID: PART_CopyButton
+			345 button Description: 닫기 ID: CloseButton
+		1 window 출력 Secondary Actions: Raise
+			2 제목 표시줄 (settable, string) Value: AmrControlSystem
+				3 메뉴 모음 시스템 ID: MenuBar
+					346 메뉴 항목 시스템
+				5 단추 최소화
+				6 단추 최대화
+				7 단추 닫기
+			8 pane 출력 ID: ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}
+				9 title bar 출력 ID: PART_Header
+					10 title bar AmrControlSystem ID: DragHeader
+						11 text 출력
+						12 드롭다운 단추 창 위치(Alt+-) Description: 창 위치(Alt+-) ID: HeaderDropDown
+						13 button 최대화 Description: 최대화 ID: MaximizeRestoreButton
+						14 button 닫기(Shift+Esc) Description: 닫기(Shift+Esc) ID: HideButton
+				15 pane 출력
+					322 custom ID: WpfTextViewHost
+						323 edit 텍스트 편집기 ID: WpfTextView
+						324 custom Line Selection Margin ID: SelectionMargin
+						325 scroll bar (settable, float) Value: 0.5 ID: WpfEditorUIVerticalScrollbar
+							326 button ID: PageUp
+							327 button ID: PageDown
+							328 thumb
+						329 scroll bar (disabled) Value: 0 ID: WpfEditorUIHorizontalScrollbar
+				16 pane
+					17 tool bar Output
+						18 combo box 출력 보기 선택: Description: 출력 보기 선택 ID: PART_FocusTarget
+							347 list item (selectable, disabled) 빌드
+						19 button (disabled) 위치로 이동 Description: 코드에서 메시지 찾기
+							20 image (disabled)
+						21 button (disabled) 이전 위치로 이동 Description: 이전 메시지로 이동
+							22 image (disabled)
+						23 button (disabled) 다음 위치로 이동 Description: 다음 메시지로 이동
+							24 image (disabled)
+						25 button 모두 지우기 Description: 모두 지우기
+							26 image
+						27 button 자동 래핑 설정/해제 Description: 자동 래핑 설정/해제
+							28 image
+						29 button 타임스탬프 표시 Description: 타임스탬프 표시
+							30 image
+						31 button Output 도구 모음 옵션 Description: Output 도구 모음 옵션 ID: Additional Toolbar Items
+		32 window 속성 Secondary Actions: Raise
+			33 제목 표시줄 (settable, string) Value: AmrControlSystem
+				34 메뉴 모음 시스템 ID: MenuBar
+					348 메뉴 항목 시스템
+				36 단추 최소화
+				37 단추 최대화
+				38 단추 닫기
+			39 pane 속성 ID: ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}
+				40 title bar 속성 ID: PART_Header
+					41 title bar AmrControlSystem ID: DragHeader
+						42 text 속성
+						43 드롭다운 단추 창 위치(Alt+-) Description: 창 위치(Alt+-) ID: HeaderDropDown
+						44 button 최대화 Description: 최대화 ID: MaximizeRestoreButton
+						45 button 닫기(Shift+Esc) Description: 닫기(Shift+Esc) ID: HideButton
+				46 pane
+					47 tool bar 속성
+						48 button (selectable, disabled) 속성 범주별 정렬 Description: 속성 범주별 정렬
+							49 image (disabled)
+						50 button (selectable, disabled) 속성 사전순 정렬 Description: 속성 사전순 정렬
+							51 image (disabled)
+						52 button 속성 도구 모음 옵션 Description: 속성 도구 모음 옵션 ID: Additional Toolbar Items
+				53 pane
+					54 창 속성
+						55 창 Property Browser ID: 658088
+		56 title bar AmrControlSystem - HeartbeatSubscription.cs - Microsoft Visual Studio ID: TitleBar
+			57 menu bar 메뉴 모음 ID: MenuBar
+				58 menu item 파일
+				59 menu item 편집
+				60 menu item 보기
+				61 menu item Git
+				62 menu item 프로젝트
+				63 menu item 빌드
+				64 menu item 디버그
+				65 menu item 테스트
+				66 menu item 도구
+				67 menu item 확장
+				68 menu item 창
+				69 menu item 도움말
+				70 menu item 검색
+			71 text amr-control-system-demo
+			72 button 연결된 사용자 정보
+				73 image
+			74 button 최소화 Description: 최소화 ID: Minimize
+			75 button 최대화 Description: 최대화 ID: Maximize
+			76 button 닫기 Description: 닫기 ID: Close
+		77 split button GitHub Copilot Description: 채팅을 사용하려면 로그인
+			78 button ID: ActionButton
+				79 image
+			80 button ID: DropDownButton
+		81 드롭다운 단추 피드백 Description: 피드백 보내기 ID: Feedback
+			82 image
+		83 pane
+			84 tool bar 표준
+				85 split button 뒤로 탐색 Description: 뒤로 탐색 (Ctrl+-) ID: PART_FocusTarget
+				86 button (disabled) 앞으로 탐색 Description: 앞으로 탐색 (Ctrl+Shift+-)
+					87 image (disabled)
+				88 split button 새 프로젝트/파일 Description: 새 파일 (Ctrl+N) ID: PART_FocusTarget
+				89 split button 프로젝트/폴더/파일 열기 Description: 파일 열기 (Ctrl+O) ID: PART_FocusTarget
+				90 button 저장 Description: 저장 (Ctrl+S)
+					91 image
+				92 button 모두 저장 Description: 모두 저장 (Ctrl+Shift+S)
+					93 image
+				94 split button (disabled) 실행 취소 ID: PART_FocusTarget
+					95 button (disabled)
+						96 image (disabled)
+				97 split button (disabled) 다시 실행 ID: PART_FocusTarget
+					98 button (disabled)
+						99 image (disabled)
+				100 split button (disabled) 현재 문서(HeartbeatSubscription.cs) Description: 현재 문서(HeartbeatSubscription.cs) ID: PART_FocusTarget
+				101 split button AMR Grid + GUI Description: 시작 프로젝트 또는 프로필 ID: PART_FocusTarget
+				102 button (disabled) 디버그하지 않고 시작 Description: 디버그하지 않고 시작 (Ctrl+F5)
+					103 image (disabled)
+				104 split button (disabled) 핫 다시 로드 Description: 핫 다시 로드(Alt+F10) ID: PART_FocusTarget
+				105 button 시작 창 Description: 시작 창
+					106 image
+				107 button 표준 도구 모음 옵션 Description: 표준 도구 모음 옵션 ID: Additional Toolbar Items
+			108 tool bar 텍스트 편집기
+				109 button 요약 정보 Description: 요약 정보를 표시합니다. (Ctrl+K, Ctrl+I)
+					110 image
+				111 button (disabled) 자동 IntelliSense 완성과 탭 전용 IntelliSense 완성 간 전환 Description: 자동 IntelliSense 완성과 탭 전용 IntelliSense 완성 간에 전환합니다. (Ctrl+Alt+스페이스바)
+					112 image (disabled)
+				113 button (disabled) 선택 영역을 주석으로 처리 Description: 선택한 줄을 주석으로 처리합니다. (Ctrl+K, Ctrl+C)
+					114 image (disabled)
+				115 button (disabled) 선택 영역의 주석 처리 제거 Description: 선택한 줄의 주석 처리를 제거합니다. (Ctrl+K, Ctrl+U)
+					116 image (disabled)
+				117 button 책갈피 설정/해제 Description: 현재 줄에서 책갈피를 설정/해제합니다. (Ctrl+K, Ctrl+K)
+					118 image
+				119 button 이전 책갈피 Description: 캐럿을 이전 책갈피로 이동합니다. (Ctrl+K, Ctrl+P)
+					120 image
+				121 button 다음 책갈피 Description: 캐럿을 다음 책갈피로 이동합니다. (Ctrl+K, Ctrl+N)
+					122 image
+				123 button 책갈피 지우기 Description: 모든 파일에서 책갈피를 모두 지웁니다. (Ctrl+K, Ctrl+L)
+					124 image
+				125 button 텍스트 편집기 도구 모음 옵션 Description: 텍스트 편집기 도구 모음 옵션 ID: Additional Toolbar Items
+		126 pane
+		127 pane
+			128 tab
+				129 tab item (selectable) HeartbeatDiagnostic.cs
+					130 title bar HeartbeatDiagnostic.cs ID: Content
+					131 button 탭 고정 Description: 탭 고정 ID: PinButton
+					132 button 닫기(Ctrl+W) Description: 닫기(Ctrl+W) ID: HideButton
+				133 tab item (selectable) HeartbeatSubscription.cs
+					134 title bar HeartbeatSubscription.cs ID: Content
+					135 button 탭 고정 Description: 탭 고정 ID: PinButton
+					136 button 닫기(Ctrl+W) Description: 닫기(Ctrl+W) ID: HideButton
+					137 pane HeartbeatSubscription.cs ID: D:0:0:{4E0B4231-5A71-BCCD-809B-3D67E5587661}|src\Amr.Communication\Amr.Communication.csproj|c:\amr-control-system-demo\src\amr.communication\mqtt\subscriptions\heartbeatsubscription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}
+						138 pane HeartbeatSubscription.cs
+							139 custom ID: WpfTextViewHost
+								140 edit 텍스트 편집기 ID: WpfTextView
+									141 group HeartbeatSubscription.HeartbeatSubscription
+										142 button 이 메서드에는 6개의 참조가 있습니다. ID: CSVBReferences
+											143 text 참조 6개
+									144 group HeartbeatSubscription._diagnostic
+										145 button 이 필드에는 3개의 참조가 있습니다. ID: CSVBReferences
+											146 text 참조 3개
+									147 group HeartbeatSubscription._receiverFailed
+										148 button 이 필드에는 2개의 참조가 있습니다. ID: CSVBReferences
+											149 text 참조 2개
+									150 group HeartbeatSubscription._rejected
+										151 button 이 필드에는 2개의 참조가 있습니다. ID: CSVBReferences
+											152 text 참조 2개
+									153 group HeartbeatSubscription._received
+										154 button 이 필드에는 2개의 참조가 있습니다. ID: CSVBReferences
+											155 text 참조 2개
+									156 group Amr.Communication.Mqtt.HeartbeatSubscription
+										157 button 이 유형에는 10개의 참조가 있습니다. ID: CSVBReferences
+											158 text 참조 10개
+									159 group HeartbeatSubscription._disposed
+										160 button 이 필드에는 5개의 참조가 있습니다. ID: CSVBReferences
+											161 text 참조 5개
+									162 group HeartbeatSubscription._subscribed
+										163 button 이 필드에는 5개의 참조가 있습니다. ID: CSVBReferences
+											164 text 참조 5개
+									165 group HeartbeatSubscription._started
+										166 button 이 필드에는 2개의 참조가 있습니다. ID: CSVBReferences
+											167 text 참조 2개
+									168 group HeartbeatSubscription._gate
+										169 button 이 필드에는 4개의 참조가 있습니다. ID: CSVBReferences
+											170 text 참조 4개
+									171 group HeartbeatSubscription._showPayload
+										172 button 이 필드에는 2개의 참조가 있습니다. ID: CSVBReferences
+											173 text 참조 2개
+									174 group HeartbeatSubscription._validator
+										175 button 이 필드에는 1개의 참조가 있습니다. ID: CSVBReferences
+											176 text 참조 1개
+									177 group HeartbeatSubscription._client
+										178 button 이 필드에는 7개의 참조가 있습니다. ID: CSVBReferences
+											179 text 참조 7개
+									180 group HeartbeatSubscription.PayloadPreviewLimit
+										181 button 이 필드에는 2개의 참조가 있습니다. ID: CSVBReferences
+											182 text 참조 2개
+									183 group HeartbeatSubscription.TopicFilter
+										184 button 이 필드에는 5개의 참조가 있습니다. ID: CSVBReferences
+											185 text 참조 5개
+									186 custom ID: LightBulbControl
+										187 button 전구 ID: LightBulbButton
+											188 image
+								189 pane Glyph Margin Grid ID: WpfEditorUIGlyphMarginGrid
+								190 custom Line Selection Margin ID: SelectionMargin
+									191 group 전역 'using' 지시문
+										192 image
+									193 group 'class HeartbeatSubscription'이(가) 상속되었습니다.
+										194 image
+									195 pane Line Number Margin ID: WpfEditorUILineNumberMargin
+									196 pane Glyph Margin Grid ID: WpfEditorUIGlyphMarginGrid
+									197 pane Outlining Margin ID: WpfEditorUIOutliningMargin
+								198 image ID: SplitterImage
+								199 scroll bar (settable, float) Value: 0.5 ID: WpfEditorUIVerticalScrollbar
+									200 button ID: PageUp
+									201 button ID: PageDown
+									202 thumb
+								203 combo box Projects ID: ProjectsList
+								204 combo box Objects ID: ScopesList
+								205 combo box Members ID: FunctionsList
+								206 combo box (settable, string) 확대/축소 컨트롤 Value: 90 % ID: ZoomControl
+									207 edit (settable, string) 확대/축소 값 Value: 90 % ID: PART_EditableTextBox
+								208 image
+								209 text 문제가 검색되지 않음
+								210 separator (disabled)
+								211 split button 추가 코드 정리 옵션 Description: 추가 코드 정리 옵션을 보려면 클릭하세요. ID: CodeCleanupSplitButton
+									212 button ID: ActionButton
+										213 image
+									214 separator (disabled) ID: Separator
+									215 button Description: 추가 코드 정리 옵션을 보려면 클릭하세요. ID: DropDownButton
+								216 scroll bar (settable, float) Value: 0 ID: WpfEditorUIHorizontalScrollbar
+									217 button ID: PageLeft
+									218 button ID: PageRight
+									219 thumb
+								220 text 줄: 22, 문자: 60 Description: 줄 이동
+									221 text 줄: 22, 문자: 60
+								222 separator (disabled)
+								223 드롭다운 단추 SPC Description: 들여쓰기 선택
+									224 text SPC
+								225 separator (disabled)
+								226 드롭다운 단추 CRLF Description: 줄 시퀀스의 끝 선택
+									227 text CRLF
+								228 separator (disabled)
+								229 드롭다운 단추 UTF-8 Description: 인코딩 선택
+									230 text UTF-8
+				231 tab item (selectable) HeartbeatMessage.cs
+					232 title bar HeartbeatMessage.cs ID: Content
+					233 button 탭 고정 Description: 탭 고정 ID: PinButton
+					234 button 닫기(Ctrl+W) Description: 닫기(Ctrl+W) ID: HideButton
+				235 tab item (selectable) Amr.ControlGui.Tests
+					236 button ID: PART_PromoteButton
+			237 pane 솔루션 탐색기 - 폴더 보기 ID: ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}
+				238 title bar 솔루션 탐색기 - 폴더 보기 ID: PART_Header
+					239 title bar 솔루션 탐색기 - 폴더 보기 ID: DragHeader
+						240 text 솔루션 탐색기 - 폴더 보기
+						241 드롭다운 단추 창 위치(Alt+-) Description: 창 위치(Alt+-) ID: HeaderDropDown
+						242 button 자동 숨기기 Description: 자동 숨기기 ID: AutoHideButton
+						243 button 닫기(Shift+Esc) Description: 닫기(Shift+Esc) ID: HideButton
+				244 pane
+					245 tool bar 작업 영역
+						246 button (disabled) 뒤로 Description: 뒤로
+							247 image (disabled)
+						248 button (disabled) 앞으로 Description: 앞으로
+							249 image (disabled)
+						250 button 홈 Description: 홈
+							251 image
+						252 button 솔루션과 사용 가능한 보기 간 전환 Description: 솔루션과 사용 가능한 보기 간 전환
+							253 image
+						254 button 활성 문서 동기화 Description: 활성 문서 동기화 (Ctrl+[, S)
+							255 image
+						256 button 새로 고침 Description: 새로 고침
+							257 image
+						258 button 모두 축소 Description: 모두 축소
+							259 image
+						260 button 모든 파일 표시 Description: 모든 파일 표시
+							261 image
+						262 button 선택한 항목 미리 보기 Description: 선택한 항목 미리 보기
+							263 image
+						264 button 작업 영역 도구 모음 옵션 Description: 작업 영역 도구 모음 옵션 ID: Additional Toolbar Items
+				265 combo box 검색 ID: SearchControl
+					266 edit (settable, string) 솔루션 탐색기 - 폴더 보기 검색(Ctrl+;) Description: 검색할 단어 입력 ID: PART_SearchBox
+					267 button 검색 Description: 검색 ID: PART_SearchButton
+						268 image ID: Image
+					269 button Dropdown Description: 드롭다운 표시 ID: PART_SearchDropdownButton
+				270 pane 솔루션 탐색기 - 폴더 보기
+					271 tree view 솔루션 탐색기 - 폴더 보기
+						272 tree view item (selectable) amr-control-system-demo(C:\amr-control-system-demo) Value: amr-control-system-demo(C:\amr-control-system-demo)
+							273 tree view item (selectable, settable, string) .github Value: .github
+							274 tree view item (selectable, settable, string) config Value: config
+							275 tree view item (selectable, settable, string) docker Value: docker
+							276 tree view item (selectable, settable, string) evidence Value: evidence
+							277 tree view item (selectable, settable, string) src Value: src
+								278 tree view item (selectable, settable, string) Amr.Communication Value: Amr.Communication
+								279 tree view item (selectable, settable, string) Amr.Communication.Console Value: Amr.Communication.Console
+								280 tree view item (selectable, settable, string) Amr.ControlGui Value: Amr.ControlGui
+								281 tree view item (selectable, settable, string) Amr.Core Value: Amr.Core
+								282 tree view item (selectable, settable, string) Amr.Simulator Value: Amr.Simulator
+							283 tree view item (selectable, settable, string) tests Value: tests
+							284 tree view item (selectable, settable, string) tools Value: tools
+							285 tree view item (selectable, settable, string) .gitignore Value: .gitignore
+							286 tree view item (selectable, settable, string) AGENTS.md Value: AGENTS.md
+							287 tree view item (selectable, settable, string) AmrControlSystem.slnLaunch Value: AmrControlSystem.slnLaunch
+							288 tree view item (selectable, settable, string) AmrControlSystem.slnx Value: AmrControlSystem.slnx
+							289 tree view item (selectable, settable, string) BUILDING.md Value: BUILDING.md
+							290 tree view item (selectable, settable, string) CONTRIBUTING.md Value: CONTRIBUTING.md
+							291 tree view item (selectable, settable, string) Directory.Build.props Value: Directory.Build.props
+							292 tree view item (selectable, settable, string) global.json Value: global.json
+							293 tree view item (selectable, settable, string) README.md Value: README.md
+		294 pane
+		295 pane
+		296 status bar ID: SccStatusBar
+			297 button 0/0 Description: 나가는 0/들어오는 0 커밋(Ctrl+E, Ctrl+C) ID: UnpublishedCommitsSccCompartment
+				298 image ID: PART_SccCompartmentImage
+				299 text 0/0
+			300 button 99개 초과 Description: 562개 변경 사항(Ctrl+Alt+F7) ID: PendingChangesSccCompartment
+				301 image ID: PART_SccCompartmentImage
+				302 text 99개 초과
+			303 button feature/46-grid-map-integration Description: 이름: feature/46-grid-map-integration(Ctrl+Alt+F3) ID: CurrentBranchSccCompartment
+				304 image ID: PART_SccCompartmentImage
+				305 text feature/46-grid-map-integration
+			306 button amr-control-system-demo Description: 경로: C:\amr-control-system-demo(Ctrl+Alt+F4) ID: CurrentRepositorysSccCompartment
+				307 image ID: PART_SccCompartmentImage
+				308 text amr-control-system-demo
+		309 button 알림 ID: Control_1
+			310 image
+		311 button 백그라운드 작업(Ctrl+E, Ctrl+T)
+			312 image
+		313 text 준비
+		314 status bar ID: StatusBarContainer
+			330 text 준비 ID: TextCompartment
+			331 text ID: XYWidthHeightCompartment
+			332 text ID: SelectionModeCompartment
+			333 text ID: InsertionModeCompartment
+		1 window 출력 Secondary Actions: Raise
+			2 제목 표시줄 (settable, string) Value: AmrControlSystem
+				3 메뉴 모음 시스템 ID: MenuBar
+					346 메뉴 항목 시스템
+				5 단추 최소화
+				6 단추 최대화
+				7 단추 닫기
+			8 pane 출력 ID: ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}
+				9 title bar 출력 ID: PART_Header
+					10 title bar AmrControlSystem ID: DragHeader
+						11 text 출력
+						12 드롭다운 단추 창 위치(Alt+-) Description: 창 위치(Alt+-) ID: HeaderDropDown
+						13 button 최대화 Description: 최대화 ID: MaximizeRestoreButton
+						14 button 닫기(Shift+Esc) Description: 닫기(Shift+Esc) ID: HideButton
+				15 pane 출력
+					322 custom ID: WpfTextViewHost
+						323 edit 텍스트 편집기 ID: WpfTextView
+						324 custom Line Selection Margin ID: SelectionMargin
+						325 scroll bar (settable, float) Value: 0.5 ID: WpfEditorUIVerticalScrollbar
+							326 button ID: PageUp
+							327 button ID: PageDown
+							328 thumb
+						329 scroll bar (disabled) Value: 0 ID: WpfEditorUIHorizontalScrollbar
+				16 pane
+					17 tool bar Output
+						18 combo box 출력 보기 선택: Description: 출력 보기 선택 ID: PART_FocusTarget
+							347 list item (selectable, disabled) 빌드
+						19 button (disabled) 위치로 이동 Description: 코드에서 메시지 찾기
+							20 image (disabled)
+						21 button (disabled) 이전 위치로 이동 Description: 이전 메시지로 이동
+							22 image (disabled)
+						23 button (disabled) 다음 위치로 이동 Description: 다음 메시지로 이동
+							24 image (disabled)
+						25 button 모두 지우기 Description: 모두 지우기
+							26 image
+						27 button 자동 래핑 설정/해제 Description: 자동 래핑 설정/해제
+							28 image
+						29 button 타임스탬프 표시 Description: 타임스탬프 표시
+							30 image
+						31 button Output 도구 모음 옵션 Description: Output 도구 모음 옵션 ID: Additional Toolbar Items
+		32 window 속성 Secondary Actions: Raise
+			33 제목 표시줄 (settable, string) Value: AmrControlSystem
+				34 메뉴 모음 시스템 ID: MenuBar
+					348 메뉴 항목 시스템
+				36 단추 최소화
+				37 단추 최대화
+				38 단추 닫기
+			39 pane 속성 ID: ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}
+				40 title bar 속성 ID: PART_Header
+					41 title bar AmrControlSystem ID: DragHeader
+						42 text 속성
+						43 드롭다운 단추 창 위치(Alt+-) Description: 창 위치(Alt+-) ID: HeaderDropDown
+						44 button 최대화 Description: 최대화 ID: MaximizeRestoreButton
+						45 button 닫기(Shift+Esc) Description: 닫기(Shift+Esc) ID: HideButton
+				46 pane
+					47 tool bar 속성
+						48 button (selectable, disabled) 속성 범주별 정렬 Description: 속성 범주별 정렬
+							49 image (disabled)
+						50 button (selectable, disabled) 속성 사전순 정렬 Description: 속성 사전순 정렬
+							51 image (disabled)
+						52 button 속성 도구 모음 옵션 Description: 속성 도구 모음 옵션 ID: Additional Toolbar Items
+				53 pane
+					54 창 속성
+						55 창 Property Browser ID: 658088
+
+Selected text: ```
+90 %
+```
+
+Note: Pay special attention to the content selected by the user. If the user asks a question or refers to the content they are looking at on-screen, they might be referring to the selected content (but they might be referring to something else that's visible, too).

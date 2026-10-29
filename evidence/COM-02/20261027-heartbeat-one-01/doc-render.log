@@ -1,0 +1,17 @@
+C:/process-plan/도구/render-plans.cjs:86
+for (const { source, input, markdown } of documents.filter(d => /과제[123]/과제계획.md$/.test(d.source))) {
+                                                                ^
+
+SyntaxError: Invalid regular expression flags
+    at wrapSafe (node:internal/modules/cjs/loader:1804:18)
+    at Module._compile (node:internal/modules/cjs/loader:1846:20)
+    at Object.<anonymous> (C:\Users\Admin\AppData\Local\Temp\amr-heartbeat-render-plans.cjs:9:158)
+    at Module._compile (node:internal/modules/cjs/loader:1872:14)
+    at Object..js (node:internal/modules/cjs/loader:2003:10)
+    at Module.load (node:internal/modules/cjs/loader:1594:32)
+    at Module._load (node:internal/modules/cjs/loader:1396:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47
+
+Node.js v24.19.0

@@ -1,0 +1,10 @@
+{
+  "configurationPath": "C:\\amr-control-system-demo\\evidence\\GUI\\20261027-grid-dashboard-01\\ui-settings.json",
+  "stepIntervalMs": 3000,
+  "mqtt": {
+    "host": "127.0.0.1",
+    "port": 60291,
+    "telemetryMs": 200,
+    "heartbeatMs": 1000
+  }
+}

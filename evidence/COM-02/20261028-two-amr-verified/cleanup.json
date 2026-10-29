@@ -1,0 +1,5 @@
+{
+  "gracefulHostExit": true,
+  "existingContainersPreserved": true,
+  "ownedBrokerRemoved": true
+}

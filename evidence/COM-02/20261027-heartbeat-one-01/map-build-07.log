@@ -1,0 +1,9 @@
+  Amr.Communication -> C:\amr-control-system-demo\src\Amr.Communication\bin\HeartbeatVerify\Amr.Communication.dll
+  Amr.Simulator -> C:\amr-control-system-demo\src\Amr.Simulator\bin\HeartbeatVerify\Amr.Simulator.dll
+  Amr.Simulator.Map -> C:\amr-control-system-demo\tools\Amr.Simulator.Map\bin\HeartbeatVerify\Amr.Simulator.Map.dll
+
+빌드했습니다.
+    경고 0개
+    오류 0개
+
+경과 시간: 00:00:02.31

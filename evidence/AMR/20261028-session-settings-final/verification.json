@@ -1,0 +1,26 @@
+[
+  {
+    "verdict": "passed",
+    "name": "file-only-settings-applied"
+  },
+  {
+    "verdict": "passed",
+    "name": "expanded-map-mqtt-arrival"
+  },
+  {
+    "verdict": "passed",
+    "name": "file-edit-waits-for-restart"
+  },
+  {
+    "verdict": "passed",
+    "name": "restart-applies-edited-file"
+  },
+  {
+    "verdict": "passed",
+    "name": "edited-route-mqtt-arrival"
+  },
+  {
+    "verdict": "passed",
+    "name": "invalid-file-rejected"
+  }
+]

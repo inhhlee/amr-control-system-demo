@@ -1,0 +1,12 @@
+{
+  "Started": "2026-10-28T14:21:55.4974036+09:00",
+  "Exe": "C:\\amr-control-system-demo\\tools\\Amr.Simulator.Map\\bin\\TwoAmrFinal2\\Amr.Simulator.Map.exe",
+  "Url": "http://127.0.0.1:50497",
+  "BrokerPort": 50491,
+  "ServerStartTicks": 639287617149986247,
+  "RunId": "20261028-two-amr-legacy-host",
+  "ContainerId": "48a002d3da242026a30bd75f3a711cb16651118e95c35d79374070f023f5c5e1",
+  "ServerPid": 45288,
+  "ImageId": "sha256:38c0da4f2ef84284d47b3b3eeea1cb3bdeabe81ee10caf0cd5c5ff61ee3ea408",
+  "ProductEvidence": "C:\\amr-control-system-demo\\evidence\\AMR\\mission-live-20261028-142155-7163e667e5244c06bd902d7f2f457790"
+}
