@@ -19,8 +19,9 @@ internal static class Program
             finally { grid.DisposeAsync().AsTask().GetAwaiter().GetResult(); }
             return;
         }
-        // 첫 Mock 실행본의 명시적 개발 설정. 실제 공급자의 운영값이 아니다.
-        var provider = new MockAmrDataProvider(subscriptionCapacity: 64, commandCapacity: 128);
+        // 실행 조립 지점: 인자가 없으면 최신 Figma 피드백용 Mock 화면을 실행한다.
+        // 위 --grid-url 분기는 기존 격자/MQTT 공급자다. 아래 수치는 Mock 개발 설정이다.
+        var provider = new MockAmrDataProvider(subscriptionCapacity: 64, commandCapacity: 128, feedbackDemo: true);
         try
         {
             using var form = new MainForm(provider, new MockCommandDispatcher(provider),

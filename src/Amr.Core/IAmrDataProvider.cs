@@ -3,6 +3,8 @@ namespace Amr.Core;
 public enum ProviderMode { Mock, Actual }
 
 // 조회 결과는 값 사본이다. UI 스레드 전환과 구독 취소는 소비자가 담당한다.
+// 과제3의 DataProvider 접점: 화면은 이 계약으로 장비·알람·이력·명령 결과를 읽고 변경을 구독한다.
+// 명령 요청은 ICommandDispatcher로 전달하며, 이 인터페이스에 Start/Stop 동작을 섞지 않는다.
 public interface IAmrDataProvider : IAsyncDisposable
 {
     ProviderMode Mode { get; }

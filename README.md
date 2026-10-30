@@ -1,6 +1,8 @@
 # amr-control-system-demo
 가상 AMR 기반 관제시스템 구현 및 Issue·PR 개발 절차 실습
 
+**2026-10-30 Figma 피드백 반영 — 로컬 구현:** 기본 Windows Forms Mock 화면에 등록 AMR 수·오류/경고 요약, 출발지/담당 목적지·확대/축소, 별도 AMR 실행창의 출발지 설정·시작/Stop, 알람 비고·이력 조회/조건 초기화를 반영했다. [현재 실행 방법](BUILDING.md#windows-forms-mock-대시보드지도) · [변경·검증 근거](evidence/GUI/20261030-figma-feedback-01/README.md). 기존 `--grid-url` 격자/MQTT 모드와 보존 자료는 유지한다. 아래 날짜별 Mock 설명은 당시 구현 이력이다.
+
 **2026-10-28 후속 — AMR 2대·Core 도메인 연결:** 기존 AMR별 독립 큐와 하나의 관제 수신 세션으로 두 장비를 각각 감시한다. **통신 관측 이벤트 → Core AMR 도메인 관리자 → 조회 상태·업무 경보 → GUI**로 연결했다. 한 대의 무응답은 해당 관제 미션만 보류하며, 통신 복구 후 명시적으로 재개한다. 기존 단일 AMR·Mock 경로는 유지한다. [실행·구조·검증·보존 근거](evidence/COM-02/20261028-two-amr-domain-01/README.md).
 
 **2026-10-28 후속 — 관제 통신 세션 분리:** `Amr.Communication/Mqtt/Sessions/ControlCommunicationSession`이 단일 AMR의 MQTT 수신·큐·Heartbeat 시작/주기 검사/종료를 소유한다. 지도 수신부는 결과 전달 어댑터이며, 지도 없는 콘솔에서도 `--monitor-amr AMR_001`로 같은 세션을 실행한다. 기존 Core·Mock·F5 설정을 유지했다. [구조·실행·검증·보존 근거](evidence/COM-02/20261028-control-session-01/README.md).

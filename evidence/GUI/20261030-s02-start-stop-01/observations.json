@@ -1,0 +1,9 @@
+{
+  "startedAt": "2026-10-30T09:37:27.241Z",
+  "stoppedAt": "2026-10-30T09:37:35.297Z",
+  "firstObservedAt": "2026-10-30T09:38:02.536Z",
+  "secondObservedAt": "2026-10-30T09:38:20.568Z",
+  "firstPosition": "\t\t\t\t\t\t\t\t\t37 텍스트 출발지 · AMR-01 S-02 (4, 2) m 출발 시각 18:37:27 할당 목적지 · A-03 AMR-01 · 정지 목표 (17, 10) m 출발–목적지 거리 21 m 이동 11.99 m · 남은 9.01 m 현재 (15.99, 2) m ID: detailsLabel",
+  "secondPosition": "\t\t\t\t\t\t\t\t\t37 텍스트 출발지 · AMR-01 S-02 (4, 2) m 출발 시각 18:37:27 할당 목적지 · A-03 AMR-01 · 정지 목표 (17, 10) m 출발–목적지 거리 21 m 이동 11.99 m · 남은 9.01 m 현재 (15.99, 2) m ID: detailsLabel",
+  "unchanged": true
+}

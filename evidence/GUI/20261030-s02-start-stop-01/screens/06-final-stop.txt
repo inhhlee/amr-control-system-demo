@@ -1,0 +1,39 @@
+Window: "AMR 독립 가상 시뮬레이션 · AMR-01", App: Amr.ControlGui.exe.
+	0 창 AMR 독립 가상 시뮬레이션 · AMR-01 Secondary Actions: Raise ID: simulationWindow
+		1 창
+			2 창
+				3 텍스트 AMR-01 ID: simulationAmrId
+				4 텍스트 현재 상태 정지 ID: simulationState
+			5 창 현재 상태 정지
+				6 창 현재 상태 정지
+					7 창 현재 상태 정지
+						8 창 현재 상태 정지
+							9 텍스트 S-02 ID: sourceName
+							10 단추 (disabled) 출발지 설정 ID: sourceSettings
+							11 텍스트 X 4.0 m / Y 2.0 m ID: sourceCoordinates
+					12 텍스트 출발지
+				13 창 출발지
+					14 창 출발지
+						15 텍스트 X 17.0 m / Y 10.0 m ID: destinationCoordinates
+						16 텍스트 A-03 ID: destinationName
+					17 텍스트 도착지
+			18 창 도착지
+				19 창 도착지
+					20 창 도착지
+						21 텍스트 발생 알람 없음 0건 ID: simulationAlarm
+					22 텍스트 알람
+				23 창 알람
+					24 창 알람
+						25 텍스트 사유 Stop 수락 · 정지 완료 ID: simulationReason
+						26 텍스트 Stop · 정지 완료 ID: simulationResponse
+					27 텍스트 응답
+			28 창 응답
+				29 단추 (disabled) 시작 ID: simulationStart
+				30 단추 (disabled) Stop ID: simulationStop
+			31 텍스트 Mock AMR · 가상 데이터 · 창을 닫으면 이 AMR의 가상 이동이 정지합니다. ID: simulationMode
+		32 제목 표시줄 (settable, string) Value: AMR 독립 가상 시뮬레이션 · AMR-01
+			33 메뉴 모음 시스템 ID: MenuBar
+				34 메뉴 항목 시스템
+			35 단추 최소화
+			36 단추 최대화
+			37 단추 닫기

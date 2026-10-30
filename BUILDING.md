@@ -113,49 +113,62 @@ pwsh -NoProfile -File tests/manual/AMR01/Stop-MqttMap.ps1 -RunId gui-host-new
 
 ## Windows Forms Mock 대시보드·지도
 
-Windows에서 아래 명령으로 실행한다. 실제 AMR·Broker·DB는 필요하지 않다.
+2026-10-30 Figma 피드백을 반영한 기본 실행본이다. Windows와 .NET 10 SDK에서 실행하며 Broker·실제 AMR·DB는 필요하지 않다. 저장소 루트에서 PowerShell 또는 Git Bash로 실행한다.
 
-```powershell
+```text
 dotnet run --project src/Amr.ControlGui/Amr.ControlGui.csproj
 ```
 
-화면의 `MOCK · 시험 데이터` 표시를 확인하고 장비 목록에서 AMR_001 또는 AMR_002를 선택한다.
+Git Bash에서는 Windows 경로의 역슬래시가 사라질 수 있으므로 위 상대 경로나 `C:/amr-control-system-demo/src/Amr.ControlGui/Amr.ControlGui.csproj`를 사용한다.
 
-1. **다음 상태**: 선택 장비의 X를 1m씩 변경하고 IDLE/속도0과 BUSY/속도1을 번갈아 보여 준다. `명령 · Mock 확인` 영역의 시험 동작이며 시간 기반 이동이나 실제 Telemetry가 아니다. 실제 Broker·Heartbeat 관측은 미확인으로 유지한다.
-2. 목표 X/Y를 입력해 **MOVE 요청**: Mock이 요청 ID를 생성·기록한 다음 접수를 표시한다. 접수 직후 결과는 미확인이다.
-3. **성공 결과 (Mock)** 또는 **실패 결과 (Mock)**: 선택 장비에서 아직 결과를 지정하지 않은 가장 오래된 요청의 시험 결과를 지정한다. 실제 이동·ACK 수신·장비 State 변경을 만들어 내지 않는다.
-4. 상태를 바꾸는 중에도 창을 닫을 수 있다. 폼은 구독·자기 작업을 취소하고 기다린 뒤 닫으며 앱 시작 지점이 공유 공급자를 정리한다.
+1. **대시보드**: `전체(등록)`은 끊김을 포함한 등록 장비 수다. 기본 예시 5대·연결 4대·끊김 1대이며 수치는 공급자에서 계산한다. `발생 중인 알람`은 오류와 경고를 합산한다. 통신 카드의 Mock 표시는 실제 MQTT 연결 성공을 뜻하지 않는다.
+2. **지도**: Marker 또는 하단 `장비 목록` 탭에서 AMR을 선택한다. 선택 대상의 출발지·목적지 좌표와 목적지에 할당된 AMR을 표시한다. 경로 선은 표시하지 않는다. `− / + / 전체 보기`로 50~300% 배율과 전체 맞춤을 사용할 수 있다. 지도에 포커스 후 좌우/Home/End로도 대상을 선택한다.
+3. **별도 실행창**: `같은 앱의 별도 실행창 열기`를 누른다. AMR별로 한 창만 열리고, 관제 선택을 바꿔도 열린 창의 대상은 유지한다. 출발지 카드의 `설정`을 누르면 별도 `출발지 설정 · AMR-ID` 창이 열린다. S-01 `(2,2)` 또는 S-02 `(4,2)`의 `선택·적용`을 눌러 시작 위치를 바꾼다. `닫기`·Escape·창 닫기는 값을 변경하지 않는다. 설정은 시작 전에만 가능하다. 다른 장비의 최초 출발지는 해당 장비의 현재 위치다. 도착지는 Mock 예시 A-03 `(17,10)`이다.
+4. **시작 / Stop**: 시작 수락 후 기존 Simulator 계산으로 실제 시간에 따라 가상 위치가 이동한다. X축 후 Y축으로 1.5m/s 이동하는 예시이며 경로 탐색/교통 제어가 아니다. 수락과 도착 완료를 응답에서 구분한다. 이동 중 Stop을 누르면 위치를 유지하며 정지한다. Stop 후 재개·재시작은 제공하지 않는다. 실행창을 닫아도 그 AMR의 Mock 이동은 정지한다. 앱 재실행으로 새 시연을 시작한다.
+5. **알람**: 오류·경고를 `시각 · AMR · 등급 · 내용 · 현재 상태 · 비고`로 통일했다. 코드는 표시하지 않는다. AMR-04는 오류, AMR-05는 연결 상태로 시작 요청이 거부되며 해당 창의 사유를 확인할 수 있다.
+6. **이력**: 하단 `이력` 탭에서 AMR ID·유형·기간(체크한 경계만 적용)으로 조회한다. 시작/Stop/도착·출발지 설정·알람·요청 거부를 기록한다. 행을 선택하면 상세가 표시된다. `초기화`는 조회 조건과 선택만 해제하며 기록은 지우지 않는다. 기간은 양 끝을 포함하고 최신 기록부터 표시한다.
 
-대시보드와 지도는 기존 Mock 자료를 사용한다. 목업 상단의 네 요약 카드에 통신 관측·장비 수/생존·운행·알람/명령 현황을 표시하고, 왼쪽 Map Marker와 선택 상세·장비 목록이 같은 장비를 가리킨다. 알람/이력 전체 화면·격자/경로·STOP/RESET 업무 처리·실제 Core/MQTT/SQLite 연결은 후속이다. 알람·이력은 유효한 빈 결과이며 지원하지 않는 명령은 접수 거부 사유를 반환한다.
+이력은 현재 Mock 앱 세션의 메모리에만 보관하며 DB 저장/재시작 복원을 구현한 것은 아니다. 실제 MQTT Command/ACK, 운영 배차·안전 정지·재시작 정책은 별도 범위다. `--grid-url`의 기존 실제 격자/MQTT 시연 제어·경로 표시·통신 복구 후 미션 재개는 기존 계약을 유지한다.
 
-프로젝트는 `Amr.Core`·`Amr.ControlGui`·`Amr.ControlGui.Tests`를 추가하고 파일은 각 루트에 둔다. 기존 통신·Simulator 구조는 유지한다. Core에는 GUI·MQTT·SQL 참조가 없고 GUI는 Core 계약을 참조한다. MainForm은 인터페이스로 조회·명령을 사용하며 Mock 시나리오 버튼의 동작은 시작 지점에서 별도로 전달한다.
+**구조와 개발 설정**
 
-**대시보드·지도 확인**
+- 조회와 변경 통지는 `IAmrDataProvider`, 시작/Stop 접수는 `ICommandDispatcher`를 사용한다. `MockAmrDataProvider`가 상태·요청·이력을 같은 잠금에서 갱신하며 GUI가 MQTT Topic/ACK를 생성하지 않는다.
+- `AmrSnapshot.Journey`, 알람의 Severity/IsActive/Note, 변경 스냅샷의 History는 선택적 확장이다. 기존 생성자·실제 격자 공급자는 그대로 동작한다.
+- GUI의 Mock 어댑터는 기존 `Amr.Simulator`의 이동 계산을 참조한다. MainForm의 100ms UI 타이머가 단조 경과 시간을 전달하며, 종료 때 타이머와 별도 창·구독을 정리한다. 공급자 소유자는 Program이다.
+- 구독 버퍼64·요청128은 Mock 개발 설정이다. 한도에서 새 시작은 거부하되 이미 이동 중인 AMR의 Stop은 허용한다. Stop 후 재시작이 없어 등록 장비 수만큼만 추가 정지 요청이 생긴다. 초기 스냅샷/등록 경계·Revision·버퍼 초과 재동기화 계약을 유지한다.
+- 기존 2대·수동 MOVE 결과 대역은 `feedbackDemo: false` 기본 생성자와 기존 시험에서 보존한다. 실제 앱 시작 지점은 `feedbackDemo: true`로 명시한다.
+- 최소 관제 창1000×800, 별도 창760×620. 초기 표시 때 사용 모니터의 작업 영역에 맞춘다. [실제 변경·시험·한계](evidence/GUI/20261030-figma-feedback-01/README.md).
 
-- 상단 요약은 실제 공급자 값에서 계산한다. 초기 Mock은 2대·대기2·알람0·명령0이며 Broker/생존은 미확인이다. Figma의 MQTT 정상·5대·경로/장애물은 예시이므로 생성하지 않는다.
-- Map Marker 클릭 또는 장비 목록 선택으로 같은 장비의 상세를 확인한다. Marker가 겹치면 반복 클릭으로 선택을 순환한다. 지도에 포커스한 뒤 좌우 방향키·Home/End로 선택할 수도 있다.
-- `다음 상태`를 누르면 해당 장비의 X·속도·운행 상태가 목록·상세·지도·요약에 함께 반영된다. 선택 장비는 유지된다.
-- 좌표는 m 단위, X는 오른쪽·Y는 위쪽이며 같은 배율을 사용한다. 원점을 포함하고 전체 장비 좌표에 여백을 두어 자동 맞춤한다. 음수도 표시한다. 운영 지도 범위나 경로 계산 규칙을 정한 것이 아니다.
-- 비유한 좌표는 잘못된 좌표 건수로, 표시 불가 범위는 안내 문구로 드러낸다. 장비가 없으면 빈 화면을 표시한다. 경로·장애물·목적지 자료는 임의로 만들지 않는다.
-- 현재 장비 목록과 기존 명령 확인 동작을 유지했다. 이력/알람의 전체 조회·선택 시나리오는 후속이며 Mock의 빈 결과를 실제 연결 완료로 해석하지 않는다.
-- 창을 최소 크기(1000×720)와 넓은 크기에서 확인한다. 최소 크기에서도 명령 결과 한 행이 온전히 보이며, 다른 요청과 요청 ID·설명은 표의 세로·가로 스크롤로 확인한다. 화면은 사용 가능한 작업 영역 안에서 시작한다.
-- 코드 파일은 GUI 루트의 `MainForm.cs`·`.Designer.cs`·`MapCanvas.cs`이며 새 폴더·프로젝트는 추가하지 않았다. Map의 축 변환과 hit test는 MapCanvas 파일 안에 둔다.
-
-**첫 Mock의 개발 설정과 계약**
-
-- 구독별 버퍼 64항목, 앱 실행당 요청 보관 128건을 `Program.cs`에 명시한다. 운영 기본값이 아니다. 보관 한도에 도달하면 새 요청을 거부하고 기존 결과는 유지한다. 앱을 다시 실행하면 시험 상태가 초기화된다.
-- 초기 스냅샷과 구독 등록을 같은 잠금에서 처리한다. 변경마다 공급자 내 Revision이 증가하며 읽기 전용 값 사본을 전달한다. 첫 실행본은 작은 전체 스냅샷을 변경 항목에도 포함한다.
-- 버퍼 초과는 `AmrResyncRequiredException`으로 알리고 해당 구독을 종료한다. 화면은 새 구독의 최신 초기 스냅샷으로 동기화한다. 통지 스트림은 업무 이력의 무손실 보관소가 아니다.
-- 입력 형식 오류는 ArgumentException, 구독/호출 취소는 OperationCanceledException, 종료 후 사용은 ObjectDisposedException으로 구분한다. 업무 거부는 CommandSubmission의 사유다.
-- Mock 접수 잠금 안의 취소 확인을 경계로 한다. 그 전에 취소되면 기록하지 않고, 확인 뒤 접수되면 ID를 반환한다. 이후 토큰 취소로 접수 사실이나 결과를 지우지 않는다.
-- Mock은 주기·발행 작업을 만들지 않는다. 공급자 종료는 버퍼 정리와 대기 독자 해제로 끝난다. 실제 전송·운영 종료 Timeout은 아직 정하지 않았다. 자동 시험별 대기 제한은 시험 정지 방지용이다.
-- GUI의 비동기 변경은 UI 스레드에서 적용한다. [Microsoft의 InvokeAsync 안내](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/controls/how-to-make-thread-safe-calls)를 따른다.
-
-자동 시험은 위 솔루션 명령에 포함되며 개별 실행은 아래와 같다. 실제 화면 조작·닫기 확인은 자동 시험과 별도로 기록한다.
-
-```powershell
+```text
 dotnet test tests/Amr.ControlGui.Tests/Amr.ControlGui.Tests.csproj
 ```
+
+### 이번 화면의 코드 위치와 읽는 순서
+
+기본 화면은 `MainForm.Designer.cs`에서 만들고, Figma 피드백용 구성은 `MainForm.Feedback.cs`에서 연결한다. `partial` 파일은 서로 다른 창이 아니라 같은 MainForm 클래스를 나누어 작성한 파일이다.
+
+| 확인할 기능 | 코드와 주요 메서드 | 담당 역할 |
+| --- | --- | --- |
+| 앱 실행·공급자 선택 | [Program.cs](src/Amr.ControlGui/Program.cs) — `Main` | 인자 없는 실행에 최신 Mock 프로필을 주입한다. `--grid-url`은 기존 격자/MQTT 모드다. |
+| DataProvider 인터페이스 | [IAmrDataProvider.cs](src/Amr.Core/IAmrDataProvider.cs), [ICommandDispatcher.cs](src/Amr.Core/ICommandDispatcher.cs) | 장비·알람·이력·요청 결과 조회/변경 구독과 명령 요청의 접점을 정의한다. |
+| 대시보드·알람·지도 옆 상세 | [MainForm.Feedback.cs](src/Amr.ControlGui/MainForm.Feedback.cs) — `ConfigureFeedbackView`, `RefreshFeedbackSummary`, `RefreshFeedback`, `ShowJourney` | 등록 수·현재 알람 수·오류/경고·비고·출발/목적지/담당 AMR 정보를 표시한다. |
+| 지도 확대/축소·출발/목적지 표식 | [MapCanvas.cs](src/Amr.ControlGui/MapCanvas.cs) — `SetZoom`, `TryGetViewport`, `DrawStations` | 데이터 좌표를 화면 좌표로 바꾸고 S/G 및 담당 호기를 그린다. 배율 변경은 실제 좌표를 바꾸지 않는다. |
+| 별도 실행창과 명령 버튼 | [SimulationForm.cs](src/Amr.ControlGui/SimulationForm.cs) — `SendAsync`, `Render`, `UpdateButtons` | 생성 시 AMR ID를 고정한다. 시작을 MOVE, Stop을 STOP으로 요청하고 상태·응답·버튼 허용 여부를 표시한다. |
+| 출발지 설정 화면 | [SourceSelectionForm.cs](src/Amr.ControlGui/SourceSelectionForm.cs), [SimulationForm.cs](src/Amr.ControlGui/SimulationForm.cs) — `OpenSourceSettings` | S-01/S-02의 좌표와 선택·적용 버튼을 표시한다. 명시적으로 적용한 값만 공급자에 전달하며 취소는 기존 좌표·이력을 유지한다. |
+| 가상 이동·정지·출발지 설정 | [MockAmrDataProvider.Simulation.cs](src/Amr.ControlGui/MockAmrDataProvider.Simulation.cs) — `SetSimulationSource`, `SubmitSimulation`, `AdvanceSimulations`, `FinishMovement` | 요청 허용 조건을 검사하고 기존 Simulator 계산으로 좌표를 갱신한다. Stop은 갱신 대상에서 제거해 마지막 좌표를 보존한다. |
+| 이력 조회와 초기화 | [MainForm.Feedback.cs](src/Amr.ControlGui/MainForm.Feedback.cs) — `RenderHistory`, `ResetHistoryView` | Mock의 전체 이력 사본을 조건별로 표시한다. 초기화는 입력·조회 조건·행 선택만 해제한다. |
+| 공급자 조회·통지와 화면 반영 | [MockAmrDataProvider.cs](src/Amr.ControlGui/MockAmrDataProvider.cs) — `WatchAsync`, `Capture`, `Publish`; [MainForm.cs](src/Amr.ControlGui/MainForm.cs) — `ObserveAsync`, `ApplyChange` | 같은 잠금에서 상태 사본을 만들고 통지한다. 폼은 UI 스레드에서 통지를 적용해 지도·목록·별도 창을 갱신한다. |
+| 화면에서 주고받는 데이터 | [AmrSnapshot.cs](src/Amr.Core/AmrSnapshot.cs), [QueryModels.cs](src/Amr.Core/QueryModels.cs), [AmrChange.cs](src/Amr.Core/AmrChange.cs) | 현재 위치/상태와 Journey, 알람 등급/활성/비고, 이력, 변경 스냅샷을 표현한다. |
+| 동작 검증 | [FeedbackSimulationTests.cs](tests/Amr.ControlGui.Tests/FeedbackSimulationTests.cs), [FeedbackViewTests.cs](tests/Amr.ControlGui.Tests/FeedbackViewTests.cs) | 이동/Stop/도착/거부/종료와 별도 창 대상 고정·이력 보존·확대/맞춤·최소 배치를 검증한다. |
+
+읽을 때는 다음 세 흐름으로 따라가면 된다.
+
+1. **시작·Stop:** `SimulationForm.SendAsync` → `MockCommandDispatcher.DispatchAsync` → 공급자 `SubmitAsync` → `SubmitSimulation`. UI는 요청을 보내고 공급자는 허용 조건·상태·요청 이력을 갱신한다. MOVE 수락은 아직 도착 완료가 아니다.
+2. **시간에 따른 이동:** `ConfigureFeedbackView`의 타이머 → `AdvanceSimulations` → 기존 `SimulatedAmr.Advance` → `Publish` → `MainForm.ObserveAsync`/`ApplyChange` → 관제/별도 창 표시. 위치 계산 코드는 [SimulatedAmr.cs](src/Amr.Simulator/Simulation/SimulatedAmr.cs)에 있다.
+3. **이력 초기화:** `ResetHistoryView` → 조회 입력/조건 초기화 → `RenderHistory(clearSelection: true)`. 공급자의 `_history`와 화면의 `_historyEntries`는 삭제하지 않는다.
+4. **출발지 설정:** `OpenSourceSettings` → `SourceSelectionForm.ShowDialog` → 선택·적용(`DialogResult.OK`) → `SetSimulationSource` → 조회/변경 통지로 실행창과 지도에 반영. [설정 창 보완·검증](evidence/GUI/20261030-source-settings-01/README.md).
+
+Stop 후에는 이동 요청(MOVE)의 도착이 완료되지 않았으므로 그 요청은 Failure로 기록하고, 별도 Stop 요청 자체는 정지 성공으로 기록한다. 이는 현재 Mock 결과 표현이며 실제 MQTT ACK·운영 재시작 정책과 구분한다.
 
 ## Broker 없이 이동 실행·실제 프로세스 검증
 

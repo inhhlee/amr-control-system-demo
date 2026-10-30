@@ -8,6 +8,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="../Amr.Core/Amr.Core.csproj" />
+    <ProjectReference Include="../Amr.Simulator/Amr.Simulator.csproj" />
     <InternalsVisibleTo Include="Amr.ControlGui.Tests" />
   </ItemGroup>
 </Project>
