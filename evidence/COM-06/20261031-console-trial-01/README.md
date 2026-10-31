@@ -60,3 +60,8 @@
 현재 요청한 통합 콘솔과 자동 재접속·실제 수신 복구를 로컬에서 구현·검증했다. 실행은 [Git Bash 안내](../../../tests/manual/COM06/README.md)를 따른다. 기본 명령은 `dotnet run --project src/Amr.Communication.Console -- --trial --show-payload`다.
 
 과제1 전체·과제5 통합 완료를 뜻하지 않는다. 실제 AMR 동작/Alarm 생성·Core 요청-ACK 추적·DB·장시간/대량 운용과 전달 보장은 남아 있다. 네이티브 터미널의 색상/키보드 Ctrl+C 화면 캡처는 이번 실제 시험에 포함하지 않았다. 파이프 입력·exit·취소 토큰·한도 소진 중 종료는 구분해 확인했다. Issue는 열어 두며 커밋·푸시·PR·병합은 요청 전 수행하지 않는다.
+
+
+## 2026-11-01 보관 위치 정리
+
+이 실행의 정상 중간 결과/일회성 도구 3개는 [정리 목록](../../curation/20261101.json)에 원래 경로·해시·고정 Git 링크를 기록하고 작업 폴더에서 제외했다. 당시 수치·실패/미검증 판정은 원문 그대로이며 원본 전체는 [정리 전 고정 버전](https://github.com/inhhlee/amr-control-system-demo/tree/ae71f452f27a65ec2fee68fee60496a7a5ca3d6c/evidence/COM-06/20261031-console-trial-01)에서 확인한다. 과거 manifest의 파일 목록·해시는 당시 스냅샷이며 현재 폴더 전체 검사 입력으로 사용하지 않는다. 당시 도구를 재현할 때는 해당 고정 버전의 자료를 사용한다.

@@ -90,3 +90,8 @@ pwsh -NoProfile -File tests/manual/COM02-A/Verify-TwoAmr.ps1 -Phase Launch -RunI
 ```
 
 실제 MQTT/Docker·로컬 소켓이 허용된 환경에서 매번 새 RunId를 사용한다. 장애 주입/처리 지연은 시험용 Probe에만 있고 제품 GUI에는 추가하지 않았다. 실행 증거를 덮어쓰지 않는다.
+
+
+## 2026-11-01 보관 위치 정리
+
+이 실행의 정상 중간 결과/일회성 도구 12개는 [정리 목록](../../curation/20261101.json)에 원래 경로·해시·고정 Git 링크를 기록하고 작업 폴더에서 제외했다. 당시 수치·실패/미검증 판정은 원문 그대로이며 원본 전체는 [정리 전 고정 버전](https://github.com/inhhlee/amr-control-system-demo/tree/ae71f452f27a65ec2fee68fee60496a7a5ca3d6c/evidence/COM-02/20261028-two-amr-domain-01)에서 확인한다. 과거 manifest의 파일 목록·해시는 당시 스냅샷이며 현재 폴더 전체 검사 입력으로 사용하지 않는다. 당시 도구를 재현할 때는 해당 고정 버전의 자료를 사용한다.
