@@ -1,0 +1,3 @@
+CommandRequested AmrId="AMR_002" CommandId="CMD-80d8b87926d54e489b17110fff3e90a5" CommandType=MOVE
+CommandPublished AmrId="AMR_002" CommandId="CMD-80d8b87926d54e489b17110fff3e90a5" CommandType=MOVE QoS=0 Retain=false Delivery=Unconfirmed Execution=NotTracked
+

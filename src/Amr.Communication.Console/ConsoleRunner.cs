@@ -21,6 +21,8 @@ internal static class ConsoleRunner
     internal static async Task<int> RunAsync(string[] args, Func<IMqttClient> clientFactory,
         CancellationToken userCancellation, TextWriter output, TextWriter error, StructuredLog? log = null)
     {
+        if (args.Contains("--trial", StringComparer.Ordinal))
+            return await TrialConsoleRunner.RunAsync(args, clientFactory, userCancellation, output, error, log);
         if (args.Contains("--command", StringComparer.Ordinal))
             return await CommandConsoleRunner.RunAsync(args, clientFactory, userCancellation, output, error, log);
         if (args.Contains("--monitor-amr", StringComparer.Ordinal))
@@ -28,6 +30,7 @@ internal static class ConsoleRunner
         if (args.Length == 1 && args[0] == "--help")
         {
             output.WriteLine("사용법: --host 127.0.0.1 --port 1884 --connect-timeout-seconds 3 [--show-payload]");
+            output.WriteLine("통합 시험 콘솔: --trial [--amr-id AMR_001 --host 127.0.0.1 --port 1884 --reconnect-delay-seconds 5 --reconnect-attempts 5 --show-payload --no-color]");
             output.WriteLine("Heartbeat·Telemetry·Alarm·ACK 검사 후 대상 AMR과 정상 모델을 전달합니다. --show-payload는 비밀정보 없는 정상 시험 입력의 앞 256바이트만 표시합니다. Ctrl+C로 종료합니다.");
             output.WriteLine("순서·독립성 시험: --test-delay-amr AMR_001 --test-delay-ms 5000 (해당 AMR의 처리만 지연)");
             output.WriteLine("단일 AMR 관제 세션: --monitor-amr AMR_001 (정상 Heartbeat부터 5초/500ms 감시, Ctrl+C 종료)");

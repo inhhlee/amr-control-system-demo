@@ -1,0 +1,38 @@
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\Debug\net10.0\Amr.Communication.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\Debug\net10.0\Amr.Core.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\Amr.Simulator.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+결과 파일: C:\amr-control-system-demo\evidence\COM-06\20261031-console-trial-01\full-tests\all.trx
+
+통과!  - 실패:     0, 통과:     9, 건너뜀:     0, 전체:     9, 기간: 762 ms - Amr.Core.Tests.dll (net10.0)
+경고: 결과 파일을 덮어쓰는 중: C:\amr-control-system-demo\evidence\COM-06\20261031-console-trial-01\full-tests\all.trx
+결과 파일: C:\amr-control-system-demo\evidence\COM-06\20261031-console-trial-01\full-tests\all.trx
+
+통과!  - 실패:     0, 통과:   244, 건너뜀:     0, 전체:   244, 기간: 2 s - Amr.Simulator.Tests.dll (net10.0)
+[xUnit.net 00:00:10.44]     Amr.Communication.Tests.ReconnectingCommunicationSessionTests.DisconnectCreatesFreshClientResubscribesAndDeliversNewMessagesWithoutStaleEvents [FAIL]
+  실패 Amr.Communication.Tests.ReconnectingCommunicationSessionTests.DisconnectCreatesFreshClientResubscribesAndDeliversNewMessagesWithoutStaleEvents [4 s]
+  오류 메시지:
+   System.Threading.Tasks.TaskCanceledException : A task was canceled.
+  스택 추적:
+     at Amr.Communication.Tests.ReconnectingCommunicationSessionTests.Until(Func`1 predicate) in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Mqtt\Sessions\ReconnectingCommunicationSessionTests.cs:line 33
+   at Amr.Communication.Tests.ReconnectingCommunicationSessionTests.DisconnectCreatesFreshClientResubscribesAndDeliversNewMessagesWithoutStaleEvents() in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Mqtt\Sessions\ReconnectingCommunicationSessionTests.cs:line 61
+   at Amr.Communication.Tests.ReconnectingCommunicationSessionTests.DisconnectCreatesFreshClientResubscribesAndDeliversNewMessagesWithoutStaleEvents() in C:\amr-control-system-demo\tests\Amr.Communication.Tests\Mqtt\Sessions\ReconnectingCommunicationSessionTests.cs:line 69
+--- End of stack trace from previous location ---
+경고: 결과 파일을 덮어쓰는 중: C:\amr-control-system-demo\evidence\COM-06\20261031-console-trial-01\full-tests\all.trx
+결과 파일: C:\amr-control-system-demo\evidence\COM-06\20261031-console-trial-01\full-tests\all.trx
+
+실패!  - 실패:     1, 통과:   824, 건너뜀:     0, 전체:   825, 기간: 4 s - Amr.Communication.Tests.dll (net10.0)
+경고: 결과 파일을 덮어쓰는 중: C:\amr-control-system-demo\evidence\COM-06\20261031-console-trial-01\full-tests\all.trx
+결과 파일: C:\amr-control-system-demo\evidence\COM-06\20261031-console-trial-01\full-tests\all.trx
+
+통과!  - 실패:     0, 통과:    53, 건너뜀:     0, 전체:    53, 기간: 9 s - Amr.ControlGui.Tests.dll (net10.0)
+경고: 결과 파일을 덮어쓰는 중: C:\amr-control-system-demo\evidence\COM-06\20261031-console-trial-01\full-tests\all.trx
+결과 파일: C:\amr-control-system-demo\evidence\COM-06\20261031-console-trial-01\full-tests\all.trx
+
+통과!  - 실패:     0, 통과:    72, 건너뜀:     0, 전체:    72, 기간: 31 s - Amr.Simulator.Map.Tests.dll (net10.0)

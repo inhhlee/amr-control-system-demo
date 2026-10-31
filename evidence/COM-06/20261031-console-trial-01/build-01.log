@@ -1,0 +1,23 @@
+  Amr.Communication -> C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll
+  Amr.Communication.Console -> C:\amr-control-system-demo\src\Amr.Communication.Console\bin\Debug\net10.0\Amr.Communication.Console.dll
+  Amr.Core -> C:\amr-control-system-demo\src\Amr.Core\bin\Debug\net10.0\Amr.Core.dll
+  Amr.ControlGui -> C:\amr-control-system-demo\src\Amr.ControlGui\bin\Debug\net10.0-windows\Amr.ControlGui.dll
+  Amr.Simulator -> C:\amr-control-system-demo\src\Amr.Simulator\bin\Debug\net10.0\Amr.Simulator.dll
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\TrialConsoleTests.cs(32,81): error CS0411: 사용 현황에서 'ImmutableArrayExtensions.ToArray<T>(ImmutableArray<T>)' 메서드의 형식 인수를 유추할 수 없습니다. 형식 인수를 명시적으로 지정하세요. [C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj]
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\Mqtt\Sessions\ReconnectingCommunicationSessionTests.cs(190,9): error CS0619: 'Assert.Throws<T>(Func<Task>)'은(는) 사용되지 않습니다. 'You must call Assert.ThrowsAsync<T> (and await the result) when testing async code.' [C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj]
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\Mqtt\Sessions\ReconnectingCommunicationSessionTests.cs(190,9): error xUnit2014: Do not use Assert.Throws() to check for asynchronously thrown exceptions. Use Assert.ThrowsAsync instead. (https://xunit.net/xunit.analyzers/rules/xUnit2014) [C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj]
+  Amr.ControlGui.Tests -> C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll
+  Amr.Core.Tests -> C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\Debug\net10.0\Amr.Core.Tests.dll
+  Amr.Simulator.Map -> C:\amr-control-system-demo\tools\Amr.Simulator.Map\bin\Debug\net10.0\Amr.Simulator.Map.dll
+  Amr.Simulator.Map.Tests -> C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll
+  Amr.Simulator.Tests -> C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\Amr.Simulator.Tests.dll
+
+빌드하지 못했습니다.
+
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\Console\TrialConsoleTests.cs(32,81): error CS0411: 사용 현황에서 'ImmutableArrayExtensions.ToArray<T>(ImmutableArray<T>)' 메서드의 형식 인수를 유추할 수 없습니다. 형식 인수를 명시적으로 지정하세요. [C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj]
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\Mqtt\Sessions\ReconnectingCommunicationSessionTests.cs(190,9): error CS0619: 'Assert.Throws<T>(Func<Task>)'은(는) 사용되지 않습니다. 'You must call Assert.ThrowsAsync<T> (and await the result) when testing async code.' [C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj]
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\Mqtt\Sessions\ReconnectingCommunicationSessionTests.cs(190,9): error xUnit2014: Do not use Assert.Throws() to check for asynchronously thrown exceptions. Use Assert.ThrowsAsync instead. (https://xunit.net/xunit.analyzers/rules/xUnit2014) [C:\amr-control-system-demo\tests\Amr.Communication.Tests\Amr.Communication.Tests.csproj]
+    경고 0개
+    오류 3개
+
+경과 시간: 00:00:39.05

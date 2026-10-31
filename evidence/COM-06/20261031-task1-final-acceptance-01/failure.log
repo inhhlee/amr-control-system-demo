@@ -1,0 +1,7 @@
+MethodException: C:\amr-control-system-demo\tests\manual\COM06\Verify-TrialConsole.ps1:151
+Line |
+ 151 |     $matches.Add(@{request=$known[$key];actual=$actual;testDouble=$tru …
+     |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot find an overload for "Add" and the argument count: "1".
+
+
