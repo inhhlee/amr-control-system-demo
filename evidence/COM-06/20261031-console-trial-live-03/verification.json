@@ -1,0 +1,88 @@
+{
+  "checks": [
+    {
+      "name": "connect-and-four-subscriptions",
+      "passed": true,
+      "detail": "Ready was logged after four subscriptions."
+    },
+    {
+      "name": "actual-simulator-final-received",
+      "passed": true,
+      "detail": "Actual Simulator final (1,2), IDLE, speed0 was received."
+    },
+    {
+      "name": "invalid-rejected-and-valid-alarm-ack-received",
+      "passed": true,
+      "detail": "Synthetic Alarm/ACK are communication test inputs, not actual AMR execution."
+    },
+    {
+      "name": "three-interactive-commands-received",
+      "passed": true,
+      "detail": "MOVE coordinates, STOP/RESET and unique request IDs received on real Broker."
+    },
+    {
+      "name": "heartbeat-timeout-and-recovery",
+      "passed": true,
+      "detail": "Heartbeat gap and recovery were observed while Broker stayed connected."
+    },
+    {
+      "name": "disconnected-command-rejected",
+      "passed": true,
+      "detail": "New request was rejected, without an application send queue."
+    },
+    {
+      "name": "automatic-reconnect-and-resubscribe",
+      "passed": true,
+      "detail": "Same console process automatically connected and subscribed after Broker restart."
+    },
+    {
+      "name": "no-command-replay-after-reconnect",
+      "passed": true,
+      "detail": "No command observed during a 2-second post-reconnect window; source/automatic tests also check no replay."
+    },
+    {
+      "name": "actual-receive-resumed-after-reconnect",
+      "passed": true,
+      "detail": "Second actual Simulator run final Telemetry received in the same console process."
+    },
+    {
+      "name": "new-command-after-reconnect",
+      "passed": true,
+      "detail": "A new explicit request can be published after recovery."
+    },
+    {
+      "name": "git-bash-command-input-and-exit",
+      "passed": true,
+      "detail": "Git Bash without profiles ran the compiled trial with piped status/exit input. Native screen/color/keyboard capture is separate."
+    },
+    {
+      "name": "normal-exit-with-input-pipe-open",
+      "passed": true,
+      "detail": "/exit joined input/supervisor/session work while stdin pipe remained open."
+    },
+    {
+      "name": "retry-limit-terminates-without-extra-input",
+      "passed": true,
+      "detail": "Initial attempt plus two retries; exhausted process exits with stdin still open."
+    },
+    {
+      "name": "exit-cancels-retry-delay",
+      "passed": true,
+      "detail": "Exit did not wait for the configured 30-second retry delay."
+    },
+    {
+      "name": "existing-containers-preserved",
+      "passed": true,
+      "detail": "Protected container IDs retained and no start/stop/rm was issued against them. Independent restart-state changes are recorded, not attributed to this test."
+    }
+  ],
+  "code": "4e462691db9dcc312d1d6b882773c5ff382eadc6",
+  "passed": true,
+  "started": "2026-10-31T23:21:50.6418958+09:00",
+  "ended": "2026-10-31T23:22:23.5030225+09:00",
+  "branch": "feature/53-communication-trial",
+  "port": 63567,
+  "sdk": "10.0.401",
+  "scope": "actual MQTT and CLI integration; not full task1/Core/AMR execution validation",
+  "runId": "20261031-console-trial-live-03"
+}

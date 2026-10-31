@@ -1,0 +1,38 @@
+{
+  "passed": false,
+  "port": 50703,
+  "code": "4e462691db9dcc312d1d6b882773c5ff382eadc6",
+  "scope": "actual MQTT and CLI integration; not full task1/Core/AMR execution validation",
+  "checks": [
+    {
+      "detail": "Ready was logged after four subscriptions.",
+      "passed": true,
+      "name": "connect-and-four-subscriptions"
+    },
+    {
+      "detail": "Actual Simulator final (1,2), IDLE, speed0 was received.",
+      "passed": true,
+      "name": "actual-simulator-final-received"
+    },
+    {
+      "detail": "Synthetic Alarm/ACK are communication test inputs, not actual AMR execution.",
+      "passed": true,
+      "name": "invalid-rejected-and-valid-alarm-ack-received"
+    },
+    {
+      "detail": "MOVE coordinates, STOP/RESET and unique request IDs received on real Broker.",
+      "passed": true,
+      "name": "three-interactive-commands-received"
+    },
+    {
+      "detail": "Protected container IDs retained and no start/stop/rm was issued against them. Independent restart-state changes are recorded, not attributed to this test.",
+      "passed": true,
+      "name": "existing-containers-preserved"
+    }
+  ],
+  "branch": "feature/53-communication-trial",
+  "ended": "2026-10-31T23:40:38.5808969+09:00",
+  "started": "2026-10-31T23:40:25.4182697+09:00",
+  "sdk": "10.0.401",
+  "runId": "20261031-task1-final-acceptance-01"
+}

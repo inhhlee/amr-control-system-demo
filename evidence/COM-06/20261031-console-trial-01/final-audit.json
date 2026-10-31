@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "productSourceMatchesFinalLiveRun": true,
+  "oldResultFilesPreserved": true,
+  "finalCommunicationTests": 826,
+  "relatedRegression": 378,
+  "actualMqttChecks": 15,
+  "testCounts": {
+    "Communication": 826,
+    "Core": 9,
+    "ControlGui": 53,
+    "Simulator": 244,
+    "Map": 72
+  },
+  "limits": "Related regression ran before the final new-supervisor notification-order change; relevant legacy sources were unchanged. Map TRX copied from full run; other final tests have independent paths. Not all tests were rerun in one final invocation."
+}
