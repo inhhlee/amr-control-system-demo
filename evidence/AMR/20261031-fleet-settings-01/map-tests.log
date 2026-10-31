@@ -1,0 +1,6 @@
+C:\amr-control-system-demo\tests\Amr.Simulator.Map.Tests\bin\Debug\net10.0\Amr.Simulator.Map.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+데이터 수집기 'Blame' 메시지: 모든 테스트 실행이 완료되었지만, 시퀀스 파일이 생성되지 않습니다..
+결과 파일: C:\amr-control-system-demo\evidence\AMR\20261031-fleet-settings-01\map.trx
+
+통과!  - 실패:     0, 통과:    72, 건너뜀:     0, 전체:    72, 기간: 31 s - Amr.Simulator.Map.Tests.dll (net10.0)

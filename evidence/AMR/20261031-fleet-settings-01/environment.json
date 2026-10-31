@@ -1,0 +1,10 @@
+{
+  "Branch": "feature/49-simulator-fleet-settings",
+  "OS": "Microsoft Windows 10.0.26200",
+  "SimulatorDll": "F2F229B89A55B54071EA8BD15C3520D9328D1A1C6E8AB7B9E5AF10C1C481F51B",
+  "Time": "2026-10-31T21:55:43.7315383+09:00",
+  "Modified": true,
+  "Code": "2339df1b1955b26c10f93295fcb3ee2622fc6131",
+  "PowerShell": "7.6.5",
+  "SDK": "10.0.401"
+}

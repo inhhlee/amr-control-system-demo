@@ -4,6 +4,8 @@
 
 ## 준비
 
+Simulator의 일반 수량 설정 실행은 [수량·장애 설정 안내](src/Amr.Simulator/README.md#수량장애-조건-설정-issue-49)를 따른다. `src/Amr.Simulator`의 `--fleet-config`와 지도 도구의 고정 두 장비 시연 설정은 별도 형식이다.
+
 - .NET SDK: 저장소 `global.json`의 **10.0.401**과 호환되는 10.0.4xx 패치 버전. 런타임만 설치하면 빌드할 수 없다. `dotnet --version`은 저장소 루트에서 확인한다.
 - 첫 복원에는 NuGet 패키지 다운로드를 위한 네트워크가 필요하다.
 - Git: 아래 복제 명령과 수동 시험 도구의 코드 버전 조회에 사용한다.

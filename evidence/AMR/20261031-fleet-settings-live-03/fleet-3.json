@@ -1,0 +1,52 @@
+{
+  "amrs": [
+    {
+      "amrId": "F3_AMR_0",
+      "initialPosition": {
+        "y": 0,
+        "x": 0
+      },
+      "speedMps": 1,
+      "updateIntervalMs": 100,
+      "waypoints": [
+        {
+          "y": 0,
+          "x": 1
+        }
+      ],
+      "faults": []
+    },
+    {
+      "amrId": "F3_AMR_1",
+      "initialPosition": {
+        "y": 1,
+        "x": 0
+      },
+      "speedMps": 2,
+      "updateIntervalMs": 100,
+      "waypoints": [
+        {
+          "y": 1,
+          "x": 1
+        }
+      ],
+      "faults": []
+    },
+    {
+      "amrId": "F3_AMR_2",
+      "initialPosition": {
+        "y": 2,
+        "x": 0
+      },
+      "speedMps": 3,
+      "updateIntervalMs": 100,
+      "waypoints": [
+        {
+          "y": 2,
+          "x": 1
+        }
+      ],
+      "faults": []
+    }
+  ]
+}

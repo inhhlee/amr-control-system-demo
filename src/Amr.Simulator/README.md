@@ -31,4 +31,36 @@ dotnet run --project src/Amr.Simulator -- --config config/simulator.single.json
 dotnet test tests/Amr.Simulator.Tests
 ```
 
+## 수량·장애 조건 설정 (Issue #49)
+
+`--fleet-config config/simulator.fleet.json`으로 여러 AMR의 설정을 한 번에 읽고 실행한다.
+`amrs` 배열의 항목 수가 장비 수이며 ID는 각 항목에 직접 적는다. 같은 ID를 두 번
+사용하거나 마지막 장비의 값이 잘못된 경우도 전체 실행 전에 거부한다. 기존
+`--config config/simulator.single.json`과 지도 도구의 `--fleet-config`는 각각 별도 형식이다.
+
+```powershell
+dotnet run --project src/Amr.Simulator -- --fleet-config config/simulator.fleet.json
+dotnet run --project src/Amr.Simulator -- --fleet-config config/simulator.fleet.json --mqtt --host 127.0.0.1 --port 1884 --telemetry-ms 100 --heartbeat-ms 1000
+```
+
+각 항목에는 기존 `amrId/initialPosition/speedMps/updateIntervalMs/waypoints`와
+`faults` 배열을 적는다. 장애가 없으면 `faults: []`다. 장애 조건은 `code`,
+`level`(기존 INFO/WARN/ERR/FATAL), `activateAfterMs`, `resolveAfterMs`, 선택
+`message`다. 시점은 실행 후 경과 ms인 0 이상의 Int64 정수이며 원인 해소는 발생보다
+뒤여야 한다. 문자열·중복/추가 필드·잘못된 UTF-8은 보정하지 않는다.
+
+이 단계는 **장애 설정 로드·검사까지**다. 로그에 `Execution=PendingAlarmImplementation`을
+표시하며 실제 장애/알람 전이는 #50, MQTT 명령 수신과 최종 ACK는 #51에서 연결한다.
+원인 해소가 즉시 알람 해제를 뜻하는지는 아직 확정하지 않았다.
+
+장비별 실행 루프·불변 송신 스냅샷·ClientId/연결을 따로 소유한다. 한 연결 실패 시
+이번 fleet 실행은 실패로 종료하고 다른 소유 작업도 취소·정리를 기다린다. 한 장비가
+먼저 도착하면 그 장비의 유한 실행/송신은 끝나며 마지막 장비 종료까지 프로세스가
+기다린다. 장시간 명령 대기 세션은 이 단계의 기능이 아니다.
+
+실제 MQTT 재현은 `pwsh -NoProfile -File tests/manual/AMR01/Verify-FleetSettings.ps1 -RunId <새ID>`를
+사용한다. Debug 빌드된 Simulator/통신 콘솔과 실행 중인 Docker Linux 엔진, 캐시된
+`eclipse-mosquitto:2.1.2-alpine`이 필요하다. 관찰용 수신 프로세스의 강제 정리를
+Ctrl+C 정상 종료 검증으로 집계하지 않는다.
+
 격자 화면은 `dotnet run --project tools/Amr.Simulator.Map`으로 실행한다. 이 호스트가 본 프로젝트의 `GridSimulation`을 호출한다. 격자 CLI나 별도 프로세스 간 명령 프로토콜을 새로 추가하지 않았다.
