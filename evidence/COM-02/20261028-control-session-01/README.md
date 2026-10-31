@@ -27,7 +27,7 @@
 | --- | --- | --- |
 | Release 솔루션 빌드 | 경고/오류0 | 통과, [최종 빌드](build-final-03.log) |
 | 표준 VSTest, 기존+신규 | 통신·Simulator·GUI·Map 회귀 유지 | **1116/1116 통과**: 통신799·Simulator202·GUI49·Map66. [출력](regression-verified.log), 이 폴더의 `regression-verified_*.trx`. 앞선 세션15건 단독 실행은 중복 합산하지 않음 |
-| 가짜 MQTT/시계 기반 수명 시험 | 최초/불량/다른ID·느린 Core 처리와 독립 감시·주기 Timeout/복구, 접속/구독 실패·조기 단절·진행 중 취소·반복 Stop/Dispose·정리 대기/오류 | 최종16건 통과, [앞선15건 단독 TRX](session-unit-01.trx). 실제 네트워크 연동과 구분 |
+| 가짜 MQTT/시계 기반 수명 시험 | 최초/불량/다른ID·느린 Core 처리와 독립 감시·주기 Timeout/복구, 접속/구독 실패·조기 단절·진행 중 취소·반복 Stop/Dispose·정리 대기/오류 | 최종16건 통과, [앞선15건 단독 TRX](https://github.com/inhhlee/amr-control-system-demo/blob/ae71f452f27a65ec2fee68fee60496a7a5ca3d6c/evidence/COM-02/20261028-control-session-01/session-unit-01.trx). 실제 네트워크 연동과 구분 |
 | 콘솔 모드 인자·취소 | 잘못된 인자는 Client 미생성, 같은 세션의 정상 수신·취소 종료 | 신규5건 통과, 통신799건에 포함 |
 | 실제 MQTT, Ready/차단 대기/도착 | 이동0/차단/도착 후에도 신호 증가·Alive | 통과, [별도 시험 호스트](../20261028-control-session-mqtt-01/probe-session.json)의 `01-ready`·`02-waiting`·`03-arrival-alive.json` |
 | Heartbeat만 차단, Telemetry 지속 | 연결 Subscribed 유지,5초 이상 후 무응답·한 번 Timeout | 최초 관측5393ms, 불량/다른ID 회복 없음. [관측](../20261028-control-session-mqtt-01/04-NoHeartbeat.json) · [격리](../20261028-control-session-mqtt-01/05-invalid-other-isolation.json) |
@@ -90,3 +90,8 @@ pwsh -NoProfile -File tests/manual/COM02-A/Verify-Heartbeat.ps1 -Phase Launch -R
 ```
 
 실제 네트워크·GUI/시험 호스트의 로컬 소켓이 허용된 환경에서 실행한다. 매 시험에는 새 RunId를 쓰며 기존 증거 폴더를 덮어쓰지 않는다. F5는 솔루션을 열고 기존 프로젝트 Broker1884를 준비한다.
+
+
+## 2026-11-01 보관 위치 정리
+
+이 실행의 정상 중간 결과/일회성 도구 8개는 [정리 목록](../../curation/20261101.json)에 원래 경로·해시·고정 Git 링크를 기록하고 작업 폴더에서 제외했다. 당시 수치·실패/미검증 판정은 원문 그대로이며 원본 전체는 [정리 전 고정 버전](https://github.com/inhhlee/amr-control-system-demo/tree/ae71f452f27a65ec2fee68fee60496a7a5ca3d6c/evidence/COM-02/20261028-control-session-01)에서 확인한다. 과거 manifest의 파일 목록·해시는 당시 스냅샷이며 현재 폴더 전체 검사 입력으로 사용하지 않는다. 당시 도구를 재현할 때는 해당 고정 버전의 자료를 사용한다.
