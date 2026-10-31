@@ -9,9 +9,12 @@ public static class SimulatorApplication
     public static async Task<int> RunAsync(string[] args, TextWriter output, TextWriter error,
         CancellationToken cancellationToken = default, ISimulationClock? clock = null)
     {
+        if (args.Contains("--fleet-config", StringComparer.Ordinal))
+            return await FleetApplication.RunAsync(args, output, error, cancellationToken);
         if (args is ["--help"])
         {
             await output.WriteLineAsync("Usage: Amr.Simulator --config <JSON file> [--mqtt --host <host> --port <port> --telemetry-ms <ms> --heartbeat-ms <ms>]");
+            await output.WriteLineAsync("Fleet: Amr.Simulator --fleet-config <JSON file> [same MQTT options]");
             return 0;
         }
         string config;

@@ -8,6 +8,9 @@ public static class SimulatorSettingsLoader
 {
     public static async Task<SimulatorSettings> LoadAsync(string path,
         CancellationToken cancellationToken = default)
+        => Parse(await ReadUtf8Async(path, cancellationToken));
+
+    internal static async Task<string> ReadUtf8Async(string path, CancellationToken cancellationToken)
     {
         if (string.IsNullOrWhiteSpace(path))
             throw new ConfigurationException("$file", "설정 파일 경로가 필요합니다.");
@@ -32,7 +35,7 @@ public static class SimulatorSettingsLoader
         }
 
         cancellationToken.ThrowIfCancellationRequested();
-        return Parse(json);
+        return json;
     }
 
     public static SimulatorSettings Parse(string json)
@@ -81,7 +84,7 @@ public static class SimulatorSettingsLoader
         return new SimulatorSettings(id, initial, speed, interval, waypoints);
     }
 
-    private static JsonDocument ReadDocument(string json)
+    internal static JsonDocument ReadDocument(string json)
     {
         try
         {

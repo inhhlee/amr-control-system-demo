@@ -1,0 +1,20 @@
+{
+  "amrs": [
+    {
+      "amrId": "F1_AMR_0",
+      "initialPosition": {
+        "y": 0,
+        "x": 0
+      },
+      "speedMps": 1,
+      "updateIntervalMs": 100,
+      "waypoints": [
+        {
+          "y": 0,
+          "x": 1
+        }
+      ],
+      "faults": []
+    }
+  ]
+}
