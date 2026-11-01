@@ -1,0 +1,226 @@
+{
+  "passed": true,
+  "recorded_kst": "2026-11-01T15:10:21.949485+09:00",
+  "base_develop": "3752d57ef9a6efb05e746763e4393858d0f3bd04",
+  "original_gui": "174a050f984014cb32fe35a481646ad1c885b8ac",
+  "version_scope": "Original GUI + merged develop + working tree display/test isolation/link corrections; final PR binds commit/tree.",
+  "environment": {
+    "os": "Windows-10-10.0.26200-SP0",
+    "sdk": "10.0.401",
+    "configuration": "Debug"
+  },
+  "tests": {
+    "gui": {
+      "outcome": "Completed",
+      "total": 65,
+      "passed": 65,
+      "failed": 0
+    },
+    "core": {
+      "outcome": "Completed",
+      "total": 9,
+      "passed": 9,
+      "failed": 0
+    },
+    "map": {
+      "outcome": "Completed",
+      "total": 72,
+      "passed": 72,
+      "failed": 0
+    }
+  },
+  "new_automated_tests": 146,
+  "original_gui64_included": true,
+  "protected_paths": [
+    "src/Amr.Communication",
+    "src/Amr.Communication.Console",
+    "src/Amr.Simulator",
+    "tools",
+    "config",
+    "docker",
+    ".vscode",
+    "tests/Amr.Communication.Tests",
+    "tests/Amr.Simulator.Tests",
+    "tests/Amr.Simulator.Map.Tests",
+    "tests/Amr.Core.Tests"
+  ],
+  "protected_code_matches_develop": true,
+  "curated_56_still_absent": true,
+  "user_35_unchanged": true,
+  "readme_conflicts_resolved": true,
+  "documents_scanned": 220,
+  "local_links_checked": 3735,
+  "new_missing_links": 0,
+  "preexisting_missing_link_pairs": 116,
+  "link_corrections": [
+    {
+      "file": "evidence/GUI/20261030-source-settings-01/README.md",
+      "old": "../../../../src/Amr.ControlGui/SourceSelectionForm.cs",
+      "new": "../../../src/Amr.ControlGui/SourceSelectionForm.cs"
+    },
+    {
+      "file": "evidence/GUI/20261030-source-settings-01/README.md",
+      "old": "../../../../src/Amr.ControlGui/SimulationForm.cs",
+      "new": "../../../src/Amr.ControlGui/SimulationForm.cs"
+    },
+    {
+      "file": "evidence/GUI/20261030-source-settings-01/README.md",
+      "old": "../../../../BUILDING.md",
+      "new": "../../../BUILDING.md"
+    }
+  ],
+  "sources": [
+    {
+      "path": "src/Amr.ControlGui/Amr.ControlGui.csproj",
+      "sha256": "9402aeac9ec2d9f2ae254ab22b346c051affe940b9619ef76f8ccc7aa693c8a0"
+    },
+    {
+      "path": "src/Amr.ControlGui/GridMapDataProvider.cs",
+      "sha256": "0bd22ef8e142b2023152bdb331b9d05b309ec62e46787096a7aa142e80110d0e"
+    },
+    {
+      "path": "src/Amr.ControlGui/MainForm.cs",
+      "sha256": "7fc0673b99529d8592394205170e502bd913113b66b074dcf7d1524bd55f6784"
+    },
+    {
+      "path": "src/Amr.ControlGui/MainForm.Designer.cs",
+      "sha256": "02853ed1923f0e2f6309aa5669b99c831ebc5bc024d963c40f945fee94c67836"
+    },
+    {
+      "path": "src/Amr.ControlGui/MainForm.Feedback.cs",
+      "sha256": "b90408e4b3bc006e2225112c48295879c58ab6063698d15094d862ecc804554b"
+    },
+    {
+      "path": "src/Amr.ControlGui/MainForm.Grid.cs",
+      "sha256": "0de3f851f39837eb210fc5d256b9de97a10b52f7dce3e1d8a5c570eccf2ad85d"
+    },
+    {
+      "path": "src/Amr.ControlGui/MapCanvas.cs",
+      "sha256": "4d10fd85f5a5a43a46b8f36889391c0cd978dfb405ce234b67a57fd75930e7ab"
+    },
+    {
+      "path": "src/Amr.ControlGui/MapCanvas.Grid.cs",
+      "sha256": "6a9324e1503ac38ea3c8c7789e98b16ea07d439ad6b06479cc604924a40f4b1d"
+    },
+    {
+      "path": "src/Amr.ControlGui/MockAmrDataProvider.cs",
+      "sha256": "a296baad95680dbc61457aee0b2559c6d45f81b524e20b904a29c0d307a40b19"
+    },
+    {
+      "path": "src/Amr.ControlGui/MockAmrDataProvider.Simulation.cs",
+      "sha256": "7e9d750f1f18a9603dc63ab26990722d5bcbc43fa82f97b0af686400b737e493"
+    },
+    {
+      "path": "src/Amr.ControlGui/MockCommandDispatcher.cs",
+      "sha256": "9598d5e0810e21be0cb5c4840c29f74ff5dc2098b052934cfbca8c220daa5be9"
+    },
+    {
+      "path": "src/Amr.ControlGui/Program.cs",
+      "sha256": "745154c22b1223b4bc2236a3f0eb29db754b18addbb14f8778698947f69bb4fb"
+    },
+    {
+      "path": "src/Amr.ControlGui/SimulationForm.cs",
+      "sha256": "6ee4a0d4b60c747bdff5544a3e9019e57a46ba2cad7e6bb63a9e968793a49b05"
+    },
+    {
+      "path": "src/Amr.ControlGui/SourceSelectionForm.cs",
+      "sha256": "66f0e1527a24b3c49dd8a1f980b03af7f72b3432ba5953c02e2c32cf0711794b"
+    },
+    {
+      "path": "src/Amr.Core/Amr.Core.csproj",
+      "sha256": "c5fc3eb64ae56fc55eaf04c20e143c231a8eafbfc5a6bd797f140931bf8e2dbf"
+    },
+    {
+      "path": "src/Amr.Core/AmrChange.cs",
+      "sha256": "b29ec88e8fa1f3c2c163625cba4f01581a78d61f58e265705c32f8d288e8534e"
+    },
+    {
+      "path": "src/Amr.Core/AmrDomainManager.cs",
+      "sha256": "6261507b1855312583e1bbca50c968cccd0d7cae391ccb27790d67cf7f6fb965"
+    },
+    {
+      "path": "src/Amr.Core/AmrDomainModels.cs",
+      "sha256": "6a9a5fcd5044df1432493826482e075f494658929376c658b2bf4846b9a85e99"
+    },
+    {
+      "path": "src/Amr.Core/AmrSnapshot.cs",
+      "sha256": "9e6a340f94492d8b9cc715146f365a3804b4eae00aab817eba04db2bfc59c14b"
+    },
+    {
+      "path": "src/Amr.Core/CommandModels.cs",
+      "sha256": "d66ad50c73f3cc5b9c1427a800d6ad3e76b3fd25e106cee262af3357203908ae"
+    },
+    {
+      "path": "src/Amr.Core/IAmrDataProvider.cs",
+      "sha256": "318597985434ab205d3d94d7553008eb1851aac73cf8f61db97ac89890f29195"
+    },
+    {
+      "path": "src/Amr.Core/ICommandDispatcher.cs",
+      "sha256": "9d56502d3744696f8b8924565cb84238d8d5674049fa8f685a7e6b7affce9845"
+    },
+    {
+      "path": "src/Amr.Core/QueryModels.cs",
+      "sha256": "2e9da01280de29c27a5f4dce05ed15c427a03f65f6c63d72346310759d7f3ba4"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/Amr.ControlGui.Tests.csproj",
+      "sha256": "42d65ae81a78121442155e4f808159e88283bb5cd8e6106bca32188f6804e887"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/DashboardMapTests.cs",
+      "sha256": "e83e7adb463cf63693eedc07c2d231471e2d85894cde07f88f9b0bde68be66c7"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/FeedbackSimulationTests.cs",
+      "sha256": "92a01199c0004a4607bb19c8965c1642058d770d05166dddf779ab169b96f4e9"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/FeedbackViewTests.cs",
+      "sha256": "bdb9b39473bc2ad53ecc347371fc29c68428b9cd1534a9fa9148abb2723659f9"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/FleetDashboardTests.cs",
+      "sha256": "39496f3d1b94ce3c941f69e671e2cda081087b9fcde576cae168a79bc78ffd31"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/GridDashboardTests.cs",
+      "sha256": "2eec61bc7bad36fb699c214f78c10145d19588118f88ef21bc8198bc3003af44"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/GuiTestAssembly.cs",
+      "sha256": "920f028779d294e883456ce63593573ff63c15cc79bea0a638363c484e772742"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/MainFormTests.cs",
+      "sha256": "d0fd8c67786298327a9169435074a6d338ad3af8650da315d07de58a57cd9b5c"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/MockCommandDispatcherTests.cs",
+      "sha256": "6b899a7359f00dcecfe11c44e7377735ae413b51bc4e8743022b9faa3ae42e1b"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/MockDataProviderTests.cs",
+      "sha256": "3d33525c4d54a03ace2c51ad1fd2234526f9fa09ef6881ffbe69ad2c10043a52"
+    }
+  ],
+  "binaries": [
+    {
+      "path": "src/Amr.ControlGui/bin/Debug/net10.0-windows/Amr.ControlGui.dll",
+      "sha256": "6782465af0ea10ea43a75022734217bc1656891bea4c9a7c70355fb1df86d8f5"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/bin/Debug/net10.0-windows/Amr.ControlGui.Tests.dll",
+      "sha256": "42966609b1b88ce92a1d6263a17a12e91830d9f65e7dc6950a3d029ea292730f"
+    },
+    {
+      "path": "src/Amr.Core/bin/Debug/net10.0/Amr.Core.dll",
+      "sha256": "27af83edb5537d7bd97ea4a531539ec6fc6685a28094f026882528b11ee325a0"
+    }
+  ],
+  "limits": [
+    "Existing manual GUI evidence dated 2026-10-30 is retained; current tests automate Windows Forms without new manual capture.",
+    "Communication826 and Simulator244 are existing evidence, not rerun.",
+    "Initial modal timeout OS cause not proven; isolated/class probes and serial suite observations preserved.",
+    "Original document merge conflicts and whole-task completion are outside this GUI integration."
+  ]
+}

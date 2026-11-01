@@ -6,6 +6,45 @@ namespace Amr.ControlGui.Tests;
 public sealed class FeedbackViewTests
 {
     [Fact]
+    public Task ClosingMovingWindowAndReopeningShowsIncompleteMove() => OnSta(() =>
+    {
+        var provider = new MockAmrDataProvider(64, 128, feedbackDemo: true);
+        try
+        {
+            using var form = new MainForm(provider, new MockCommandDispatcher(provider));
+            form.Show();
+            ApplyCurrent(form, provider);
+            Find<Button>(form, "openSimulation").PerformClick();
+            var simulation = Assert.Single(form.OwnedForms.OfType<SimulationForm>());
+            Find<Button>(simulation, "simulationStart").PerformClick();
+            provider.AdvanceSimulations(1);
+            ApplyCurrent(form, provider);
+            simulation.Close();
+            ApplyCurrent(form, provider);
+
+            var watch = provider.WatchAsync().GetAsyncEnumerator();
+            try
+            {
+                Assert.True(watch.MoveNextAsync().AsTask().GetAwaiter().GetResult());
+                var command = Assert.Single(watch.Current.Commands);
+                Assert.Equal(CommandKind.MOVE, command.Kind);
+                Assert.Equal(CommandResult.Failure, command.Result);
+            }
+            finally { watch.DisposeAsync().AsTask().GetAwaiter().GetResult(); }
+
+            Find<Button>(form, "openSimulation").PerformClick();
+            var reopened = Assert.Single(form.OwnedForms.OfType<SimulationForm>());
+            Assert.Contains("미완료", Find<Label>(reopened, "simulationResponse").Text);
+            Assert.Contains("실행창 닫힘", Find<Label>(reopened, "simulationReason").Text);
+            Assert.False(Find<Button>(reopened, "simulationStart").Enabled);
+            Assert.False(Find<Button>(reopened, "simulationStop").Enabled);
+            form.Close();
+            Application.DoEvents();
+        }
+        finally { provider.DisposeAsync().AsTask().GetAwaiter().GetResult(); }
+    });
+
+    [Fact]
     public Task StartStopWindowIsBoundToSelectionAndOnlyHistoryViewIsReset() => OnSta(() =>
     {
         var provider = new MockAmrDataProvider(64, 128, feedbackDemo: true);
@@ -150,13 +189,23 @@ public sealed class FeedbackViewTests
     private static void WithSourceSettings(SimulationForm simulation, Action<SourceSelectionForm> action)
     {
         Exception? failure = null;
-        simulation.BeginInvoke(new Action(() =>
+        bool invoked = false;
+        // ShowDialog가 실제 소유 창을 표시한 뒤 조작한다. 생성 전에 큐에 넣은 콜백은
+        // 중첩 메시지 처리 시 OwnedForms 등록보다 먼저 실행될 수 있다.
+        using var driver = new System.Windows.Forms.Timer { Interval = 10 };
+        driver.Tick += (_, _) =>
         {
-            try { action(Assert.Single(simulation.OwnedForms.OfType<SourceSelectionForm>())); }
+            var dialog = simulation.OwnedForms.OfType<SourceSelectionForm>().SingleOrDefault(x => x.Visible);
+            if (dialog is null) return;
+            driver.Stop();
+            invoked = true;
+            try { action(dialog); }
             catch (Exception ex) { failure = ex; }
-            finally { foreach (var dialog in simulation.OwnedForms.OfType<SourceSelectionForm>()) dialog.Close(); }
-        }));
+            finally { foreach (var openDialog in simulation.OwnedForms.OfType<SourceSelectionForm>()) openDialog.Close(); }
+        };
+        driver.Start();
         Find<Button>(simulation, "sourceSettings").PerformClick();
+        Assert.True(invoked, "출발지 설정 창이 표시되지 않았습니다.");
         if (failure is not null) System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(failure).Throw();
     }
 

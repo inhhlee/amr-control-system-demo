@@ -1,0 +1,69 @@
+1793451180: mosquitto version 2.1.2 starting
+1793451180: Config loaded from /mosquitto/config/mosquitto.conf.
+1793451180: Bridge support available.
+1793451180: Persistence support available.
+1793451180: TLS support available.
+1793451180: TLS-PSK support available.
+1793451180: Websockets support available.
+1793451180: Opening ipv4 listen socket on port 1883.
+1793451180: mosquitto version 2.1.2 running
+1793451181: New connection from 172.17.0.1:41994 on port 1883.
+1793451181: New client connected from 172.17.0.1:41994 as amr-demo-14553998fe1c416480454e25d980d303 (p5, c1, k5).
+1793451181: No will message specified.
+1793451181: Sending CONNACK to amr-demo-14553998fe1c416480454e25d980d303 (0, 0)
+1793451181: Received SUBSCRIBE from amr-demo-14553998fe1c416480454e25d980d303
+1793451181: 	amr/+/heartbeat (QoS 0)
+1793451181: amr-demo-14553998fe1c416480454e25d980d303 0 amr/+/heartbeat
+1793451180: Info: running mosquitto as user: mosquitto.
+1793451181: 	amr/+/telemetry (QoS 0)
+1793451181: amr-demo-14553998fe1c416480454e25d980d303 0 amr/+/telemetry
+1793451181: 	amr/+/alarm (QoS 0)
+1793451181: amr-demo-14553998fe1c416480454e25d980d303 0 amr/+/alarm
+1793451181: 	amr/+/ack (QoS 0)
+1793451181: amr-demo-14553998fe1c416480454e25d980d303 0 amr/+/ack
+1793451181: Sending SUBACK to amr-demo-14553998fe1c416480454e25d980d303
+1793451182: New connection from 172.17.0.1:41998 on port 1883.
+1793451182: New client connected from 172.17.0.1:41998 as amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 (p5, c1, k5).
+1793451182: No will message specified.
+1793451182: Sending CONNACK to amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 (0, 0)
+1793451182: Received PUBLISH from amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 (d0, q0, r0, m0, 'amr/F1_AMR_0/heartbeat', ... (50 bytes))
+1793451182: Sending PUBLISH to amr-demo-14553998fe1c416480454e25d980d303 (d0, q0, r0, m0, 'amr/F1_AMR_0/heartbeat', ... (50 bytes))
+1793451182: Received PUBLISH from amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (78 bytes))
+1793451182: Sending PUBLISH to amr-demo-14553998fe1c416480454e25d980d303 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (78 bytes))
+1793451182: Received PUBLISH from amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (78 bytes))
+1793451182: Sending PUBLISH to amr-demo-14553998fe1c416480454e25d980d303 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (78 bytes))
+1793451182: Received PUBLISH from amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 (d0, q0, r0, m0, 'amr/F1_AMR_0/heartbeat', ... (50 bytes))
+1793451182: Sending PUBLISH to amr-demo-14553998fe1c416480454e25d980d303 (d0, q0, r0, m0, 'amr/F1_AMR_0/heartbeat', ... (50 bytes))
+1793451182: Received PUBLISH from amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (86 bytes))
+1793451182: Sending PUBLISH to amr-demo-14553998fe1c416480454e25d980d303 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (86 bytes))
+1793451182: Received PUBLISH from amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (86 bytes))
+1793451182: Sending PUBLISH to amr-demo-14553998fe1c416480454e25d980d303 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (86 bytes))
+1793451182: Received PUBLISH from amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 (d0, q0, r0, m0, 'amr/F1_AMR_0/heartbeat', ... (50 bytes))
+1793451182: Sending PUBLISH to amr-demo-14553998fe1c416480454e25d980d303 (d0, q0, r0, m0, 'amr/F1_AMR_0/heartbeat', ... (50 bytes))
+1793451182: Received PUBLISH from amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (86 bytes))
+1793451182: Sending PUBLISH to amr-demo-14553998fe1c416480454e25d980d303 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (86 bytes))
+1793451183: Received PUBLISH from amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (86 bytes))
+1793451183: Sending PUBLISH to amr-demo-14553998fe1c416480454e25d980d303 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (86 bytes))
+1793451183: Received PUBLISH from amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 (d0, q0, r0, m0, 'amr/F1_AMR_0/heartbeat', ... (50 bytes))
+1793451183: Sending PUBLISH to amr-demo-14553998fe1c416480454e25d980d303 (d0, q0, r0, m0, 'amr/F1_AMR_0/heartbeat', ... (50 bytes))
+1793451183: Received PUBLISH from amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (86 bytes))
+1793451183: Sending PUBLISH to amr-demo-14553998fe1c416480454e25d980d303 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (86 bytes))
+1793451183: Received PUBLISH from amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (95 bytes))
+1793451183: Sending PUBLISH to amr-demo-14553998fe1c416480454e25d980d303 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (95 bytes))
+1793451183: Received PUBLISH from amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 (d0, q0, r0, m0, 'amr/F1_AMR_0/heartbeat', ... (50 bytes))
+1793451183: Sending PUBLISH to amr-demo-14553998fe1c416480454e25d980d303 (d0, q0, r0, m0, 'amr/F1_AMR_0/heartbeat', ... (50 bytes))
+1793451183: Received PUBLISH from amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (86 bytes))
+1793451183: Sending PUBLISH to amr-demo-14553998fe1c416480454e25d980d303 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (86 bytes))
+1793451183: Received PUBLISH from amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (95 bytes))
+1793451183: Sending PUBLISH to amr-demo-14553998fe1c416480454e25d980d303 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (95 bytes))
+1793451183: Received PUBLISH from amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 (d0, q0, r0, m0, 'amr/F1_AMR_0/heartbeat', ... (50 bytes))
+1793451183: Sending PUBLISH to amr-demo-14553998fe1c416480454e25d980d303 (d0, q0, r0, m0, 'amr/F1_AMR_0/heartbeat', ... (50 bytes))
+1793451183: Received PUBLISH from amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (85 bytes))
+1793451183: Sending PUBLISH to amr-demo-14553998fe1c416480454e25d980d303 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (85 bytes))
+1793451183: Received PUBLISH from amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (78 bytes))
+1793451183: Sending PUBLISH to amr-demo-14553998fe1c416480454e25d980d303 (d0, q0, r0, m0, 'amr/F1_AMR_0/telemetry', ... (78 bytes))
+1793451183: Received DISCONNECT from amr-demo-61a7eb15574441f5bbf4dbd377fcdc36
+1793451183: Client amr-demo-61a7eb15574441f5bbf4dbd377fcdc36 [172.17.0.1:41998] disconnected.
+1793451186: Received PINGREQ from amr-demo-14553998fe1c416480454e25d980d303
+1793451186: Sending PINGRESP to amr-demo-14553998fe1c416480454e25d980d303
+1793451187: Client amr-demo-14553998fe1c416480454e25d980d303 [172.17.0.1:41994] disconnected: connection closed by client.

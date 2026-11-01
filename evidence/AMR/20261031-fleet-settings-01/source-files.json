@@ -1,0 +1,38 @@
+[
+  {
+    "Path": "src/Amr.Simulator/Configuration/FleetSettings.cs",
+    "SHA256": "F7365CB865FFDEC9CED011C17EE8614D6E1FE1F94E6261DF9A3F6E8D161770C9"
+  },
+  {
+    "Path": "src/Amr.Simulator/Configuration/FleetSettingsLoader.cs",
+    "SHA256": "5F06835E19F2404872121AA4729B66209BB31581F788709DC76D43C029A7AA1C"
+  },
+  {
+    "Path": "src/Amr.Simulator/Configuration/SimulatorSettingsLoader.cs",
+    "SHA256": "290D30EE9EFAA54FC711315737B2B7A3E077489580641C2FF080558482320CC5"
+  },
+  {
+    "Path": "src/Amr.Simulator/FleetApplication.cs",
+    "SHA256": "7A210CDE60176B63145854DC0DA73385DC4A86748E9E59673CF33D340DBC4085"
+  },
+  {
+    "Path": "src/Amr.Simulator/SimulatorApplication.cs",
+    "SHA256": "11B863E9B099CB336C7B7DA6AC0A486DE4D182B7572B6236665C368DEBE799CF"
+  },
+  {
+    "Path": "tests/Amr.Simulator.Tests/FleetSettingsTests.cs",
+    "SHA256": "716F4FD892C2548FEEBB3273226D3523EC990F8B267BE26FEA09545668FC53CC"
+  },
+  {
+    "Path": "tests/Amr.Simulator.Tests/FleetApplicationTests.cs",
+    "SHA256": "49EA4D959FD66CE2458FFCF1B1480B2AD2FA0A421695E200189D8FCB3324BC2B"
+  },
+  {
+    "Path": "tests/manual/AMR01/Verify-FleetSettings.ps1",
+    "SHA256": "76267FB2F2ADCCB9E6B22C0BD5822E9308BFDC28C3B38AAE7F31AFF246280E6F"
+  },
+  {
+    "Path": "config/simulator.fleet.json",
+    "SHA256": "1C6D8CE4649D3AEE5A3F4866D1B83977EBAC3EDF59C02071CF763F960342AA6D"
+  }
+]

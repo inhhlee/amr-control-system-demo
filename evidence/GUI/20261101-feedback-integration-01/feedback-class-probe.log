@@ -1,0 +1,34 @@
+  Amr.Core -> C:\amr-control-system-demo\src\Amr.Core\bin\Debug\net10.0\Amr.Core.dll
+  Amr.Communication -> C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll
+  Amr.Simulator -> C:\amr-control-system-demo\src\Amr.Simulator\bin\Debug\net10.0\Amr.Simulator.dll
+  Amr.ControlGui -> C:\amr-control-system-demo\src\Amr.ControlGui\bin\Debug\net10.0-windows\Amr.ControlGui.dll
+  Amr.ControlGui.Tests -> C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll
+C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.12]   Discovering: Amr.ControlGui.Tests
+[xUnit.net 00:00:00.21]   Discovered:  Amr.ControlGui.Tests
+[xUnit.net 00:00:00.24]   Starting:    Amr.ControlGui.Tests
+SourceSettingsTest: begin
+  통과 Amr.ControlGui.Tests.FeedbackViewTests.WindowsFitWorkingAreaAndZoomFitRestoresProjection [2 s]
+SourceSettingsTest: open first
+SourceDriver: visible dialog
+SourceSettingsTest: close second
+SourceDriver: visible dialog
+SourceSettingsTest: apply third
+SourceDriver: visible dialog
+SourceSettingsTest: applied third
+SourceSettingsTest: close parent
+SourceSettingsTest: done
+  통과 Amr.ControlGui.Tests.FeedbackViewTests.SourceSettingsOnlyAppliesExplicitChoiceAndKeepsOtherAmrUnchanged [1 s]
+SourceDriver: visible dialog
+  통과 Amr.ControlGui.Tests.FeedbackViewTests.StartStopWindowIsBoundToSelectionAndOnlyHistoryViewIsReset [1 s]
+[xUnit.net 00:00:07.26]   Finished:    Amr.ControlGui.Tests
+  통과 Amr.ControlGui.Tests.FeedbackViewTests.ClosingMovingWindowAndReopeningShowsIncompleteMove [1 s]
+결과 파일: C:\amr-control-system-demo\evidence\GUI\20261101-feedback-integration-01\feedback-class-probe.trx
+
+테스트를 실행했습니다.
+총 테스트 수: 4
+     통과: 4
+ 총 시간: 8.0798 초

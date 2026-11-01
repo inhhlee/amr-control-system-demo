@@ -173,8 +173,10 @@ public sealed class SimulationForm : Form
         var command = commands.Where(x => x.AmrId == _amrId && (_commandId is null || x.CommandId == _commandId)).OrderByDescending(x => x.RequestedAt).FirstOrDefault();
         _response.Text = _rejection is not null ? "요청 거부" : command is null ? "요청 없음"
             : command.Result == CommandResult.Unconfirmed ? "요청 수락 · 실행 중"
-            : journey.Phase == SimulationPhase.Arrived ? "목적지 도착 · 실행 완료" : "Stop · 정지 완료";
-        _response.ForeColor = _rejection is not null ? Color.Firebrick : journey.Phase == SimulationPhase.Arrived ? Color.ForestGreen : Color.FromArgb(51, 65, 85);
+            : command.Result == CommandResult.Failure ? (command.Kind == CommandKind.MOVE ? "이동 중단 · 미완료" : "요청 실패")
+            : command.Kind == CommandKind.MOVE ? "목적지 도착 · 실행 완료" : "Stop · 정지 완료";
+        _response.ForeColor = _rejection is not null || command?.Result == CommandResult.Failure ? Color.Firebrick
+            : journey.Phase == SimulationPhase.Arrived ? Color.ForestGreen : Color.FromArgb(51, 65, 85);
         _reason.Text = "사유  " + (_rejection ?? command?.Reason ?? "—");
         UpdateButtons();
     }

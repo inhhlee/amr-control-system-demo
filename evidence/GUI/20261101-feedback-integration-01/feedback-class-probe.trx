@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="e3d831a0-fc16-4e88-850a-13fd5a2a455d" name="user@DESKTOP-BLNVKRS 2026-11-01 15:06:13" runUser="DESKTOP-BLNVKRS\user" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-01T15:06:13.1265380+09:00" queuing="2026-11-01T15:06:13.1265387+09:00" start="2026-11-01T15:06:09.4347847+09:00" finish="2026-11-01T15:06:17.5336231+09:00" />
+  <TestSettings name="default" id="9bceb2f4-83a3-45df-8f66-1aa35a70abb1">
+    <Deployment runDeploymentRoot="user_DESKTOP-BLNVKRS_2026-11-01_15_06_13" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="df6f65b9-26c9-4d4a-930b-9c5078916074" testId="9f3c7ec3-17b0-635d-5ac5-cca2433ccae1" testName="Amr.ControlGui.Tests.FeedbackViewTests.StartStopWindowIsBoundToSelectionAndOnlyHistoryViewIsReset" computerName="DESKTOP-BLNVKRS" duration="00:00:01.1497031" startTime="2026-11-01T15:06:14.4420462+09:00" endTime="2026-11-01T15:06:15.5923623+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="df6f65b9-26c9-4d4a-930b-9c5078916074" />
+    <UnitTestResult executionId="b6317519-e99d-42f1-aa23-2b24792485ae" testId="c41002b8-f4ec-3fe7-7a66-7abacd818f1b" testName="Amr.ControlGui.Tests.FeedbackViewTests.ClosingMovingWindowAndReopeningShowsIncompleteMove" computerName="DESKTOP-BLNVKRS" duration="00:00:01.7086728" startTime="2026-11-01T15:06:15.5934565+09:00" endTime="2026-11-01T15:06:17.3029387+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b6317519-e99d-42f1-aa23-2b24792485ae" />
+    <UnitTestResult executionId="d094bea0-6c0a-4ef9-aa3d-9826dba588a3" testId="17a0d7e0-d1bb-b174-f0a6-8ac2013828c6" testName="Amr.ControlGui.Tests.FeedbackViewTests.SourceSettingsOnlyAppliesExplicitChoiceAndKeepsOtherAmrUnchanged" computerName="DESKTOP-BLNVKRS" duration="00:00:01.6494146" startTime="2026-11-01T15:06:12.7956283+09:00" endTime="2026-11-01T15:06:14.4405210+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d094bea0-6c0a-4ef9-aa3d-9826dba588a3" />
+    <UnitTestResult executionId="2d88678e-0aec-4d60-89c7-128efcf6e2a7" testId="eac6cb59-6e99-9e13-4d93-d9e3cdd0d656" testName="Amr.ControlGui.Tests.FeedbackViewTests.WindowsFitWorkingAreaAndZoomFitRestoresProjection" computerName="DESKTOP-BLNVKRS" duration="00:00:02.4238155" startTime="2026-11-01T15:06:10.3243968+09:00" endTime="2026-11-01T15:06:12.7663909+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2d88678e-0aec-4d60-89c7-128efcf6e2a7" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Amr.ControlGui.Tests.FeedbackViewTests.WindowsFitWorkingAreaAndZoomFitRestoresProjection" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="eac6cb59-6e99-9e13-4d93-d9e3cdd0d656">
+      <Execution id="2d88678e-0aec-4d60-89c7-128efcf6e2a7" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.FeedbackViewTests" name="WindowsFitWorkingAreaAndZoomFitRestoresProjection" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.FeedbackViewTests.ClosingMovingWindowAndReopeningShowsIncompleteMove" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="c41002b8-f4ec-3fe7-7a66-7abacd818f1b">
+      <Execution id="b6317519-e99d-42f1-aa23-2b24792485ae" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.FeedbackViewTests" name="ClosingMovingWindowAndReopeningShowsIncompleteMove" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.FeedbackViewTests.SourceSettingsOnlyAppliesExplicitChoiceAndKeepsOtherAmrUnchanged" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="17a0d7e0-d1bb-b174-f0a6-8ac2013828c6">
+      <Execution id="d094bea0-6c0a-4ef9-aa3d-9826dba588a3" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.FeedbackViewTests" name="SourceSettingsOnlyAppliesExplicitChoiceAndKeepsOtherAmrUnchanged" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.FeedbackViewTests.StartStopWindowIsBoundToSelectionAndOnlyHistoryViewIsReset" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="9f3c7ec3-17b0-635d-5ac5-cca2433ccae1">
+      <Execution id="df6f65b9-26c9-4d4a-930b-9c5078916074" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.FeedbackViewTests" name="StartStopWindowIsBoundToSelectionAndOnlyHistoryViewIsReset" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="9f3c7ec3-17b0-635d-5ac5-cca2433ccae1" executionId="df6f65b9-26c9-4d4a-930b-9c5078916074" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c41002b8-f4ec-3fe7-7a66-7abacd818f1b" executionId="b6317519-e99d-42f1-aa23-2b24792485ae" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="17a0d7e0-d1bb-b174-f0a6-8ac2013828c6" executionId="d094bea0-6c0a-4ef9-aa3d-9826dba588a3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="eac6cb59-6e99-9e13-4d93-d9e3cdd0d656" executionId="2d88678e-0aec-4d60-89c7-128efcf6e2a7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="목록에 없는 결과" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="로드된 모든 결과" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="4" executed="4" passed="4" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.12)&#xD;
+[xUnit.net 00:00:00.12]   Discovering: Amr.ControlGui.Tests&#xD;
+[xUnit.net 00:00:00.21]   Discovered:  Amr.ControlGui.Tests&#xD;
+[xUnit.net 00:00:00.24]   Starting:    Amr.ControlGui.Tests&#xD;
+SourceSettingsTest: begin&#xD;
+SourceSettingsTest: open first&#xD;
+SourceDriver: visible dialog&#xD;
+SourceSettingsTest: close second&#xD;
+SourceDriver: visible dialog&#xD;
+SourceSettingsTest: apply third&#xD;
+SourceDriver: visible dialog&#xD;
+SourceSettingsTest: applied third&#xD;
+SourceSettingsTest: close parent&#xD;
+SourceSettingsTest: done&#xD;
+SourceDriver: visible dialog&#xD;
+[xUnit.net 00:00:07.26]   Finished:    Amr.ControlGui.Tests&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

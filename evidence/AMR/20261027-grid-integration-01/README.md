@@ -15,8 +15,8 @@ AMR-01/02/05·GUI-02의 단일 AMR 시연 범위다. 최신 develop 위에 기�
 
 Windows 10.0.26200 win-x64, .NET SDK 10.0.401·Runtime 10.0.12, MQTTnet 5.2.0.1603. [실제 SDK](environment-authorized.log). 실제 Mosquitto `2.1.2-alpine` 이미지 SHA256 `38c0da4f2ef84284d47b3b3eeea1cb3bdeabe81ee10caf0cd5c5ff61ee3ea408`를 사용했다. 각 시험은 Windows PowerShell 5.1이 아닌 설치된 PowerShell 7.6.5(`pwsh`)로 실행했다.
 
-- 실제 MQTT/API 호스트: [session.json](../20261027-grid-host-01/session.json), HTTP 50695·Broker 50693, 11:12~11:20 KST. 제품 원시 이벤트는 해당 session의 ProductEvidence와 [로그](../mission-live-20261027-111239-042c5cc2856049e5805d9c156545013d/grid-navigation.jsonl)에 있다.
-- 실제 브라우저 호스트: [session.json](../20261027-grid-ui-host-01/session.json), HTTP 52051·Broker 62328, 11:20~11:22 KST. [원시 이벤트](../mission-live-20261027-112011-79a794f9146c42118e04749357d01455/grid-navigation.jsonl).
+- 실제 MQTT/API 호스트: [session.json](../20261027-grid-host-01/session.json), HTTP 50695·Broker 50693, 11:12~11:20 KST. 제품 원시 이벤트는 해당 session의 ProductEvidence와 [로그](https://github.com/inhhlee/amr-control-system-demo/blob/ae71f452f27a65ec2fee68fee60496a7a5ca3d6c/evidence/AMR/mission-live-20261027-111239-042c5cc2856049e5805d9c156545013d/grid-navigation.jsonl)에 있다.
+- 실제 브라우저 호스트: [session.json](../20261027-grid-ui-host-01/session.json), HTTP 52051·Broker 62328, 11:20~11:22 KST. [원시 이벤트](https://github.com/inhhlee/amr-control-system-demo/blob/ae71f452f27a65ec2fee68fee60496a7a5ca3d6c/evidence/AMR/mission-live-20261027-112011-79a794f9146c42118e04749357d01455/grid-navigation.jsonl).
 - Topic `amr/AMR_001/telemetry`, `amr/AMR_001/heartbeat`, MQTT5·QoS0·Retain=false. 실제 Broker·송신 Client·관제 수신 Client·브라우저를 연결했다. 실제 로봇은 사용하지 않았다. 자동시험의 대역과 실제 연동은 아래에서 구분한다.
 
 ## 3. 선별 이관과 설계 판단

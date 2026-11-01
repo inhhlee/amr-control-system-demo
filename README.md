@@ -1,7 +1,13 @@
 # amr-control-system-demo
 가상 AMR 기반 관제시스템 구현 및 Issue·PR 개발 절차 실습
 
-**2026-10-30 Figma 피드백 반영 — 로컬 구현:** 기본 Windows Forms Mock 화면에 등록 AMR 수·오류/경고 요약, 출발지/담당 목적지·확대/축소, 별도 AMR 실행창의 출발지 설정·시작/Stop, 알람 비고·이력 조회/조건 초기화를 반영했다. [현재 실행 방법](BUILDING.md#windows-forms-mock-대시보드지도) · [변경·검증 근거](evidence/GUI/20261030-figma-feedback-01/README.md). 기존 `--grid-url` 격자/MQTT 모드와 보존 자료는 유지한다. 아래 날짜별 Mock 설명은 당시 구현 이력이다.
+[과제별 최신 검증 근거와 과거 자료 찾기](evidence/README.md) — 최종 결과·중요 실패·고정 Git 원본을 구분한다.
+
+**과제3 Mock GUI 개선본 (#48):** 기본 Windows Forms Mock 화면에 등록 AMR 수·오류/경고 요약, 출발지/담당 목적지·확대/축소, 별도 AMR 실행창의 출발지 설정·시작/Stop, 알람 비고·이력 조회/조건 초기화를 반영했다. [현재 실행 방법](BUILDING.md#windows-forms-mock-대시보드지도) · [기존 피드백 근거](evidence/GUI/20261030-figma-feedback-01/README.md) · [최신 통합·수정 검증](evidence/GUI/20261101-feedback-integration-01/README.md). 기존 `--grid-url` 격자/MQTT 모드와 보존 자료는 유지한다. 실제 AMR 명령 수행·DB 영속 이력과 구분하며 아래 날짜별 Mock 설명은 당시 구현 이력이다.
+
+**과제1 통합 통신 시험 콘솔 (#53):** `dotnet run --project src/Amr.Communication.Console -- --trial --show-payload`로 접속·장비별 수신·메시지 검사·명령 발행·생존 신호·연결 끊김·자동 재접속/재구독을 한 콘솔에서 확인한다. 기본 Broker는 `127.0.0.1:1884`, 대상은 `AMR_001`이다. [Git Bash 실행·입력·단절 시험·재접속 기준](tests/manual/COM06/README.md). 기존 수신·감시·명령 모드는 유지한다. 실제 AMR 명령 수행과 Core 요청/ACK 추적은 별도 범위다.
+
+[과제1 최종 완료조건과 근거](evidence/task1/20261031-final/README.md): COM-01~06 및 실제 MQTT20항목 대조. 명령/ACK는 통신 시험 대역의 왕복·식별자 보존을 확인하며 실제 로봇 동작 완료로 확대하지 않는다.
 
 **2026-10-28 후속 — AMR 2대·Core 도메인 연결:** 기존 AMR별 독립 큐와 하나의 관제 수신 세션으로 두 장비를 각각 감시한다. **통신 관측 이벤트 → Core AMR 도메인 관리자 → 조회 상태·업무 경보 → GUI**로 연결했다. 한 대의 무응답은 해당 관제 미션만 보류하며, 통신 복구 후 명시적으로 재개한다. 기존 단일 AMR·Mock 경로는 유지한다. [실행·구조·검증·보존 근거](evidence/COM-02/20261028-two-amr-domain-01/README.md).
 

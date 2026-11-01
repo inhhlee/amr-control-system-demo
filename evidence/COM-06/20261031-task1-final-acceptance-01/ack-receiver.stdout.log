@@ -1,0 +1,12 @@
+2026-10-31T14:40:34.3723930+00:00 Settings Host=127.0.0.1 Port=50703 ClientId=amr-demo-9b1db472a6ad43d7824331a0b61d27b6 MQTT=5 CleanStart=true SessionExpiry=0 KeepAliveSeconds=5 ConnectTimeoutSeconds=3 DisconnectTimeoutSeconds=3
+2026-10-31T14:40:34.3808550+00:00 Connecting
+2026-10-31T14:40:34.4708606+00:00 Connected
+2026-10-31T14:40:34.5000556+00:00 QueueReady CapacityPerAmr=256 AmrLimit=64 StopTimeoutSeconds=3 TestDelayAmr=null TestDelayMs=0
+2026-10-31T14:40:34.5010604+00:00 Subscribing TopicFilters=amr/+/heartbeat,amr/+/telemetry,amr/+/alarm,amr/+/ack QoS=0 PayloadPreview=True LimitBytes=256
+2026-10-31T14:40:34.5235047+00:00 Subscribed TopicFilters=amr/+/heartbeat,amr/+/telemetry,amr/+/alarm,amr/+/ack QoS=0
+2026-10-31T14:40:34.5235244+00:00 WaitingForShutdown: Ctrl+C로 정상 종료합니다.
+2026-10-31T14:40:36.4254871+00:00 MessageDiagnostic Topic="amr/AMR_002/ack" TopicTruncated=False PayloadBytes=92 Payload="{\"id\":\"AMR_002\",\"ts\":1005,\"result\":\"SUCCESS\",\"cmdId\":\"CMD-cd1b23384bf84e1aaf68e6d6e62cece5\"}" PayloadTruncated=False Validation=Accepted
+2026-10-31T14:40:36.4438954+00:00 QueueAdmission Result=Accepted AmrId="AMR_002" Kind=ack
+2026-10-31T14:40:36.4442433+00:00 ProcessingStarted AmrId="AMR_002" Kind=ack
+2026-10-31T14:40:36.4640843+00:00 Received {"AmrId":"AMR_002","Kind":"ack","Model":{"CommandId":"CMD-cd1b23384bf84e1aaf68e6d6e62cece5","Result":"SUCCESS","Timestamp":1005,"Id":"AMR_002","Reason":null,"ReceivedAtUtc":"2026-10-31T14:40:36.4254871+00:00"},"ReceivedAtUtc":"2026-10-31T14:40:36.4254871+00:00"}
+

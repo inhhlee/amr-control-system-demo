@@ -1,0 +1,77 @@
+{
+  "Results": [
+    {
+      "Name": "ReceiverSubscribedFourTypes",
+      "Passed": true
+    },
+    {
+      "Name": "Fleet1Exit0",
+      "Passed": true
+    },
+    {
+      "Name": "Fleet1Count",
+      "Passed": true
+    },
+    {
+      "Name": "Fleet1EachIdReceivedTelemetryAndHeartbeat",
+      "Passed": true
+    },
+    {
+      "Name": "Fleet1Arrival-F1_AMR_0",
+      "Passed": true
+    },
+    {
+      "Name": "Fleet2Exit0",
+      "Passed": true
+    },
+    {
+      "Name": "Fleet2Count",
+      "Passed": true
+    },
+    {
+      "Name": "Fleet2EachIdReceivedTelemetryAndHeartbeat",
+      "Passed": true
+    },
+    {
+      "Name": "Fleet2Arrival-F2_AMR_0",
+      "Passed": true
+    },
+    {
+      "Name": "Fleet2Arrival-F2_AMR_1",
+      "Passed": true
+    },
+    {
+      "Name": "Fleet3Exit0",
+      "Passed": true
+    },
+    {
+      "Name": "Fleet3Count",
+      "Passed": true
+    },
+    {
+      "Name": "Fleet3EachIdReceivedTelemetryAndHeartbeat",
+      "Passed": true
+    },
+    {
+      "Name": "Fleet3Arrival-F3_AMR_0",
+      "Passed": true
+    },
+    {
+      "Name": "Fleet3Arrival-F3_AMR_1",
+      "Passed": true
+    },
+    {
+      "Name": "Fleet3Arrival-F3_AMR_2",
+      "Passed": true
+    },
+    {
+      "Name": "DuplicateIdRejectedBeforeInitialization",
+      "Passed": true
+    }
+  ],
+  "BrokerPort": 56605,
+  "Passed": true,
+  "Code": "2339df1b1955b26c10f93295fcb3ee2622fc6131",
+  "RunId": "20261031-fleet-settings-live-03",
+  "Started": "2026-10-31T21:53:41.1747062+09:00"
+}

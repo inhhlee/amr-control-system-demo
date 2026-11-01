@@ -1,0 +1,20 @@
+{
+  "amrs": [
+    {
+      "amrId": "AMR_001",
+      "initialPosition": { "x": 0, "y": 0 },
+      "speedMps": 1,
+      "updateIntervalMs": 100,
+      "waypoints": [{ "x": 2, "y": 0 }],
+      "faults": []
+    },
+    {
+      "amrId": "AMR_002",
+      "initialPosition": { "x": 0, "y": 2 },
+      "speedMps": 2,
+      "updateIntervalMs": 100,
+      "waypoints": [{ "x": 2, "y": 2 }],
+      "faults": [{ "code": "SIM_SENSOR", "level": "ERR", "activateAfterMs": 300, "resolveAfterMs": 800, "message": "시험용 센서 장애" }]
+    }
+  ]
+}

@@ -99,3 +99,8 @@ foreach ($phase in 'Healthy','NoHeartbeat','Recovery','Silent','Recovery2','Brok
 ```
 
 다중 AMR·장시간 부하·실제 AMR 별도 프로세스 강제 종료·물리적 STOP·Core/DB 업무 처리 전체·COM-02 전체·자동 재접속/재구독은 미검증/미구현이다. 실제 신호 차단과 Broker 단절 시험을 실제 로봇/전체 통합 시험으로 확대하지 않는다. 원본 계획/같은 날짜 업무 기록은 `C:\process-plan`에 갱신했다. 두 저장소의 변경은 미커밋 상태다.
+
+
+## 2026-11-01 보관 위치 정리
+
+이 실행의 정상 중간 결과/일회성 도구 5개는 [정리 목록](../../curation/20261101.json)에 원래 경로·해시·고정 Git 링크를 기록하고 작업 폴더에서 제외했다. 당시 수치·실패/미검증 판정은 원문 그대로이며 원본 전체는 [정리 전 고정 버전](https://github.com/inhhlee/amr-control-system-demo/tree/ae71f452f27a65ec2fee68fee60496a7a5ca3d6c/evidence/COM-02/20261027-heartbeat-one-01)에서 확인한다. 과거 manifest의 파일 목록·해시는 당시 스냅샷이며 현재 폴더 전체 검사 입력으로 사용하지 않는다. 당시 도구를 재현할 때는 해당 고정 버전의 자료를 사용한다.

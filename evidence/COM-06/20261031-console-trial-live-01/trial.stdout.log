@@ -1,0 +1,141 @@
+[23:13:00] [안내] 과제 1 · MQTT 통신 시험 프로그램
+[23:13:00] [설정] Broker=127.0.0.1:61285 AMR=AMR_001
+[23:13:00] [설정] 재시도: 1초 간격 / 최대 10회 (최초 시도 제외)
+[23:13:00] [안내] 입력: move 10 20 | stop | reset | status | help | /exit  /  Ctrl+C 종료
+[23:13:00] [안내] 명령 발행과 응답 수신을 관찰합니다. AMR 실제 수행·요청/응답 업무 매핑은 별도입니다.
+[23:13:00] [접속] 서버 연결을 시도합니다.
+[23:13:00] [구독] Heartbeat·Telemetry·Alarm·ACK 구독 승인
+[23:13:00] [접속완료] CONNECTED · 구독 완료, 송수신 준비 완료
+[23:13:01] [내용] Topic=amr/AMR_001/heartbeat JSON={"id":"AMR_001","ts":1793455981127,"status":"OK"}
+[23:13:01] [생존확인] 정상 생존 신호 수신, 감시 시작
+[23:13:01] [수신·검사통과] AMR=AMR_001 종류=heartbeat status=OK ts=1793455981127
+[23:13:01] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455981135,"pos":{"x":-1,"y":0},"sp":0,"state":"IDLE"}
+[23:13:01] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(-1,0) 속도=0 상태=IDLE ts=1793455981135
+[23:13:01] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455981341,"pos":{"x":-0.8922551999999999,"y":0},"sp":1,"state":"BUSY"}
+[23:13:01] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(-0.892255,0) 속도=1 상태=BUSY ts=1793455981341
+[23:13:01] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455981544,"pos":{"x":-0.6783185999999999,"y":0},"sp":1,"state":"BUSY"}
+[23:13:01] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(-0.678319,0) 속도=1 상태=BUSY ts=1793455981544
+[23:13:01] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455981752,"pos":{"x":-0.46254779999999973,"y":0},"sp":1,"state":"BUSY"}
+[23:13:01] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(-0.462548,0) 속도=1 상태=BUSY ts=1793455981752
+[23:13:01] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455981964,"pos":{"x":-0.2516447999999997,"y":0},"sp":1,"state":"BUSY"}
+[23:13:01] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(-0.251645,0) 속도=1 상태=BUSY ts=1793455981964
+[23:13:02] [내용] Topic=amr/AMR_001/heartbeat JSON={"id":"AMR_001","ts":1793455982139,"status":"OK"}
+[23:13:02] [수신·검사통과] AMR=AMR_001 종류=heartbeat status=OK ts=1793455982139
+[23:13:02] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455982167,"pos":{"x":-0.03633199999999974,"y":0},"sp":1,"state":"BUSY"}
+[23:13:02] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(-0.036332,0) 속도=1 상태=BUSY ts=1793455982167
+[23:13:02] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455982376,"pos":{"x":0.18816340000000026,"y":0},"sp":1,"state":"BUSY"}
+[23:13:02] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(0.188163,0) 속도=1 상태=BUSY ts=1793455982376
+[23:13:02] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455982581,"pos":{"x":0.39991520000000025,"y":0},"sp":1,"state":"BUSY"}
+[23:13:02] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(0.399915,0) 속도=1 상태=BUSY ts=1793455982581
+[23:13:02] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455982794,"pos":{"x":0.6195421000000003,"y":0},"sp":1,"state":"BUSY"}
+[23:13:02] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(0.619542,0) 속도=1 상태=BUSY ts=1793455982794
+[23:13:02] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455982996,"pos":{"x":0.8387635000000003,"y":0},"sp":1,"state":"BUSY"}
+[23:13:02] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(0.838764,0) 속도=1 상태=BUSY ts=1793455982996
+[23:13:03] [내용] Topic=amr/AMR_001/heartbeat JSON={"id":"AMR_001","ts":1793455983139,"status":"OK"}
+[23:13:03] [수신·검사통과] AMR=AMR_001 종류=heartbeat status=OK ts=1793455983139
+[23:13:03] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455983207,"pos":{"x":0.9523480000000003,"y":0},"sp":1,"state":"BUSY"}
+[23:13:03] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(0.952348,0) 속도=1 상태=BUSY ts=1793455983207
+[23:13:03] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455983420,"pos":{"x":1,"y":0.2807114000000003},"sp":1,"state":"BUSY"}
+[23:13:03] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,0.280711) 속도=1 상태=BUSY ts=1793455983420
+[23:13:03] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455983623,"pos":{"x":1,"y":0.3853472000000003},"sp":1,"state":"BUSY"}
+[23:13:03] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,0.385347) 속도=1 상태=BUSY ts=1793455983623
+[23:13:03] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455983833,"pos":{"x":1,"y":0.6014856000000003},"sp":1,"state":"BUSY"}
+[23:13:03] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,0.601486) 속도=1 상태=BUSY ts=1793455983833
+[23:13:04] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455984035,"pos":{"x":1,"y":0.8121695000000003},"sp":1,"state":"BUSY"}
+[23:13:04] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,0.81217) 속도=1 상태=BUSY ts=1793455984035
+[23:13:04] [내용] Topic=amr/AMR_001/heartbeat JSON={"id":"AMR_001","ts":1793455984155,"status":"OK"}
+[23:13:04] [수신·검사통과] AMR=AMR_001 종류=heartbeat status=OK ts=1793455984155
+[23:13:04] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455984246,"pos":{"x":1,"y":1.0304378000000003},"sp":1,"state":"BUSY"}
+[23:13:04] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,1.03044) 속도=1 상태=BUSY ts=1793455984246
+[23:13:04] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455984455,"pos":{"x":1,"y":1.2428564000000002},"sp":1,"state":"BUSY"}
+[23:13:04] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,1.24286) 속도=1 상태=BUSY ts=1793455984455
+[23:13:04] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455984662,"pos":{"x":1,"y":1.4471823000000001},"sp":1,"state":"BUSY"}
+[23:13:04] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,1.44718) 속도=1 상태=BUSY ts=1793455984662
+[23:13:04] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455984875,"pos":{"x":1,"y":1.653203},"sp":1,"state":"BUSY"}
+[23:13:04] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,1.6532) 속도=1 상태=BUSY ts=1793455984875
+[23:13:05] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455985089,"pos":{"x":1,"y":1.8665412},"sp":1,"state":"BUSY"}
+[23:13:05] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,1.86654) 속도=1 상태=BUSY ts=1793455985089
+[23:13:05] [내용] Topic=amr/AMR_001/heartbeat JSON={"id":"AMR_001","ts":1793455985165,"status":"OK"}
+[23:13:05] [수신·검사통과] AMR=AMR_001 종류=heartbeat status=OK ts=1793455985165
+[23:13:05] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455985229,"pos":{"x":1,"y":2},"sp":0,"state":"IDLE"}
+[23:13:05] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,2) 속도=0 상태=IDLE ts=1793455985229
+[23:13:05] [검사거부] Code=MissingField Field=$.ts Reason=Required field is missing.
+[23:13:05] [내용] Topic=amr/AMR_001/alarm JSON={"code":"TEST_SENSOR","ts":100,"id":"AMR_001","level":"WARN","alarmState":"ACTIVE"}
+[23:13:05] [수신·검사통과] AMR=AMR_001 종류=alarm code=TEST_SENSOR level=WARN alarmState=ACTIVE ts=100
+[23:13:06] [내용] Topic=amr/AMR_001/ack JSON={"cmdId":"TEST_RESPONSE","ts":101,"result":"SUCCESS"}
+[23:13:06] [수신·검사통과] AMR=AMR_001 종류=ack cmdId=TEST_RESPONSE result=SUCCESS ts=101 (응답 수신값)
+[23:13:06] [발행요청] AMR=AMR_001 명령=MOVE cmdId=CMD-bef350cca3af4dbaa1ed00767629bd08
+[23:13:06] [명령발행] AMR=AMR_001 명령=MOVE cmdId=CMD-bef350cca3af4dbaa1ed00767629bd08 · MQTT 발행 반환, AMR 수행 미확인
+[23:13:06] [발행요청] AMR=AMR_001 명령=STOP cmdId=CMD-65d4e4f4401c4206a65c68848c56a088
+[23:13:06] [명령발행] AMR=AMR_001 명령=STOP cmdId=CMD-65d4e4f4401c4206a65c68848c56a088 · MQTT 발행 반환, AMR 수행 미확인
+[23:13:06] [발행요청] AMR=AMR_001 명령=RESET cmdId=CMD-a76f8e3d95314060aa59ed45e56f2c5e
+[23:13:06] [명령발행] AMR=AMR_001 명령=RESET cmdId=CMD-a76f8e3d95314060aa59ed45e56f2c5e · MQTT 발행 반환, AMR 수행 미확인
+[23:13:10] [AMR무응답] AMR=AMR_001 생존 신호 5초 이상 없음 · 서버 단절과 구분
+[23:13:10] [내용] Topic=amr/AMR_001/heartbeat JSON={"ts":200,"id":"AMR_001","status":"OK"}
+[23:13:10] [생존복구] 정상 생존 신호를 다시 수신했습니다.
+[23:13:10] [수신·검사통과] AMR=AMR_001 종류=heartbeat status=OK ts=200
+[23:13:11] [연결끊김] BrokerDisconnected
+[23:13:11] [재접속대기] 1초 뒤 1/10회 시도 · 원인=BrokerDisconnected
+[23:13:11] [발행거부] 서버 연결·구독 준비 전입니다. 명령을 보관하거나 자동 재전송하지 않습니다.
+[23:13:12] [재접속시도] 1/10회
+[23:13:12] [접속] 서버 연결을 시도합니다.
+[23:13:13] [구독] Heartbeat·Telemetry·Alarm·ACK 구독 승인
+[23:13:13] [재접속완료] RECONNECTED · 구독 복구, 송수신 준비 완료
+[23:13:15] [내용] Topic=amr/AMR_001/heartbeat JSON={"id":"AMR_001","ts":1793455995788,"status":"OK"}
+[23:13:15] [생존확인] 정상 생존 신호 수신, 감시 시작
+[23:13:15] [수신·검사통과] AMR=AMR_001 종류=heartbeat status=OK ts=1793455995788
+[23:13:15] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455995795,"pos":{"x":-1,"y":0},"sp":0,"state":"IDLE"}
+[23:13:15] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(-1,0) 속도=0 상태=IDLE ts=1793455995795
+[23:13:16] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455996013,"pos":{"x":-0.8878427,"y":0},"sp":1,"state":"BUSY"}
+[23:13:16] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(-0.887843,0) 속도=1 상태=BUSY ts=1793455996013
+[23:13:16] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455996227,"pos":{"x":-0.5724316000000002,"y":0},"sp":1,"state":"BUSY"}
+[23:13:16] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(-0.572432,0) 속도=1 상태=BUSY ts=1793455996227
+[23:13:16] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455996437,"pos":{"x":-0.46888970000000013,"y":0},"sp":1,"state":"BUSY"}
+[23:13:16] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(-0.46889,0) 속도=1 상태=BUSY ts=1793455996437
+[23:13:16] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455996648,"pos":{"x":-0.2577397000000001,"y":0},"sp":1,"state":"BUSY"}
+[23:13:16] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(-0.25774,0) 속도=1 상태=BUSY ts=1793455996648
+[23:13:16] [내용] Topic=amr/AMR_001/heartbeat JSON={"id":"AMR_001","ts":1793455996800,"status":"OK"}
+[23:13:16] [수신·검사통과] AMR=AMR_001 종류=heartbeat status=OK ts=1793455996800
+[23:13:16] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455996860,"pos":{"x":-0.044673300000000096,"y":0},"sp":1,"state":"BUSY"}
+[23:13:16] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(-0.0446733,0) 속도=1 상태=BUSY ts=1793455996860
+[23:13:17] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455997063,"pos":{"x":0.1617236999999999,"y":0},"sp":1,"state":"BUSY"}
+[23:13:17] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(0.161724,0) 속도=1 상태=BUSY ts=1793455997063
+[23:13:17] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455997264,"pos":{"x":0.37280479999999994,"y":0},"sp":1,"state":"BUSY"}
+[23:13:17] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(0.372805,0) 속도=1 상태=BUSY ts=1793455997264
+[23:13:17] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455997466,"pos":{"x":0.5920563999999999,"y":0},"sp":1,"state":"BUSY"}
+[23:13:17] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(0.592056,0) 속도=1 상태=BUSY ts=1793455997466
+[23:13:17] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455997681,"pos":{"x":0.8140367999999999,"y":0},"sp":1,"state":"BUSY"}
+[23:13:17] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(0.814037,0) 속도=1 상태=BUSY ts=1793455997681
+[23:13:17] [내용] Topic=amr/AMR_001/heartbeat JSON={"id":"AMR_001","ts":1793455997808,"status":"OK"}
+[23:13:17] [수신·검사통과] AMR=AMR_001 종류=heartbeat status=OK ts=1793455997808
+[23:13:17] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455997904,"pos":{"x":1,"y":0.02441189999999993},"sp":1,"state":"BUSY"}
+[23:13:17] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,0.0244119) 속도=1 상태=BUSY ts=1793455997904
+[23:13:18] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455998117,"pos":{"x":1,"y":0.2564205999999999},"sp":1,"state":"BUSY"}
+[23:13:18] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,0.256421) 속도=1 상태=BUSY ts=1793455998117
+[23:13:18] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455998327,"pos":{"x":1,"y":0.48022469999999984},"sp":1,"state":"BUSY"}
+[23:13:18] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,0.480225) 속도=1 상태=BUSY ts=1793455998327
+[23:13:18] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455998531,"pos":{"x":1,"y":0.6913015999999998},"sp":1,"state":"BUSY"}
+[23:13:18] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,0.691302) 속도=1 상태=BUSY ts=1793455998531
+[23:13:18] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455998733,"pos":{"x":1,"y":0.9075562999999998},"sp":1,"state":"BUSY"}
+[23:13:18] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,0.907556) 속도=1 상태=BUSY ts=1793455998733
+[23:13:18] [내용] Topic=amr/AMR_001/heartbeat JSON={"id":"AMR_001","ts":1793455998812,"status":"OK"}
+[23:13:18] [수신·검사통과] AMR=AMR_001 종류=heartbeat status=OK ts=1793455998812
+[23:13:18] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455998943,"pos":{"x":1,"y":1.1133289999999998},"sp":1,"state":"BUSY"}
+[23:13:18] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,1.11333) 속도=1 상태=BUSY ts=1793455998943
+[23:13:19] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455999147,"pos":{"x":1,"y":1.3181491999999997},"sp":1,"state":"BUSY"}
+[23:13:19] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,1.31815) 속도=1 상태=BUSY ts=1793455999147
+[23:13:19] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455999362,"pos":{"x":1,"y":1.5303694999999997},"sp":1,"state":"BUSY"}
+[23:13:19] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,1.53037) 속도=1 상태=BUSY ts=1793455999362
+[23:13:19] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455999575,"pos":{"x":1,"y":1.7451374999999996},"sp":1,"state":"BUSY"}
+[23:13:19] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,1.74514) 속도=1 상태=BUSY ts=1793455999575
+[23:13:19] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455999777,"pos":{"x":1,"y":1.9625108999999996},"sp":1,"state":"BUSY"}
+[23:13:19] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,1.96251) 속도=1 상태=BUSY ts=1793455999777
+[23:13:19] [내용] Topic=amr/AMR_001/heartbeat JSON={"id":"AMR_001","ts":1793455999822,"status":"OK"}
+[23:13:19] [수신·검사통과] AMR=AMR_001 종류=heartbeat status=OK ts=1793455999822
+[23:13:19] [내용] Topic=amr/AMR_001/telemetry JSON={"id":"AMR_001","ts":1793455999868,"pos":{"x":1,"y":2},"sp":0,"state":"IDLE"}
+[23:13:19] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,2) 속도=0 상태=IDLE ts=1793455999868
+[23:13:20] [발행요청] AMR=AMR_001 명령=RESET cmdId=CMD-3ef04f01768a4c04abe1105d9d05e5fd
+[23:13:20] [명령발행] AMR=AMR_001 명령=RESET cmdId=CMD-3ef04f01768a4c04abe1105d9d05e5fd · MQTT 발행 반환, AMR 수행 미확인
+[23:13:20] [상태] Broker=Connected AMR=AMR_001 Ready=True
+[23:13:20] [종료] 통신 연결과 소유 작업 정리를 완료했습니다.
+[23:13:20] [종료결과] ExitCode=0

@@ -1,4 +1,5 @@
 using Amr.Communication.Models;
+using Amr.Communication.Command;
 using Amr.Communication.Monitoring;
 using MQTTnet;
 
@@ -32,6 +33,7 @@ public sealed class ControlCommunicationSession : IAsyncDisposable
     private CancellationTokenRegistration _ownerCancellation;
     private Task _monitorTask = Task.CompletedTask;
     private Task? _stopWorker;
+    private readonly HashSet<Task> _publications = [];
     private bool _stopping, _approved, _ready;
     private int _startClaimed;
     private string? _failureReason;
@@ -104,6 +106,27 @@ public sealed class ControlCommunicationSession : IAsyncDisposable
     public event Action<AmrCommunicationObservation>? ObservationChanged;
     public HeartbeatObservation Heartbeat => _heartbeat.Read();
     public bool IsConnected { get { lock (_gate) return _ready && !_stopping && _connection.IsConnected; } }
+
+    /// <summary>준비된 현재 연결에서 한 번 발행한다. 종료는 진행 중 발행의 취소·반환까지 기다린다.</summary>
+    public async Task<CommandPublication> PublishCommandAsync(ReadOnlyMemory<byte> payload,
+        CancellationToken cancellationToken = default)
+    {
+        CancellationTokenSource lifetime;
+        Task<CommandPublication> pending;
+        lock (_gate)
+        {
+            if (!_ready || _stopping) throw new CommandPublishException(CommandPublishFailure.NotConnected);
+            lifetime = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, _shutdown.Token);
+            pending = new CommandPublisher(_client).PublishAsync(AmrId, payload, lifetime.Token);
+            _publications.Add(pending);
+        }
+        try { return await pending.ConfigureAwait(false); }
+        finally
+        {
+            lock (_gate) _publications.Remove(pending);
+            lifetime.Dispose();
+        }
+    }
     public string? FailureReason => Volatile.Read(ref _failureReason);
     public Task Completion => _completion.Task;
 
@@ -237,6 +260,10 @@ public sealed class ControlCommunicationSession : IAsyncDisposable
         try
         {
             try { await _monitorTask; } catch (Exception error) { errors.Add(error); }
+            Task[] publications;
+            lock (_gate) publications = _publications.ToArray();
+            // 실패/취소의 발행 결과는 호출자가 받는다. 정리는 모든 발행 대기가 끝난 뒤 수행한다.
+            try { await Task.WhenAll(publications); } catch (Exception) { }
             try { await _queue.StopAsync(_settings.ConnectTimeout); } catch (Exception error) { errors.Add(error); }
             try { await _subscription.StopAsync(); } catch (Exception error) { errors.Add(error); }
             _client.DisconnectedAsync -= OnDisconnected;

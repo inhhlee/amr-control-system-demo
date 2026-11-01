@@ -1,0 +1,9 @@
+  Amr.Communication -> C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll
+  Amr.Simulator -> C:\amr-control-system-demo\src\Amr.Simulator\bin\Debug\net10.0\Amr.Simulator.dll
+  Amr.Simulator.Tests -> C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\Amr.Simulator.Tests.dll
+C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\Amr.Simulator.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+원본 'C:\amr-control-system-demo\tests\Amr.Simulator.Tests\bin\Debug\net10.0\Amr.Simulator.Tests.dll'에 대한 Testhost 프로세스가 오류 과(와) 함께 종료되었습니다. 자세한 내용은 진단 로그를 확인하세요.
+결과 파일: C:\amr-control-system-demo\evidence\AMR\20261031-fleet-settings-01\simulator.trx
+
+테스트 실행이 중단되었습니다.

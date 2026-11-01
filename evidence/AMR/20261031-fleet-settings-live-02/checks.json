@@ -1,0 +1,18 @@
+[
+  {
+    "Name": "ReceiverSubscribedFourTypes",
+    "Passed": true
+  },
+  {
+    "Name": "Fleet1Exit0",
+    "Passed": true
+  },
+  {
+    "Name": "Fleet1Count",
+    "Passed": true
+  },
+  {
+    "Name": "Fleet1EachIdReceivedTelemetryAndHeartbeat",
+    "Passed": false
+  }
+]

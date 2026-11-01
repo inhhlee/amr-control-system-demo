@@ -1,0 +1,75 @@
+ConfigurationLoaded AmrId=AMR_001 InitialX=-1 InitialY=0 SpeedMps=1 UpdateIntervalMs=100 WaypointCount=2
+Waypoint Index=0 X=1 Y=0
+Waypoint Index=1 X=1 Y=2
+AmrInitialized AmrId=AMR_001 X=-1 Y=0 State=IDLE CurrentSpeedMps=0
+InitializationCompleted
+MqttConnected ClientId=amr-demo-1b04cf65cc4f412082be5ecf9b201dcf TelemetryMs=200 HeartbeatMs=1000
+HeartbeatPublished Topic=amr/AMR_001/heartbeat Payload={"id":"AMR_001","ts":1793456314094,"status":"OK"} Delivery=Unconfirmed
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456314102,"pos":{"x":-1,"y":0},"sp":0,"state":"IDLE"} Delivery=Unconfirmed
+SimulationStarted AmrId=AMR_001 X=-1 Y=0 State=IDLE CurrentSpeedMps=0 ElapsedSeconds=0.000
+AmrMoved AmrId=AMR_001 X=-0.8948062000000001 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.105
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456314304,"pos":{"x":-0.8948062000000001,"y":0},"sp":1,"state":"BUSY"} Delivery=Unconfirmed
+AmrMoved AmrId=AMR_001 X=-0.7880836000000001 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.212
+AmrMoved AmrId=AMR_001 X=-0.6848157000000001 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.315
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456314513,"pos":{"x":-0.6848157000000001,"y":0},"sp":1,"state":"BUSY"} Delivery=Unconfirmed
+AmrMoved AmrId=AMR_001 X=-0.5768358000000002 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.423
+AmrMoved AmrId=AMR_001 X=-0.4703445000000003 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.530
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456314715,"pos":{"x":-0.4703445000000003,"y":0},"sp":1,"state":"BUSY"} Delivery=Unconfirmed
+AmrMoved AmrId=AMR_001 X=-0.36143280000000033 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.639
+AmrMoved AmrId=AMR_001 X=-0.2552201000000003 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.745
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456314920,"pos":{"x":-0.2552201000000003,"y":0},"sp":1,"state":"BUSY"} Delivery=Unconfirmed
+AmrMoved AmrId=AMR_001 X=-0.13981710000000028 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.860
+AmrMoved AmrId=AMR_001 X=-0.031033700000000275 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=0.969
+HeartbeatPublished Topic=amr/AMR_001/heartbeat Payload={"id":"AMR_001","ts":1793456315117,"status":"OK"} Delivery=Unconfirmed
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456315142,"pos":{"x":-0.031033700000000275,"y":0},"sp":1,"state":"BUSY"} Delivery=Unconfirmed
+AmrMoved AmrId=AMR_001 X=0.07356699999999973 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.074
+AmrMoved AmrId=AMR_001 X=0.18173019999999973 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.182
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456315358,"pos":{"x":0.18173019999999973,"y":0},"sp":1,"state":"BUSY"} Delivery=Unconfirmed
+AmrMoved AmrId=AMR_001 X=0.2815413999999997 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.282
+AmrMoved AmrId=AMR_001 X=0.38428969999999973 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.384
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456315569,"pos":{"x":0.38428969999999973,"y":0},"sp":1,"state":"BUSY"} Delivery=Unconfirmed
+AmrMoved AmrId=AMR_001 X=0.48675399999999974 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.487
+AmrMoved AmrId=AMR_001 X=0.5984894999999998 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.598
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456315771,"pos":{"x":0.5984894999999998,"y":0},"sp":1,"state":"BUSY"} Delivery=Unconfirmed
+AmrMoved AmrId=AMR_001 X=0.7054241999999998 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.705
+AmrMoved AmrId=AMR_001 X=0.8103724999999998 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.810
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456315983,"pos":{"x":0.8103724999999998,"y":0},"sp":1,"state":"BUSY"} Delivery=Unconfirmed
+AmrMoved AmrId=AMR_001 X=0.9156022999999999 Y=0 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=1.916
+HeartbeatPublished Topic=amr/AMR_001/heartbeat Payload={"id":"AMR_001","ts":1793456316120,"status":"OK"} Delivery=Unconfirmed
+WaypointReached AmrId=AMR_001 Index=0 X=1 Y=0 ObservedElapsedSeconds=2.034
+AmrMoved AmrId=AMR_001 X=1 Y=0.034236399999999875 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.034
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456316196,"pos":{"x":1,"y":0.034236399999999875},"sp":1,"state":"BUSY"} Delivery=Unconfirmed
+AmrMoved AmrId=AMR_001 X=1 Y=0.13713619999999987 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.137
+AmrMoved AmrId=AMR_001 X=1 Y=0.2428748999999999 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.243
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456316410,"pos":{"x":1,"y":0.2428748999999999},"sp":1,"state":"BUSY"} Delivery=Unconfirmed
+AmrMoved AmrId=AMR_001 X=1 Y=0.3490201999999999 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.349
+AmrMoved AmrId=AMR_001 X=1 Y=0.4526737999999999 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.453
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456316621,"pos":{"x":1,"y":0.4526737999999999},"sp":1,"state":"BUSY"} Delivery=Unconfirmed
+AmrMoved AmrId=AMR_001 X=1 Y=0.5587133999999999 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.559
+AmrMoved AmrId=AMR_001 X=1 Y=0.6734886999999999 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.673
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456316826,"pos":{"x":1,"y":0.6734886999999999},"sp":1,"state":"BUSY"} Delivery=Unconfirmed
+AmrMoved AmrId=AMR_001 X=1 Y=0.7801263999999999 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.780
+AmrMoved AmrId=AMR_001 X=1 Y=0.8953855999999999 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=2.895
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456317032,"pos":{"x":1,"y":0.8953855999999999},"sp":1,"state":"BUSY"} Delivery=Unconfirmed
+AmrMoved AmrId=AMR_001 X=1 Y=1.0010483 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.001
+HeartbeatPublished Topic=amr/AMR_001/heartbeat Payload={"id":"AMR_001","ts":1793456317123,"status":"OK"} Delivery=Unconfirmed
+AmrMoved AmrId=AMR_001 X=1 Y=1.1067257 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.107
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456317244,"pos":{"x":1,"y":1.1067257},"sp":1,"state":"BUSY"} Delivery=Unconfirmed
+AmrMoved AmrId=AMR_001 X=1 Y=1.2157699 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.216
+AmrMoved AmrId=AMR_001 X=1 Y=1.3200853 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.320
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456317457,"pos":{"x":1,"y":1.3200853},"sp":1,"state":"BUSY"} Delivery=Unconfirmed
+AmrMoved AmrId=AMR_001 X=1 Y=1.4209973999999999 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.421
+AmrMoved AmrId=AMR_001 X=1 Y=1.5317444999999998 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.532
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456317669,"pos":{"x":1,"y":1.5317444999999998},"sp":1,"state":"BUSY"} Delivery=Unconfirmed
+AmrMoved AmrId=AMR_001 X=1 Y=1.6375851999999997 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.638
+AmrMoved AmrId=AMR_001 X=1 Y=1.7418633999999997 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.742
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456317878,"pos":{"x":1,"y":1.7418633999999997},"sp":1,"state":"BUSY"} Delivery=Unconfirmed
+AmrMoved AmrId=AMR_001 X=1 Y=1.8484286999999997 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.848
+AmrMoved AmrId=AMR_001 X=1 Y=1.9484494999999997 State=BUSY CurrentSpeedMps=1 ElapsedSeconds=3.948
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456318086,"pos":{"x":1,"y":1.9484494999999997},"sp":1,"state":"BUSY"} Delivery=Unconfirmed
+HeartbeatPublished Topic=amr/AMR_001/heartbeat Payload={"id":"AMR_001","ts":1793456318128,"status":"OK"} Delivery=Unconfirmed
+WaypointReached AmrId=AMR_001 Index=1 X=1 Y=2 ObservedElapsedSeconds=4.052
+SimulationCompleted AmrId=AMR_001 X=1 Y=2 State=IDLE CurrentSpeedMps=0 ElapsedSeconds=4.052
+TelemetryPublished Topic=amr/AMR_001/telemetry Payload={"id":"AMR_001","ts":1793456318162,"pos":{"x":1,"y":2},"sp":0,"state":"IDLE"} Delivery=Unconfirmed
+MqttSimulationCompleted Delivery=Unconfirmed
+MqttSessionEnded ExitCode=0
