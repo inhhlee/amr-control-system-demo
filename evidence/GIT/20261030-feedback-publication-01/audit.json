@@ -1,0 +1,1078 @@
+{
+  "Base": "2339df1b1955b26c10f93295fcb3ee2622fc6131",
+  "Branch": "feature/48-gui-feedback",
+  "SelectedFiles": [
+    {
+      "Path": "BUILDING.md",
+      "SHA256": "BA431F52DF668EDD798408D6C6162483EC562F1D90BC325FD585285CDF9E0B8D"
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/build-debug.log",
+      "SHA256": "066DB1927701CCF2F484771F56CED698092CB2AD031111127AFEF67C1D991AD4"
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/README.md",
+      "SHA256": "A29C56A8FE6437D3BB98565D6651AA39B005FFCC8F29096339F811B5F1A0BA7E"
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/regression-debug.log",
+      "SHA256": "21B24945DFCC7A6D96981BFF8E43892AF5D0418E89F022976D2C19F10F3E13F1"
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/screens/01-dashboard-ready.png",
+      "SHA256": "1CE100DE5BCDE013211430369810291B3E6164779E83BB74805912F8FCB5CEC1"
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/screens/02-simulation-moving.png",
+      "SHA256": "13537AD5E1D1A8B5D7288628D358D6239494C09E748E80B6DDC29661E389BED3"
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/screens/04-amr02-start.png",
+      "SHA256": "4254C77E535E2D0923F0A21C214696E4A159C9546BA984DA300920EB4B0195DC"
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/screens/06-start-final.png",
+      "SHA256": "C4BC1D8BF1A270230454DA98AF77FC8FEDE58F52723D678B1371A34BC3843153"
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/screens/07-stop-final.png",
+      "SHA256": "F44C0E507B801601FED56CBFCA56B1D4D1F59AA2ADA0098F24A16748AE09A2E4"
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/screens/08-history-filter-selected.png",
+      "SHA256": "EE6EDA5B7EDF2CEF0A4791490D6B52EFB77D13DC4D73D1E7B31DEB1F5AC5CED2"
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/screens/09-history-reset.png",
+      "SHA256": "57C484CA8C0DC3A9DC3B7D9C29F5A99C89C73C8DD27285B469ABA279BF80AC85"
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/tests/feedback-second.trx",
+      "SHA256": "2D6A396427A5D399D28358CC9B8E107FD3EEA885C703EA061FAFD141C0A651DA"
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/tests/full/Admin_DESKTOP-N1BSNS3_2026-10-30_17_59_09_net10.0.trx",
+      "SHA256": "DCE54DE5242D57E2CAE1DE8DBDEA52AFBD3250BF9E594C799541FAC9AC807554"
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/tests/full/Admin_DESKTOP-N1BSNS3_2026-10-30_17_59_14_net10.0.trx",
+      "SHA256": "AF1C0A5F2DE99BB5CDA928EF555F2241E091CC506CD22AD04E55FAE7990DEFFA"
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/tests/full/Admin_DESKTOP-N1BSNS3_2026-10-30_17_59_17_net10.0.trx",
+      "SHA256": "2C7A437C007F32A1A1A68CB678DD786A7B99433212E11850E6EE1691598D2D8E"
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/tests/full/Admin_DESKTOP-N1BSNS3_2026-10-30_17_59_19_net10.0.trx",
+      "SHA256": "911B0F364955BCC123779E29B7008F2B3378B3623B965247216D42FD46A70247"
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/tests/full/Admin_DESKTOP-N1BSNS3_2026-10-30_17_59_51_net10.0.trx",
+      "SHA256": "000D9D8AA3F4B1004D7F75CC0946197B594466CC4352CA3BE317748B9CD336CB"
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/tests/gui-debug-first.trx",
+      "SHA256": "C6BE46748F445C6B8CFF56F323F884F9DF67159F52CB91FF9AAA22A6F3C267ED"
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/tests/gui-final.trx",
+      "SHA256": "04B751F053E98B3A70CAC6EED7B91BE0AF33D18D4B64EC2B54FF8A61CA75C78E"
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/tests/gui-first.trx",
+      "SHA256": "A3C358FDCF96EB8E7ABE329D1F6326CCA7D25EE17DBDDC2F8BE6002776E7B7DD"
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/observations.json",
+      "SHA256": "62342D71362D29A5B1DB428C5459E924C3B02F5DF2808B974EB9EDAAFA5E948B"
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/README.md",
+      "SHA256": "726E04C64BEB656DDF45AF9EFB090D601B25BAC13F9E82D32221A390ADBDB059"
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/01-source-dialog.png",
+      "SHA256": "88F1205998D87E743FABC8BA24DA69DB4909D48E10214A830CCB604D05B069C2"
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/02-s02-applied.png",
+      "SHA256": "ACDC9B60B921F1EB991FF59696C570C66A0FC608881ACE1567C2DEFADE27E630"
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/03-started.png",
+      "SHA256": "8BC7E7D6EFEFB023456D4E6E899CABC85FB2D10D02AFB194EC454C2700AB6383"
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/03-started.txt",
+      "SHA256": "A8A3335809EEA73F26C589951C07D5B7C7FE8E60E092F09555678BB636C952D4"
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/04-first-run-arrived.png",
+      "SHA256": "986D80921C9C2B0ED2111D6DF23AD3ECD63FE45134419DBFE028AAD12155D7BD"
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/05-final-start.png",
+      "SHA256": "C19229B80F2C7AD5171668A167F6B7639AF399F9E91049358A6786FEF68A0E95"
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/06-final-stop.png",
+      "SHA256": "157750F38D6249507CA06EFAA0B226FC11D4B062878E3DED1D0AF80B7FD9D75C"
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/06-final-stop.txt",
+      "SHA256": "1B1C23220D5373B388928AF6D049E051A88D88259E202E8216A6F3EC154E5BDD"
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/07-stop-map.png",
+      "SHA256": "9B293FF81277F609CE747E1020A1A98231AD218CC258752C48F875E0991703C8"
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/07-stop-map.txt",
+      "SHA256": "ADC527DE996895392B0FE4D3335D9DFB6CB86D253616DB6C4E4A53BE4AD2A783"
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/08-stop-position-held.png",
+      "SHA256": "9B293FF81277F609CE747E1020A1A98231AD218CC258752C48F875E0991703C8"
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/08-stop-position-held.txt",
+      "SHA256": "ADC527DE996895392B0FE4D3335D9DFB6CB86D253616DB6C4E4A53BE4AD2A783"
+    },
+    {
+      "Path": "evidence/GUI/20261030-source-settings-01/code-hashes.json",
+      "SHA256": "3167796DD9D1FDBE0A39CB0E4265845A51DE1F5CE8465A72243494BDAF9052C6"
+    },
+    {
+      "Path": "evidence/GUI/20261030-source-settings-01/README.md",
+      "SHA256": "8F71C656FC41518B2D15E1C8C7E84661C7718736DB22AAAE893F32D97433B7B1"
+    },
+    {
+      "Path": "evidence/GUI/20261030-source-settings-01/screens/01-source-dialog-0.png",
+      "SHA256": "96A9F1D7A91A9FA9581954393F1D3C6821858DCA2C2C959FD3FF9F0ACF65E415"
+    },
+    {
+      "Path": "evidence/GUI/20261030-source-settings-01/screens/01-source-dialog-1.png",
+      "SHA256": "88C134720BA7745C6AD29FEC5AAB4D2EE9E3FB61EDD2E5ABA047064C64BFB486"
+    },
+    {
+      "Path": "evidence/GUI/20261030-source-settings-01/screens/02-source-applied.png",
+      "SHA256": "8C2A1EA2D0FA3BFB3F9D69EC46E0AFA1E1A73EA2B1F2E417BEA6B8760F23097C"
+    },
+    {
+      "Path": "evidence/GUI/20261030-source-settings-01/screens/03-map-source-applied.png",
+      "SHA256": "5E67F0BF706B59AC462D0150CBC0214371BE25D06FBFFD14F395B7BBB9A37233"
+    },
+    {
+      "Path": "evidence/GUI/20261030-source-settings-01/screens/03-map-source-applied.txt",
+      "SHA256": "F630ACA154B4C770FC4226171C3E07A931925458C5C2CAAE77D664905C3F8CD7"
+    },
+    {
+      "Path": "evidence/GUI/20261030-source-settings-01/screens/04-map-source-visible.png",
+      "SHA256": "A97C8FF360BBFDBF8A004D93C33BDDC52DDBD895FD59DB39741BEC2629749D77"
+    },
+    {
+      "Path": "evidence/GUI/20261030-source-settings-01/tests/source-settings-final.trx",
+      "SHA256": "8F40A6E58E4569296C01387D4B2BD7CEEF32296F83E327F0E3942B7446D75873"
+    },
+    {
+      "Path": "evidence/GUI/20261030-source-settings-01/tests/source-settings.trx",
+      "SHA256": "1D61F49188883A23A4DF6998E482D28D448F3D5A39DD546586797D01891BD182"
+    },
+    {
+      "Path": "README.md",
+      "SHA256": "E9A195317722E0572790E97700B2AB0E88063FC36F870CC62394976E0876851F"
+    },
+    {
+      "Path": "src/Amr.ControlGui/Amr.ControlGui.csproj",
+      "SHA256": "9402AEAC9EC2D9F2AE254AB22B346C051AFFE940B9619EF76F8CCC7AA693C8A0"
+    },
+    {
+      "Path": "src/Amr.ControlGui/MainForm.cs",
+      "SHA256": "7FC0673B99529D8592394205170E502BD913113B66B074DCF7D1524BD55F6784"
+    },
+    {
+      "Path": "src/Amr.ControlGui/MainForm.Designer.cs",
+      "SHA256": "02853ED1923F0E2F6309AA5669B99C831EBC5BC024D963C40F945FEE94C67836"
+    },
+    {
+      "Path": "src/Amr.ControlGui/MainForm.Feedback.cs",
+      "SHA256": "3E79D70CA8DE7536E89E9899DFFB336F86CF1D3C5E1167782F4953B84A2D0145"
+    },
+    {
+      "Path": "src/Amr.ControlGui/MapCanvas.cs",
+      "SHA256": "4D10FD85F5A5A43A46B8F36889391C0CD978DFB405CE234B67A57FD75930E7AB"
+    },
+    {
+      "Path": "src/Amr.ControlGui/MockAmrDataProvider.cs",
+      "SHA256": "A296BAAD95680DBC61457AEE0B2559C6D45F81B524E20B904A29C0D307A40B19"
+    },
+    {
+      "Path": "src/Amr.ControlGui/MockAmrDataProvider.Simulation.cs",
+      "SHA256": "50187BC5763A522DFD7CA865703C0DD1CEE036E78EF315435C9F044F5AC69366"
+    },
+    {
+      "Path": "src/Amr.ControlGui/Program.cs",
+      "SHA256": "745154C22B1223B4BC2236A3F0EB29DB754B18ADDBB14F8778698947F69BB4FB"
+    },
+    {
+      "Path": "src/Amr.ControlGui/SimulationForm.cs",
+      "SHA256": "DA6ACB41158227D3D31FBD6FAA74D265ED8FB37A29CD113697CD6FDF04D3D664"
+    },
+    {
+      "Path": "src/Amr.ControlGui/SourceSelectionForm.cs",
+      "SHA256": "82E96D22CA6E71B80E7603EFA6EF2ABF8A8C11D7499986E7D973DFB99404F283"
+    },
+    {
+      "Path": "src/Amr.Core/AmrChange.cs",
+      "SHA256": "B29EC88E8FA1F3C2C163625CBA4F01581A78D61F58E265705C32F8D288E8534E"
+    },
+    {
+      "Path": "src/Amr.Core/AmrSnapshot.cs",
+      "SHA256": "9E6A340F94492D8B9CC715146F365A3804B4EAE00AAB817EBA04DB2BFC59C14B"
+    },
+    {
+      "Path": "src/Amr.Core/IAmrDataProvider.cs",
+      "SHA256": "318597985434AB205D3D94D7553008EB1851AAC73CF8F61DB97AC89890F29195"
+    },
+    {
+      "Path": "src/Amr.Core/ICommandDispatcher.cs",
+      "SHA256": "9D56502D3744696F8B8924565CB84238D8D5674049FA8F685A7E6B7AFFCE9845"
+    },
+    {
+      "Path": "src/Amr.Core/QueryModels.cs",
+      "SHA256": "2E9DA01280DE29C27A5F4DCE05ED15C427A03F65F6C63D72346310759D7F3BA4"
+    },
+    {
+      "Path": "tests/Amr.ControlGui.Tests/FeedbackSimulationTests.cs",
+      "SHA256": "3E4A79D675EC2C09BDE200AAD7463B59648D6C7B747BCA2F9BDFBAFFCA71F9AE"
+    },
+    {
+      "Path": "tests/Amr.ControlGui.Tests/FeedbackViewTests.cs",
+      "SHA256": "2A6D7C43EEED98484E76E09CFF92965B2AFAEDE6FCF5D2AA5A77D93AD6576358"
+    }
+  ],
+  "PriorVerification": [
+    {
+      "Path": "src/Amr.ControlGui/SourceSelectionForm.cs",
+      "Match": true
+    },
+    {
+      "Path": "src/Amr.ControlGui/SimulationForm.cs",
+      "Match": true
+    },
+    {
+      "Path": "tests/Amr.ControlGui.Tests/FeedbackViewTests.cs",
+      "Match": true
+    },
+    {
+      "Path": "src/Amr.ControlGui/bin/Debug/net10.0-windows/Amr.ControlGui.dll",
+      "Match": true
+    }
+  ],
+  "OriginalUntrackedPreservation": [
+    {
+      "Path": ".vscode/settings.json",
+      "SHA256": "7577F99A07C25C14A82B4C9B48DFF2920791DD97D0140B1B98440D1BA1605A98",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-map-restart-01/launch.json",
+      "SHA256": "43A08BFCA52BB8C68D5109C7518AB19E09180DD4E557F6170DEFF37054CBE7DB",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-map-restart-01/map-open.png",
+      "SHA256": "5DFA324028681778B5B35622CA7D91BB4208A0BABA70DC71989D8999512691DF",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-map-restart-01/ready-state.json",
+      "SHA256": "B188D784BD28ED6C13B43BC3C7D1CD1BB588D668DD4EEBA26D03D73B6250CAFA",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-map-restart-01/result.json",
+      "SHA256": "AEFC4D886FA6921FA35B9F5F7BB1B9B712EE6A57DBD53E5245AFCD660D128026",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-map-restart-01/server.stderr.log",
+      "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-map-restart-01/server.stdout.log",
+      "SHA256": "C1D02BC1E495FF57B28610448F790E927DE6931C7BDD20E60942449920816549",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-simulator-navigation-01/live-server.stderr.log",
+      "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-simulator-navigation-01/live-server.stdout.log",
+      "SHA256": "EDF942E6775EB6A2D01AAFE08FAF5A889A667C6D345A6112BE38330A8BC5BC64",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-ui-detour-01/Observe.ps1",
+      "SHA256": "218452C21D5C8BCB505A5B8341682E22755A1D2D252B8225D9C006C8A0DDCAB0",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-ui-detour-01/README.md",
+      "SHA256": "A716569EFC4629EBCC399E5DDAFA171E07ECAE6F2A8895593CA05A2AFDD81251",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-ui-detour-01/Verify.ps1",
+      "SHA256": "1F7D9A9E3AE78FB767C36BB8E6D7D6390E838A501D0C915594C763D4CCE4B299",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-ui-detour-01/api-samples.jsonl",
+      "SHA256": "50C39F4E61E02DE873BDE2951743CA5173FEB9F5B7B73735A44D5D28EFF61896",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-ui-detour-01/crossing-w2.png",
+      "SHA256": "82A2DCDC75AB38E774E87118B221B6713495538CEDE848C4C243BE6AE2C83A9D",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-ui-detour-01/dom-samples.json",
+      "SHA256": "C99F3A0D62B0E1BA84DCF9A47E1D86304B965D818C575B1A6E44DA2CB12C3139",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-ui-detour-01/environment.json",
+      "SHA256": "A1D26DE86AECC76A92E110B355FCC9B49754ABF5D5608B29C8A822A454136195",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-ui-detour-01/final-page.png",
+      "SHA256": "8CE3E3E6B676FF605A80DE0EE4FABD2437984F6882A90A274945D26926326C36",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-ui-detour-01/final.json",
+      "SHA256": "F6E55A396B3B68AB2F9F41F0B09C257A93F2DA1C506FFF89380F0C4E2DB86948",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-ui-detour-01/hashes.json",
+      "SHA256": "D31C1C21CB274482381EC875651301D0A23F61BE066B1FA45C36AD231DF9DCFE",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-ui-detour-01/initial.json",
+      "SHA256": "B188D784BD28ED6C13B43BC3C7D1CD1BB588D668DD4EEBA26D03D73B6250CAFA",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-ui-detour-01/observer-ready.txt",
+      "SHA256": "83E24203F3532A5D379E2DFCAB2A0BFFA0B0D059EDDC22AB04155ED229343EF3",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-ui-detour-01/observer-result.json",
+      "SHA256": "A07878FF837884533AAE9494FB0D7D1AF6E4BB8E614DA711CACAF4F043B46D8C",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-ui-detour-01/observer.pid",
+      "SHA256": "2A1759ED7068C07734D7492F8841140847EC67F0EF6B162A3CCB8A43F678A1D2",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-ui-detour-01/observer.stderr.log",
+      "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-ui-detour-01/observer.stdout.log",
+      "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-ui-detour-01/run-events.jsonl",
+      "SHA256": "59A9537E039936D725B2A7D10D83A4C78F32DD76EEA2621AC416D62D5D8D8857",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/20261023-ui-detour-01/verification.json",
+      "SHA256": "E4D2CDD6D5D2788A8709F5278DC8C5D27CBF7C8B089A6F9368C31184522F4A3D",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/mission-live-20261023-100434-94cc1cce5ccc455e88149bc5498613b4/config.json",
+      "SHA256": "29AC69C67CB119B461116C9FA4A2FB091F92E5839FC6B3BFB78ED3F43D1192FD",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/mission-live-20261023-100434-94cc1cce5ccc455e88149bc5498613b4/effective-settings.json",
+      "SHA256": "5DF32D8639B0B4E7F61DF7FDE52843D836ADD96F5B50CCA38D22931ED40278BC",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/mission-live-20261023-100434-94cc1cce5ccc455e88149bc5498613b4/grid-navigation.jsonl",
+      "SHA256": "BD965386FE66EC0AA6D440FBBB5DCAFCCF96A3D69B700DA1BDEE10F36D7220E9",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/mission-live-20261023-104747-531284d2c4834622a0e44fe61a34905b/grid-navigation.jsonl",
+      "SHA256": "BFBC00224E917BE5DD3EC278EF8397B842571767C0C4A183EEA9188367C7526D",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/mission-live-20261023-110716-12951fe0c1d64a1b816b94c3df2f913f/config.json",
+      "SHA256": "29AC69C67CB119B461116C9FA4A2FB091F92E5839FC6B3BFB78ED3F43D1192FD",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/mission-live-20261023-110716-12951fe0c1d64a1b816b94c3df2f913f/effective-settings.json",
+      "SHA256": "5DF32D8639B0B4E7F61DF7FDE52843D836ADD96F5B50CCA38D22931ED40278BC",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/mission-live-20261023-110716-12951fe0c1d64a1b816b94c3df2f913f/grid-navigation.jsonl",
+      "SHA256": "3F335979EDFE1013246D314756B3915CA8D8145EA1DD10EF15E7B8AA08B4387E",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/mission-live-20261023-122710-9640cde3a2934a71a435ae088b8272db/config.json",
+      "SHA256": "29AC69C67CB119B461116C9FA4A2FB091F92E5839FC6B3BFB78ED3F43D1192FD",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/mission-live-20261023-122710-9640cde3a2934a71a435ae088b8272db/effective-settings.json",
+      "SHA256": "5DF32D8639B0B4E7F61DF7FDE52843D836ADD96F5B50CCA38D22931ED40278BC",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/AMR/mission-live-20261023-122710-9640cde3a2934a71a435ae088b8272db/grid-navigation.jsonl",
+      "SHA256": "70128F839E058E0725ACBFE335CD1C5F0690C2AA676B14FAA34F326CCA28431D",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/COM-02/20261028-two-amr-live-final/AMR_001.config.json",
+      "SHA256": "A08B8B9C1F5B1FF99576966FBA3BA7B52CCEC92BD54BF84F922E8A0A9F8A2719",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/COM-02/20261028-two-amr-live-final/AMR_002.config.json",
+      "SHA256": "1A4A066D8B38DBE8647D2A425F8D6D9921AE0669EB5551278C21CD244023664E",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/COM-02/20261028-two-amr-live-final/broker.conf",
+      "SHA256": "C6A79D46B2E1540608A447B340717AD2DF61018CDFE00145299FEDE135C9CED8",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/COM-02/20261028-two-amr-live-final/broker.log",
+      "SHA256": "E32F8961A7EECC9C5D403CA5ED02C101E38370BA6D93FCC52CC45641EEEA2DEE",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/COM-02/20261028-two-amr-live-final/cleanup.json",
+      "SHA256": "44D5A018DFCC0C9EA7CF4029794A0B8202AE93D612E6B3275B05D20794E3D103",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/COM-02/20261028-two-amr-live-final/containers-before.jsonl",
+      "SHA256": "75891A261CA298DC9CB29B7A208B8DD91BFC84E97A03561197630622B27E48D8",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/COM-02/20261028-two-amr-live-final/fleet-events.jsonl",
+      "SHA256": "2C2436CEBEFB56F7C9144AF89EFCCFA8E9E7AF7017B6A4204E54AD5575A8DF9C",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/COM-02/20261028-two-amr-live-final/fleet.config.json",
+      "SHA256": "CA3A95ED5F123801642D48759CB2F5BECE9A8380C4BA5998035EE38E27970C44",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/COM-02/20261028-two-amr-live-final/fleet.json",
+      "SHA256": "CA3A95ED5F123801642D48759CB2F5BECE9A8380C4BA5998035EE38E27970C44",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/COM-02/20261028-two-amr-live-final/owned-session.json",
+      "SHA256": "A6A8ACCE733B20D3112E12EE650DD43D59B1140FBC0D9F3B863DAD0CBF5F6909",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/COM-02/20261028-two-amr-live-final/probe-session.json",
+      "SHA256": "E13C51CAA71F56EC227436617ACDFB238A6537AEE62DDD52FA7080CEAEF78C00",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/COM-02/20261028-two-amr-live-final/probe.stderr.log",
+      "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/COM-02/20261028-two-amr-live-final/probe.stdout.log",
+      "SHA256": "C768A5BDE7B832E6788DDE1E9AF8AE377C47AB20507C3182AF705A61D13DFB9B",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/COM-02/20261028-two-amr-live-final/settings.amr002.json",
+      "SHA256": "1A4A066D8B38DBE8647D2A425F8D6D9921AE0669EB5551278C21CD244023664E",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/COM-02/20261028-two-amr-live-final/settings.json",
+      "SHA256": "A08B8B9C1F5B1FF99576966FBA3BA7B52CCEC92BD54BF84F922E8A0A9F8A2719",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261023-before-pull-01/backup.json",
+      "SHA256": "145951ED10A21B20ED5218D47B1E2A1B1B1AF45BB37941EAF18A16F9841CAA95",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261023-before-pull-01/committed-work.patch",
+      "SHA256": "2461F621B6DA1DD78BD0C3849A24FC535812DEFFF14B2D70FB50E65BF0CEB87F",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261023-before-pull-01/history.bundle",
+      "SHA256": "E1BBED1DD6AB83C9F40A6E3A24E6F525BA181B8B0EEF03047ACF3FDECDC8C832",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261023-before-pull-01/local-staged.patch",
+      "SHA256": "2461F621B6DA1DD78BD0C3849A24FC535812DEFFF14B2D70FB50E65BF0CEB87F",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261023-before-pull-01/local-working.patch",
+      "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261023-before-pull-01/preservation-result.json",
+      "SHA256": "FBE821320775A833CE57C47420A695B6A84F5989129FD82D9E79511C6948E1C6",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261023-remote-cleanup-01/before-cleanup.bundle",
+      "SHA256": "3538E2F9FB56BE1DBFAC91FEB4EF168F3488B1C09801651E2F75E430F062397C",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261023-remote-cleanup-01/bundle-verification.txt",
+      "SHA256": "9C483C8B9A0D71BED208D277603F0BE6D25CB014474C625F43E60DDB7D756C37",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261023-remote-cleanup-01/plan.json",
+      "SHA256": "C56D88C46930CAAA81260D893FE85AEC2F189A4941A7B8D7C40A31C136C223B7",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261023-remote-cleanup-01/remote-after.txt",
+      "SHA256": "F37D2863DFC0BF67464CE2A80DB382231A7FC071B9C60A9B7E2D80A00DC8C190",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261023-remote-cleanup-01/remote-before-deletion.txt",
+      "SHA256": "2728D9CCBDB00F56C87CEBD40E581320EB476D3ACE56AB85D290F6A1241DA8B5",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261023-remote-cleanup-01/remote-before.txt",
+      "SHA256": "D8C55FB9C14974BCBC6475D8B3207B832F19D4011FE8DB4A8CD011132D83213E",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261023-remote-cleanup-01/remote-deletion.txt",
+      "SHA256": "CB696E50E2DC324F776F823890C8F49D12393DA009928B73A660FA82588B6C34",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261023-remote-cleanup-01/result.json",
+      "SHA256": "F680DC9461F91CFA512EB6A6BEF9D4013ED455A2E284C8BD16C691A519BD25D0",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261027-preservation-backup-01/Backup-And-Verify.ps1",
+      "SHA256": "38A168BB8F9D23845891AD67F33F31684FAD53A42B04733A4635C8992BB8D454",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261027-preservation-backup-01/README.md",
+      "SHA256": "004ACF8F7F5C939B6F79B9C3EDBD17BED5E70584E8D3877F89C79FC94C882E35",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261027-preservation-backup-01/SHA256SUMS.txt",
+      "SHA256": "5EEBEE0D37426A7C6613CD806D384E29EC9BD24233CB06F76AB324A78033C2F5",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261027-preservation-backup-01/artifact-hashes.json",
+      "SHA256": "2C90164C97AE03138A0E1749C689B1797B808426FCC205B73F35DDB023FDAD7D",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261027-preservation-backup-01/attempt-01-failure.json",
+      "SHA256": "C023800124406F58F7CFBF4EC26F940E110E8C6FBE0548F369155E0472F5E9F3",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261027-preservation-backup-01/attempt-02-sandbox-failure.json",
+      "SHA256": "BCCF67BF1C0B5FBCF1B0B966EC733FAF543A93A4DE6B96232BEA1BA31989B4BC",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261027-preservation-backup-01/bundle-create.log",
+      "SHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261027-preservation-backup-01/bundle-heads.txt",
+      "SHA256": "C8029B781CC1AE8D2172CF818F72EE886ADD40B8259880A886601DEBA51F9399",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261027-preservation-backup-01/bundle-verify.log",
+      "SHA256": "5A8C22F1A576481DB451696A8433AD64B7BC45060FE6E5A4E746A8F948F960FA",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261027-preservation-backup-01/final-audit.json",
+      "SHA256": "94A7769354C98B73C41CDBA049C8E1919FB78A257E4E880FF7C7CCC25331262B",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261027-preservation-backup-01/preservation.bundle",
+      "SHA256": "3F720B859514AB1D8716EF27A4F9B9E17E4DA61E6511DA7510D1628175C9256A",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261027-preservation-backup-01/restore-clone.log",
+      "SHA256": "CB5DD7B146EA5F1C9B2F310B8A16FBE69FD92A251349787851114A5C14AFBF78",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261027-preservation-backup-01/restore-fsck.log",
+      "SHA256": "E73EB468812211842A1FD0E3B58D88AE87EBC6E5520C46FCA994DF7146274C6B",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261027-preservation-backup-01/restore-location.json",
+      "SHA256": "666AA783ABE31084B682FA489652DF5E32C6BC40DBAABC5CFB214A44360C8659",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261027-preservation-backup-01/restore-stash.log",
+      "SHA256": "97E3C0749C264AB5935FF5532FA5EA3206B1B23995764AA9926D024F3B238BDB",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261027-preservation-backup-01/source-snapshot.json",
+      "SHA256": "284FB48289CB576EC69A178D1A220221570D5BA2AFB6DF60099AA114579015B8",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261027-preservation-backup-01/untracked-files.zip",
+      "SHA256": "9DE0B1A3C210628FCB4EFD5602E0B32A25CA6E0022DB99F47E4BF989D8F1291A",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GIT/20261027-preservation-backup-01/verification.json",
+      "SHA256": "248B7712199E1422A2AFFC17326E83CEF3CF1BA2D76630706AE613B73F703184",
+      "Match": true,
+      "Included": false
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/README.md",
+      "SHA256": "A29C56A8FE6437D3BB98565D6651AA39B005FFCC8F29096339F811B5F1A0BA7E",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/build-debug.log",
+      "SHA256": "066DB1927701CCF2F484771F56CED698092CB2AD031111127AFEF67C1D991AD4",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/regression-debug.log",
+      "SHA256": "21B24945DFCC7A6D96981BFF8E43892AF5D0418E89F022976D2C19F10F3E13F1",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/screens/01-dashboard-ready.png",
+      "SHA256": "1CE100DE5BCDE013211430369810291B3E6164779E83BB74805912F8FCB5CEC1",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/screens/02-simulation-moving.png",
+      "SHA256": "13537AD5E1D1A8B5D7288628D358D6239494C09E748E80B6DDC29661E389BED3",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/screens/04-amr02-start.png",
+      "SHA256": "4254C77E535E2D0923F0A21C214696E4A159C9546BA984DA300920EB4B0195DC",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/screens/06-start-final.png",
+      "SHA256": "C4BC1D8BF1A270230454DA98AF77FC8FEDE58F52723D678B1371A34BC3843153",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/screens/07-stop-final.png",
+      "SHA256": "F44C0E507B801601FED56CBFCA56B1D4D1F59AA2ADA0098F24A16748AE09A2E4",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/screens/08-history-filter-selected.png",
+      "SHA256": "EE6EDA5B7EDF2CEF0A4791490D6B52EFB77D13DC4D73D1E7B31DEB1F5AC5CED2",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/screens/09-history-reset.png",
+      "SHA256": "57C484CA8C0DC3A9DC3B7D9C29F5A99C89C73C8DD27285B469ABA279BF80AC85",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/tests/feedback-second.trx",
+      "SHA256": "2D6A396427A5D399D28358CC9B8E107FD3EEA885C703EA061FAFD141C0A651DA",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/tests/full/Admin_DESKTOP-N1BSNS3_2026-10-30_17_59_09_net10.0.trx",
+      "SHA256": "DCE54DE5242D57E2CAE1DE8DBDEA52AFBD3250BF9E594C799541FAC9AC807554",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/tests/full/Admin_DESKTOP-N1BSNS3_2026-10-30_17_59_14_net10.0.trx",
+      "SHA256": "AF1C0A5F2DE99BB5CDA928EF555F2241E091CC506CD22AD04E55FAE7990DEFFA",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/tests/full/Admin_DESKTOP-N1BSNS3_2026-10-30_17_59_17_net10.0.trx",
+      "SHA256": "2C7A437C007F32A1A1A68CB678DD786A7B99433212E11850E6EE1691598D2D8E",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/tests/full/Admin_DESKTOP-N1BSNS3_2026-10-30_17_59_19_net10.0.trx",
+      "SHA256": "911B0F364955BCC123779E29B7008F2B3378B3623B965247216D42FD46A70247",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/tests/full/Admin_DESKTOP-N1BSNS3_2026-10-30_17_59_51_net10.0.trx",
+      "SHA256": "000D9D8AA3F4B1004D7F75CC0946197B594466CC4352CA3BE317748B9CD336CB",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/tests/gui-debug-first.trx",
+      "SHA256": "C6BE46748F445C6B8CFF56F323F884F9DF67159F52CB91FF9AAA22A6F3C267ED",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/tests/gui-final.trx",
+      "SHA256": "04B751F053E98B3A70CAC6EED7B91BE0AF33D18D4B64EC2B54FF8A61CA75C78E",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-figma-feedback-01/tests/gui-first.trx",
+      "SHA256": "A3C358FDCF96EB8E7ABE329D1F6326CCA7D25EE17DBDDC2F8BE6002776E7B7DD",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/README.md",
+      "SHA256": "726E04C64BEB656DDF45AF9EFB090D601B25BAC13F9E82D32221A390ADBDB059",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/observations.json",
+      "SHA256": "62342D71362D29A5B1DB428C5459E924C3B02F5DF2808B974EB9EDAAFA5E948B",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/01-source-dialog.png",
+      "SHA256": "88F1205998D87E743FABC8BA24DA69DB4909D48E10214A830CCB604D05B069C2",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/02-s02-applied.png",
+      "SHA256": "ACDC9B60B921F1EB991FF59696C570C66A0FC608881ACE1567C2DEFADE27E630",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/03-started.png",
+      "SHA256": "8BC7E7D6EFEFB023456D4E6E899CABC85FB2D10D02AFB194EC454C2700AB6383",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/03-started.txt",
+      "SHA256": "A8A3335809EEA73F26C589951C07D5B7C7FE8E60E092F09555678BB636C952D4",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/04-first-run-arrived.png",
+      "SHA256": "986D80921C9C2B0ED2111D6DF23AD3ECD63FE45134419DBFE028AAD12155D7BD",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/05-final-start.png",
+      "SHA256": "C19229B80F2C7AD5171668A167F6B7639AF399F9E91049358A6786FEF68A0E95",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/06-final-stop.png",
+      "SHA256": "157750F38D6249507CA06EFAA0B226FC11D4B062878E3DED1D0AF80B7FD9D75C",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/06-final-stop.txt",
+      "SHA256": "1B1C23220D5373B388928AF6D049E051A88D88259E202E8216A6F3EC154E5BDD",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/07-stop-map.png",
+      "SHA256": "9B293FF81277F609CE747E1020A1A98231AD218CC258752C48F875E0991703C8",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/07-stop-map.txt",
+      "SHA256": "ADC527DE996895392B0FE4D3335D9DFB6CB86D253616DB6C4E4A53BE4AD2A783",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/08-stop-position-held.png",
+      "SHA256": "9B293FF81277F609CE747E1020A1A98231AD218CC258752C48F875E0991703C8",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-s02-start-stop-01/screens/08-stop-position-held.txt",
+      "SHA256": "ADC527DE996895392B0FE4D3335D9DFB6CB86D253616DB6C4E4A53BE4AD2A783",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-source-settings-01/README.md",
+      "SHA256": "8F71C656FC41518B2D15E1C8C7E84661C7718736DB22AAAE893F32D97433B7B1",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-source-settings-01/code-hashes.json",
+      "SHA256": "3167796DD9D1FDBE0A39CB0E4265845A51DE1F5CE8465A72243494BDAF9052C6",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-source-settings-01/screens/01-source-dialog-0.png",
+      "SHA256": "96A9F1D7A91A9FA9581954393F1D3C6821858DCA2C2C959FD3FF9F0ACF65E415",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-source-settings-01/screens/01-source-dialog-1.png",
+      "SHA256": "88C134720BA7745C6AD29FEC5AAB4D2EE9E3FB61EDD2E5ABA047064C64BFB486",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-source-settings-01/screens/02-source-applied.png",
+      "SHA256": "8C2A1EA2D0FA3BFB3F9D69EC46E0AFA1E1A73EA2B1F2E417BEA6B8760F23097C",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-source-settings-01/screens/03-map-source-applied.png",
+      "SHA256": "5E67F0BF706B59AC462D0150CBC0214371BE25D06FBFFD14F395B7BBB9A37233",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-source-settings-01/screens/03-map-source-applied.txt",
+      "SHA256": "F630ACA154B4C770FC4226171C3E07A931925458C5C2CAAE77D664905C3F8CD7",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-source-settings-01/screens/04-map-source-visible.png",
+      "SHA256": "A97C8FF360BBFDBF8A004D93C33BDDC52DDBD895FD59DB39741BEC2629749D77",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-source-settings-01/tests/source-settings-final.trx",
+      "SHA256": "8F40A6E58E4569296C01387D4B2BD7CEEF32296F83E327F0E3942B7446D75873",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "evidence/GUI/20261030-source-settings-01/tests/source-settings.trx",
+      "SHA256": "1D61F49188883A23A4DF6998E482D28D448F3D5A39DD546586797D01891BD182",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "src/Amr.ControlGui/MainForm.Feedback.cs",
+      "SHA256": "3E79D70CA8DE7536E89E9899DFFB336F86CF1D3C5E1167782F4953B84A2D0145",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "src/Amr.ControlGui/MockAmrDataProvider.Simulation.cs",
+      "SHA256": "50187BC5763A522DFD7CA865703C0DD1CEE036E78EF315435C9F044F5AC69366",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "src/Amr.ControlGui/SimulationForm.cs",
+      "SHA256": "DA6ACB41158227D3D31FBD6FAA74D265ED8FB37A29CD113697CD6FDF04D3D664",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "src/Amr.ControlGui/SourceSelectionForm.cs",
+      "SHA256": "82E96D22CA6E71B80E7603EFA6EF2ABF8A8C11D7499986E7D973DFB99404F283",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "tests/Amr.ControlGui.Tests/FeedbackSimulationTests.cs",
+      "SHA256": "3E4A79D675EC2C09BDE200AAD7463B59648D6C7B747BCA2F9BDFBAFFCA71F9AE",
+      "Match": true,
+      "Included": true
+    },
+    {
+      "Path": "tests/Amr.ControlGui.Tests/FeedbackViewTests.cs",
+      "SHA256": "2A6D7C43EEED98484E76E09CFF92965B2AFAEDE6FCF5D2AA5A77D93AD6576358",
+      "Match": true,
+      "Included": true
+    }
+  ],
+  "PreservedRefs": [
+    "refs/heads/codex/preserve-6-review-evidence 20950a2132bd39917013418928412772ea701559",
+    "refs/heads/codex/preserve-grid-map-20261023 4b9f950555aff6ad23e67495b5d0ec9cb9371b3b",
+    "refs/stash 1fffc4b4fef06b7e63d95f84724f5f2fc96ddc0b"
+  ],
+  "PublicationStatus": "Prepared; remote verification is recorded in Issue #48."
+}

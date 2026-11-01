@@ -1,0 +1,22 @@
+  Amr.Core -> C:\amr-control-system-demo\src\Amr.Core\bin\Debug\net10.0\Amr.Core.dll
+  Amr.Communication -> C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll
+  Amr.Simulator -> C:\amr-control-system-demo\src\Amr.Simulator\bin\Debug\net10.0\Amr.Simulator.dll
+  Amr.ControlGui -> C:\amr-control-system-demo\src\Amr.ControlGui\bin\Debug\net10.0-windows\Amr.ControlGui.dll
+  Amr.ControlGui.Tests -> C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll
+C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+[xUnit.net 00:00:02.27]     Amr.ControlGui.Tests.FeedbackViewTests.ClosingMovingWindowAndReopeningShowsIncompleteMove [FAIL]
+  실패 Amr.ControlGui.Tests.FeedbackViewTests.ClosingMovingWindowAndReopeningShowsIncompleteMove [1 s]
+  오류 메시지:
+   Assert.Contains() Failure: Sub-string not found
+String:    "Stop · 정지 완료"
+Not found: "미완료"
+  스택 추적:
+     at Amr.ControlGui.Tests.FeedbackViewTests.<>c.<ClosingMovingWindowAndReopeningShowsIncompleteMove>b__0_0() in C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\FeedbackViewTests.cs:line 37
+   at Amr.ControlGui.Tests.FeedbackViewTests.<>c__DisplayClass7_0.<OnSta>b__0() in C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\FeedbackViewTests.cs:line 212
+--- End of stack trace from previous location ---
+   at Amr.ControlGui.Tests.FeedbackViewTests.OnSta(Action action) in C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\FeedbackViewTests.cs:line 216
+--- End of stack trace from previous location ---
+결과 파일: C:\amr-control-system-demo\evidence\GUI\20261101-feedback-integration-01\window-close-red.trx
+
+실패!  - 실패:     1, 통과:     0, 건너뜀:     0, 전체:     1, 기간: 1 s - Amr.ControlGui.Tests.dll (net10.0)

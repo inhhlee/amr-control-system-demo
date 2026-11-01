@@ -38,6 +38,7 @@ public partial class MainForm : Form
         modeLabel.Text = provider.Mode == ProviderMode.Mock ? "MOCK · 시험 데이터" : "ACTUAL · 실제 공급자";
         advanceButton.Visible = completeSuccessButton.Visible = completeFailureButton.Visible = provider.Mode == ProviderMode.Mock;
         if (provider is GridMapDataProvider) ConfigureGridMode();
+        else if (provider is MockAmrDataProvider { FeedbackDemo: true }) ConfigureFeedbackView();
     }
 
     protected override void OnShown(EventArgs e)
@@ -105,6 +106,7 @@ public partial class MainForm : Form
         RefreshDashboard();
         statusLabel.Text = $"장비 {change.Devices.Length}대 · 알람 {change.Alarms.Length}건 · 요청 {_commands.Length}건 · 상태 버전 {change.Revision}";
         UpdateButtons();
+        RefreshFeedback(change);
     }
 
     private string? SelectedAmrId => deviceGrid.SelectedRows.Count == 0 ? null : deviceGrid.SelectedRows[0].Cells[0].Value as string;
@@ -113,9 +115,10 @@ public partial class MainForm : Form
 
     private async void DeviceSelectionChanged(object? sender, EventArgs e)
     {
-        if (_rendering || _closing || _provider is null || SelectedAmrId is not string id) return;
+        if (_rendering || _closing || _provider is null) return;
         ShowSelectedDevice();
         UpdateButtons();
+        if (SelectedAmrId is not string id) return;
         if (_provider is GridMapDataProvider) return; // 같은 프레임의 위치와 격자 상태를 함께 유지한다.
         long request = ++_selectionRequest;
         await TrackAsync(async token =>
@@ -162,6 +165,7 @@ public partial class MainForm : Form
         alarmsValue.ForeColor = _alarms.IsEmpty ? Color.FromArgb(51, 65, 85) : Color.Firebrick;
         alarmsDetail.Text = $"명령 대기 {_commands.Count(x => x.Result == CommandResult.Unconfirmed)} · 성공 {_commands.Count(x => x.Result == CommandResult.Success)} · 실패 {_commands.Count(x => x.Result == CommandResult.Failure)}";
         alarmSummary.Text = _alarms.IsEmpty ? "현재 알람 없음\n수신된 알람 0건" : string.Join("\n", _alarms.Take(3).Select(x => $"{x.AmrId} · {x.Code}\n{x.Message}"));
+        RefreshFeedbackSummary();
     }
 
     private void MapDeviceSelected(object? sender, EventArgs e)
@@ -180,6 +184,7 @@ public partial class MainForm : Form
         if (SelectedAmrId is not string id || !_devices.TryGetValue(id, out var device))
         {
             detailsLabel.Text = "장비를 선택하세요.";
+            if (_simulationTarget is not null) _simulationTarget.Text = "지도 또는 장비 목록에서 AMR 선택";
             return;
         }
         detailsLabel.Text = $"{device.AmrId}\n\nX {Number(device.X)} m / Y {Number(device.Y)} m\n속도  {Number(device.SpeedMps)} m/s\n운행  {StateText(device.State)}\n\nBroker  {ConnectionText(device.BrokerConnection)}\n생존  {LivenessText(device.Liveness)}\nHeartbeat  {TimeText(device.LastHeartbeatReceivedAt)}\nTelemetry  {TimeText(device.LastTelemetryReceivedAt)}";
@@ -192,6 +197,7 @@ public partial class MainForm : Form
             if (CurrentDomainStatus is { } domainStatus) detailsLabel.Text += "\n" + DomainStatusText(domainStatus);
             if (_gridFrame?.Error is not null) detailsLabel.Text += "\n마지막 수신값 · 갱신 오류";
         }
+        ShowJourney(device);
     }
 
     private async void AdvanceClicked(object? sender, EventArgs e)
@@ -251,6 +257,7 @@ public partial class MainForm : Form
     private void UpdateButtons()
     {
         bool ready = !_closing && !_actionBusy && SelectedAmrId is not null;
+        if (_openSimulation is not null) _openSimulation.Enabled = ready;
         advanceButton.Enabled = ready && _advanceScenario is not null;
         submitButton.Enabled = ready && _dispatcher is not null;
         bool pending = ready && _completeScenario is not null && _commands.Any(x => x.AmrId == SelectedAmrId && x.Result == CommandResult.Unconfirmed);
@@ -281,6 +288,7 @@ public partial class MainForm : Form
         e.Cancel = true;
         if (_closing) return;
         _closing = true;
+        CloseSimulations();
         Enabled = false;
         _lifetime.Cancel();
         try

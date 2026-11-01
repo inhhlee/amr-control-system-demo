@@ -9,7 +9,7 @@
 | 공통 | 요구·기능·입출력 정의 | 담당 원본은 `C:\process-plan`의 명세·과제계획. 이 폴더에는 실행 근거만 둔다. |
 | 과제1 통신 | 기초 통신 완료. 자동826 및 실제 MQTT20 | [최종 완료조건표](task1/20261031-final/README.md) · [통신826 상세](COM-06/20261031-console-trial-01/final-tests/Communication-order.trx) · [실제20 판정](COM-06/20261031-task1-final-acceptance-02/verification.json) · [대표 콘솔](COM-06/20261031-task1-final-acceptance-02/trial.stdout.log). 실제 AMR 명령 수행·Core 업무 추적과 구분. |
 | 과제2 가상 AMR | 설정·수량·좌표 이동·MQTT 송신 일부 완료 | [최신 설정/다중 실행 검증](AMR/20261031-fleet-settings-01/README.md) · [실제 MQTT17](AMR/20261031-fleet-settings-live-03/verification.json) · [격자 시연 범위](AMR/20261027-grid-integration-01/README.md). 장애 알람/명령 수행 #50/#51은 후속. |
-| 과제3 GUI | Mock·대시보드·격자·두 AMR 조회의 부분 구현/검증 | [격자 GUI](GUI/20261027-grid-dashboard-01/README.md) · [두 AMR GUI와 한계](COM-02/20261028-two-amr-domain-01/README.md). 화면 캡처·자동시험·네이티브 조작의 검증 범위를 각각 확인. 전체 GUI 완료 판정 아님. |
+| 과제3 GUI | Mock 대시보드·지도·알람/이력·별도 실행창의 출발지·시작/Stop 및 기존 격자/두 AMR 조회 | [피드백 개선본](GUI/20261030-figma-feedback-01/README.md) · [출발지 설정](GUI/20261030-source-settings-01/README.md) · [현재 develop 통합 검증](GUI/20261101-feedback-integration-01/README.md) · [실제 격자/두 AMR와 한계](COM-02/20261028-two-amr-domain-01/README.md). Mock 화면/실제 연동/자동·수동 검증을 구분하며 과제3 전체 완료 판정은 별도다. |
 | 과제4 관제 기본 기능 | 최소 계약·두 AMR 상태/관제 경보·미션 보류의 일부 구현 | [Core 도메인과 실제 관측](COM-02/20261028-two-amr-domain-01/README.md) · [기존 Core9 회귀](COM-06/20261031-console-trial-01/final-tests/Core.trx). 명령 결과/이력·DB 등 전체 업무 기능 완료 아님. |
 | 과제5 모듈 연결 | 앞선 과제의 부분 MQTT/GUI 연동 근거만 있음 | [부분 연동과 제외 범위](COM-02/20261028-two-amr-domain-01/README.md). 과제5 전체 시나리오 검증 완료 근거는 아직 없음. |
 

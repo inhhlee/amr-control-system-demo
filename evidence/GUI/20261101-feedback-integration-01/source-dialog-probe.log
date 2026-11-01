@@ -1,0 +1,32 @@
+  Amr.Core -> C:\amr-control-system-demo\src\Amr.Core\bin\Debug\net10.0\Amr.Core.dll
+  Amr.Communication -> C:\amr-control-system-demo\src\Amr.Communication\bin\Debug\net10.0\Amr.Communication.dll
+  Amr.Simulator -> C:\amr-control-system-demo\src\Amr.Simulator\bin\Debug\net10.0\Amr.Simulator.dll
+  Amr.ControlGui -> C:\amr-control-system-demo\src\Amr.ControlGui\bin\Debug\net10.0-windows\Amr.ControlGui.dll
+  Amr.ControlGui.Tests -> C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll
+C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.20]   Discovering: Amr.ControlGui.Tests
+[xUnit.net 00:00:00.33]   Discovered:  Amr.ControlGui.Tests
+[xUnit.net 00:00:00.38]   Starting:    Amr.ControlGui.Tests
+SourceSettings: queue action
+SourceSettings: click
+SourceSettings: callback owned=1
+SourceSettings: returned
+SourceSettings: queue action
+SourceSettings: click
+SourceSettings: callback owned=1
+SourceSettings: returned
+SourceSettings: queue action
+SourceSettings: click
+SourceSettings: callback owned=1
+SourceSettings: returned
+[xUnit.net 00:00:02.33]   Finished:    Amr.ControlGui.Tests
+  통과 Amr.ControlGui.Tests.FeedbackViewTests.SourceSettingsOnlyAppliesExplicitChoiceAndKeepsOtherAmrUnchanged [1 s]
+결과 파일: C:\amr-control-system-demo\evidence\GUI\20261101-feedback-integration-01\source-dialog-probe.trx
+
+테스트를 실행했습니다.
+총 테스트 수: 1
+     통과: 1
+ 총 시간: 3.2244 초

@@ -34,15 +34,37 @@ public sealed partial class MapCanvas : Control
         Invalidate();
     }
 
-    internal bool TryGetViewport(out MapViewport viewport) => _gridState is not null ? TryGetGridViewport(out viewport) : MapViewport.TryCreate(
-        new RectangleF(44, 24, ClientSize.Width - 62, ClientSize.Height - 66), _devices.Where(ValidPosition).ToArray(), out viewport);
+    internal double Zoom { get; private set; } = 1;
+    // 화면 투영 배율만 변경한다. 공급자의 AMR 좌표·거리·이동 상태에는 영향을 주지 않는다.
+    internal void SetZoom(double zoom)
+    {
+        if (!double.IsFinite(zoom)) throw new ArgumentOutOfRangeException(nameof(zoom));
+        Zoom = Math.Clamp(zoom, .5, 3);
+        Invalidate();
+    }
+
+    internal bool TryGetViewport(out MapViewport viewport)
+    {
+        if (_gridState is not null) return TryGetGridViewport(out viewport);
+        var points = _devices.Where(ValidPosition).ToList();
+        foreach (var device in _devices.Where(x => x.Journey is not null))
+        {
+            points.Add(device with { X = device.Journey!.Source.X, Y = device.Journey.Source.Y });
+            points.Add(device with { X = device.Journey!.Destination.X, Y = device.Journey.Destination.Y });
+        }
+        if (!MapViewport.TryCreate(new RectangleF(44, 24, ClientSize.Width - 62, ClientSize.Height - 66), points, out viewport)) return false;
+        viewport = viewport with { MinX = viewport.MinX + viewport.SpanX * (1 - 1 / Zoom) / 2,
+            MinY = viewport.MinY + viewport.SpanY * (1 - 1 / Zoom) / 2, SpanX = viewport.SpanX / Zoom, SpanY = viewport.SpanY / Zoom };
+        return true;
+    }
 
     internal PointF? MarkerPoint(string id) => TryGetViewport(out var viewport) && _devices.FirstOrDefault(x => x.AmrId == id) is { } device && ValidPosition(device)
         ? viewport.Project(device.X, device.Y) : null;
 
     internal void SelectMarkerAt(PointF location)
     {
-        var candidates = _devices.Where(ValidPosition).Where(x => MarkerPoint(x.AmrId) is PointF point &&
+        if (!TryGetViewport(out var view) || !view.Plot.Contains(location)) return;
+        var candidates = _devices.Where(ValidPosition).Where(x => MarkerPoint(x.AmrId) is PointF point && view.Plot.Contains(point) &&
             Math.Pow(point.X - location.X, 2) + Math.Pow(point.Y - location.Y, 2) <= 20 * 20).ToArray();
         if (candidates.Length == 0) return;
         // 같은 좌표의 장비도 반복 클릭으로 모두 선택할 수 있다.
@@ -106,7 +128,11 @@ public sealed partial class MapCanvas : Control
         graphics.DrawRectangle(framePen, Rectangle.Round(view.Plot));
         TextRenderer.DrawText(graphics, "Y (m)", Font, new Point(5, 3), Color.SlateGray);
         TextRenderer.DrawText(graphics, "X (m)", Font, new Point(Math.Max(0, Width - 45), Height - 20), Color.SlateGray);
+        var clip = graphics.Save();
+        graphics.SetClip(view.Plot);
         foreach (var device in _devices.Where(ValidPosition).OrderBy(x => x.AmrId == SelectedAmrId)) DrawMarker(graphics, view, device);
+        if (_devices.FirstOrDefault(x => x.AmrId == SelectedAmrId) is { Journey: { } journey } selected) DrawStations(graphics, view, selected, journey);
+        graphics.Restore(clip);
         int invalid = _devices.Count(x => !ValidPosition(x));
         if (invalid > 0) TextRenderer.DrawText(graphics, $"표시할 수 없는 좌표 {invalid}건", Font, new Point(44, 3), Color.Firebrick);
         if (Focused) ControlPaint.DrawFocusRectangle(graphics, new Rectangle(1, 1, Width - 2, Height - 2));
@@ -130,6 +156,27 @@ public sealed partial class MapCanvas : Control
         var bounds = new Rectangle((int)Math.Clamp(point.X - labelSize.Width / 2, view.Plot.Left, Math.Max(view.Plot.Left, view.Plot.Right - labelSize.Width)),
             (int)(point.Y > view.Plot.Top + 35 ? point.Y - 35 : point.Y + 19), labelSize.Width, labelSize.Height);
         TextRenderer.DrawText(graphics, label, Font, bounds, selected ? Color.FromArgb(29, 78, 216) : Color.FromArgb(51, 65, 85), Color.White);
+    }
+
+    // 선택 장비의 출발(S)·목적지(G)와 담당 AMR을 표시한다. 이 Mock 지도에는 이동 경로 선을 그리지 않는다.
+    private void DrawStations(Graphics graphics, MapViewport view, AmrSnapshot device, AmrJourney journey)
+    {
+        void Station(MapStation station, string letter, string label, Color color, int offset)
+        {
+            var point = view.Project(station.X, station.Y);
+            if (!view.Plot.Contains(point)) return;
+            using var pen = new Pen(color, 1.5f);
+            graphics.FillRectangle(Brushes.White, point.X - 7, point.Y - 7, 14, 14);
+            graphics.DrawRectangle(pen, point.X - 7, point.Y - 7, 14, 14);
+            TextRenderer.DrawText(graphics, letter, Font, new Rectangle((int)point.X - 8, (int)point.Y - 8, 16, 16), color, TextFormatFlags.HorizontalCenter);
+            var size = TextRenderer.MeasureText(label, Font);
+            int x = (int)Math.Clamp(point.X - size.Width / 2, view.Plot.Left, Math.Max(view.Plot.Left, view.Plot.Right - size.Width));
+            int y = (int)Math.Clamp(point.Y + offset, view.Plot.Top, Math.Max(view.Plot.Top, view.Plot.Bottom - size.Height));
+            TextRenderer.DrawText(graphics, label, Font, new Point(x, y), color, Color.White);
+        }
+        Station(journey.Source, "S", $"출발 {journey.Source.Name} · {device.AmrId}", Color.Teal, 25);
+        string status = journey.Phase switch { SimulationPhase.Arrived => "도착", SimulationPhase.Stopped => "정지", _ => "도착 예정" };
+        Station(journey.Destination, "G", $"{journey.Destination.Name} · {device.AmrId} {status}", Color.RoyalBlue, -48);
     }
 
     private void DrawMessage(Graphics graphics, string message) => TextRenderer.DrawText(graphics, message, Font,

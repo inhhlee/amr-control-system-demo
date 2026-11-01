@@ -21,6 +21,7 @@ partial class MainForm
         if (disposing && !_resourcesDisposed)
         {
             _resourcesDisposed = true;
+            CloseSimulations();
             _lifetime.Cancel();
             _lifetime.Dispose();
             components?.Dispose();
@@ -34,7 +35,7 @@ partial class MainForm
         SuspendLayout();
         Font = new Font("맑은 고딕", 9);
         BackColor = Color.FromArgb(242, 245, 249);
-        var root = new TableLayoutPanel { Dock = DockStyle.Fill, Padding = new Padding(16), ColumnCount = 1, RowCount = 4 };
+        var root = new TableLayoutPanel { Name = "rootLayout", Dock = DockStyle.Fill, Padding = new Padding(16), ColumnCount = 1, RowCount = 4 };
         root.RowStyles.Add(new RowStyle(SizeType.Absolute, 176));
         root.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
         root.RowStyles.Add(new RowStyle(SizeType.Absolute, 132));
@@ -63,7 +64,7 @@ partial class MainForm
         body.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 68));
         body.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 32));
         var mapSection = Section("지도", out var mapBody);
-        var mapLayout = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 3, Margin = Padding.Empty };
+        var mapLayout = new TableLayoutPanel { Name = "mapLayout", Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 3, Margin = Padding.Empty };
         mapLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 24));
         mapLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
         mapLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 45));
@@ -100,13 +101,15 @@ partial class MainForm
         mapLayout.Controls.Add(legend, 0, 2);
         mapBody.Controls.Add(mapLayout);
 
-        var right = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 2, Margin = Padding.Empty };
+        var right = new TableLayoutPanel { Name = "sideLayout", Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 2, Margin = Padding.Empty };
         right.RowStyles.Add(new RowStyle(SizeType.Absolute, 86));
         right.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
         var alarmSection = Section("알람", out var alarmBody);
+        alarmBody.Name = "alarmBody";
         alarmSummary = TextLabel("alarmSummary", "현재 알람 없음\n수신된 알람 0건", 9, Color.SlateGray);
         alarmBody.Controls.Add(alarmSummary);
         var commandSection = Section("명령 · Mock 확인", out var commandBody);
+        commandBody.Name = "commandBody";
         commandTitle = commandSection.Controls.OfType<Label>().Single();
         var commandLayout = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 3, Margin = Padding.Empty };
         commandLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
@@ -174,7 +177,7 @@ partial class MainForm
         body.Controls.Add(mapSection, 0, 0);
         body.Controls.Add(right, 1, 0);
 
-        var bottom = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 2, RowCount = 1, Margin = Padding.Empty };
+        var bottom = new TableLayoutPanel { Name = "bottomLayout", Dock = DockStyle.Fill, ColumnCount = 2, RowCount = 1, Margin = Padding.Empty };
         bottom.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 68));
         bottom.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 32));
         var listSection = Section("장비 목록 · 지도와 선택 연동", out var listBody);

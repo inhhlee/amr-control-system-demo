@@ -1,0 +1,18 @@
+[
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.ControlGui\\SourceSelectionForm.cs",
+    "Hash": "82E96D22CA6E71B80E7603EFA6EF2ABF8A8C11D7499986E7D973DFB99404F283"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.ControlGui\\SimulationForm.cs",
+    "Hash": "DA6ACB41158227D3D31FBD6FAA74D265ED8FB37A29CD113697CD6FDF04D3D664"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\tests\\Amr.ControlGui.Tests\\FeedbackViewTests.cs",
+    "Hash": "2A6D7C43EEED98484E76E09CFF92965B2AFAEDE6FCF5D2AA5A77D93AD6576358"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.ControlGui\\bin\\Debug\\net10.0-windows\\Amr.ControlGui.dll",
+    "Hash": "1D12A8B83C04FDF85DF1A4D843C7C1195E073A77C40F78BD8B7291FCC9F748DC"
+  }
+]

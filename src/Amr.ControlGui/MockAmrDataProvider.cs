@@ -5,7 +5,7 @@ using Amr.Core;
 
 namespace Amr.ControlGui;
 
-public sealed class MockAmrDataProvider : IAmrDataProvider
+public sealed partial class MockAmrDataProvider : IAmrDataProvider
 {
     private readonly object _gate = new();
     private readonly Dictionary<string, AmrSnapshot> _devices = new(StringComparer.Ordinal);
@@ -17,7 +17,7 @@ public sealed class MockAmrDataProvider : IAmrDataProvider
     private long _revision;
     private bool _disposed;
 
-    public MockAmrDataProvider(int subscriptionCapacity, int commandCapacity, TimeProvider? clock = null)
+    public MockAmrDataProvider(int subscriptionCapacity, int commandCapacity, TimeProvider? clock = null, bool feedbackDemo = false)
     {
         ArgumentOutOfRangeException.ThrowIfLessThan(subscriptionCapacity, 1);
         ArgumentOutOfRangeException.ThrowIfLessThan(commandCapacity, 1);
@@ -26,6 +26,8 @@ public sealed class MockAmrDataProvider : IAmrDataProvider
         _clock = clock ?? TimeProvider.System;
         _devices.Add("AMR_001", InitialDevice("AMR_001", 0, 0));
         _devices.Add("AMR_002", InitialDevice("AMR_002", 5, 2));
+        FeedbackDemo = feedbackDemo;
+        if (FeedbackDemo) InitializeFeedbackDemo();
     }
 
     public ProviderMode Mode => ProviderMode.Mock;
@@ -56,7 +58,7 @@ public sealed class MockAmrDataProvider : IAmrDataProvider
         lock (_gate)
         {
             CheckAvailable(cancellationToken);
-            return Task.FromResult<IReadOnlyList<AlarmSnapshot>>(ImmutableArray<AlarmSnapshot>.Empty);
+            return Task.FromResult<IReadOnlyList<AlarmSnapshot>>(_demoAlarms.Where(x => Matches(query, x.AmrId, x.ObservedAt, SeverityText(x.Severity))).ToImmutableArray());
         }
     }
 
@@ -66,7 +68,7 @@ public sealed class MockAmrDataProvider : IAmrDataProvider
         lock (_gate)
         {
             CheckAvailable(cancellationToken);
-            return Task.FromResult(new HistoryResult([]));
+            return Task.FromResult(new HistoryResult(_history.Where(x => Matches(query, x.AmrId, x.ObservedAt, x.Type)).Reverse().ToImmutableArray()));
         }
     }
 
@@ -130,6 +132,7 @@ public sealed class MockAmrDataProvider : IAmrDataProvider
         {
             CheckAvailable(cancellationToken);
             if (!_devices.TryGetValue(amrId, out var device)) throw new ArgumentException("시험 장비가 없습니다.", nameof(amrId));
+            if (FeedbackDemo) throw new InvalidOperationException("독립 실행창에서 시작·Stop을 사용하세요.");
             bool moving = device.State != AmrState.BUSY;
             _devices[amrId] = device with
             {
@@ -150,6 +153,7 @@ public sealed class MockAmrDataProvider : IAmrDataProvider
         lock (_gate)
         {
             CheckAvailable(cancellationToken);
+            if (FeedbackDemo) return Task.FromResult(SubmitSimulation(request));
             if (!_devices.ContainsKey(request.AmrId)) return Reject(CommandRejection.UnknownDevice, "등록된 시험 장비가 아닙니다.");
             if (request.Kind != CommandKind.MOVE) return Reject(CommandRejection.UnsupportedInMock, "첫 Mock은 MOVE 접수·결과 확인만 지원합니다.");
             if (request.X is not double x || request.Y is not double y || !double.IsFinite(x) || !double.IsFinite(y))
@@ -173,6 +177,7 @@ public sealed class MockAmrDataProvider : IAmrDataProvider
         lock (_gate)
         {
             CheckAvailable(cancellationToken);
+            if (FeedbackDemo) throw new InvalidOperationException("이동 계산이 실행 결과를 결정합니다.");
             if (!_commands.TryGetValue(commandId, out var command) || command.AmrId != amrId)
                 throw new ArgumentException("대상 장비와 요청 ID에 맞는 시험 요청이 없습니다.", nameof(commandId));
             if (command.Result != CommandResult.Unconfirmed) throw new InvalidOperationException("이미 결과를 지정한 시험 요청입니다.");
@@ -194,6 +199,8 @@ public sealed class MockAmrDataProvider : IAmrDataProvider
         {
             if (_disposed) return ValueTask.CompletedTask;
             _disposed = true;
+            _simulations.Clear();
+            _movementCommands.Clear();
             foreach (var subscription in _subscriptions)
             {
                 while (subscription.Channel.Reader.TryRead(out _)) { }
@@ -206,7 +213,8 @@ public sealed class MockAmrDataProvider : IAmrDataProvider
     }
 
     private AmrChange Capture(AmrChangeKind kind, string? amrId = null, string? commandId = null) =>
-        new(_revision, kind, DeviceValues(), [], _commands.Values.OrderBy(x => x.Revision).ToImmutableArray(), amrId, commandId);
+        new(_revision, kind, DeviceValues(), _demoAlarms.ToImmutableArray(), _commands.Values.OrderBy(x => x.Revision).ToImmutableArray(), amrId, commandId)
+        { History = _history.ToImmutableArray() };
 
     private ImmutableArray<AmrSnapshot> DeviceValues() => _devices.Values.OrderBy(x => x.AmrId, StringComparer.Ordinal).ToImmutableArray();
 

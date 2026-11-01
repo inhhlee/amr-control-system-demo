@@ -12,7 +12,11 @@ public sealed record AmrChange(
     ImmutableArray<AlarmSnapshot> Alarms,
     ImmutableArray<CommandSnapshot> Commands,
     string? AmrId = null,
-    string? CommandId = null);
+    string? CommandId = null)
+{
+    // 작은 Mock 세션의 전체 이력. 실제 DB의 페이지/보존 계약과 구분한다.
+    public ImmutableArray<HistoryEntry> History { get; init; } = [];
+}
 
 public sealed class AmrResyncRequiredException : Exception
 {
