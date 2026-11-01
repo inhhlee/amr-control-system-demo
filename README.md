@@ -5,7 +5,15 @@
 
 ## 폴더별 역할 한눈에 보기
 
+GUI·trial·Seq 개선과 역할별 파일 이동은 [별도 커밋으로 구분해 관리한다](evidence/GIT/20261101-local-publication-01/README.md). 현재 작업 브랜치는 `feature/58-gui-mqtt-live`이며 develop 반영 여부는 후속 PR에서 확인한다.
+
 사용자와 검토자가 **기능을 어디서 구현하고, 어떻게 시험하며, 결과를 어디서 확인하는지** 찾기 위한 안내다. 현재 로컬 코드 기준이며, 미커밋 구현과 원격 반영 상태는 아래 변경 기록과 각 검증 근거에서 구분한다.
+
+**실제 파일도 역할별 폴더로 배치한다.** 콘솔은 `Modes/Trial`, GUI는 `Views/Providers/Configuration`, Core는 `Contracts/Models/Commands/Domain`으로 구분했다. [현재 소스 트리](src/README.md#source-tree) · [이동 전후 목록](evidence/layout/20261101-role-folders-01/moves.json). Program.cs 진입점과 프로젝트 경로·namespace는 유지한다.
+
+![AMR 관제 시스템의 역할별 폴더 구조](.github/images/folder-structure.png)
+
+[구조 이미지 확대](.github/images/folder-structure.png) · [수정 가능한 SVG 원본](.github/images/folder-structure.svg) · [텍스트 트리·파일 설명](src/README.md#source-tree)
 
 | 폴더 | 역할·필요한 이유 | 주요 내용 | 먼저 볼 곳 |
 | --- | --- | --- | --- |
@@ -15,7 +23,7 @@
 | [tests](tests/README.md) | 입력에 맞는 결과가 나오는지 검사 | 프로젝트별 자동시험과 실제 MQTT·GUI·Seq 연동 시험 도구 | [시험별 안내](tests/README.md) |
 | [evidence](evidence/README.md) | 진행·완료 판단의 근거 확인 | 실행별 환경·입력·판정·대표 로그·화면·실패와 재확인 기록 | [과제별 검증 색인](evidence/README.md) |
 | [tools](tools/) | 시연과 특수 시험을 지원 | 격자 지도 웹 호스트, 통신 응답 차단 프록시, 보조 시험 실행기 | [지도 시연](tools/Amr.Simulator.Map/README.md) · [응답 차단 시험](tools/COM-03/README.md) · [보조 실행기](tools/RunSimulatorTests/Program.cs) |
-| [.github](.github/) | 변경 내용을 같은 기준으로 검토 | PR 작성 양식 | [PR 양식](.github/pull_request_template.md) |
+| [.github](.github/) | 변경 검토 양식과 README 시각 자료 관리 | PR 양식·폴더 구조 이미지 | [PR 양식](.github/pull_request_template.md) · [구조 이미지](.github/images/folder-structure.png) |
 
 계획·기능명세·결정사항·업무 기록의 원본은 `C:\process-plan`에서 관리한다. `bin`·`obj`·`.git` 내부와 임시 빌드 결과는 위 기능 안내 대상에서 제외한다.
 
@@ -26,10 +34,10 @@
 | 프로젝트 | 역할·필요한 이유 | 현재 담당 기능 | 대표 파일·상세 안내 |
 | --- | --- | --- | --- |
 | [Amr.Communication](src/Amr.Communication/) | AMR과 관제 사이의 공통 통신 기능 제공 | MQTT 접속·송수신·메시지 검사·장비별 수신 처리·생존 확인·재접속 | [ReconnectingCommunicationSession.cs](src/Amr.Communication/Mqtt/Sessions/ReconnectingCommunicationSession.cs) · [내부 폴더](src/README.md#communication) |
-| [Amr.Communication.Console](src/Amr.Communication.Console/) | 화면 없이 통신 동작을 시험·관찰 | trial 명령 입력, 핵심 이벤트 표시, 상세 로그의 Seq 전송 | [TrialConsoleRunner.cs](src/Amr.Communication.Console/TrialConsoleRunner.cs) · [내부 파일](src/README.md#console) |
-| [Amr.Simulator](src/Amr.Simulator/) | 실제 AMR 대신 시험 데이터와 명령 응답 생성 | 설정 읽기·좌표 이동·상태/생존 신호 송신, 명령 모드의 MOVE/STOP·최종 응답, 격자 이동 계산 | [SimulatorApplication.cs](src/Amr.Simulator/SimulatorApplication.cs) · [내부 폴더](src/README.md#simulator) |
-| [Amr.Core](src/Amr.Core/) | 화면과 연결부가 같은 관제 기준 사용 | 장비·상태·알람·조회/명령 계약, 명령 ID별 결과 추적, 통신 이상에 따른 관제 미션 보류 | [CommandTracker.cs](src/Amr.Core/CommandTracker.cs) · [주요 파일](src/README.md#core) |
-| [Amr.Infrastructure](src/Amr.Infrastructure/) | 통신 데이터를 GUI가 사용하는 형식으로 연결 | 수신값을 장비·알람·연결 상태로 변환, GUI 명령 발행·응답 연결, 이번 실행의 메모리 이력 | [MqttAmrDataProvider.cs](src/Amr.Infrastructure/MqttAmrDataProvider.cs) · [주요 파일](src/README.md#infrastructure) |
+| [Amr.Communication.Console](src/Amr.Communication.Console/) | 화면 없이 통신 동작을 시험·관찰 | trial 명령 입력, 핵심 이벤트 표시, 상세 로그의 Seq 전송 | [TrialConsoleRunner.cs](src/Amr.Communication.Console/Trial/TrialConsoleRunner.cs) · [내부 파일](src/README.md#console) |
+| [Amr.Simulator](src/Amr.Simulator/) | 실제 AMR 대신 시험 데이터와 명령 응답 생성 | 설정 읽기·좌표 이동·상태/생존 신호 송신, 명령 모드의 MOVE/STOP·최종 응답, 격자 이동 계산 | [SimulatorApplication.cs](src/Amr.Simulator/Execution/SimulatorApplication.cs) · [내부 폴더](src/README.md#simulator) |
+| [Amr.Core](src/Amr.Core/) | 화면과 연결부가 같은 관제 기준 사용 | 장비·상태·알람·조회/명령 계약, 명령 ID별 결과 추적, 통신 이상에 따른 관제 미션 보류 | [CommandTracker.cs](src/Amr.Core/Commands/CommandTracker.cs) · [주요 파일](src/README.md#core) |
+| [Amr.Infrastructure](src/Amr.Infrastructure/) | 통신 데이터를 GUI가 사용하는 형식으로 연결 | 수신값을 장비·알람·연결 상태로 변환, GUI 명령 발행·응답 연결, 이번 실행의 메모리 이력 | [MqttAmrDataProvider.cs](src/Amr.Infrastructure/Mqtt/MqttAmrDataProvider.cs) · [주요 파일](src/README.md#infrastructure) |
 | [Amr.ControlGui](src/Amr.ControlGui/) | 사용자가 장비 상태를 보고 명령 요청 | 대시보드·지도·알람·이력·AMR 별도 창, Mock/실제 MQTT/격자 호스트 조회 모드 | [Program.cs](src/Amr.ControlGui/Program.cs) · [주요 파일](src/README.md#gui) |
 
 <a id="module-connections"></a>
@@ -442,7 +450,7 @@ Windows·PowerShell 7·기동된 Docker Linux Engine·설치된 `eclipse-mosquit
 
 라이브러리는 실패를 `MqttConnectionException.Reason`으로 제공한다. 사용자 취소는 전달받은 토큰을 가진 `OperationCanceledException`이다. 실패·취소된 객체는 Client를 Dispose하고 재사용을 금지한다. 새 접속에는 새 객체/프로세스를 사용한다. 대기 중 취소는 최초로 관찰한 원인을 유지하며 늦은 결과·예외는 관찰만 하고 연결 승인으로 반영하지 않는다. 주입하는 Client는 Dispose로 전송 자원을 해제해야 하며 동기 호출 구간은 신속히 반환해야 한다.
 
-[ConsoleRunner](src/Amr.Communication.Console/ConsoleRunner.cs)에 실제 콘솔 흐름을 두고 시험에서 Client·취소 토큰·출력을 주입한다. Program은 Ctrl+C를 이 토큰에 전달한다. 최초 접속 중 Disconnected 이벤트는 연결 상실로 중복 기록하지 않으며, 예외의 자유 형식 메시지·Broker ReasonString은 출력하지 않는다.
+[ConsoleRunner](src/Amr.Communication.Console/Modes/ConsoleRunner.cs)에 실제 콘솔 흐름을 두고 시험에서 Client·취소 토큰·출력을 주입한다. Program은 Ctrl+C를 이 토큰에 전달한다. 최초 접속 중 Disconnected 이벤트는 연결 상실로 중복 기록하지 않으며, 예외의 자유 형식 메시지·Broker ReasonString은 출력하지 않는다.
 
 ```powershell
 # 오류 입력: 연결 시도 없이 종료 1

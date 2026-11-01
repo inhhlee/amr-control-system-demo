@@ -1,0 +1,5 @@
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\role-folders\bin\Amr.Core.Tests\debug\Amr.Core.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+결과 파일: C:\amr-control-system-demo\evidence\layout\20261101-role-folders-01\Amr.Core.Tests.trx
+
+통과!  - 실패:     0, 통과:    16, 건너뜀:     0, 전체:    16, 기간: 263 ms - Amr.Core.Tests.dll (net10.0)

@@ -19,7 +19,7 @@ Heartbeat 감시 수명은 정식 [`ControlCommunicationSession`](../../src/Amr.
 | `Control/GridControlConnection.cs` | 관제 세션의 결과를 지도 이벤트로 전달. 발행 Client는 Simulator가 별도로 소유 |
 | `Control/GridMapCoordinates.cs` | 받은 X/Y 좌표를 지도 칸으로 변환·범위 검사 |
 | `Control/GridMissionSettings.cs` | 웹 포트를 포함한 시연 설정 로드와 시작 시점 설정 복사 |
-| `MqttMapReceiver.cs`, `MqttMapProjection.cs` | Communication 세션의 얇은 어댑터·로그 기록, 수신 모델 보관 |
+| `Mqtt/MqttMapReceiver.cs`, `Mqtt/MqttMapProjection.cs` | Communication 세션의 얇은 어댑터·로그 기록, 수신 모델 보관 |
 | `wwwroot` | HTML·CSS·`grid.js`로 지도·버튼·수신 좌표 표시 |
 
 현재 화면에서 사용하지 않는 이전 `MapSession.cs`·`app.js`는 제거했다. 이전 실행 증거는 그대로 보존한다.

@@ -1,0 +1,87 @@
+{
+  "head": "755e1405dd4bb74b54a80a97abdc47d244fcfd99",
+  "branch": "feature/58-gui-mqtt-live",
+  "uncommitted": true,
+  "movedFiles": 70,
+  "csharpFiles": 69,
+  "unchangedMovedContent": true,
+  "existingFilesContentPreserved": 3956,
+  "modifiedExistingDocumentsOrTools": [
+    "src/README.md",
+    "tests/README.md",
+    "BUILDING.md",
+    "README.md",
+    "evidence/AMR/20261021-movement-recheck-01/README.md",
+    "evidence/COM-02/20261028-control-session-01/README.md",
+    "evidence/COM-02/20261028-two-amr-domain-01/README.md",
+    "evidence/GUI/20261030-source-settings-01/README.md",
+    "evidence/README.md",
+    "tests/manual/COM03-C/Verify-BrokerShutdown.ps1",
+    "tests/manual/COM03-C/Verify-KeepAlive.ps1",
+    "tests/manual/COM03-C/Verify-ResponseGate.ps1",
+    "tools/Amr.Simulator.Map/README.md"
+  ],
+  "historicalReadmeLinksOnly": 9,
+  "currentLinksChecked": 240,
+  "headingLinksChecked": 14,
+  "automatedTests": [
+    {
+      "total": 839,
+      "executed": 839,
+      "passed": 839,
+      "failed": 0,
+      "notExecuted": 0,
+      "project": "Amr.Communication.Tests"
+    },
+    {
+      "total": 16,
+      "executed": 16,
+      "passed": 16,
+      "failed": 0,
+      "notExecuted": 0,
+      "project": "Amr.Core.Tests"
+    },
+    {
+      "total": 250,
+      "executed": 250,
+      "passed": 250,
+      "failed": 0,
+      "notExecuted": 0,
+      "project": "Amr.Simulator.Tests"
+    },
+    {
+      "total": 72,
+      "executed": 72,
+      "passed": 72,
+      "failed": 0,
+      "notExecuted": 0,
+      "project": "Amr.Simulator.Map.Tests"
+    },
+    {
+      "total": 84,
+      "executed": 84,
+      "passed": 84,
+      "failed": 0,
+      "notExecuted": 0,
+      "project": "Amr.ControlGui.Tests"
+    }
+  ],
+  "automatedPassed": 1261,
+  "resources": [
+    "Amr.ControlGui.MainForm.resources"
+  ],
+  "entrypoints": {
+    "ConsoleHelpExit": 0,
+    "SimulatorHelpExit": 0
+  },
+  "buildWarnings": 0,
+  "buildErrors": 0,
+  "scriptVerification": {
+    "ScriptSyntax": "Passed (3)",
+    "SourceInventory": "Passed",
+    "CurrentSourceFiles": 221
+  },
+  "actualMqttSeqTest": "not rerun; file contents and communication contract unchanged",
+  "commitsPushesPrs": false,
+  "resultAndRecordLinksChecked": 29
+}
