@@ -156,16 +156,16 @@ dotnet test tests/Amr.ControlGui.Tests/Amr.ControlGui.Tests.csproj
 | 확인할 기능 | 코드와 주요 메서드 | 담당 역할 |
 | --- | --- | --- |
 | 앱 실행·공급자 선택 | [Program.cs](src/Amr.ControlGui/Program.cs) — `Main` | 인자 없는 실행에 최신 Mock 프로필을 주입한다. `--grid-url`은 기존 격자/MQTT 모드다. |
-| DataProvider 인터페이스 | [IAmrDataProvider.cs](src/Amr.Core/IAmrDataProvider.cs), [ICommandDispatcher.cs](src/Amr.Core/ICommandDispatcher.cs) | 장비·알람·이력·요청 결과 조회/변경 구독과 명령 요청의 접점을 정의한다. |
-| 대시보드·알람·지도 옆 상세 | [MainForm.Feedback.cs](src/Amr.ControlGui/MainForm.Feedback.cs) — `ConfigureFeedbackView`, `RefreshFeedbackSummary`, `RefreshFeedback`, `ShowJourney` | 등록 수·현재 알람 수·오류/경고·비고·출발/목적지/담당 AMR 정보를 표시한다. |
-| 지도 확대/축소·출발/목적지 표식 | [MapCanvas.cs](src/Amr.ControlGui/MapCanvas.cs) — `SetZoom`, `TryGetViewport`, `DrawStations` | 데이터 좌표를 화면 좌표로 바꾸고 S/G 및 담당 호기를 그린다. 배율 변경은 실제 좌표를 바꾸지 않는다. |
-| 별도 실행창과 명령 버튼 | [SimulationForm.cs](src/Amr.ControlGui/SimulationForm.cs) — `SendAsync`, `Render`, `UpdateButtons` | 생성 시 AMR ID를 고정한다. 시작을 MOVE, Stop을 STOP으로 요청하고 상태·응답·버튼 허용 여부를 표시한다. |
-| 출발지 설정 화면 | [SourceSelectionForm.cs](src/Amr.ControlGui/SourceSelectionForm.cs), [SimulationForm.cs](src/Amr.ControlGui/SimulationForm.cs) — `OpenSourceSettings` | S-01/S-02의 좌표와 선택·적용 버튼을 표시한다. 명시적으로 적용한 값만 공급자에 전달하며 취소는 기존 좌표·이력을 유지한다. |
-| 가상 이동·정지·출발지 설정 | [MockAmrDataProvider.Simulation.cs](src/Amr.ControlGui/MockAmrDataProvider.Simulation.cs) — `SetSimulationSource`, `SubmitSimulation`, `AdvanceSimulations`, `FinishMovement` | 요청 허용 조건을 검사하고 기존 Simulator 계산으로 좌표를 갱신한다. Stop은 갱신 대상에서 제거해 마지막 좌표를 보존한다. |
-| 이력 조회와 초기화 | [MainForm.Feedback.cs](src/Amr.ControlGui/MainForm.Feedback.cs) — `RenderHistory`, `ResetHistoryView` | Mock의 전체 이력 사본을 조건별로 표시한다. 초기화는 입력·조회 조건·행 선택만 해제한다. |
-| 공급자 조회·통지와 화면 반영 | [MockAmrDataProvider.cs](src/Amr.ControlGui/MockAmrDataProvider.cs) — `WatchAsync`, `Capture`, `Publish`; [MainForm.cs](src/Amr.ControlGui/MainForm.cs) — `ObserveAsync`, `ApplyChange` | 같은 잠금에서 상태 사본을 만들고 통지한다. 폼은 UI 스레드에서 통지를 적용해 지도·목록·별도 창을 갱신한다. |
-| 화면에서 주고받는 데이터 | [AmrSnapshot.cs](src/Amr.Core/AmrSnapshot.cs), [QueryModels.cs](src/Amr.Core/QueryModels.cs), [AmrChange.cs](src/Amr.Core/AmrChange.cs) | 현재 위치/상태와 Journey, 알람 등급/활성/비고, 이력, 변경 스냅샷을 표현한다. |
-| 동작 검증 | [FeedbackSimulationTests.cs](tests/Amr.ControlGui.Tests/FeedbackSimulationTests.cs), [FeedbackViewTests.cs](tests/Amr.ControlGui.Tests/FeedbackViewTests.cs) | 이동/Stop/도착/거부/종료와 별도 창 대상 고정·이력 보존·확대/맞춤·최소 배치를 검증한다. |
+| DataProvider 인터페이스 | [IAmrDataProvider.cs](src/Amr.Core/Contracts/IAmrDataProvider.cs), [ICommandDispatcher.cs](src/Amr.Core/Contracts/ICommandDispatcher.cs) | 장비·알람·이력·요청 결과 조회/변경 구독과 명령 요청의 접점을 정의한다. |
+| 대시보드·알람·지도 옆 상세 | [MainForm.Feedback.cs](src/Amr.ControlGui/Views/Dashboard/MainForm.Feedback.cs) — `ConfigureFeedbackView`, `RefreshFeedbackSummary`, `RefreshFeedback`, `ShowJourney` | 등록 수·현재 알람 수·오류/경고·비고·출발/목적지/담당 AMR 정보를 표시한다. |
+| 지도 확대/축소·출발/목적지 표식 | [MapCanvas.cs](src/Amr.ControlGui/Views/Map/MapCanvas.cs) — `SetZoom`, `TryGetViewport`, `DrawStations` | 데이터 좌표를 화면 좌표로 바꾸고 S/G 및 담당 호기를 그린다. 배율 변경은 실제 좌표를 바꾸지 않는다. |
+| 별도 실행창과 명령 버튼 | [SimulationForm.cs](src/Amr.ControlGui/Views/Simulation/SimulationForm.cs) — `SendAsync`, `Render`, `UpdateButtons` | 생성 시 AMR ID를 고정한다. 시작을 MOVE, Stop을 STOP으로 요청하고 상태·응답·버튼 허용 여부를 표시한다. |
+| 출발지 설정 화면 | [SourceSelectionForm.cs](src/Amr.ControlGui/Views/Simulation/SourceSelectionForm.cs), [SimulationForm.cs](src/Amr.ControlGui/Views/Simulation/SimulationForm.cs) — `OpenSourceSettings` | S-01/S-02의 좌표와 선택·적용 버튼을 표시한다. 명시적으로 적용한 값만 공급자에 전달하며 취소는 기존 좌표·이력을 유지한다. |
+| 가상 이동·정지·출발지 설정 | [MockAmrDataProvider.Simulation.cs](src/Amr.ControlGui/Providers/Mock/MockAmrDataProvider.Simulation.cs) — `SetSimulationSource`, `SubmitSimulation`, `AdvanceSimulations`, `FinishMovement` | 요청 허용 조건을 검사하고 기존 Simulator 계산으로 좌표를 갱신한다. Stop은 갱신 대상에서 제거해 마지막 좌표를 보존한다. |
+| 이력 조회와 초기화 | [MainForm.Feedback.cs](src/Amr.ControlGui/Views/Dashboard/MainForm.Feedback.cs) — `RenderHistory`, `ResetHistoryView` | Mock의 전체 이력 사본을 조건별로 표시한다. 초기화는 입력·조회 조건·행 선택만 해제한다. |
+| 공급자 조회·통지와 화면 반영 | [MockAmrDataProvider.cs](src/Amr.ControlGui/Providers/Mock/MockAmrDataProvider.cs) — `WatchAsync`, `Capture`, `Publish`; [MainForm.cs](src/Amr.ControlGui/Views/Dashboard/MainForm.cs) — `ObserveAsync`, `ApplyChange` | 같은 잠금에서 상태 사본을 만들고 통지한다. 폼은 UI 스레드에서 통지를 적용해 지도·목록·별도 창을 갱신한다. |
+| 화면에서 주고받는 데이터 | [AmrSnapshot.cs](src/Amr.Core/Models/AmrSnapshot.cs), [QueryModels.cs](src/Amr.Core/Models/QueryModels.cs), [AmrChange.cs](src/Amr.Core/Models/AmrChange.cs) | 현재 위치/상태와 Journey, 알람 등급/활성/비고, 이력, 변경 스냅샷을 표현한다. |
+| 동작 검증 | [FeedbackSimulationTests.cs](tests/Amr.ControlGui.Tests/Simulation/FeedbackSimulationTests.cs), [FeedbackViewTests.cs](tests/Amr.ControlGui.Tests/Dashboard/FeedbackViewTests.cs) | 이동/Stop/도착/거부/종료와 별도 창 대상 고정·이력 보존·확대/맞춤·최소 배치를 검증한다. |
 
 읽을 때는 다음 세 흐름으로 따라가면 된다.
 

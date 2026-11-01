@@ -15,12 +15,23 @@
 | 폴더 | 확인하는 기능 | 대표 시험 |
 | --- | --- | --- |
 | [Amr.Communication.Tests](Amr.Communication.Tests/) | 접속·구독·메시지 검사·장비별 큐·생존 감시·재접속·명령 발행, 콘솔·로그 분리 | [재접속](Amr.Communication.Tests/Mqtt/Sessions/ReconnectingCommunicationSessionTests.cs) · [Seq/콘솔 분리](Amr.Communication.Tests/Console/Logging/TrialEventLoggerTests.cs) |
-| [Amr.Simulator.Tests](Amr.Simulator.Tests/) | 설정 읽기·단일/여러 AMR 생성·이동/도착·격자 탐색·MQTT 송신·MOVE/STOP 결과 | [명령 수행](Amr.Simulator.Tests/CommandDrivenAmrTests.cs) · [설정](Amr.Simulator.Tests/ConfigurationTests.cs) |
-| [Amr.Core.Tests](Amr.Core.Tests/) | 통신 이상·관제 미션 판단, 명령/응답 ID·중복·대기 시간 처리 | [관제 판단](Amr.Core.Tests/AmrDomainManagerTests.cs) · [명령 추적](Amr.Core.Tests/CommandTrackerTests.cs) |
-| [Amr.ControlGui.Tests](Amr.ControlGui.Tests/) | Mock·지도·대시보드·선택/별도 창, 실제 MQTT 공급자의 상태 변환과 명령 처리 | [공급자](Amr.ControlGui.Tests/MqttDataProviderTests.cs) · [화면](Amr.ControlGui.Tests/MqttDashboardTests.cs) · [명령](Amr.ControlGui.Tests/MqttControlTests.cs) |
-| [Amr.Simulator.Map.Tests](Amr.Simulator.Map.Tests/) | 격자 웹 호스트의 설정·좌표 변환·수신값 투영·여러 AMR 설정 | [좌표 투영](Amr.Simulator.Map.Tests/ProjectionTests.cs) · [지도 설정](Amr.Simulator.Map.Tests/MapConfigurationTests.cs) |
+| [Amr.Simulator.Tests](Amr.Simulator.Tests/) | 설정 읽기·단일/여러 AMR 생성·이동/도착·격자 탐색·MQTT 송신·MOVE/STOP 결과 | [명령 수행](Amr.Simulator.Tests/Simulation/CommandDrivenAmrTests.cs) · [설정](Amr.Simulator.Tests/Configuration/ConfigurationTests.cs) |
+| [Amr.Core.Tests](Amr.Core.Tests/) | 통신 이상·관제 미션 판단, 명령/응답 ID·중복·대기 시간 처리 | [관제 판단](Amr.Core.Tests/Domain/AmrDomainManagerTests.cs) · [명령 추적](Amr.Core.Tests/Commands/CommandTrackerTests.cs) |
+| [Amr.ControlGui.Tests](Amr.ControlGui.Tests/) | Mock·지도·대시보드·선택/별도 창, 실제 MQTT 공급자의 상태 변환과 명령 처리 | [공급자](Amr.ControlGui.Tests/Providers/Mqtt/MqttDataProviderTests.cs) · [화면](Amr.ControlGui.Tests/Dashboard/MqttDashboardTests.cs) · [명령](Amr.ControlGui.Tests/Simulation/MqttControlTests.cs) |
+| [Amr.Simulator.Map.Tests](Amr.Simulator.Map.Tests/) | 격자 웹 호스트의 설정·좌표 변환·수신값 투영·여러 AMR 설정 | [좌표 투영](Amr.Simulator.Map.Tests/Projection/ProjectionTests.cs) · [지도 설정](Amr.Simulator.Map.Tests/Configuration/MapConfigurationTests.cs) |
 
 통신 시험의 내부 폴더는 소스의 `Command`·`Monitoring`·`Mqtt`·`Validation`에 대응한다. `Console`은 콘솔 동작, `TestDoubles`는 Broker 대신 사용하는 시험 대역이다. Infrastructure의 공급자 시험은 현재 `Amr.ControlGui.Tests`에 있다.
+
+그 밖의 C# 시험 파일도 역할별로 배치한다.
+
+| 프로젝트 | 내부 기능 폴더 |
+| --- | --- |
+| Amr.Simulator.Tests | `Configuration` 설정 · `Execution` 실행 조립 · `Simulation` 이동/명령 · `Navigation` 격자 탐색 · `Mqtt` 송신 |
+| Amr.Core.Tests | `Commands` 명령 추적 · `Domain` 관제 판단 |
+| Amr.ControlGui.Tests | `Providers/Mock` 예시 공급자 · `Providers/Mqtt` 실제 공급자 · `Dashboard` 화면 · `Simulation` 실행/제어 |
+| Amr.Simulator.Map.Tests | `Configuration` 지도 설정 · `Mqtt` 수신 · `Projection` 좌표 변환 |
+
+`GuiTestAssembly.cs`는 전체 GUI 시험의 동시 실행 설정이므로 프로젝트 루트에 둔다. [파일 이동 전후 목록](../evidence/layout/20261101-role-folders-01/moves.json)으로 이전 경로를 찾을 수 있다.
 
 Broker가 없는 자동시험의 예는 아래와 같다. 저장소 루트에서 실행한다.
 

@@ -108,7 +108,7 @@ try {
     $imageId = [string](Invoke-Docker -Arguments @('image','inspect',$image,'--format','{{.Id}}'))
     & dotnet build src/Amr.Communication.Console/Amr.Communication.Console.csproj --no-restore --verbosity minimal *> "$run/build.log"
     if ($LASTEXITCODE -ne 0) { throw 'Product build failed; see build.log.' }
-    $files = @(git ls-files src global.json AmrControlSystem.slnx) + @('tests/manual/COM03-C/Verify-KeepAlive.ps1')
+    $files = @(@(git ls-files --cached --others --exclude-standard -- src global.json AmrControlSystem.slnx) + @('tests/manual/COM03-C/Verify-KeepAlive.ps1') | Where-Object { Test-Path -LiteralPath $_ -PathType Leaf } | Select-Object -Unique)
     @($files | ForEach-Object { [ordered]@{path=$_;sha256=(Get-FileHash -LiteralPath $_ -Algorithm SHA256).Hash} }) | ConvertTo-Json | Set-Content -LiteralPath "$run/source-version.json" -Encoding utf8
     @'
 listener 1883 0.0.0.0

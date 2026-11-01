@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1320" viewBox="0 0 1800 1320" role="img" aria-labelledby="title desc">
+<title id="title">AMR 관제 시스템의 역할별 폴더 구조</title>
+<desc id="desc">저장소의 주요 폴더 7개와 src의 프로젝트 6개, 실제 하위 기능 폴더와 역할을 표시한다. 자세한 트리는 src/README.md를 참고한다.</desc>
+<rect width="1800" height="1320" fill="#f4f7fb"/>
+<text x="44" y="25" dominant-baseline="text-before-edge" fill="#13243a" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="42" font-weight="700">AMR 관제 시스템 · 역할별 폴더 구조</text>
+<text x="46" y="79" dominant-baseline="text-before-edge" fill="#54677e" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="24" font-weight="400">관련 C# 파일을 같은 기능 폴더에 모아, 구현·시험·결과 위치를 빠르게 찾습니다.</text>
+<rect x="44" y="124" width="1712" height="55" rx="12" fill="#172b44" stroke="none" stroke-width="1"/>
+<text x="65" y="135" dominant-baseline="text-before-edge" fill="#ffffff" font-family="Consolas, monospace" font-size="31" font-weight="700">amr-control-system-demo/</text>
+<text x="1130" y="140" dominant-baseline="text-before-edge" fill="#c7d6e8" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="23" font-weight="400">현재 로컬 코드 기준</text>
+<path d="M900 179L900 196" fill="none" stroke="#c4cfdd" stroke-width="2"/>
+<path d="M160 196L1640 196" fill="none" stroke="#c4cfdd" stroke-width="2"/>
+<path d="M162 196L162 211" fill="none" stroke="#c4cfdd" stroke-width="2"/>
+<rect x="44" y="211" width="236" height="83" rx="12" fill="#eaf2ff" stroke="#75a7f7" stroke-width="1"/>
+<text x="61" y="224" dominant-baseline="text-before-edge" fill="#205bb5" font-family="Consolas, monospace" font-size="27" font-weight="700">src/</text>
+<text x="61" y="260" dominant-baseline="text-before-edge" fill="#576d86" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">기능 구현</text>
+<path d="M408 196L408 211" fill="none" stroke="#c4cfdd" stroke-width="2"/>
+<rect x="290" y="211" width="236" height="83" rx="12" fill="#ffffff" stroke="#d7e0eb" stroke-width="1"/>
+<text x="307" y="224" dominant-baseline="text-before-edge" fill="#263a54" font-family="Consolas, monospace" font-size="27" font-weight="700">config/</text>
+<text x="307" y="260" dominant-baseline="text-before-edge" fill="#576d86" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">시험 조건</text>
+<path d="M654 196L654 211" fill="none" stroke="#c4cfdd" stroke-width="2"/>
+<rect x="536" y="211" width="236" height="83" rx="12" fill="#ffffff" stroke="#d7e0eb" stroke-width="1"/>
+<text x="553" y="224" dominant-baseline="text-before-edge" fill="#263a54" font-family="Consolas, monospace" font-size="27" font-weight="700">docker/</text>
+<text x="553" y="260" dominant-baseline="text-before-edge" fill="#576d86" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">MQTT 서버</text>
+<path d="M900 196L900 211" fill="none" stroke="#c4cfdd" stroke-width="2"/>
+<rect x="782" y="211" width="236" height="83" rx="12" fill="#ffffff" stroke="#d7e0eb" stroke-width="1"/>
+<text x="799" y="224" dominant-baseline="text-before-edge" fill="#263a54" font-family="Consolas, monospace" font-size="27" font-weight="700">tests/</text>
+<text x="799" y="260" dominant-baseline="text-before-edge" fill="#576d86" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">기능 검증</text>
+<path d="M1146 196L1146 211" fill="none" stroke="#c4cfdd" stroke-width="2"/>
+<rect x="1028" y="211" width="236" height="83" rx="12" fill="#ffffff" stroke="#d7e0eb" stroke-width="1"/>
+<text x="1045" y="224" dominant-baseline="text-before-edge" fill="#263a54" font-family="Consolas, monospace" font-size="27" font-weight="700">evidence/</text>
+<text x="1045" y="260" dominant-baseline="text-before-edge" fill="#576d86" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">실행 근거</text>
+<path d="M1392 196L1392 211" fill="none" stroke="#c4cfdd" stroke-width="2"/>
+<rect x="1274" y="211" width="236" height="83" rx="12" fill="#ffffff" stroke="#d7e0eb" stroke-width="1"/>
+<text x="1291" y="224" dominant-baseline="text-before-edge" fill="#263a54" font-family="Consolas, monospace" font-size="27" font-weight="700">tools/</text>
+<text x="1291" y="260" dominant-baseline="text-before-edge" fill="#576d86" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">시연·보조 도구</text>
+<path d="M1638 196L1638 211" fill="none" stroke="#c4cfdd" stroke-width="2"/>
+<rect x="1520" y="211" width="236" height="83" rx="12" fill="#ffffff" stroke="#d7e0eb" stroke-width="1"/>
+<text x="1537" y="224" dominant-baseline="text-before-edge" fill="#263a54" font-family="Consolas, monospace" font-size="27" font-weight="700">.github/</text>
+<text x="1537" y="260" dominant-baseline="text-before-edge" fill="#576d86" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">PR 양식·이미지</text>
+<text x="44" y="326" dominant-baseline="text-before-edge" fill="#203c60" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="28" font-weight="700">src/  ─  주요 프로젝트와 하위 기능 폴더</text>
+<rect x="44" y="380" width="552" height="364" rx="12" fill="#ffffff" stroke="#d7e0eb" stroke-width="1"/>
+<rect x="44" y="380" width="7" height="364" rx="3" fill="#2f6bd1" stroke="none" stroke-width="1"/>
+<text x="69" y="399" dominant-baseline="text-before-edge" fill="#2f6bd1" font-family="Consolas, monospace" font-size="26" font-weight="700">Amr.Communication</text>
+<text x="69" y="437" dominant-baseline="text-before-edge" fill="#415771" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="24" font-weight="700">공통 MQTT 통신</text>
+<path d="M69 473L571 473" fill="none" stroke="#e8edf4" stroke-width="1"/>
+<text x="69" y="490" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Command/</text>
+<text x="294" y="490" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">명령 검사·발행</text>
+<text x="69" y="527" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Models/</text>
+<text x="294" y="527" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">수신 데이터 형식</text>
+<text x="69" y="564" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Monitoring/</text>
+<text x="294" y="564" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">생존 신호 감시</text>
+<text x="69" y="601" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Mqtt/</text>
+<text x="294" y="601" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">접속·구독·큐·재접속</text>
+<text x="69" y="638" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Validation/</text>
+<text x="294" y="638" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">메시지 형식 검사</text>
+<text x="69" y="704" dominant-baseline="text-before-edge" fill="#73839a" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="21" font-weight="400">기존 기능별 하위 폴더 유지</text>
+<rect x="624" y="380" width="552" height="364" rx="12" fill="#ffffff" stroke="#d7e0eb" stroke-width="1"/>
+<rect x="624" y="380" width="7" height="364" rx="3" fill="#158575" stroke="none" stroke-width="1"/>
+<text x="649" y="399" dominant-baseline="text-before-edge" fill="#158575" font-family="Consolas, monospace" font-size="26" font-weight="700">Amr.Communication.Console</text>
+<text x="649" y="437" dominant-baseline="text-before-edge" fill="#415771" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="24" font-weight="700">통신 시험 프로그램</text>
+<path d="M649 473L1151 473" fill="none" stroke="#e8edf4" stroke-width="1"/>
+<text x="649" y="490" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Modes/</text>
+<text x="874" y="490" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">기존 실행 모드</text>
+<text x="649" y="527" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Trial/</text>
+<text x="874" y="527" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">통합 시험·입력·표시</text>
+<text x="649" y="564" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Logging/</text>
+<text x="874" y="564" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">구조화 로그·Seq</text>
+<text x="649" y="704" dominant-baseline="text-before-edge" fill="#73839a" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="21" font-weight="400">Program.cs → 실행 시작</text>
+<rect x="1204" y="380" width="552" height="364" rx="12" fill="#ffffff" stroke="#d7e0eb" stroke-width="1"/>
+<rect x="1204" y="380" width="7" height="364" rx="3" fill="#b77512" stroke="none" stroke-width="1"/>
+<text x="1229" y="399" dominant-baseline="text-before-edge" fill="#b77512" font-family="Consolas, monospace" font-size="26" font-weight="700">Amr.Simulator</text>
+<text x="1229" y="437" dominant-baseline="text-before-edge" fill="#415771" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="24" font-weight="700">실제 AMR을 대신하는 시뮬레이터</text>
+<path d="M1229 473L1731 473" fill="none" stroke="#e8edf4" stroke-width="1"/>
+<text x="1229" y="490" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Execution/</text>
+<text x="1454" y="490" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">단일·여러 AMR 실행 조립</text>
+<text x="1229" y="527" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Configuration/</text>
+<text x="1454" y="527" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">설정 읽기·검사</text>
+<text x="1229" y="564" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Simulation/</text>
+<text x="1454" y="564" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">이동·정지·명령 수행</text>
+<text x="1229" y="601" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Navigation/</text>
+<text x="1454" y="601" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">격자 경로 탐색</text>
+<text x="1229" y="638" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Telemetry/</text>
+<text x="1454" y="638" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">MQTT 송수신</text>
+<text x="1229" y="704" dominant-baseline="text-before-edge" fill="#73839a" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="21" font-weight="400">Program.cs → 실행 시작</text>
+<rect x="44" y="772" width="552" height="420" rx="12" fill="#ffffff" stroke="#d7e0eb" stroke-width="1"/>
+<rect x="44" y="772" width="7" height="420" rx="3" fill="#8252b4" stroke="none" stroke-width="1"/>
+<text x="69" y="791" dominant-baseline="text-before-edge" fill="#8252b4" font-family="Consolas, monospace" font-size="26" font-weight="700">Amr.Core</text>
+<text x="69" y="829" dominant-baseline="text-before-edge" fill="#415771" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="24" font-weight="700">관제 계약과 업무 판단</text>
+<path d="M69 865L571 865" fill="none" stroke="#e8edf4" stroke-width="1"/>
+<text x="69" y="882" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Contracts/</text>
+<text x="294" y="882" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">조회·명령 인터페이스</text>
+<text x="69" y="919" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Models/</text>
+<text x="294" y="919" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">장비·연결·조회 데이터</text>
+<text x="69" y="956" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Commands/</text>
+<text x="294" y="956" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">명령 데이터·결과 추적</text>
+<text x="69" y="993" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Domain/</text>
+<text x="294" y="993" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">통신 이상·미션 판단</text>
+<text x="69" y="1152" dominant-baseline="text-before-edge" fill="#73839a" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="21" font-weight="400">화면·통신부가 같은 기준 사용</text>
+<rect x="624" y="772" width="552" height="420" rx="12" fill="#ffffff" stroke="#d7e0eb" stroke-width="1"/>
+<rect x="624" y="772" width="7" height="420" rx="3" fill="#3a7d70" stroke="none" stroke-width="1"/>
+<text x="649" y="791" dominant-baseline="text-before-edge" fill="#3a7d70" font-family="Consolas, monospace" font-size="26" font-weight="700">Amr.Infrastructure</text>
+<text x="649" y="829" dominant-baseline="text-before-edge" fill="#415771" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="24" font-weight="700">실제 통신과 GUI 사이 연결</text>
+<path d="M649 865L1151 865" fill="none" stroke="#e8edf4" stroke-width="1"/>
+<text x="649" y="882" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Mqtt/</text>
+<text x="874" y="882" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">실제 MQTT 데이터 공급자</text>
+<text x="649" y="1152" dominant-baseline="text-before-edge" fill="#73839a" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="21" font-weight="400">MqttAmrDataProvider*.cs</text>
+<text x="649" y="954" dominant-baseline="text-before-edge" fill="#365e55" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="25" font-weight="700">수신값 → Core 형식 → GUI</text>
+<text x="649" y="1001" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="23" font-weight="400">GUI 명령 발행·응답 연결</text>
+<text x="649" y="1042" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="23" font-weight="400">이번 실행의 이력 관리</text>
+<rect x="1204" y="772" width="552" height="420" rx="12" fill="#ffffff" stroke="#d7e0eb" stroke-width="1"/>
+<rect x="1204" y="772" width="7" height="420" rx="3" fill="#315787" stroke="none" stroke-width="1"/>
+<text x="1229" y="791" dominant-baseline="text-before-edge" fill="#315787" font-family="Consolas, monospace" font-size="26" font-weight="700">Amr.ControlGui</text>
+<text x="1229" y="829" dominant-baseline="text-before-edge" fill="#415771" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="24" font-weight="700">사용자 관제 화면</text>
+<path d="M1229 865L1731 865" fill="none" stroke="#e8edf4" stroke-width="1"/>
+<text x="1229" y="882" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Configuration/</text>
+<text x="1454" y="882" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">실제 MQTT 실행 옵션</text>
+<text x="1229" y="919" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Providers/Mock/</text>
+<text x="1454" y="919" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">예시 데이터·명령</text>
+<text x="1229" y="956" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Providers/Grid/</text>
+<text x="1454" y="956" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">격자 웹 호스트 조회</text>
+<text x="1229" y="993" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Views/Dashboard/</text>
+<text x="1454" y="993" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">메인 화면·Designer·resx</text>
+<text x="1229" y="1030" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Views/Map/</text>
+<text x="1454" y="1030" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">지도 그리기</text>
+<text x="1229" y="1067" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Views/Simulation/</text>
+<text x="1454" y="1067" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">AMR 창·출발/목적지</text>
+<text x="1229" y="1104" dominant-baseline="text-before-edge" fill="#243d59" font-family="Consolas, monospace" font-size="24" font-weight="400">Properties/</text>
+<text x="1454" y="1104" dominant-baseline="text-before-edge" fill="#536980" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="22" font-weight="400">개발 실행 프로필</text>
+<text x="1229" y="1152" dominant-baseline="text-before-edge" fill="#73839a" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="21" font-weight="400">Program.cs → 화면·모드 조립</text>
+<rect x="44" y="1221" width="1712" height="67" rx="10" fill="#e9eff7" stroke="none" stroke-width="1"/>
+<text x="65" y="1233" dominant-baseline="text-before-edge" fill="#304d70" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="24" font-weight="700">Program.cs·프로젝트 경로·namespace 유지</text>
+<text x="65" y="1264" dominant-baseline="text-before-edge" fill="#5c718b" font-family="Malgun Gothic, Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif" font-size="20" font-weight="400">bin/obj 및 .git 내부 생략  ·  상세 트리와 대표 파일은 src/README.md에서 확인</text>
+</svg>

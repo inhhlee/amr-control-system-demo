@@ -10,9 +10,9 @@
 | 위치 | 이번 결과 |
 | --- | --- |
 | [ControlCommunicationSession](../../../src/Amr.Communication/Mqtt/Sessions/ControlCommunicationSession.cs) | Communication에 신규 추가. 수신 Client·Connection·Subscription·Queue, 감시기와 PeriodicTimer/취소/종료를 함께 소유 |
-| [MqttMapReceiver](../../../tools/Amr.Simulator.Map/MqttMapReceiver.cs) | 세션 호출·기록·지도 전달만 수행. 직접 Monitor·Timer·CTS·MQTT 정리 코드를 제거 |
+| [MqttMapReceiver](../../../tools/Amr.Simulator.Map/Mqtt/MqttMapReceiver.cs) | 세션 호출·기록·지도 전달만 수행. 직접 Monitor·Timer·CTS·MQTT 정리 코드를 제거 |
 | [GridControlConnection](../../../tools/Amr.Simulator.Map/Control/GridControlConnection.cs) | 기존 이벤트/Heartbeat 계약 유지, 설명을 실제 위임 구조에 맞춤 |
-| [HeartbeatConsoleRunner](../../../src/Amr.Communication.Console/HeartbeatConsoleRunner.cs) | 선택적 `--monitor-amr <id>`로 지도 없이 동일 세션 실행. 기존 콘솔/명령 경로 유지, 기존 설정 파서만 공유 |
+| [HeartbeatConsoleRunner](../../../src/Amr.Communication.Console/Modes/HeartbeatConsoleRunner.cs) | 선택적 `--monitor-amr <id>`로 지도 없이 동일 세션 실행. 기존 콘솔/명령 경로 유지, 기존 설정 파서만 공유 |
 | [세션 시험](../../../tests/Amr.Communication.Tests/Mqtt/Sessions/ControlCommunicationSessionTests.cs), [콘솔 시험](../../../tests/Amr.Communication.Tests/Console/HeartbeatConsoleTests.cs) | 새 21건. 기존 1095건에 포함해 이번 1116건으로 회귀 실행 |
 
 연결 승인 후 감시를 활성화하며 첫 정상 Heartbeat 전에는 `AwaitingFirst`다. 검사 전 수신 지점의 UTC+단조 시각을 사용하고 검사 통과 후 **Core 전달 큐 앞**에서 관측한다. 기본 Timeout5초·확인500ms, 중단당 Timeout1회/복구1회다. 다른 ID·불량 Heartbeat·Telemetry는 갱신하지 않는다.

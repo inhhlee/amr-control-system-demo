@@ -1,0 +1,15 @@
+{
+  "base": "755e1405dd4bb74b54a80a97abdc47d244fcfd99",
+  "functionalCommit": "43c11901ed1c526916bd45eaaee70232a705d0d6",
+  "functionalTree": "17940d464620b7af46170243d9cd3e47bb5aa3aa",
+  "functionalChangedPaths": 295,
+  "layoutMoves": 70,
+  "sourceHashFiles": 194,
+  "userFilesExcluded": 35,
+  "excludedPrefix": "evidence/COM-01/20261031-task1-results-01/",
+  "sourceWhitespace": "passed",
+  "rawCaptureWhitespaceExit": 2,
+  "tests": "existing matching code: automated1261, actual GUI/MQTT20, Seq/MQTT14; not newly rerun",
+  "prMergeRequested": false,
+  "issue46": "closed/completed after original conditions and PR47 merge confirmed"
+}

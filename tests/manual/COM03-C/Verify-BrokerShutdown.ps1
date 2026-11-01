@@ -84,7 +84,7 @@ try {
     Invoke-Docker -Arguments @('ps','-a','--format','{{json .}}') | Set-Content -LiteralPath "$run/containers-before.jsonl" -Encoding utf8
     $image = 'eclipse-mosquitto:2.1.2-alpine'
     $imageId = [string](Invoke-Docker -Arguments @('image','inspect',$image,'--format','{{.Id}}'))
-    $files = @(git ls-files src tests global.json AmrControlSystem.slnx) + @('tests/manual/COM03-C/Verify-KeepAlive.ps1','tests/manual/COM03-C/Verify-BrokerShutdown.ps1')
+    $files = @(@(git ls-files --cached --others --exclude-standard -- src tests global.json AmrControlSystem.slnx) + @('tests/manual/COM03-C/Verify-KeepAlive.ps1','tests/manual/COM03-C/Verify-BrokerShutdown.ps1') | Where-Object { Test-Path -LiteralPath $_ -PathType Leaf } | Select-Object -Unique)
     @($files | Select-Object -Unique | ForEach-Object { [ordered]@{path=$_;sha256=(Get-FileHash -LiteralPath $_).Hash} }) | ConvertTo-Json | Set-Content -LiteralPath "$run/source-version.json" -Encoding utf8
     $binaryFiles = @('Amr.Communication.Console.exe','Amr.Communication.Console.dll','Amr.Communication.dll','MQTTnet.dll')
     @($binaryFiles | ForEach-Object { [ordered]@{file=$_;sha256=(Get-FileHash -LiteralPath (Join-Path 'src/Amr.Communication.Console/bin/Debug/net10.0' $_)).Hash} }) | ConvertTo-Json | Set-Content -LiteralPath "$run/binary-version.json" -Encoding utf8

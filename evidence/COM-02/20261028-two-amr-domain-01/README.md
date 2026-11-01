@@ -13,9 +13,9 @@
 | [ControlCommunicationSession](../../../src/Amr.Communication/Mqtt/Sessions/ControlCommunicationSession.cs) | 한 Broker 수신 연결, 기존 AMR별 큐, ID별 감시기. 타이머·수신 시각·종료/연결 정리를 소유. 기존 단일 ID 생성자/관측 속성 유지 |
 | [AmrCommunicationObservation](../../../src/Amr.Communication/Mqtt/Sessions/AmrCommunicationObservation.cs) | 세션 ID·순번·AMR ID·관측 상태의 형식화 통지. 통신 계층은 미션을 모름 |
 | [FleetCommunicationBridge](../../../tools/Amr.Simulator.Map/Control/FleetCommunicationBridge.cs) | 조립 계층에서 통신 DTO를 Core 입력으로 변환. Core에 MQTT 참조를 추가하지 않음 |
-| [AmrDomainManager](../../../src/Amr.Core/AmrDomainManager.cs), [입력/조회 모델](../../../src/Amr.Core/AmrDomainModels.cs) | 등록된 두 ID의 최신 상태, `COMM_LOST`/`BROKER_LOST`, 관제 미션 보류·명시 재개·업무 경보. MQTT·Timer·Windows Forms 의존 없음 |
+| [AmrDomainManager](../../../src/Amr.Core/Domain/AmrDomainManager.cs), [입력/조회 모델](../../../src/Amr.Core/Domain/AmrDomainModels.cs) | 등록된 두 ID의 최신 상태, `COMM_LOST`/`BROKER_LOST`, 관제 미션 보류·명시 재개·업무 경보. MQTT·Timer·Windows Forms 의존 없음 |
 | [FleetMapSession](../../../tools/Amr.Simulator.Map/Control/FleetMapSession.cs), [FleetMapHost](../../../tools/Amr.Simulator.Map/Control/FleetMapHost.cs) | 두 Simulator·통신·Core 조립과 HTTP 제공. 기존 단일 호스트는 유지. 각 수신/송신 Client의 ClientId를 별도로 소유 |
-| [GridMapDataProvider](../../../src/Amr.ControlGui/GridMapDataProvider.cs), [MainForm.Grid](../../../src/Amr.ControlGui/MainForm.Grid.cs) | Fleet 경로에서는 Core 스냅샷으로 요약·선택 상세·업무 경보를 표시. raw Heartbeat로 생존을 재판정하지 않음. 기존 단일 경로 호환 유지 |
+| [GridMapDataProvider](../../../src/Amr.ControlGui/Providers/Grid/GridMapDataProvider.cs), [MainForm.Grid](../../../src/Amr.ControlGui/Views/Dashboard/MainForm.Grid.cs) | Fleet 경로에서는 Core 스냅샷으로 요약·선택 상세·업무 경보를 표시. raw Heartbeat로 생존을 재판정하지 않음. 기존 단일 경로 호환 유지 |
 
 정상 Heartbeat 관측은 큐 접수 전 갱신하고, Telemetry 등 메시지는 기존 ID별 큐로 전달한다. 한 AMR의 느린 수신 처리가 다른 AMR의 소비 작업이나 두 감시기의 수신 시각 갱신을 막지 않는다. 단조 시각 갱신/검사/형식화 통지는 세션에서 직렬화하고 Core는 세션 ID·AMR별 순번으로 이전/중복 관측을 배제한다. Core의 짧은 상태 갱신 잠금에는 네트워크 I/O가 없다.
 
