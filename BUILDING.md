@@ -8,6 +8,8 @@
 
 과제1의 접속·송수신·단절·자동 재접속을 직접 시험하려면 [통합 콘솔 실행 안내](tests/manual/COM06/README.md)를 따른다. 새 `--trial` 모드의 기본 재시도는 5초 간격·추가5회이며 실행 옵션으로 바꾼다. 기존 `--monitor-amr` 실행은 자동 재접속 모드로 바뀌지 않는다.
 
+Seq 상세 로그도 확인하려면 [Docker·Seq 구성 안내](docker/README.md)를 따른다. 저장소의 Compose에 선택 서비스 `seq`가 있으며 `.env.example`에 포트와 `AMR_SEQ_URL`·선택 API 키 예시를 제공한다. 기존 PC의 `amr-seq` 재사용과 새 설치를 구분하고 같은 포트를 중복 사용하지 않는다. 기본 빌드·자동시험에는 Seq가 필요하지 않다.
+
 Simulator의 일반 수량 설정 실행은 [수량·장애 설정 안내](src/Amr.Simulator/README.md#수량장애-조건-설정-issue-49)를 따른다. `src/Amr.Simulator`의 `--fleet-config`와 지도 도구의 고정 두 장비 시연 설정은 별도 형식이다.
 
 - .NET SDK: 저장소 `global.json`의 **10.0.401**과 호환되는 10.0.4xx 패치 버전. 런타임만 설치하면 빌드할 수 없다. `dotnet --version`은 저장소 루트에서 확인한다.

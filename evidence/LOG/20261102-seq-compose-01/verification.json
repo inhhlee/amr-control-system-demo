@@ -1,0 +1,65 @@
+{
+  "runId": "20261102-seq-compose-01",
+  "started": "2026-11-02T00:48:47.1003216+09:00",
+  "ended": "2026-11-02T00:49:33.6085151+09:00",
+  "result": "passed",
+  "checks": [
+    {
+      "name": "new-project-only",
+      "passed": true,
+      "detail": "시험 프로젝트의 기존 자원 없음."
+    },
+    {
+      "name": "seq-is-optional",
+      "passed": true,
+      "detail": "기본 서비스는 Mosquitto만 포함."
+    },
+    {
+      "name": "mosquitto-definition-preserved",
+      "passed": true,
+      "detail": "기존 MQTT 서비스의 이미지·포트·마운트 정의 동일."
+    },
+    {
+      "name": "env-port-and-loopback",
+      "passed": true,
+      "detail": "예시에서 바꾼 포트가 loopback에만 반영."
+    },
+    {
+      "name": "named-data-volume",
+      "passed": true,
+      "detail": "기존 PC의 bind 경로와 분리된 named volume."
+    },
+    {
+      "name": "actual-seq-created",
+      "passed": true,
+      "detail": "이 저장소 Compose로 새 Seq API 실행."
+    },
+    {
+      "name": "actual-console-seq-mqtt",
+      "passed": true,
+      "detail": "신규 Seq에서 기존 trial 실제 로그 수집·검색·송신 장애 격리 14항목."
+    },
+    {
+      "name": "persisted-event-before",
+      "passed": true,
+      "detail": "재생성 전 실제 콘솔 이벤트 존재."
+    },
+    {
+      "name": "data-survives-container-recreation",
+      "passed": true,
+      "detail": "컨테이너 ID 변경 뒤 동일 볼륨에서 같은 이벤트 ID 조회."
+    },
+    {
+      "name": "existing-containers-preserved",
+      "passed": true,
+      "detail": "기존 ID·실행 상태·시작 시각 비교."
+    },
+    {
+      "name": "owned-resources-cleaned",
+      "passed": true,
+      "detail": "새 시험 프로젝트의 자원만 정리."
+    }
+  ],
+  "failure": null,
+  "cleanupFailure": null
+}

@@ -1,0 +1,50 @@
+{
+  "baseCommit": "5d0902febead29d6b49dcbb25b111752d4655d2a",
+  "state": "uncommitted configuration and documentation changes; product C# unchanged",
+  "files": [
+    {
+      "path": "docker/compose.yaml",
+      "sha256": "8aad47d4d38203e5bd0352b9cd10f635e825d53b0d51c4b22473ae317852ea29"
+    },
+    {
+      "path": ".env.example",
+      "sha256": "14999e426f87fbdfc28966656f69d95848f770c80612675f789b060596b8895d"
+    },
+    {
+      "path": "docker/README.md",
+      "sha256": "1603fe4245a55b0d6bf254b02fea11fc07c215d6347922665c476a3abf0a5fbe"
+    },
+    {
+      "path": "README.md",
+      "sha256": "01a4479bbe2d480094290661788e6d22d8ce81cce9031690a295d48055eb332e"
+    },
+    {
+      "path": "BUILDING.md",
+      "sha256": "cf04def633390bf07d0e1f5f65a10c197b608f6c209b1014522ca8cd9df9f9d4"
+    },
+    {
+      "path": "tests/README.md",
+      "sha256": "d847443a6e0d61f0e127876aa172a8e77f44f87b3d06087a8b5ee4cf11d33fe6"
+    },
+    {
+      "path": "tests/manual/COM06/README.md",
+      "sha256": "8cfdde0f83b065a0155fd2f0d42f0376bb48857379143fed9b050799907bd9ba"
+    },
+    {
+      "path": "tests/manual/LOG/Verify-TrialSeq.ps1",
+      "sha256": "24c3931e148f0b5a6c17b96ca8ec5116403057b11c490062f2aa0f38a97440a6"
+    },
+    {
+      "path": "evidence/LOG/20261102-seq-compose-01/verify-setup.ps1",
+      "sha256": "431101694ec1f0306cfc7a4e970e2abaaf74aafd2d63671ca3e3c1ea3e805f1f"
+    },
+    {
+      "path": "src/Amr.Communication.Console/bin/Debug/net10.0/Amr.Communication.Console.dll",
+      "sha256": "604dadb0af580058ea1ad0239106e348a20d2d697be5fa9f4422c05810ae9652"
+    },
+    {
+      "path": "src/Amr.Simulator/bin/Debug/net10.0/Amr.Simulator.dll",
+      "sha256": "43c2b4605a85cfd422fa4540fb553c1d1d30a606e6f38ee409a418b3c780ba7a"
+    }
+  ]
+}

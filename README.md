@@ -19,7 +19,7 @@ GUI·trial·Seq 개선과 역할별 파일 이동은 [별도 커밋으로 구분
 | --- | --- | --- | --- |
 | [src](src/README.md) | AMR과 관제 시스템의 기능 구현 | 통신·콘솔·가상 AMR·관제 공통 계약·GUI 연결·관제 화면 | [프로젝트별 역할](#source-projects) · [내부 폴더·파일](src/README.md) |
 | [config](config/) | 코드 수정 없이 시험 조건 설정 | AMR 이름·초기 위치·속도·경로·수량, 격자 지도 시연 설정 | [단일 AMR](config/simulator.single.json) · [여러 AMR](config/simulator.fleet.json) · [격자 설정 안내](config/map-demo/README.md) |
-| [docker](docker/) | MQTT 중계 서버의 실행 환경 관리 | Mosquitto 컨테이너와 접속·저장 설정. 호스트 접속 포트는 1884 | [compose.yaml](docker/compose.yaml) · [Mosquitto 설정](docker/mosquitto/config/mosquitto.conf) |
+| [docker](docker/README.md) | MQTT·로그 서버의 실행 환경 관리 | Mosquitto1884와 선택 서비스 Seq5341, 포트·데이터 보관·환경변수 예시 | [실행·Seq 구성](docker/README.md) · [compose.yaml](docker/compose.yaml) · [환경변수 예시](.env.example) |
 | [tests](tests/README.md) | 입력에 맞는 결과가 나오는지 검사 | 프로젝트별 자동시험과 실제 MQTT·GUI·Seq 연동 시험 도구 | [시험별 안내](tests/README.md) |
 | [evidence](evidence/README.md) | 진행·완료 판단의 근거 확인 | 실행별 환경·입력·판정·대표 로그·화면·실패와 재확인 기록 | [과제별 검증 색인](evidence/README.md) |
 | [tools](tools/) | 시연과 특수 시험을 지원 | 격자 지도 웹 호스트, 통신 응답 차단 프록시, 보조 시험 실행기 | [지도 시연](tools/Amr.Simulator.Map/README.md) · [응답 차단 시험](tools/COM-03/README.md) · [보조 실행기](tools/RunSimulatorTests/Program.cs) |
@@ -68,6 +68,7 @@ flowchart LR
 | --- | --- |
 | 빌드·전체 실행 준비 | [BUILDING.md](BUILDING.md) · [솔루션 구성](AmrControlSystem.slnx) |
 | trial에서 통신·명령 시험, Seq에서 상세 로그 검색 | [콘솔 실행·시험 안내](tests/manual/COM06/README.md) |
+| Seq 새 설치, 기존 컨테이너 재사용, 환경변수·데이터 관리 | [Docker·Seq 구성 안내](docker/README.md) · [환경변수 예시](.env.example) |
 | 가상 AMR과 실제 MQTT 관제 GUI 함께 실행 | [GUI·AMR 실행 순서](tests/manual/GUI-CONTROL/README.md) |
 | AMR 초기 위치·속도·경로·수량 변경 | [시뮬레이터 안내](src/Amr.Simulator/README.md) · [config](config/) |
 | 격자 지도·장애물 우회 시연 | [지도 호스트 안내](tools/Amr.Simulator.Map/README.md) |
@@ -248,8 +249,9 @@ ACK 자체의 기존 수신 검사는 유지하지만 이번 명령 모드에서
 기존 콘솔 출력·stdout/stderr 구분·종료 코드를 유지하고, 선택적으로 Serilog 이벤트를 Seq에 전송한다.
 작업 브랜치는 `feature/26-serilog-seq`, 기준은 develop `b4265af`다. 구현·테스트 폴더 정리를 `76cb19f`로 커밋·푸시하고 [PR #27](https://github.com/inhhlee/amr-control-system-demo/pull/27)을 develop 대상으로 생성했다. [최초 AI 리뷰](https://github.com/inhhlee/amr-control-system-demo/pull/27#pullrequestreview-5574317537)의 P2에 따라 종료 원인을 분리했다. 먼저 접수한 사용자 취소는 `UserCanceled`, 연결 단절은 `ConnectionLost`로 유지하며 뒤늦은 신호는 원인을 덮어쓰지 않는다. [P2 수정 검증](evidence/LOG/20261020-p2-green-01/README.md): 신규 11건 포함 전체 591건 통과. 병합·Issue 종료는 하지 않았으며 최신 재리뷰는 PR에서 확인한다. 아래 실행 증거의 미커밋 표시는 당시 시험 시점의 기록이다.
 
-기존 Seq는 `C:\practice\docker\docker-compose.yml`의 `amr-seq`이며 `C:\practice\docker\seq\data`를 재사용한다.
-호스트 주소는 `http://127.0.0.1:5341`, 확인한 실행 버전은 2026.1.17114다. 이 저장소 Compose에는 Seq를 중복 정의하지 않는다.
+#26 당시 기존 Seq는 `C:\practice\docker\docker-compose.yml`의 `amr-seq`를 재사용했다. 기존 컨테이너의 데이터는 `C:\practice\docker\seq\data`, 주소는 `http://127.0.0.1:5341`, 확인한 버전은 2026.1.17114다. 아래는 당시 기존 컨테이너 재사용 방식이다.
+
+2026-11-02에는 기존 Compose 원본 파일이 현재 경로에 없음을 확인하고, 저장소에 새 설치용 선택 서비스 `seq`·환경변수 예시·[실행 안내](docker/README.md)를 추가했다. 기존 컨테이너와 데이터는 유지하며 새 구성으로 자동 이관하지 않는다.
 
 ```powershell
 # 기존 컨테이너를 사용할 때만 실행. 새 인스턴스 생성·데이터 초기화는 하지 않는다.

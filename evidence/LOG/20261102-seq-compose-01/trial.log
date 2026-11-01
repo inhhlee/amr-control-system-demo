@@ -1,0 +1,15 @@
+PASS console-core-only
+PASS detail-on
+PASS detail-off
+PASS move-stop-final-ack
+PASS manual-new-move-arrived
+PASS reconnect-receipt-visible
+PASS seq-debug-telemetry
+PASS seq-typed-fields
+PASS seq-state-property-query
+PASS seq-command-identity
+PASS seq-command-property-query
+PASS session-and-raw-boundary
+PASS seq-unavailable-communication-continues
+PASS redirected-clean-output
+PASS actual Docker Seq/trial: C:\amr-control-system-demo\evidence\LOG\20261102-seq-compose-01-trial

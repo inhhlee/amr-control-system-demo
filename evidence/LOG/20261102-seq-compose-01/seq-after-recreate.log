@@ -1,0 +1,15 @@
+amr-seq-check-20261102-seq-compose-01-seq-1  | ────────────────────────────────────────
+amr-seq-check-20261102-seq-compose-01-seq-1  |   Seq ♦ Machine data, for humans.
+amr-seq-check-20261102-seq-compose-01-seq-1  | ─────────── © 2026 Datalust Pty Ltd ────
+amr-seq-check-20261102-seq-compose-01-seq-1  | 
+amr-seq-check-20261102-seq-compose-01-seq-1  | Running as server; press Ctrl+C to exit.
+amr-seq-check-20261102-seq-compose-01-seq-1  | 
+amr-seq-check-20261102-seq-compose-01-seq-1  | [15:49:23 INF] Seq 2026.1.17114 running on OS Ubuntu 24.04.4 LTS
+amr-seq-check-20261102-seq-compose-01-seq-1  | [15:49:25 INF] Seq listening on ["http://localhost/", "https://localhost/", "http://localhost:5341/", "https://localhost:45341/"]
+amr-seq-check-20261102-seq-compose-01-seq-1  | [15:49:25 INF] Opening event store at /data/Stream/stream.flare
+amr-seq-check-20261102-seq-compose-01-seq-1  | [15:49:25 INF] Opening metastore /data/Documents/metastore.flare
+amr-seq-check-20261102-seq-compose-01-seq-1  | [15:49:25 INF] Storage subsystem available
+amr-seq-check-20261102-seq-compose-01-seq-1  | [15:49:25 INF] Loaded key xmlkey-18 with friendly name key-8c7e88c9-a6fe-415e-ae79-3a75ab113162
+amr-seq-check-20261102-seq-compose-01-seq-1  | [15:49:25 INF] Ingestion enabled
+amr-seq-check-20261102-seq-compose-01-seq-1  | [15:49:26 INF] HTTP GET /api (141.894 ms)
+amr-seq-check-20261102-seq-compose-01-seq-1  | [15:49:27 INF] HTTP GET /api/events (149.991 ms)

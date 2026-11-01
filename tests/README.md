@@ -61,6 +61,6 @@ dotnet test tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj
 | [GUI-CONTROL](manual/GUI-CONTROL/) | 독립 AMR과 GUI의 MOVE/STOP·도착 응답·창 닫기·재접속 | [실행·시험 안내](manual/GUI-CONTROL/README.md) |
 | [LOG](manual/LOG/) | 실제 Seq 수집·구조화 검색·종료/전송 실패·trial 출력 분리 | [Seq 준비·조회](manual/COM06/README.md#docker-seq에서-구조화-상세-로그-조회) · [Verify-TrialSeq.ps1](manual/LOG/Verify-TrialSeq.ps1) |
 
-`COM02-A` 아래 `HeartbeatProbe`·`FleetProbe`, `GUI-MQTT`·`GUI-CONTROL`의 프로젝트는 연동 결과를 확인하는 시험용 프로그램이다. `LOG`는 Seq 연동 시험 도구 위치이며, 현재 PC의 기존 Docker Seq 관리 파일은 `C:\practice\docker\docker-compose.yml`이다. 이 저장소의 `docker/compose.yaml`은 Mosquitto를 관리한다.
+`COM02-A` 아래 `HeartbeatProbe`·`FleetProbe`, `GUI-MQTT`·`GUI-CONTROL`의 프로젝트는 연동 결과를 확인하는 시험용 프로그램이다. `LOG`는 Seq 연동 시험 도구 위치다. 이 저장소의 `docker/compose.yaml`은 Mosquitto와 선택 서비스 Seq를 정의한다. [Docker·Seq 구성 안내](../docker/README.md)에서 새 설치와 기존 PC Seq 재사용을 구분한다. 과거 Compose 원본 경로는 현재 존재하지 않아 새 PC의 선행 조건으로 사용하지 않는다.
 
 실행별 입력·환경·코드 버전·예상/실제 결과·판정은 `evidence`에 남긴다. 기존 실행 결과는 [색인](../evidence/README.md)으로 찾고, 시험 파일의 존재를 실행 성공이나 과제 전체 완료로 판단하지 않는다.

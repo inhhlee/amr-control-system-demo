@@ -23,3 +23,19 @@ services:
         target: /mosquitto/log
         bind:
           create_host_path: true
+
+  seq:
+    image: datalust/seq:2026.1
+    profiles: [logging]
+    restart: "no"
+    environment:
+      ACCEPT_EULA: "Y"
+      # Local development only; the HTTP port is bound to loopback below.
+      SEQ_FIRSTRUN_NOAUTHENTICATION: "True"
+    ports:
+      - "127.0.0.1:${SEQ_HTTP_PORT:-5341}:80"
+    volumes:
+      - seq-data:/data
+
+volumes:
+  seq-data:
