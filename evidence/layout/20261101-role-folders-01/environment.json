@@ -1,0 +1,14 @@
+{
+  "RunId": "20261101-role-folders-01",
+  "RecordedAt": "2026-11-01T09:20:01.2546874Z",
+  "OS": "Microsoft Windows NT 10.0.26200.0",
+  "PowerShell": "7.6.5",
+  "DotnetSdk": "10.0.401",
+  "Head": "755e1405dd4bb74b54a80a97abdc47d244fcfd99",
+  "Branch": "feature/58-gui-mqtt-live",
+  "WorkingTree": "Existing uncommitted work plus role-based file relocation",
+  "ArtifactsPath": "tests/Amr.Communication.Tests/bin/role-folders",
+  "ExternalServices": "Not started or stopped by this task",
+  "NamespacePolicy": "Unchanged",
+  "ProjectReferencePolicy": "Unchanged"
+}

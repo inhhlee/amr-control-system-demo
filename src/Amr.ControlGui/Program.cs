@@ -1,3 +1,7 @@
+using Amr.Infrastructure;
+using Amr.Core;
+using Amr.Simulator.Configuration;
+
 namespace Amr.ControlGui;
 
 internal static class Program
@@ -6,6 +10,40 @@ internal static class Program
     private static void Main(string[] args)
     {
         ApplicationConfiguration.Initialize();
+        if (args.FirstOrDefault() == "--mqtt")
+        {
+            MqttGuiOptions options;
+            try { options = MqttGuiOptions.Parse(args); }
+            catch (ArgumentException error)
+            {
+                MessageBox.Show(error.Message, "MQTT 실행 설정 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.ExitCode = 2;
+                return;
+            }
+            MapStation? destination = null;
+            if (options.SimulatorConfig is not null)
+            {
+                try
+                {
+                    var settings = SimulatorSettingsLoader.LoadAsync(options.SimulatorConfig).GetAwaiter().GetResult();
+                    if (settings.AmrId != options.AmrId) throw new ArgumentException("설정 파일의 AMR ID와 관리 대상이 다릅니다.");
+                    if (settings.Waypoints.Count != 0)
+                    { var goal = settings.Waypoints[^1]; destination = new("설정 목적지", goal.X, goal.Y); }
+                }
+                catch (Exception error) when (error is ArgumentException or IOException or ConfigurationException)
+                { MessageBox.Show(error.Message, "AMR 설정 오류", MessageBoxButtons.OK, MessageBoxIcon.Error); Environment.ExitCode = 2; return; }
+            }
+            var actual = new MqttAmrDataProvider(options.Connection, options.AmrId, options.Reconnect,
+                commandTimeout: TimeSpan.FromSeconds(options.CommandTimeoutSeconds), destination: destination);
+            try
+            {
+                using var liveForm = new MainForm(actual, actual);
+                actual.Start();
+                Application.Run(liveForm);
+            }
+            finally { actual.DisposeAsync().AsTask().GetAwaiter().GetResult(); }
+            return;
+        }
         if (args.Length != 0)
         {
             if (args.Length != 2 || args[0] != "--grid-url" || !Uri.TryCreate(args[1], UriKind.Absolute, out var endpoint))

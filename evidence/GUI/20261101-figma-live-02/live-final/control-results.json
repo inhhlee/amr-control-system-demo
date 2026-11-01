@@ -1,0 +1,108 @@
+{
+  "executedAt": "2026-11-01T16:41:31.507777+09:00",
+  "os": "Microsoft Windows NT 10.0.26200.0",
+  "runtime": "10.0.12",
+  "broker": "127.0.0.1:18886",
+  "results": [
+    {
+      "id": "CTRL-01",
+      "passed": true,
+      "detail": "Only configured actual target registered; no invented position."
+    },
+    {
+      "id": "CTRL-02",
+      "passed": true,
+      "detail": "Actual AMR initial coordinates received from configuration."
+    },
+    {
+      "id": "CTRL-03",
+      "passed": true,
+      "detail": "Actual source is configuration-based; assigned destination shown in selected AMR window."
+    },
+    {
+      "id": "CTRL-03A",
+      "passed": true,
+      "detail": "Visible destination dialog rejects non-finite input and applies valid actual mission coordinates without moving AMR."
+    },
+    {
+      "id": "CTRL-04",
+      "passed": true,
+      "detail": "GUI MOVE published; actual BUSY seen; publication is not reported as completed."
+    },
+    {
+      "id": "CTRL-05",
+      "passed": true,
+      "detail": "STOP actually stopped movement; original MOVE failed, STOP has independent SUCCESS."
+    },
+    {
+      "id": "CTRL-06",
+      "passed": true,
+      "detail": "Position stays stopped while Heartbeat and Telemetry continue."
+    },
+    {
+      "id": "CTRL-07",
+      "passed": true,
+      "detail": "Manual restart creates new request ID and uses stopped current position as source."
+    },
+    {
+      "id": "CTRL-08",
+      "passed": true,
+      "detail": "Closing separate window does not stop actual AMR movement."
+    },
+    {
+      "id": "CTRL-09",
+      "passed": true,
+      "detail": "Reopened window remains bound to actual target."
+    },
+    {
+      "id": "CTRL-10",
+      "passed": true,
+      "detail": "Actual arrival, matching final ACK and same-basis remaining distance zero confirmed."
+    },
+    {
+      "id": "CTRL-11",
+      "passed": true,
+      "detail": "Alarm test fixture traversed real MQTT into active GUI alarm; not Simulator fault-scenario implementation."
+    },
+    {
+      "id": "CTRL-12",
+      "passed": true,
+      "detail": "Actual session-history filter applied."
+    },
+    {
+      "id": "CTRL-13",
+      "passed": true,
+      "detail": "History reset changes filter/selection only, preserving actual records."
+    },
+    {
+      "id": "CTRL-14",
+      "passed": true,
+      "detail": "Duplicate final ACK does not repeat business/history transition."
+    },
+    {
+      "id": "CTRL-15",
+      "passed": true,
+      "detail": "Conflicting ACK flagged while original SUCCESS preserved."
+    },
+    {
+      "id": "CTRL-16",
+      "passed": true,
+      "detail": "Disconnected real AMR remains registered with last position; current state is unknown."
+    },
+    {
+      "id": "CTRL-17",
+      "passed": true,
+      "detail": "Reconnect alone does not mark old coordinates fresh."
+    },
+    {
+      "id": "CTRL-18",
+      "passed": true,
+      "detail": "No automatic command replay after reconnect; old completion is not current arrival at restarted coordinates."
+    },
+    {
+      "id": "CTRL-19",
+      "passed": true,
+      "detail": "After GUI closes and its communication owner stops, independent AMR completes MOVE and sends final ACK to separate observer."
+    }
+  ]
+}

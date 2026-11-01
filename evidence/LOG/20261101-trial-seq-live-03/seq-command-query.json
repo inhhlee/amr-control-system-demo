@@ -1,0 +1,308 @@
+[
+  {
+    "Timestamp": "2026-11-01T08:50:25.5053103Z",
+    "Properties": [
+      {
+        "Name": "AckAmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "CommandId",
+        "Value": "CMD-a59fa2ad623e4ab48b4bca7484265c40"
+      },
+      {
+        "Name": "DeviceTimestamp",
+        "Value": 1793523025492
+      },
+      {
+        "Name": "EventType",
+        "Value": "AckReceived"
+      },
+      {
+        "Name": "Host",
+        "Value": "127.0.0.1"
+      },
+      {
+        "Name": "Kind",
+        "Value": "ack"
+      },
+      {
+        "Name": "Port",
+        "Value": 49235
+      },
+      {
+        "Name": "Reason",
+        "Value": "STOPPED"
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-11-01T17:50:25.5047151+09:00"
+      },
+      {
+        "Name": "Result",
+        "Value": "SUCCESS"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261101-trial-seq-live-03-online"
+      },
+      {
+        "Name": "SessionId",
+        "Value": "f75973a6dd934a069371b8d72c2ff693"
+      },
+      {
+        "Name": "Topic",
+        "Value": "amr/AMR_001/ack"
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR="
+      },
+      {
+        "PropertyName": "AmrId",
+        "RawText": "{AmrId:l}",
+        "FormattedValue": "AMR_001"
+      },
+      {
+        "Text": " 종류=ack cmdId="
+      },
+      {
+        "PropertyName": "CommandId",
+        "RawText": "{CommandId:l}",
+        "FormattedValue": "CMD-a59fa2ad623e4ab48b4bca7484265c40"
+      },
+      {
+        "Text": " result="
+      },
+      {
+        "PropertyName": "Result",
+        "RawText": "{Result:l}",
+        "FormattedValue": "SUCCESS"
+      },
+      {
+        "Text": " reason="
+      },
+      {
+        "PropertyName": "Reason",
+        "RawText": "{Reason:l}",
+        "FormattedValue": "STOPPED"
+      },
+      {
+        "Text": " ts="
+      },
+      {
+        "PropertyName": "DeviceTimestamp"
+      },
+      {
+        "Text": " (응답 수신값)"
+      }
+    ],
+    "EventType": "$BCFF7AA6",
+    "Level": "Information",
+    "RenderedMessage": "AMR=AMR_001 종류=ack cmdId=CMD-a59fa2ad623e4ab48b4bca7484265c40 result=SUCCESS reason=STOPPED ts=1793523025492 (응답 수신값)",
+    "Id": "event-2c06b92f37f508df4300000000000000",
+    "Links": {
+      "Self": "api/events/event-2c06b92f37f508df4300000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-11-01T08:50:25.4479058Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "CommandId",
+        "Value": "CMD-a59fa2ad623e4ab48b4bca7484265c40"
+      },
+      {
+        "Name": "CommandType",
+        "Value": "STOP"
+      },
+      {
+        "Name": "Detail",
+        "Value": "· MQTT 발행 반환, AMR 수행 미확인"
+      },
+      {
+        "Name": "EventType",
+        "Value": "CommandPublished"
+      },
+      {
+        "Name": "Host",
+        "Value": "127.0.0.1"
+      },
+      {
+        "Name": "Port",
+        "Value": 49235
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261101-trial-seq-live-03-online"
+      },
+      {
+        "Name": "SessionId",
+        "Value": "f75973a6dd934a069371b8d72c2ff693"
+      },
+      {
+        "Name": "X",
+        "Value": null
+      },
+      {
+        "Name": "Y",
+        "Value": null
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR="
+      },
+      {
+        "PropertyName": "AmrId",
+        "RawText": "{AmrId:l}",
+        "FormattedValue": "AMR_001"
+      },
+      {
+        "Text": " 명령="
+      },
+      {
+        "PropertyName": "CommandType",
+        "RawText": "{CommandType:l}",
+        "FormattedValue": "STOP"
+      },
+      {
+        "Text": " cmdId="
+      },
+      {
+        "PropertyName": "CommandId",
+        "RawText": "{CommandId:l}",
+        "FormattedValue": "CMD-a59fa2ad623e4ab48b4bca7484265c40"
+      },
+      {
+        "Text": " "
+      },
+      {
+        "PropertyName": "Detail",
+        "RawText": "{Detail:l}",
+        "FormattedValue": "· MQTT 발행 반환, AMR 수행 미확인"
+      }
+    ],
+    "EventType": "$91A93CFC",
+    "Level": "Information",
+    "RenderedMessage": "AMR=AMR_001 명령=STOP cmdId=CMD-a59fa2ad623e4ab48b4bca7484265c40 · MQTT 발행 반환, AMR 수행 미확인",
+    "Id": "event-2bfdf6d237f508df3c00000000000000",
+    "Links": {
+      "Self": "api/events/event-2bfdf6d237f508df3c00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-11-01T08:50:25.4471556Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "CommandId",
+        "Value": "CMD-a59fa2ad623e4ab48b4bca7484265c40"
+      },
+      {
+        "Name": "CommandType",
+        "Value": "STOP"
+      },
+      {
+        "Name": "Detail",
+        "Value": "요청 작성"
+      },
+      {
+        "Name": "EventType",
+        "Value": "CommandRequested"
+      },
+      {
+        "Name": "Host",
+        "Value": "127.0.0.1"
+      },
+      {
+        "Name": "Port",
+        "Value": 49235
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261101-trial-seq-live-03-online"
+      },
+      {
+        "Name": "SessionId",
+        "Value": "f75973a6dd934a069371b8d72c2ff693"
+      },
+      {
+        "Name": "X",
+        "Value": null
+      },
+      {
+        "Name": "Y",
+        "Value": null
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR="
+      },
+      {
+        "PropertyName": "AmrId",
+        "RawText": "{AmrId:l}",
+        "FormattedValue": "AMR_001"
+      },
+      {
+        "Text": " 명령="
+      },
+      {
+        "PropertyName": "CommandType",
+        "RawText": "{CommandType:l}",
+        "FormattedValue": "STOP"
+      },
+      {
+        "Text": " cmdId="
+      },
+      {
+        "PropertyName": "CommandId",
+        "RawText": "{CommandId:l}",
+        "FormattedValue": "CMD-a59fa2ad623e4ab48b4bca7484265c40"
+      },
+      {
+        "Text": " "
+      },
+      {
+        "PropertyName": "Detail",
+        "RawText": "{Detail:l}",
+        "FormattedValue": "요청 작성"
+      }
+    ],
+    "EventType": "$91A93CFC",
+    "Level": "Information",
+    "RenderedMessage": "AMR=AMR_001 명령=STOP cmdId=CMD-a59fa2ad623e4ab48b4bca7484265c40 요청 작성",
+    "Id": "event-2bfdd98437f508df3b00000000000000",
+    "Links": {
+      "Self": "api/events/event-2bfdd98437f508df3b00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[17:51:04] [안내] 과제 1 · MQTT 통신 시험 프로그램
+[17:51:04] [설정] Broker=127.0.0.1:63946 AMR=AMR_001
+[17:51:04] [설정] 재시도: 1초 간격 / 최대 10회 (최초 시도 제외)
+[17:51:04] [안내] 입력: move 10 20 | stop | reset | status | detail on/off | help | /exit  /  Ctrl+C 종료
+[17:51:04] [안내] 명령 발행과 응답 수신을 관찰합니다. AMR 실제 수행·요청/응답 업무 매핑은 별도입니다.
+[17:51:05] [로그설정] 콘솔=Information / Seq=미설정 · 상세 로그 보관 안 됨 / RunId=126ddc3adb6443009e8ea1f9cd3308f1
+[17:51:05] [접속] 서버 연결을 시도합니다.
+[17:51:05] [구독] Heartbeat·Telemetry·Alarm·ACK 구독 승인
+[17:51:05] [접속완료] CONNECTED · 구독 완료, 송수신 준비 완료
+[17:51:05] [생존확인] 정상 생존 신호 수신, 감시 시작
+[17:51:05] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(-1,0) 속도=0 상태=IDLE ts=1793523065539
+[17:51:05] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(-0.89543,0) 속도=1 상태=BUSY ts=1793523065747
+[17:51:09] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,2) 속도=0 상태=IDLE ts=1793523069580
+[17:51:10] [검사거부] Code=MissingField Field=$.ts Reason=Required field is missing.
+[17:51:10] [수신·검사통과] AMR=AMR_001 종류=alarm code=TEST_SENSOR level=WARN alarmState=ACTIVE
+[17:51:10] [수신·검사통과] AMR=AMR_001 종류=ack cmdId=TEST_RESPONSE result=SUCCESS reason=null ts=101 (응답 수신값)
+[17:51:12] [발행요청] AMR=AMR_001 명령=MOVE cmdId=CMD-c1f9164571d147c6aaf55c7aac6d0594 요청 작성
+[17:51:12] [명령발행] AMR=AMR_001 명령=MOVE cmdId=CMD-c1f9164571d147c6aaf55c7aac6d0594 · MQTT 발행 반환, AMR 수행 미확인
+[17:51:12] [발행요청] AMR=AMR_001 명령=STOP cmdId=CMD-49b5bf000974473ba1ce8bb0468d3aa7 요청 작성
+[17:51:12] [명령발행] AMR=AMR_001 명령=STOP cmdId=CMD-49b5bf000974473ba1ce8bb0468d3aa7 · MQTT 발행 반환, AMR 수행 미확인
+[17:51:12] [발행요청] AMR=AMR_001 명령=RESET cmdId=CMD-0870d968f94344c688853a22a6998cc8 요청 작성
+[17:51:12] [명령발행] AMR=AMR_001 명령=RESET cmdId=CMD-0870d968f94344c688853a22a6998cc8 · MQTT 발행 반환, AMR 수행 미확인
+[17:51:14] [AMR무응답] 생존 신호 5초 이상 없음 · 서버 단절과 구분
+[17:51:16] [수신·검사통과] AMR=AMR_001 종류=ack cmdId=CMD-0870d968f94344c688853a22a6998cc8 result=FAILURE reason=null ts=1002 (응답 수신값)
+[17:51:16] [수신·검사통과] AMR=AMR_001 종류=ack cmdId=CMD-49b5bf000974473ba1ce8bb0468d3aa7 result=SUCCESS reason=null ts=1001 (응답 수신값)
+[17:51:17] [수신·검사통과] AMR=AMR_001 종류=ack cmdId=CMD-c1f9164571d147c6aaf55c7aac6d0594 result=FAILURE reason=TEST_REASON_PRESERVED ts=1000 (응답 수신값)
+[17:51:17] [검사거부] Code=MissingField Field=$.cmdId Reason=Required field is missing.
+[17:51:18] [수신·검사통과] AMR=AMR_001 종류=ack cmdId=AFTER_INVALID_ACK result=FAILURE reason=EXPECTED_TEST_INPUT ts=2002 (응답 수신값)
+[17:51:18] [생존복구] 정상 생존 신호를 다시 수신했습니다.
+[17:51:19] [연결끊김] BrokerDisconnected
+[17:51:19] [재접속대기] 1초 간격 1/10회 · 원인=BrokerDisconnected
+[17:51:19] [발행거부] 서버 연결·구독 준비 전입니다. 명령을 보관하거나 자동 재전송하지 않습니다.
+[17:51:20] [재접속시도] 1초 간격 1/10회 · 원인=BrokerDisconnected
+[17:51:20] [접속] 서버 연결을 시도합니다.
+[17:51:20] [구독] Heartbeat·Telemetry·Alarm·ACK 구독 승인
+[17:51:20] [재접속완료] RECONNECTED · 구독 복구, 송수신 준비 완료
+[17:51:21] [수신·검사통과] AMR=AMR_001 종류=ack cmdId=AFTER_RECONNECT_ACK result=FAILURE reason=TEST_ONLY ts=3000 (응답 수신값)
+[17:51:21] [수신·검사통과] AMR=AMR_001 종류=alarm code=AFTER_RECOVERY level=WARN alarmState=CLEARED
+[17:51:24] [생존확인] 정상 생존 신호 수신, 감시 시작
+[17:51:24] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(-1,0) 속도=0 상태=IDLE ts=1793523084513
+[17:51:24] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(-0.8865335000000001,0) 속도=1 상태=BUSY ts=1793523084723
+[17:51:28] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(1,2) 속도=0 상태=IDLE ts=1793523088607
+[17:51:28] [발행요청] AMR=AMR_001 명령=RESET cmdId=CMD-9e231ef4fb3c4cd18e9c592509f01747 요청 작성
+[17:51:28] [명령발행] AMR=AMR_001 명령=RESET cmdId=CMD-9e231ef4fb3c4cd18e9c592509f01747 · MQTT 발행 반환, AMR 수행 미확인
+[17:51:31] [상태] Broker=Connected AMR=AMR_001 Ready=True RunId=126ddc3adb6443009e8ea1f9cd3308f1
+[17:51:31] [종료] 통신 연결과 소유 작업 정리를 완료했습니다.
+[17:51:31] [종료결과] ExitCode=0

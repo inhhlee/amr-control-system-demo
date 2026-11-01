@@ -42,7 +42,7 @@
 | 이동 없는 경로·완료 후 유지 | AllWaypointsAtInitialPosition(동일점1000개)/FinalArrival. 생성부터 IDLE·0·완료, 큰 추가 시간에도 위치·상태 유지 | 통과 |
 | 설정 보존·회귀·추적 | UpdatingOneAmr와 기존 설정/초기화88건. 공유 설정·다른 AMR 불변. 0초는 유지, 음수·NaN·±Infinity는 초기/이동/도착 각 단계에서 항목·이유가 있는 오류 및 상태 보존 | 통과 |
 
-입력·정확한 assertion은 [MovementTests.cs](../../../tests/Amr.Simulator.Tests/MovementTests.cs)에 있고 모든 실제 사례 결과는 `elevated-test-summary.json`과 `elevated-tests.trx`에 있다. 유한 수치의 극단값 시험은 일반 좌표의 1e-6m 비교와 구분해 정규화 오차·유한 결과·진행 여부를 검사한다.
+입력·정확한 assertion은 [MovementTests.cs](../../../tests/Amr.Simulator.Tests/Simulation/MovementTests.cs)에 있고 모든 실제 사례 결과는 `elevated-test-summary.json`과 `elevated-tests.trx`에 있다. 유한 수치의 극단값 시험은 일반 좌표의 1e-6m 비교와 구분해 정규화 오차·유한 결과·진행 여부를 검사한다.
 
 ## 4. 실제 결과와 판정
 

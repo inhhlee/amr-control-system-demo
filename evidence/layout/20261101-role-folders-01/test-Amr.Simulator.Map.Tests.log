@@ -1,0 +1,5 @@
+C:\amr-control-system-demo\tests\Amr.Communication.Tests\bin\role-folders\bin\Amr.Simulator.Map.Tests\debug\Amr.Simulator.Map.Tests.dll(.NETCoreApp,Version=v10.0)에 대한 테스트 실행
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+결과 파일: C:\amr-control-system-demo\evidence\layout\20261101-role-folders-01\Amr.Simulator.Map.Tests.trx
+
+통과!  - 실패:     0, 통과:    72, 건너뜀:     0, 전체:    72, 기간: 31 s - Amr.Simulator.Map.Tests.dll (net10.0)

@@ -4,6 +4,10 @@
     "Mock": {
       "commandName": "Project"
     },
+    "MQTT Live": {
+      "commandName": "Project",
+      "commandLineArgs": "--mqtt --host 127.0.0.1 --port 1884 --amr-id AMR_001"
+    },
     "Grid MQTT": {
       "commandName": "Project",
       "commandLineArgs": "--grid-url http://127.0.0.1:59344"

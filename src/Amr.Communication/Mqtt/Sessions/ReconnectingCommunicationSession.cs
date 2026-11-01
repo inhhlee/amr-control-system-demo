@@ -41,6 +41,7 @@ public sealed class ReconnectingCommunicationSession : IAsyncDisposable
 
     public bool IsReady { get { lock (_gate) return _ready && !_stopping; } }
     public string State { get { lock (_gate) return _state; } }
+    public Guid? SessionId { get { lock (_gate) return _ready && !_stopping ? _current?.SessionId : null; } }
 
     public Task<int> RunAsync(CancellationToken cancellationToken = default)
     {
@@ -52,10 +53,10 @@ public sealed class ReconnectingCommunicationSession : IAsyncDisposable
         }
     }
 
-    public Task<CommandPublication> PublishCommandAsync(ReadOnlyMemory<byte> payload, CancellationToken token = default)
+    public Task<CommandPublication> PublishCommandAsync(ReadOnlyMemory<byte> payload, CancellationToken token = default, Guid? expectedSessionId = null)
     {
         ControlCommunicationSession? session;
-        lock (_gate) session = _ready && !_stopping ? _current : null;
+        lock (_gate) session = _ready && !_stopping && (expectedSessionId is null || _current?.SessionId == expectedSessionId) ? _current : null;
         // 다음 연결로 넘기거나 저장하지 않는다. 현재 세션도 자신의 종료 경계에서 다시 검사한다.
         return session is null
             ? Task.FromException<CommandPublication>(new CommandPublishException(CommandPublishFailure.NotConnected))
@@ -81,6 +82,8 @@ public sealed class ReconnectingCommunicationSession : IAsyncDisposable
                 {
                     session = new(settings, _amrId, (_, _) => Task.CompletedTask,
                         entry => Observe(generation, entry), client: _clientFactory(), clock: _clock, showPayload: _showPayload);
+                    // 정상 Heartbeat마다 수신 시각/생존 관측을 전달한다. 큐 소비 시점과 분리한다.
+                    session.ObservationChanged += observation => Observe(generation, new("SessionObservation", observation));
                     lock (_gate) _current = session;
                     await session.StartAsync(token);
                     await session.Completion;

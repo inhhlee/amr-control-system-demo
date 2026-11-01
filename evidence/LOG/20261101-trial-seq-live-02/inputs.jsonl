@@ -1,0 +1,4 @@
+{"input":"detail on","at":"2026-11-01T08:49:05.6525156+00:00","child":"online"}
+{"input":"detail off","at":"2026-11-01T08:49:05.8216341+00:00","child":"online"}
+{"input":"move 10 2","at":"2026-11-01T08:49:07.1317097+00:00","child":"online"}
+{"input":"stop","at":"2026-11-01T08:49:07.7192300+00:00","child":"online"}

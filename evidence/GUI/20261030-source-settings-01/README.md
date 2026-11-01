@@ -9,8 +9,8 @@
 
 기존 `SimulationForm`은 출발지 선택을 드롭다운으로 구현했으나, 시안의 `설정` 버튼 → 별도 출발지 설정 창 → S-01/S-02 `선택·적용` 흐름을 누락했다.
 
-- [SourceSelectionForm.cs](../../../src/Amr.ControlGui/SourceSelectionForm.cs): AMR ID, 두 출발지의 좌표, 현재 출발지 강조, 선택·적용/닫기 버튼을 표시한다.
-- [SimulationForm.cs](../../../src/Amr.ControlGui/SimulationForm.cs): `OpenSourceSettings()`에서 모달 창을 열고 OK로 반환된 출발지만 기존 `SetSimulationSource()`에 전달한다. 닫기/Escape/창 닫기는 공급자를 수정하지 않는다. 시작 후 설정 비활성화와 공급자의 Ready 재검사를 유지한다.
+- [SourceSelectionForm.cs](../../../src/Amr.ControlGui/Views/Simulation/SourceSelectionForm.cs): AMR ID, 두 출발지의 좌표, 현재 출발지 강조, 선택·적용/닫기 버튼을 표시한다.
+- [SimulationForm.cs](../../../src/Amr.ControlGui/Views/Simulation/SimulationForm.cs): `OpenSourceSettings()`에서 모달 창을 열고 OK로 반환된 출발지만 기존 `SetSimulationSource()`에 전달한다. 닫기/Escape/창 닫기는 공급자를 수정하지 않는다. 시작 후 설정 비활성화와 공급자의 Ready 재검사를 유지한다.
 - 공급자·이동 엔진·시작/Stop·이력 초기화의 동작은 변경하지 않았다. 설정 창은 공급자를 소유하거나 구독하지 않으며 호출자가 `using`으로 해제한다. 기존 라벨 생성 함수를 재사용했다.
 - [BUILDING.md](../../../BUILDING.md)에 실제 조작 순서와 코드 위치를 보완했다.
 

@@ -1,0 +1,2 @@
+Usage: Amr.Simulator --config <JSON file> [--mqtt --host <host> --port <port> --telemetry-ms <ms> --heartbeat-ms <ms>]
+Fleet: Amr.Simulator --fleet-config <JSON file> [same MQTT options]

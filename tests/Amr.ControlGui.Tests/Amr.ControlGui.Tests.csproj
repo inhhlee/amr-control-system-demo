@@ -17,5 +17,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../../src/Amr.ControlGui/Amr.ControlGui.csproj" />
+    <Compile Include="../Amr.Communication.Tests/TestDoubles/FakeMqttClient.cs" Link="TestDoubles/FakeMqttClient.cs" />
   </ItemGroup>
 </Project>

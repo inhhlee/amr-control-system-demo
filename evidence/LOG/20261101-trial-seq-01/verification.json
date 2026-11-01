@@ -1,0 +1,186 @@
+{
+  "runId": "20261101-trial-seq-01",
+  "verifiedAt": "2026-11-01T18:02:55.133202+09:00",
+  "head": "755e1405dd4bb74b54a80a97abdc47d244fcfd99",
+  "branch": "feature/58-gui-mqtt-live",
+  "state": "local-uncommitted",
+  "commitPushPrMergePerformed": false,
+  "sourceSha256": {
+    "src/Amr.Communication.Console/Amr.Communication.Console.csproj": "d2e902231968d3b2214955e0bc2d7fced4607aa3a08f2b5530d15004093f22f3",
+    "src/Amr.Communication.Console/CommandConsoleRunner.cs": "bd211aa52f54ccd31a8b3cbde504b34be6ef3fab73fefe523c7cfc539962bffa",
+    "src/Amr.Communication.Console/ConsoleRunner.cs": "a527188846a1feadec4eb35318a889735c32273105858f9b14080a57d8a192fb",
+    "src/Amr.Communication.Console/HeartbeatConsoleRunner.cs": "fa7caee541645a1b74adc36fc38c2400cee115b385e0330d3435b12daf693dec",
+    "src/Amr.Communication.Console/Logging/SeqLogSink.cs": "4752efe0f1f10b2ca0a8c505cbf2f5ab811f6886b3a727a67814b6a023a9646f",
+    "src/Amr.Communication.Console/Logging/SeqLogging.cs": "00ba2796a5da9a1d6dd612209d2ae7853177019ceedb734a609e2cafe8770462",
+    "src/Amr.Communication.Console/Logging/StructuredLog.cs": "bf09025c859d79e946269da5af19d88b0359df45308cae60d151c8dc6c2febfc",
+    "src/Amr.Communication.Console/Logging/TrialEventLogger.cs": "fcc6ee9eda8e615491baa91d36d76725ba0215a6b713df0469630bdb72ca939b",
+    "src/Amr.Communication.Console/Program.cs": "52ddbcf2cc06b9de401c41fed418512f8f182e908b0f2831ee567df5b5bb2c3d",
+    "src/Amr.Communication.Console/TrialConsoleDisplay.cs": "2a8772ee55a475d4c267585582cf8e5bb7f16b4bca4abed1951fae548befe3ad",
+    "src/Amr.Communication.Console/TrialConsoleInput.cs": "0609ee561707aa77dd9a1a63277b1dc20fa17244a1e04d36aa24fb3528e1413e",
+    "src/Amr.Communication.Console/TrialConsoleOptions.cs": "2a1b9979c74736de812a1f4ff2eeed22b401634080c1ba023e7d6f060d133468",
+    "src/Amr.Communication.Console/TrialConsoleRunner.cs": "272931d5c8cbb985bf11b17e7e1e6a5031a4ba2afd57fc4e50ea20ebd808ff69",
+    "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj": "0bb622c8930e883f570dd8dcfa7d4055ccd4722555c8b2f2ff972798a22e8699",
+    "tests/Amr.Communication.Tests/Command/CommandPublisherTests.cs": "737c9b02695da77486ca60b494119beceaf47a7b124603cdd5238c2d6e717f7e",
+    "tests/Amr.Communication.Tests/Command/CommandValidationTests.cs": "d46034a32a23874b921e2d84f5daf0aac2e82402c6fba77d444f07eb8a904dea",
+    "tests/Amr.Communication.Tests/Console/CommandConsoleTests.cs": "2c6be32cd789014ecc68ebfcf202e7ae7c3607c5da920f35be85433667a58366",
+    "tests/Amr.Communication.Tests/Console/ConsoleConnectionFailureTests.cs": "350ed8a675d54a7960169f652bb1d99cfb31b9985ccd34e275f8fa4f18c825c8",
+    "tests/Amr.Communication.Tests/Console/HeartbeatConsoleTests.cs": "e6fbb3454bb65c76914852a82ae66cf951972b6cb280f65a4d436dc6dcf4ef74",
+    "tests/Amr.Communication.Tests/Console/Logging/ConsoleShutdownReasonTests.cs": "8cc649eeb22f698c2733472995299690a3e97ae69b3bee2a8c814276c69633b4",
+    "tests/Amr.Communication.Tests/Console/Logging/SeqLoggingTests.cs": "17530fcdcec2d59f4268393c93d2e709991bf6733d65ec65e85bfe7145cc6d56",
+    "tests/Amr.Communication.Tests/Console/Logging/TrialEventLoggerTests.cs": "0f2a4c6ec678f8f1212c804a6529bde06002127af485837423dec7e6628ea1e6",
+    "tests/Amr.Communication.Tests/Console/TrialConsolePromptTests.cs": "54ca24790b8345ae5d1fc40a939d5b79e9a276ebf75844c44cdcc6d612cd7058",
+    "tests/Amr.Communication.Tests/Console/TrialConsoleTests.cs": "29442af6d4f003ce889130c76f5bb5468fa399a74fa6a2d5f8c541ddf0b136e9",
+    "tests/Amr.Communication.Tests/Monitoring/SingleAmrHeartbeatMonitorTests.cs": "b058d1ed18f9d07d1486bceff7ae2d343bae22debcab7ee3cbb175a0375c1489",
+    "tests/Amr.Communication.Tests/Mqtt/Connection/MqttConnectionFailureTests.cs": "c90e243665956ee3267d7767a4de94d86382322c7cc16ef8b1a5fc85ca200229",
+    "tests/Amr.Communication.Tests/Mqtt/Connection/MqttConnectionTests.cs": "56d70e386aea42eb11f533a7d2313896bd89e7e68d88550ad23908390cd3d394",
+    "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueBoundaryTests.cs": "4db676ab1c6ecbaf3d474c8201211f9243dbc9c4b57198792b3ae3e0758e38d9",
+    "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueShutdownTests.cs": "f4d564cfc5e7d3a29a32f06efb5d0fcb2929a710b632568878c2f17e88f60cce",
+    "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueTests.cs": "d4baedd8aca2f15660f2730fd3433aa75fccf882edf8e46f4c0d47e8d2a4dffa",
+    "tests/Amr.Communication.Tests/Mqtt/Sessions/ControlCommunicationSessionTests.cs": "322392c0a72b3c218c44158807717e58fb59eea259fa90ffe9f3616fd19f486b",
+    "tests/Amr.Communication.Tests/Mqtt/Sessions/ReconnectingCommunicationSessionTests.cs": "c476118e1801ea7fc15505007c8c145cee17552680904165b30ecc97160153d7",
+    "tests/Amr.Communication.Tests/Mqtt/Sessions/TwoAmrSessionTests.cs": "842970b1d835ce8165366fd345888e78f7f79a77a3c7b0425b48312a44f61617",
+    "tests/Amr.Communication.Tests/Mqtt/Subscriptions/HeartbeatSubscriptionTests.cs": "f2c98e620e2ec01166a0d1d2a06ef324e9c75b0d298ed80434562f8e34871e07",
+    "tests/Amr.Communication.Tests/Mqtt/Subscriptions/MessageSubscriptionTests.cs": "5910663c9f8be1ec29502ddd44dbbc0406a48180f402e76518f121cfbd1dd030",
+    "tests/Amr.Communication.Tests/TestDoubles/FakeMqttClient.cs": "191cbe4b02410b354dcaefa46ab02f538a796fbd0e7e383b388c0cd98c11041a",
+    "tests/Amr.Communication.Tests/Validation/AckValidatorTests.cs": "bb727f21f3290d691053663ce44ea4d145e6e3dd243f844d9ab7e14dcf6aca17",
+    "tests/Amr.Communication.Tests/Validation/AlarmValidatorTests.cs": "b7d1cf7a60639ce9427b791ec9adb8cbb5e318f98741f5f70382bca7417d9533",
+    "tests/Amr.Communication.Tests/Validation/HeartbeatValidatorTests.cs": "faa761d201b0a94778633b28effce1fed4243689ca30df2ea083af9b813b842d",
+    "tests/Amr.Communication.Tests/Validation/MessageFieldValidationTests.cs": "6d9096c1ab067eb6833929cdd7ec05978a93e250b3a73518829c6ae879dc8205",
+    "tests/Amr.Communication.Tests/Validation/MessageValidationRegressionTests.cs": "4c277cd69dec818f0f0a876d661e37520dec421f7bb9b7b76ea9b259a510d96a",
+    "tests/Amr.Communication.Tests/Validation/TelemetryValidatorTests.cs": "7c09035a772d947acf7c70802255f0911785da7fffcff290e645fcf67a2793c1",
+    "tests/manual/COM06/Run-TrialInputProbe.ps1": "f5382194d22a02c8dc0a5aad56ebbf0b70b8625529f0c3ae74e2abb800dddfc1",
+    "tests/manual/COM06/Verify-TrialConsole.ps1": "ff05cddf516e617df273a38c888db817ebd2deb9f65d9311d42895b8dcafee8a",
+    "tests/manual/LOG/Verify-Seq.ps1": "51f91b5a6f39f8fccff3725e11f5b8f349600782f1f472e9ba76874caa2fabea",
+    "tests/manual/LOG/Verify-SeqShutdown.ps1": "580848222d9a297d7a0339e6d2e81d3e66dcd8b499b3870ec6dd015f7739517a",
+    "tests/manual/LOG/Verify-TrialSeq.ps1": "24c3931e148f0b5a6c17b96ca8ec5116403057b11c490062f2aa0f38a97440a6"
+  },
+  "runtimeSha256": {
+    "tests/Amr.Communication.Tests/bin/trial-seq/bin/Amr.Communication.Console/debug/Amr.Communication.Console.deps.json": "4fbe1b75809e7c848bdb84416f7f1d10a280693a62ca305e14ace861ae641dde",
+    "tests/Amr.Communication.Tests/bin/trial-seq/bin/Amr.Communication.Console/debug/Amr.Communication.Console.dll": "5ad193bbbbf1480aa599f695293e1ed585b5c332983f5d3efaa0674585f05290",
+    "tests/Amr.Communication.Tests/bin/trial-seq/bin/Amr.Communication.Console/debug/Amr.Communication.Console.exe": "5d7f63139695f607669c385c9985dc219ed24b9d91cebb3db029d57f02c27b96",
+    "tests/Amr.Communication.Tests/bin/trial-seq/bin/Amr.Communication.Console/debug/Amr.Communication.Console.runtimeconfig.json": "256dda2706e1151bb95987b6b5be610bf68d64e058285b19e7e958222fc90414",
+    "tests/Amr.Communication.Tests/bin/trial-seq/bin/Amr.Communication.Console/debug/Amr.Communication.dll": "59df2b667aef316b4baf3bd521570d95dfa257d29cc70636c77708f31e287ec2",
+    "tests/Amr.Communication.Tests/bin/trial-seq/bin/Amr.Communication.Console/debug/MQTTnet.dll": "1bb34492a9018fec3f627458364dc6e46fef076a647df181403246da65f5bce2",
+    "tests/Amr.Communication.Tests/bin/trial-seq/bin/Amr.Communication.Console/debug/Serilog.dll": "3ee17790b1bf00eabca2176288de6c058977bc5b07e6d9839cf6a88433d72311",
+    "tests/Amr.Communication.Tests/bin/trial-seq/bin/Amr.Communication.Console/debug/Serilog.Formatting.Compact.dll": "319fbcefc2161dd50ccdd8d60b30edee48a09f794aedb28421a23f35ddd670d9"
+  },
+  "originalDocumentSha256": {
+    "C:\\process-plan\\관제시스템 과제 진행\\과제1\\과제계획.md": "97da0a79cab2fa4f1ad359a58288bf723c83d1107e88f5cd1b64175a675f716a",
+    "C:\\process-plan\\관제시스템 과제 진행\\명세\\검토 및 결정사항.md": "8ef39a7384464644742bd41eb5a7392ad7ab5cef9b157e2a1d0ba0ad09415492",
+    "C:\\process-plan\\관제시스템 과제 진행\\개발환경.md": "0e3e29dcaeb107fd722ca60e2a0cf645f5c71d90e3213ddd68f84d082d008818",
+    "C:\\process-plan\\일일업무\\2026-11-01.md": "c2590447d1f906d0744b8a33ea860a36b980cdd011d8b7f527e8a0da174ccc6c"
+  },
+  "automated": {
+    "passed": 839,
+    "failed": 0,
+    "file": "communication-final-02.trx"
+  },
+  "actualDockerSeqMqtt": {
+    "passed": 14,
+    "file": "../20261101-trial-seq-live-03/verification.json",
+    "debugTelemetryCount": 27,
+    "seqEvents": 116
+  },
+  "actualMqttRegression": {
+    "passed": 20,
+    "file": "../../COM-06/20261101-trial-seq-console-regression-01/verification.json"
+  },
+  "actualNative": {
+    "passed": 4,
+    "checks": [
+      {
+        "name": "core-quiet-with-seq-detail",
+        "passed": true,
+        "detail": "Native console stays quiet; same RunId has detailed Seq telemetry."
+      },
+      {
+        "name": "detail-switch-and-protected-input",
+        "passed": true,
+        "detail": "Detailed receive stream preserves partial command across captures."
+      },
+      {
+        "name": "detail-off-and-status",
+        "passed": true,
+        "detail": "Info mode restored while status remains available."
+      },
+      {
+        "name": "exit-and-no-partial-publication",
+        "passed": true,
+        "detail": "Esc cleared partial command; /exit finished without accidental MOVE."
+      }
+    ],
+    "seqEventCount": 553,
+    "file": "native/input-output.json"
+  },
+  "dockerSeq": {
+    "name": "amr-seq",
+    "url": "http://127.0.0.1:5341",
+    "version": "2026.1.17114",
+    "dataLocation": "C:/practice/docker/seq/data",
+    "startedExistingStoppedService": true,
+    "configurationOrAuthChanged": false,
+    "leftRunningForUser": true
+  },
+  "preserved": {
+    "evidence/COM-01/20261031-task1-results-01/": {
+      "count": 35,
+      "sha256Unchanged": true
+    },
+    "evidence/GUI/20261101-mqtt-live-01/": {
+      "count": 24,
+      "sha256Unchanged": true
+    },
+    "evidence/GUI/20261101-figma-live-02/": {
+      "count": 52,
+      "sha256Unchanged": true
+    },
+    "evidence/COM-06/20261101-trial-input-01/": {
+      "count": 36,
+      "sha256Unchanged": true
+    },
+    "evidence/COM-06/20261101-trial-input-redirected-01/": {
+      "count": 39,
+      "sha256Unchanged": true
+    }
+  },
+  "preexistingDirtyChangedOnly": [
+    "README.md",
+    "evidence/README.md",
+    "src/Amr.Communication.Console/TrialConsoleDisplay.cs",
+    "src/Amr.Communication.Console/TrialConsoleRunner.cs",
+    "tests/manual/COM06/README.md",
+    "tests/manual/COM06/Run-TrialInputProbe.ps1"
+  ],
+  "localLinks": {
+    "checked": 206,
+    "broken": []
+  },
+  "limitations": [
+    "Diagnostic delivery remains best-effort with failure/drop counters, not guaranteed lossless.",
+    "Seq reused existing Docker installation; fresh install/data migration/auth/retention changes not performed.",
+    "Shared Seq outage simulated with a separate unavailable endpoint; shared Seq was not stopped.",
+    "GUI external command tracking/SQLite/RESET/fault scenarios/full integration outside this scope.",
+    "Official HTML generation blocked by pre-existing task1 format mismatch."
+  ],
+  "evidenceSha256": {
+    "build-final.log": "9c03430dcb898263416e72339edabebee7b743658af59668af48e8fad517b7ac",
+    "build-test-final.log": "ca3038f7ab74a9a948f98b92cb2fede41278418737e13634d3cc04a2e01783c8",
+    "build-test.log": "575231b8706d8bec35cad811c99fd0dc5c0fbc2740b90f3adb908e29d2a78558",
+    "communication-final-02.trx": "968fcc0b8c3ae290dbf1193a2eab4f63b4d83edb03b575bd4e1e2320d0aa9ed7",
+    "communication-final.trx": "9dfb0989fcf26df4b21e1c09c14d9634790f2cbc30b5f4bcdb255a6ea316db51",
+    "document-render.log": "39057bc2699ec27658b8ae3a1cfcf49108e0c6f06b1638589527b1b625dcf6dd",
+    "owned-containers-after.log": "724f0979112095b68b095a5930994dc6952dcd97148ef366a630b1561b622fac",
+    "README.md": "0464dbeb33a7f9ed5b283b505d23ee414f7dbc79783d1af858c154a466f5411e",
+    "seq-state-query.jpg": "37671b64d9d7d4df664c71d9afeef05bc26b78b933eee14d85717dcf021458ba",
+    "trial-seq-first.trx": "0a022de6574fecf3e9434f7679695bf8be57e9f5642f4714079059e711ce36bd",
+    "trial-seq-routing.trx": "52efea13839aa47a62624512fbf812eb44bb6ee44fc15dc8ab1365011c4f3697",
+    "native/input-output.json": "15184fed6c81798c6806d2698d647f64d68ca5e187d16dbea3c580254d6cd61e",
+    "native/native-environment.json": "febd84e3f4b56fbecfc13bacdaf3e64b0823464b83bb76004c2dfc1a29ade4f7",
+    "native/native-result.json": "f3c8aade15e96f892f70022cc37a257a90b2366e563fb5339734d98e44cd0374",
+    "native/resources.json": "d3324f073887cdc196df3ac695bb3e449e36579db6a8880fc7d564effd6f091a",
+    "native/seq-events.json": "d5c1921e6d0abbc744a7809c8bf1efc9e8cc288f267647338fbfdeb0298dadc5",
+    "native/simulator.error.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native/simulator.json": "fc1966516c30ad1b95da1a3e3d9e8a19d1fb322be83a2460297b9cceb2551176",
+    "native/simulator.log": "e57a8d75020abdc21266724f27dfe042fad802035f39b37c02807fd34fbaa6c6"
+  }
+}

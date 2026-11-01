@@ -1,0 +1,3 @@
+CommandRequested AmrId="AMR_002" CommandId="CMD-f6503e30cb744b2e86f6613ee4f6130f" CommandType=RESET
+CommandPublished AmrId="AMR_002" CommandId="CMD-f6503e30cb744b2e86f6613ee4f6130f" CommandType=RESET QoS=0 Retain=false Delivery=Unconfirmed Execution=NotTracked
+

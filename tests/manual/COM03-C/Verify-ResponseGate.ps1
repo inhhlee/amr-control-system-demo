@@ -126,7 +126,7 @@ try {
     # Preload OS socket inspection before the brief blocked observation.
     Import-Module NetTCPIP
     $null=Get-NetTCPConnection -State Established -ErrorAction SilentlyContinue
-    $files=@(git ls-files src tests global.json AmrControlSystem.slnx) + @('tests/manual/COM03-C/Verify-ResponseGate.ps1','tools/COM-03/ResponseGateProxy.cs','tools/COM-03/Start-ResponseGateProxy.ps1')
+    $files=@(@(git ls-files --cached --others --exclude-standard -- src tests global.json AmrControlSystem.slnx) + @('tests/manual/COM03-C/Verify-ResponseGate.ps1','tools/COM-03/ResponseGateProxy.cs','tools/COM-03/Start-ResponseGateProxy.ps1') | Where-Object { Test-Path -LiteralPath $_ -PathType Leaf } | Select-Object -Unique)
     @($files | Select-Object -Unique | ForEach-Object { [ordered]@{path=$_;sha256=(Get-FileHash -LiteralPath $_).Hash} }) | ConvertTo-Json | Set-Content -LiteralPath "$run/source-version.json" -Encoding utf8
     & dotnet build src/Amr.Communication.Console/Amr.Communication.Console.csproj --no-restore --verbosity minimal *> "$run/build.log"
     if ($LASTEXITCODE -ne 0) { throw 'Build failed.' }

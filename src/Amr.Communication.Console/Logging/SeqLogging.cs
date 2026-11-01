@@ -14,9 +14,9 @@ internal sealed class SeqLogging
     {
         _sink = sink;
         RunId = runId;
-        _logger = new LoggerConfiguration().Enrich.WithProperty("Application", "Amr.Communication.Console")
-            .Enrich.WithProperty("RunId", runId).WriteTo.Sink(sink).CreateLogger();
-        Log = new StructuredLog(_logger);
+        _logger = new LoggerConfiguration().MinimumLevel.Debug().Enrich.WithProperty("Application", "Amr.Communication.Console")
+            .Enrich.WithProperty("RunId", runId).WriteTo.Sink(sink, restrictedToMinimumLevel: Serilog.Events.LogEventLevel.Debug).CreateLogger();
+        Log = new StructuredLog(_logger, runId);
     }
 
     internal static SeqLogging? FromEnvironment(TextWriter error, Func<string, string?>? read = null)
