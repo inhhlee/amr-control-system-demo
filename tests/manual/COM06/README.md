@@ -17,7 +17,56 @@ cd /c/amr-control-system-demo
 dotnet run --project src/Amr.Simulator -- --config config/simulator.single.json --mqtt --host 127.0.0.1 --port 1884 --telemetry-ms 200 --heartbeat-ms 1000
 ```
 
-통신 창에서 `[수신·검사통과]`의 위치·속도·상태·원본 시각 `ts`를 확인한다. 최종 값은 `(1,2)`, `IDLE`, 속도0이다. `--show-payload`는 정상 입력 JSON의 앞부분도 표시한다. 원문 데이터와 요약 좌표의 표시 정밀도는 다르며 검사된 모델은 변경하지 않는다.
+기본 콘솔에는 첫 위치 수신·운행 상태 변화·접속/단절/재접속·명령/ACK·알람/오류만 표시한다. 위 자동 경로 실행의 최종 값은 `(1,2)`, `IDLE`, 속도0이다. 반복 위치·생존 신호는 Debug 로그로 기록하며 Seq에서 조회한다. `detail on` 또는 `--console-detail`로 콘솔 상세 표시를 켤 수 있다. `--show-payload`의 제한된 정상 JSON 미리보기도 콘솔 상세 모드에서만 표시한다.
+
+## Docker Seq에서 구조화 상세 로그 조회
+
+현재 PC의 기존 `amr-seq`(Seq2026.1, `127.0.0.1:5341`, 데이터 `C:\practice\docker\seq\data`)를 재사용한다. 기존 데이터·인증·관리 파일은 유지한다. 아래는 이미 만들어진 이 컨테이너를 시작하는 명령이며 다른 PC에 새 Seq를 설치하는 명령과 구분한다.
+
+기존 trial을 Ctrl+C로 종료한 뒤 Git Bash에서 실행한다.
+
+```bash
+cd /c/amr-control-system-demo
+docker start amr-seq
+AMR_SEQ_URL=http://127.0.0.1:5341 dotnet run --project src/Amr.Communication.Console -- --trial --host 127.0.0.1 --port 1884 --amr-id AMR_001
+```
+
+가상 AMR·GUI는 같은 Broker1884를 계속 사용한다. Seq는 [http://127.0.0.1:5341](http://127.0.0.1:5341)에서 연다. 콘솔의 `[로그설정]`/`status`에 출력된 RunId로 이번 실행만 선택할 수 있다. 필요하면 실행 환경의 `AMR_LOG_RUN_ID`로 실행 ID를 지정한다. Seq 미설정 상태에서는 상세 로그를 저장하지 않는다고 시작 시 표시한다.
+
+Seq 검색칸에 아래 조건을 넣고 Go를 누른다. `여기에_콘솔의_RunId`를 실제 값으로 바꾼다.
+
+```sql
+RunId = '여기에_콘솔의_RunId' and AmrId = 'AMR_001' and EventType = 'TelemetryReceived'
+```
+
+이동 중 데이터만 찾으려면 `and State = 'BUSY'`, 특정 요청을 찾으려면 `RunId = '실행ID' and CommandId = '요청ID'`를 사용한다. 구조화 속성은 RunId·SessionId(확인 가능한 경우)·AmrId·Topic·X/Y·Speed·State·DeviceTimestamp·ReceivedAtUtc, 명령에는 CommandId/CommandType/Result/Reason 등이다. Topic의 장비 ID와 ACK 안의 생략 가능한 장비 ID는 구분한다.
+
+전체 최소 Debug → 입력줄 보호 콘솔 Sink는 기본 Information, 기존 Seq Sink는 Debug로 연결한다. Seq에는 허용한 진단 속성만 보내며 원본 Payload/모델/예외 원문·콘솔용 JSON 미리보기는 보내지 않는다. 전송 큐/종료 제한·실패/유실 집계를 유지한다. Seq에 문제가 있어도 통신을 계속하며, 실패한 로그를 자동 재전송하지 않는다. 정상 수집 완료를 로그 설정 완료와 혼동하지 않는다.
+
+[이번 실제 Docker Seq 검증·화면](../../../evidence/LOG/20261101-trial-seq-01/README.md).
+
+## 로그가 나오는 동안 같은 창에서 명령 입력
+
+Windows 대화형 터미널에서는 마지막 `trial>` 줄에 명령을 입력한다. 새 로그가 오면 그 위에 출력하고 작성 중인 문장·커서를 다시 표시한다. 긴 입력은 화면 폭에 맞는 부분만 보여주며 실제 입력을 잘라 보내지 않는다.
+
+- `Enter`: 현재 명령 실행. `←/→`, `Home/End`, `Backspace/Delete`: 커서 이동·수정. `Esc`: 현재 입력 비우기.
+- 로그와 키 입력은 같은 출력 잠금을 사용한다. 터미널 모드·고정 화면 영역이나 새 패키지는 추가하지 않았다.
+- 파일·파이프로 입력/출력을 연결한 기존 시험은 일반 텍스트 로그를 유지한다. 화면용 프롬프트·커서 문자를 파일에 추가하지 않는다. `--no-color`는 기존처럼 로그 색상을 끈다.
+- 기존 trial을 실행 중이었다면 그 창에서 Ctrl+C로 종료한 뒤 위 실행 명령을 다시 실행한다. `--no-build`를 사용하지 않아 수정본을 빌드·반영한다. 가상 AMR·GUI·Broker를 재시작할 필요는 없다.
+
+[입력줄 보호·실제 터미널/MQTT 검증](../../../evidence/COM-06/20261101-trial-input-01/README.md).
+
+## 명령을 받아 실제 이동·정지하는 가상 AMR
+
+두 번째 창에서 위 자동 경로 실행 대신 아래 명령을 사용한다. 같은 AMR ID의 기존 실행은 먼저 종료한다.
+
+```bash
+dotnet run --project src/Amr.Simulator -- --config config/simulator.single.json --command-mode --mqtt --host 127.0.0.1 --port 1884 --telemetry-ms 200 --heartbeat-ms 1000
+```
+
+처음에는 `(-1,0)`·IDLE로 명령을 기다린다. trial의 `move 10 2`로 이동하고 이동 중 `stop`으로 정지한다. 다시 `move 10 2`를 입력하면 멈춘 위치에서 새 요청 ID로 이동한다. 도착은 `(10,2)`·IDLE·속도0과 같은 요청 ID의 최종 SUCCESS/ARRIVED를 함께 확인한다. `--show-payload`의 ACK JSON에서 사유를 볼 수 있다.
+
+GUI도 같은 Broker/AMR ID에 연결하면 위치·속도·운행을 함께 관찰한다. trial에서 보낸 요청은 현재 GUI의 명령 추적에 등록되지 않으므로 최종 ACK는 trial에서 확인한다. [GUI와 독립 AMR 실행·범위](../GUI-CONTROL/README.md).
 
 ## 콘솔 안에서 입력할 명령
 
@@ -26,12 +75,13 @@ dotnet run --project src/Amr.Simulator -- --config config/simulator.single.json 
 | `move 10 20` | 대상 AMR의 MOVE 명령을 한 번 발행한다. |
 | `stop` / `reset` | STOP / RESET 명령을 한 번 발행한다. |
 | `status` | Broker 상태·대상·송수신 준비 여부를 출력한다. |
+| `detail on` / `detail off` | 콘솔 상세 로그를 켜거나 끈다. Seq의 Debug 수집은 계속된다. |
 | `help` | 입력 형식을 표시한다. |
 | `/exit` 또는 `exit` / Ctrl+C | 대기·발행·수신 작업을 취소하고 연결 정리를 기다린다. |
 
 표의 입력은 통신 프로그램이 실행 중인 창에 입력한다. 프로그램이 출력한 로그를 Git Bash 명령으로 다시 붙여넣지 않는다. 입력은 ASCII 128자 이내, 좌표 소수점은 `.`이다. 입력 대기에는 취소할 수 없는 별도 ReadLine 작업을 남기지 않는다. Windows 콘솔은 준비된 키를 읽고, Git Bash/파일/파이프 입력은 가용 바이트만 읽는다. 새 시험 모드의 리다이렉트 입력은 Windows 지원 범위다.
 
-현재 Simulator는 설정 경로 이동·송신까지 구현돼 있다. 콘솔의 MOVE/STOP/RESET 발행이 Simulator의 실제 명령 수행을 뜻하지 않는다. 이를 실제 Broker 수신으로 확인하거나 별도 장비를 연결한다. ACK는 수신한 결과값으로 표시하고 Core의 요청-응답 업무 추적을 대신하지 않는다.
+`--command-mode` Simulator는 MOVE/STOP을 실제 수행하고 최종 ACK를 보낸다. RESET은 미지원 FAILURE다. 콘솔의 발행 반환만으로 수행 완료를 판단하지 않는다. trial은 ACK 수신값을 보여주며 Core의 요청-응답 업무 추적을 대신하지 않는다.
 
 ## 연결 끊김·복구
 
@@ -75,5 +125,11 @@ pwsh -NoProfile -File tests/manual/COM06/Verify-TrialConsole.ps1 -RunId my-final
 별도 loopback 고정 포트의 소유 Broker만 중단/시작/제거한다. 기존 서버는 조작하지 않는다. 실제 Simulator 도착 수신, 잘못된 입력 거부, 시험 Alarm/ACK 수신, 콘솔의 세 명령 발행, Heartbeat 중단·복구, 서버 중단·자동 재접속·재구독·수신 재개, 재발행 없음의 관측 구간, 복구 후 새 명령, 재시도 소진/대기 중 종료를 검증한다. Alarm/ACK 입력은 통신 시험 데이터이며 AMR 실제 동작 결과가 아니다.
 
 `evidence/COM-06/<RunId>/verification.json`과 실행 로그를 확인한다. 실제 stdout/입력·Docker 명령·환경·실패를 실행 ID별로 보존한다. 기존 자동시험·실제 Broker 시험·네이티브 터미널 화면은 서로 다른 검증이다.
+
+Docker Seq의 실제 수집/속성 검색·핵심 콘솔·상세 전환·Seq 불가 시 통신 유지는 실행 중인 Seq와 새 실행 ID로 확인한다. 이 도구는 고유 이름의 시험 Broker/AMR만 정리하고 공유 Seq/1884 Broker를 중단하지 않는다.
+
+```powershell
+pwsh -NoProfile -File tests/manual/LOG/Verify-TrialSeq.ps1 -RunId <새ID>
+```
 
 입력 설계 근거: [Microsoft의 Console.In ReadLineAsync 동기 실행 설명](https://learn.microsoft.com/en-us/dotnet/api/system.io.textreader.readlineasync?view=net-10.0), [Windows 파이프의 데이터 가용량 조회](https://learn.microsoft.com/en-us/windows/win32/api/namedpipeapi/nf-namedpipeapi-peeknamedpipe). 입력 핸들은 하나의 소유자만 읽으며 조회와 실제 읽기 사이에 다른 독자가 데이터를 소비하지 않도록 한다.

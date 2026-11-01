@@ -1,0 +1,79 @@
+{
+  "telemetryDebugCount": 27,
+  "completed": "2026-11-01T17:50:33.5138870+09:00",
+  "checks": [
+    {
+      "passed": true,
+      "name": "console-core-only",
+      "detail": "First Telemetry shown once; periodic Telemetry/Heartbeat/JSON hidden."
+    },
+    {
+      "passed": true,
+      "name": "detail-on",
+      "detail": "Explicit detail mode shows periodic data and requested bounded preview."
+    },
+    {
+      "passed": true,
+      "name": "detail-off",
+      "detail": "Stable telemetry stopped printing; reception continues."
+    },
+    {
+      "passed": true,
+      "name": "move-stop-final-ack",
+      "detail": "Independent MOVE failure and STOP success returned."
+    },
+    {
+      "passed": true,
+      "name": "manual-new-move-arrived",
+      "detail": "New MOVE from stopped position reached target with final ACK."
+    },
+    {
+      "passed": true,
+      "name": "reconnect-receipt-visible",
+      "detail": "Fresh telemetry after reconnect is visible at Information even when IDLE repeats."
+    },
+    {
+      "passed": true,
+      "name": "seq-debug-telemetry",
+      "detail": "Debug Telemetry actually stored in Docker Seq."
+    },
+    {
+      "passed": true,
+      "name": "seq-typed-fields",
+      "detail": "Device/session/position/speed/state/source and receive times present."
+    },
+    {
+      "passed": true,
+      "name": "seq-state-property-query",
+      "detail": "Server-side device/state/Debug filter returned moving telemetry."
+    },
+    {
+      "passed": true,
+      "name": "seq-command-identity",
+      "detail": "Three request IDs connect publication and actual final ACK."
+    },
+    {
+      "passed": true,
+      "name": "seq-command-property-query",
+      "detail": "Same request can be queried independently."
+    },
+    {
+      "passed": true,
+      "name": "session-and-raw-boundary",
+      "detail": "Reconnect sessions differ; raw models/previews/exceptions not stored."
+    },
+    {
+      "passed": true,
+      "name": "seq-unavailable-communication-continues",
+      "detail": "MOVE/STOP and ACK still work; failed Seq delivery is counted at exit."
+    },
+    {
+      "passed": true,
+      "name": "redirected-clean-output",
+      "detail": "Redirected plain logs do not contain prompt/cursor/ANSI controls."
+    }
+  ],
+  "result": "passed",
+  "seqEvents": 116,
+  "sharedSeqStopped": false
+}

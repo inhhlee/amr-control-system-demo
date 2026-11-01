@@ -1,0 +1,9 @@
+{
+  "inputRedirected": false,
+  "started": "2026-11-01T17:21:51.8116160+09:00",
+  "columns": 80,
+  "sha256": "5D7F63139695F607669C385C9985DC219ED24B9D91CEBB3DB029D57F02C27B96",
+  "console": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\bin\\trial-input\\bin\\Amr.Communication.Console\\debug\\Amr.Communication.Console.exe",
+  "outputRedirected": false,
+  "port": 18887
+}

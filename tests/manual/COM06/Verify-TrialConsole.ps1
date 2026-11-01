@@ -1,4 +1,5 @@
-param([Parameter(Mandatory)][ValidatePattern('^[a-zA-Z0-9_-]{1,64}$')][string]$RunId,[switch]$FinalAcceptance)
+param([Parameter(Mandatory)][ValidatePattern('^[a-zA-Z0-9_-]{1,64}$')][string]$RunId,[switch]$FinalAcceptance,
+ [string]$ConsolePath='src/Amr.Communication.Console/bin/Debug/net10.0/Amr.Communication.Console.exe')
 $ErrorActionPreference='Stop'
 $repo=(Resolve-Path "$PSScriptRoot/../../..").Path
 Set-Location -LiteralPath $repo
@@ -6,7 +7,7 @@ $root=Join-Path $repo "evidence/COM-06/$RunId"
 if(Test-Path -LiteralPath $root){throw 'Use a fresh RunId.'}
 $null=New-Item -ItemType Directory -Path $root
 $dockerExe=(Get-Command docker -CommandType Application | Select-Object -First 1).Source
-$consoleExe=Join-Path $repo 'src/Amr.Communication.Console/bin/Debug/net10.0/Amr.Communication.Console.exe'
+$consoleExe=(Resolve-Path -LiteralPath ([IO.Path]::GetFullPath($ConsolePath,$repo))).Path
 $simulatorExe=Join-Path $repo 'src/Amr.Simulator/bin/Debug/net10.0/Amr.Simulator.exe'
 $env:AMR_SEQ_URL=$null;$env:AMR_SEQ_API_KEY=$null;$env:AMR_LOG_RUN_ID=$null
 $checks=[Collections.Generic.List[object]]::new()

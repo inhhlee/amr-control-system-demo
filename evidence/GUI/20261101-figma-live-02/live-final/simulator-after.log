@@ -1,0 +1,3 @@
+CommandSessionReady AmrId=AMR_001 Topic=amr/AMR_001/command
+CommandProcessed AmrId=AMR_001 Type=MOVE CmdId=GUI-32a79bd47400456981b20cc99faee776 State=BUSY Diagnostic=NONE
+FinalAckPublished AmrId=AMR_001 CmdId=GUI-32a79bd47400456981b20cc99faee776 Result=SUCCESS Reason=ARRIVED Delivery=Unconfirmed

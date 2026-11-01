@@ -1,0 +1,22 @@
+[17:50:30] [안내] 과제 1 · MQTT 통신 시험 프로그램
+[17:50:30] [설정] Broker=127.0.0.1:49235 AMR=AMR_001
+[17:50:30] [설정] 재시도: 1초 간격 / 최대 10회 (최초 시도 제외)
+[17:50:30] [안내] 입력: move 10 20 | stop | reset | status | detail on/off | help | /exit  /  Ctrl+C 종료
+[17:50:30] [안내] 명령 발행과 응답 수신을 관찰합니다. AMR 실제 수행·요청/응답 업무 매핑은 별도입니다.
+[17:50:30] [로그설정] 콘솔=Information / Seq=Debug 전송 설정 · 실제 수집은 Seq에서 확인 / RunId=20261101-trial-seq-live-03-offline
+[17:50:30] [접속] 서버 연결을 시도합니다.
+[17:50:31] [구독] Heartbeat·Telemetry·Alarm·ACK 구독 승인
+[17:50:31] [접속완료] CONNECTED · 구독 완료, 송수신 준비 완료
+[17:50:31] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(-1,0) 속도=0 상태=IDLE ts=1793523031152
+[17:50:31] [발행요청] AMR=AMR_001 명령=MOVE cmdId=CMD-33a93c1a04c6416788ec2ece7824d698 요청 작성
+[17:50:31] [생존확인] 정상 생존 신호 수신, 감시 시작
+[17:50:31] [명령발행] AMR=AMR_001 명령=MOVE cmdId=CMD-33a93c1a04c6416788ec2ece7824d698 · MQTT 발행 반환, AMR 수행 미확인
+[17:50:31] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(-1,0) 속도=1 상태=BUSY ts=1793523031398
+[17:50:31] [발행요청] AMR=AMR_001 명령=STOP cmdId=CMD-10edba18e1f74d159111854db0ffed87 요청 작성
+[17:50:31] [명령발행] AMR=AMR_001 명령=STOP cmdId=CMD-10edba18e1f74d159111854db0ffed87 · MQTT 발행 반환, AMR 수행 미확인
+[17:50:31] [수신·검사통과] AMR=AMR_001 종류=telemetry 위치=(-0.5610057073946484,0.07981714411006398) 속도=0 상태=STOPPED ts=1793523031841
+[17:50:31] [수신·검사통과] AMR=AMR_001 종류=ack cmdId=CMD-33a93c1a04c6416788ec2ece7824d698 result=FAILURE reason=STOP_INTERRUPTED ts=1793523031841 (응답 수신값)
+[17:50:31] [수신·검사통과] AMR=AMR_001 종류=ack cmdId=CMD-10edba18e1f74d159111854db0ffed87 result=SUCCESS reason=STOPPED ts=1793523031841 (응답 수신값)
+[17:50:31] [종료] 통신 연결과 소유 작업 정리를 완료했습니다.
+[17:50:31] [종료결과] ExitCode=0
+

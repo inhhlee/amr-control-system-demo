@@ -1,0 +1,8 @@
+Check: C:\amr-control-system-demo\tests\manual\LOG\Verify-TrialSeq.ps1:88
+Line |
+  88 |  … -final-ack' ($trial.Lines -match 'result=FAILURE.*reason=STOP_INTERRU …
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot process argument transformation on parameter 'Passed'. Cannot convert value "System.Object[]" to type
+     | "System.Boolean". Boolean parameters accept only Boolean values and numbers, such as $True, $False, 1 or 0.
+
+

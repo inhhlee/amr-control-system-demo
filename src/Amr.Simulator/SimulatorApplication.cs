@@ -19,7 +19,13 @@ public static class SimulatorApplication
         }
         string config;
         SimulatorMqttOptions? mqtt;
-        try { (config, mqtt) = SimulatorMqttOptions.Parse(args); }
+        bool commandMode = args.Contains("--command-mode", StringComparer.Ordinal);
+        try
+        {
+            if (args.Count(x => x == "--command-mode") > 1) throw new ArgumentException("Duplicate command mode.");
+            (config, mqtt) = SimulatorMqttOptions.Parse(args.Where(x => x != "--command-mode").ToArray());
+            if (commandMode && mqtt is null) throw new ArgumentException("Command mode requires MQTT.");
+        }
         catch (ArgumentException)
         {
             await error.WriteLineAsync("ConfigurationRejected Field=arguments Reason=--config <JSON file> 옵션을 지정하세요.");
@@ -30,6 +36,8 @@ public static class SimulatorApplication
         {
             var settings = await SimulatorSettingsLoader.LoadAsync(config, cancellationToken);
             cancellationToken.ThrowIfCancellationRequested();
+            if (commandMode)
+                return await MqttCommandSimulationSession.RunAsync(settings, mqtt!, output, error, cancellationToken);
             var amr = new SimulatedAmr(settings);
             await output.WriteLineAsync(FormattableString.Invariant(
                 $"ConfigurationLoaded AmrId={settings.AmrId} InitialX={settings.InitialPosition.X:R} InitialY={settings.InitialPosition.Y:R} SpeedMps={settings.SpeedMps:R} UpdateIntervalMs={settings.UpdateIntervalMs} WaypointCount={settings.Waypoints.Count}"));

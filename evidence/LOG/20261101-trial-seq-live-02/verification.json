@@ -1,0 +1,20 @@
+{
+  "result": "failed",
+  "checks": [
+    {
+      "detail": "First Telemetry shown once; periodic Telemetry/Heartbeat/JSON hidden.",
+      "passed": true,
+      "name": "console-core-only"
+    },
+    {
+      "detail": "Explicit detail mode shows periodic data and requested bounded preview.",
+      "passed": true,
+      "name": "detail-on"
+    },
+    {
+      "detail": "Stable telemetry stopped printing; reception continues.",
+      "passed": true,
+      "name": "detail-off"
+    }
+  ]
+}

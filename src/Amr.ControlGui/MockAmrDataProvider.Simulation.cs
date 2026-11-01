@@ -131,7 +131,7 @@ public sealed partial class MockAmrDataProvider
                 var journey = device.Journey!;
                 double moved = Math.Abs(simulation.Position.X - journey.Source.X) + Math.Abs(simulation.Position.Y - journey.Source.Y);
                 _devices[id] = device with { X = simulation.Position.X, Y = simulation.Position.Y,
-                    Revision = ++_revision, Journey = journey with { TraveledDistance = Math.Min(journey.TotalDistance, moved) } };
+                    Revision = ++_revision, Journey = journey with { TraveledDistance = Math.Min(journey.TotalDistance!.Value, moved) } };
                 if (simulation.IsCompleted) FinishMovement(id, true, "목적지 도착 · 실행 완료");
             }
             Publish(Capture(AmrChangeKind.DeviceChanged));

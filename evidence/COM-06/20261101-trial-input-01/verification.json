@@ -1,0 +1,185 @@
+{
+  "runId": "20261101-trial-input-01",
+  "verifiedAt": "2026-11-01T17:29:25.110021+09:00",
+  "head": "755e1405dd4bb74b54a80a97abdc47d244fcfd99",
+  "branch": "feature/58-gui-mqtt-live",
+  "state": "local-uncommitted",
+  "commitPushPrMergePerformed": false,
+  "sourceSha256": {
+    "src/Amr.Communication.Console/Amr.Communication.Console.csproj": "d2e902231968d3b2214955e0bc2d7fced4607aa3a08f2b5530d15004093f22f3",
+    "src/Amr.Communication.Console/CommandConsoleRunner.cs": "bd211aa52f54ccd31a8b3cbde504b34be6ef3fab73fefe523c7cfc539962bffa",
+    "src/Amr.Communication.Console/ConsoleRunner.cs": "053085b564811a6e20b7ad59920cbbd1343867048641023561c53cc613651d76",
+    "src/Amr.Communication.Console/HeartbeatConsoleRunner.cs": "fa7caee541645a1b74adc36fc38c2400cee115b385e0330d3435b12daf693dec",
+    "src/Amr.Communication.Console/Logging/SeqLogSink.cs": "4752efe0f1f10b2ca0a8c505cbf2f5ab811f6886b3a727a67814b6a023a9646f",
+    "src/Amr.Communication.Console/Logging/SeqLogging.cs": "18978489bd3ddc3a994bd66fe3b7c5fe5ec7f61fd715cc7438c18046d9baaf15",
+    "src/Amr.Communication.Console/Logging/StructuredLog.cs": "561668fb1c6182e80b231b7345decacb7fb761c2c6ed940ef468f28a86dd32f2",
+    "src/Amr.Communication.Console/Program.cs": "52ddbcf2cc06b9de401c41fed418512f8f182e908b0f2831ee567df5b5bb2c3d",
+    "src/Amr.Communication.Console/TrialConsoleDisplay.cs": "3838c513a312314340aa17c06949a2b88ec44b528ebd9c6c12536849f0270ddd",
+    "src/Amr.Communication.Console/TrialConsoleInput.cs": "0609ee561707aa77dd9a1a63277b1dc20fa17244a1e04d36aa24fb3528e1413e",
+    "src/Amr.Communication.Console/TrialConsoleOptions.cs": "379d9ecd60d46834c15357629ff00e9652eb289c2c1c0a1912f8c4c270ef7254",
+    "src/Amr.Communication.Console/TrialConsoleRunner.cs": "225fcdefc5fe8f38ee72aaf78477d1e76c2f5a79d93b16e48345f2916a6a5c08",
+    "tests/Amr.Communication.Tests/Amr.Communication.Tests.csproj": "0bb622c8930e883f570dd8dcfa7d4055ccd4722555c8b2f2ff972798a22e8699",
+    "tests/Amr.Communication.Tests/Command/CommandPublisherTests.cs": "737c9b02695da77486ca60b494119beceaf47a7b124603cdd5238c2d6e717f7e",
+    "tests/Amr.Communication.Tests/Command/CommandValidationTests.cs": "d46034a32a23874b921e2d84f5daf0aac2e82402c6fba77d444f07eb8a904dea",
+    "tests/Amr.Communication.Tests/Console/CommandConsoleTests.cs": "2c6be32cd789014ecc68ebfcf202e7ae7c3607c5da920f35be85433667a58366",
+    "tests/Amr.Communication.Tests/Console/ConsoleConnectionFailureTests.cs": "350ed8a675d54a7960169f652bb1d99cfb31b9985ccd34e275f8fa4f18c825c8",
+    "tests/Amr.Communication.Tests/Console/HeartbeatConsoleTests.cs": "e6fbb3454bb65c76914852a82ae66cf951972b6cb280f65a4d436dc6dcf4ef74",
+    "tests/Amr.Communication.Tests/Console/Logging/ConsoleShutdownReasonTests.cs": "8cc649eeb22f698c2733472995299690a3e97ae69b3bee2a8c814276c69633b4",
+    "tests/Amr.Communication.Tests/Console/Logging/SeqLoggingTests.cs": "17530fcdcec2d59f4268393c93d2e709991bf6733d65ec65e85bfe7145cc6d56",
+    "tests/Amr.Communication.Tests/Console/TrialConsolePromptTests.cs": "54ca24790b8345ae5d1fc40a939d5b79e9a276ebf75844c44cdcc6d612cd7058",
+    "tests/Amr.Communication.Tests/Console/TrialConsoleTests.cs": "29442af6d4f003ce889130c76f5bb5468fa399a74fa6a2d5f8c541ddf0b136e9",
+    "tests/Amr.Communication.Tests/Monitoring/SingleAmrHeartbeatMonitorTests.cs": "b058d1ed18f9d07d1486bceff7ae2d343bae22debcab7ee3cbb175a0375c1489",
+    "tests/Amr.Communication.Tests/Mqtt/Connection/MqttConnectionFailureTests.cs": "c90e243665956ee3267d7767a4de94d86382322c7cc16ef8b1a5fc85ca200229",
+    "tests/Amr.Communication.Tests/Mqtt/Connection/MqttConnectionTests.cs": "56d70e386aea42eb11f533a7d2313896bd89e7e68d88550ad23908390cd3d394",
+    "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueBoundaryTests.cs": "4db676ab1c6ecbaf3d474c8201211f9243dbc9c4b57198792b3ae3e0758e38d9",
+    "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueShutdownTests.cs": "f4d564cfc5e7d3a29a32f06efb5d0fcb2929a710b632568878c2f17e88f60cce",
+    "tests/Amr.Communication.Tests/Mqtt/Queues/AmrReceiveQueueTests.cs": "d4baedd8aca2f15660f2730fd3433aa75fccf882edf8e46f4c0d47e8d2a4dffa",
+    "tests/Amr.Communication.Tests/Mqtt/Sessions/ControlCommunicationSessionTests.cs": "322392c0a72b3c218c44158807717e58fb59eea259fa90ffe9f3616fd19f486b",
+    "tests/Amr.Communication.Tests/Mqtt/Sessions/ReconnectingCommunicationSessionTests.cs": "c476118e1801ea7fc15505007c8c145cee17552680904165b30ecc97160153d7",
+    "tests/Amr.Communication.Tests/Mqtt/Sessions/TwoAmrSessionTests.cs": "842970b1d835ce8165366fd345888e78f7f79a77a3c7b0425b48312a44f61617",
+    "tests/Amr.Communication.Tests/Mqtt/Subscriptions/HeartbeatSubscriptionTests.cs": "f2c98e620e2ec01166a0d1d2a06ef324e9c75b0d298ed80434562f8e34871e07",
+    "tests/Amr.Communication.Tests/Mqtt/Subscriptions/MessageSubscriptionTests.cs": "5910663c9f8be1ec29502ddd44dbbc0406a48180f402e76518f121cfbd1dd030",
+    "tests/Amr.Communication.Tests/TestDoubles/FakeMqttClient.cs": "191cbe4b02410b354dcaefa46ab02f538a796fbd0e7e383b388c0cd98c11041a",
+    "tests/Amr.Communication.Tests/Validation/AckValidatorTests.cs": "bb727f21f3290d691053663ce44ea4d145e6e3dd243f844d9ab7e14dcf6aca17",
+    "tests/Amr.Communication.Tests/Validation/AlarmValidatorTests.cs": "b7d1cf7a60639ce9427b791ec9adb8cbb5e318f98741f5f70382bca7417d9533",
+    "tests/Amr.Communication.Tests/Validation/HeartbeatValidatorTests.cs": "faa761d201b0a94778633b28effce1fed4243689ca30df2ea083af9b813b842d",
+    "tests/Amr.Communication.Tests/Validation/MessageFieldValidationTests.cs": "6d9096c1ab067eb6833929cdd7ec05978a93e250b3a73518829c6ae879dc8205",
+    "tests/Amr.Communication.Tests/Validation/MessageValidationRegressionTests.cs": "4c277cd69dec818f0f0a876d661e37520dec421f7bb9b7b76ea9b259a510d96a",
+    "tests/Amr.Communication.Tests/Validation/TelemetryValidatorTests.cs": "7c09035a772d947acf7c70802255f0911785da7fffcff290e645fcf67a2793c1",
+    "tests/manual/COM06/Run-TrialInputProbe.ps1": "2f718995eaac2cad9e0ec98b78a1821e98cd94a8923c1b2a92dd7d98b51caabb",
+    "tests/manual/COM06/Verify-TrialConsole.ps1": "ff05cddf516e617df273a38c888db817ebd2deb9f65d9311d42895b8dcafee8a"
+  },
+  "runtimeSha256": {
+    "tests/Amr.Communication.Tests/bin/trial-input/bin/Amr.Communication.Console/debug/Amr.Communication.Console.deps.json": "4fbe1b75809e7c848bdb84416f7f1d10a280693a62ca305e14ace861ae641dde",
+    "tests/Amr.Communication.Tests/bin/trial-input/bin/Amr.Communication.Console/debug/Amr.Communication.Console.dll": "95e9595e12dc2923c9e8ddd986d7e914952440f8cf1f94a22100461ea6e271ee",
+    "tests/Amr.Communication.Tests/bin/trial-input/bin/Amr.Communication.Console/debug/Amr.Communication.Console.exe": "5d7f63139695f607669c385c9985dc219ed24b9d91cebb3db029d57f02c27b96",
+    "tests/Amr.Communication.Tests/bin/trial-input/bin/Amr.Communication.Console/debug/Amr.Communication.Console.runtimeconfig.json": "256dda2706e1151bb95987b6b5be610bf68d64e058285b19e7e958222fc90414",
+    "tests/Amr.Communication.Tests/bin/trial-input/bin/Amr.Communication.Console/debug/Amr.Communication.dll": "a8feec8a458311428a7ec98bcfd20293774eff9273f11e10f9f18ae27164f3bf"
+  },
+  "originalDocumentSha256": {
+    "C:\\process-plan\\관제시스템 과제 진행\\과제1\\과제계획.md": "43d7f96243577fd02d692f625b09a57e7549759d9ab53f8a7af0bf4c7c93c7a6",
+    "C:\\process-plan\\일일업무\\2026-11-01.md": "a3c18a91c86ce50d6e1df9e53aee7b7be19106381c4998143e3c844e09b13d7b"
+  },
+  "automated": {
+    "file": "communication-final-03.trx",
+    "passed": 833,
+    "failed": 0
+  },
+  "actualRedirectedMqtt": {
+    "file": "../20261101-trial-input-redirected-01/verification.json",
+    "passed": 20,
+    "note": "Same behavior build before final indentation-only change; final native interaction and automated regression cover the final source."
+  },
+  "actualInteractive": {
+    "passed": 8,
+    "checks": [
+      {
+        "name": "interactive-native-console",
+        "passed": true,
+        "detail": "Windows ConPTY, Console.ReadKey input path, columns=80"
+      },
+      {
+        "name": "partial-input-survives-logs",
+        "passed": true,
+        "detail": "Partial command retained across two captured receive intervals before Enter."
+      },
+      {
+        "name": "edited-command-published-once",
+        "passed": true,
+        "detail": "Edited 100 to 10 with Left/Backspace/End; observed one MOVE(10,2), no MOVE(100,2)."
+      },
+      {
+        "name": "edited-stop-and-independent-results",
+        "passed": true,
+        "detail": "Original MOVE failure plus STOP success; stopped positions remain unchanged."
+      },
+      {
+        "name": "new-request-arrives",
+        "passed": true,
+        "detail": "New ID returned to (-1,0), final ACK ARRIVED and IDLE."
+      },
+      {
+        "name": "exit-without-extra-enter",
+        "passed": true,
+        "detail": "App and outer shell exit0 after /exit."
+      },
+      {
+        "name": "partial-input-during-reconnect",
+        "passed": true,
+        "detail": "Partial st preserved through disconnect/reconnect attempt."
+      },
+      {
+        "name": "ctrl-c-with-partial-input",
+        "passed": true,
+        "detail": "Native app exit0 without Enter; outer PowerShell/tool cancellation returned1 and is recorded separately."
+      }
+    ],
+    "evidence": "live-final/input-output.json",
+    "cancelEvidence": "live-input/pty-cancel-01/input-output.json"
+  },
+  "preserved": {
+    "evidence/COM-01/20261031-task1-results-01/": {
+      "count": 35,
+      "sha256Unchanged": true
+    },
+    "evidence/GUI/20261101-mqtt-live-01/": {
+      "count": 24,
+      "sha256Unchanged": true
+    },
+    "evidence/GUI/20261101-figma-live-02/": {
+      "count": 52,
+      "sha256Unchanged": true
+    }
+  },
+  "preexistingModifiedFilesPreservedExcept": [
+    "README.md",
+    "evidence/README.md"
+  ],
+  "localLinks": {
+    "checked": 192,
+    "broken": []
+  },
+  "limitations": [
+    "VS Code UI injection interrupted by user input; cmd UI launch blocked by tool policy; built-in ConPTY tested actual native console input instead.",
+    "Non-Windows/redirected MinTTY terminal/window resizing while typing not manually tested.",
+    "Seq setup/service/log ingestion not changed or retested.",
+    "Official HTML generation blocked by existing task1 format mismatch."
+  ],
+  "evidenceSha256": {
+    "build-final.log": "62bce181e31b652f9d07bfc755aceec6bb326d30ac1b31c4f81434b209cc81c1",
+    "communication-build-test-final-03.log": "bf0a2efaf787c2580e2860ef6b1fc592338e25b4eb58fe3ed81769c94483e48d",
+    "communication-build-test-final.log": "42f05fc99475d97efae975fb0dcdf4dda474e6dd54896d272f25b1c4cf7b5d8b",
+    "communication-build-test.log": "0bccfef6e688475d1fb881bb7436389c437da6c5bd3ed97be7b2118498125c20",
+    "communication-final-03.trx": "daa632663c108303138e885478681059f9b5d42723be8d90957a8b4a560370c6",
+    "communication-final.trx": "dc2803e7edfd72fdc3a0d52f378284bc30625d6a6307a8c4a8c29b55da372a31",
+    "document-render.log": "39057bc2699ec27658b8ae3a1cfcf49108e0c6f06b1638589527b1b625dcf6dd",
+    "owned-containers-after.log": "47ded8da2d9727bfec08d819d47949ecabd952e90aa58e27ae70727221dc1c78",
+    "README.md": "bf691358396d6c9a0f15ae74ef7b34f273a821a7ca262e911e277d0e36b02c27",
+    "trial-input-first.trx": "47fd2aea3177aa1828565f498c98ce88a270d597e053ee3dcd45d55a5bbac4f5",
+    "live-final/input-output.json": "a6698b99574c68868702b282901d758aaca1cc45b26f3a2e5679926ed1a92cd8",
+    "live-final/mqtt.log": "1e5ff035f8c8972718cd1b796d3f5ca8b06e82b8332b37b7830fa26018b06384",
+    "live-final/native-environment.json": "3c43e08c17c65693b4018db04ceae59998150c543a29ec9af7dec684090ee055",
+    "live-final/native-result.json": "d105c6215e228a80072fff2a70ff4615463a5115f5b3c168562a23be8a25ee2d",
+    "live-final/observer.error.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "live-final/resources.json": "3c20cace936a05b67c2fff729d674ba164e057316180f9e2f859e7a1159de8c3",
+    "live-final/simulator.error.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "live-final/simulator.json": "451334f7b890d1d779887fffc64f52e20af2a6d223f467cc91aebd2507a9c48d",
+    "live-final/simulator.log": "8d8efdd891b1597f9d7bca87b0a03b2c01272ef50e5572e1cc059b8332b2f625",
+    "live-input/mqtt.log": "aabc2256704a7c210cb6b2e52b981be5dd7b92ce276517629ae742505bf72be4",
+    "live-input/native-environment.json": "974d5f7dd3f2d1adab1bffe734360b588226cea6a9d91669b2abba2cbacf2e9c",
+    "live-input/native-result.json": "810c85b7a8346e98900a7928afd0210c773cbb70e17164d8135578818622ccfd",
+    "live-input/observer.error.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "live-input/resources.json": "c2b3adfa344df6cf015bdf392607900c0c853332dd92d7283f95371c62198ae1",
+    "live-input/simulator.error.log": "62bc2b9d0dd04ff8529ce0333fc2fd93ba2c6c6d26546e0ac38eb7f92c49c359",
+    "live-input/simulator.json": "451334f7b890d1d779887fffc64f52e20af2a6d223f467cc91aebd2507a9c48d",
+    "live-input/simulator.log": "97a84a7c8aa861587801009b401deb0015b15bbe445f0d4b6ff520bfc2c2b70f",
+    "live-input/terminal-process.json": "fed522c52188815f1263d9efae79da7d97a011c2f85cd8c9b903e9ab09e1c26f",
+    "live-input/pty-01/input-output.json": "11121620536b1d62dee3172548d9faec651ddd44d13b85ee82189170b6271fc0",
+    "live-input/pty-01/native-environment.json": "6933944bdab0875ac097ff697a1883a116582ef049e2f1636bae2e92c0929561",
+    "live-input/pty-01/native-result.json": "c345aff13b132c1bcd3ae62dc422c559faf6f80801123ed68924fcc724267e10",
+    "live-input/pty-01/source-files.json": "b6897997582c253e8455030880e6025084a2082895b3a902d2e71c586872b748",
+    "live-input/pty-cancel-01/input-output.json": "b39e12f83ed45e53da5fdddc3174cba254b4e758ded065c766c24e7c1996687a",
+    "live-input/pty-cancel-01/native-environment.json": "999345d8eacec7628dee8b47d28a9025a4173664e30f4f06c7ae98edf1d12d16",
+    "live-input/pty-cancel-01/native-result.json": "1ca03c48567ba036df4b3ab02baefbddbdfb032c1ac6a6284ec7f160f9d283e9"
+  }
+}

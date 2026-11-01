@@ -46,6 +46,7 @@ public sealed class ReconnectingCommunicationSessionTests
             events.Enqueue, () => clients.TryDequeue(out var c) ? c : throw new InvalidOperationException());
         var run = session.RunAsync();
         await Until(() => session.IsReady);
+        var firstSession = session.SessionId;
         var stale = first.CaptureDisconnectedCallback();
         await first.ReceiveAsync(Heartbeat(1));
         // 큐 접수와 소비 완료는 다르다. 기존 세션에서 관찰한 전달을 확정한 뒤 단절시킨다.
@@ -62,6 +63,10 @@ public sealed class ReconnectingCommunicationSessionTests
         await second.ReceiveAsync(Heartbeat(2));
         await Until(() => events.Count(e => e.Name == "Received") == 2);
         Assert.Single(events, e => e.Name == "Reconnected");
+        Assert.NotEqual(firstSession, session.SessionId);
+        var wrongSession = await Assert.ThrowsAsync<CommandPublishException>(() => session.PublishCommandAsync(Stop(), expectedSessionId: firstSession));
+        Assert.Equal(CommandPublishFailure.NotConnected, wrongSession.Reason);
+        Assert.Equal(0, second.PublishCalls);
         await session.PublishCommandAsync(Stop());
         Assert.Equal(0, first.PublishCalls);
         Assert.Equal(1, second.PublishCalls);
@@ -210,6 +215,27 @@ public sealed class ReconnectingCommunicationSessionTests
         Assert.Equal(1, await run.WaitAsync(TimeSpan.FromSeconds(3)));
         var names = events.Select(e => e.Name).ToList();
         Assert.True(names.IndexOf("Ready") < names.IndexOf("Failed"));
+    }
+
+    [Fact]
+    public async Task EveryNormalHeartbeatReportsSessionObservationWithoutQueueDeliveryDependency()
+    {
+        var client = Client();
+        var events = new ConcurrentQueue<CommunicationSessionEvent>();
+        await using var session = new ReconnectingCommunicationSession(new(), "ONE", report: events.Enqueue, clientFactory: () => client);
+        var running = session.RunAsync();
+        await Until(() => session.IsReady);
+        await client.ReceiveAsync(Heartbeat(1));
+        await Until(() => events.Count(x => x.Value is AmrCommunicationObservation { Heartbeat.State: Amr.Communication.Monitoring.HeartbeatObservationState.Alive }) >= 1);
+        await client.ReceiveAsync(Heartbeat(2));
+        await Until(() => events.Count(x => x.Value is AmrCommunicationObservation { Heartbeat.State: Amr.Communication.Monitoring.HeartbeatObservationState.Alive }) >= 2);
+        var observations = events.Where(x => x.Name == "SessionObservation").Select(x => (AmrCommunicationObservation)x.Value!).ToArray();
+        Assert.Single(observations.Select(x => x.SessionId).Distinct());
+        Assert.All(observations, x => Assert.Equal("ONE", x.AmrId));
+        Assert.True(observations[^1].Sequence > observations[0].Sequence);
+        Assert.NotNull(observations[^1].Heartbeat.LastReceivedAtUtc);
+        await session.StopAsync();
+        Assert.Equal(0, await running);
     }
 
     [Fact]

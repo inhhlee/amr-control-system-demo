@@ -4,8 +4,11 @@ using Serilog.Events;
 namespace Amr.Communication.ConsoleApp.Logging;
 
 /// <summary>Only explicit diagnostic properties enter Seq; never serialize a message model or exception.</summary>
-internal sealed class StructuredLog(ILogger logger)
+internal sealed class StructuredLog(ILogger logger, string? runId = null)
 {
+    internal string? RunId => runId;
+    internal void Write(LogEvent entry) => logger.Write(entry);
+
     internal void Event(string eventType, LogEventLevel level = LogEventLevel.Information,
         params (string Name, object? Value)[] properties)
     {

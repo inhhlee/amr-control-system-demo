@@ -15,6 +15,7 @@ public partial class MainForm : Form
     private readonly Dictionary<string, AmrSnapshot> _devices = new(StringComparer.Ordinal);
     private ImmutableArray<CommandSnapshot> _commands = [];
     private ImmutableArray<AlarmSnapshot> _alarms = [];
+    private DataConnectionSnapshot? _dataConnection;
     private Task _watchTask = Task.CompletedTask;
     private long _lastRevision = -1;
     private long _selectionRequest;
@@ -39,6 +40,7 @@ public partial class MainForm : Form
         advanceButton.Visible = completeSuccessButton.Visible = completeFailureButton.Visible = provider.Mode == ProviderMode.Mock;
         if (provider is GridMapDataProvider) ConfigureGridMode();
         else if (provider is MockAmrDataProvider { FeedbackDemo: true }) ConfigureFeedbackView();
+        else if (provider.Mode == ProviderMode.Actual) ConfigureFeedbackView(actual: true);
     }
 
     protected override void OnShown(EventArgs e)
@@ -82,6 +84,7 @@ public partial class MainForm : Form
     {
         if (_closing || change.Revision < _lastRevision) return;
         _lastRevision = change.Revision;
+        _dataConnection = change.Connection;
         string? selected = SelectedAmrId;
         _devices.Clear();
         foreach (var device in change.Devices) _devices.Add(device.AmrId, device);
@@ -107,6 +110,7 @@ public partial class MainForm : Form
         statusLabel.Text = $"장비 {change.Devices.Length}대 · 알람 {change.Alarms.Length}건 · 요청 {_commands.Length}건 · 상태 버전 {change.Revision}";
         UpdateButtons();
         RefreshFeedback(change);
+        RenderDataConnection();
     }
 
     private string? SelectedAmrId => deviceGrid.SelectedRows.Count == 0 ? null : deviceGrid.SelectedRows[0].Cells[0].Value as string;
@@ -144,6 +148,7 @@ public partial class MainForm : Form
         }
         ShowSelectedDevice();
         RefreshDashboard();
+        RenderDataConnection();
     }
 
     private void RefreshDashboard()
@@ -188,6 +193,7 @@ public partial class MainForm : Form
             return;
         }
         detailsLabel.Text = $"{device.AmrId}\n\nX {Number(device.X)} m / Y {Number(device.Y)} m\n속도  {Number(device.SpeedMps)} m/s\n운행  {StateText(device.State)}\n\nBroker  {ConnectionText(device.BrokerConnection)}\n생존  {LivenessText(device.Liveness)}\nHeartbeat  {TimeText(device.LastHeartbeatReceivedAt)}\nTelemetry  {TimeText(device.LastTelemetryReceivedAt)}";
+        if (_dataConnection is { TelemetryIsCurrent: false }) detailsLabel.Text += "\n마지막 수신값 · 현재 위치·운행 미확인";
         if (CurrentGridState is { } grid)
         {
             mapCanvas.SetGridState(grid);
@@ -257,7 +263,7 @@ public partial class MainForm : Form
     private void UpdateButtons()
     {
         bool ready = !_closing && !_actionBusy && SelectedAmrId is not null;
-        if (_openSimulation is not null) _openSimulation.Enabled = ready;
+        if (_openSimulation is not null) _openSimulation.Enabled = ready && _dispatcher is not null;
         advanceButton.Enabled = ready && _advanceScenario is not null;
         submitButton.Enabled = ready && _dispatcher is not null;
         bool pending = ready && _completeScenario is not null && _commands.Any(x => x.AmrId == SelectedAmrId && x.Result == CommandResult.Unconfirmed);
@@ -300,7 +306,8 @@ public partial class MainForm : Form
         finally { _closeReady = true; Close(); }
     }
 
-    private static string Number(double value) => value.ToString("0.##", CultureInfo.InvariantCulture);
+    private static string Number(double value) => double.IsFinite(value) ? value.ToString("0.##", CultureInfo.InvariantCulture) : "미확인";
+    private static string Number(double? value) => value is double number ? Number(number) : "미확인";
     private static string TimeText(DateTimeOffset? value) => value?.ToLocalTime().ToString("HH:mm:ss") ?? "미관측";
     private static string ConnectionText(ConnectionObservation value) => value switch { ConnectionObservation.Connected => "연결됨", ConnectionObservation.Disconnected => "연결 끊김", _ => "미확인" };
     private static string LivenessText(LivenessObservation value) => value switch { LivenessObservation.Alive => "확인됨", LivenessObservation.Unresponsive => "응답 없음", _ => "미확인" };

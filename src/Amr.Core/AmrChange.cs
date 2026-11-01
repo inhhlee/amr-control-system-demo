@@ -16,6 +16,8 @@ public sealed record AmrChange(
 {
     // 작은 Mock 세션의 전체 이력. 실제 DB의 페이지/보존 계약과 구분한다.
     public ImmutableArray<HistoryEntry> History { get; init; } = [];
+    // 위치 수신 전에도 연결 상태를 통지한다. 기존 Mock/격자 공급자는 null을 유지한다.
+    public DataConnectionSnapshot? Connection { get; init; }
 }
 
 public sealed class AmrResyncRequiredException : Exception

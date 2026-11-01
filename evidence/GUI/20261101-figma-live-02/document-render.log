@@ -1,0 +1,15 @@
+C:\process-plan\도구\render-plans.cjs:81
+      throw new Error(`빈 양식과 ${key}이 다릅니다: ${source}`);
+      ^
+
+Error: 빈 양식과 절·하위 제목 순서이 다릅니다: 관제시스템 과제 진행/과제1/과제계획.md
+    at Object.<anonymous> (C:\process-plan\도구\render-plans.cjs:81:13)
+    at Module._compile (node:internal/modules/cjs/loader:1830:14)
+    at Object..js (node:internal/modules/cjs/loader:1961:10)
+    at Module.load (node:internal/modules/cjs/loader:1553:32)
+    at Module._load (node:internal/modules/cjs/loader:1355:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47
+
+Node.js v24.15.0

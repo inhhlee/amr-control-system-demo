@@ -1,0 +1,306 @@
+{
+  "issue": 58,
+  "base_commit": "755e1405dd4bb74b54a80a97abdc47d244fcfd99",
+  "branch": "feature/58-gui-mqtt-live",
+  "uncommitted_changes": true,
+  "sdk": "10.0.401",
+  "source_files": [
+    {
+      "path": "AmrControlSystem.slnx",
+      "bytes": 1021,
+      "sha256": "87135e7dd5c193decc7ffc6bd082e18f88d627a121c879ed194835da8393211a"
+    },
+    {
+      "path": "src/Amr.Communication/Mqtt/Sessions/ReconnectingCommunicationSession.cs",
+      "bytes": 8530,
+      "sha256": "edc62e05f99cc7036c489297c999adbcbf1d0e8243e919a093b90a0fe7f5cbe8"
+    },
+    {
+      "path": "src/Amr.ControlGui/Amr.ControlGui.csproj",
+      "bytes": 614,
+      "sha256": "36cad662841288a0fb0a7c322929262852db13ca3bc1b58b518e4a74bdb7d99b"
+    },
+    {
+      "path": "src/Amr.ControlGui/MainForm.Feedback.cs",
+      "bytes": 20132,
+      "sha256": "1895a895b6ea8e2452aaf015c4a4e6c237ebd7230021855ed42f99711ca8d68d"
+    },
+    {
+      "path": "src/Amr.ControlGui/MainForm.Mqtt.cs",
+      "bytes": 3933,
+      "sha256": "c79a568398fc3c64e0250ea41904addd7d46c2f62c919035bce9fad6b96d1a8c"
+    },
+    {
+      "path": "src/Amr.ControlGui/MainForm.cs",
+      "bytes": 18165,
+      "sha256": "c90f64b4977997ab92680c6c450f48660298e1938c977415034d596c9ebc11de"
+    },
+    {
+      "path": "src/Amr.ControlGui/MqttGuiOptions.cs",
+      "bytes": 1893,
+      "sha256": "c8d078946ee68bf53537461d0f9a25d143e8de978025673e4eedbb84bfe5eae7"
+    },
+    {
+      "path": "src/Amr.ControlGui/Program.cs",
+      "bytes": 2446,
+      "sha256": "2157faf1f18f64238fe2c9b085efc43709215fcd97f8b060affe262070107042"
+    },
+    {
+      "path": "src/Amr.ControlGui/Properties/launchSettings.json",
+      "bytes": 413,
+      "sha256": "39ce161d652b15e5691266650950408d33e9def47cebaf6f1d09fdab4dd4e51a"
+    },
+    {
+      "path": "src/Amr.Core/AmrChange.cs",
+      "bytes": 1110,
+      "sha256": "b2b154de82fef68365199b81ad3f3b3c700cb0fb3c167d948c32510f1e613420"
+    },
+    {
+      "path": "src/Amr.Core/DataConnectionSnapshot.cs",
+      "bytes": 478,
+      "sha256": "e1de5f7f18e47c0aa1b8e9600ff0daac49a476e9dabd152c71b54780676fbc3f"
+    },
+    {
+      "path": "src/Amr.Infrastructure/Amr.Infrastructure.csproj",
+      "bytes": 378,
+      "sha256": "f11c0c7ec3c943fb32a6aad1fbab6be41d550421e64953a228a68533aa0e8d1b"
+    },
+    {
+      "path": "src/Amr.Infrastructure/MqttAmrDataProvider.cs",
+      "bytes": 11488,
+      "sha256": "733e97ac49f0c06cfad1161487db971fc5cfa3eedff0210dd97f3728b9e5936e"
+    },
+    {
+      "path": "tests/Amr.Communication.Tests/Mqtt/Sessions/ReconnectingCommunicationSessionTests.cs",
+      "bytes": 14063,
+      "sha256": "01f21f3f74a3fed9c537c9e33e8525dd703e95608c37f450fdf1f8d80eceb97f"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/Amr.ControlGui.Tests.csproj",
+      "bytes": 989,
+      "sha256": "a4197084aca88663720a37a8f3681b2a25f26d94e3ce23128f4d35b523066181"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/MqttDashboardTests.cs",
+      "bytes": 4142,
+      "sha256": "e5a88ca26bedd2d0d69c871650a80b3be0d58e2bbaae0639cbf5dbfb1e410e60"
+    },
+    {
+      "path": "tests/Amr.ControlGui.Tests/MqttDataProviderTests.cs",
+      "bytes": 10947,
+      "sha256": "b14bddae243492d9d8aef27b10bba917adcc33fb8a85c1bbddc7a0ce9d3567c4"
+    },
+    {
+      "path": "tests/manual/GUI-MQTT/LiveProbe.csproj",
+      "bytes": 404,
+      "sha256": "b6225265b577c700d32bf5d54e8bb6ca8a3c2b1a9afa4075a28aff90a5748b58"
+    },
+    {
+      "path": "tests/manual/GUI-MQTT/Program.cs",
+      "bytes": 10941,
+      "sha256": "d8449ab6acfae12aa75b51a44444cf92be0db3c1cc2a8b0eef4b4bcbf625e1b0"
+    },
+    {
+      "path": "tests/manual/GUI-MQTT/README.md",
+      "bytes": 4325,
+      "sha256": "23af0af777b81a206c250604e149588f49db1dfbad90c8985e84ceddfa6df619"
+    },
+    {
+      "path": "tests/manual/GUI-MQTT/verify.ps1",
+      "bytes": 1152,
+      "sha256": "d61b172ac60084e0e3f8a318a3e664e479ea74fd6b4373e94762aa188934dceb"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "config/simulator.single.json",
+      "bytes": 192,
+      "sha256": "623932aa66b3f507171867a4a60186d7339170fb617df0c9c1bd7e6ddf0c71b5"
+    },
+    {
+      "path": "docker/mosquitto/config/mosquitto.conf",
+      "bytes": 313,
+      "sha256": "26bbc86be2cfc28b8cb88177e4c9003c03f6f4114b5dd621b62fefad8c44c053"
+    },
+    {
+      "path": "docker/compose.yaml",
+      "bytes": 628,
+      "sha256": "eafd232c385b04d7bfd1158f4e1b46c45de2d0887708dd80fd357f4279721fa0"
+    },
+    {
+      "path": "global.json",
+      "bytes": 116,
+      "sha256": "6a8e9044030d136bd4c04fff9684111a3478b27559bfb6d19e4d380f0de91510"
+    }
+  ],
+  "source_set_sha256": "e4aa5b93f83747d442eda64e26d4e524931daaac84a5bcaa88dec218f48f5535",
+  "automatic_tests": [
+    {
+      "artifact": "communication-final.trx",
+      "passed": 827,
+      "total": 827,
+      "failed": 0
+    },
+    {
+      "artifact": "gui-final.trx",
+      "passed": 81,
+      "total": 81,
+      "failed": 0
+    },
+    {
+      "artifact": "core-final.trx",
+      "passed": 9,
+      "total": 9,
+      "failed": 0
+    }
+  ],
+  "automatic_total": 917,
+  "live_tests": {
+    "artifact": "live-final/live-results.json",
+    "passed": 10,
+    "total": 10,
+    "actual_simulator_processes": true,
+    "actual_broker": "127.0.0.1:18885",
+    "actual_gui": true,
+    "reconnect_delay_seconds": 1,
+    "additional_attempts": 20
+  },
+  "evidence_files": [
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/01-moving.png",
+      "bytes": 53635,
+      "sha256": "aa8da53b4357b42e5bdfaaf61f7d774e77b15e997b1117798fe0680dcd25e75b"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/02-disconnected.png",
+      "bytes": 57601,
+      "sha256": "a8d6b648c5b4322b03020ca62e4d5393c51e4b2acc3312a2f432aaf7cf17409f"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/03-reconnected-awaiting-data.png",
+      "bytes": 55462,
+      "sha256": "d7738939d603aceafde8195df8717aea6e49d053cc5c3c1d910d3a268191422f"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/04-received-after-reconnect.png",
+      "bytes": 53493,
+      "sha256": "68ca9b53b64389c458d7faeeaa70f3f6044a1ff450088a84441fed60bf24752f"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/build-final.log",
+      "bytes": 2031,
+      "sha256": "388f7dad3fcb22331404260d68fb26c9b4e2e295ff2e71c33f2b7013edd4018d"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/communication-final.trx",
+      "bytes": 1244707,
+      "sha256": "6804e4f9ee5cbac873bacbe52b721b2d6d3caf77a5ddb53d488016b1335b4f83"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/core-final.trx",
+      "bytes": 13786,
+      "sha256": "4ca174ea3f8395cd79a8fc499a130c395e10e3125f53e9fb32dfe0a0d0523852"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/gui-final.trx",
+      "bytes": 116065,
+      "sha256": "5621339680fd24177b4bead83636b35c8fdc8e782b7f896bb2c39cac1749ca28"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/gui-first.trx",
+      "bytes": 24213,
+      "sha256": "a677fc7a5c0e6e23ce2eba68484a2cd0ffd5f0aac81489940f72b6864a14a323"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/gui-regression.trx",
+      "bytes": 116065,
+      "sha256": "ae602ef3e918c053ea219900519602b4a717ab9dc486380dc57e822bb56a53dd"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/live-final/01-moving.png",
+      "bytes": 53585,
+      "sha256": "22eb404303637eef8847364f17955b38032b832d6d0afe119bff8607f5b984cd"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/live-final/02-disconnected.png",
+      "bytes": 57282,
+      "sha256": "7dcfa7fdfafaff0e85e2644381ab845d41c0e05c6481409ad6d5d34feb7c4e37"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/live-final/03-reconnected-awaiting-data.png",
+      "bytes": 55143,
+      "sha256": "34abff67c878e0937ed17273d9ad8b27114a12d3a2974e7a6f156577a6eecaaf"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/live-final/04-received-after-reconnect.png",
+      "bytes": 53471,
+      "sha256": "ec1eba5d5a5df844c5501caee44f97b6ea505db0044a64398b6b08045a3cb667"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/live-final/live-results.json",
+      "bytes": 1864,
+      "sha256": "cb13e9589d6a417345b1f8c215c9847234a91896d3eb7799175fbe0b63f8e3a2"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/live-final/mqtt-events.jsonl",
+      "bytes": 26936,
+      "sha256": "3426542920bca6a3d4c43734b45aec125b8b9beb587b883b0bb1e43cf8c76ed6"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/live-final/simulator-after.log",
+      "bytes": 8392,
+      "sha256": "1b8373790bbe7fea87756b35f43261f0f0f75efab74d263769a1b1c9091d5bda"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/live-final/simulator-before.log",
+      "bytes": 8491,
+      "sha256": "071bff5fda117d316e886cc7f38c87643a74b0c99a2cef6384a69bb03652e177"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/live-results.json",
+      "bytes": 1864,
+      "sha256": "d322955e03df47d34f699d61b09190e69d82ab4a6817d5b7434539f1a89109ed"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/mqtt-events.jsonl",
+      "bytes": 19446,
+      "sha256": "8ec9149a86e9cbdf2a8cc4348c0bbb0d3feeeba23f7f989e549095df1184a301"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/README.md",
+      "bytes": 8689,
+      "sha256": "e105658ed999f5b0809b0e7bface6892e6b653395969e7fd03683c0fa78229a0"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/simulator-after.log",
+      "bytes": 8328,
+      "sha256": "3e504b1bebd14a97084edaf0ef16bf1f2bb762f4c30cd0812131da1195ef90a8"
+    },
+    {
+      "path": "evidence/GUI/20261101-mqtt-live-01/simulator-before.log",
+      "bytes": 8473,
+      "sha256": "4b8c02a4cf852abbf7e0beddedbaaaa66ac89f0acb4dfae3e7b0aceb56ac1352"
+    }
+  ],
+  "new_local_links": {
+    "checked": 20,
+    "missing": []
+  },
+  "limits": [
+    "Single AMR in new direct MQTT GUI mode",
+    "Actual MOVE/STOP/RESET and ACK business tracking remain #51",
+    "Alarm scenarios #50, business alarms/DB/history and task5 remain separate",
+    "Simulator exits after arrival; restarted for new data after reconnect",
+    "Long-duration/high-load/new-mode multi-AMR not run"
+  ],
+  "document_generation": {
+    "status": "blocked_existing_format",
+    "reason": "Official render-plans.cjs fails on pre-existing task1 section/subheading mismatch; no HTML updated"
+  },
+  "publication": {
+    "committed": false,
+    "pushed": false,
+    "pr_created": false,
+    "merged": false
+  }
+}

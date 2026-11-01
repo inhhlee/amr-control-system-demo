@@ -1,0 +1,59 @@
+{
+  "executedAt": "2026-11-01T15:42:05.3091642+09:00",
+  "environment": "Microsoft Windows NT 10.0.26200.0",
+  "runtime": "10.0.12",
+  "broker": "127.0.0.1:18885",
+  "container": "amr-gui-live-85713a4dd2",
+  "results": [
+    {
+      "id": "LIVE-01",
+      "passed": true,
+      "detail": "Broker connected before Telemetry; no invented AMR coordinates."
+    },
+    {
+      "id": "LIVE-02",
+      "passed": true,
+      "detail": "Actual Simulator process sent BUSY coordinates through Mosquitto into GUI."
+    },
+    {
+      "id": "LIVE-03",
+      "passed": true,
+      "detail": "Simulator final=(1,2), speed=0, IDLE; actual GUI received final position."
+    },
+    {
+      "id": "LIVE-04",
+      "passed": true,
+      "detail": "After Simulator exit, Heartbeat timeout marks AMR unresponsive while Broker remains connected."
+    },
+    {
+      "id": "LIVE-05",
+      "passed": true,
+      "detail": "Invalid negative-speed Telemetry rejected; last valid coordinates unchanged."
+    },
+    {
+      "id": "LIVE-06",
+      "passed": true,
+      "detail": "Broker loss displayed; final coordinates/state preserved as last received, liveness unknown."
+    },
+    {
+      "id": "LIVE-07",
+      "passed": true,
+      "detail": "Automatic reconnection/subscription succeeded; old coordinates remain stale until new Telemetry."
+    },
+    {
+      "id": "LIVE-08",
+      "passed": true,
+      "detail": "Restarted actual Simulator publishes a new run; same GUI resumes receiving without restart."
+    },
+    {
+      "id": "LIVE-09",
+      "passed": true,
+      "detail": "After reconnection, final position/state and Heartbeat received in same GUI."
+    },
+    {
+      "id": "LIVE-10",
+      "passed": true,
+      "detail": "GUI closed during reconnect waiting; subscriptions and owned session joined."
+    }
+  ]
+}

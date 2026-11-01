@@ -1,0 +1,11 @@
+{
+  "head": "755e1405dd4bb74b54a80a97abdc47d244fcfd99",
+  "seqUrl": "http://127.0.0.1:5341",
+  "console": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\bin\\trial-seq\\bin\\Amr.Communication.Console\\debug\\Amr.Communication.Console.exe",
+  "seqVersion": "2026.1.17114",
+  "consoleDllSha256": "5AD193BBBBF1480AA599F695293E1ED585B5C332983F5D3EFAA0674585F05290",
+  "sdk": "10.0.401",
+  "branch": "feature/58-gui-mqtt-live",
+  "started": "2026-11-01T17:47:30.9777635+09:00",
+  "sharedSeqStopped": false
+}

@@ -1,7 +1,84 @@
 # amr-control-system-demo
 가상 AMR 기반 관제시스템 구현 및 Issue·PR 개발 절차 실습
 
+<a id="folder-guide"></a>
+
+## 폴더별 역할 한눈에 보기
+
+사용자와 검토자가 **기능을 어디서 구현하고, 어떻게 시험하며, 결과를 어디서 확인하는지** 찾기 위한 안내다. 현재 로컬 코드 기준이며, 미커밋 구현과 원격 반영 상태는 아래 변경 기록과 각 검증 근거에서 구분한다.
+
+| 폴더 | 역할·필요한 이유 | 주요 내용 | 먼저 볼 곳 |
+| --- | --- | --- | --- |
+| [src](src/README.md) | AMR과 관제 시스템의 기능 구현 | 통신·콘솔·가상 AMR·관제 공통 계약·GUI 연결·관제 화면 | [프로젝트별 역할](#source-projects) · [내부 폴더·파일](src/README.md) |
+| [config](config/) | 코드 수정 없이 시험 조건 설정 | AMR 이름·초기 위치·속도·경로·수량, 격자 지도 시연 설정 | [단일 AMR](config/simulator.single.json) · [여러 AMR](config/simulator.fleet.json) · [격자 설정 안내](config/map-demo/README.md) |
+| [docker](docker/) | MQTT 중계 서버의 실행 환경 관리 | Mosquitto 컨테이너와 접속·저장 설정. 호스트 접속 포트는 1884 | [compose.yaml](docker/compose.yaml) · [Mosquitto 설정](docker/mosquitto/config/mosquitto.conf) |
+| [tests](tests/README.md) | 입력에 맞는 결과가 나오는지 검사 | 프로젝트별 자동시험과 실제 MQTT·GUI·Seq 연동 시험 도구 | [시험별 안내](tests/README.md) |
+| [evidence](evidence/README.md) | 진행·완료 판단의 근거 확인 | 실행별 환경·입력·판정·대표 로그·화면·실패와 재확인 기록 | [과제별 검증 색인](evidence/README.md) |
+| [tools](tools/) | 시연과 특수 시험을 지원 | 격자 지도 웹 호스트, 통신 응답 차단 프록시, 보조 시험 실행기 | [지도 시연](tools/Amr.Simulator.Map/README.md) · [응답 차단 시험](tools/COM-03/README.md) · [보조 실행기](tools/RunSimulatorTests/Program.cs) |
+| [.github](.github/) | 변경 내용을 같은 기준으로 검토 | PR 작성 양식 | [PR 양식](.github/pull_request_template.md) |
+
+계획·기능명세·결정사항·업무 기록의 원본은 `C:\process-plan`에서 관리한다. `bin`·`obj`·`.git` 내부와 임시 빌드 결과는 위 기능 안내 대상에서 제외한다.
+
+<a id="source-projects"></a>
+
+### src의 프로젝트별 담당 기능
+
+| 프로젝트 | 역할·필요한 이유 | 현재 담당 기능 | 대표 파일·상세 안내 |
+| --- | --- | --- | --- |
+| [Amr.Communication](src/Amr.Communication/) | AMR과 관제 사이의 공통 통신 기능 제공 | MQTT 접속·송수신·메시지 검사·장비별 수신 처리·생존 확인·재접속 | [ReconnectingCommunicationSession.cs](src/Amr.Communication/Mqtt/Sessions/ReconnectingCommunicationSession.cs) · [내부 폴더](src/README.md#communication) |
+| [Amr.Communication.Console](src/Amr.Communication.Console/) | 화면 없이 통신 동작을 시험·관찰 | trial 명령 입력, 핵심 이벤트 표시, 상세 로그의 Seq 전송 | [TrialConsoleRunner.cs](src/Amr.Communication.Console/TrialConsoleRunner.cs) · [내부 파일](src/README.md#console) |
+| [Amr.Simulator](src/Amr.Simulator/) | 실제 AMR 대신 시험 데이터와 명령 응답 생성 | 설정 읽기·좌표 이동·상태/생존 신호 송신, 명령 모드의 MOVE/STOP·최종 응답, 격자 이동 계산 | [SimulatorApplication.cs](src/Amr.Simulator/SimulatorApplication.cs) · [내부 폴더](src/README.md#simulator) |
+| [Amr.Core](src/Amr.Core/) | 화면과 연결부가 같은 관제 기준 사용 | 장비·상태·알람·조회/명령 계약, 명령 ID별 결과 추적, 통신 이상에 따른 관제 미션 보류 | [CommandTracker.cs](src/Amr.Core/CommandTracker.cs) · [주요 파일](src/README.md#core) |
+| [Amr.Infrastructure](src/Amr.Infrastructure/) | 통신 데이터를 GUI가 사용하는 형식으로 연결 | 수신값을 장비·알람·연결 상태로 변환, GUI 명령 발행·응답 연결, 이번 실행의 메모리 이력 | [MqttAmrDataProvider.cs](src/Amr.Infrastructure/MqttAmrDataProvider.cs) · [주요 파일](src/README.md#infrastructure) |
+| [Amr.ControlGui](src/Amr.ControlGui/) | 사용자가 장비 상태를 보고 명령 요청 | 대시보드·지도·알람·이력·AMR 별도 창, Mock/실제 MQTT/격자 호스트 조회 모드 | [Program.cs](src/Amr.ControlGui/Program.cs) · [주요 파일](src/README.md#gui) |
+
+<a id="module-connections"></a>
+
+### 현재 모듈 연결 관계
+
+아래는 GUI의 **실제 MQTT 모드**와 trial의 데이터 흐름이다. 양쪽 실행 프로그램은 같은 통신 라이브러리를 사용한다.
+
+```mermaid
+flowchart LR
+    simulator[가상 AMR] <--> broker[Mosquitto MQTT 서버]
+    broker <--> communication[Amr.Communication]
+    communication <--> trial[trial 콘솔]
+    communication <--> infrastructure[Amr.Infrastructure]
+    infrastructure <--> gui[관제 GUI]
+    trial --> seq[Seq 상세 로그 조회]
+```
+
+`Amr.Core`는 GUI와 Infrastructure가 함께 사용하는 조회·명령 계약과 관제 판단을 제공한다. trial을 종료해도 GUI는 자신의 통신 연결을 사용한다. Seq 상세 로그 분리는 현재 trial에 적용되어 있다.
+
+현재 실제 GUI 연결은 지정 AMR 한 대의 위치·상태·MOVE/STOP·응답 확인 범위다. SQLite 저장, RESET·장애 시나리오와 전체 관제 기능의 완료는 별도다. [모드별 차이와 코드 위치](src/README.md#gui).
+
+<a id="run-and-check"></a>
+
+### 하려는 일에 따라 찾아보기
+
+| 하려는 일 | 확인 위치 |
+| --- | --- |
+| 빌드·전체 실행 준비 | [BUILDING.md](BUILDING.md) · [솔루션 구성](AmrControlSystem.slnx) |
+| trial에서 통신·명령 시험, Seq에서 상세 로그 검색 | [콘솔 실행·시험 안내](tests/manual/COM06/README.md) |
+| 가상 AMR과 실제 MQTT 관제 GUI 함께 실행 | [GUI·AMR 실행 순서](tests/manual/GUI-CONTROL/README.md) |
+| AMR 초기 위치·속도·경로·수량 변경 | [시뮬레이터 안내](src/Amr.Simulator/README.md) · [config](config/) |
+| 격자 지도·장애물 우회 시연 | [지도 호스트 안내](tools/Amr.Simulator.Map/README.md) |
+| 자동시험과 실제 연동 시험 선택 | [tests 안내](tests/README.md) |
+| 과제 진행·완료 근거 확인 | [evidence 색인](evidence/README.md) |
+
+<a id="change-history"></a>
+
+## 최근 변경과 과거 기록
+
+아래 날짜·Issue별 내용은 각 작업 당시의 구현·시험·게시 상태를 보존한 기록이다. **현재 폴더 역할은 위 안내**, 과제 완료 여부는 연결된 최신 검증 근거를 확인한다.
+
 [과제별 최신 검증 근거와 과거 자료 찾기](evidence/README.md) — 최종 결과·중요 실패·고정 Git 원본을 구분한다.
+
+**trial 핵심 콘솔·Docker Seq 상세 조회 (로컬 미커밋):** 기본 콘솔은 접속·단절·재접속·명령/ACK·첫 수신/상태 변화를 표시한다. 주기 위치·생존 신호는 Serilog Debug 구조화 로그로 Seq에서 조회한다. `detail on/off`로 콘솔 상세 표시를 전환한다. [실행·Seq 검색](tests/manual/COM06/README.md#docker-seq에서-구조화-상세-로그-조회) · [실제 검증](evidence/LOG/20261101-trial-seq-01/README.md).
+
+**trial 입력줄 보완 (로컬 미커밋):** 수신 로그가 계속 나와도 마지막 `trial>` 줄의 입력 문장·커서를 보존한다. 같은 창에서 명령을 수정하고 Enter로 발행한다. [실행·키 조작](tests/manual/COM06/README.md#로그가-나오는-동안-같은-창에서-명령-입력) · [검증 근거](evidence/COM-06/20261101-trial-input-01/README.md). 기존 실행은 Ctrl+C로 종료 후 다시 실행해야 한다.
+
+**최신 GUI의 실제 MQTT 제어 (#58, 로컬 구현·시험):** `--trial`과 같은 통신·자동 재접속 모듈을 연결했다. 실제 위치·상태, 마지막 수신값과 재접속, 별도 창의 MOVE/STOP 수행·최종 응답, 수신 알람과 이번 실행 이력을 확인한다. 기본 AMR_001/127.0.0.1:1884, 대상 한 대다. [GUI·독립 AMR 실행 방법](tests/manual/GUI-CONTROL/README.md) · [최신 검증](evidence/GUI/20261101-figma-live-02/README.md) · [앞선 수신 연결 검증](evidence/GUI/20261101-mqtt-live-01/README.md). RESET·장애 시나리오·DB 저장·전체 통합 완료는 별도다. 현재 미커밋 작업이므로 원격 develop 반영과 구분한다.
 
 **과제3 Mock GUI 개선본 (#48):** 기본 Windows Forms Mock 화면에 등록 AMR 수·오류/경고 요약, 출발지/담당 목적지·확대/축소, 별도 AMR 실행창의 출발지 설정·시작/Stop, 알람 비고·이력 조회/조건 초기화를 반영했다. [현재 실행 방법](BUILDING.md#windows-forms-mock-대시보드지도) · [기존 피드백 근거](evidence/GUI/20261030-figma-feedback-01/README.md) · [최신 통합·수정 검증](evidence/GUI/20261101-feedback-integration-01/README.md). 기존 `--grid-url` 격자/MQTT 모드와 보존 자료는 유지한다. 실제 AMR 명령 수행·DB 영속 이력과 구분하며 아래 날짜별 Mock 설명은 당시 구현 이력이다.
 
@@ -219,6 +296,8 @@ pwsh -NoProfile -File tests/manual/LOG/Verify-SeqShutdown.ps1 -RunId <새-실행
 4. [개발 진행 절차](<C:/process-plan/기준/개발 진행 절차.md>)와 사용자가 요청한 단계에 맞춰 진행한다. 작업별 원본 스킬은 [AGENTS.md의 안내](AGENTS.md#작업별-스킬)를 따른다.
 
 ## 개발 구성
+
+이 절의 Issue·프로젝트 표·시험 수치는 당시 개발 이력이다. 현재 전체 구성은 [프로젝트별 담당 기능](#source-projects)과 [솔루션](AmrControlSystem.slnx)에서 확인한다.
 
 현재 작업은 [Issue #5 — 접속 실패·대기 제한·취소 처리](https://github.com/inhhlee/amr-control-system-demo/issues/5)다. 최신 develop `e207614`에서 `feature/5-mqtt-connect-failure`를 생성했다. 입력 오류·TCP 실패·MQTT 거부·접속 제한·사용자 취소를 구분하고 늦은 접속 결과를 차단했다. 빌드 경고·오류 0, 자동시험 566건과 실제 실패·제한·Ctrl+C 취소·새 정상 세션을 확인했다. [실행 안내](#com03b-run) · [검증결과](evidence/COM-03/20261019-connect-failure-unit-03/README.md). 구현·시험 근거를 작업 브랜치에 함께 게시한다. PR의 최신 상태는 Issue #5에서 확인하며 develop 병합·Issue 종료는 후속 단계다. #23은 PR #24로 develop에 반영·종료됐으며 아래 #23 준비 단계 설명은 당시 기록이다.
 
