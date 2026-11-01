@@ -1,0 +1,13 @@
+Client null sending CONNECT
+Client (null) received CONNACK (0)
+Client null sending SUBSCRIBE (Mid: 1, Topic: amr/AMR_002/command, QoS: 0, Options: 0x00)
+Client null received SUBACK
+Subscribed (mid: 1): 0
+Client null received PUBLISH (d0, q0, r0, m0, 'amr/AMR_002/command', ... (104 bytes))
+amr/AMR_002/command {"cmdId":"CMD-a6602b9217d64ed4b0e92319ad0d86f7","type":"MOVE","ts":1793523073570,"param":{"x":-3,"y":4}}
+Client null received PUBLISH (d0, q0, r0, m0, 'amr/AMR_002/command', ... (92 bytes))
+amr/AMR_002/command {"cmdId":"CMD-df565f80192c4cdabfae42dc842405fa","type":"STOP","ts":1793523073879,"param":{}}
+Client null received PUBLISH (d0, q0, r0, m0, 'amr/AMR_002/command', ... (93 bytes))
+amr/AMR_002/command {"cmdId":"CMD-f6503e30cb744b2e86f6613ee4f6130f","type":"RESET","ts":1793523074216,"param":{}}
+Client null sending DISCONNECT
+

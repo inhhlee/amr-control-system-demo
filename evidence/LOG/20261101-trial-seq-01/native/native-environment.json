@@ -1,0 +1,12 @@
+{
+  "managedSha256": "5AD193BBBBF1480AA599F695293E1ED585B5C332983F5D3EFAA0674585F05290",
+  "seqUrl": "http://127.0.0.1:5341",
+  "inputRedirected": false,
+  "console": "C:\\amr-control-system-demo\\tests\\Amr.Communication.Tests\\bin\\trial-seq\\bin\\Amr.Communication.Console\\debug\\Amr.Communication.Console.exe",
+  "port": 18889,
+  "columns": 80,
+  "runId": "20261101-trial-seq-native-01",
+  "started": "2026-11-01T17:53:06.8069118+09:00",
+  "outputRedirected": false,
+  "sha256": "5D7F63139695F607669C385C9985DC219ED24B9D91CEBB3DB029D57F02C27B96"
+}

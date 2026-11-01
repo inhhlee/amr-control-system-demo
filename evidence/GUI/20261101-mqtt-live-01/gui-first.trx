@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="682d937a-1772-445a-9c2e-2ae5975aed1c" name="user@DESKTOP-BLNVKRS 2026-11-01 15:39:27" runUser="DESKTOP-BLNVKRS\user" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-01T15:39:27.1270608+09:00" queuing="2026-11-01T15:39:27.1270612+09:00" start="2026-11-01T15:39:24.8356504+09:00" finish="2026-11-01T15:39:32.9546895+09:00" />
+  <TestSettings name="default" id="d836ad48-7f49-4cd9-987d-d943c7050281">
+    <Deployment runDeploymentRoot="user_DESKTOP-BLNVKRS_2026-11-01_15_39_27" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="00216d53-3977-4f0f-a4bd-3899153b056b" testId="d2cf29a8-90af-1d38-8b71-45ae250c0eda" testName="Amr.ControlGui.Tests.MqttDashboardTests.ActualModeUsesLatestLayoutAndDistinguishesConnectionAndFreshness" computerName="DESKTOP-BLNVKRS" duration="00:00:01.0191882" startTime="2026-11-01T15:39:26.3895325+09:00" endTime="2026-11-01T15:39:27.3954917+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="00216d53-3977-4f0f-a4bd-3899153b056b" />
+    <UnitTestResult executionId="e47be04e-272e-4798-8840-500ab0bafefe" testId="6f80d289-ea41-c975-14f7-a9b39c36342d" testName="Amr.ControlGui.Tests.MqttDataProviderTests.ReconnectKeepsLastValueAndDoesNotClaimFreshTelemetryUntilNewMessage" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0776464" startTime="2026-11-01T15:39:27.5517613+09:00" endTime="2026-11-01T15:39:27.6572591+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e47be04e-272e-4798-8840-500ab0bafefe" />
+    <UnitTestResult executionId="acbee285-a8c9-4238-8e34-0895d40be5fa" testId="bd39d820-af32-9c3f-c2ae-2de49ec9d3a8" testName="Amr.ControlGui.Tests.MqttDashboardTests.InvalidMqttOptionsAreRejected(option: &quot;--amr-id&quot;, value: &quot;AMR/001&quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0000249" startTime="2026-11-01T15:39:26.3889959+09:00" endTime="2026-11-01T15:39:26.3891428+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="acbee285-a8c9-4238-8e34-0895d40be5fa" />
+    <UnitTestResult executionId="56640e7a-f5ce-4bdc-9161-e1f34e11eda5" testId="2676145e-7c7e-c6e4-f100-0aae7f2122c6" testName="Amr.ControlGui.Tests.MqttDashboardTests.InvalidMqttOptionsAreRejected(option: &quot;--reconnect-attempts&quot;, value: &quot;-1&quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0009882" startTime="2026-11-01T15:39:26.3856956+09:00" endTime="2026-11-01T15:39:26.3859876+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="56640e7a-f5ce-4bdc-9161-e1f34e11eda5" />
+    <UnitTestResult executionId="9fd415b8-0b0b-470a-a193-5e4d1a26609b" testId="669e3d2e-a130-eaa6-8d45-38c2df5d6aa8" testName="Amr.ControlGui.Tests.MqttDashboardTests.InvalidMqttOptionsAreRejected(option: &quot;--reconnect-delay-seconds&quot;, value: &quot;0&quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0003928" startTime="2026-11-01T15:39:26.3872597+09:00" endTime="2026-11-01T15:39:26.3874030+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9fd415b8-0b0b-470a-a193-5e4d1a26609b" />
+    <UnitTestResult executionId="c564081c-5866-479e-bea5-4767f3c9fd52" testId="50b36fe7-9ecf-dafa-210d-e57af4799ef1" testName="Amr.ControlGui.Tests.MqttDataProviderTests.InitialSnapshotDoesNotInventPositionAndValidatedTelemetryIsPreserved" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0097943" startTime="2026-11-01T15:39:32.8094465+09:00" endTime="2026-11-01T15:39:32.8176838+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c564081c-5866-479e-bea5-4767f3c9fd52" />
+    <UnitTestResult executionId="14c97265-ac40-4904-b47a-7fbae8a7d27b" testId="3daa954e-e007-17f8-1d8c-6e6aee29bce9" testName="Amr.ControlGui.Tests.MqttDashboardTests.InvalidMqttOptionsAreRejected(option: &quot;--amr-id&quot;, value: &quot;&quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0000184" startTime="2026-11-01T15:39:26.3880184+09:00" endTime="2026-11-01T15:39:26.3881430+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="14c97265-ac40-4904-b47a-7fbae8a7d27b" />
+    <UnitTestResult executionId="2498c41d-6fc0-452b-9ea0-73f50fe7cb49" testId="a6adfa67-93af-fc84-8c53-dda776fc17ed" testName="Amr.ControlGui.Tests.MqttDataProviderTests.HeartbeatTimeoutIsIndependentOfBrokerAndRecoversOnNewHeartbeat" computerName="DESKTOP-BLNVKRS" duration="00:00:05.0176012" startTime="2026-11-01T15:39:27.7895852+09:00" endTime="2026-11-01T15:39:32.8074184+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2498c41d-6fc0-452b-9ea0-73f50fe7cb49" />
+    <UnitTestResult executionId="02ef971f-4475-4b9a-9587-6313f0bb0a87" testId="3ebee5ba-8e19-bba8-4033-a7c4400d1419" testName="Amr.ControlGui.Tests.MqttDashboardTests.MqttOptionsKeepTrialDefaults" computerName="DESKTOP-BLNVKRS" duration="00:00:00.2918890" startTime="2026-11-01T15:39:26.0692047+09:00" endTime="2026-11-01T15:39:26.3680974+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="02ef971f-4475-4b9a-9587-6313f0bb0a87" />
+    <UnitTestResult executionId="362cba79-731b-4a13-913d-78ab553ef281" testId="aebc9db7-6f5a-c83b-ec0d-a1caf9107f22" testName="Amr.ControlGui.Tests.MqttDataProviderTests.ImmediateStartAndDisposeAlwaysJoinTheOwnedSession" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0487790" startTime="2026-11-01T15:39:27.6579372+09:00" endTime="2026-11-01T15:39:27.7178185+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="362cba79-731b-4a13-913d-78ab553ef281" />
+    <UnitTestResult executionId="5725f085-ae01-485d-8c3d-4959922ec046" testId="fab6a6e6-9195-ae70-13db-3bbca2f6c5a5" testName="Amr.ControlGui.Tests.MqttDataProviderTests.RetryExhaustionRemainsFailedAndDisposeInterruptsRetryDelay" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0508676" startTime="2026-11-01T15:39:27.7182238+09:00" endTime="2026-11-01T15:39:27.7746730+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5725f085-ae01-485d-8c3d-4959922ec046" />
+    <UnitTestResult executionId="a014814b-f90d-4d03-809c-135cdbc5cf25" testId="a28c3013-34db-251e-74ee-de45546ef3b2" testName="Amr.ControlGui.Tests.MqttDataProviderTests.CancelingOneSubscriberDoesNotStopSharedSession" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0128358" startTime="2026-11-01T15:39:27.7754249+09:00" endTime="2026-11-01T15:39:27.7891002+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a014814b-f90d-4d03-809c-135cdbc5cf25" />
+    <UnitTestResult executionId="dd2abcef-a56e-4951-9360-dc977bfa7bc6" testId="5b55cbb6-6835-a14b-4891-76190b63a27b" testName="Amr.ControlGui.Tests.MqttDashboardTests.InvalidMqttOptionsAreRejected(option: &quot;--port&quot;, value: &quot;0&quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0001435" startTime="2026-11-01T15:39:26.3883591+09:00" endTime="2026-11-01T15:39:26.3884655+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dd2abcef-a56e-4951-9360-dc977bfa7bc6" />
+    <UnitTestResult executionId="f010dac1-2896-4fd1-ba75-1e0b30ed5315" testId="6c3c4c1b-4a26-bfc8-6ece-cafee5e6f776" testName="Amr.ControlGui.Tests.MqttDashboardTests.InvalidMqttOptionsAreRejected(option: &quot;--unknown&quot;, value: &quot;1&quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0000264" startTime="2026-11-01T15:39:26.3886663+09:00" endTime="2026-11-01T15:39:26.3887788+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f010dac1-2896-4fd1-ba75-1e0b30ed5315" />
+    <UnitTestResult executionId="37ecd152-8300-4b86-bb12-4b23a139de13" testId="7ee00cb7-4473-abfd-060a-ac99a7d0ef38" testName="Amr.ControlGui.Tests.MqttDataProviderTests.OverflowRequiresResyncAndNewSubscriptionStartsWithLatestSnapshot" computerName="DESKTOP-BLNVKRS" duration="00:00:00.1457432" startTime="2026-11-01T15:39:27.4044838+09:00" endTime="2026-11-01T15:39:27.5512785+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="37ecd152-8300-4b86-bb12-4b23a139de13" />
+    <UnitTestResult executionId="e68a4e58-1fc9-43e2-941a-6568f1a19491" testId="6349157d-a2e3-5a36-d5b3-4f2819c26bb8" testName="Amr.ControlGui.Tests.MqttDashboardTests.InvalidMqttOptionsAreRejected(option: &quot;--port&quot;, value: &quot;65536&quot;)" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0000327" startTime="2026-11-01T15:39:26.3876572+09:00" endTime="2026-11-01T15:39:26.3877774+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e68a4e58-1fc9-43e2-941a-6568f1a19491" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Amr.ControlGui.Tests.MqttDataProviderTests.OverflowRequiresResyncAndNewSubscriptionStartsWithLatestSnapshot" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="7ee00cb7-4473-abfd-060a-ac99a7d0ef38">
+      <Execution id="37ecd152-8300-4b86-bb12-4b23a139de13" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MqttDataProviderTests" name="OverflowRequiresResyncAndNewSubscriptionStartsWithLatestSnapshot" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MqttDataProviderTests.CancelingOneSubscriberDoesNotStopSharedSession" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="a28c3013-34db-251e-74ee-de45546ef3b2">
+      <Execution id="a014814b-f90d-4d03-809c-135cdbc5cf25" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MqttDataProviderTests" name="CancelingOneSubscriberDoesNotStopSharedSession" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MqttDashboardTests.InvalidMqttOptionsAreRejected(option: &quot;--reconnect-delay-seconds&quot;, value: &quot;0&quot;)" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="669e3d2e-a130-eaa6-8d45-38c2df5d6aa8">
+      <Execution id="9fd415b8-0b0b-470a-a193-5e4d1a26609b" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MqttDashboardTests" name="InvalidMqttOptionsAreRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MqttDataProviderTests.ImmediateStartAndDisposeAlwaysJoinTheOwnedSession" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="aebc9db7-6f5a-c83b-ec0d-a1caf9107f22">
+      <Execution id="362cba79-731b-4a13-913d-78ab553ef281" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MqttDataProviderTests" name="ImmediateStartAndDisposeAlwaysJoinTheOwnedSession" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MqttDashboardTests.MqttOptionsKeepTrialDefaults" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="3ebee5ba-8e19-bba8-4033-a7c4400d1419">
+      <Execution id="02ef971f-4475-4b9a-9587-6313f0bb0a87" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MqttDashboardTests" name="MqttOptionsKeepTrialDefaults" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MqttDataProviderTests.InitialSnapshotDoesNotInventPositionAndValidatedTelemetryIsPreserved" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="50b36fe7-9ecf-dafa-210d-e57af4799ef1">
+      <Execution id="c564081c-5866-479e-bea5-4767f3c9fd52" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MqttDataProviderTests" name="InitialSnapshotDoesNotInventPositionAndValidatedTelemetryIsPreserved" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MqttDataProviderTests.RetryExhaustionRemainsFailedAndDisposeInterruptsRetryDelay" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="fab6a6e6-9195-ae70-13db-3bbca2f6c5a5">
+      <Execution id="5725f085-ae01-485d-8c3d-4959922ec046" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MqttDataProviderTests" name="RetryExhaustionRemainsFailedAndDisposeInterruptsRetryDelay" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MqttDashboardTests.InvalidMqttOptionsAreRejected(option: &quot;--amr-id&quot;, value: &quot;AMR/001&quot;)" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="bd39d820-af32-9c3f-c2ae-2de49ec9d3a8">
+      <Execution id="acbee285-a8c9-4238-8e34-0895d40be5fa" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MqttDashboardTests" name="InvalidMqttOptionsAreRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MqttDashboardTests.InvalidMqttOptionsAreRejected(option: &quot;--unknown&quot;, value: &quot;1&quot;)" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="6c3c4c1b-4a26-bfc8-6ece-cafee5e6f776">
+      <Execution id="f010dac1-2896-4fd1-ba75-1e0b30ed5315" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MqttDashboardTests" name="InvalidMqttOptionsAreRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MqttDashboardTests.InvalidMqttOptionsAreRejected(option: &quot;--reconnect-attempts&quot;, value: &quot;-1&quot;)" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="2676145e-7c7e-c6e4-f100-0aae7f2122c6">
+      <Execution id="56640e7a-f5ce-4bdc-9161-e1f34e11eda5" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MqttDashboardTests" name="InvalidMqttOptionsAreRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MqttDataProviderTests.HeartbeatTimeoutIsIndependentOfBrokerAndRecoversOnNewHeartbeat" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="a6adfa67-93af-fc84-8c53-dda776fc17ed">
+      <Execution id="2498c41d-6fc0-452b-9ea0-73f50fe7cb49" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MqttDataProviderTests" name="HeartbeatTimeoutIsIndependentOfBrokerAndRecoversOnNewHeartbeat" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MqttDashboardTests.InvalidMqttOptionsAreRejected(option: &quot;--port&quot;, value: &quot;0&quot;)" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="5b55cbb6-6835-a14b-4891-76190b63a27b">
+      <Execution id="dd2abcef-a56e-4951-9360-dc977bfa7bc6" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MqttDashboardTests" name="InvalidMqttOptionsAreRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MqttDashboardTests.ActualModeUsesLatestLayoutAndDistinguishesConnectionAndFreshness" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="d2cf29a8-90af-1d38-8b71-45ae250c0eda">
+      <Execution id="00216d53-3977-4f0f-a4bd-3899153b056b" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MqttDashboardTests" name="ActualModeUsesLatestLayoutAndDistinguishesConnectionAndFreshness" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MqttDataProviderTests.ReconnectKeepsLastValueAndDoesNotClaimFreshTelemetryUntilNewMessage" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="6f80d289-ea41-c975-14f7-a9b39c36342d">
+      <Execution id="e47be04e-272e-4798-8840-500ab0bafefe" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MqttDataProviderTests" name="ReconnectKeepsLastValueAndDoesNotClaimFreshTelemetryUntilNewMessage" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MqttDashboardTests.InvalidMqttOptionsAreRejected(option: &quot;--amr-id&quot;, value: &quot;&quot;)" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="3daa954e-e007-17f8-1d8c-6e6aee29bce9">
+      <Execution id="14c97265-ac40-4904-b47a-7fbae8a7d27b" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MqttDashboardTests" name="InvalidMqttOptionsAreRejected" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MqttDashboardTests.InvalidMqttOptionsAreRejected(option: &quot;--port&quot;, value: &quot;65536&quot;)" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="6349157d-a2e3-5a36-d5b3-4f2819c26bb8">
+      <Execution id="e68a4e58-1fc9-43e2-941a-6568f1a19491" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MqttDashboardTests" name="InvalidMqttOptionsAreRejected" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="d2cf29a8-90af-1d38-8b71-45ae250c0eda" executionId="00216d53-3977-4f0f-a4bd-3899153b056b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6f80d289-ea41-c975-14f7-a9b39c36342d" executionId="e47be04e-272e-4798-8840-500ab0bafefe" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bd39d820-af32-9c3f-c2ae-2de49ec9d3a8" executionId="acbee285-a8c9-4238-8e34-0895d40be5fa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2676145e-7c7e-c6e4-f100-0aae7f2122c6" executionId="56640e7a-f5ce-4bdc-9161-e1f34e11eda5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="669e3d2e-a130-eaa6-8d45-38c2df5d6aa8" executionId="9fd415b8-0b0b-470a-a193-5e4d1a26609b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="50b36fe7-9ecf-dafa-210d-e57af4799ef1" executionId="c564081c-5866-479e-bea5-4767f3c9fd52" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3daa954e-e007-17f8-1d8c-6e6aee29bce9" executionId="14c97265-ac40-4904-b47a-7fbae8a7d27b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a6adfa67-93af-fc84-8c53-dda776fc17ed" executionId="2498c41d-6fc0-452b-9ea0-73f50fe7cb49" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3ebee5ba-8e19-bba8-4033-a7c4400d1419" executionId="02ef971f-4475-4b9a-9587-6313f0bb0a87" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aebc9db7-6f5a-c83b-ec0d-a1caf9107f22" executionId="362cba79-731b-4a13-913d-78ab553ef281" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fab6a6e6-9195-ae70-13db-3bbca2f6c5a5" executionId="5725f085-ae01-485d-8c3d-4959922ec046" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a28c3013-34db-251e-74ee-de45546ef3b2" executionId="a014814b-f90d-4d03-809c-135cdbc5cf25" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5b55cbb6-6835-a14b-4891-76190b63a27b" executionId="dd2abcef-a56e-4951-9360-dc977bfa7bc6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6c3c4c1b-4a26-bfc8-6ece-cafee5e6f776" executionId="f010dac1-2896-4fd1-ba75-1e0b30ed5315" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7ee00cb7-4473-abfd-060a-ac99a7d0ef38" executionId="37ecd152-8300-4b86-bb12-4b23a139de13" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6349157d-a2e3-5a36-d5b3-4f2819c26bb8" executionId="e68a4e58-1fc9-43e2-941a-6568f1a19491" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="목록에 없는 결과" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="로드된 모든 결과" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="16" executed="16" passed="16" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.12)&#xD;
+[xUnit.net 00:00:00.30]   Discovering: Amr.ControlGui.Tests&#xD;
+[xUnit.net 00:00:00.37]   Discovered:  Amr.ControlGui.Tests&#xD;
+[xUnit.net 00:00:00.40]   Starting:    Amr.ControlGui.Tests&#xD;
+[xUnit.net 00:00:07.18]   Finished:    Amr.ControlGui.Tests&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

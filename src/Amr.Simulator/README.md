@@ -50,13 +50,13 @@ dotnet run --project src/Amr.Simulator -- --fleet-config config/simulator.fleet.
 뒤여야 한다. 문자열·중복/추가 필드·잘못된 UTF-8은 보정하지 않는다.
 
 이 단계는 **장애 설정 로드·검사까지**다. 로그에 `Execution=PendingAlarmImplementation`을
-표시하며 실제 장애/알람 전이는 #50, MQTT 명령 수신과 최종 ACK는 #51에서 연결한다.
+표시하며 실제 장애/알람 전이는 #50의 후속이다. #58 GUI 연결에서 #51의 MOVE/STOP 수신·최종 ACK 부분을 추가했다. 아래 명령 대기 실행과 [실제 GUI 실행 안내](../../tests/manual/GUI-CONTROL/README.md)를 따른다. RESET과 #51 전체 완료는 별도다.
 원인 해소가 즉시 알람 해제를 뜻하는지는 아직 확정하지 않았다.
 
 장비별 실행 루프·불변 송신 스냅샷·ClientId/연결을 따로 소유한다. 한 연결 실패 시
 이번 fleet 실행은 실패로 종료하고 다른 소유 작업도 취소·정리를 기다린다. 한 장비가
 먼저 도착하면 그 장비의 유한 실행/송신은 끝나며 마지막 장비 종료까지 프로세스가
-기다린다. 장시간 명령 대기 세션은 이 단계의 기능이 아니다.
+기다린다. 이 자동 경로 모드와 아래 명령 대기 모드는 별도다.
 
 실제 MQTT 재현은 `pwsh -NoProfile -File tests/manual/AMR01/Verify-FleetSettings.ps1 -RunId <새ID>`를
 사용한다. Debug 빌드된 Simulator/통신 콘솔과 실행 중인 Docker Linux 엔진, 캐시된
@@ -64,3 +64,13 @@ dotnet run --project src/Amr.Simulator -- --fleet-config config/simulator.fleet.
 Ctrl+C 정상 종료 검증으로 집계하지 않는다.
 
 격자 화면은 `dotnet run --project tools/Amr.Simulator.Map`으로 실행한다. 이 호스트가 본 프로젝트의 `GridSimulation`을 호출한다. 격자 CLI나 별도 프로세스 간 명령 프로토콜을 새로 추가하지 않았다.
+
+## 명령을 기다리는 단일 AMR 실행 (#58·#51 일부)
+
+```powershell
+dotnet run --project src/Amr.Simulator -- --config config/simulator.single.json --command-mode --mqtt --host 127.0.0.1 --port 1884 --telemetry-ms 200 --heartbeat-ms 1000
+```
+
+자동 경로 모드와 달리 초기 좌표에서 IDLE로 기다린다. MOVE를 받으면 현재 위치에서 지정한 목적지로 직선 이동하고 도착 시 최종 SUCCESS를 보낸다. 이동 중 추가 MOVE는 거부한다. STOP은 현재 좌표에서 정지하고 원래 MOVE의 FAILURE/중단 사유와 별도 STOP의 SUCCESS를 보낸다. 새 MOVE는 멈춘 위치에서 다시 출발한다.
+
+대기·도착·정지에도 Telemetry/Heartbeat를 계속 보낸다. 같은 요청 ID/내용은 이동을 다시 시작하지 않고 기존 결과를 사용한다. RESET은 미지원 FAILURE다. `--fleet-config` 명령 대기는 지원하지 않는다. Broker가 끊기면 이 AMR 실행은 종료하므로 복구 후 직접 재실행한다. [GUI와 함께 실행·검증](../../tests/manual/GUI-CONTROL/README.md).

@@ -4,6 +4,7 @@
     <Project Path="src/Amr.Communication.Console/Amr.Communication.Console.csproj" />
     <Project Path="src/Amr.Simulator/Amr.Simulator.csproj" />
     <Project Path="src/Amr.Core/Amr.Core.csproj" />
+    <Project Path="src/Amr.Infrastructure/Amr.Infrastructure.csproj" />
     <Project Path="src/Amr.ControlGui/Amr.ControlGui.csproj" />
   </Folder>
   <Folder Name="/tests/">

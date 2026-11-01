@@ -25,7 +25,10 @@ public enum SimulationPhase { Ready, Moving, Stopped, Arrived }
 public sealed record MapStation(string Name, double X, double Y);
 // 거리는 공급자의 이동 방식에 따른 값이다. 현재 Mock은 X축 후 Y축 구간 거리의 합을 전달한다.
 public sealed record AmrJourney(MapStation Source, MapStation Destination, SimulationPhase Phase,
-    double TotalDistance, double TraveledDistance, DateTimeOffset? StartedAt = null)
+    double? TotalDistance, double? TraveledDistance, DateTimeOffset? StartedAt = null)
 {
-    public double RemainingDistance => Math.Max(0, TotalDistance - TraveledDistance);
+    // 미관측 실행 거리는 0이나 NaN 대신 null로 전달한다.
+    public double? RemainingDistance => TotalDistance is double total && TraveledDistance is double traveled
+        ? Math.Max(0, total - traveled) : null;
+    public string? DistanceBasis { get; init; }
 }

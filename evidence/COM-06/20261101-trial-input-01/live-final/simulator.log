@@ -1,0 +1,7 @@
+CommandSessionReady AmrId=AMR_001 Topic=amr/AMR_001/command
+CommandProcessed AmrId=AMR_001 Type=MOVE CmdId=CMD-f748b5c0643448109402b69c73663a17 State=BUSY Diagnostic=NONE
+CommandProcessed AmrId=AMR_001 Type=STOP CmdId=CMD-1f92300c6a1643cb8b1bfe6cb77a43e9 State=STOPPED Diagnostic=NONE
+FinalAckPublished AmrId=AMR_001 CmdId=CMD-f748b5c0643448109402b69c73663a17 Result=FAILURE Reason=STOP_INTERRUPTED Delivery=Unconfirmed
+FinalAckPublished AmrId=AMR_001 CmdId=CMD-1f92300c6a1643cb8b1bfe6cb77a43e9 Result=SUCCESS Reason=STOPPED Delivery=Unconfirmed
+CommandProcessed AmrId=AMR_001 Type=MOVE CmdId=CMD-0937ee7d6fd94079be405cea342f83f9 State=BUSY Diagnostic=NONE
+FinalAckPublished AmrId=AMR_001 CmdId=CMD-0937ee7d6fd94079be405cea342f83f9 Result=SUCCESS Reason=ARRIVED Delivery=Unconfirmed

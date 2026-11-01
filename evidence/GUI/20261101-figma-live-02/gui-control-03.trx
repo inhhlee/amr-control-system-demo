@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="b759711e-78e5-4f9f-a472-c61e07ad6fc5" name="user@DESKTOP-BLNVKRS 2026-11-01 16:33:36" runUser="DESKTOP-BLNVKRS\user" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-01T16:33:36.6335345+09:00" queuing="2026-11-01T16:33:36.6335349+09:00" start="2026-11-01T16:33:35.2631760+09:00" finish="2026-11-01T16:33:36.6398891+09:00" />
+  <TestSettings name="default" id="b6c6b3d5-28d8-4f98-b24e-2cd018789c34">
+    <Deployment runDeploymentRoot="user_DESKTOP-BLNVKRS_2026-11-01_16_33_36" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="5c31b311-e8bb-4dbc-b841-6dffbe55ce24" testId="944f55ed-6ff1-a70a-383a-72cb89646b48" testName="Amr.ControlGui.Tests.MqttControlTests.ActualAlarmAndHistoryAreReceivedAndFilteringDoesNotRemoveRecords" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0967321" startTime="2026-11-01T16:33:36.2865332+09:00" endTime="2026-11-01T16:33:36.3947899+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5c31b311-e8bb-4dbc-b841-6dffbe55ce24" />
+    <UnitTestResult executionId="4bd45f50-9e42-4c0a-95c5-1f79b6d65286" testId="04908276-6e05-870c-59b7-0f41af1b536b" testName="Amr.ControlGui.Tests.MqttControlTests.PendingPublicationsAreOrderedAndNeverForwardedToANewSession" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0488112" startTime="2026-11-01T16:33:36.4599863+09:00" endTime="2026-11-01T16:33:36.5080935+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4bd45f50-9e42-4c0a-95c5-1f79b6d65286" />
+    <UnitTestResult executionId="91e8817b-9cf9-450f-bda5-246d379958ef" testId="e77446ee-6bd9-1930-6f84-fff17c6530af" testName="Amr.ControlGui.Tests.MqttControlTests.FastAckIsMatchedBeforePublishReturnsAndTheRegisteredIdIsUsedOnWire" computerName="DESKTOP-BLNVKRS" duration="00:00:00.0616972" startTime="2026-11-01T16:33:36.4090196+09:00" endTime="2026-11-01T16:33:36.4589210+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="91e8817b-9cf9-450f-bda5-246d379958ef" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Amr.ControlGui.Tests.MqttControlTests.FastAckIsMatchedBeforePublishReturnsAndTheRegisteredIdIsUsedOnWire" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="e77446ee-6bd9-1930-6f84-fff17c6530af">
+      <Execution id="91e8817b-9cf9-450f-bda5-246d379958ef" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MqttControlTests" name="FastAckIsMatchedBeforePublishReturnsAndTheRegisteredIdIsUsedOnWire" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MqttControlTests.ActualAlarmAndHistoryAreReceivedAndFilteringDoesNotRemoveRecords" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="944f55ed-6ff1-a70a-383a-72cb89646b48">
+      <Execution id="5c31b311-e8bb-4dbc-b841-6dffbe55ce24" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MqttControlTests" name="ActualAlarmAndHistoryAreReceivedAndFilteringDoesNotRemoveRecords" />
+    </UnitTest>
+    <UnitTest name="Amr.ControlGui.Tests.MqttControlTests.PendingPublicationsAreOrderedAndNeverForwardedToANewSession" storage="c:\amr-control-system-demo\tests\amr.controlgui.tests\bin\debug\net10.0-windows\amr.controlgui.tests.dll" id="04908276-6e05-870c-59b7-0f41af1b536b">
+      <Execution id="4bd45f50-9e42-4c0a-95c5-1f79b6d65286" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.ControlGui.Tests\bin\Debug\net10.0-windows\Amr.ControlGui.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.ControlGui.Tests.MqttControlTests" name="PendingPublicationsAreOrderedAndNeverForwardedToANewSession" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="944f55ed-6ff1-a70a-383a-72cb89646b48" executionId="5c31b311-e8bb-4dbc-b841-6dffbe55ce24" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="04908276-6e05-870c-59b7-0f41af1b536b" executionId="4bd45f50-9e42-4c0a-95c5-1f79b6d65286" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e77446ee-6bd9-1930-6f84-fff17c6530af" executionId="91e8817b-9cf9-450f-bda5-246d379958ef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="목록에 없는 결과" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="로드된 모든 결과" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="3" executed="3" passed="3" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.12)&#xD;
+[xUnit.net 00:00:00.17]   Discovering: Amr.ControlGui.Tests&#xD;
+[xUnit.net 00:00:00.26]   Discovered:  Amr.ControlGui.Tests&#xD;
+[xUnit.net 00:00:00.30]   Starting:    Amr.ControlGui.Tests&#xD;
+[xUnit.net 00:00:00.56]   Finished:    Amr.ControlGui.Tests&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

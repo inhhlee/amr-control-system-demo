@@ -1,0 +1,692 @@
+[
+  {
+    "Timestamp": "2026-11-01T08:50:26.1198494Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "DeviceTimestamp",
+        "Value": 1793523026095
+      },
+      {
+        "Name": "EventType",
+        "Value": "TelemetryReceived"
+      },
+      {
+        "Name": "Host",
+        "Value": "127.0.0.1"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "Port",
+        "Value": 49235
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-11-01T17:50:26.1193889+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261101-trial-seq-live-03-online"
+      },
+      {
+        "Name": "SessionId",
+        "Value": "f75973a6dd934a069371b8d72c2ff693"
+      },
+      {
+        "Name": "Speed",
+        "Value": 1
+      },
+      {
+        "Name": "State",
+        "Value": "BUSY"
+      },
+      {
+        "Name": "Topic",
+        "Value": "amr/AMR_001/telemetry"
+      },
+      {
+        "Name": "X",
+        "Value": -0.9625954305318037
+      },
+      {
+        "Name": "Y",
+        "Value": 0.0068008308123993135
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR="
+      },
+      {
+        "PropertyName": "AmrId",
+        "RawText": "{AmrId:l}",
+        "FormattedValue": "AMR_001"
+      },
+      {
+        "Text": " 종류=telemetry 위치=("
+      },
+      {
+        "PropertyName": "X"
+      },
+      {
+        "Text": ","
+      },
+      {
+        "PropertyName": "Y"
+      },
+      {
+        "Text": ") 속도="
+      },
+      {
+        "PropertyName": "Speed"
+      },
+      {
+        "Text": " 상태="
+      },
+      {
+        "PropertyName": "State",
+        "RawText": "{State:l}",
+        "FormattedValue": "BUSY"
+      },
+      {
+        "Text": " ts="
+      },
+      {
+        "PropertyName": "DeviceTimestamp"
+      }
+    ],
+    "EventType": "$E8A0590A",
+    "Level": "Debug",
+    "RenderedMessage": "AMR=AMR_001 종류=telemetry 위치=(-0.9625954305318037,0.0068008308123993135) 속도=1 상태=BUSY ts=1793523026095",
+    "Id": "event-2c647e9e37f508df4f00000000000000",
+    "Links": {
+      "Self": "api/events/event-2c647e9e37f508df4f00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-11-01T08:50:25.8560768Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "DeviceTimestamp",
+        "Value": 1793523025854
+      },
+      {
+        "Name": "EventType",
+        "Value": "TelemetryReceived"
+      },
+      {
+        "Name": "Host",
+        "Value": "127.0.0.1"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "Port",
+        "Value": 49235
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-11-01T17:50:25.8558585+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261101-trial-seq-live-03-online"
+      },
+      {
+        "Name": "SessionId",
+        "Value": "f75973a6dd934a069371b8d72c2ff693"
+      },
+      {
+        "Name": "Speed",
+        "Value": 1
+      },
+      {
+        "Name": "State",
+        "Value": "BUSY"
+      },
+      {
+        "Name": "Topic",
+        "Value": "amr/AMR_001/telemetry"
+      },
+      {
+        "Name": "X",
+        "Value": -0.7250405326731362
+      },
+      {
+        "Name": "Y",
+        "Value": 0.049992630423066155
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR="
+      },
+      {
+        "PropertyName": "AmrId",
+        "RawText": "{AmrId:l}",
+        "FormattedValue": "AMR_001"
+      },
+      {
+        "Text": " 종류=telemetry 위치=("
+      },
+      {
+        "PropertyName": "X"
+      },
+      {
+        "Text": ","
+      },
+      {
+        "PropertyName": "Y"
+      },
+      {
+        "Text": ") 속도="
+      },
+      {
+        "PropertyName": "Speed"
+      },
+      {
+        "Text": " 상태="
+      },
+      {
+        "PropertyName": "State",
+        "RawText": "{State:l}",
+        "FormattedValue": "BUSY"
+      },
+      {
+        "Text": " ts="
+      },
+      {
+        "PropertyName": "DeviceTimestamp"
+      }
+    ],
+    "EventType": "$E8A0590A",
+    "Level": "Debug",
+    "RenderedMessage": "AMR=AMR_001 종류=telemetry 위치=(-0.7250405326731362,0.049992630423066155) 속도=1 상태=BUSY ts=1793523025854",
+    "Id": "event-2c3c3f0037f508df4a00000000000000",
+    "Links": {
+      "Self": "api/events/event-2c3c3f0037f508df4a00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-11-01T08:50:25.5996155Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "DeviceTimestamp",
+        "Value": 1793523025597
+      },
+      {
+        "Name": "EventType",
+        "Value": "TelemetryReceived"
+      },
+      {
+        "Name": "Host",
+        "Value": "127.0.0.1"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "Port",
+        "Value": 49235
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-11-01T17:50:25.5993565+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261101-trial-seq-live-03-online"
+      },
+      {
+        "Name": "SessionId",
+        "Value": "f75973a6dd934a069371b8d72c2ff693"
+      },
+      {
+        "Name": "Speed",
+        "Value": 1
+      },
+      {
+        "Name": "State",
+        "Value": "BUSY"
+      },
+      {
+        "Name": "Topic",
+        "Value": "amr/AMR_001/telemetry"
+      },
+      {
+        "Name": "X",
+        "Value": -0.4719578063453079
+      },
+      {
+        "Name": "Y",
+        "Value": 0.09600767157358041
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR="
+      },
+      {
+        "PropertyName": "AmrId",
+        "RawText": "{AmrId:l}",
+        "FormattedValue": "AMR_001"
+      },
+      {
+        "Text": " 종류=telemetry 위치=("
+      },
+      {
+        "PropertyName": "X"
+      },
+      {
+        "Text": ","
+      },
+      {
+        "PropertyName": "Y"
+      },
+      {
+        "Text": ") 속도="
+      },
+      {
+        "PropertyName": "Speed"
+      },
+      {
+        "Text": " 상태="
+      },
+      {
+        "PropertyName": "State",
+        "RawText": "{State:l}",
+        "FormattedValue": "BUSY"
+      },
+      {
+        "Text": " ts="
+      },
+      {
+        "PropertyName": "DeviceTimestamp"
+      }
+    ],
+    "EventType": "$E8A0590A",
+    "Level": "Debug",
+    "RenderedMessage": "AMR=AMR_001 종류=telemetry 위치=(-0.4719578063453079,0.09600767157358041) 속도=1 상태=BUSY ts=1793523025597",
+    "Id": "event-2c151cfb37f508df4700000000000000",
+    "Links": {
+      "Self": "api/events/event-2c151cfb37f508df4700000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-11-01T08:50:25.4026351Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "DeviceTimestamp",
+        "Value": 1793523025400
+      },
+      {
+        "Name": "EventType",
+        "Value": "TelemetryReceived"
+      },
+      {
+        "Name": "Host",
+        "Value": "127.0.0.1"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "Port",
+        "Value": 49235
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-11-01T17:50:25.4024655+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261101-trial-seq-live-03-online"
+      },
+      {
+        "Name": "SessionId",
+        "Value": "f75973a6dd934a069371b8d72c2ff693"
+      },
+      {
+        "Name": "Speed",
+        "Value": 1
+      },
+      {
+        "Name": "State",
+        "Value": "BUSY"
+      },
+      {
+        "Name": "Topic",
+        "Value": "amr/AMR_001/telemetry"
+      },
+      {
+        "Name": "X",
+        "Value": -0.5614835730099839
+      },
+      {
+        "Name": "Y",
+        "Value": 0.07973025945273024
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR="
+      },
+      {
+        "PropertyName": "AmrId",
+        "RawText": "{AmrId:l}",
+        "FormattedValue": "AMR_001"
+      },
+      {
+        "Text": " 종류=telemetry 위치=("
+      },
+      {
+        "PropertyName": "X"
+      },
+      {
+        "Text": ","
+      },
+      {
+        "PropertyName": "Y"
+      },
+      {
+        "Text": ") 속도="
+      },
+      {
+        "PropertyName": "Speed"
+      },
+      {
+        "Text": " 상태="
+      },
+      {
+        "PropertyName": "State",
+        "RawText": "{State:l}",
+        "FormattedValue": "BUSY"
+      },
+      {
+        "Text": " ts="
+      },
+      {
+        "PropertyName": "DeviceTimestamp"
+      }
+    ],
+    "EventType": "$E8A0590A",
+    "Level": "Debug",
+    "RenderedMessage": "AMR=AMR_001 종류=telemetry 위치=(-0.5614835730099839,0.07973025945273024) 속도=1 상태=BUSY ts=1793523025400",
+    "Id": "event-2bf70e6f37f508df3a00000000000000",
+    "Links": {
+      "Self": "api/events/event-2bf70e6f37f508df3a00000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-11-01T08:50:25.1996632Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "DeviceTimestamp",
+        "Value": 1793523025197
+      },
+      {
+        "Name": "EventType",
+        "Value": "TelemetryReceived"
+      },
+      {
+        "Name": "Host",
+        "Value": "127.0.0.1"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "Port",
+        "Value": 49235
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-11-01T17:50:25.1994166+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261101-trial-seq-live-03-online"
+      },
+      {
+        "Name": "SessionId",
+        "Value": "f75973a6dd934a069371b8d72c2ff693"
+      },
+      {
+        "Name": "Speed",
+        "Value": 1
+      },
+      {
+        "Name": "State",
+        "Value": "BUSY"
+      },
+      {
+        "Name": "Topic",
+        "Value": "amr/AMR_001/telemetry"
+      },
+      {
+        "Name": "X",
+        "Value": -0.7611854534954317
+      },
+      {
+        "Name": "Y",
+        "Value": 0.04342082663719428
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR="
+      },
+      {
+        "PropertyName": "AmrId",
+        "RawText": "{AmrId:l}",
+        "FormattedValue": "AMR_001"
+      },
+      {
+        "Text": " 종류=telemetry 위치=("
+      },
+      {
+        "PropertyName": "X"
+      },
+      {
+        "Text": ","
+      },
+      {
+        "PropertyName": "Y"
+      },
+      {
+        "Text": ") 속도="
+      },
+      {
+        "PropertyName": "Speed"
+      },
+      {
+        "Text": " 상태="
+      },
+      {
+        "PropertyName": "State",
+        "RawText": "{State:l}",
+        "FormattedValue": "BUSY"
+      },
+      {
+        "Text": " ts="
+      },
+      {
+        "PropertyName": "DeviceTimestamp"
+      }
+    ],
+    "EventType": "$E8A0590A",
+    "Level": "Debug",
+    "RenderedMessage": "AMR=AMR_001 종류=telemetry 위치=(-0.7611854534954317,0.04342082663719428) 속도=1 상태=BUSY ts=1793523025197",
+    "Id": "event-2bd815d837f508df3800000000000000",
+    "Links": {
+      "Self": "api/events/event-2bd815d837f508df3800000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  },
+  {
+    "Timestamp": "2026-11-01T08:50:24.9607371Z",
+    "Properties": [
+      {
+        "Name": "AmrId",
+        "Value": "AMR_001"
+      },
+      {
+        "Name": "Application",
+        "Value": "Amr.Communication.Console"
+      },
+      {
+        "Name": "DeviceTimestamp",
+        "Value": 1793523024958
+      },
+      {
+        "Name": "EventType",
+        "Value": "TelemetryReceived"
+      },
+      {
+        "Name": "Host",
+        "Value": "127.0.0.1"
+      },
+      {
+        "Name": "Kind",
+        "Value": "telemetry"
+      },
+      {
+        "Name": "Port",
+        "Value": 49235
+      },
+      {
+        "Name": "ReceivedAtUtc",
+        "Value": "2026-11-01T17:50:24.9605155+09:00"
+      },
+      {
+        "Name": "RunId",
+        "Value": "20261101-trial-seq-live-03-online"
+      },
+      {
+        "Name": "SessionId",
+        "Value": "f75973a6dd934a069371b8d72c2ff693"
+      },
+      {
+        "Name": "Speed",
+        "Value": 1
+      },
+      {
+        "Name": "State",
+        "Value": "BUSY"
+      },
+      {
+        "Name": "Topic",
+        "Value": "amr/AMR_001/telemetry"
+      },
+      {
+        "Name": "X",
+        "Value": -1
+      },
+      {
+        "Name": "Y",
+        "Value": 0
+      }
+    ],
+    "MessageTemplateTokens": [
+      {
+        "Text": "AMR="
+      },
+      {
+        "PropertyName": "AmrId",
+        "RawText": "{AmrId:l}",
+        "FormattedValue": "AMR_001"
+      },
+      {
+        "Text": " 종류=telemetry 위치=("
+      },
+      {
+        "PropertyName": "X"
+      },
+      {
+        "Text": ","
+      },
+      {
+        "PropertyName": "Y"
+      },
+      {
+        "Text": ") 속도="
+      },
+      {
+        "PropertyName": "Speed"
+      },
+      {
+        "Text": " 상태="
+      },
+      {
+        "PropertyName": "State",
+        "RawText": "{State:l}",
+        "FormattedValue": "BUSY"
+      },
+      {
+        "Text": " ts="
+      },
+      {
+        "PropertyName": "DeviceTimestamp"
+      }
+    ],
+    "EventType": "$E8A0590A",
+    "Level": "Debug",
+    "RenderedMessage": "AMR=AMR_001 종류=telemetry 위치=(-1,0) 속도=1 상태=BUSY ts=1793523024958",
+    "Id": "event-2bb3a0cb37f508df3200000000000000",
+    "Links": {
+      "Self": "api/events/event-2bb3a0cb37f508df3200000000000000{?download,render,clef}",
+      "Group": "api/events/resources"
+    }
+  }
+]

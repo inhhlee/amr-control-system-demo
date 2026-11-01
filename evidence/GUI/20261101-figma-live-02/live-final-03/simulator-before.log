@@ -1,0 +1,9 @@
+CommandSessionReady AmrId=AMR_001 Topic=amr/AMR_001/command
+CommandProcessed AmrId=AMR_001 Type=MOVE CmdId=GUI-6f9cb3355e0a491fadfc5ac7be6cccf6 State=BUSY Diagnostic=NONE
+CommandProcessed AmrId=AMR_001 Type=STOP CmdId=GUI-f5db3e4aabf84df0a9e2e9dae60345b6 State=STOPPED Diagnostic=NONE
+FinalAckPublished AmrId=AMR_001 CmdId=GUI-6f9cb3355e0a491fadfc5ac7be6cccf6 Result=FAILURE Reason=STOP_INTERRUPTED Delivery=Unconfirmed
+FinalAckPublished AmrId=AMR_001 CmdId=GUI-f5db3e4aabf84df0a9e2e9dae60345b6 Result=SUCCESS Reason=STOPPED Delivery=Unconfirmed
+CommandProcessed AmrId=AMR_001 Type=MOVE CmdId=GUI-8f9ee268f2434012b08c91e913dceeda State=BUSY Diagnostic=NONE
+FinalAckPublished AmrId=AMR_001 CmdId=GUI-8f9ee268f2434012b08c91e913dceeda Result=SUCCESS Reason=ARRIVED Delivery=Unconfirmed
+CommandSessionDisconnected
+CommandSessionEnded ExitCode=1

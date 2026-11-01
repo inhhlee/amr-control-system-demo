@@ -1,0 +1,18 @@
+[
+  {
+    "path": "src/Amr.Communication.Console/TrialConsoleDisplay.cs",
+    "sha256": "3838C513A312314340AA17C06949A2B88EC44B528EBD9C6C12536849F0270DDD"
+  },
+  {
+    "path": "src/Amr.Communication.Console/TrialConsoleInput.cs",
+    "sha256": "62495A653AEEFD1BF7665D1DE00E4304C6C19EB0B6EC67C95CD47040C0935E43"
+  },
+  {
+    "path": "src/Amr.Communication.Console/TrialConsoleRunner.cs",
+    "sha256": "225FCDEFC5FE8F38EE72AAF78477D1E76C2F5A79D93B16E48345F2916A6A5C08"
+  },
+  {
+    "path": "tests/Amr.Communication.Tests/bin/trial-input/bin/Amr.Communication.Console/debug/Amr.Communication.Console.dll",
+    "sha256": "122D81FE90511C7FC871C743B4A4DC6617BEB9B9C83049BE334F0E36DB1F7881"
+  }
+]

@@ -1,81 +1,94 @@
 using System.Globalization;
 using System.Text;
-using Amr.Communication.Models;
-using Amr.Communication.Monitoring;
-using Amr.Communication.Mqtt;
-using Amr.Communication.Validation;
 
 namespace Amr.Communication.ConsoleApp;
 
-internal sealed class TrialConsoleDisplay(TextWriter output, bool color, TimeProvider? clock = null)
+internal sealed class TrialConsoleDisplay(TextWriter output, bool color, TimeProvider? clock = null,
+    bool interactive = false, Func<int>? columns = null)
 {
     private readonly object _gate = new();
     private readonly TimeProvider _clock = clock ?? TimeProvider.System;
+    private bool _reading;
+    private string _input = "";
+    private int _cursor, _renderedLength;
 
     public void Header(TrialConsoleOptions options)
     {
         Line("안내", "과제 1 · MQTT 통신 시험 프로그램", "36");
         Line("설정", $"Broker={options.Connection.Host}:{options.Connection.Port} AMR={options.AmrId}");
         Line("설정", $"재시도: {options.Reconnect.Delay.TotalSeconds}초 간격 / 최대 {options.Reconnect.MaxAttempts}회 (최초 시도 제외)");
-        Line("안내", "입력: move 10 20 | stop | reset | status | help | /exit  /  Ctrl+C 종료");
+        Line("안내", "입력: move 10 20 | stop | reset | status | detail on/off | help | /exit  /  Ctrl+C 종료");
+        if (interactive) Line("안내", "위쪽은 수신 로그, 마지막 trial> 줄은 명령 입력입니다. ←/→·Home/End·Backspace/Delete로 수정, Esc로 비우기.");
         Line("안내", "명령 발행과 응답 수신을 관찰합니다. AMR 실제 수행·요청/응답 업무 매핑은 별도입니다.");
-    }
-
-    public void Event(CommunicationSessionEvent entry)
-    {
-        switch (entry.Name)
-        {
-            case "Connecting": Line("접속", "서버 연결을 시도합니다.", "36"); break;
-            case "Subscribed": Line("구독", "Heartbeat·Telemetry·Alarm·ACK 구독 승인", "32"); break;
-            case "Ready": Line("접속완료", "CONNECTED · 구독 완료, 송수신 준비 완료", "32"); break;
-            case "Reconnected": Line("재접속완료", "RECONNECTED · 구독 복구, 송수신 준비 완료", "32"); break;
-            case "ReconnectWaiting" when entry.Value is ReconnectNotice n:
-                Line("재접속대기", $"{n.DelaySeconds}초 뒤 {n.Attempt}/{n.Maximum}회 시도 · 원인={n.Reason}", "33"); break;
-            case "ReconnectAttempt" when entry.Value is ReconnectNotice n:
-                Line("재접속시도", $"{n.Attempt}/{n.Maximum}회", "33"); break;
-            case "Failed":
-                Line(Equals(entry.Value, "BrokerDisconnected") ? "연결끊김" : "접속/세션실패", $"{entry.Value}", "31"); break;
-            case "AttemptFailed": Line("시도실패", $"{entry.Value}", "33"); break;
-            case "RetriesExhausted": Line("복구실패", "재접속 횟수를 모두 사용했습니다. 종료합니다.", "31"); break;
-            case "FatalSessionFailure": Line("세션중단", $"원인={entry.Value}", "31"); break;
-            case "CleanupFailed": Line("정리실패", "이전 연결 정리에 실패하여 새 연결을 시작하지 않습니다.", "31"); break;
-            case "CallbackFailed" when entry.Value is CallbackFailure failure:
-                Line("처리오류", $"단계={failure.Stage} 예외={failure.ExceptionType}", "31"); break;
-            case "SupervisorStopped": Line("종료", "통신 연결과 소유 작업 정리를 완료했습니다."); break;
-            case "Rejected" when entry.Value is ValidationError error:
-                Line("검사거부", $"Code={error.Code} Field={error.Field} Reason={error.Reason}", "31"); break;
-            case "MessageDiagnostic" when entry.Value is MessageDiagnostic { IsValid: true, PayloadPreview: not null } d:
-                Line("내용", $"Topic={d.Topic} JSON={d.PayloadPreview}{(d.PayloadTruncated ? " (일부 표시)" : "")}"); break;
-            case "Received" when entry.Value is ReceivedMessage message: Receive(message); break;
-            case "HeartbeatMonitoringStarted": Line("생존확인", "정상 생존 신호 수신, 감시 시작", "32"); break;
-            case "HeartbeatTimedOut" when entry.Value is HeartbeatObservation h:
-                Line("AMR무응답", $"AMR={h.AmrId} 생존 신호 {h.TimeoutMilliseconds / 1000}초 이상 없음 · 서버 단절과 구분", "33"); break;
-            case "HeartbeatRecovered": Line("생존복구", "정상 생존 신호를 다시 수신했습니다.", "32"); break;
-        }
-    }
-
-    private void Receive(ReceivedMessage message)
-    {
-        string detail = message.Model switch
-        {
-            TelemetryMessage t => FormattableString.Invariant($"위치=({t.Position.X:G6},{t.Position.Y:G6}) 속도={t.Speed:G6} 상태={t.State} ts={t.Timestamp}"),
-            HeartbeatMessage h => $"status={h.Status} ts={h.Timestamp}",
-            AlarmMessage a => $"code={a.Code} level={a.Level} alarmState={a.AlarmState} ts={a.Timestamp}",
-            AckMessage a => $"cmdId={a.CommandId} result={a.Result} ts={a.Timestamp} (응답 수신값)",
-            _ => "지원하지 않는 모델"
-        };
-        Line("수신·검사통과", $"AMR={message.AmrId} 종류={message.Kind} {detail}", "36");
     }
 
     public void Line(string kind, string message, string? ansiColor = null)
     {
         lock (_gate)
         {
+            if (_reading) ClearInput();
             string prefix = $"[{_clock.GetLocalNow():HH:mm:ss}] [{kind}] ";
             output.WriteLine(color && ansiColor is not null
                 ? $"\u001b[{ansiColor}m{prefix}{Safe(message)}\u001b[0m" : prefix + Safe(message));
+            if (_reading) DrawInput();
             output.Flush();
         }
+    }
+
+    public void BeginInput()
+    {
+        if (!interactive) return;
+        lock (_gate) { _reading = true; _input = ""; _cursor = 0; DrawInput(); output.Flush(); }
+    }
+
+    public void UpdateInput(string text, int cursor)
+    {
+        if (!interactive) return;
+        lock (_gate)
+        {
+            if (!_reading) return;
+            ClearInput(); _input = text; _cursor = cursor; DrawInput(); output.Flush();
+        }
+    }
+
+    public void EndInput(bool submitted)
+    {
+        if (!interactive) return;
+        lock (_gate)
+        {
+            if (!_reading) return;
+            ClearInput(); _reading = false;
+            if (submitted) output.WriteLine("trial> " + _input);
+            _input = ""; _cursor = 0; output.Flush();
+        }
+    }
+
+    private int Columns()
+    {
+        try { int width = columns?.Invoke() ?? Console.WindowWidth; return width <= 0 ? 80 : Math.Clamp(width, 3, 4096); }
+        catch (Exception error) when (error is IOException or PlatformNotSupportedException) { return 80; }
+    }
+
+    // CR/공백/Backspace만 사용한다. 터미널 모드 변경이나 ANSI 커서 제어는 필요 없다.
+    // 로그와 키 입력이 같은 잠금을 사용하므로 글자 단위 출력도 서로 끼어들지 않는다.
+    private void ClearInput()
+    {
+        output.Write('\r');
+        output.Write(new string(' ', Math.Min(_renderedLength, Columns() - 1)));
+        output.Write('\r');
+    }
+
+    private void DrawInput()
+    {
+        int width = Columns();
+        string prefix = width < 12 ? "> " : "trial> ";
+        int length = Math.Max(0, width - prefix.Length - 1); // 마지막 열은 자동 줄바꿈 방지용이다.
+        int start = Math.Clamp(_cursor - length + 1, 0, Math.Max(0, _input.Length - length));
+        string visible = _input.Substring(start, Math.Min(length, _input.Length - start));
+        output.Write(prefix + visible);
+        int back = visible.Length - (_cursor - start);
+        if (back > 0) output.Write(new string('\b', back));
+        _renderedLength = prefix.Length + visible.Length;
     }
 
     private static string Safe(string text)

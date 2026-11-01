@@ -1,0 +1,22 @@
+6b982fe2108935fadc9c40f0379e173c620437c1a4a01eaf016df600dc8e479f
+amr-gui-control-c95c60cf24
+CTRL-01 PASS Only configured actual target registered; no invented position.
+CTRL-02 PASS Actual AMR initial coordinates received from configuration.
+CTRL-03 PASS Actual source is configuration-based; assigned destination shown in selected AMR window.
+CTRL-03A PASS Visible destination dialog rejects non-finite input and applies valid actual mission coordinates without moving AMR.
+CTRL-04 PASS GUI MOVE published; actual BUSY seen; publication is not reported as completed.
+CTRL-05 PASS STOP actually stopped movement; original MOVE failed, STOP has independent SUCCESS.
+CTRL-06 PASS Position stays stopped while Heartbeat and Telemetry continue.
+CTRL-07 PASS Manual restart creates new request ID and uses stopped current position as source.
+CTRL-08 PASS Closing separate window does not stop actual AMR movement.
+CTRL-09 PASS Reopened window remains bound to actual target.
+CTRL-10 PASS Actual arrival, matching final ACK and same-basis remaining distance zero confirmed.
+CTRL-11 PASS Alarm test fixture traversed real MQTT into active GUI alarm; not Simulator fault-scenario implementation.
+CTRL-12 PASS Actual session-history filter applied.
+CTRL-13 PASS History reset changes filter/selection only, preserving actual records.
+CTRL-14 PASS Duplicate final ACK does not repeat business/history transition.
+CTRL-15 PASS Conflicting ACK flagged while original SUCCESS preserved.
+CTRL-16 PASS Disconnected real AMR remains registered with last position; current state is unknown.
+CTRL-17 PASS Reconnect alone does not mark old coordinates fresh.
+CTRL-18 PASS No automatic command replay after reconnect; old completion is not current arrival at restarted coordinates.
+CTRL-19 PASS After GUI closes and its communication owner stops, independent AMR completes MOVE and sends final ACK to separate observer.

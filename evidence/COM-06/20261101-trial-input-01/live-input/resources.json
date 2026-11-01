@@ -1,0 +1,13 @@
+{
+  "observer": {
+    "started": "2026-11-01T08:15:11.2904283Z",
+    "id": 50264
+  },
+  "started": "2026-11-01T17:15:11.3204896+09:00",
+  "simulator": {
+    "started": "2026-11-01T08:15:11.2538477Z",
+    "id": 37720
+  },
+  "port": 18887,
+  "container": "amr-trial-input-3e9bbc8af5"
+}

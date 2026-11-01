@@ -5,7 +5,7 @@ using Amr.Core;
 namespace Amr.ControlGui;
 
 // MainForm.Designer.cs의 기본 배치에 Figma 피드백 화면을 구성하는 부분 클래스다.
-// 이 파일은 표시·선택·창 수명을 담당하고, 가상 이동과 명령 허용 판단은 Mock 공급자가 담당한다.
+// 표시·선택·창 수명을 담당한다. 실제 MQTT 모드는 수신 표시, Mock의 이동·명령 판단은 Mock 공급자가 담당한다.
 public partial class MainForm
 {
     private Button? _openSimulation;
@@ -19,13 +19,13 @@ public partial class MainForm
     private System.Windows.Forms.Timer? _simulationTimer;
     private long _lastTick;
 
-    // 대시보드·지도 도구·알람·별도 창 열기·이력 영역을 연결한다. Mock 피드백 모드에서만 호출한다.
-    private void ConfigureFeedbackView()
+    // 최신 대시보드 배치를 공유한다. 실제 모드에는 Mock 실행창/타이머를 만들지 않는다.
+    private void ConfigureFeedbackView(bool actual = false)
     {
-        Text = "AMR 관제 시스템 · Mock";
+        Text = actual ? "AMR 관제 시스템 · 실제 MQTT" : "AMR 관제 시스템 · Mock";
         MinimumSize = new Size(1000, 800);
         BackColor = Color.White;
-        modeLabel.Text = "MOCK · 가상 데이터";
+        modeLabel.Text = actual ? "ACTUAL · MQTT 연동" : "MOCK · 가상 데이터";
         operationValue.Font = new Font("맑은 고딕", 11, FontStyle.Bold);
         alarmsValue.Font = new Font("맑은 고딕", 12, FontStyle.Bold);
         var root = (TableLayoutPanel)Controls.Find("rootLayout", true).Single();
@@ -41,7 +41,7 @@ public partial class MainForm
         mapLayout.RowStyles[0].Height = 36;
         mapCaption.Visible = false;
         var zoom = new FlowLayoutPanel { Dock = DockStyle.Fill, Margin = Padding.Empty, WrapContents = false };
-        zoom.Controls.Add(new Label { Text = "출발지와 할당 목적지 · m", AutoSize = true, Margin = new Padding(0, 8, 12, 0) });
+        zoom.Controls.Add(new Label { Text = actual ? "실제 수신 위치 · m" : "출발지와 할당 목적지 · m", AutoSize = true, Margin = new Padding(0, 8, 12, 0) });
         var minus = ActionButton("zoomOut", "−", (_, _) => SetMapZoom(mapCanvas.Zoom / 1.25), 32);
         var plus = ActionButton("zoomIn", "+", (_, _) => SetMapZoom(mapCanvas.Zoom * 1.25), 32);
         var fit = ActionButton("zoomFit", "전체 보기", (_, _) => SetMapZoom(1), 72);
@@ -92,10 +92,13 @@ public partial class MainForm
         _openSimulation.ForeColor = Color.White;
         launch.Controls.Add(_simulationTarget, 0, 0);
         launch.Controls.Add(_openSimulation, 0, 1);
-        launch.Controls.Add(TextLabel("simulationHint", "시작 · Stop · 상태·알람·응답 확인\n열린 창은 선택한 AMR 대상을 유지합니다.", 8, Color.SlateGray), 0, 2);
+        launch.Controls.Add(TextLabel("simulationHint", actual
+            ? "실제 MOVE·STOP · 최종 응답 확인\n창을 닫아도 AMR 이동은 계속합니다."
+            : "시작 · Stop · 상태·알람·응답 확인\n열린 창은 선택한 AMR 대상을 유지합니다.", 8, Color.SlateGray), 0, 2);
         commandBody.Controls.Add(launch);
 
         ConfigureHistory();
+        if (actual) { ConfigureMqttPanel(); return; }
         _lastTick = Stopwatch.GetTimestamp();
         _simulationTimer = new System.Windows.Forms.Timer(components!) { Interval = 100 };
         _simulationTimer.Tick += (_, _) =>
@@ -134,7 +137,7 @@ public partial class MainForm
         var filters = new FlowLayoutPanel { Dock = DockStyle.Fill, WrapContents = false, Margin = Padding.Empty };
         _historyAmr = new TextBox { Name = "historyAmr", PlaceholderText = "AMR ID", Width = 90 };
         _historyType = new ComboBox { Name = "historyType", DropDownStyle = ComboBoxStyle.DropDownList, Width = 70 };
-        _historyType.Items.AddRange(["전체", "상태", "알람", "명령"]);
+        _historyType.Items.AddRange(["전체", "상태", "알람", "명령", "통신", "계획"]);
         _historyType.SelectedIndex = 0;
         _historyFrom = HistoryDate("historyFrom");
         _historyTo = HistoryDate("historyTo");
@@ -234,6 +237,12 @@ public partial class MainForm
             $"출발–목적지 거리 {Number(journey.TotalDistance)} m\n이동 {Number(journey.TraveledDistance)} m · 남은 {Number(journey.RemainingDistance)} m\n" +
             $"현재 ({Number(device.X)}, {Number(device.Y)}) m";
         _simulationTarget!.Text = $"대상 {device.AmrId} · 지도 또는 장비 목록에서 선택";
+        if (_provider?.Mode == ProviderMode.Actual)
+        {
+            detailsLabel.Text = detailsLabel.Text.Replace("출발 시각", "이동 관측");
+            detailsLabel.Text += $"\n속도 {Number(device.SpeedMps)} m/s · 운행 {StateText(device.State)}\n거리 기준: {journey.DistanceBasis}\nBroker {ConnectionText(device.BrokerConnection)} · 생존 {LivenessText(device.Liveness)}";
+            if (_dataConnection is { TelemetryIsCurrent: false }) detailsLabel.Text += "\n마지막 수신값 · 현재 위치·운행 미확인";
+        }
     }
 
     // WatchAsync로 전달받은 변경을 알람·이력·열려 있는 AMR별 창에 함께 반영한다.
@@ -261,14 +270,14 @@ public partial class MainForm
             RenderHistory();
         }
         foreach (var (id, form) in _simulationWindows)
-            if (_devices.TryGetValue(id, out var device)) form.Render(device, change.Alarms, change.Commands);
+            if (_devices.TryGetValue(id, out var device)) form.Render(device, change.Alarms, change.Commands, change.Connection);
     }
 
     // 전체는 등록 장비 수이며 연결 여부로 제외하지 않는다. 현재 알람은 IsActive 기준으로 집계한다.
     // 이 Mock 화면의 장비 연결 표시는 Liveness 기준이며 Broker 접속 여부와는 구분한다.
     private void RefreshFeedbackSummary()
     {
-        if (_alarmGrid is null) return;
+        if (_alarmGrid is null || _provider?.Mode != ProviderMode.Mock) return;
         var active = _alarms.Where(x => x.IsActive).ToArray();
         devicesValue.Text = $"전체(등록) {_devices.Count}대";
         devicesDetail.Text = $"연결 {_devices.Values.Count(x => x.Liveness == LivenessObservation.Alive)}대 · 끊김 {_devices.Values.Count(x => x.Liveness == LivenessObservation.Unresponsive)}대\n미확인 {_devices.Values.Count(x => x.Liveness == LivenessObservation.Unknown)}대";
@@ -285,10 +294,10 @@ public partial class MainForm
     // AMR ID별로 창을 하나만 열고, 생성 시 대상을 고정한다. 이후 관제 화면의 선택과 독립적이다.
     private void OpenSimulation()
     {
-        if (_provider is not MockAmrDataProvider provider || _dispatcher is null || SelectedAmrId is not string id || !_devices.TryGetValue(id, out var device)) return;
+        if (_provider is null || _dispatcher is null || SelectedAmrId is not string id || !_devices.TryGetValue(id, out var device)) return;
         if (_simulationWindows.TryGetValue(id, out var existing)) { existing.Activate(); return; }
-        var window = new SimulationForm(device, provider, _dispatcher);
-        window.Render(device, _alarms, _commands);
+        var window = new SimulationForm(device, _provider, _dispatcher);
+        window.Render(device, _alarms, _commands, _dataConnection);
         _simulationWindows.Add(id, window);
         window.FormClosed += (_, _) => _simulationWindows.Remove(id);
         window.Show(this);

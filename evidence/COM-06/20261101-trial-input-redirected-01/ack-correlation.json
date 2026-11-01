@@ -1,0 +1,189 @@
+{
+  "reverseMatches": [
+    {
+      "actual": {
+        "AmrId": "AMR_002",
+        "Kind": "ack",
+        "Model": {
+          "CommandId": "CMD-1f2057bf27b44193bea39dd2919a94bf",
+          "Result": "SUCCESS",
+          "Timestamp": 1005,
+          "Id": "AMR_002",
+          "Reason": null,
+          "ReceivedAtUtc": "2026-11-01T17:21:53.7025675+09:00"
+        },
+        "ReceivedAtUtc": "2026-11-01T17:21:53.7025675+09:00"
+      },
+      "testDouble": true,
+      "request": {
+        "amrId": "AMR_002",
+        "type": "RESET",
+        "cmdId": "CMD-1f2057bf27b44193bea39dd2919a94bf"
+      }
+    },
+    {
+      "actual": {
+        "AmrId": "AMR_002",
+        "Kind": "ack",
+        "Model": {
+          "CommandId": "CMD-bf18cdb07faf4dc194eafa48cd231eb6",
+          "Result": "FAILURE",
+          "Timestamp": 1004,
+          "Id": null,
+          "Reason": null,
+          "ReceivedAtUtc": "2026-11-01T17:21:54.2287003+09:00"
+        },
+        "ReceivedAtUtc": "2026-11-01T17:21:54.2287003+09:00"
+      },
+      "testDouble": true,
+      "request": {
+        "amrId": "AMR_002",
+        "type": "STOP",
+        "cmdId": "CMD-bf18cdb07faf4dc194eafa48cd231eb6"
+      }
+    },
+    {
+      "actual": {
+        "AmrId": "AMR_002",
+        "Kind": "ack",
+        "Model": {
+          "CommandId": "CMD-1669e3fcc95c4e7f8534a44df15810ff",
+          "Result": "SUCCESS",
+          "Timestamp": 1003,
+          "Id": "AMR_002",
+          "Reason": "TEST_REASON_PRESERVED",
+          "ReceivedAtUtc": "2026-11-01T17:21:54.7828248+09:00"
+        },
+        "ReceivedAtUtc": "2026-11-01T17:21:54.7828248+09:00"
+      },
+      "testDouble": true,
+      "request": {
+        "amrId": "AMR_002",
+        "type": "MOVE",
+        "cmdId": "CMD-1669e3fcc95c4e7f8534a44df15810ff"
+      }
+    },
+    {
+      "actual": {
+        "AmrId": "AMR_001",
+        "Kind": "ack",
+        "Model": {
+          "CommandId": "CMD-10551cd302c84a5b9621263ca432af55",
+          "Result": "FAILURE",
+          "Timestamp": 1002,
+          "Id": null,
+          "Reason": null,
+          "ReceivedAtUtc": "2026-11-01T17:21:55.3177332+09:00"
+        },
+        "ReceivedAtUtc": "2026-11-01T17:21:55.3177332+09:00"
+      },
+      "testDouble": true,
+      "request": {
+        "amrId": "AMR_001",
+        "type": "RESET",
+        "cmdId": "CMD-10551cd302c84a5b9621263ca432af55"
+      }
+    },
+    {
+      "actual": {
+        "AmrId": "AMR_001",
+        "Kind": "ack",
+        "Model": {
+          "CommandId": "CMD-292b18a81cc2402faa9e17d088e9ea63",
+          "Result": "SUCCESS",
+          "Timestamp": 1001,
+          "Id": "AMR_001",
+          "Reason": null,
+          "ReceivedAtUtc": "2026-11-01T17:21:55.8307721+09:00"
+        },
+        "ReceivedAtUtc": "2026-11-01T17:21:55.8307721+09:00"
+      },
+      "testDouble": true,
+      "request": {
+        "amrId": "AMR_001",
+        "type": "STOP",
+        "cmdId": "CMD-292b18a81cc2402faa9e17d088e9ea63"
+      }
+    },
+    {
+      "actual": {
+        "AmrId": "AMR_001",
+        "Kind": "ack",
+        "Model": {
+          "CommandId": "CMD-9da0bafea2a948b397bd14d10807a6cf",
+          "Result": "FAILURE",
+          "Timestamp": 1000,
+          "Id": null,
+          "Reason": "TEST_REASON_PRESERVED",
+          "ReceivedAtUtc": "2026-11-01T17:21:56.3087259+09:00"
+        },
+        "ReceivedAtUtc": "2026-11-01T17:21:56.3087259+09:00"
+      },
+      "testDouble": true,
+      "request": {
+        "amrId": "AMR_001",
+        "type": "MOVE",
+        "cmdId": "CMD-9da0bafea2a948b397bd14d10807a6cf"
+      }
+    }
+  ],
+  "requests": [
+    {
+      "amrId": "AMR_001",
+      "type": "MOVE",
+      "cmdId": "CMD-9da0bafea2a948b397bd14d10807a6cf"
+    },
+    {
+      "amrId": "AMR_001",
+      "type": "STOP",
+      "cmdId": "CMD-292b18a81cc2402faa9e17d088e9ea63"
+    },
+    {
+      "amrId": "AMR_001",
+      "type": "RESET",
+      "cmdId": "CMD-10551cd302c84a5b9621263ca432af55"
+    },
+    {
+      "amrId": "AMR_002",
+      "type": "MOVE",
+      "cmdId": "CMD-1669e3fcc95c4e7f8534a44df15810ff"
+    },
+    {
+      "amrId": "AMR_002",
+      "type": "STOP",
+      "cmdId": "CMD-bf18cdb07faf4dc194eafa48cd231eb6"
+    },
+    {
+      "amrId": "AMR_002",
+      "type": "RESET",
+      "cmdId": "CMD-1f2057bf27b44193bea39dd2919a94bf"
+    }
+  ],
+  "unmatched": {
+    "AmrId": "AMR_002",
+    "Kind": "ack",
+    "Model": {
+      "CommandId": "CMD-9da0bafea2a948b397bd14d10807a6cf",
+      "Result": "SUCCESS",
+      "Timestamp": 2000,
+      "Id": "AMR_002",
+      "Reason": null,
+      "ReceivedAtUtc": "2026-11-01T17:21:56.9183606+09:00"
+    },
+    "ReceivedAtUtc": "2026-11-01T17:21:56.9183606+09:00"
+  },
+  "scope": "test doubles for communication identity, not actual AMR execution or Core business tracking",
+  "afterInvalid": {
+    "AmrId": "AMR_001",
+    "Kind": "ack",
+    "Model": {
+      "CommandId": "AFTER_INVALID_ACK",
+      "Result": "FAILURE",
+      "Timestamp": 2002,
+      "Id": null,
+      "Reason": "EXPECTED_TEST_INPUT",
+      "ReceivedAtUtc": "2026-11-01T17:21:57.8975581+09:00"
+    },
+    "ReceivedAtUtc": "2026-11-01T17:21:57.8975581+09:00"
+  }
+}
