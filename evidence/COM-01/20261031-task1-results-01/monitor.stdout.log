@@ -1,0 +1,19 @@
+2026-10-31T13:38:18.0612845+00:00 ControlSession Host=127.0.0.1 Port=65111 AmrId="DEMO_AMR_001" TimeoutMs=5000 CheckIntervalMs=500
+2026-10-31T13:38:18.1320903+00:00 Connecting null
+2026-10-31T13:38:18.2622490+00:00 Subscribed {"ClientId":"amr-demo-a9d610d48b864fa09ef2b0d94fbac621","Host":"127.0.0.1","Port":65111}
+WaitingForShutdown: Ctrl+C로 정상 종료합니다.
+2026-10-31T13:38:18.8886066+00:00 HeartbeatMonitoringStarted {"AmrId":"DEMO_AMR_001","State":"Alive","Monitoring":true,"LastReceivedAtUtc":"2026-10-31T13:38:18.8781555+00:00","ElapsedMilliseconds":10.1246,"TimeoutMilliseconds":5000,"CheckIntervalMilliseconds":500,"TimeoutCount":0,"RecoveryCount":0}
+2026-10-31T13:38:18.9353609+00:00 Received {"AmrId":"DEMO_AMR_001","Kind":"heartbeat","Model":{"Id":"DEMO_AMR_001","Timestamp":100,"Status":"OK","ReceivedAtUtc":"2026-10-31T13:38:18.8781555+00:00"},"ReceivedAtUtc":"2026-10-31T13:38:18.8781555+00:00"}
+2026-10-31T13:38:19.6983840+00:00 IgnoredAmr {"AmrId":"DEMO_AMR_002","Kind":"heartbeat"}
+2026-10-31T13:38:20.1262114+00:00 Received {"AmrId":"DEMO_AMR_001","Kind":"telemetry","Model":{"Id":"DEMO_AMR_001","Timestamp":101,"Position":{"X":1.25,"Y":2.5},"Speed":0.5,"State":"BUSY","ReceivedAtUtc":"2026-10-31T13:38:20.1184394+00:00"},"ReceivedAtUtc":"2026-10-31T13:38:20.1184394+00:00"}
+2026-10-31T13:38:20.6071737+00:00 IgnoredAmr {"AmrId":"DEMO_AMR_002","Kind":"telemetry"}
+2026-10-31T13:38:21.1555736+00:00 Received {"AmrId":"DEMO_AMR_001","Kind":"alarm","Model":{"Id":"DEMO_AMR_001","Timestamp":102,"Code":"DEMO_SENSOR","Level":"WARN","AlarmState":"ACTIVE","Message":"\uC2DC\uD5D8\uC6A9 \uBA54\uC2DC\uC9C0: \uC2E4\uC81C AMR \uC7A5\uC560\uAC00 \uC544\uB2D8","ReceivedAtUtc":"2026-10-31T13:38:21.1460601+00:00"},"ReceivedAtUtc":"2026-10-31T13:38:21.1460601+00:00"}
+2026-10-31T13:38:21.7715042+00:00 Received {"AmrId":"DEMO_AMR_001","Kind":"ack","Model":{"CommandId":"DEMO_RESPONSE_001","Result":"SUCCESS","Timestamp":103,"Id":null,"Reason":null,"ReceivedAtUtc":"2026-10-31T13:38:21.7692669+00:00"},"ReceivedAtUtc":"2026-10-31T13:38:21.7692669+00:00"}
+2026-10-31T13:38:22.2723412+00:00 Rejected {"Code":5,"Field":"$.ts","Reason":"Required field is missing."}
+2026-10-31T13:38:24.2674997+00:00 HeartbeatTimedOut {"AmrId":"DEMO_AMR_001","State":"Unresponsive","Monitoring":true,"LastReceivedAtUtc":"2026-10-31T13:38:18.8781555+00:00","ElapsedMilliseconds":5389.3235,"TimeoutMilliseconds":5000,"CheckIntervalMilliseconds":500,"TimeoutCount":1,"RecoveryCount":0}
+2026-10-31T13:38:24.6858236+00:00 HeartbeatRecovered {"AmrId":"DEMO_AMR_001","State":"Alive","Monitoring":true,"LastReceivedAtUtc":"2026-10-31T13:38:24.6855826+00:00","ElapsedMilliseconds":0.2317,"TimeoutMilliseconds":5000,"CheckIntervalMilliseconds":500,"TimeoutCount":1,"RecoveryCount":1}
+2026-10-31T13:38:24.6866431+00:00 Received {"AmrId":"DEMO_AMR_001","Kind":"heartbeat","Model":{"Id":"DEMO_AMR_001","Timestamp":200,"Status":"OK","ReceivedAtUtc":"2026-10-31T13:38:24.6855826+00:00"},"ReceivedAtUtc":"2026-10-31T13:38:24.6855826+00:00"}
+2026-10-31T13:38:25.3630471+00:00 QueueEvent {"Code":"Stopped","AmrId":null,"Kind":null,"Count":0,"ExceptionType":null}
+2026-10-31T13:38:25.3908966+00:00 Failed "BrokerDisconnected"
+2026-10-31T13:38:25.4044565+00:00 Closed null
+ExitCode=1

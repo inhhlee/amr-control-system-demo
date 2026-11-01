@@ -1,0 +1,95 @@
+[
+  {
+    "name": "heartbeat-1",
+    "topic": "amr/DEMO_AMR_001/heartbeat",
+    "payload": {
+      "status": "OK",
+      "id": "DEMO_AMR_001",
+      "ts": 100
+    }
+  },
+  {
+    "name": "heartbeat-2",
+    "topic": "amr/DEMO_AMR_002/heartbeat",
+    "payload": {
+      "status": "OK",
+      "id": "DEMO_AMR_002",
+      "ts": 100
+    }
+  },
+  {
+    "name": "telemetry-1",
+    "topic": "amr/DEMO_AMR_001/telemetry",
+    "payload": {
+      "state": "BUSY",
+      "sp": 0.5,
+      "id": "DEMO_AMR_001",
+      "ts": 101,
+      "pos": {
+        "y": 2.5,
+        "x": 1.25
+      }
+    }
+  },
+  {
+    "name": "telemetry-2",
+    "topic": "amr/DEMO_AMR_002/telemetry",
+    "payload": {
+      "state": "IDLE",
+      "sp": 0,
+      "id": "DEMO_AMR_002",
+      "ts": 101,
+      "pos": {
+        "y": 4,
+        "x": 3
+      }
+    }
+  },
+  {
+    "name": "alarm-input",
+    "topic": "amr/DEMO_AMR_001/alarm",
+    "payload": {
+      "message": "시험용 메시지: 실제 AMR 장애가 아님",
+      "id": "DEMO_AMR_001",
+      "level": "WARN",
+      "ts": 102,
+      "code": "DEMO_SENSOR",
+      "alarmState": "ACTIVE"
+    }
+  },
+  {
+    "name": "ack-input",
+    "topic": "amr/DEMO_AMR_001/ack",
+    "payload": {
+      "result": "SUCCESS",
+      "cmdId": "DEMO_RESPONSE_001",
+      "ts": 103
+    }
+  },
+  {
+    "name": "invalid-missing-timestamp",
+    "topic": "amr/DEMO_AMR_001/heartbeat",
+    "payload": {
+      "id": "DEMO_AMR_001",
+      "status": "OK"
+    }
+  },
+  {
+    "name": "heartbeat-recovery",
+    "topic": "amr/DEMO_AMR_001/heartbeat",
+    "payload": {
+      "status": "OK",
+      "id": "DEMO_AMR_001",
+      "ts": 200
+    }
+  },
+  {
+    "name": "fresh-session-heartbeat",
+    "topic": "amr/DEMO_AMR_001/heartbeat",
+    "payload": {
+      "status": "OK",
+      "id": "DEMO_AMR_001",
+      "ts": 300
+    }
+  }
+]

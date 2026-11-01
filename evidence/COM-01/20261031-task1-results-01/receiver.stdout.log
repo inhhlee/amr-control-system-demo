@@ -1,0 +1,45 @@
+2026-10-31T13:38:18.0736772+00:00 Settings Host=127.0.0.1 Port=65111 ClientId=amr-demo-b5b56e221d494b72aa7db6738086589e MQTT=5 CleanStart=true SessionExpiry=0 KeepAliveSeconds=5 ConnectTimeoutSeconds=3 DisconnectTimeoutSeconds=3
+2026-10-31T13:38:18.0894062+00:00 Connecting
+2026-10-31T13:38:18.2177264+00:00 Connected
+2026-10-31T13:38:18.2500329+00:00 QueueReady CapacityPerAmr=256 AmrLimit=64 StopTimeoutSeconds=3 TestDelayAmr=null TestDelayMs=0
+2026-10-31T13:38:18.2512746+00:00 Subscribing TopicFilters=amr/+/heartbeat,amr/+/telemetry,amr/+/alarm,amr/+/ack QoS=0 PayloadPreview=True LimitBytes=256
+2026-10-31T13:38:18.2716073+00:00 Subscribed TopicFilters=amr/+/heartbeat,amr/+/telemetry,amr/+/alarm,amr/+/ack QoS=0
+2026-10-31T13:38:18.2718989+00:00 WaitingForShutdown: Ctrl+C로 정상 종료합니다.
+2026-10-31T13:38:18.8778752+00:00 MessageDiagnostic Topic="amr/DEMO_AMR_001/heartbeat" TopicTruncated=False PayloadBytes=44 Payload="{\"status\":\"OK\",\"id\":\"DEMO_AMR_001\",\"ts\":100}" PayloadTruncated=False Validation=Accepted
+2026-10-31T13:38:18.9004580+00:00 QueueAdmission Result=Accepted AmrId="DEMO_AMR_001" Kind=heartbeat
+2026-10-31T13:38:18.9004688+00:00 ProcessingStarted AmrId="DEMO_AMR_001" Kind=heartbeat
+2026-10-31T13:38:18.9254088+00:00 Received {"AmrId":"DEMO_AMR_001","Kind":"heartbeat","Model":{"Id":"DEMO_AMR_001","Timestamp":100,"Status":"OK","ReceivedAtUtc":"2026-10-31T13:38:18.8778752+00:00"},"ReceivedAtUtc":"2026-10-31T13:38:18.8778752+00:00"}
+2026-10-31T13:38:19.6979110+00:00 MessageDiagnostic Topic="amr/DEMO_AMR_002/heartbeat" TopicTruncated=False PayloadBytes=44 Payload="{\"status\":\"OK\",\"id\":\"DEMO_AMR_002\",\"ts\":100}" PayloadTruncated=False Validation=Accepted
+2026-10-31T13:38:19.6987997+00:00 QueueAdmission Result=Accepted AmrId="DEMO_AMR_002" Kind=heartbeat
+2026-10-31T13:38:19.6988602+00:00 ProcessingStarted AmrId="DEMO_AMR_002" Kind=heartbeat
+2026-10-31T13:38:19.6993280+00:00 Received {"AmrId":"DEMO_AMR_002","Kind":"heartbeat","Model":{"Id":"DEMO_AMR_002","Timestamp":100,"Status":"OK","ReceivedAtUtc":"2026-10-31T13:38:19.697911+00:00"},"ReceivedAtUtc":"2026-10-31T13:38:19.697911+00:00"}
+2026-10-31T13:38:20.1174011+00:00 MessageDiagnostic Topic="amr/DEMO_AMR_001/telemetry" TopicTruncated=False PayloadBytes=79 Payload="{\"state\":\"BUSY\",\"sp\":0.5,\"id\":\"DEMO_AMR_001\",\"ts\":101,\"pos\":{\"y\":2.5,\"x\":1.25}}" PayloadTruncated=False Validation=Accepted
+2026-10-31T13:38:20.1299079+00:00 QueueAdmission Result=Accepted AmrId="DEMO_AMR_001" Kind=telemetry
+2026-10-31T13:38:20.1299844+00:00 ProcessingStarted AmrId="DEMO_AMR_001" Kind=telemetry
+2026-10-31T13:38:20.1385050+00:00 Received {"AmrId":"DEMO_AMR_001","Kind":"telemetry","Model":{"Id":"DEMO_AMR_001","Timestamp":101,"Position":{"X":1.25,"Y":2.5},"Speed":0.5,"State":"BUSY","ReceivedAtUtc":"2026-10-31T13:38:20.1174011+00:00"},"ReceivedAtUtc":"2026-10-31T13:38:20.1174011+00:00"}
+2026-10-31T13:38:20.6063765+00:00 MessageDiagnostic Topic="amr/DEMO_AMR_002/telemetry" TopicTruncated=False PayloadBytes=72 Payload="{\"state\":\"IDLE\",\"sp\":0,\"id\":\"DEMO_AMR_002\",\"ts\":101,\"pos\":{\"y\":4,\"x\":3}}" PayloadTruncated=False Validation=Accepted
+2026-10-31T13:38:20.6086099+00:00 QueueAdmission Result=Accepted AmrId="DEMO_AMR_002" Kind=telemetry
+2026-10-31T13:38:20.6090322+00:00 ProcessingStarted AmrId="DEMO_AMR_002" Kind=telemetry
+2026-10-31T13:38:20.6093356+00:00 Received {"AmrId":"DEMO_AMR_002","Kind":"telemetry","Model":{"Id":"DEMO_AMR_002","Timestamp":101,"Position":{"X":3,"Y":4},"Speed":0,"State":"IDLE","ReceivedAtUtc":"2026-10-31T13:38:20.6063765+00:00"},"ReceivedAtUtc":"2026-10-31T13:38:20.6063765+00:00"}
+2026-10-31T13:38:21.1436936+00:00 MessageDiagnostic Topic="amr/DEMO_AMR_001/alarm" TopicTruncated=False PayloadBytes=149 Payload="{\"message\":\"시험용 메시지: 실제 AMR 장애가 아님\",\"id\":\"DEMO_AMR_001\",\"level\":\"WARN\",\"ts\":102,\"code\":\"DEMO_SENSOR\",\"alarmState\":\"ACTIVE\"}" PayloadTruncated=False Validation=Accepted
+2026-10-31T13:38:21.1516460+00:00 QueueAdmission Result=Accepted AmrId="DEMO_AMR_001" Kind=alarm
+2026-10-31T13:38:21.1516844+00:00 ProcessingStarted AmrId="DEMO_AMR_001" Kind=alarm
+2026-10-31T13:38:21.1571870+00:00 Received {"AmrId":"DEMO_AMR_001","Kind":"alarm","Model":{"Id":"DEMO_AMR_001","Timestamp":102,"Code":"DEMO_SENSOR","Level":"WARN","AlarmState":"ACTIVE","Message":"\uC2DC\uD5D8\uC6A9 \uBA54\uC2DC\uC9C0: \uC2E4\uC81C AMR \uC7A5\uC560\uAC00 \uC544\uB2D8","ReceivedAtUtc":"2026-10-31T13:38:21.1436936+00:00"},"ReceivedAtUtc":"2026-10-31T13:38:21.1436936+00:00"}
+2026-10-31T13:38:21.7694053+00:00 MessageDiagnostic Topic="amr/DEMO_AMR_001/ack" TopicTruncated=False PayloadBytes=57 Payload="{\"result\":\"SUCCESS\",\"cmdId\":\"DEMO_RESPONSE_001\",\"ts\":103}" PayloadTruncated=False Validation=Accepted
+2026-10-31T13:38:21.7719211+00:00 QueueAdmission Result=Accepted AmrId="DEMO_AMR_001" Kind=ack
+2026-10-31T13:38:21.7722402+00:00 ProcessingStarted AmrId="DEMO_AMR_001" Kind=ack
+2026-10-31T13:38:21.7757609+00:00 Received {"AmrId":"DEMO_AMR_001","Kind":"ack","Model":{"CommandId":"DEMO_RESPONSE_001","Result":"SUCCESS","Timestamp":103,"Id":null,"Reason":null,"ReceivedAtUtc":"2026-10-31T13:38:21.7694053+00:00"},"ReceivedAtUtc":"2026-10-31T13:38:21.7694053+00:00"}
+2026-10-31T13:38:22.2711885+00:00 MessageDiagnostic Topic="amr/DEMO_AMR_001/heartbeat" TopicTruncated=False PayloadBytes=35 Payload=<hidden> PayloadTruncated=False Validation=Rejected
+2026-10-31T13:38:22.2752391+00:00 Rejected Code=MissingField Field=$.ts Reason=Required field is missing.
+2026-10-31T13:38:24.6855732+00:00 MessageDiagnostic Topic="amr/DEMO_AMR_001/heartbeat" TopicTruncated=False PayloadBytes=44 Payload="{\"status\":\"OK\",\"id\":\"DEMO_AMR_001\",\"ts\":200}" PayloadTruncated=False Validation=Accepted
+2026-10-31T13:38:24.6869578+00:00 QueueAdmission Result=Accepted AmrId="DEMO_AMR_001" Kind=heartbeat
+2026-10-31T13:38:24.6870170+00:00 ProcessingStarted AmrId="DEMO_AMR_001" Kind=heartbeat
+2026-10-31T13:38:24.6874082+00:00 Received {"AmrId":"DEMO_AMR_001","Kind":"heartbeat","Model":{"Id":"DEMO_AMR_001","Timestamp":200,"Status":"OK","ReceivedAtUtc":"2026-10-31T13:38:24.6855732+00:00"},"ReceivedAtUtc":"2026-10-31T13:38:24.6855732+00:00"}
+2026-10-31T13:38:25.3573725+00:00 ConnectionLost Reason=NormalDisconnection ClientWasConnected=True ExceptionType=None SocketError=None ClientId=amr-demo-b5b56e221d494b72aa7db6738086589e
+2026-10-31T13:38:25.3626241+00:00 ShutdownRequested Reason=ConnectionLost
+2026-10-31T13:38:25.3673810+00:00 QueueEvent {"Code":"Stopped","AmrId":null,"Kind":null,"Count":0,"ExceptionType":null}
+2026-10-31T13:38:25.3677698+00:00 QueueStopped
+2026-10-31T13:38:25.3679503+00:00 Unsubscribing
+2026-10-31T13:38:25.3723058+00:00 SubscriptionStopped
+2026-10-31T13:38:25.3728761+00:00 Disposed
+2026-10-31T13:38:25.3731227+00:00 ExitCode=1

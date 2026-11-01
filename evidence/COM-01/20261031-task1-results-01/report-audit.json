@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checks": [
+    "17 demo checks passed",
+    "7 delivered messages: 6 initial and 1 recovery",
+    "original telemetry values and ACK fields retained",
+    "1 invalid message rejected without extra delivery",
+    "three command payloads and request IDs matched real Broker observer",
+    "one heartbeat timeout and recovery",
+    "Broker loss exit 1, explicit fresh session, normal exit 0",
+    "existing container set and states unchanged",
+    "source and executable hashes match"
+  ],
+  "heartbeatTimeoutObservedMs": 5389.3235
+}

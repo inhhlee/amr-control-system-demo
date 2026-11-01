@@ -1,0 +1,20 @@
+2026-10-31T13:38:26.8317881+00:00 Settings Host=127.0.0.1 Port=65126 ClientId=amr-demo-6eb243f12ee947639874a5cc46d248eb MQTT=5 CleanStart=true SessionExpiry=0 KeepAliveSeconds=5 ConnectTimeoutSeconds=3 DisconnectTimeoutSeconds=3
+2026-10-31T13:38:26.8373029+00:00 Connecting
+2026-10-31T13:38:26.8973105+00:00 Connected
+2026-10-31T13:38:26.9202615+00:00 QueueReady CapacityPerAmr=256 AmrLimit=64 StopTimeoutSeconds=3 TestDelayAmr=null TestDelayMs=0
+2026-10-31T13:38:26.9213608+00:00 Subscribing TopicFilters=amr/+/heartbeat,amr/+/telemetry,amr/+/alarm,amr/+/ack QoS=0 PayloadPreview=True LimitBytes=256
+2026-10-31T13:38:26.9368455+00:00 Subscribed TopicFilters=amr/+/heartbeat,amr/+/telemetry,amr/+/alarm,amr/+/ack QoS=0
+2026-10-31T13:38:26.9370615+00:00 WaitingForShutdown: Ctrl+C로 정상 종료합니다.
+2026-10-31T13:38:27.3855624+00:00 MessageDiagnostic Topic="amr/DEMO_AMR_001/heartbeat" TopicTruncated=False PayloadBytes=44 Payload="{\"status\":\"OK\",\"id\":\"DEMO_AMR_001\",\"ts\":300}" PayloadTruncated=False Validation=Accepted
+2026-10-31T13:38:27.4027382+00:00 QueueAdmission Result=Accepted AmrId="DEMO_AMR_001" Kind=heartbeat
+2026-10-31T13:38:27.4030383+00:00 ProcessingStarted AmrId="DEMO_AMR_001" Kind=heartbeat
+2026-10-31T13:38:27.4255362+00:00 Received {"AmrId":"DEMO_AMR_001","Kind":"heartbeat","Model":{"Id":"DEMO_AMR_001","Timestamp":300,"Status":"OK","ReceivedAtUtc":"2026-10-31T13:38:27.3855624+00:00"},"ReceivedAtUtc":"2026-10-31T13:38:27.3855624+00:00"}
+2026-10-31T13:38:29.5847366+00:00 ShutdownRequested Reason=UserCanceled
+2026-10-31T13:38:29.5883715+00:00 QueueEvent {"Code":"Stopped","AmrId":null,"Kind":null,"Count":0,"ExceptionType":null}
+2026-10-31T13:38:29.5886746+00:00 QueueStopped
+2026-10-31T13:38:29.5888782+00:00 Unsubscribing
+2026-10-31T13:38:29.5974668+00:00 SubscriptionStopped
+2026-10-31T13:38:29.5977171+00:00 Disconnecting
+2026-10-31T13:38:29.6044929+00:00 Disconnected
+2026-10-31T13:38:29.6050332+00:00 Disposed
+2026-10-31T13:38:29.6052359+00:00 ExitCode=0

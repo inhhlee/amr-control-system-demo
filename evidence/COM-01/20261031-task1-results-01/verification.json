@@ -1,0 +1,104 @@
+{
+  "limits": [
+    "No automatic reconnect implementation.",
+    "Alarm and ACK were synthetic test input, not simulator execution results.",
+    "No original-request/ACK correlation implementation.",
+    "No long-duration/load test."
+  ],
+  "os": "Microsoft Windows 10.0.26200",
+  "runId": "20261031-task1-results-01",
+  "code": "4e462691db9dcc312d1d6b882773c5ff382eadc6",
+  "branch": "develop",
+  "ended": "2026-10-31T22:38:31.8503501+09:00",
+  "sdk": "10.0.401",
+  "checks": [
+    {
+      "name": "server-connect-and-subscribe",
+      "passed": true,
+      "detail": "Existing console connected to a separate real Mosquitto Broker and subscribed."
+    },
+    {
+      "name": "receive-heartbeat",
+      "passed": true,
+      "detail": "Validated and delivered as a normal model."
+    },
+    {
+      "name": "receive-telemetry",
+      "passed": true,
+      "detail": "Validated and delivered as a normal model."
+    },
+    {
+      "name": "receive-alarm",
+      "passed": true,
+      "detail": "Validated and delivered as a normal model."
+    },
+    {
+      "name": "receive-ack",
+      "passed": true,
+      "detail": "Validated and delivered as a normal model."
+    },
+    {
+      "name": "two-device-routing",
+      "passed": true,
+      "detail": "Second device remains separately identified."
+    },
+    {
+      "name": "invalid-message-rejected",
+      "passed": true,
+      "detail": "Missing timestamp rejected; no normal delivery for that input."
+    },
+    {
+      "name": "command-MOVE-received",
+      "passed": true,
+      "detail": "Real Broker observer received the requested target, type and request ID; AMR execution was not tested."
+    },
+    {
+      "name": "command-STOP-received",
+      "passed": true,
+      "detail": "Real Broker observer received the requested target, type and request ID; AMR execution was not tested."
+    },
+    {
+      "name": "command-RESET-received",
+      "passed": true,
+      "detail": "Real Broker observer received the requested target, type and request ID; AMR execution was not tested."
+    },
+    {
+      "name": "heartbeat-timeout",
+      "passed": true,
+      "detail": "DEMO_AMR_001 produced no further valid Heartbeat; timeout detected."
+    },
+    {
+      "name": "heartbeat-recovery",
+      "passed": true,
+      "detail": "New valid Heartbeat restored the liveness observation without reconnecting the Broker."
+    },
+    {
+      "name": "receiver-broker-loss",
+      "passed": true,
+      "detail": "Broker stopped; application detected loss and exited with code 1."
+    },
+    {
+      "name": "monitor-broker-loss",
+      "passed": true,
+      "detail": "Broker stopped; application detected loss and exited with code 1."
+    },
+    {
+      "name": "manual-new-session-after-broker-restart",
+      "passed": true,
+      "detail": "Explicitly launched a new console process after Broker restart. This is not automatic reconnection."
+    },
+    {
+      "name": "normal-shutdown",
+      "passed": true,
+      "detail": "Owned isolated console received CTRL_C_EVENT and completed normal cleanup."
+    },
+    {
+      "name": "existing-containers-preserved",
+      "detail": "Compared existing container IDs and states before and after the demo.",
+      "passed": true
+    }
+  ],
+  "started": "2026-10-31T22:38:02.6653356+09:00",
+  "passed": true,
+  "cleanupErrors": []
+}

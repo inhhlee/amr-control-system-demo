@@ -1,0 +1,17 @@
+[
+  {
+    "type": "MOVE",
+    "cmdId": "CMD-1eb240639e3244b5bf92233b72ba226b",
+    "amrId": "DEMO_AMR_001"
+  },
+  {
+    "type": "STOP",
+    "cmdId": "CMD-39fbea2c3d534278943d5660ee071ab6",
+    "amrId": "DEMO_AMR_001"
+  },
+  {
+    "type": "RESET",
+    "cmdId": "CMD-8c72118af1654c58b18eb984301e07e8",
+    "amrId": "DEMO_AMR_001"
+  }
+]

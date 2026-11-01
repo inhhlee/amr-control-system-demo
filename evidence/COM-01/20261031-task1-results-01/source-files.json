@@ -1,0 +1,34 @@
+[
+  {
+    "path": "src/Amr.Communication.Console/CommandConsoleRunner.cs",
+    "sha256": "BD211AA52F54CCD31A8B3CBDE504B34BE6EF3FAB73FEFE523C7CFC539962BFFA"
+  },
+  {
+    "path": "src/Amr.Communication.Console/ConsoleRunner.cs",
+    "sha256": "FF002F72C49BF3F82C18DC5FE753CFB7D4BAD09EF55C87EFBE57B8E14106BB19"
+  },
+  {
+    "path": "src/Amr.Communication.Console/HeartbeatConsoleRunner.cs",
+    "sha256": "FA7CAEE541645A1B74ADC36FC38C2400CEE115B385E0330D3435B12DAF693DEC"
+  },
+  {
+    "path": "src/Amr.Communication/Mqtt/Sessions/ControlCommunicationSession.cs",
+    "sha256": "19BC609B27536C4F096A1E0D199BC76D008B1ABCF6F0935C5760134F7167ADB2"
+  },
+  {
+    "path": "src/Amr.Communication/Mqtt/Subscriptions/MessageSubscription.cs",
+    "sha256": "7A85B34692A4BCA95DFEA0F5AE18A9776D4A8B3C60FEADE13A05FA2B80076366"
+  },
+  {
+    "path": "src/Amr.Communication/Command/CommandPublisher.cs",
+    "sha256": "96AA8D5A26228895EDC5A1CFEA3BAD9D65D810EB8D7FBA1503CCDD0CAF623FC7"
+  },
+  {
+    "path": "src/Amr.Communication.Console/bin/Debug/net10.0/Amr.Communication.Console.dll",
+    "sha256": "6CD5A35FAE7C48D581826F732583CFBCCA638E2A0ACBD010713759916A1167B5"
+  },
+  {
+    "path": "src/Amr.Communication/bin/Debug/net10.0/Amr.Communication.dll",
+    "sha256": "E9294954FA4850AF9EA8A3A3FC2B676A932E059DEC964E0FFDB977B5E607694D"
+  }
+]
