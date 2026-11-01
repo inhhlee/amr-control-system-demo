@@ -1,0 +1,11 @@
+{
+  "sdk": "10.0.401",
+  "started": "2026-11-02T00:49:03.9548323+09:00",
+  "head": "5d0902febead29d6b49dcbb25b111752d4655d2a",
+  "consoleDllSha256": "604DADB0AF580058EA1AD0239106E348A20D2D697BE5FA9F4422C05810AE9652",
+  "console": "C:\\amr-control-system-demo\\src\\Amr.Communication.Console\\bin\\Debug\\net10.0\\Amr.Communication.Console.exe",
+  "sharedSeqStopped": false,
+  "seqVersion": "2026.1.17114",
+  "branch": "develop",
+  "seqUrl": "http://127.0.0.1:59574"
+}

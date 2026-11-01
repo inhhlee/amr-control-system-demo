@@ -1,0 +1,9 @@
+{"at":"2026-11-01T15:49:09.5779006+00:00","input":"detail on","child":"online"}
+{"at":"2026-11-01T15:49:09.7815740+00:00","input":"detail off","child":"online"}
+{"at":"2026-11-01T15:49:11.1260376+00:00","input":"move 10 2","child":"online"}
+{"at":"2026-11-01T15:49:11.6767924+00:00","input":"stop","child":"online"}
+{"at":"2026-11-01T15:49:11.7835659+00:00","input":"move -1 0","child":"online"}
+{"at":"2026-11-01T15:49:14.2028356+00:00","input":"/exit","child":"online"}
+{"at":"2026-11-01T15:49:15.3240407+00:00","input":"move 10 2","child":"offline"}
+{"at":"2026-11-01T15:49:15.8150094+00:00","input":"stop","child":"offline"}
+{"at":"2026-11-01T15:49:15.9036031+00:00","input":"/exit","child":"offline"}

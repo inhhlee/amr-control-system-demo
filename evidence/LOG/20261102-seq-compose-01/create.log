@@ -1,0 +1,8 @@
+Network amr-seq-check-20261102-seq-compose-01_default  Creating
+ Network amr-seq-check-20261102-seq-compose-01_default  Created
+ Volume "amr-seq-check-20261102-seq-compose-01_seq-data"  Creating
+ Volume "amr-seq-check-20261102-seq-compose-01_seq-data"  Created
+ Container amr-seq-check-20261102-seq-compose-01-seq-1  Creating
+ Container amr-seq-check-20261102-seq-compose-01-seq-1  Created
+ Container amr-seq-check-20261102-seq-compose-01-seq-1  Starting
+ Container amr-seq-check-20261102-seq-compose-01-seq-1  Started

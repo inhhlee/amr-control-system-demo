@@ -1,0 +1,8 @@
+Container amr-seq-check-20261102-seq-compose-01-seq-1  Stopping
+ Container amr-seq-check-20261102-seq-compose-01-seq-1  Stopped
+ Container amr-seq-check-20261102-seq-compose-01-seq-1  Removing
+ Container amr-seq-check-20261102-seq-compose-01-seq-1  Removed
+ Volume amr-seq-check-20261102-seq-compose-01_seq-data  Removing
+ Volume amr-seq-check-20261102-seq-compose-01_seq-data  Removed
+ Network amr-seq-check-20261102-seq-compose-01_default  Removing
+ Network amr-seq-check-20261102-seq-compose-01_default  Removed

@@ -1,0 +1,13 @@
+{
+  "reviewed_changed_files": 40,
+  "parse_errors": [],
+  "secret_pattern_findings": [],
+  "checked_documents": 6,
+  "missing_links": [],
+  "git_ignored": {
+    ".env": true,
+    ".env.local": true,
+    ".env.example": false
+  },
+  "source_manifest_mismatches": []
+}

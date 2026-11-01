@@ -21,12 +21,15 @@ dotnet run --project src/Amr.Simulator -- --config config/simulator.single.json 
 
 ## Docker Seq에서 구조화 상세 로그 조회
 
-현재 PC의 기존 `amr-seq`(Seq2026.1, `127.0.0.1:5341`, 데이터 `C:\practice\docker\seq\data`)를 재사용한다. 기존 데이터·인증·관리 파일은 유지한다. 아래는 이미 만들어진 이 컨테이너를 시작하는 명령이며 다른 PC에 새 Seq를 설치하는 명령과 구분한다.
+Seq의 생성·포트·데이터·환경변수와 PowerShell/Git Bash 실행은 [Docker·Seq 구성 안내](../../../docker/README.md)를 따른다. 새 PC는 저장소의 `docker/compose.yaml`에서 선택 서비스 `seq`를 생성한다. 루트 `.env.example`은 포트와 통신 콘솔 환경변수의 공유 예시이며 .NET 프로그램이 `.env`를 자동으로 읽지는 않는다.
+
+현재 PC의 기존 `amr-seq`(Seq2026.1, `127.0.0.1:5341`, 데이터 `C:\practice\docker\seq\data`)도 재사용할 수 있다. 기존 Compose 원본은 현재 경로에서 확인되지 않으며, 기존 컨테이너가 새 프로젝트에 자동 편입되는 것은 아니다. 아래는 **이미 만들어진 이 컨테이너를 재사용하는 예시**다. 중지 상태일 때만 `docker start`를 실행한다.
 
 기존 trial을 Ctrl+C로 종료한 뒤 Git Bash에서 실행한다.
 
 ```bash
 cd /c/amr-control-system-demo
+# 기존 amr-seq가 중지 상태일 때만 실행
 docker start amr-seq
 AMR_SEQ_URL=http://127.0.0.1:5341 dotnet run --project src/Amr.Communication.Console -- --trial --host 127.0.0.1 --port 1884 --amr-id AMR_001
 ```
