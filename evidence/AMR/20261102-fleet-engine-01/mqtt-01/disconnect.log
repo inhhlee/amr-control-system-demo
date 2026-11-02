@@ -1,0 +1,18 @@
+FleetConfigurationLoaded AmrCount=3
+FleetAmrConfigured AmrId=A InitialX=4 InitialY=2 SpeedMps=2 Mode=Command FaultCount=1
+FaultScenarioConfigured AmrId=A Code="SHARED_CODE" ActivateAfterMs=15000 ResolveAfterMs=23000 Execution=DeviceLoop
+FleetAmrConfigured AmrId=B InitialX=0 InitialY=5 SpeedMps=2 Mode=Command FaultCount=0
+FleetAmrConfigured AmrId=R InitialX=0 InitialY=10 SpeedMps=5 Mode=Route FaultCount=0
+CommandSessionReady AmrId=A Topic=amr/A/command Mode=Command
+CommandSessionReady AmrId=B Topic=amr/B/command Mode=Command
+CommandSessionReady AmrId=R Topic=amr/R/command Mode=Route
+FaultScenarioScheduled AmrId=A Code="SHARED_CODE" ActivateAfterMs=15000 ResolveAfterMs=23000
+SimulationStarted AmrId=B X=0 Y=5 State=IDLE CurrentSpeedMps=0
+SimulationStarted AmrId=A X=4 Y=2 State=IDLE CurrentSpeedMps=0
+SimulationStarted AmrId=R X=0 Y=10 State=BUSY CurrentSpeedMps=5
+CommandSessionEnded ExitCode=1 AmrId=R
+CommandProcessed AmrId=B Type=MOVE CmdId=AFTER-R-DISCONNECT State=BUSY Diagnostic=NONE
+FinalAckPublished AmrId=B CmdId=AFTER-R-DISCONNECT Result=SUCCESS Reason=ARRIVED Delivery=Unconfirmed
+CommandSessionEnded ExitCode=0 AmrId=B
+CommandSessionEnded ExitCode=0 AmrId=A
+FleetEnded ExitCode=1

@@ -1,0 +1,246 @@
+[
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Amr.Simulator.csproj",
+    "Hash": "AAE9C0C0DEAF1C22063816BFD6E1700F209A1629DB4051A948C638B28937C589"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Program.cs",
+    "Hash": "21550BC6BBC9E932A2891C4E76D435D7D428D77F6147B787846C64190A82960B"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Configuration\\ConfigurationException.cs",
+    "Hash": "E00CCC37DF6E8B329A88A9E4464B0D475827498C4A14235A57C12DA2E7320C87"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Configuration\\FleetSettings.cs",
+    "Hash": "56CB75F29AAA4918A50911D828175CA16FE4B46997E6B5EAD423DAB84BF9E913"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Configuration\\FleetSettingsLoader.cs",
+    "Hash": "90FD52035A05EFAE8E4ADF759B7CB7348D06702F60DFE06265F945316D1E3789"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Configuration\\SimulatorSettings.cs",
+    "Hash": "E2EDA1C1015026DBB10E844C1DE8C783B0F017412916FB33A4E1D05CF8CDDE9D"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Configuration\\SimulatorSettingsLoader.cs",
+    "Hash": "90684BFABDD8DC9E90AC814E7F613E3D477AE12FFC32C76FA81FA2E3A2E51BC2"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Execution\\FleetApplication.cs",
+    "Hash": "8862678E08B9FFFDF6E42D2009E7FC4048A49291BE4296DA15676A2F69D0F223"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Execution\\SimulatorApplication.cs",
+    "Hash": "B95077A7189BDB3C19B04BA3E45B30E86F8B4795B7F854D1F0343CDE196097FD"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Navigation\\GridNavigator.cs",
+    "Hash": "2D3FD92A78018B80D927BAB1EC3BE61AA39876B7EAD343BF68DE4BD94BE39267"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Navigation\\GridPathfinder.cs",
+    "Hash": "44C08FFBDFCBF5962BAE85A3E3BC37322AAA0AD4A375206EC2D82F9A96B9A36A"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Navigation\\GridSimulation.cs",
+    "Hash": "006EDEE4694ECAB58D8CFA4CBF86F2382BDF3E7FF6625E78E93353D6FF3B9D8C"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Navigation\\GridTelemetry.cs",
+    "Hash": "B3B7B40F7F8F3F20B1F494C65335B34A9F94DDA4C4321D708F2F0AA37AAC451A"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Simulation\\CommandDrivenAmr.cs",
+    "Hash": "40F64213E8FCB5BB043D4BABC01E98ED7486EB298071008054313FAEF5F8B908"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Simulation\\FaultScenarioRunner.cs",
+    "Hash": "0D6B0AA6E9F9803E10D41E5AEEDFFBE114A6C37DE9AFC04073594CAC82DA8CDF"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Simulation\\ISimulationClock.cs",
+    "Hash": "25D810D754797D1B6F1CADEE1B3087FC1382922A783DE07641C2DE06D97CAF87"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Simulation\\Position2D.cs",
+    "Hash": "EF5F0EF9E64C3815B896507C0F94D8C3CE6F9EFC46279DFDDBA5CAC8DEFADB22"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Simulation\\SimulatedAmr.cs",
+    "Hash": "9F60202E4C488C7D3C75D868088D5ED056ABC80DAA15E4AC93A00C2F720E2902"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Simulation\\SimulationRunner.cs",
+    "Hash": "289222CF25021BFA7D2A9196842ECB6E4FE3BA0510A12FC2532DA7A0662D9981"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Simulation\\SimulationSnapshot.cs",
+    "Hash": "AD42A93D4FECA4D8E8DFA7AB50A7B00612F13D4DEF661D040A685637529F2FEA"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Telemetry\\ISimulationTransport.cs",
+    "Hash": "520FF410B282FCB3E5E42CB41B1490305ABEC58EC9C0E5FE9A81254547F36961"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Telemetry\\MqttCommandSimulationSession.cs",
+    "Hash": "C2C0A735522D77CBEC34500CBD9994D45D759E3A8632C5FC48AD9E0A77DCD9A4"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Telemetry\\MqttSimulationSession.cs",
+    "Hash": "9E39A15EA759940660184952AA168EBB28C75703A2E1223D527F930979371E58"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Telemetry\\MqttSimulationTransport.cs",
+    "Hash": "53283E281A529931C39BFE2269ED32D225317B47D979B62258E20579F8059FC3"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Telemetry\\SimulationMessages.cs",
+    "Hash": "874C9BC2DEC5F46B0EA5437133414F8AEBDF5FFB87CE540A4DA9930A1FDDC13B"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Simulator\\Telemetry\\SimulatorMqttOptions.cs",
+    "Hash": "39020994A915111657C98C2FB16DAC9005A2A95EF12E93D3A61FA5E660E912A3"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Amr.Communication.csproj",
+    "Hash": "EC8DE05434FD0644E9F9424BF0AE3239E38A21022A3DDFA5CA4CEF21A05E8361"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Command\\CommandMessage.cs",
+    "Hash": "6B708F4DC1C0D16F16E56B10A5A3C0B828E8F142409F4AD2D2B531811017A9DC"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Command\\CommandPublisher.cs",
+    "Hash": "96AA8D5A26228895EDC5A1CFEA3BAD9D65D810EB8D7FBA1503CCDD0CAF623FC7"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Command\\CommandValidationResult.cs",
+    "Hash": "B7CFAAAEB25702513F055CD304C72074F2460FBC34EC418382C859EBC6025623"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Command\\CommandValidator.cs",
+    "Hash": "3B672887A0503D44155DCF808DE8D9293CE13AF7F8F01C4FE76A49C84CC9223B"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Models\\AckMessage.cs",
+    "Hash": "D28A532212713B8A86D1AF35F2F542B6B53461D73F92F017CA3AFFFA7CA73821"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Models\\AlarmMessage.cs",
+    "Hash": "E86A417FF8ACD3E76500CAC357BE23DE2FF1BF593742E8C323E0DB172701E93E"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Models\\HeartbeatMessage.cs",
+    "Hash": "4BEDA4DA2B7E45720E0C11779DF09496A34D069655BB1B0E509034BC16E33A4E"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Models\\ReceivedMessage.cs",
+    "Hash": "0A7D983DB5E8185A3760BA57B567A2B0924F9FE0DAD5DD34E39FBE95061C7EBF"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Models\\TelemetryMessage.cs",
+    "Hash": "6D0D5C7B6A8A0E26A8A87DB8AAF5957DCD7E9D8DB46E40225BB324B35467D695"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Monitoring\\SingleAmrHeartbeatMonitor.cs",
+    "Hash": "9F778E4474361F324EE4B16A1FCD486CC56E7B52BFAAC161CFDCCDED6E8F5E17"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Connection\\MqttConnection.cs",
+    "Hash": "70BA5CB9000AA2A0C09D6741C81C8347F4FC7D5F23CD95C02BAC75926812FD95"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Connection\\MqttConnectionException.cs",
+    "Hash": "BBD323C8E96884039640BB93A263FEB13A3BB8F7F622BF96DD5F091069C375EB"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Connection\\MqttConnectionSettings.cs",
+    "Hash": "39331CD6BCDA0F09D1A72397A31993972C2C2BC937FD2BB0BADA6DB6B1155F1F"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Queues\\AmrReceiveQueue.cs",
+    "Hash": "182038B55E6AE298CEDBF8EB159B475518619DE962487E722B610BC4383F7625"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Queues\\QueueAdmission.cs",
+    "Hash": "B2E9578282ECE81E1CB6F07119C1D87964D34EDF195A16DB1C6871E2E43D3316"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Queues\\QueueProcessingEvent.cs",
+    "Hash": "F0C065F9289AEC821A19A6E090A4944CF10C155DBA6024B0CF7D9A63975D5789"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Sessions\\AmrCommunicationObservation.cs",
+    "Hash": "DCE721CF55DCA03B242548DB4A2F1CAC2FE794620D07F55BEEB2AB84E18F5958"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Sessions\\ControlCommunicationSession.cs",
+    "Hash": "3919BDC96E7F0DFA753C01943E6EAA18C3383D78B827FA3BD6F1E53FCDF11523"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Sessions\\ReconnectingCommunicationSession.cs",
+    "Hash": "292F7CC8ADDEC65DE806BD938F3AEFA968297EF7FF2066C49E56B4D5CF7D0205"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Sessions\\ReconnectOptions.cs",
+    "Hash": "B7ECBF8AE1470060F01CE82825453A95567734ECAF777686CADA5EE30EC6938C"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Subscriptions\\HeartbeatDiagnostic.cs",
+    "Hash": "C4CBA602462BF67C6FC472895DF0EA3635A46E683CD8B9667D26B22E0918720E"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Subscriptions\\HeartbeatSubscription.cs",
+    "Hash": "A38723932BC0C7B3DA1B4801D2F1650C19A4AA191706D749CE991A3C1DFB1BF2"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Subscriptions\\MessageDiagnostic.cs",
+    "Hash": "5AA07F8F98E5991B407E7F82987D0C1FC0BD8BBCD7CB91DD0119B1E3CAE74291"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Mqtt\\Subscriptions\\MessageSubscription.cs",
+    "Hash": "7A85B34692A4BCA95DFEA0F5AE18A9776D4A8B3C60FEADE13A05FA2B80076366"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Ack\\AckValidationResult.cs",
+    "Hash": "22A832C7E5FD12E8CEFC636A35760EE629E1C640DA095A49F404ACC8D0BD9131"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Ack\\AckValidator.cs",
+    "Hash": "35A64751463D3BF49A4C691DB175360E268CC410E80F2401A98B89FD681248ED"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Alarm\\AlarmValidationResult.cs",
+    "Hash": "B09A032DE262596E065232FFEA7A3BDE00E7517DCF7A58EEBDDD3DFC4C18677C"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Alarm\\AlarmValidator.cs",
+    "Hash": "E2DFD160B68DC84377807B5D7ABB6620A8F1237E1CC87D79EF36152C97E4D684"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Common\\MessageValidation.cs",
+    "Hash": "430CB62E5C08D1BAD586F1EBDDCA205FA84D69E2C3D65C1836ABAF9BE36D21D2"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Common\\ValidationError.cs",
+    "Hash": "3DCF8999E3771B4966872962A45D621BE51F862C1EFB16D268501CD3BE666B71"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Heartbeat\\HeartbeatValidationResult.cs",
+    "Hash": "1604225131767FC7564E9D42470E976117920FC14DD0732039C91260EB14C9A7"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Heartbeat\\HeartbeatValidator.cs",
+    "Hash": "71F3AA777BA7A44E405F6B36FFD06D56B78825FE761A07B01C74CD0FE80EEC29"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Telemetry\\TelemetryValidationResult.cs",
+    "Hash": "3687D86B1B52EEA007F3FEF77BAA48C4E513753782EAC8E0EC284364D529E4C6"
+  },
+  {
+    "Path": "C:\\amr-control-system-demo\\src\\Amr.Communication\\Validation\\Telemetry\\TelemetryValidator.cs",
+    "Hash": "9A9D2A46EAD617E6EE9086C54BB738AE0FA1EE30806F18D5BCF790289F66E506"
+  }
+]

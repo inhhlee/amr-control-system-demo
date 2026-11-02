@@ -6,13 +6,14 @@ namespace Amr.Simulator.Configuration;
 public sealed class SimulatorSettings
 {
     internal SimulatorSettings(string amrId, Position2D initialPosition, double speedMps,
-        long updateIntervalMs, Position2D[] waypoints)
+        long updateIntervalMs, Position2D[] waypoints, IReadOnlyList<FaultScenario>? faults = null)
     {
         AmrId = amrId;
         InitialPosition = initialPosition;
         SpeedMps = speedMps;
         UpdateIntervalMs = updateIntervalMs;
         Waypoints = Array.AsReadOnly((Position2D[])waypoints.Clone());
+        Faults = Array.AsReadOnly((faults ?? []).ToArray());
     }
 
     public string AmrId { get; }
@@ -20,4 +21,5 @@ public sealed class SimulatorSettings
     public double SpeedMps { get; }
     public long UpdateIntervalMs { get; }
     public IReadOnlyList<Position2D> Waypoints { get; }
+    public IReadOnlyList<FaultScenario> Faults { get; }
 }

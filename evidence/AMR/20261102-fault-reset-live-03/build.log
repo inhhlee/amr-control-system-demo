@@ -1,0 +1,14 @@
+  복원할 프로젝트를 확인하는 중...
+  복원할 모든 프로젝트가 최신 상태입니다.
+  Amr.Communication -> C:\amr-control-system-demo\src\Amr.Communication\bin\FaultReset\net10.0\Amr.Communication.dll
+  Amr.Simulator -> C:\amr-control-system-demo\src\Amr.Simulator\bin\FaultReset\net10.0\Amr.Simulator.dll
+  Amr.Core -> C:\amr-control-system-demo\src\Amr.Core\bin\FaultReset\net10.0\Amr.Core.dll
+  Amr.Infrastructure -> C:\amr-control-system-demo\src\Amr.Infrastructure\bin\FaultReset\net10.0\Amr.Infrastructure.dll
+  Amr.ControlGui -> C:\amr-control-system-demo\src\Amr.ControlGui\bin\FaultReset\net10.0-windows\Amr.ControlGui.dll
+  FaultResetProbe -> C:\amr-control-system-demo\tests\manual\FAULT-RESET\bin\FaultReset\net10.0-windows\FaultResetProbe.dll
+
+빌드했습니다.
+    경고 0개
+    오류 0개
+
+경과 시간: 00:00:01.49

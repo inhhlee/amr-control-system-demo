@@ -1,0 +1,58 @@
+{
+  "executedAt": "2026-11-02T15:39:48.5201245+09:00",
+  "runtime": "10.0.12",
+  "os": "Microsoft Windows NT 10.0.26200.0",
+  "port": 18887,
+  "results": [
+    {
+      "id": "FR-01",
+      "passed": true,
+      "detail": "GUI Start -\u003E real MQTT MOVE -\u003E BUSY; no premature success."
+    },
+    {
+      "id": "FR-02",
+      "passed": true,
+      "detail": "Direct BUSY RESET fails without interrupting MOVE."
+    },
+    {
+      "id": "FR-03",
+      "passed": true,
+      "detail": "Scheduled fault stops actual movement; MOVE fails; GUI is red, alarm visible, Start disabled."
+    },
+    {
+      "id": "FR-04",
+      "passed": true,
+      "detail": "MainForm RESET reaches simulator; unresolved cause returns matching FAILURE and keeps FAULT/ACTIVE."
+    },
+    {
+      "id": "FR-05",
+      "passed": true,
+      "detail": "Cause resolution alone keeps latch, coordinates and Heartbeat; no automatic resume."
+    },
+    {
+      "id": "FR-06",
+      "passed": true,
+      "detail": "New RESET -\u003E CLEARED, unchanged coordinates, IDLE, matching SUCCESS; GUI Start restored."
+    },
+    {
+      "id": "FR-07",
+      "passed": true,
+      "detail": "Duplicate RESET replays cached final ACK without repeating CLEARED or changing state."
+    },
+    {
+      "id": "FR-08",
+      "passed": true,
+      "detail": "Explicit new GUI MOVE starts from preserved fault position and arrives normally."
+    },
+    {
+      "id": "FR-09",
+      "passed": true,
+      "detail": "Real Telemetry/Heartbeat/Alarm/ACK pass existing receiver validators; no retained messages."
+    },
+    {
+      "id": "FR-10",
+      "passed": true,
+      "detail": "Cancellation awaits simulator unsubscribe/disconnect and exits successfully."
+    }
+  ]
+}

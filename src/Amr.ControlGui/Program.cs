@@ -20,25 +20,15 @@ internal static class Program
                 Environment.ExitCode = 2;
                 return;
             }
-            MapStation? destination = null;
-            if (options.SimulatorConfig is not null)
-            {
-                try
-                {
-                    var settings = SimulatorSettingsLoader.LoadAsync(options.SimulatorConfig).GetAwaiter().GetResult();
-                    if (settings.AmrId != options.AmrId) throw new ArgumentException("설정 파일의 AMR ID와 관리 대상이 다릅니다.");
-                    if (settings.Waypoints.Count != 0)
-                    { var goal = settings.Waypoints[^1]; destination = new("설정 목적지", goal.X, goal.Y); }
-                }
-                catch (Exception error) when (error is ArgumentException or IOException or ConfigurationException)
-                { MessageBox.Show(error.Message, "AMR 설정 오류", MessageBoxButtons.OK, MessageBoxIcon.Error); Environment.ExitCode = 2; return; }
-            }
-            var actual = new MqttAmrDataProvider(options.Connection, options.AmrId, options.Reconnect,
-                commandTimeout: TimeSpan.FromSeconds(options.CommandTimeoutSeconds), destination: destination);
+            (IAmrDataProvider Provider, Action Start) runtime;
+            try { runtime = options.CreateProvider(); }
+            catch (Exception error) when (error is ArgumentException or IOException or ConfigurationException or UnauthorizedAccessException)
+            { MessageBox.Show(error.Message, "AMR 설정 오류", MessageBoxButtons.OK, MessageBoxIcon.Error); Environment.ExitCode = 2; return; }
+            var actual = runtime.Provider;
             try
             {
-                using var liveForm = new MainForm(actual, actual);
-                actual.Start();
+                using var liveForm = new MainForm(actual, (ICommandDispatcher)actual);
+                runtime.Start();
                 Application.Run(liveForm);
             }
             finally { actual.DisposeAsync().AsTask().GetAwaiter().GetResult(); }

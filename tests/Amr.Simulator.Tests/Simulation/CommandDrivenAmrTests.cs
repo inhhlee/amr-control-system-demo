@@ -69,10 +69,10 @@ public sealed class CommandDrivenAmrTests
         Assert.Equal("STOPPED", amr.State);
     }
     [Fact]
-    public void ResetIsExplicitlyUnsupportedAndZeroDistanceCompletesWithoutFakeMotion()
+    public void ResetOutsideFaultIsRejectedAndZeroDistanceCompletesWithoutFakeMotion()
     {
         var amr = new CommandDrivenAmr(Settings());
-        Assert.Equal("RESET_NOT_IMPLEMENTED", Assert.Single(amr.Execute(new("R", "RESET", 1, new())).Replies).Reason);
+        Assert.Equal("NOT_IN_FAULT", Assert.Single(amr.Execute(new("R", "RESET", 1, new())).Replies).Reason);
         Assert.Equal("SUCCESS", Assert.Single(amr.Execute(Move(x: 0)).Replies).Result);
         Assert.Equal("IDLE", amr.State); Assert.Equal(0, amr.Position.X);
     }

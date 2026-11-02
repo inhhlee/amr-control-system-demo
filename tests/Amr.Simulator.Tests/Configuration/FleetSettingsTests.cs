@@ -47,6 +47,7 @@ public sealed class FleetSettingsTests
             Assert.Equal(new Position2D(i * 2, -i), configured.Settings.InitialPosition);
             Assert.Equal(i + 1, configured.Settings.SpeedMps);
             Assert.Empty(configured.Faults);
+            Assert.Equal(AmrOperationMode.Route, configured.Mode);
         }
         Assert.Throws<NotSupportedException>(() => ((IList<ConfiguredAmr>)fleet.Amrs).Clear());
     }
@@ -61,8 +62,18 @@ public sealed class FleetSettingsTests
         Assert.Throws<NotSupportedException>(() => ((IList<FaultScenario>)fleet.Amrs[1].Faults).Clear());
     }
 
+    [Fact]
+    public void MixedModes_AreParsedPerDevice()
+    {
+        var fleet = FleetSettingsLoader.Parse(FleetJson(change: r => r["amrs"]![1]!["mode"] = "command"));
+        Assert.Equal(AmrOperationMode.Route, fleet.Amrs[0].Mode);
+        Assert.Equal(AmrOperationMode.Command, fleet.Amrs[1].Mode);
+    }
+
     public static IEnumerable<object[]> InvalidFleets()
     {
+        foreach (JsonNode? mode in new JsonNode?[] { null, 1, "COMMAND", "invalid" })
+            yield return [FleetJson(change: r => r["amrs"]![1]!["mode"] = mode?.DeepClone()), "$.amrs[1].mode"];
         yield return ["{}", "$.amrs"];
         yield return ["{\"amrs\":[]}", "$.amrs"];
         yield return ["{\"amrs\":null}", "$.amrs"];

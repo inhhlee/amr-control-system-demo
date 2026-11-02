@@ -54,4 +54,5 @@ pwsh -NoProfile -File tests/manual/GUI-CONTROL/verify.ps1
 
 결과 폴더의 `control-results.json`에서 20항목의 `passed: true`, `communication.jsonl`, Simulator 로그와 화면을 확인한다. 시험용 알람/중복·상충 ACK는 시험 도구가 실제 MQTT로 넣은 입력이며 AMR 장애 시나리오 구현과 구분한다. 도구는 자신이 만든 컨테이너와 AMR 프로세스를 종료한다. 기존 증거 폴더는 덮어쓰지 않는다.
 
-[실제 실행 근거·코드 버전·한계](../../../evidence/GUI/20261101-figma-live-02/README.md). RESET, 장애 발생/해제 시나리오, 여러 AMR 동시 제어, SQLite 이력은 이번 범위에 포함하지 않는다.
+[이 정상 제어 시험의 실행 근거·코드 버전·한계](../../../evidence/GUI/20261101-figma-live-02/README.md).
+추가된 RESET·장애 발생/해제는 [FAULT-RESET 전용 시험](../FAULT-RESET/README.md)에서 검증한다. 여러 AMR 동시 제어와 SQLite 이력은 별도다.

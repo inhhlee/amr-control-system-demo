@@ -1,0 +1,122 @@
+Window: "AMR 관제 시스템 · Fleet 공통 맵", App: Amr.ControlGui.exe.
+	0 창 AMR 관제 시스템 · Fleet 공통 맵 Secondary Actions: Raise
+		1 창 ID: rootLayout
+			2 창
+				3 창
+					4 창
+						5 창
+							6 창
+								7 텍스트 통신 상태
+								8 텍스트 서버 연결 2/2 ID: communicationValue
+								9 텍스트 127.0.0.1:62001 AMR 응답 상태는 별도로 확인합니다. ID: communicationDetail
+						10 창 127.0.0.1:62001 AMR 응답 상태는 별도로 확인합니다.
+							11 창 127.0.0.1:62001 AMR 응답 상태는 별도로 확인합니다.
+								12 텍스트 AMR 연결 현황
+								13 텍스트 전체(등록) 2대 ID: devicesValue
+								14 텍스트 생존 확인 2 · 응답 없음 0 위치 수신 2대 · 미확인 0대 ID: devicesDetail
+						15 창 생존 확인 2 · 응답 없음 0 위치 수신 2대 · 미확인 0대
+							16 창 생존 확인 2 · 응답 없음 0 위치 수신 2대 · 미확인 0대
+								17 텍스트 AMR 운행 상태
+								18 텍스트 대기 1 · 이동 0 · 오류 1 ID: operationValue
+								19 텍스트 생존 확인 2대 기준 · 정지 0대 ID: operationDetail
+						20 창 생존 확인 2대 기준 · 정지 0대
+							21 창 생존 확인 2대 기준 · 정지 0대
+								22 텍스트 알람 요약
+								23 텍스트 수신된 활성 알람 1건 ID: alarmsValue
+								24 텍스트 오류 1건 · 경고 0건 ID: alarmsDetail
+					25 창 오류 1건 · 경고 0건
+						26 텍스트 공급자의 현재 상태 기준 ID: summarySource
+						27 텍스트 ACTUAL · MQTT 연동 ID: modeLabel
+				28 텍스트 대시보드
+			29 창 대시보드
+				30 창 대시보드
+					31 창 대시보드
+						32 창 대시보드 ID: mapLayout
+							33 창 AMR 위치 · 단위 m · 전체 좌표 자동 맞춤
+								34 이미지 AMR 위치 지도 ID: mapCanvas
+								35 창
+									36 텍스트 선택한 AMR 정보 ID: selectedTitle
+									37 텍스트 출발지 · AMR_01 출발 좌표 (4, 2) m 이동 관측 18:22:54 할당 목적지 · 목적 좌표 AMR_01 · FAULT · 장애 목표 (1000, 2) m 출발–목적지 거리 996 m 이동 103.29 m · 남은 892.71 m 현재 (107.29, 2) m 속도 0 m/s · 운행 오류 거리 기준: 명령 출발점–목적지 직선 구간 거리 Broker 연결됨 · 생존 확인됨 ID: detailsLabel
+							38 창 출발지 · AMR_01 출발 좌표 (4, 2) m 이동 관측 18:22:54 할당 목적지 · 목적 좌표 AMR_01 · FAULT · 장애 목표 (1000, 2) m 출발–목적지 거리 996 m 이동 103.29 m · 남은 892.71 m 현재 (107.29, 2) m 속도 0 m/s · 운행 오류 거리 기준: 명령 출발점–목적지 직선 구간 거리 Broker 연결됨 · 생존 확인됨 ID: mapLegend
+								39 창 출발지 · AMR_01 출발 좌표 (4, 2) m 이동 관측 18:22:54 할당 목적지 · 목적 좌표 AMR_01 · FAULT · 장애 목표 (1000, 2) m 출발–목적지 거리 996 m 이동 103.29 m · 남은 892.71 m 현재 (107.29, 2) m 속도 0 m/s · 운행 오류 거리 기준: 명령 출발점–목적지 직선 구간 거리 Broker 연결됨 · 생존 확인됨
+									40 텍스트 ● 대기
+									41 텍스트 ● 이동
+									42 텍스트 ● 정지
+									43 텍스트 ● 오류
+									44 텍스트 ◎ 선택
+									45 텍스트 ◌ 연결 끊김/응답 없음
+								46 텍스트 실제 MQTT · 현재 위치 수신 2/2대 · 장비별 연결 확인 ID: mapSource
+							47 창 실제 MQTT · 현재 위치 수신 2/2대 · 장비별 연결 확인
+								48 텍스트 실제 수신 위치 · m
+								49 단추 − ID: zoomOut
+								50 텍스트 80%
+								51 단추 + ID: zoomIn
+								52 단추 전체 보기 ID: zoomFit
+					53 텍스트 지도
+				54 창 지도 ID: sideLayout
+					55 창 지도
+						56 창 지도 ID: alarmBody
+							57 창 AMR_01 · SIM_SENSOR AMR_01 시험 장애
+								58 데이터 그리드 발생 중인 알람 ID: alarmGrid
+									59 custom 상위 행
+										60 머리글 발생 시각 ID: 4218799467
+										61 머리글 대상 AMR ID: 4243066490
+										62 머리글 등급 ID: 4222993468
+										63 머리글 내용 ID: 4230479632
+									2418 custom 행 1
+										2419 항목 발생 시각 행 1, 정렬되지 않았습니다. Value: 18:24:37 ID: 4253579387
+										2420 항목 대상 AMR 행 1, 정렬되지 않았습니다. Value: AMR_01 ID: 4225443403
+										2421 항목 등급 행 1, 정렬되지 않았습니다. Value: 오류 ID: 4262328788
+										2422 항목 내용 행 1, 정렬되지 않았습니다. Value: AMR_01 시험 장애 ID: 424967879
+								64 텍스트 선택 알람 상세 · AMR_01 오류 · AMR_01 시험 장애 현재 상태: 발생 중 비고: 실제 수신 · ERR · ACTIVE ID: alarmDetail
+						65 텍스트 알람
+					66 창 알람
+						67 창 알람 ID: commandBody
+							68 창 대상 AMR_01 · 지도 또는 장비 목록에서 선택 ID: fleetControlPanel
+								69 텍스트 AMR_01 · FAULT · 확인됨 ID: fleetTarget
+								70 창 AMR_01 · FAULT · 확인됨
+									71 텍스트 X
+									72 편집 (settable, string) 목적지 X Value: 1000 ID: fleetTargetX
+									73 텍스트 Y
+									74 편집 (settable, string) 목적지 Y Value: 2 ID: fleetTargetY
+								75 창
+									76 단추 (disabled) 시작 ID: fleetMove
+									77 단추 (disabled) STOP ID: fleetStop
+									78 단추 RESET ID: fleetReset
+								79 텍스트 AMR_01 · MOVE · FAILURE FAULT_INTERRUPTED GUI-6f85bd63fae148978b91ace3c252a4d7 ID: fleetResponse
+						80 텍스트 선택 AMR 제어 · 공통 맵
+			81 창 선택 AMR 제어 · 공통 맵 ID: bottomLayout
+				82 Tab 선택 AMR 제어 · 공통 맵 ID: feedbackTabs
+					83 창 장비 목록 · 지도와 선택 연동
+						84 데이터 그리드 장비 목록 ID: deviceGrid
+							85 custom 상위 행
+								86 머리글 장비 ID ID: 4250784294
+								87 머리글 X (m) ID: 4256216055
+								88 머리글 Y (m) ID: 4259720082
+								89 머리글 속도 (m/s) ID: 4238163566
+								90 머리글 운행 상태 ID: 4226364313
+							2678 custom 행 1
+								2679 항목 장비 ID 행 1, 정렬되지 않았습니다. Value: AMR_01 ID: 4244792886
+								2680 항목 X (m) 행 1, 정렬되지 않았습니다. Value: 107.29 ID: 4245436614
+								2681 항목 Y (m) 행 1, 정렬되지 않았습니다. Value: 2 ID: 4253805077
+								2682 항목 속도 (m/s) 행 1, 정렬되지 않았습니다. Value: 0 ID: 4228377362
+								2683 항목 운행 상태 행 1, 정렬되지 않았습니다. Value: 오류 ID: 4233361394
+							2684 custom 행 2
+								2685 항목 장비 ID 행 2, 정렬되지 않았습니다. Value: AMR_02 ID: 42931068
+								2686 항목 X (m) 행 2, 정렬되지 않았습니다. Value: 0 ID: 4212103888
+								2687 항목 Y (m) 행 2, 정렬되지 않았습니다. Value: 5 ID: 4223132817
+								2688 항목 속도 (m/s) 행 2, 정렬되지 않았습니다. Value: 0 ID: 4232291165
+								2689 항목 운행 상태 행 2, 정렬되지 않았습니다. Value: 대기 ID: 4217131966
+					91 탭 항목 (selectable) 이력
+					92 탭 항목 (selectable) 장비 목록 · 지도와 선택 연동
+			93 텍스트 서버 연결 2/2 · 현재 위치 수신 2/2대 · 장비별 연결 확인 · 형식 오류 거부 0건 · ID: statusLabel
+		94 제목 표시줄 (settable, string) Value: AMR 관제 시스템 · Fleet 공통 맵
+			95 메뉴 모음 시스템 ID: MenuBar
+				2629 메뉴 항목 시스템
+			97 단추 최소화
+			98 단추 최대화
+			99 단추 닫기
+
+Document text: ```
+2
+```

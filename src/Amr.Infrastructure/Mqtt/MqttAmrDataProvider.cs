@@ -26,7 +26,7 @@ public sealed partial class MqttAmrDataProvider : IAmrDataProvider, ICommandDisp
     private Task? _stop;
     private bool _disposed;
     private readonly CommandTracker _commands;
-    private readonly Dictionary<string, AlarmSnapshot> _alarms = new(StringComparer.Ordinal);
+    private readonly Dictionary<(string AmrId, string Code), AlarmSnapshot> _alarms = [];
     private readonly List<HistoryEntry> _history = [];
     private readonly HashSet<Task> _publications = [];
     private Task _publicationTail = Task.CompletedTask;

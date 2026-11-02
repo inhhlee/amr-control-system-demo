@@ -1,0 +1,10 @@
+FR-01 PASS GUI Start -> real MQTT MOVE -> BUSY; no premature success.
+FR-02 PASS Direct BUSY RESET fails without interrupting MOVE.
+FR-03 PASS Scheduled fault stops actual movement; MOVE fails; GUI is red, alarm visible, Start disabled.
+FR-04 PASS MainForm RESET reaches simulator; unresolved cause returns matching FAILURE and keeps FAULT/ACTIVE.
+FR-05 PASS Cause resolution alone keeps latch, coordinates and Heartbeat; no automatic resume.
+FR-06 PASS New RESET -> CLEARED, unchanged coordinates, IDLE, matching SUCCESS; GUI Start restored.
+FR-07 PASS Duplicate RESET replays cached final ACK without repeating CLEARED or changing state.
+FR-08 PASS Explicit new GUI MOVE starts from preserved fault position and arrives normally.
+FR-09 PASS Real Telemetry/Heartbeat/Alarm/ACK pass existing receiver validators; no retained messages.
+FR-10 PASS Cancellation awaits simulator unsubscribe/disconnect and exits successfully.

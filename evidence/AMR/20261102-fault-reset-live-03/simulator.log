@@ -1,0 +1,18 @@
+CommandSessionReady AmrId=AMR_001 Topic=amr/AMR_001/command
+FaultScenarioScheduled Code="DRIVE_FAULT" ActivateAfterMs=4000 ResolveAfterMs=8000
+CommandProcessed AmrId=AMR_001 Type=MOVE CmdId=GUI-78aba8e83b9749cba99ab502cf6c236a State=BUSY Diagnostic=NONE
+CommandProcessed AmrId=AMR_001 Type=RESET CmdId=BUSY-RESET State=BUSY Diagnostic=NONE
+FinalAckPublished AmrId=AMR_001 CmdId=BUSY-RESET Result=FAILURE Reason=BUSY_RESET_REJECTED Delivery=Unconfirmed
+AlarmPublished AmrId=AMR_001 Code="DRIVE_FAULT" AlarmState=ACTIVE Delivery=Unconfirmed
+FinalAckPublished AmrId=AMR_001 CmdId=GUI-78aba8e83b9749cba99ab502cf6c236a Result=FAILURE Reason=FAULT_INTERRUPTED Delivery=Unconfirmed
+CommandProcessed AmrId=AMR_001 Type=RESET CmdId=GUI-048c31748726408d9781b0ad1ff737c2 State=FAULT Diagnostic=NONE
+FinalAckPublished AmrId=AMR_001 CmdId=GUI-048c31748726408d9781b0ad1ff737c2 Result=FAILURE Reason=FAULT_CAUSE_ACTIVE Delivery=Unconfirmed
+FaultCauseResolved AmrId=AMR_001 AllCausesResolved=True State=FAULT Alarm=LatchedUntilReset
+CommandProcessed AmrId=AMR_001 Type=RESET CmdId=GUI-385787644d2240299abb201ab11339bf State=IDLE Diagnostic=NONE
+AlarmPublished AmrId=AMR_001 Code="DRIVE_FAULT" AlarmState=CLEARED Delivery=Unconfirmed
+FinalAckPublished AmrId=AMR_001 CmdId=GUI-385787644d2240299abb201ab11339bf Result=SUCCESS Reason=RESET_COMPLETED Delivery=Unconfirmed
+CommandProcessed AmrId=AMR_001 Type=RESET CmdId=GUI-385787644d2240299abb201ab11339bf State=IDLE Diagnostic=DUPLICATE_REQUEST
+FinalAckPublished AmrId=AMR_001 CmdId=GUI-385787644d2240299abb201ab11339bf Result=SUCCESS Reason=RESET_COMPLETED Delivery=Unconfirmed
+CommandProcessed AmrId=AMR_001 Type=MOVE CmdId=GUI-0ab38b39584043d982cf14196ad7265f State=BUSY Diagnostic=NONE
+FinalAckPublished AmrId=AMR_001 CmdId=GUI-0ab38b39584043d982cf14196ad7265f Result=SUCCESS Reason=ARRIVED Delivery=Unconfirmed
+CommandSessionEnded ExitCode=0

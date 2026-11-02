@@ -14,18 +14,22 @@ public sealed partial class MqttAmrDataProvider
             CheckAvailable(cancellationToken);
             CommandSubmission Reject(CommandRejection rejection, string reason) => new(false, null, rejection, reason);
             if (request.AmrId != _connection.AmrId) return Task.FromResult(Reject(CommandRejection.UnknownDevice, "관리 대상 AMR이 아닙니다."));
-            if (request.Kind is not (CommandKind.MOVE or CommandKind.STOP)) return Task.FromResult(Reject(CommandRejection.InvalidParameters, "현재 실제 연결은 MOVE/STOP만 지원합니다."));
+            if (request.Kind is not (CommandKind.MOVE or CommandKind.STOP or CommandKind.RESET)) return Task.FromResult(Reject(CommandRejection.InvalidParameters, "지원하지 않는 명령입니다."));
             if (request.Kind == CommandKind.MOVE && (request.X is not double x || request.Y is not double y || !double.IsFinite(x) || !double.IsFinite(y)))
                 return Task.FromResult(Reject(CommandRejection.InvalidParameters, "목적지 X/Y를 설정하세요."));
-            if (request.Kind == CommandKind.STOP && (request.X is not null || request.Y is not null))
-                return Task.FromResult(Reject(CommandRejection.InvalidParameters, "STOP에는 좌표를 지정하지 않습니다."));
+            if (request.Kind is CommandKind.STOP or CommandKind.RESET && (request.X is not null || request.Y is not null))
+                return Task.FromResult(Reject(CommandRejection.InvalidParameters, "STOP/RESET에는 좌표를 지정하지 않습니다."));
             if (!_session.IsReady || !_connection.TelemetryIsCurrent || _liveness != LivenessObservation.Alive || _device is null)
                 return Task.FromResult(Reject(CommandRejection.NotConnected, "서버 연결과 AMR의 새 위치·생존 신호를 확인하세요."));
             var pending = _commands.Read().Where(x => x.Result == CommandResult.Unconfirmed).ToArray();
             if (request.Kind == CommandKind.MOVE && (_device.State is not (AmrState.IDLE or AmrState.STOPPED) || pending.Any(x => x.Kind == CommandKind.MOVE && !x.SupersededByConfirmedStop)))
                 return Task.FromResult(Reject(CommandRejection.InvalidState, "이동 중이거나 이전 이동 결과가 미확인입니다."));
+            if (request.Kind == CommandKind.MOVE && (_alarms.Values.Any(x => x.AmrId == request.AmrId && x.IsActive && x.Severity == AlarmSeverity.Error) || pending.Any(x => x.Kind == CommandKind.RESET)))
+                return Task.FromResult(Reject(CommandRejection.InvalidState, "장애 알람 해제와 RESET 최종 응답을 확인하세요."));
             if (request.Kind == CommandKind.STOP && pending.Any(x => x.Kind == CommandKind.STOP && !x.ResultDeadlineExceeded))
                 return Task.FromResult(Reject(CommandRejection.InvalidState, "기존 정지 요청의 결과를 기다리고 있습니다."));
+            if (request.Kind == CommandKind.RESET && (_device.State != AmrState.FAULT || pending.Any(x => x.Kind == CommandKind.RESET && !x.ResultDeadlineExceeded)))
+                return Task.FromResult(Reject(CommandRejection.InvalidState, "FAULT 상태에서 이전 RESET의 결과를 확인한 뒤 요청하세요."));
             var result = _commands.Register(request);
             if (!result.Accepted) return Task.FromResult(result);
             if (request.Kind == CommandKind.MOVE)
@@ -114,13 +118,14 @@ public sealed partial class MqttAmrDataProvider
                 AddHistory("명령", $"{ack.CommandId} · {(disposition == AckDisposition.Conflict ? "상충 응답 · 기존 결과 유지" : ack.Result)} · {ack.Reason}");
                 return true;
             case AlarmMessage alarm:
-                if (!_alarms.ContainsKey(alarm.Code) && _alarms.Count >= 256)
+                var key = (alarm.Id, alarm.Code);
+                if (!_alarms.ContainsKey(key) && _alarms.Count >= 256)
                 { _connection = _connection with { DataWarning = "알람 보관 한도 도달 · 새 코드 수집 중단" }; return true; }
-                var previous = _alarms.GetValueOrDefault(alarm.Code);
+                var previous = _alarms.GetValueOrDefault(key);
                 var current = new AlarmSnapshot(alarm.Id, alarm.Code, alarm.Message ?? alarm.Code, alarm.ReceivedAtUtc, _revision)
                 { Severity = alarm.Level is "ERR" or "FATAL" ? AlarmSeverity.Error : alarm.Level == "WARN" ? AlarmSeverity.Warning : AlarmSeverity.Unknown,
                     IsActive = alarm.AlarmState == "ACTIVE", Note = $"실제 수신 · {alarm.Level} · {alarm.AlarmState}" };
-                _alarms[alarm.Code] = current;
+                _alarms[key] = current;
                 if (previous is null || previous.IsActive != current.IsActive || previous.Message != current.Message || previous.Severity != current.Severity)
                     AddHistory("알람", $"{alarm.Code} · {alarm.AlarmState} · {current.Message}");
                 return true;

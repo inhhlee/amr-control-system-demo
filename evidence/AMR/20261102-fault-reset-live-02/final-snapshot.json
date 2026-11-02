@@ -1,0 +1,327 @@
+{
+  "Revision": 146,
+  "Kind": 1,
+  "Devices": [
+    {
+      "AmrId": "AMR_001",
+      "X": 8.820062899999998,
+      "Y": 2,
+      "SpeedMps": 0,
+      "State": 0,
+      "BrokerConnection": 1,
+      "Liveness": 1,
+      "LastHeartbeatReceivedAt": "2026-11-02T06:39:48.1404859+00:00",
+      "LastTelemetryReceivedAt": "2026-11-02T06:39:48.2403213+00:00",
+      "Revision": 146,
+      "Journey": {
+        "Source": {
+          "Name": "\uCD9C\uBC1C \uC88C\uD45C",
+          "X": 7.820062899999998,
+          "Y": 2
+        },
+        "Destination": {
+          "Name": "\uBAA9\uC801 \uC88C\uD45C",
+          "X": 8.820062899999998,
+          "Y": 2
+        },
+        "Phase": 3,
+        "TotalDistance": 1,
+        "TraveledDistance": 1,
+        "StartedAt": "2026-11-02T06:39:47.2404599+00:00",
+        "RemainingDistance": 0,
+        "DistanceBasis": "\uBA85\uB839 \uCD9C\uBC1C\uC810\u2013\uBAA9\uC801\uC9C0 \uC9C1\uC120 \uAD6C\uAC04 \uAC70\uB9AC"
+      }
+    }
+  ],
+  "Alarms": [
+    {
+      "AmrId": "AMR_001",
+      "Code": "DRIVE_FAULT",
+      "Message": "\uAD6C\uB3D9 \uC7A5\uC560 \uC2DC\uD5D8",
+      "ObservedAt": "2026-11-02T06:39:46.8388504+00:00",
+      "Revision": 121,
+      "Severity": 1,
+      "IsActive": false,
+      "Note": "\uC2E4\uC81C \uC218\uC2E0 \u00B7 ERR \u00B7 CLEARED"
+    }
+  ],
+  "Commands": [
+    {
+      "AmrId": "AMR_001",
+      "CommandId": "GUI-2a43cbe2516d4d34a005beefc11cd19c",
+      "Kind": 0,
+      "TargetX": 100,
+      "TargetY": 2,
+      "RequestedAt": "2026-11-02T06:39:38.5093494+00:00",
+      "Publish": 2,
+      "Result": 2,
+      "ResultDeadlineExceeded": false,
+      "AckResult": "FAILURE",
+      "Reason": "FAULT_INTERRUPTED",
+      "AckTimestampUnixMs": 1793601582384,
+      "AckReceivedAt": "2026-11-02T06:39:42.389904+00:00",
+      "HasConflictingResult": false,
+      "Revision": 3,
+      "SupersededByConfirmedStop": false,
+      "RequestSequence": 1
+    },
+    {
+      "AmrId": "AMR_001",
+      "CommandId": "GUI-0b60263e1b57456db7409e0cbd07c011",
+      "Kind": 2,
+      "TargetX": null,
+      "TargetY": null,
+      "RequestedAt": "2026-11-02T06:39:42.5547059+00:00",
+      "Publish": 2,
+      "Result": 2,
+      "ResultDeadlineExceeded": false,
+      "AckResult": "FAILURE",
+      "Reason": "FAULT_CAUSE_ACTIVE",
+      "AckTimestampUnixMs": 1793601582585,
+      "AckReceivedAt": "2026-11-02T06:39:42.5868176+00:00",
+      "HasConflictingResult": false,
+      "Revision": 6,
+      "SupersededByConfirmedStop": false,
+      "RequestSequence": 2
+    },
+    {
+      "AmrId": "AMR_001",
+      "CommandId": "GUI-474c338365e444deb53ce8a2ccf06336",
+      "Kind": 2,
+      "TargetX": null,
+      "TargetY": null,
+      "RequestedAt": "2026-11-02T06:39:44.7904553+00:00",
+      "Publish": 2,
+      "Result": 2,
+      "ResultDeadlineExceeded": false,
+      "AckResult": "FAILURE",
+      "Reason": "FAULT_CAUSE_ACTIVE",
+      "AckTimestampUnixMs": 1793601584835,
+      "AckReceivedAt": "2026-11-02T06:39:44.8365853+00:00",
+      "HasConflictingResult": false,
+      "Revision": 9,
+      "SupersededByConfirmedStop": false,
+      "RequestSequence": 3
+    },
+    {
+      "AmrId": "AMR_001",
+      "CommandId": "GUI-5b81d8dde9af475a894131288bd11106",
+      "Kind": 2,
+      "TargetX": null,
+      "TargetY": null,
+      "RequestedAt": "2026-11-02T06:39:46.8075092+00:00",
+      "Publish": 2,
+      "Result": 1,
+      "ResultDeadlineExceeded": false,
+      "AckResult": "SUCCESS",
+      "Reason": "RESET_COMPLETED",
+      "AckTimestampUnixMs": 1793601586837,
+      "AckReceivedAt": "2026-11-02T06:39:46.8390612+00:00",
+      "HasConflictingResult": false,
+      "Revision": 12,
+      "SupersededByConfirmedStop": false,
+      "RequestSequence": 4
+    },
+    {
+      "AmrId": "AMR_001",
+      "CommandId": "GUI-1cd03a7dd0984ac183fe70e7cddbae91",
+      "Kind": 0,
+      "TargetX": 8.820062899999998,
+      "TargetY": 2,
+      "RequestedAt": "2026-11-02T06:39:47.1908974+00:00",
+      "Publish": 2,
+      "Result": 1,
+      "ResultDeadlineExceeded": false,
+      "AckResult": "SUCCESS",
+      "Reason": "ARRIVED",
+      "AckTimestampUnixMs": 1793601588239,
+      "AckReceivedAt": "2026-11-02T06:39:48.2403591+00:00",
+      "HasConflictingResult": false,
+      "Revision": 15,
+      "SupersededByConfirmedStop": false,
+      "RequestSequence": 5
+    }
+  ],
+  "AmrId": null,
+  "CommandId": null,
+  "History": [
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uD1B5\uC2E0",
+      "Description": "\uC11C\uBC84 \uC0C1\uD0DC Connecting",
+      "ObservedAt": "2026-11-02T06:39:38.171405+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uD1B5\uC2E0",
+      "Description": "\uC11C\uBC84 \uC0C1\uD0DC Connected",
+      "ObservedAt": "2026-11-02T06:39:38.1768185+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uC0C1\uD0DC",
+      "Description": "\uC6B4\uD589 IDLE",
+      "ObservedAt": "2026-11-02T06:39:38.3835898+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uD1B5\uC2E0",
+      "Description": "AMR \uC751\uB2F5 Alive",
+      "ObservedAt": "2026-11-02T06:39:38.3846565+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uBA85\uB839",
+      "Description": "MOVE \uC694\uCCAD \uC811\uC218 \u00B7 GUI-2a43cbe2516d4d34a005beefc11cd19c",
+      "ObservedAt": "2026-11-02T06:39:38.5099135+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uBA85\uB839",
+      "Description": "MOVE \u00B7 GUI-2a43cbe2516d4d34a005beefc11cd19c \u00B7 MQTT \uBC1C\uD589 \uBC18\uD658",
+      "ObservedAt": "2026-11-02T06:39:38.5206396+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uC0C1\uD0DC",
+      "Description": "\uC6B4\uD589 BUSY",
+      "ObservedAt": "2026-11-02T06:39:38.5440254+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uC54C\uB78C",
+      "Description": "DRIVE_FAULT \u00B7 ACTIVE \u00B7 \uAD6C\uB3D9 \uC7A5\uC560 \uC2DC\uD5D8",
+      "ObservedAt": "2026-11-02T06:39:42.390432+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uC0C1\uD0DC",
+      "Description": "\uC6B4\uD589 FAULT",
+      "ObservedAt": "2026-11-02T06:39:42.3905196+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uBA85\uB839",
+      "Description": "GUI-2a43cbe2516d4d34a005beefc11cd19c \u00B7 FAILURE \u00B7 FAULT_INTERRUPTED",
+      "ObservedAt": "2026-11-02T06:39:42.3907001+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uBA85\uB839",
+      "Description": "RESET \uC694\uCCAD \uC811\uC218 \u00B7 GUI-0b60263e1b57456db7409e0cbd07c011",
+      "ObservedAt": "2026-11-02T06:39:42.5547101+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uBA85\uB839",
+      "Description": "RESET \u00B7 GUI-0b60263e1b57456db7409e0cbd07c011 \u00B7 MQTT \uBC1C\uD589 \uBC18\uD658",
+      "ObservedAt": "2026-11-02T06:39:42.5551137+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uBA85\uB839",
+      "Description": "GUI-0b60263e1b57456db7409e0cbd07c011 \u00B7 FAILURE \u00B7 FAULT_CAUSE_ACTIVE",
+      "ObservedAt": "2026-11-02T06:39:42.586848+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uBA85\uB839",
+      "Description": "RESET \uC694\uCCAD \uC811\uC218 \u00B7 GUI-474c338365e444deb53ce8a2ccf06336",
+      "ObservedAt": "2026-11-02T06:39:44.7904596+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uBA85\uB839",
+      "Description": "RESET \u00B7 GUI-474c338365e444deb53ce8a2ccf06336 \u00B7 MQTT \uBC1C\uD589 \uBC18\uD658",
+      "ObservedAt": "2026-11-02T06:39:44.7909273+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uBA85\uB839",
+      "Description": "GUI-474c338365e444deb53ce8a2ccf06336 \u00B7 FAILURE \u00B7 FAULT_CAUSE_ACTIVE",
+      "ObservedAt": "2026-11-02T06:39:44.8366196+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uBA85\uB839",
+      "Description": "RESET \uC694\uCCAD \uC811\uC218 \u00B7 GUI-5b81d8dde9af475a894131288bd11106",
+      "ObservedAt": "2026-11-02T06:39:46.8075319+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uBA85\uB839",
+      "Description": "RESET \u00B7 GUI-5b81d8dde9af475a894131288bd11106 \u00B7 MQTT \uBC1C\uD589 \uBC18\uD658",
+      "ObservedAt": "2026-11-02T06:39:46.8077297+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uC54C\uB78C",
+      "Description": "DRIVE_FAULT \u00B7 CLEARED \u00B7 \uAD6C\uB3D9 \uC7A5\uC560 \uC2DC\uD5D8",
+      "ObservedAt": "2026-11-02T06:39:46.8393005+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uC0C1\uD0DC",
+      "Description": "\uC6B4\uD589 IDLE",
+      "ObservedAt": "2026-11-02T06:39:46.8393207+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uBA85\uB839",
+      "Description": "GUI-5b81d8dde9af475a894131288bd11106 \u00B7 SUCCESS \u00B7 RESET_COMPLETED",
+      "ObservedAt": "2026-11-02T06:39:46.8393273+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uACC4\uD68D",
+      "Description": "\uBAA9\uC801\uC9C0 \uC124\uC815 (8.820062899999998, 2) m",
+      "ObservedAt": "2026-11-02T06:39:47.0742132+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uBA85\uB839",
+      "Description": "MOVE \uC694\uCCAD \uC811\uC218 \u00B7 GUI-1cd03a7dd0984ac183fe70e7cddbae91",
+      "ObservedAt": "2026-11-02T06:39:47.1909026+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uBA85\uB839",
+      "Description": "MOVE \u00B7 GUI-1cd03a7dd0984ac183fe70e7cddbae91 \u00B7 MQTT \uBC1C\uD589 \uBC18\uD658",
+      "ObservedAt": "2026-11-02T06:39:47.1911465+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uC0C1\uD0DC",
+      "Description": "\uC6B4\uD589 BUSY",
+      "ObservedAt": "2026-11-02T06:39:47.2405189+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uC0C1\uD0DC",
+      "Description": "\uC6B4\uD589 IDLE",
+      "ObservedAt": "2026-11-02T06:39:48.2403848+00:00"
+    },
+    {
+      "AmrId": "AMR_001",
+      "Type": "\uBA85\uB839",
+      "Description": "GUI-1cd03a7dd0984ac183fe70e7cddbae91 \u00B7 SUCCESS \u00B7 ARRIVED",
+      "ObservedAt": "2026-11-02T06:39:48.2404124+00:00"
+    }
+  ],
+  "Connection": {
+    "Endpoint": "127.0.0.1:18887",
+    "AmrId": "AMR_001",
+    "State": 2,
+    "RetryAttempt": 0,
+    "MaxAttempts": 5,
+    "RetryDelaySeconds": 5,
+    "RejectedMessages": 0,
+    "TelemetryIsCurrent": true,
+    "Reason": null,
+    "RegisteredAmrIds": [
+      "AMR_001"
+    ],
+    "HistoryAtCapacity": false,
+    "DataWarning": null
+  }
+}

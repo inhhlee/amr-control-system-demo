@@ -18,6 +18,9 @@ public sealed record AmrChange(
     public ImmutableArray<HistoryEntry> History { get; init; } = [];
     // 위치 수신 전에도 연결 상태를 통지한다. 기존 Mock/격자 공급자는 null을 유지한다.
     public DataConnectionSnapshot? Connection { get; init; }
+    // Fleet의 장비별 수신 세션. Connection은 전체 요약이며 제어 허용은 대상 세션으로 판단한다.
+    public ImmutableDictionary<string, DataConnectionSnapshot> DeviceConnections { get; init; }
+        = ImmutableDictionary<string, DataConnectionSnapshot>.Empty;
 }
 
 public sealed class AmrResyncRequiredException : Exception

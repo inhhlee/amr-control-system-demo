@@ -1,0 +1,31 @@
+{
+  "observerId": 34448,
+  "started": "2026-11-02T18:19:53.2808823+09:00",
+  "port": 62001,
+  "guiArguments": [
+    "--mqtt",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "62001",
+    "--fleet-config",
+    "C:\\amr-control-system-demo\\evidence\\GUI\\20261102-fleet-map-01\\live/fleet.json",
+    "--command-timeout-seconds",
+    "900"
+  ],
+  "observerStartTicks": 639292079932059520,
+  "guiStartTicks": 639292079932712117,
+  "container": "amr-fleet-gui-check-ceb12b3a029e4cf7a9232963e3349cbd",
+  "guiId": 41264,
+  "simulatorId": 9320,
+  "simulatorStartTicks": 639292080971737642,
+  "simulatorArguments": [
+    "--fleet-config",
+    "C:/amr-control-system-demo/evidence/GUI/20261102-fleet-map-01/live/fleet.json",
+    "--mqtt",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "62001"
+  ]
+}

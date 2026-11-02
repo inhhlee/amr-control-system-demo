@@ -1,0 +1,10 @@
+CommandSessionReady AmrId=AMR_001 Topic=amr/AMR_001/command
+FaultScenarioScheduled Code="DRIVE_FAULT" ActivateAfterMs=4000 ResolveAfterMs=8000
+CommandProcessed AmrId=AMR_001 Type=MOVE CmdId=GUI-deb25bf9970e4fcdb7278e5c142afd18 State=BUSY Diagnostic=NONE
+CommandProcessed AmrId=AMR_001 Type=RESET CmdId=BUSY-RESET State=BUSY Diagnostic=NONE
+FinalAckPublished AmrId=AMR_001 CmdId=BUSY-RESET Result=FAILURE Reason=BUSY_RESET_REJECTED Delivery=Unconfirmed
+AlarmPublished AmrId=AMR_001 Code="DRIVE_FAULT" AlarmState=ACTIVE Delivery=Unconfirmed
+FinalAckPublished AmrId=AMR_001 CmdId=GUI-deb25bf9970e4fcdb7278e5c142afd18 Result=FAILURE Reason=FAULT_INTERRUPTED Delivery=Unconfirmed
+CommandProcessed AmrId=AMR_001 Type=RESET CmdId=GUI-a874283499ab4875af1f2175ca761180 State=FAULT Diagnostic=NONE
+FinalAckPublished AmrId=AMR_001 CmdId=GUI-a874283499ab4875af1f2175ca761180 Result=FAILURE Reason=FAULT_CAUSE_ACTIVE Delivery=Unconfirmed
+CommandSessionEnded ExitCode=0

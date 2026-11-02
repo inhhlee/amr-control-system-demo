@@ -5,7 +5,7 @@ namespace Amr.Simulator.Telemetry;
 
 public sealed record SimulatorMqttOptions(MqttConnectionSettings Connection, int TelemetryMs, int HeartbeatMs)
 {
-    public static (string Config, SimulatorMqttOptions? Mqtt) Parse(string[] args)
+    public static (string Config, SimulatorMqttOptions? Mqtt) Parse(string[] args, bool useFleetDefaults = false)
     {
         var values = new Dictionary<string, string>(StringComparer.Ordinal);
         bool mqtt = false;
@@ -27,6 +27,11 @@ public sealed record SimulatorMqttOptions(MqttConnectionSettings Connection, int
         {
             if (values.Count != 1) throw new ArgumentException("MQTT options require --mqtt.");
             return (config, null);
+        }
+        if (useFleetDefaults)
+        {
+            values.TryAdd("--host", "127.0.0.1"); values.TryAdd("--port", "1884");
+            values.TryAdd("--telemetry-ms", "200"); values.TryAdd("--heartbeat-ms", "1000");
         }
         if (values.Count != 5) throw new ArgumentException("Specify --host, --port, --telemetry-ms and --heartbeat-ms with --mqtt.");
         int Positive(string key) => int.TryParse(values[key], NumberStyles.None, CultureInfo.InvariantCulture, out int value) && value > 0

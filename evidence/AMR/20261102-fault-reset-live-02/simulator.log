@@ -1,0 +1,20 @@
+CommandSessionReady AmrId=AMR_001 Topic=amr/AMR_001/command
+FaultScenarioScheduled Code="DRIVE_FAULT" ActivateAfterMs=4000 ResolveAfterMs=8000
+CommandProcessed AmrId=AMR_001 Type=MOVE CmdId=GUI-2a43cbe2516d4d34a005beefc11cd19c State=BUSY Diagnostic=NONE
+CommandProcessed AmrId=AMR_001 Type=RESET CmdId=BUSY-RESET State=BUSY Diagnostic=NONE
+FinalAckPublished AmrId=AMR_001 CmdId=BUSY-RESET Result=FAILURE Reason=BUSY_RESET_REJECTED Delivery=Unconfirmed
+AlarmPublished AmrId=AMR_001 Code="DRIVE_FAULT" AlarmState=ACTIVE Delivery=Unconfirmed
+FinalAckPublished AmrId=AMR_001 CmdId=GUI-2a43cbe2516d4d34a005beefc11cd19c Result=FAILURE Reason=FAULT_INTERRUPTED Delivery=Unconfirmed
+CommandProcessed AmrId=AMR_001 Type=RESET CmdId=GUI-0b60263e1b57456db7409e0cbd07c011 State=FAULT Diagnostic=NONE
+FinalAckPublished AmrId=AMR_001 CmdId=GUI-0b60263e1b57456db7409e0cbd07c011 Result=FAILURE Reason=FAULT_CAUSE_ACTIVE Delivery=Unconfirmed
+CommandProcessed AmrId=AMR_001 Type=RESET CmdId=GUI-474c338365e444deb53ce8a2ccf06336 State=FAULT Diagnostic=NONE
+FinalAckPublished AmrId=AMR_001 CmdId=GUI-474c338365e444deb53ce8a2ccf06336 Result=FAILURE Reason=FAULT_CAUSE_ACTIVE Delivery=Unconfirmed
+FaultCauseResolved AmrId=AMR_001 AllCausesResolved=True State=FAULT Alarm=LatchedUntilReset
+CommandProcessed AmrId=AMR_001 Type=RESET CmdId=GUI-5b81d8dde9af475a894131288bd11106 State=IDLE Diagnostic=NONE
+AlarmPublished AmrId=AMR_001 Code="DRIVE_FAULT" AlarmState=CLEARED Delivery=Unconfirmed
+FinalAckPublished AmrId=AMR_001 CmdId=GUI-5b81d8dde9af475a894131288bd11106 Result=SUCCESS Reason=RESET_COMPLETED Delivery=Unconfirmed
+CommandProcessed AmrId=AMR_001 Type=RESET CmdId=GUI-5b81d8dde9af475a894131288bd11106 State=IDLE Diagnostic=DUPLICATE_REQUEST
+FinalAckPublished AmrId=AMR_001 CmdId=GUI-5b81d8dde9af475a894131288bd11106 Result=SUCCESS Reason=RESET_COMPLETED Delivery=Unconfirmed
+CommandProcessed AmrId=AMR_001 Type=MOVE CmdId=GUI-1cd03a7dd0984ac183fe70e7cddbae91 State=BUSY Diagnostic=NONE
+FinalAckPublished AmrId=AMR_001 CmdId=GUI-1cd03a7dd0984ac183fe70e7cddbae91 Result=SUCCESS Reason=ARRIVED Delivery=Unconfirmed
+CommandSessionEnded ExitCode=0

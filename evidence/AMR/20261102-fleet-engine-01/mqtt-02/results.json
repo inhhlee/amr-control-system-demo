@@ -1,0 +1,50 @@
+{
+  "branch": "feature/50-fault-reset",
+  "ended": "2026-11-02T17:00:05.3010351+09:00",
+  "started": "2026-11-02T16:59:35.5699508+09:00",
+  "sdk": "10.0.401",
+  "port": 57292,
+  "head": "4aa0b8a3ba4941b872f30ce1619b18d106023daa",
+  "results": [
+    {
+      "id": "FLEET-01",
+      "passed": true,
+      "detail": "Independent EXE without Core/GUI/Infrastructure dependencies."
+    },
+    {
+      "id": "FLEET-02",
+      "passed": true,
+      "detail": "A/B command wait; R configured route arrival and continued Heartbeat."
+    },
+    {
+      "id": "FLEET-03",
+      "passed": true,
+      "detail": "Same cmdId is device-scoped; B STOP/RESET do not stop A."
+    },
+    {
+      "id": "FLEET-04",
+      "passed": true,
+      "detail": "A FAULT/ACTIVE/failed MOVE; B coordinates and periodic messages continue."
+    },
+    {
+      "id": "FLEET-05",
+      "passed": true,
+      "detail": "Cause resolution stays latched; new RESET clears alarm and returns IDLE at same coordinates."
+    },
+    {
+      "id": "FLEET-06",
+      "passed": true,
+      "detail": "10 target+cmdId final results; correct topic/payload, coordinates and alarm pair."
+    },
+    {
+      "id": "FLEET-07",
+      "passed": true,
+      "detail": "Ctrl+C joins all three devices; exit 0 without stderr."
+    },
+    {
+      "id": "FLEET-08",
+      "passed": true,
+      "detail": "R connection terminates alone; B completes MOVE; global exit aggregates failure 1."
+    }
+  ]
+}

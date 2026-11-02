@@ -1,0 +1,50 @@
+{
+  "sdk": "10.0.401",
+  "started": "2026-11-02T16:55:08.0087663+09:00",
+  "branch": "feature/50-fault-reset",
+  "ended": "2026-11-02T16:55:38.1057239+09:00",
+  "results": [
+    {
+      "passed": true,
+      "id": "FLEET-01",
+      "detail": "Independent EXE without Core/GUI/Infrastructure dependencies."
+    },
+    {
+      "passed": true,
+      "id": "FLEET-02",
+      "detail": "A/B command wait; R configured route arrival and continued Heartbeat."
+    },
+    {
+      "passed": true,
+      "id": "FLEET-03",
+      "detail": "Same cmdId is device-scoped; B STOP/RESET do not stop A."
+    },
+    {
+      "passed": true,
+      "id": "FLEET-04",
+      "detail": "A FAULT/ACTIVE/failed MOVE; B coordinates and periodic messages continue."
+    },
+    {
+      "passed": true,
+      "id": "FLEET-05",
+      "detail": "Cause resolution stays latched; new RESET clears alarm and returns IDLE at same coordinates."
+    },
+    {
+      "passed": true,
+      "id": "FLEET-06",
+      "detail": "10 target+cmdId final results; correct topic/payload, coordinates and alarm pair."
+    },
+    {
+      "passed": true,
+      "id": "FLEET-07",
+      "detail": "Ctrl+C joins all three devices; exit 0 without stderr."
+    },
+    {
+      "passed": true,
+      "id": "FLEET-08",
+      "detail": "R connection terminates alone; B completes MOVE; global exit aggregates failure 1."
+    }
+  ],
+  "head": "4aa0b8a3ba4941b872f30ce1619b18d106023daa",
+  "port": 51973
+}

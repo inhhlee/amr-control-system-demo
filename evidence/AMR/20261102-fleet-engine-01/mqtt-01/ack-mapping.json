@@ -1,0 +1,102 @@
+[
+  {
+    "topic": "amr/B/ack",
+    "payload": {
+      "id": "B",
+      "cmdId": "BUSY-RESET",
+      "result": "FAILURE",
+      "ts": 1793606111463,
+      "reason": "BUSY_RESET_REJECTED"
+    }
+  },
+  {
+    "topic": "amr/B/ack",
+    "payload": {
+      "id": "B",
+      "cmdId": "SAME-ID",
+      "result": "FAILURE",
+      "ts": 1793606111709,
+      "reason": "STOP_INTERRUPTED"
+    }
+  },
+  {
+    "topic": "amr/B/ack",
+    "payload": {
+      "id": "B",
+      "cmdId": "STOP-1",
+      "result": "SUCCESS",
+      "ts": 1793606111709,
+      "reason": "STOPPED"
+    }
+  },
+  {
+    "topic": "amr/A/ack",
+    "payload": {
+      "id": "A",
+      "cmdId": "SAME-ID",
+      "result": "FAILURE",
+      "ts": 1793606125478,
+      "reason": "FAULT_INTERRUPTED"
+    }
+  },
+  {
+    "topic": "amr/A/ack",
+    "payload": {
+      "id": "A",
+      "cmdId": "EARLY",
+      "result": "FAILURE",
+      "ts": 1793606126168,
+      "reason": "FAULT_CAUSE_ACTIVE"
+    }
+  },
+  {
+    "topic": "amr/A/ack",
+    "payload": {
+      "id": "A",
+      "cmdId": "RECOVER",
+      "result": "SUCCESS",
+      "ts": 1793606133700,
+      "reason": "RESET_COMPLETED"
+    }
+  },
+  {
+    "topic": "amr/R/ack",
+    "payload": {
+      "id": "R",
+      "cmdId": "AFTER-ROUTE",
+      "result": "SUCCESS",
+      "ts": 1793606134321,
+      "reason": "ARRIVED"
+    }
+  },
+  {
+    "topic": "amr/A/ack",
+    "payload": {
+      "id": "A",
+      "cmdId": "AFTER-RESET",
+      "result": "SUCCESS",
+      "ts": 1793606134509,
+      "reason": "ARRIVED"
+    }
+  },
+  {
+    "topic": "amr/B/ack",
+    "payload": {
+      "id": "B",
+      "cmdId": "CONTINUE",
+      "result": "FAILURE",
+      "ts": 1793606134694,
+      "reason": "STOP_INTERRUPTED"
+    }
+  },
+  {
+    "topic": "amr/B/ack",
+    "payload": {
+      "id": "B",
+      "cmdId": "STOP-2",
+      "result": "SUCCESS",
+      "ts": 1793606134694,
+      "reason": "STOPPED"
+    }
+  }
+]

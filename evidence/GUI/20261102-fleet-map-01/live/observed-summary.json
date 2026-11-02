@@ -1,0 +1,17 @@
+{
+  "Commands": 9,
+  "Acks": 9,
+  "Matched": 9,
+  "Telemetry": 9527,
+  "Heartbeat": 1904,
+  "Alarms": [
+    {
+      "id": "AMR_01",
+      "ts": 1793611477349,
+      "code": "SIM_SENSOR",
+      "level": "ERR",
+      "alarmState": "ACTIVE",
+      "message": "AMR_01 시험 장애"
+    }
+  ]
+}
