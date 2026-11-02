@@ -1,0 +1,277 @@
+[
+    {
+        "Id": "50bfc4b4902377e7ad453fb8c6a42003d8cbfa4333a7a05b0fc005d3db20b1e0",
+        "Created": "2026-11-02T07:59:36.607267534Z",
+        "Path": "/docker-entrypoint.sh",
+        "Args": [
+            "/usr/sbin/mosquitto",
+            "-c",
+            "/mosquitto/config/mosquitto.conf"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 7556,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-02T07:59:36.670527941Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:38c0da4f2ef84284d47b3b3eeea1cb3bdeabe81ee10caf0cd5c5ff61ee3ea408",
+        "ResolvConfPath": "/var/lib/docker/containers/50bfc4b4902377e7ad453fb8c6a42003d8cbfa4333a7a05b0fc005d3db20b1e0/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/50bfc4b4902377e7ad453fb8c6a42003d8cbfa4333a7a05b0fc005d3db20b1e0/hostname",
+        "HostsPath": "/var/lib/docker/containers/50bfc4b4902377e7ad453fb8c6a42003d8cbfa4333a7a05b0fc005d3db20b1e0/hosts",
+        "LogPath": "/var/lib/docker/containers/50bfc4b4902377e7ad453fb8c6a42003d8cbfa4333a7a05b0fc005d3db20b1e0/50bfc4b4902377e7ad453fb8c6a42003d8cbfa4333a7a05b0fc005d3db20b1e0-json.log",
+        "Name": "/amr-fleet-check-058f726437834cadbdc7039a4f52672b",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "bridge",
+            "PortBindings": {
+                "1883/tcp": [
+                    {
+                        "HostIp": "127.0.0.1",
+                        "HostPort": ""
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": true,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "Mounts": [
+                {
+                    "Type": "bind",
+                    "Source": "C:\\amr-control-system-demo/tests/manual/FAULT-RESET/mosquitto.conf",
+                    "Target": "/mosquitto/config/mosquitto.conf",
+                    "ReadOnly": true
+                }
+            ],
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "C:\\amr-control-system-demo/tests/manual/FAULT-RESET/mosquitto.conf",
+                "Destination": "/mosquitto/config/mosquitto.conf",
+                "Mode": "",
+                "RW": false,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "volume",
+                "Name": "ce75f13a304df7525f2764b65d085ba42a5f01c72f81d7ba9bac0a54afcfae26",
+                "Source": "/var/lib/docker/volumes/ce75f13a304df7525f2764b65d085ba42a5f01c72f81d7ba9bac0a54afcfae26/_data",
+                "Destination": "/mosquitto/data",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            },
+            {
+                "Type": "volume",
+                "Name": "3f8a2a1fa52c02fdce21e3966744dde72c94b90f95e6b836be3edbda09a1346f",
+                "Source": "/var/lib/docker/volumes/3f8a2a1fa52c02fdce21e3966744dde72c94b90f95e6b836be3edbda09a1346f/_data",
+                "Destination": "/mosquitto/log",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "50bfc4b49023",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "1883/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "VERSION=2.1.2",
+                "DOWNLOAD_SHA256=fd905380691ac65ea5a93779e8214941829e3d6e038d5edff9eac5fd74cbed02",
+                "GPG_KEYS=A0D6EEA1DCAE49A635A3B2F0779B22DFB3E717B7"
+            ],
+            "Cmd": [
+                "/usr/sbin/mosquitto",
+                "-c",
+                "/mosquitto/config/mosquitto.conf"
+            ],
+            "Image": "eclipse-mosquitto:2.1.2-alpine",
+            "Volumes": {
+                "/mosquitto/data": {},
+                "/mosquitto/log": {}
+            },
+            "WorkingDir": "/",
+            "Entrypoint": [
+                "/docker-entrypoint.sh"
+            ],
+            "Labels": {
+                "org.opencontainers.image.authors": "Roger Light \u003croger@atchoo.org\u003e",
+                "org.opencontainers.image.description": "Eclipse Mosquitto MQTT Broker",
+                "org.opencontainers.image.documentation": "https://mosquitto.org/documentation/",
+                "org.opencontainers.image.licenses": "EPL-2.0 OR BSD-3-Clause",
+                "org.opencontainers.image.source": "https://github.com/eclipse-mosquitto/mosquitto",
+                "org.opencontainers.image.title": "eclipse-mosquitto",
+                "org.opencontainers.image.url": "https://mosquitto.org/",
+                "org.opencontainers.image.version": "2.1.2"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "9d91d10de45158733319b10e33337625e231e5b9d837432b36cb5912db4ebfb5",
+            "SandboxKey": "/var/run/docker/netns/9d91d10de451",
+            "Ports": {
+                "1883/tcp": [
+                    {
+                        "HostIp": "127.0.0.1",
+                        "HostPort": "57292"
+                    }
+                ]
+            },
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "864b023f7187c7339823ba1fbb393ef97c29230c6ec7cf93ee624be2794270ed",
+                    "EndpointID": "9451fc963d85b838dd303e4e6a511200f2c5c2d49fe55207cf2b7d2d6ba64462",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.2",
+                    "MacAddress": "16:a1:ca:cc:bd:62",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:12436df85d6b2b91e63c71184da35ec89400a98abdc688a78b1403a11ecf44b4",
+            "size": 1556,
+            "annotations": {
+                "com.docker.official-images.bashbrew.arch": "amd64",
+                "org.opencontainers.image.base.digest": "sha256:1f3591b8a02ea153f41c5bba878ad477f63ab3d19349762cb77504db02a23e15",
+                "org.opencontainers.image.base.name": "alpine:3.23",
+                "org.opencontainers.image.created": "2026-09-17T21:15:14Z",
+                "org.opencontainers.image.revision": "5b74cce8a4fe2a73b57df6c703bfde2cfd535d60",
+                "org.opencontainers.image.source": "https://github.com/eclipse-mosquitto/mosquitto.git#5b74cce8a4fe2a73b57df6c703bfde2cfd535d60:docker/2.1-alpine",
+                "org.opencontainers.image.url": "https://hub.docker.com/_/eclipse-mosquitto",
+                "org.opencontainers.image.version": "2.1.2-alpine"
+            },
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]

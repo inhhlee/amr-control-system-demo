@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="b2b708cc-3afb-4038-83a5-6c7198c5c961" name="Admin@DESKTOP-N1BSNS3 2026-11-02 18:26:01" runUser="DESKTOP-N1BSNS3\Admin" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-02T18:26:01.4170351+09:00" queuing="2026-11-02T18:26:01.4170353+09:00" start="2026-11-02T18:26:00.5678330+09:00" finish="2026-11-02T18:26:01.4411777+09:00" />
+  <TestSettings name="default" id="8a0a67a8-1c68-41f1-bb74-808c0605d0ad">
+    <Deployment runDeploymentRoot="Admin_DESKTOP-N1BSNS3_2026-11-02_18_26_01" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="e14074a0-607f-49cd-988c-4c75716d8d0d" testId="9187e20f-047b-424f-b4df-1c96b2116659" testName="Amr.Core.Tests.AmrDomainManagerTests.BrokerLossHoldsBothWithoutRewritingLastTelemetryOrOperationalState" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0127302" startTime="2026-11-02T18:26:01.3786632+09:00" endTime="2026-11-02T18:26:01.3983623+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e14074a0-607f-49cd-988c-4c75716d8d0d" />
+    <UnitTestResult executionId="3ec2eb43-b9d7-4b6d-bdd5-7775e5012507" testId="0f09ecc6-05dc-808a-5b2d-44bfebdc48f8" testName="Amr.Core.Tests.CommandTrackerTests.ResetResultsMatchTargetAndIdWithoutRewritingFailedMove" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0002332" startTime="2026-11-02T18:26:01.3789532+09:00" endTime="2026-11-02T18:26:01.3789734+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3ec2eb43-b9d7-4b6d-bdd5-7775e5012507" />
+    <UnitTestResult executionId="b91906ee-dbbc-49e7-8d8d-8dfd1d0f4a93" testId="317eefa2-8fbe-a0ed-bdcd-761c448a5b89" testName="Amr.Core.Tests.AmrDomainManagerTests.UnknownIdDuplicateAndOutOfOrderObservationsCannotChangeDomain" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0001660" startTime="2026-11-02T18:26:01.3986363+09:00" endTime="2026-11-02T18:26:01.3986599+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b91906ee-dbbc-49e7-8d8d-8dfd1d0f4a93" />
+    <UnitTestResult executionId="74b93c75-9bea-498e-83b2-44e2669cd636" testId="d70a3e3c-64f8-702e-78b8-fcf3378cfb3a" testName="Amr.Core.Tests.AmrDomainManagerTests.CompletionDuringHoldIsLatchedUntilExplicitResume" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0002636" startTime="2026-11-02T18:26:01.3989305+09:00" endTime="2026-11-02T18:26:01.3989515+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="74b93c75-9bea-498e-83b2-44e2669cd636" />
+    <UnitTestResult executionId="5ef71ae7-5b88-4cda-8990-30cebdfcdc61" testId="2d6c1b61-bdbc-dee9-680d-41a979a979c1" testName="Amr.Core.Tests.AmrDomainManagerTests.OldSessionCannotRecoverNewSessionOrDeliverTelemetry" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0001399" startTime="2026-11-02T18:26:01.3987844+09:00" endTime="2026-11-02T18:26:01.3988050+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5ef71ae7-5b88-4cda-8990-30cebdfcdc61" />
+    <UnitTestResult executionId="157a0d98-a982-4ae4-a1e7-7ffdda37c23f" testId="21b0e288-f5b5-387a-4645-7fabe63eac58" testName="Amr.Core.Tests.CommandTrackerTests.UnknownPublicationAndDefinitelyNotSentAreDistinct(notSent: True, expected: Failure, publication: NotAttempted)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0001388" startTime="2026-11-02T18:26:01.3787552+09:00" endTime="2026-11-02T18:26:01.3787782+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="157a0d98-a982-4ae4-a1e7-7ffdda37c23f" />
+    <UnitTestResult executionId="007af60e-b528-4a89-86a5-797ad6a8dc65" testId="f7cb8dd1-deb1-ae01-5464-25abe7e27273" testName="Amr.Core.Tests.CommandTrackerTests.DeadlineStartsAtPublicationAndLateAckKeepsPastTimeout" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0681510" startTime="2026-11-02T18:26:01.2981982+09:00" endTime="2026-11-02T18:26:01.3711575+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="007af60e-b528-4a89-86a5-797ad6a8dc65" />
+    <UnitTestResult executionId="81fd92b2-bc7b-437f-9095-9ef2fbcbaab7" testId="b5045560-50f9-e52e-70db-0e3b2fa2a013" testName="Amr.Core.Tests.CommandTrackerTests.RecoveryStopPreservesUnknownMoveButAllowsANewMission" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0006440" startTime="2026-11-02T18:26:01.3788874+09:00" endTime="2026-11-02T18:26:01.3789088+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="81fd92b2-bc7b-437f-9095-9ef2fbcbaab7" />
+    <UnitTestResult executionId="cf05bb3b-ef41-430c-a2c5-a19e75846c2e" testId="0ab3e089-50fd-4e06-c97a-366b4ffd5070" testName="Amr.Core.Tests.CommandTrackerTests.OtherTargetUnknownIdAndDuplicateCannotChangeResultAndConflictPreservesFirst" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0021013" startTime="2026-11-02T18:26:01.3969036+09:00" endTime="2026-11-02T18:26:01.3969498+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cf05bb3b-ef41-430c-a2c5-a19e75846c2e" />
+    <UnitTestResult executionId="60c28c77-6712-45a4-b31b-92bf60b44290" testId="5b8075f9-6020-d519-b59b-2cf1067a19c0" testName="Amr.Core.Tests.AmrDomainManagerTests.AwaitingFirstCannotStartMissionAndTelemetryDoesNotDeclareLiveness" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0012580" startTime="2026-11-02T18:26:01.3985534+09:00" endTime="2026-11-02T18:26:01.3985795+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="60c28c77-6712-45a4-b31b-92bf60b44290" />
+    <UnitTestResult executionId="e5cfccbe-c756-4c0c-98fa-a8133d30ece3" testId="3f2510ed-b0f7-671f-de82-74e71807d9be" testName="Amr.Core.Tests.AmrDomainManagerTests.TimeoutHoldsOnlyAffectedMissionAndRecoveryRequiresExplicitResume" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0010441" startTime="2026-11-02T18:26:01.3984634+09:00" endTime="2026-11-02T18:26:01.3984902+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e5cfccbe-c756-4c0c-98fa-a8133d30ece3" />
+    <UnitTestResult executionId="7d012b45-b67c-4225-be0e-6a65fed84331" testId="565f2909-9e1c-fadd-9518-4d0f6a58ae5b" testName="Amr.Core.Tests.AmrDomainManagerTests.ConcurrentQueuesUpdateDifferentAmrsAndSnapshotsRemainImmutable" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0031536" startTime="2026-11-02T18:26:01.3988571+09:00" endTime="2026-11-02T18:26:01.3988785+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7d012b45-b67c-4225-be0e-6a65fed84331" />
+    <UnitTestResult executionId="aaea4911-bf9e-4a98-b337-e3e3d1a09508" testId="3d02ee1f-18a6-5305-b714-285687f1ea79" testName="Amr.Core.Tests.CommandTrackerTests.EarlyAckIsNotOverwrittenByPublicationReturn" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0040216" startTime="2026-11-02T18:26:01.3782643+09:00" endTime="2026-11-02T18:26:01.3786889+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="aaea4911-bf9e-4a98-b337-e3e3d1a09508" />
+    <UnitTestResult executionId="c9f28c41-1e1e-4824-a41c-5b6a63e0c2b7" testId="923560a0-eeb0-ffc5-9bf3-e8990ee8d32a" testName="Amr.Core.Tests.AmrDomainManagerTests.SessionStopHoldsMissionButDoesNotInventBrokerLossOrPhysicalStop" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0721011" startTime="2026-11-02T18:26:01.2991681+09:00" endTime="2026-11-02T18:26:01.3783081+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c9f28c41-1e1e-4824-a41c-5b6a63e0c2b7" />
+    <UnitTestResult executionId="9813333b-d204-404d-bd52-ffde64b5459f" testId="378fd26e-5750-2f7a-ecd2-0872f2be9354" testName="Amr.Core.Tests.CommandTrackerTests.UnknownPublicationAndDefinitelyNotSentAreDistinct(notSent: False, expected: Unconfirmed, publication: Unknown)" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0002026" startTime="2026-11-02T18:26:01.3788123+09:00" endTime="2026-11-02T18:26:01.3788374+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9813333b-d204-404d-bd52-ffde64b5459f" />
+    <UnitTestResult executionId="f9d81720-cbb9-4482-b6b5-602b9dc09a6e" testId="23f0cc15-fda0-59ee-2636-fa27b41fea5d" testName="Amr.Core.Tests.CommandTrackerTests.CapacityReservesStopAndDoesNotEvictExistingCommands" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0007009" startTime="2026-11-02T18:26:01.3790258+09:00" endTime="2026-11-02T18:26:01.3790458+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f9d81720-cbb9-4482-b6b5-602b9dc09a6e" />
+    <UnitTestResult executionId="4466b2d6-0ad3-455d-86f9-601b6b9bf58e" testId="776ba3b1-48d5-ef7d-3933-59640b5072c6" testName="Amr.Core.Tests.AmrDomainManagerTests.LateCompletionFromCanceledOrDifferentMissionIsIgnored" computerName="DESKTOP-N1BSNS3" duration="00:00:00.0003420" startTime="2026-11-02T18:26:01.3987124+09:00" endTime="2026-11-02T18:26:01.3987369+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4466b2d6-0ad3-455d-86f9-601b6b9bf58e" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Amr.Core.Tests.AmrDomainManagerTests.CompletionDuringHoldIsLatchedUntilExplicitResume" storage="c:\amr-control-system-demo\tests\amr.core.tests\bin\fleetengine\net10.0\amr.core.tests.dll" id="d70a3e3c-64f8-702e-78b8-fcf3378cfb3a">
+      <Execution id="74b93c75-9bea-498e-83b2-44e2669cd636" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\FleetEngine\net10.0\Amr.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Core.Tests.AmrDomainManagerTests" name="CompletionDuringHoldIsLatchedUntilExplicitResume" />
+    </UnitTest>
+    <UnitTest name="Amr.Core.Tests.CommandTrackerTests.OtherTargetUnknownIdAndDuplicateCannotChangeResultAndConflictPreservesFirst" storage="c:\amr-control-system-demo\tests\amr.core.tests\bin\fleetengine\net10.0\amr.core.tests.dll" id="0ab3e089-50fd-4e06-c97a-366b4ffd5070">
+      <Execution id="cf05bb3b-ef41-430c-a2c5-a19e75846c2e" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\FleetEngine\net10.0\Amr.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Core.Tests.CommandTrackerTests" name="OtherTargetUnknownIdAndDuplicateCannotChangeResultAndConflictPreservesFirst" />
+    </UnitTest>
+    <UnitTest name="Amr.Core.Tests.AmrDomainManagerTests.OldSessionCannotRecoverNewSessionOrDeliverTelemetry" storage="c:\amr-control-system-demo\tests\amr.core.tests\bin\fleetengine\net10.0\amr.core.tests.dll" id="2d6c1b61-bdbc-dee9-680d-41a979a979c1">
+      <Execution id="5ef71ae7-5b88-4cda-8990-30cebdfcdc61" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\FleetEngine\net10.0\Amr.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Core.Tests.AmrDomainManagerTests" name="OldSessionCannotRecoverNewSessionOrDeliverTelemetry" />
+    </UnitTest>
+    <UnitTest name="Amr.Core.Tests.AmrDomainManagerTests.UnknownIdDuplicateAndOutOfOrderObservationsCannotChangeDomain" storage="c:\amr-control-system-demo\tests\amr.core.tests\bin\fleetengine\net10.0\amr.core.tests.dll" id="317eefa2-8fbe-a0ed-bdcd-761c448a5b89">
+      <Execution id="b91906ee-dbbc-49e7-8d8d-8dfd1d0f4a93" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\FleetEngine\net10.0\Amr.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Core.Tests.AmrDomainManagerTests" name="UnknownIdDuplicateAndOutOfOrderObservationsCannotChangeDomain" />
+    </UnitTest>
+    <UnitTest name="Amr.Core.Tests.CommandTrackerTests.ResetResultsMatchTargetAndIdWithoutRewritingFailedMove" storage="c:\amr-control-system-demo\tests\amr.core.tests\bin\fleetengine\net10.0\amr.core.tests.dll" id="0f09ecc6-05dc-808a-5b2d-44bfebdc48f8">
+      <Execution id="3ec2eb43-b9d7-4b6d-bdd5-7775e5012507" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\FleetEngine\net10.0\Amr.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Core.Tests.CommandTrackerTests" name="ResetResultsMatchTargetAndIdWithoutRewritingFailedMove" />
+    </UnitTest>
+    <UnitTest name="Amr.Core.Tests.CommandTrackerTests.UnknownPublicationAndDefinitelyNotSentAreDistinct(notSent: False, expected: Unconfirmed, publication: Unknown)" storage="c:\amr-control-system-demo\tests\amr.core.tests\bin\fleetengine\net10.0\amr.core.tests.dll" id="378fd26e-5750-2f7a-ecd2-0872f2be9354">
+      <Execution id="9813333b-d204-404d-bd52-ffde64b5459f" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\FleetEngine\net10.0\Amr.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Core.Tests.CommandTrackerTests" name="UnknownPublicationAndDefinitelyNotSentAreDistinct" />
+    </UnitTest>
+    <UnitTest name="Amr.Core.Tests.CommandTrackerTests.DeadlineStartsAtPublicationAndLateAckKeepsPastTimeout" storage="c:\amr-control-system-demo\tests\amr.core.tests\bin\fleetengine\net10.0\amr.core.tests.dll" id="f7cb8dd1-deb1-ae01-5464-25abe7e27273">
+      <Execution id="007af60e-b528-4a89-86a5-797ad6a8dc65" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\FleetEngine\net10.0\Amr.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Core.Tests.CommandTrackerTests" name="DeadlineStartsAtPublicationAndLateAckKeepsPastTimeout" />
+    </UnitTest>
+    <UnitTest name="Amr.Core.Tests.CommandTrackerTests.CapacityReservesStopAndDoesNotEvictExistingCommands" storage="c:\amr-control-system-demo\tests\amr.core.tests\bin\fleetengine\net10.0\amr.core.tests.dll" id="23f0cc15-fda0-59ee-2636-fa27b41fea5d">
+      <Execution id="f9d81720-cbb9-4482-b6b5-602b9dc09a6e" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\FleetEngine\net10.0\Amr.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Core.Tests.CommandTrackerTests" name="CapacityReservesStopAndDoesNotEvictExistingCommands" />
+    </UnitTest>
+    <UnitTest name="Amr.Core.Tests.AmrDomainManagerTests.AwaitingFirstCannotStartMissionAndTelemetryDoesNotDeclareLiveness" storage="c:\amr-control-system-demo\tests\amr.core.tests\bin\fleetengine\net10.0\amr.core.tests.dll" id="5b8075f9-6020-d519-b59b-2cf1067a19c0">
+      <Execution id="60c28c77-6712-45a4-b31b-92bf60b44290" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\FleetEngine\net10.0\Amr.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Core.Tests.AmrDomainManagerTests" name="AwaitingFirstCannotStartMissionAndTelemetryDoesNotDeclareLiveness" />
+    </UnitTest>
+    <UnitTest name="Amr.Core.Tests.CommandTrackerTests.EarlyAckIsNotOverwrittenByPublicationReturn" storage="c:\amr-control-system-demo\tests\amr.core.tests\bin\fleetengine\net10.0\amr.core.tests.dll" id="3d02ee1f-18a6-5305-b714-285687f1ea79">
+      <Execution id="aaea4911-bf9e-4a98-b337-e3e3d1a09508" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\FleetEngine\net10.0\Amr.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Core.Tests.CommandTrackerTests" name="EarlyAckIsNotOverwrittenByPublicationReturn" />
+    </UnitTest>
+    <UnitTest name="Amr.Core.Tests.AmrDomainManagerTests.BrokerLossHoldsBothWithoutRewritingLastTelemetryOrOperationalState" storage="c:\amr-control-system-demo\tests\amr.core.tests\bin\fleetengine\net10.0\amr.core.tests.dll" id="9187e20f-047b-424f-b4df-1c96b2116659">
+      <Execution id="e14074a0-607f-49cd-988c-4c75716d8d0d" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\FleetEngine\net10.0\Amr.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Core.Tests.AmrDomainManagerTests" name="BrokerLossHoldsBothWithoutRewritingLastTelemetryOrOperationalState" />
+    </UnitTest>
+    <UnitTest name="Amr.Core.Tests.AmrDomainManagerTests.LateCompletionFromCanceledOrDifferentMissionIsIgnored" storage="c:\amr-control-system-demo\tests\amr.core.tests\bin\fleetengine\net10.0\amr.core.tests.dll" id="776ba3b1-48d5-ef7d-3933-59640b5072c6">
+      <Execution id="4466b2d6-0ad3-455d-86f9-601b6b9bf58e" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\FleetEngine\net10.0\Amr.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Core.Tests.AmrDomainManagerTests" name="LateCompletionFromCanceledOrDifferentMissionIsIgnored" />
+    </UnitTest>
+    <UnitTest name="Amr.Core.Tests.CommandTrackerTests.UnknownPublicationAndDefinitelyNotSentAreDistinct(notSent: True, expected: Failure, publication: NotAttempted)" storage="c:\amr-control-system-demo\tests\amr.core.tests\bin\fleetengine\net10.0\amr.core.tests.dll" id="21b0e288-f5b5-387a-4645-7fabe63eac58">
+      <Execution id="157a0d98-a982-4ae4-a1e7-7ffdda37c23f" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\FleetEngine\net10.0\Amr.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Core.Tests.CommandTrackerTests" name="UnknownPublicationAndDefinitelyNotSentAreDistinct" />
+    </UnitTest>
+    <UnitTest name="Amr.Core.Tests.CommandTrackerTests.RecoveryStopPreservesUnknownMoveButAllowsANewMission" storage="c:\amr-control-system-demo\tests\amr.core.tests\bin\fleetengine\net10.0\amr.core.tests.dll" id="b5045560-50f9-e52e-70db-0e3b2fa2a013">
+      <Execution id="81fd92b2-bc7b-437f-9095-9ef2fbcbaab7" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\FleetEngine\net10.0\Amr.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Core.Tests.CommandTrackerTests" name="RecoveryStopPreservesUnknownMoveButAllowsANewMission" />
+    </UnitTest>
+    <UnitTest name="Amr.Core.Tests.AmrDomainManagerTests.SessionStopHoldsMissionButDoesNotInventBrokerLossOrPhysicalStop" storage="c:\amr-control-system-demo\tests\amr.core.tests\bin\fleetengine\net10.0\amr.core.tests.dll" id="923560a0-eeb0-ffc5-9bf3-e8990ee8d32a">
+      <Execution id="c9f28c41-1e1e-4824-a41c-5b6a63e0c2b7" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\FleetEngine\net10.0\Amr.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Core.Tests.AmrDomainManagerTests" name="SessionStopHoldsMissionButDoesNotInventBrokerLossOrPhysicalStop" />
+    </UnitTest>
+    <UnitTest name="Amr.Core.Tests.AmrDomainManagerTests.ConcurrentQueuesUpdateDifferentAmrsAndSnapshotsRemainImmutable" storage="c:\amr-control-system-demo\tests\amr.core.tests\bin\fleetengine\net10.0\amr.core.tests.dll" id="565f2909-9e1c-fadd-9518-4d0f6a58ae5b">
+      <Execution id="7d012b45-b67c-4225-be0e-6a65fed84331" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\FleetEngine\net10.0\Amr.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Core.Tests.AmrDomainManagerTests" name="ConcurrentQueuesUpdateDifferentAmrsAndSnapshotsRemainImmutable" />
+    </UnitTest>
+    <UnitTest name="Amr.Core.Tests.AmrDomainManagerTests.TimeoutHoldsOnlyAffectedMissionAndRecoveryRequiresExplicitResume" storage="c:\amr-control-system-demo\tests\amr.core.tests\bin\fleetengine\net10.0\amr.core.tests.dll" id="3f2510ed-b0f7-671f-de82-74e71807d9be">
+      <Execution id="e5cfccbe-c756-4c0c-98fa-a8133d30ece3" />
+      <TestMethod codeBase="C:\amr-control-system-demo\tests\Amr.Core.Tests\bin\FleetEngine\net10.0\Amr.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Amr.Core.Tests.AmrDomainManagerTests" name="TimeoutHoldsOnlyAffectedMissionAndRecoveryRequiresExplicitResume" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="9187e20f-047b-424f-b4df-1c96b2116659" executionId="e14074a0-607f-49cd-988c-4c75716d8d0d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0f09ecc6-05dc-808a-5b2d-44bfebdc48f8" executionId="3ec2eb43-b9d7-4b6d-bdd5-7775e5012507" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="317eefa2-8fbe-a0ed-bdcd-761c448a5b89" executionId="b91906ee-dbbc-49e7-8d8d-8dfd1d0f4a93" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d70a3e3c-64f8-702e-78b8-fcf3378cfb3a" executionId="74b93c75-9bea-498e-83b2-44e2669cd636" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2d6c1b61-bdbc-dee9-680d-41a979a979c1" executionId="5ef71ae7-5b88-4cda-8990-30cebdfcdc61" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="21b0e288-f5b5-387a-4645-7fabe63eac58" executionId="157a0d98-a982-4ae4-a1e7-7ffdda37c23f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f7cb8dd1-deb1-ae01-5464-25abe7e27273" executionId="007af60e-b528-4a89-86a5-797ad6a8dc65" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b5045560-50f9-e52e-70db-0e3b2fa2a013" executionId="81fd92b2-bc7b-437f-9095-9ef2fbcbaab7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0ab3e089-50fd-4e06-c97a-366b4ffd5070" executionId="cf05bb3b-ef41-430c-a2c5-a19e75846c2e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5b8075f9-6020-d519-b59b-2cf1067a19c0" executionId="60c28c77-6712-45a4-b31b-92bf60b44290" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3f2510ed-b0f7-671f-de82-74e71807d9be" executionId="e5cfccbe-c756-4c0c-98fa-a8133d30ece3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="565f2909-9e1c-fadd-9518-4d0f6a58ae5b" executionId="7d012b45-b67c-4225-be0e-6a65fed84331" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3d02ee1f-18a6-5305-b714-285687f1ea79" executionId="aaea4911-bf9e-4a98-b337-e3e3d1a09508" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="923560a0-eeb0-ffc5-9bf3-e8990ee8d32a" executionId="c9f28c41-1e1e-4824-a41c-5b6a63e0c2b7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="378fd26e-5750-2f7a-ecd2-0872f2be9354" executionId="9813333b-d204-404d-bd52-ffde64b5459f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="23f0cc15-fda0-59ee-2636-fa27b41fea5d" executionId="f9d81720-cbb9-4482-b6b5-602b9dc09a6e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="776ba3b1-48d5-ef7d-3933-59640b5072c6" executionId="4466b2d6-0ad3-455d-86f9-601b6b9bf58e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="목록에 없는 결과" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="로드된 모든 결과" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="17" executed="17" passed="17" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.12)&#xD;
+[xUnit.net 00:00:00.19]   Discovering: Amr.Core.Tests&#xD;
+[xUnit.net 00:00:00.26]   Discovered:  Amr.Core.Tests&#xD;
+[xUnit.net 00:00:00.28]   Starting:    Amr.Core.Tests&#xD;
+[xUnit.net 00:00:00.39]   Finished:    Amr.Core.Tests&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

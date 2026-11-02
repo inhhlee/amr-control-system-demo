@@ -7,7 +7,7 @@ namespace Amr.Simulator.Configuration;
 public static class FleetSettingsLoader
 {
     private static readonly string[] AmrFields =
-        ["amrId", "initialPosition", "speedMps", "updateIntervalMs", "waypoints", "faults"];
+        ["amrId", "initialPosition", "speedMps", "updateIntervalMs", "waypoints", "faults", "mode"];
 
     public static async Task<FleetSettings> LoadAsync(string path, CancellationToken token = default) =>
         Parse(await SimulatorSettingsLoader.ReadUtf8Async(path, token));
@@ -33,7 +33,7 @@ public static class FleetSettingsLoader
             {
                 writer.WriteStartObject();
                 foreach (var property in item.EnumerateObject())
-                    if (property.Name != "faults") property.WriteTo(writer);
+                    if (property.Name is not ("faults" or "mode")) property.WriteTo(writer);
                 writer.WriteEndObject();
             }
             SimulatorSettings settings;
@@ -44,12 +44,31 @@ public static class FleetSettingsLoader
                 throw new ConfigurationException(path + ".amrId", "AMR ID가 중복됐습니다.");
 
             var faults = Required(item, "faults", path);
+            var mode = AmrOperationMode.Route; // 기존 Fleet JSON의 자동 경로 동작 유지.
+            if (item.TryGetProperty("mode", out var configuredMode))
+            {
+                if (configuredMode.ValueKind != JsonValueKind.String)
+                    throw new ConfigurationException(path + ".mode", "mode는 route 또는 command 문자열이어야 합니다.");
+                mode = configuredMode.GetString() switch
+                {
+                    "route" => AmrOperationMode.Route,
+                    "command" => AmrOperationMode.Command,
+                    _ => throw new ConfigurationException(path + ".mode", "지원하는 운전 모드는 route와 command입니다.")
+                };
+            }
+            amrs.Add(new(settings, ParseFaults(faults, path + ".faults", settings.AmrId), mode));
+        }
+        return new(amrs);
+    }
+
+    internal static IReadOnlyList<FaultScenario> ParseFaults(JsonElement faults, string path, string amrId)
+    {
             if (faults.ValueKind != JsonValueKind.Array)
-                throw new ConfigurationException(path + ".faults", "장애 시나리오 배열이 필요합니다. 장애 없음은 빈 배열입니다.");
+                throw new ConfigurationException(path, "장애 시나리오 배열이 필요합니다. 장애 없음은 빈 배열입니다.");
             var scenarios = new List<FaultScenario>();
             foreach (var fault in faults.EnumerateArray())
             {
-                string faultPath = $"{path}.faults[{scenarios.Count}]";
+                string faultPath = $"{path}[{scenarios.Count}]";
                 Members(fault, faultPath, ["code", "level", "activateAfterMs", "resolveAfterMs", "message"]);
                 var code = Required(fault, "code", faultPath);
                 var level = Required(fault, "level", faultPath);
@@ -60,20 +79,18 @@ public static class FleetSettingsLoader
                 // Alarm의 문자열·등급 규칙을 설정 검사에서 중복 구현하지 않는다.
                 var payload = new Dictionary<string, object?>
                 {
-                    ["id"] = settings.AmrId, ["ts"] = 0, ["code"] = code,
+                    ["id"] = amrId, ["ts"] = 0, ["code"] = code,
                     ["level"] = level, ["alarmState"] = "ACTIVE"
                 };
                 if (fault.TryGetProperty("message", out var message)) payload["message"] = message;
-                var validated = new AlarmValidator().Validate($"amr/{settings.AmrId}/alarm",
+                var validated = new AlarmValidator().Validate($"amr/{amrId}/alarm",
                     new ReadOnlySequence<byte>(JsonSerializer.SerializeToUtf8Bytes(payload)), DateTimeOffset.UnixEpoch);
                 if (!validated.IsValid)
                     throw new ConfigurationException(faultPath + validated.Error!.Field[1..], validated.Error.Reason);
                 var model = validated.Message!;
                 scenarios.Add(new(model.Code, model.Level, activate, resolve, model.Message));
             }
-            amrs.Add(new(settings, scenarios.AsReadOnly()));
-        }
-        return new(amrs);
+            return scenarios.AsReadOnly();
     }
 
     private static long Milliseconds(JsonElement element, string field, string path)

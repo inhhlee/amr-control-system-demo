@@ -9,6 +9,7 @@ namespace Amr.ControlGui;
 public partial class MainForm
 {
     private Button? _openSimulation;
+    private Button? _faultReset;
     private DataGridView? _alarmGrid, _historyGrid;
     private Label? _alarmDetail, _simulationTarget, _historyDetail, _historyCount, _zoomLabel;
     private TextBox? _historyAmr;
@@ -92,9 +93,14 @@ public partial class MainForm
         _openSimulation.ForeColor = Color.White;
         launch.Controls.Add(_simulationTarget, 0, 0);
         launch.Controls.Add(_openSimulation, 0, 1);
-        launch.Controls.Add(TextLabel("simulationHint", actual
-            ? "실제 MOVE·STOP · 최종 응답 확인\n창을 닫아도 AMR 이동은 계속합니다."
-            : "시작 · Stop · 상태·알람·응답 확인\n열린 창은 선택한 AMR 대상을 유지합니다.", 8, Color.SlateGray), 0, 2);
+        if (actual)
+        {
+            _faultReset = ActionButton("faultReset", "RESET · 선택 장비 장애 복구", ResetFaultClicked, 250);
+            _faultReset.Dock = DockStyle.Fill;
+            launch.Controls.Add(_faultReset, 0, 2);
+        }
+        else launch.Controls.Add(TextLabel("simulationHint",
+            "시작 · Stop · 상태·알람·응답 확인\n열린 창은 선택한 AMR 대상을 유지합니다.", 8, Color.SlateGray), 0, 2);
         commandBody.Controls.Add(launch);
 
         ConfigureHistory();
@@ -232,7 +238,7 @@ public partial class MainForm
     {
         if (_openSimulation is null || device.Journey is not { } journey) return;
         detailsLabel.Text = $"출발지 · {device.AmrId}\n{journey.Source.Name} ({Number(journey.Source.X)}, {Number(journey.Source.Y)}) m\n" +
-            $"출발 시각 {TimeText(journey.StartedAt)}\n\n할당 목적지 · {journey.Destination.Name}\n{device.AmrId} · {SimulationForm.PhaseText(journey.Phase)}\n" +
+            $"출발 시각 {TimeText(journey.StartedAt)}\n\n할당 목적지 · {journey.Destination.Name}\n{device.AmrId} · {(device.State == AmrState.FAULT ? "FAULT · 장애" : SimulationForm.PhaseText(journey.Phase))}\n" +
             $"목표 ({Number(journey.Destination.X)}, {Number(journey.Destination.Y)}) m\n\n" +
             $"출발–목적지 거리 {Number(journey.TotalDistance)} m\n이동 {Number(journey.TraveledDistance)} m · 남은 {Number(journey.RemainingDistance)} m\n" +
             $"현재 ({Number(device.X)}, {Number(device.Y)}) m";
@@ -241,7 +247,7 @@ public partial class MainForm
         {
             detailsLabel.Text = detailsLabel.Text.Replace("출발 시각", "이동 관측");
             detailsLabel.Text += $"\n속도 {Number(device.SpeedMps)} m/s · 운행 {StateText(device.State)}\n거리 기준: {journey.DistanceBasis}\nBroker {ConnectionText(device.BrokerConnection)} · 생존 {LivenessText(device.Liveness)}";
-            if (_dataConnection is { TelemetryIsCurrent: false }) detailsLabel.Text += "\n마지막 수신값 · 현재 위치·운행 미확인";
+            if (ConnectionFor(device.AmrId) is { TelemetryIsCurrent: false }) detailsLabel.Text += "\n마지막 수신값 · 현재 위치·운행 미확인";
         }
     }
 
@@ -270,7 +276,7 @@ public partial class MainForm
             RenderHistory();
         }
         foreach (var (id, form) in _simulationWindows)
-            if (_devices.TryGetValue(id, out var device)) form.Render(device, change.Alarms, change.Commands, change.Connection);
+            if (_devices.TryGetValue(id, out var device)) form.Render(device, change.Alarms, change.Commands, ConnectionFor(id));
     }
 
     // 전체는 등록 장비 수이며 연결 여부로 제외하지 않는다. 현재 알람은 IsActive 기준으로 집계한다.
@@ -297,7 +303,7 @@ public partial class MainForm
         if (_provider is null || _dispatcher is null || SelectedAmrId is not string id || !_devices.TryGetValue(id, out var device)) return;
         if (_simulationWindows.TryGetValue(id, out var existing)) { existing.Activate(); return; }
         var window = new SimulationForm(device, _provider, _dispatcher);
-        window.Render(device, _alarms, _commands, _dataConnection);
+        window.Render(device, _alarms, _commands, ConnectionFor(id));
         _simulationWindows.Add(id, window);
         window.FormClosed += (_, _) => _simulationWindows.Remove(id);
         window.Show(this);

@@ -103,7 +103,7 @@ trial의 기본 콘솔은 접속·단절·재접속·첫 수신·상태 변화·
 
 [기본 설정](../config/simulator.single.json)을 이용한 경로 실행과 `--command-mode --mqtt`의 명령 대기 실행을 구분한다. 격자 계산은 이 프로젝트에 있으며, 그 결과를 보여 주는 웹 호스트는 [tools/Amr.Simulator.Map](../tools/Amr.Simulator.Map/README.md)이다.
 
-현재 명령 모드는 MOVE/STOP·도착/중단 응답을 구현한다. 장애 시점 설정의 읽기와 장애 알람 발생·해제의 실행은 다른 범위이며, RESET 수행·장애 시나리오 전체는 후속이다. [설정·실행 안내](Amr.Simulator/README.md).
+단일 명령 모드와 Fleet은 장비별 `AmrDeviceContext`에서 MOVE/STOP·도착/중단 응답·장애 발생·원인 해소·RESET 복구를 처리한다. Fleet JSON의 route/command 모드를 혼합할 수 있다. 원인 해소만으로 FAULT/알람을 해제하지 않으며 RESET 성공 시 현재 좌표에서 IDLE로 복구한다. 한 장비 실패는 다른 장비를 종료하지 않는다. [설정·실행 안내](Amr.Simulator/README.md) · [Fleet 시험](../tests/manual/FLEET-CONTROL/README.md) · [GUI 장애·RESET 시험](../tests/manual/FAULT-RESET/README.md).
 
 <a id="core"></a>
 
@@ -132,7 +132,7 @@ trial의 기본 콘솔은 접속·단절·재접속·첫 수신·상태 변화·
 | [MqttAmrDataProvider.cs](Amr.Infrastructure/Mqtt/MqttAmrDataProvider.cs) | 통신 실행/종료, 연결·생존·수신 상태 변환, GUI 조회와 변경 알림 |
 | [MqttAmrDataProvider.Commands.cs](Amr.Infrastructure/Mqtt/MqttAmrDataProvider.Commands.cs) | GUI의 MOVE/STOP 요청·발행·ACK 연결, 수신 알람, 목적지와 실행 중 이력 관리 |
 
-현재 한 공급자는 지정 AMR 한 대를 관리한다. 이력은 이번 실행의 메모리에 보관한다. trial에서 보낸 외부 명령은 GUI 자체 요청으로 등록되지 않으며, GUI는 수신한 위치·상태를 표시한다. 실제 요청·최종 ACK·화면의 동작 확인은 [GUI 연동 안내](../tests/manual/GUI-CONTROL/README.md)를 따른다.
+`MqttAmrDataProvider`는 한 대를 관리하고, [FleetMqttAmrDataProvider](Amr.Infrastructure/Mqtt/FleetMqttAmrDataProvider.cs)는 이를 장비별로 소유하여 전체 스냅샷으로 집계한다. GUI `--fleet-config`는 MainForm/MapCanvas 하나에서 선택 장비를 제어한다. 이력은 이번 실행의 메모리에 보관한다. trial 등 외부 명령은 GUI 자체 요청으로 등록되지 않는다. [단일 GUI 연동](../tests/manual/GUI-CONTROL/README.md) · [Fleet 공통 맵 실행/검증](../tests/manual/FLEET-GUI/README.md).
 
 <a id="gui"></a>
 

@@ -1,0 +1,11 @@
+{"topic":"amr/A/command","payload":{"type":"MOVE","ts":1793606111024,"cmdId":"SAME-ID","param":{"y":2,"x":1000}}}
+{"topic":"amr/B/command","payload":{"type":"MOVE","ts":1793606111197,"cmdId":"SAME-ID","param":{"y":5,"x":1000}}}
+{"topic":"amr/B/command","payload":{"type":"RESET","ts":1793606111399,"cmdId":"BUSY-RESET","param":{}}}
+{"topic":"amr/B/command","payload":{"type":"STOP","ts":1793606111593,"cmdId":"STOP-1","param":{}}}
+{"topic":"amr/B/command","payload":{"type":"MOVE","ts":1793606111790,"cmdId":"CONTINUE","param":{"y":5,"x":1000}}}
+{"topic":"amr/A/command","payload":{"type":"RESET","ts":1793606126063,"cmdId":"EARLY","param":{}}}
+{"topic":"amr/A/command","payload":{"type":"RESET","ts":1793606133613,"cmdId":"RECOVER","param":{}}}
+{"topic":"amr/A/command","payload":{"type":"MOVE","ts":1793606133835,"cmdId":"AFTER-RESET","param":{"y":2,"x":33.627409799999995}}}
+{"topic":"amr/R/command","payload":{"type":"MOVE","ts":1793606134000,"cmdId":"AFTER-ROUTE","param":{"y":11,"x":2}}}
+{"topic":"amr/B/command","payload":{"type":"STOP","ts":1793606134617,"cmdId":"STOP-2","param":{}}}
+{"topic":"amr/B/command","payload":{"type":"MOVE","ts":1793606136104,"cmdId":"AFTER-R-DISCONNECT","param":{"y":5,"x":1}}}

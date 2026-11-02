@@ -66,9 +66,13 @@ public sealed class FleetApplicationTests
         var transports = new List<Transport>();
         using var output = new StringWriter(); using var error = new StringWriter();
         var options = new SimulatorMqttOptions(new MqttConnectionSettings(), 100, 1000);
-        Assert.Equal(0, await FleetApplication.RunAsync(fleet, options, output, error,
-            clockFactory: _ => new TestSimulationClock(1),
-            transportFactory: _ => { var t = new Transport(); transports.Add(t); return t; }));
+        using var stop = new CancellationTokenSource();
+        var running = FleetApplication.RunAsync(fleet, options, output, error, stop.Token,
+            clockFactory: _ => new WaitingClock(),
+            transportFactory: _ => { var t = new Transport(); transports.Add(t); return t; });
+        await Task.WhenAll(transports.Select(t => t.Ready.Task)).WaitAsync(TimeSpan.FromSeconds(5));
+        stop.Cancel();
+        Assert.Equal(0, await running.WaitAsync(TimeSpan.FromSeconds(5)));
         Assert.Equal(2, transports.Count);
         for (int i = 0; i < transports.Count; i++)
         {
@@ -78,7 +82,7 @@ public sealed class FleetApplicationTests
     }
 
     [Fact]
-    public async Task OneTransportFailure_CancelsAndJoinsSiblingBeforeReturningFailure()
+    public async Task OneTransportFailure_LeavesSiblingRunningUntilParentCancellation()
     {
         var fleet = FleetSettingsLoader.Parse(FleetSettingsTests.FleetJson());
         using var output = new StringWriter(); using var error = new StringWriter();
@@ -86,10 +90,16 @@ public sealed class FleetApplicationTests
         var second = new Transport { FailConnection = true };
         var clock = new WaitingClock();
         int index = 0;
-        int code = await FleetApplication.RunAsync(fleet, new(new(), 100, 1000), output, error,
+        using var stop = new CancellationTokenSource();
+        var running = FleetApplication.RunAsync(fleet, new(new(), 100, 1000), output, error, stop.Token,
             clockFactory: _ => clock,
-            transportFactory: _ => index++ == 0 ? first : second).WaitAsync(TimeSpan.FromSeconds(5));
-        Assert.Equal(1, code);
+            transportFactory: _ => index++ == 0 ? first : second);
+        await Task.WhenAll(clock.Started.Task, second.Closed.Task).WaitAsync(TimeSpan.FromSeconds(5));
+        Assert.False(running.IsCompleted);
+        Assert.False(clock.Ended);
+        Assert.False(first.Disposed);
+        stop.Cancel();
+        Assert.Equal(1, await running.WaitAsync(TimeSpan.FromSeconds(5)));
         Assert.True(clock.Ended);
         Assert.True(first.Disposed && second.Disposed);
     }
@@ -108,15 +118,20 @@ public sealed class FleetApplicationTests
         }
     }
 
-    private sealed class Transport : ISimulationTransport
+    private sealed class Transport : IAmrDeviceTransport
     {
         public event Action? ConnectionLost { add { } remove { } }
+        public event DeviceCommandReceived? CommandReceived { add { } remove { } }
+        public TaskCompletionSource Ready { get; } = new(TaskCreationOptions.RunContinuationsAsynchronously);
+        public TaskCompletionSource Closed { get; } = new(TaskCreationOptions.RunContinuationsAsynchronously);
         public bool Disposed { get; private set; }
         public bool FailConnection { get; init; }
         public List<SimulationPublication> Messages { get; } = [];
         public Task ConnectAsync(CancellationToken token) => FailConnection ? Task.FromException(new IOException()) : Task.CompletedTask;
-        public Task PublishAsync(SimulationPublication message, CancellationToken token) { Messages.Add(message); return Task.CompletedTask; }
+        public Task SubscribeAsync(CancellationToken token) => Task.CompletedTask;
+        public Task UnsubscribeAsync(CancellationToken token) => Task.CompletedTask;
+        public Task PublishAsync(SimulationPublication message, CancellationToken token) { Messages.Add(message); if (message.Kind == "heartbeat") Ready.TrySetResult(); return Task.CompletedTask; }
         public Task DisconnectAsync() => Task.CompletedTask;
-        public void Dispose() => Disposed = true;
+        public void Dispose() { Disposed = true; Closed.TrySetResult(); }
     }
 }

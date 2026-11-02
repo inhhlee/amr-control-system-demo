@@ -1,0 +1,92 @@
+[
+  {
+    "AmrId": "AMR_01",
+    "CmdId": "GUI-6f85bd63fae148978b91ace3c252a4d7",
+    "Type": "MOVE",
+    "CommandAtUtc": "2026-11-02T09:22:54.0010000+00:00",
+    "AckCount": 1,
+    "Results": [
+      "FAILURE/FAULT_INTERRUPTED"
+    ]
+  },
+  {
+    "AmrId": "AMR_01",
+    "CmdId": "GUI-a0290dddbabc4f819dc3b3c9a3d8e43b",
+    "Type": "RESET",
+    "CommandAtUtc": "2026-11-02T09:26:53.7540000+00:00",
+    "AckCount": 1,
+    "Results": [
+      "FAILURE/FAULT_CAUSE_ACTIVE"
+    ]
+  },
+  {
+    "AmrId": "AMR_01",
+    "CmdId": "GUI-02c5b0df63b54630bda5dd83038ccc9f",
+    "Type": "RESET",
+    "CommandAtUtc": "2026-11-02T09:26:54.4900000+00:00",
+    "AckCount": 1,
+    "Results": [
+      "FAILURE/FAULT_CAUSE_ACTIVE"
+    ]
+  },
+  {
+    "AmrId": "AMR_01",
+    "CmdId": "GUI-180146af1dde4fb1bebc8054dc164531",
+    "Type": "RESET",
+    "CommandAtUtc": "2026-11-02T09:26:55.1960000+00:00",
+    "AckCount": 1,
+    "Results": [
+      "FAILURE/FAULT_CAUSE_ACTIVE"
+    ]
+  },
+  {
+    "AmrId": "AMR_01",
+    "CmdId": "GUI-ceaaaffb6611411eb3e67aef98c28699",
+    "Type": "RESET",
+    "CommandAtUtc": "2026-11-02T09:26:55.6890000+00:00",
+    "AckCount": 1,
+    "Results": [
+      "FAILURE/FAULT_CAUSE_ACTIVE"
+    ]
+  },
+  {
+    "AmrId": "AMR_01",
+    "CmdId": "GUI-bc98fde7a60740a1a3454815cabadb40",
+    "Type": "RESET",
+    "CommandAtUtc": "2026-11-02T09:26:55.9050000+00:00",
+    "AckCount": 1,
+    "Results": [
+      "FAILURE/FAULT_CAUSE_ACTIVE"
+    ]
+  },
+  {
+    "AmrId": "AMR_01",
+    "CmdId": "GUI-aa375d921fde4b6593fccaed958550b9",
+    "Type": "RESET",
+    "CommandAtUtc": "2026-11-02T09:26:56.1450000+00:00",
+    "AckCount": 1,
+    "Results": [
+      "FAILURE/FAULT_CAUSE_ACTIVE"
+    ]
+  },
+  {
+    "AmrId": "AMR_01",
+    "CmdId": "GUI-7e6fcb491fa24428b045b7a9dec35577",
+    "Type": "RESET",
+    "CommandAtUtc": "2026-11-02T09:26:56.5000000+00:00",
+    "AckCount": 1,
+    "Results": [
+      "FAILURE/FAULT_CAUSE_ACTIVE"
+    ]
+  },
+  {
+    "AmrId": "AMR_01",
+    "CmdId": "GUI-773f9462f6414d6bba6e46c3589ba606",
+    "Type": "RESET",
+    "CommandAtUtc": "2026-11-02T09:26:57.0980000+00:00",
+    "AckCount": 1,
+    "Results": [
+      "FAILURE/FAULT_CAUSE_ACTIVE"
+    ]
+  }
+]

@@ -14,7 +14,8 @@ public static class SimulatorApplication
         if (args is ["--help"])
         {
             await output.WriteLineAsync("Usage: Amr.Simulator --config <JSON file> [--mqtt --host <host> --port <port> --telemetry-ms <ms> --heartbeat-ms <ms>]");
-            await output.WriteLineAsync("Fleet: Amr.Simulator --fleet-config <JSON file> [same MQTT options]");
+            await output.WriteLineAsync("Fleet: Amr.Simulator --fleet-config <JSON file> [--mqtt] [same MQTT options]; JSON mode=route|command. Defaults: host=127.0.0.1 port=1884 telemetry-ms=200 heartbeat-ms=1000.");
+            await output.WriteLineAsync("Commands/faults: --config <JSON file with optional faults> --command-mode --mqtt [same MQTT options]");
             return 0;
         }
         string config;
@@ -38,6 +39,8 @@ public static class SimulatorApplication
             cancellationToken.ThrowIfCancellationRequested();
             if (commandMode)
                 return await MqttCommandSimulationSession.RunAsync(settings, mqtt!, output, error, cancellationToken);
+            if (settings.Faults.Count != 0)
+                throw new ConfigurationException("$.faults", "단일 장비 장애 실행에는 --command-mode --mqtt가 필요합니다.");
             var amr = new SimulatedAmr(settings);
             await output.WriteLineAsync(FormattableString.Invariant(
                 $"ConfigurationLoaded AmrId={settings.AmrId} InitialX={settings.InitialPosition.X:R} InitialY={settings.InitialPosition.Y:R} SpeedMps={settings.SpeedMps:R} UpdateIntervalMs={settings.UpdateIntervalMs} WaypointCount={settings.Waypoints.Count}"));

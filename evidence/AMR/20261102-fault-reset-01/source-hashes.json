@@ -1,0 +1,106 @@
+[
+  {
+    "path": "config/simulator.fault-reset.json",
+    "sha256": "E2F0651F8FEBF61DB5987CE2402EEFBEE3732DDA289107AB8013DF1B7A074A82"
+  },
+  {
+    "path": "src/Amr.ControlGui/Views/Dashboard/MainForm.cs",
+    "sha256": "A01F1F463C30C4800A3DCCFC5895E7DD0F30505970B436723EB82CB14D1B5575"
+  },
+  {
+    "path": "src/Amr.ControlGui/Views/Dashboard/MainForm.Feedback.cs",
+    "sha256": "FBBC26CD7D2504D57739D288DE9969AEC679E7D69D8A66548725673685BF9325"
+  },
+  {
+    "path": "src/Amr.ControlGui/Views/Simulation/SimulationForm.cs",
+    "sha256": "8113AC9BCA4AD45C03B75A638F0D45AE5074ADC223D0FEAA274FED1910BE472F"
+  },
+  {
+    "path": "src/Amr.Infrastructure/Mqtt/MqttAmrDataProvider.Commands.cs",
+    "sha256": "7A1F7377EC3084A7A1717DC8893CD752D8DC5F689CB397D5A684A8262124C6A8"
+  },
+  {
+    "path": "src/Amr.Infrastructure/Mqtt/MqttAmrDataProvider.cs",
+    "sha256": "8C63AFD41CBE9DCF21AA0922DC86CE9685A8E44F62E14D73F45599D3269B3500"
+  },
+  {
+    "path": "src/Amr.Simulator/Configuration/FleetSettingsLoader.cs",
+    "sha256": "90FD52035A05EFAE8E4ADF759B7CB7348D06702F60DFE06265F945316D1E3789"
+  },
+  {
+    "path": "src/Amr.Simulator/Configuration/SimulatorSettings.cs",
+    "sha256": "E2EDA1C1015026DBB10E844C1DE8C783B0F017412916FB33A4E1D05CF8CDDE9D"
+  },
+  {
+    "path": "src/Amr.Simulator/Configuration/SimulatorSettingsLoader.cs",
+    "sha256": "90684BFABDD8DC9E90AC814E7F613E3D477AE12FFC32C76FA81FA2E3A2E51BC2"
+  },
+  {
+    "path": "src/Amr.Simulator/Execution/SimulatorApplication.cs",
+    "sha256": "B95077A7189BDB3C19B04BA3E45B30E86F8B4795B7F854D1F0343CDE196097FD"
+  },
+  {
+    "path": "src/Amr.Simulator/README.md",
+    "sha256": "0026C5D5A32B73F013DD7FEF7C8232A385F24EB44D99F59C2768E9F4E87F2F9B"
+  },
+  {
+    "path": "src/Amr.Simulator/Simulation/CommandDrivenAmr.cs",
+    "sha256": "40F64213E8FCB5BB043D4BABC01E98ED7486EB298071008054313FAEF5F8B908"
+  },
+  {
+    "path": "src/Amr.Simulator/Simulation/FaultScenarioRunner.cs",
+    "sha256": "0D6B0AA6E9F9803E10D41E5AEEDFFBE114A6C37DE9AFC04073594CAC82DA8CDF"
+  },
+  {
+    "path": "src/Amr.Simulator/Telemetry/MqttCommandSimulationSession.cs",
+    "sha256": "C2C0A735522D77CBEC34500CBD9994D45D759E3A8632C5FC48AD9E0A77DCD9A4"
+  },
+  {
+    "path": "src/README.md",
+    "sha256": "EF9724338B1DF266CF0FCDA1946F7D1B187F55BD66598BBDB230B652194F7E63"
+  },
+  {
+    "path": "tests/Amr.ControlGui.Tests/Dashboard/MqttDashboardTests.cs",
+    "sha256": "DF34C7D311E9D8FBDF50B144976333D9D5C0508696AD6B04A23BBA45C964DF51"
+  },
+  {
+    "path": "tests/Amr.ControlGui.Tests/Simulation/MqttControlTests.cs",
+    "sha256": "985AA4B384F015EEBF9E2B7F6C2C6F3E69EABCD082BCAA3BEC50B326E105EDF3"
+  },
+  {
+    "path": "tests/Amr.Core.Tests/Commands/CommandTrackerTests.cs",
+    "sha256": "DDFEFF321901E11FB59F78BCB62230E4631F587DEB4A1592573114929347002D"
+  },
+  {
+    "path": "tests/Amr.Simulator.Tests/Simulation/CommandDrivenAmrTests.cs",
+    "sha256": "491D73E4BE1AADE7365B56FADCF58D9D8AE4E558E308FB97793143EE3E8C2C06"
+  },
+  {
+    "path": "tests/Amr.Simulator.Tests/Simulation/FaultResetTests.cs",
+    "sha256": "F39B36542B82580FE83B65326DC3FD038544362057A08316A01D3EF8DBB7E41F"
+  },
+  {
+    "path": "tests/manual/FAULT-RESET/FaultResetProbe.csproj",
+    "sha256": "B6225265B577C700D32BF5D54E8BB6CA8A3C2B1A9AFA4075A28AFF90A5748B58"
+  },
+  {
+    "path": "tests/manual/FAULT-RESET/mosquitto.conf",
+    "sha256": "161889868CA946BF6F1D0694BB2A8D736544A7AB0399C2BA8F06575515680F5A"
+  },
+  {
+    "path": "tests/manual/FAULT-RESET/Program.cs",
+    "sha256": "B7581B2BAA70F8B851103F766F0A050B07D0A245671A2F4FA5E289C7B00848CD"
+  },
+  {
+    "path": "tests/manual/FAULT-RESET/README.md",
+    "sha256": "32515CC13F0F781D694660E8F2BCA404DB9DA0EF05056ED82CA66B03A11E1EA6"
+  },
+  {
+    "path": "tests/manual/FAULT-RESET/verify.ps1",
+    "sha256": "FD8AD44B02625D172CC50EA88F250FAE275D411B3D3334E61DDE7D06CB3E74D2"
+  },
+  {
+    "path": "tests/manual/GUI-CONTROL/README.md",
+    "sha256": "342777882E73013804BB3DA4C6C1A847DDBB529AA2A0B4DD5AC3F6B0C56DB888"
+  }
+]

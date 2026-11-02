@@ -13,11 +13,12 @@ public sealed class SimulationForm : Form
     private readonly ICommandDispatcher _dispatcher;
     private readonly string _amrId;
     private readonly Label _state, _sourceName, _sourceCoordinates, _destinationName, _destinationCoordinates, _alarm, _response, _reason;
-    private readonly Button _sourceSettings, _start, _stop;
+    private readonly Button _sourceSettings, _start, _stop, _reset;
     private AmrSnapshot _device;
     private string? _commandId, _rejection;
     private bool _busy;
     private bool _disposedResources;
+    private bool _blockingAlarm;
 
     public SimulationForm(AmrSnapshot device, IAmrDataProvider provider, ICommandDispatcher dispatcher)
     {
@@ -113,11 +114,21 @@ public sealed class SimulationForm : Form
         commands.Padding = new Padding(0, 24, 0, 12);
         _start = CommandButton("simulationStart", "시작");
         _stop = CommandButton("simulationStop", "Stop");
+        _reset = CommandButton("simulationReset", "RESET · 장애 복구");
+        _reset.Visible = provider.Mode == ProviderMode.Actual;
+        if (_reset.Visible)
+        {
+            commands.ColumnCount = 3;
+            commands.ColumnStyles.Clear();
+            for (int i = 0; i < 3; i++) commands.ColumnStyles.Add(new(SizeType.Percent, 100f / 3));
+        }
         // 화면의 '시작'은 기존 명령 계약의 MOVE에 대응한다. 버튼이 직접 좌표를 이동시키지 않는다.
         _start.Click += async (_, _) => await SendAsync(CommandKind.MOVE);
         _stop.Click += async (_, _) => await SendAsync(CommandKind.STOP);
+        _reset.Click += async (_, _) => await SendAsync(CommandKind.RESET);
         commands.Controls.Add(_start, 0, 0);
         commands.Controls.Add(_stop, 1, 0);
+        if (_reset.Visible) commands.Controls.Add(_reset, 2, 0);
         root.Controls.Add(commands, 0, 3);
         root.Controls.Add(TextBlock("simulationMode", provider.Mode == ProviderMode.Actual
             ? "실제 MQTT · 창을 닫아도 AMR 이동은 계속됩니다. 초기 좌표는 AMR 설정 파일에서 변경합니다."
@@ -211,6 +222,8 @@ public sealed class SimulationForm : Form
     }
 
     // 요청 수락(Unconfirmed)과 목적지 도착 완료를 구분한다. 표시의 근거는 공급자 상태/요청 결과다.
+    internal void TrackCommand(string commandId) { _commandId = commandId; _rejection = null; }
+
     internal void Render(AmrSnapshot device, IEnumerable<AlarmSnapshot> alarms, IEnumerable<CommandSnapshot> commands, DataConnectionSnapshot? connection = null)
     {
         if (IsDisposed) return;
@@ -225,6 +238,10 @@ public sealed class SimulationForm : Form
         _destinationName.Text = journey?.Destination.Name ?? "미설정";
         _destinationCoordinates.Text = journey is null ? "목적지 설정 후 시작할 수 있습니다." : $"X {journey.Destination.X:0.0} m / Y {journey.Destination.Y:0.0} m";
         var currentAlarms = alarms.Where(x => x.AmrId == _amrId && x.IsActive).ToArray();
+        _blockingAlarm = currentAlarms.Any(x => x.Severity == AlarmSeverity.Error);
+        _state.ForeColor = device.State == AmrState.FAULT ? Color.Firebrick : Color.FromArgb(51, 65, 85);
+        if (_provider.Mode == ProviderMode.Actual && _connection is { TelemetryIsCurrent: true } && device.State == AmrState.FAULT) _state.Text = "현재 상태\nFAULT · 장애";
+        _alarm.ForeColor = currentAlarms.Any(x => x.Severity == AlarmSeverity.Error) ? Color.Firebrick : Color.FromArgb(51, 65, 85);
         _alarm.Text = currentAlarms.Length == 0 ? "발생 알람 없음\n\n0건" : string.Join("\n\n", currentAlarms.Select(x =>
             $"{MockAmrDataProvider.SeverityText(x.Severity)} · {x.Message} · 발생 중\n비고: {x.Note}"));
         var command = _commands.Where(x => x.AmrId == _amrId && (_commandId is null || x.CommandId == _commandId))
@@ -234,7 +251,8 @@ public sealed class SimulationForm : Form
                 ? command.ResultDeadlineExceeded ? "대기 시간 경과 · 수행 미확인" : command.Publish == PublishObservation.Returned ? "명령 발행 · 최종 응답 대기" : "요청 접수 · 발행 대기"
                 : "요청 수락 · 실행 중"
             : command.Result == CommandResult.Failure ? (command.Kind == CommandKind.MOVE && (_mock is not null || command.Reason == "STOP_INTERRUPTED") ? "이동 중단 · 미완료" : "요청 실패")
-            : command.Kind == CommandKind.MOVE ? "목적지 도착 · 실행 완료" : "Stop · 정지 완료";
+            : command.Kind == CommandKind.MOVE ? "목적지 도착 · 실행 완료"
+            : command.Kind == CommandKind.RESET ? "RESET · 복구 응답 수신" : "Stop · 정지 완료";
         _response.ForeColor = _rejection is not null || command?.Result == CommandResult.Failure ? Color.Firebrick
             : journey?.Phase == SimulationPhase.Arrived ? Color.ForestGreen : Color.FromArgb(51, 65, 85);
         _reason.Text = "사유  " + ReasonText(_rejection ?? command?.Reason ?? "—");
@@ -254,8 +272,10 @@ public sealed class SimulationForm : Form
             bool ready = !_busy && !_lifetime.IsCancellationRequested && _connection is { State: DataConnectionState.Connected, TelemetryIsCurrent: true } && _device.Liveness == LivenessObservation.Alive;
             bool pendingMove = _commands.Any(x => x.AmrId == _amrId && x.Kind == CommandKind.MOVE && x.Result == CommandResult.Unconfirmed && !x.SupersededByConfirmedStop);
             bool pendingStop = _commands.Any(x => x.AmrId == _amrId && x.Kind == CommandKind.STOP && x.Result == CommandResult.Unconfirmed && !x.ResultDeadlineExceeded);
-            _start.Enabled = ready && _device.Journey is not null && _device.State is AmrState.IDLE or AmrState.STOPPED && !pendingMove;
+            bool pendingReset = _commands.Any(x => x.AmrId == _amrId && x.Kind == CommandKind.RESET && x.Result == CommandResult.Unconfirmed && !x.ResultDeadlineExceeded);
+            _start.Enabled = ready && _device.Journey is not null && _device.State is AmrState.IDLE or AmrState.STOPPED && !pendingMove && !pendingReset && !_blockingAlarm;
             _stop.Enabled = ready && !pendingStop && (_device.State == AmrState.BUSY || pendingMove);
+            _reset.Enabled = ready && _device.State == AmrState.FAULT && !pendingReset;
             _sourceSettings.Enabled = !_busy;
             if (Controls.Find("destinationSettings", true).SingleOrDefault() is Button destination) destination.Enabled = !_busy && _device.State != AmrState.BUSY && !pendingMove;
         }
@@ -265,7 +285,7 @@ public sealed class SimulationForm : Form
             _stop.Enabled = !_busy && phase == SimulationPhase.Moving;
             _sourceSettings.Enabled = !_busy && phase == SimulationPhase.Ready;
         }
-        foreach (var button in new[] { _start, _stop })
+        foreach (var button in new[] { _start, _stop, _reset })
         {
             button.BackColor = button.Enabled ? Color.FromArgb(31, 41, 55) : Color.FromArgb(226, 232, 240);
             button.ForeColor = button.Enabled ? Color.White : Color.SlateGray;
@@ -280,13 +300,21 @@ public sealed class SimulationForm : Form
     private static string ReasonText(string reason) => reason switch
     {
         "ARRIVED" => "목적지 도착", "STOPPED" => "정지 완료", "STOP_INTERRUPTED" => "정지 명령으로 이동 중단",
-        "BUSY_MOVE_REJECTED" => "이동 중에는 새 이동을 시작할 수 없습니다.", "RESET_NOT_IMPLEMENTED" => "복구 명령은 아직 지원하지 않습니다.",
+        "BUSY_MOVE_REJECTED" => "이동 중에는 새 이동을 시작할 수 없습니다.",
+        "FAULT_INTERRUPTED" => "장애 발생으로 이동 중단", "FAULT_ACTIVE" => "장애 복구 후 이동할 수 있습니다.",
+        "FAULT_CAUSE_ACTIVE" => "장애 원인이 아직 해소되지 않았습니다.",
+        "BUSY_RESET_REJECTED" => "이동 중에는 RESET할 수 없습니다.", "NOT_IN_FAULT" => "복구할 장애 상태가 아닙니다.",
+        "RESET_COMPLETED" => "장애 복구 완료 · 현재 좌표 유지", "STOPPED_FAULT_LATCHED" => "정지 상태 확인 · 장애 복구 필요",
         _ => reason
     };
 
     protected override void Dispose(bool disposing)
     {
-        if (disposing && !_disposedResources) { _disposedResources = true; _lifetime.Cancel(); _lifetime.Dispose(); }
+        if (disposing && !_disposedResources)
+        {
+            _disposedResources = true; _lifetime.Cancel(); _lifetime.Dispose();
+            if (_reset.Parent is null) _reset.Dispose();
+        }
         base.Dispose(disposing);
     }
 

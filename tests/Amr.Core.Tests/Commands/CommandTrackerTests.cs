@@ -6,6 +6,22 @@ namespace Amr.Core.Tests;
 public sealed class CommandTrackerTests
 {
     [Fact]
+    public void ResetResultsMatchTargetAndIdWithoutRewritingFailedMove()
+    {
+        var tracker = new CommandTracker(TimeSpan.FromSeconds(5));
+        string move = tracker.Register(new("ONE", CommandKind.MOVE, 8, 2)).CommandId!;
+        tracker.Receive(new("ONE", move, "FAILURE", "FAULT_INTERRUPTED", 1, DateTimeOffset.UtcNow));
+        string reset = tracker.Register(new("ONE", CommandKind.RESET)).CommandId!;
+        Assert.Equal(AckDisposition.UnknownRequest, tracker.Receive(new("TWO", reset, "SUCCESS", "RESET_COMPLETED", 2, DateTimeOffset.UtcNow)));
+        Assert.Equal(CommandResult.Unconfirmed, tracker.Find("ONE", reset)!.Result);
+        var ack = new CommandResponseInput("ONE", reset, "SUCCESS", "RESET_COMPLETED", 2, DateTimeOffset.UtcNow);
+        Assert.Equal(AckDisposition.Matched, tracker.Receive(ack));
+        Assert.Equal(AckDisposition.Duplicate, tracker.Receive(ack));
+        Assert.Equal(CommandResult.Success, tracker.Find("ONE", reset)!.Result);
+        Assert.Equal(CommandResult.Failure, tracker.Find("ONE", move)!.Result);
+    }
+
+    [Fact]
     public void EarlyAckIsNotOverwrittenByPublicationReturn()
     {
         var tracker = new CommandTracker(TimeSpan.FromSeconds(5));

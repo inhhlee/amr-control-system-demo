@@ -1,0 +1,67 @@
+{
+  "amrs": [
+    {
+      "amrId": "A",
+      "speedMps": 2,
+      "faults": [
+        {
+          "message": "fleet audit",
+          "activateAfterMs": 15000,
+          "level": "ERR",
+          "resolveAfterMs": 23000,
+          "code": "SHARED_CODE"
+        }
+      ],
+      "waypoints": [
+        {
+          "y": 2,
+          "x": 100
+        }
+      ],
+      "mode": "command",
+      "initialPosition": {
+        "y": 2,
+        "x": 4
+      },
+      "updateIntervalMs": 50
+    },
+    {
+      "amrId": "B",
+      "speedMps": 2,
+      "faults": [],
+      "waypoints": [
+        {
+          "y": 5,
+          "x": 100
+        }
+      ],
+      "mode": "command",
+      "initialPosition": {
+        "y": 5,
+        "x": 0
+      },
+      "updateIntervalMs": 50
+    },
+    {
+      "amrId": "R",
+      "speedMps": 5,
+      "faults": [],
+      "waypoints": [
+        {
+          "y": 10,
+          "x": 1
+        },
+        {
+          "y": 11,
+          "x": 1
+        }
+      ],
+      "mode": "route",
+      "initialPosition": {
+        "y": 10,
+        "x": 0
+      },
+      "updateIntervalMs": 50
+    }
+  ]
+}

@@ -42,7 +42,7 @@ public static class SimulatorSettingsLoader
     {
         using var document = ReadDocument(json);
         var root = document.RootElement;
-        CheckMembers(root, "$", ["amrId", "initialPosition", "speedMps", "updateIntervalMs", "waypoints"]);
+        CheckMembers(root, "$", ["amrId", "initialPosition", "speedMps", "updateIntervalMs", "waypoints", "faults"]);
 
         var idElement = Required(root, "amrId", "$");
         if (idElement.ValueKind != JsonValueKind.String)
@@ -81,7 +81,9 @@ public static class SimulatorSettingsLoader
             index++;
         }
 
-        return new SimulatorSettings(id, initial, speed, interval, waypoints);
+        var faults = root.TryGetProperty("faults", out var configuredFaults)
+            ? FleetSettingsLoader.ParseFaults(configuredFaults, "$.faults", id) : [];
+        return new SimulatorSettings(id, initial, speed, interval, waypoints, faults);
     }
 
     internal static JsonDocument ReadDocument(string json)

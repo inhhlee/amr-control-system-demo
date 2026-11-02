@@ -1,0 +1,1 @@
+{"amrId":"AMR_001","initialPosition":{"x":4,"y":2},"speedMps":1,"updateIntervalMs":50,"waypoints":[{"x":100,"y":2}],"faults":[{"code":"DRIVE_FAULT","level":"ERR","activateAfterMs":4000,"resolveAfterMs":8000,"message":"구동 장애 시험"}]}

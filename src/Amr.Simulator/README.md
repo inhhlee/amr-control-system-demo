@@ -49,19 +49,24 @@ dotnet run --project src/Amr.Simulator -- --fleet-config config/simulator.fleet.
 `message`다. 시점은 실행 후 경과 ms인 0 이상의 Int64 정수이며 원인 해소는 발생보다
 뒤여야 한다. 문자열·중복/추가 필드·잘못된 UTF-8은 보정하지 않는다.
 
-이 단계는 **장애 설정 로드·검사까지**다. 로그에 `Execution=PendingAlarmImplementation`을
-표시하며 실제 장애/알람 전이는 #50의 후속이다. #58 GUI 연결에서 #51의 MOVE/STOP 수신·최종 ACK 부분을 추가했다. 아래 명령 대기 실행과 [실제 GUI 실행 안내](../../tests/manual/GUI-CONTROL/README.md)를 따른다. RESET과 #51 전체 완료는 별도다.
-원인 해소가 즉시 알람 해제를 뜻하는지는 아직 확정하지 않았다.
+각 장비에 `mode: "route" | "command"`를 지정한다. 생략 시 route다. Fleet은 두 모드 모두
+`AmrDeviceContext`의 공통 실행 루프로 이동·장애·알람·명령 응답을 처리한다. MQTT command는
+초기 좌표에서 기다리고, route는 설정 경유점을 한 번 실행한 뒤에도 명령·생존 신호 처리를 유지한다.
+로컬 route는 도착하고 남은 장애 이벤트가 없으면 종료한다. 예제 `simulator.fleet.json`의
+AMR_002는 이제 300ms에 실제 FAULT가 발생하므로 로컬 실행은 Ctrl+C로 종료한다. RESET 시험에는 MQTT를 사용한다.
 
-장비별 실행 루프·불변 송신 스냅샷·ClientId/연결을 따로 소유한다. 한 연결 실패 시
-이번 fleet 실행은 실패로 종료하고 다른 소유 작업도 취소·정리를 기다린다. 한 장비가
-먼저 도착하면 그 장비의 유한 실행/송신은 끝나며 마지막 장비 종료까지 프로세스가
-기다린다. 이 자동 경로 모드와 아래 명령 대기 모드는 별도다.
+장비마다 상태 머신·큐·시계·CTS·ClientId/연결을 소유한다. 한 장비의 연결 실패·과부하는 해당
+장비만 종료하고 정상 장비는 계속 실행한다. 전체 Ctrl+C 시 모든 정리를 기다린다.
+단절·과부하 중 ACK 전달과 자동 재접속은 보장하지 않는다.
 
-실제 MQTT 재현은 `pwsh -NoProfile -File tests/manual/AMR01/Verify-FleetSettings.ps1 -RunId <새ID>`를
-사용한다. Debug 빌드된 Simulator/통신 콘솔과 실행 중인 Docker Linux 엔진, 캐시된
-`eclipse-mosquitto:2.1.2-alpine`이 필요하다. 관찰용 수신 프로세스의 강제 정리를
-Ctrl+C 정상 종료 검증으로 집계하지 않는다.
+```bash
+dotnet run --project src/Amr.Simulator -c FleetEngine -- --fleet-config config/simulator.fleet-control.json --mqtt
+```
+
+Fleet MQTT 기본값은 127.0.0.1:1884, Telemetry 200ms, Heartbeat 1000ms다.
+[설정·Git Bash·MQTT Explorer·자동 시험 안내](../../tests/manual/FLEET-CONTROL/README.md)를 따른다.
+기존 `Verify-FleetSettings.ps1`은 유한 경로 실행을 전제한 과거 시험이며 현재 MQTT 상시 실행 시험은
+`tests/manual/FLEET-CONTROL/verify.ps1`을 사용한다. #50/#51 게시·리뷰·전체 완료 판정은 별도다.
 
 격자 화면은 `dotnet run --project tools/Amr.Simulator.Map`으로 실행한다. 이 호스트가 본 프로젝트의 `GridSimulation`을 호출한다. 격자 CLI나 별도 프로세스 간 명령 프로토콜을 새로 추가하지 않았다.
 
@@ -73,4 +78,20 @@ dotnet run --project src/Amr.Simulator -- --config config/simulator.single.json 
 
 자동 경로 모드와 달리 초기 좌표에서 IDLE로 기다린다. MOVE를 받으면 현재 위치에서 지정한 목적지로 직선 이동하고 도착 시 최종 SUCCESS를 보낸다. 이동 중 추가 MOVE는 거부한다. STOP은 현재 좌표에서 정지하고 원래 MOVE의 FAILURE/중단 사유와 별도 STOP의 SUCCESS를 보낸다. 새 MOVE는 멈춘 위치에서 다시 출발한다.
 
-대기·도착·정지에도 Telemetry/Heartbeat를 계속 보낸다. 같은 요청 ID/내용은 이동을 다시 시작하지 않고 기존 결과를 사용한다. RESET은 미지원 FAILURE다. `--fleet-config` 명령 대기는 지원하지 않는다. Broker가 끊기면 이 AMR 실행은 종료하므로 복구 후 직접 재실행한다. [GUI와 함께 실행·검증](../../tests/manual/GUI-CONTROL/README.md).
+대기·도착·정지·장애에도 Telemetry/Heartbeat를 계속 보낸다. 같은 요청 ID/내용은 동작을 다시 실행하지 않고 기존 최종 ACK를 사용한다. Fleet의 장비별 `mode: "command"`도 같은 엔진을 사용한다. Broker가 끊기면 해당 AMR 실행은 종료하므로 복구 후 직접 재실행한다. [GUI와 함께 실행·검증](../../tests/manual/GUI-CONTROL/README.md).
+
+## 단일 명령 모드의 장애·RESET (#50·#51 일부)
+
+`--config config/simulator.fault-reset.json --command-mode --mqtt`로 장애 복구를 시험한다.
+기존 단일 설정에 선택 `faults` 배열을 추가했다. 생략/빈 배열이면 이전 정상 명령 모드와 같다.
+각 항목의 형식·검사기는 위 fleet 장애 설정과 공유한다. 단일 자동 경로 모드에서는
+장애 설정을 조용히 무시하지 않고 실행을 거부한다.
+
+- `FaultScenarioRunner`: 명령 Topic 구독 준비 후 Stopwatch를 시작한다. 시점은 이 기준의 경과 ms이며, 시계 변경에 영향받지 않는다. 호출이 늦어져도 장애 시점을 지나서 이동시키지 않는다. 도착과 발생이 정확히 같으면 도착을 먼저 확정한 뒤 장애를 적용한다.
+- `CommandDrivenAmr`: `faults`의 항목은 작업을 중단시키는 장애 주입이다. 등급은 Alarm의 표시 등급이며, 일반 WARN만 발행하는 비중단 시나리오와 구분한다. 발생 시 FAULT·속도 0·ACTIVE 및 진행 MOVE의 `FAILURE / FAULT_INTERRUPTED`를 생성한다.
+- 원인 해소 시 `FaultCauseResolved`를 기록하며 FAULT와 알람은 유지한다. 모든 발생 원인이 해소된 뒤 **새 ID의 RESET**을 받아야 `CLEARED → IDLE Telemetry → SUCCESS / RESET_COMPLETED ACK`를 발행한다. 현재 좌표를 유지하고 이전 MOVE를 자동 재개하지 않는다.
+- 미해소 RESET은 `FAILURE / FAULT_CAUSE_ACTIVE`, BUSY RESET은 `FAILURE / BUSY_RESET_REJECTED`, 장애가 없는 상태는 `FAILURE / NOT_IN_FAULT`다. STOP은 장애 중에도 정지를 확인하지만 FAULT를 해제하지 않는다.
+- 같은 알람 코드의 겹친 원인을 시나리오 인덱스로 따로 추적한다. ACTIVE 상태를 Tick마다 재발행하지 않으며, 같은 코드가 해제 후 다시 발생하면 새 ACTIVE를 생성한다.
+- MQTT 콜백은 검사·bounded queue 접수만 한다. 상태·시나리오·명령은 단일 실행 루프가 소유한다. 큐 128, 명령 결과 기록 128(기존 STOP 예약 1자리), QoS0·Retain=false·세션 내 중복 억제 정책을 유지한다. 발행 지연은 다음 Tick을 늦출 수 있으며 하드 실시간 정지 보장은 아니다.
+
+[Git Bash 실행 명령·GUI 조작·Pass/Fail·자동 E2E](../../tests/manual/FAULT-RESET/README.md)

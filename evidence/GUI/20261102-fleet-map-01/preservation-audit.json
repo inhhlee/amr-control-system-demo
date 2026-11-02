@@ -1,0 +1,16 @@
+{
+  "Missing": [],
+  "Changed": [
+    "src\\README.md",
+    "src\\Amr.Core\\Models\\AmrChange.cs",
+    "src\\Amr.ControlGui\\Program.cs",
+    "src\\Amr.ControlGui\\Configuration\\MqttGuiOptions.cs",
+    "src\\Amr.ControlGui\\Views\\Map\\MapCanvas.cs",
+    "src\\Amr.ControlGui\\Views\\Dashboard\\MainForm.Mqtt.cs",
+    "src\\Amr.ControlGui\\Views\\Dashboard\\MainForm.Feedback.cs",
+    "src\\Amr.ControlGui\\Views\\Dashboard\\MainForm.cs"
+  ],
+  "Unexpected": [],
+  "BaselineFileCount": 239,
+  "ExistingFleetTestsRestored": true
+}

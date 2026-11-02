@@ -13,6 +13,47 @@ namespace Amr.ControlGui.Tests;
 
 public sealed class MqttControlTests
 {
+    [Fact]
+    public async Task ResetRequiresFaultAndReceivedRecoveryEvidenceWithoutOptimisticClear()
+    {
+        var client = MqttDataProviderTests.Client();
+        client.PublishResponse.SetResult(new(null, MqttClientPublishReasonCode.Success, null, []));
+        await using var provider = new MqttAmrDataProvider(new(), clientFactory: () => client, destination: new("G", 20, 2));
+        await using var watch = provider.WatchAsync().GetAsyncEnumerator();
+        await Ready(provider, client, watch);
+        await MqttDataProviderTests.Telemetry(client, 4, "BUSY");
+        await MqttDataProviderTests.ReadUntil(watch, x => x.Devices[0].State == AmrState.BUSY);
+        Assert.False((await provider.DispatchAsync(new("AMR_001", CommandKind.RESET))).Accepted);
+        const string active = """{"id":"AMR_001","ts":1,"code":"DRIVE","level":"ERR","alarmState":"ACTIVE"}""";
+        await MqttDataProviderTests.Send(client, "alarm", active);
+        await MqttDataProviderTests.Telemetry(client, 4, "FAULT");
+        await MqttDataProviderTests.ReadUntil(watch, x => x.Devices[0].State == AmrState.FAULT);
+        Assert.False((await provider.DispatchAsync(new("AMR_001", CommandKind.MOVE, 20, 2))).Accepted);
+        Assert.False((await provider.DispatchAsync(new("AMR_001", CommandKind.RESET, 0, 0))).Accepted);
+        var early = await provider.DispatchAsync(new("AMR_001", CommandKind.RESET)); Assert.True(early.Accepted);
+        await MqttDataProviderTests.Until(() => client.PublishCalls == 1);
+        using (var json = JsonDocument.Parse(client.PublishedMessage!.Payload.ToArray()))
+        {
+            Assert.Equal("RESET", json.RootElement.GetProperty("type").GetString());
+            Assert.Empty(json.RootElement.GetProperty("param").EnumerateObject());
+        }
+        Assert.False((await provider.DispatchAsync(new("AMR_001", CommandKind.RESET))).Accepted);
+        await Ack(client, early.CommandId!, "FAILURE", "FAULT_CAUSE_ACTIVE");
+        var failed = await MqttDataProviderTests.ReadUntil(watch, x => x.Commands.Any(c => c.CommandId == early.CommandId && c.Result == CommandResult.Failure));
+        Assert.True(failed.Alarms[0].IsActive); Assert.Equal(AmrState.FAULT, failed.Devices[0].State);
+        var reset = await provider.DispatchAsync(new("AMR_001", CommandKind.RESET)); Assert.True(reset.Accepted);
+        await Ack(client, reset.CommandId!, reason: "RESET_COMPLETED");
+        var ackOnly = await MqttDataProviderTests.ReadUntil(watch, x => x.Commands.Any(c => c.CommandId == reset.CommandId && c.Result == CommandResult.Success));
+        Assert.True(ackOnly.Alarms[0].IsActive); Assert.Equal(AmrState.FAULT, ackOnly.Devices[0].State);
+        await MqttDataProviderTests.Telemetry(client, 4, "IDLE");
+        await MqttDataProviderTests.ReadUntil(watch, x => x.Devices[0].State == AmrState.IDLE);
+        Assert.False((await provider.DispatchAsync(new("AMR_001", CommandKind.MOVE, 20, 2))).Accepted);
+        await MqttDataProviderTests.Send(client, "alarm", active.Replace("ACTIVE", "CLEARED"));
+        var cleared = await MqttDataProviderTests.ReadUntil(watch, x => !x.Alarms[0].IsActive);
+        Assert.Equal((4d, 2d), (cleared.Devices[0].X, cleared.Devices[0].Y));
+        Assert.True((await provider.DispatchAsync(new("AMR_001", CommandKind.MOVE, 20, 2))).Accepted);
+    }
+
     private static async Task Ready(MqttAmrDataProvider provider, FakeMqttClient client, IAsyncEnumerator<AmrChange> watch)
     {
         provider.Start();

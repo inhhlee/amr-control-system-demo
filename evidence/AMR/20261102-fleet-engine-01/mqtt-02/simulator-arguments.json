@@ -1,0 +1,13 @@
+[
+  "--fleet-config",
+  "\"C:\\amr-control-system-demo\\evidence\\AMR\\20261102-fleet-engine-01\\mqtt-02/fleet.json\"",
+  "--mqtt",
+  "--host",
+  "127.0.0.1",
+  "--port",
+  "57292",
+  "--telemetry-ms",
+  "100",
+  "--heartbeat-ms",
+  "250"
+]

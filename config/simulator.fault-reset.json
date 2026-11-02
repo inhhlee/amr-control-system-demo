@@ -1,0 +1,16 @@
+{
+  "amrId": "AMR_001",
+  "initialPosition": { "x": -1, "y": 0 },
+  "speedMps": 1,
+  "updateIntervalMs": 100,
+  "waypoints": [{ "x": 100, "y": 0 }],
+  "faults": [
+    {
+      "code": "DRIVE_FAULT",
+      "level": "ERR",
+      "activateAfterMs": 30000,
+      "resolveAfterMs": 60000,
+      "message": "구동 장애 시험 · 원인 해소 후 RESET 필요"
+    }
+  ]
+}

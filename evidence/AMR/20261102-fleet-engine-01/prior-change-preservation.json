@@ -1,0 +1,38 @@
+[
+  {
+    "file": "src/Amr.ControlGui/Views/Simulation/SimulationForm.cs",
+    "preserved": true
+  },
+  {
+    "file": "src/Amr.ControlGui/Views/Dashboard/MainForm.cs",
+    "preserved": true
+  },
+  {
+    "file": "tests/Amr.ControlGui.Tests/Dashboard/MqttDashboardTests.cs",
+    "preserved": true
+  },
+  {
+    "file": "src/Amr.Infrastructure/Mqtt/MqttAmrDataProvider.Commands.cs",
+    "preserved": true
+  },
+  {
+    "file": "tests/manual/GUI-CONTROL/README.md",
+    "preserved": true
+  },
+  {
+    "file": "tests/Amr.ControlGui.Tests/Simulation/MqttControlTests.cs",
+    "preserved": true
+  },
+  {
+    "file": "src/Amr.Infrastructure/Mqtt/MqttAmrDataProvider.cs",
+    "preserved": true
+  },
+  {
+    "file": "tests/Amr.Core.Tests/Commands/CommandTrackerTests.cs",
+    "preserved": true
+  },
+  {
+    "file": "src/Amr.ControlGui/Views/Dashboard/MainForm.Feedback.cs",
+    "preserved": true
+  }
+]

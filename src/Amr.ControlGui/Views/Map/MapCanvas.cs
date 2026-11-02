@@ -204,10 +204,12 @@ internal readonly record struct MapViewport(RectangleF Plot, double MinX, double
         double scale = Math.Min(available.Width / spanX, available.Height / spanY);
         if (!double.IsFinite(minX) || !double.IsFinite(minY) || !double.IsFinite(spanX) || !double.IsFinite(spanY) ||
             !double.IsFinite(minX + spanX) || !double.IsFinite(minY + spanY) || !double.IsFinite(scale) || scale <= 0) return false;
-        float width = (float)(spanX * scale), height = (float)(spanY * scale);
-        if (width < 1 || height < 1) return false;
-        viewport = new(new RectangleF(available.Left + (available.Width - width) / 2,
-            available.Top + (available.Height - height) / 2, width, height), minX, minY, spanX, spanY);
+        // 먼 X 목적지와 가까운 Y 좌표에서도 마커/문자를 얇은 띠로 잘라내지 않는다.
+        // 짧은 축의 세계 범위를 확장하고 전체 표시 영역에서 같은 X/Y 배율을 유지한다.
+        double fittedX = available.Width / scale, fittedY = available.Height / scale;
+        if (spanX * scale < 1 || spanY * scale < 1 || !double.IsFinite(fittedX) || !double.IsFinite(fittedY)) return false;
+        viewport = new(available, minX - (fittedX - spanX) / 2,
+            minY - (fittedY - spanY) / 2, fittedX, fittedY);
         return true;
     }
 }

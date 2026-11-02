@@ -1,0 +1,39 @@
+FleetConfigurationLoaded AmrCount=3
+FleetAmrConfigured AmrId=A InitialX=4 InitialY=2 SpeedMps=2 Mode=Command FaultCount=1
+FaultScenarioConfigured AmrId=A Code="SHARED_CODE" ActivateAfterMs=15000 ResolveAfterMs=23000 Execution=DeviceLoop
+FleetAmrConfigured AmrId=B InitialX=0 InitialY=5 SpeedMps=2 Mode=Command FaultCount=0
+FleetAmrConfigured AmrId=R InitialX=0 InitialY=10 SpeedMps=5 Mode=Route FaultCount=0
+CommandSessionReady AmrId=A Topic=amr/A/command Mode=Command
+CommandSessionReady AmrId=B Topic=amr/B/command Mode=Command
+CommandSessionReady AmrId=R Topic=amr/R/command Mode=Route
+FaultScenarioScheduled AmrId=A Code="SHARED_CODE" ActivateAfterMs=15000 ResolveAfterMs=23000
+SimulationStarted AmrId=A X=4 Y=2 State=IDLE CurrentSpeedMps=0
+SimulationStarted AmrId=R X=0 Y=10 State=BUSY CurrentSpeedMps=5
+SimulationStarted AmrId=B X=0 Y=5 State=IDLE CurrentSpeedMps=0
+CommandProcessed AmrId=A Type=MOVE CmdId=SAME-ID State=BUSY Diagnostic=NONE
+CommandProcessed AmrId=B Type=MOVE CmdId=SAME-ID State=BUSY Diagnostic=NONE
+CommandProcessed AmrId=B Type=RESET CmdId=BUSY-RESET State=BUSY Diagnostic=NONE
+FinalAckPublished AmrId=B CmdId=BUSY-RESET Result=FAILURE Reason=BUSY_RESET_REJECTED Delivery=Unconfirmed
+CommandProcessed AmrId=B Type=STOP CmdId=STOP-1 State=STOPPED Diagnostic=NONE
+FinalAckPublished AmrId=B CmdId=SAME-ID Result=FAILURE Reason=STOP_INTERRUPTED Delivery=Unconfirmed
+FinalAckPublished AmrId=B CmdId=STOP-1 Result=SUCCESS Reason=STOPPED Delivery=Unconfirmed
+CommandProcessed AmrId=B Type=MOVE CmdId=CONTINUE State=BUSY Diagnostic=NONE
+AlarmPublished AmrId=A Code="SHARED_CODE" AlarmState=ACTIVE Delivery=Unconfirmed
+FinalAckPublished AmrId=A CmdId=SAME-ID Result=FAILURE Reason=FAULT_INTERRUPTED Delivery=Unconfirmed
+CommandProcessed AmrId=A Type=RESET CmdId=EARLY State=FAULT Diagnostic=NONE
+FinalAckPublished AmrId=A CmdId=EARLY Result=FAILURE Reason=FAULT_CAUSE_ACTIVE Delivery=Unconfirmed
+FaultCauseResolved AmrId=A AllCausesResolved=True State=FAULT Alarm=LatchedUntilReset
+CommandProcessed AmrId=A Type=RESET CmdId=RECOVER State=IDLE Diagnostic=NONE
+AlarmPublished AmrId=A Code="SHARED_CODE" AlarmState=CLEARED Delivery=Unconfirmed
+FinalAckPublished AmrId=A CmdId=RECOVER Result=SUCCESS Reason=RESET_COMPLETED Delivery=Unconfirmed
+CommandProcessed AmrId=A Type=MOVE CmdId=AFTER-RESET State=BUSY Diagnostic=NONE
+CommandProcessed AmrId=R Type=MOVE CmdId=AFTER-ROUTE State=BUSY Diagnostic=NONE
+FinalAckPublished AmrId=R CmdId=AFTER-ROUTE Result=SUCCESS Reason=ARRIVED Delivery=Unconfirmed
+FinalAckPublished AmrId=A CmdId=AFTER-RESET Result=SUCCESS Reason=ARRIVED Delivery=Unconfirmed
+CommandProcessed AmrId=B Type=STOP CmdId=STOP-2 State=STOPPED Diagnostic=NONE
+FinalAckPublished AmrId=B CmdId=CONTINUE Result=FAILURE Reason=STOP_INTERRUPTED Delivery=Unconfirmed
+FinalAckPublished AmrId=B CmdId=STOP-2 Result=SUCCESS Reason=STOPPED Delivery=Unconfirmed
+CommandSessionEnded ExitCode=0 AmrId=R
+CommandSessionEnded ExitCode=0 AmrId=A
+CommandSessionEnded ExitCode=0 AmrId=B
+FleetEnded ExitCode=0

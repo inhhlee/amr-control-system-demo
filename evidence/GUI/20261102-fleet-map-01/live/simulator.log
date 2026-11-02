@@ -1,0 +1,32 @@
+FleetConfigurationLoaded AmrCount=2
+FleetAmrConfigured AmrId=AMR_01 InitialX=4 InitialY=2 SpeedMps=1 Mode=Command FaultCount=1
+FaultScenarioConfigured AmrId=AMR_01 Code="SIM_SENSOR" ActivateAfterMs=180000 ResolveAfterMs=360000 Execution=DeviceLoop
+FleetAmrConfigured AmrId=AMR_02 InitialX=0 InitialY=5 SpeedMps=2 Mode=Command FaultCount=0
+CommandSessionReady AmrId=AMR_01 Topic=amr/AMR_01/command Mode=Command
+CommandSessionReady AmrId=AMR_02 Topic=amr/AMR_02/command Mode=Command
+FaultScenarioScheduled AmrId=AMR_01 Code="SIM_SENSOR" ActivateAfterMs=180000 ResolveAfterMs=360000
+SimulationStarted AmrId=AMR_01 X=4 Y=2 State=IDLE CurrentSpeedMps=0
+SimulationStarted AmrId=AMR_02 X=0 Y=5 State=IDLE CurrentSpeedMps=0
+CommandProcessed AmrId=AMR_01 Type=MOVE CmdId=GUI-6f85bd63fae148978b91ace3c252a4d7 State=BUSY Diagnostic=NONE
+AlarmPublished AmrId=AMR_01 Code="SIM_SENSOR" AlarmState=ACTIVE Delivery=Unconfirmed
+FinalAckPublished AmrId=AMR_01 CmdId=GUI-6f85bd63fae148978b91ace3c252a4d7 Result=FAILURE Reason=FAULT_INTERRUPTED Delivery=Unconfirmed
+CommandProcessed AmrId=AMR_01 Type=RESET CmdId=GUI-a0290dddbabc4f819dc3b3c9a3d8e43b State=FAULT Diagnostic=NONE
+FinalAckPublished AmrId=AMR_01 CmdId=GUI-a0290dddbabc4f819dc3b3c9a3d8e43b Result=FAILURE Reason=FAULT_CAUSE_ACTIVE Delivery=Unconfirmed
+CommandProcessed AmrId=AMR_01 Type=RESET CmdId=GUI-02c5b0df63b54630bda5dd83038ccc9f State=FAULT Diagnostic=NONE
+FinalAckPublished AmrId=AMR_01 CmdId=GUI-02c5b0df63b54630bda5dd83038ccc9f Result=FAILURE Reason=FAULT_CAUSE_ACTIVE Delivery=Unconfirmed
+CommandProcessed AmrId=AMR_01 Type=RESET CmdId=GUI-180146af1dde4fb1bebc8054dc164531 State=FAULT Diagnostic=NONE
+FinalAckPublished AmrId=AMR_01 CmdId=GUI-180146af1dde4fb1bebc8054dc164531 Result=FAILURE Reason=FAULT_CAUSE_ACTIVE Delivery=Unconfirmed
+CommandProcessed AmrId=AMR_01 Type=RESET CmdId=GUI-ceaaaffb6611411eb3e67aef98c28699 State=FAULT Diagnostic=NONE
+FinalAckPublished AmrId=AMR_01 CmdId=GUI-ceaaaffb6611411eb3e67aef98c28699 Result=FAILURE Reason=FAULT_CAUSE_ACTIVE Delivery=Unconfirmed
+CommandProcessed AmrId=AMR_01 Type=RESET CmdId=GUI-bc98fde7a60740a1a3454815cabadb40 State=FAULT Diagnostic=NONE
+FinalAckPublished AmrId=AMR_01 CmdId=GUI-bc98fde7a60740a1a3454815cabadb40 Result=FAILURE Reason=FAULT_CAUSE_ACTIVE Delivery=Unconfirmed
+CommandProcessed AmrId=AMR_01 Type=RESET CmdId=GUI-aa375d921fde4b6593fccaed958550b9 State=FAULT Diagnostic=NONE
+FinalAckPublished AmrId=AMR_01 CmdId=GUI-aa375d921fde4b6593fccaed958550b9 Result=FAILURE Reason=FAULT_CAUSE_ACTIVE Delivery=Unconfirmed
+CommandProcessed AmrId=AMR_01 Type=RESET CmdId=GUI-7e6fcb491fa24428b045b7a9dec35577 State=FAULT Diagnostic=NONE
+FinalAckPublished AmrId=AMR_01 CmdId=GUI-7e6fcb491fa24428b045b7a9dec35577 Result=FAILURE Reason=FAULT_CAUSE_ACTIVE Delivery=Unconfirmed
+CommandProcessed AmrId=AMR_01 Type=RESET CmdId=GUI-773f9462f6414d6bba6e46c3589ba606 State=FAULT Diagnostic=NONE
+FinalAckPublished AmrId=AMR_01 CmdId=GUI-773f9462f6414d6bba6e46c3589ba606 Result=FAILURE Reason=FAULT_CAUSE_ACTIVE Delivery=Unconfirmed
+FaultCauseResolved AmrId=AMR_01 AllCausesResolved=True State=FAULT Alarm=LatchedUntilReset
+CommandProcessed AmrId=AMR_01 Type=RESET CmdId=GUI-1e9386f9133f4f4d89c7028ba74ef66b State=IDLE Diagnostic=NONE
+AlarmPublished AmrId=AMR_01 Code="SIM_SENSOR" AlarmState=CLEARED Delivery=Unconfirmed
+FinalAckPublished AmrId=AMR_01 CmdId=GUI-1e9386f9133f4f4d89c7028ba74ef66b Result=SUCCESS Reason=RESET_COMPLETED Delivery=Unconfirmed

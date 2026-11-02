@@ -5,7 +5,11 @@
 
 ## 폴더별 역할 한눈에 보기
 
-GUI·trial·Seq 개선과 역할별 파일 이동은 [별도 커밋으로 구분해 관리한다](evidence/GIT/20261101-local-publication-01/README.md). 현재 작업 브랜치는 `feature/58-gui-mqtt-live`이며 develop 반영 여부는 후속 PR에서 확인한다.
+GUI·trial·Seq 개선과 역할별 파일 이동은 [별도 커밋으로 구분해 관리한다](evidence/GIT/20261101-local-publication-01/README.md). 현재 작업 브랜치는 `feature/50-fault-reset`이며 develop 반영 여부는 후속 PR에서 확인한다.
+
+**2026-11-02 Fleet 실행 확장:** JSON의 장비별 route/command 모드를 공통 실행 엔진에 연결했다. 각 장비가 독립 큐·상태·장애 시계·MQTT 연결을 갖고 MOVE/STOP/RESET·Telemetry/Heartbeat·Alarm·최종 ACK를 처리한다. [Git Bash 실행·MQTT Explorer 시험](tests/manual/FLEET-CONTROL/README.md) · [검증 근거](evidence/AMR/20261102-fleet-engine-01/README.md). Simulator 자동 재접속·단절 시 전달 보장은 별도 범위다.
+
+**Fleet 공통 맵 GUI:** `Amr.ControlGui --mqtt --fleet-config ...`로 GUI/MapCanvas 하나에서 여러 AMR을 표시하고 선택 장비의 시작·STOP·RESET을 요청한다. [Git Bash 실행·조작](tests/manual/FLEET-GUI/README.md) · [자동시험과 실제 GUI 시험 진행 상태](evidence/GUI/20261102-fleet-map-01/README.md).
 
 사용자와 검토자가 **기능을 어디서 구현하고, 어떻게 시험하며, 결과를 어디서 확인하는지** 찾기 위한 안내다. 현재 로컬 코드 기준이며, 미커밋 구현과 원격 반영 상태는 아래 변경 기록과 각 검증 근거에서 구분한다.
 
@@ -58,7 +62,7 @@ flowchart LR
 
 `Amr.Core`는 GUI와 Infrastructure가 함께 사용하는 조회·명령 계약과 관제 판단을 제공한다. trial을 종료해도 GUI는 자신의 통신 연결을 사용한다. Seq 상세 로그 분리는 현재 trial에 적용되어 있다.
 
-현재 실제 GUI 연결은 지정 AMR 한 대의 위치·상태·MOVE/STOP·응답 확인 범위다. SQLite 저장, RESET·장애 시나리오와 전체 관제 기능의 완료는 별도다. [모드별 차이와 코드 위치](src/README.md#gui).
+실제 GUI는 기존 `--amr-id` 단일 장비와 새 `--fleet-config` 공통 맵 연결을 지원한다. [단일 장비 장애·RESET 시험](tests/manual/FAULT-RESET/README.md) · [Fleet 공통 맵 시험](tests/manual/FLEET-GUI/README.md). SQLite 저장과 전체 관제 기능 완료는 별도다. [모드별 차이와 코드 위치](src/README.md#gui).
 
 <a id="run-and-check"></a>
 
@@ -87,7 +91,7 @@ flowchart LR
 
 **trial 입력줄 보완 (로컬 미커밋):** 수신 로그가 계속 나와도 마지막 `trial>` 줄의 입력 문장·커서를 보존한다. 같은 창에서 명령을 수정하고 Enter로 발행한다. [실행·키 조작](tests/manual/COM06/README.md#로그가-나오는-동안-같은-창에서-명령-입력) · [검증 근거](evidence/COM-06/20261101-trial-input-01/README.md). 기존 실행은 Ctrl+C로 종료 후 다시 실행해야 한다.
 
-**최신 GUI의 실제 MQTT 제어 (#58, 로컬 구현·시험):** `--trial`과 같은 통신·자동 재접속 모듈을 연결했다. 실제 위치·상태, 마지막 수신값과 재접속, 별도 창의 MOVE/STOP 수행·최종 응답, 수신 알람과 이번 실행 이력을 확인한다. 기본 AMR_001/127.0.0.1:1884, 대상 한 대다. [GUI·독립 AMR 실행 방법](tests/manual/GUI-CONTROL/README.md) · [최신 검증](evidence/GUI/20261101-figma-live-02/README.md) · [앞선 수신 연결 검증](evidence/GUI/20261101-mqtt-live-01/README.md). RESET·장애 시나리오·DB 저장·전체 통합 완료는 별도다. 현재 미커밋 작업이므로 원격 develop 반영과 구분한다.
+**최신 GUI의 실제 MQTT 제어:** `--trial`과 같은 통신·자동 재접속 모듈을 연결했다. 실제 위치·상태, 마지막 수신값과 재접속, 별도 창의 MOVE/STOP/RESET 수행·최종 응답, 수신 알람과 이번 실행 이력을 확인한다. 기본 AMR_001/127.0.0.1:1884, 대상 한 대다. [GUI·독립 AMR 실행 방법](tests/manual/GUI-CONTROL/README.md) · [단일 장애 복구 시험](tests/manual/FAULT-RESET/README.md) · [정상 제어 검증](evidence/GUI/20261101-figma-live-02/README.md). DB 저장·다중 장비 명령 제어·전체 통합 완료는 별도다. 로컬 변경과 원격 develop 반영을 구분한다.
 
 **과제3 Mock GUI 개선본 (#48):** 기본 Windows Forms Mock 화면에 등록 AMR 수·오류/경고 요약, 출발지/담당 목적지·확대/축소, 별도 AMR 실행창의 출발지 설정·시작/Stop, 알람 비고·이력 조회/조건 초기화를 반영했다. [현재 실행 방법](BUILDING.md#windows-forms-mock-대시보드지도) · [기존 피드백 근거](evidence/GUI/20261030-figma-feedback-01/README.md) · [최신 통합·수정 검증](evidence/GUI/20261101-feedback-integration-01/README.md). 기존 `--grid-url` 격자/MQTT 모드와 보존 자료는 유지한다. 실제 AMR 명령 수행·DB 영속 이력과 구분하며 아래 날짜별 Mock 설명은 당시 구현 이력이다.
 

@@ -16,6 +16,8 @@ public partial class MainForm : Form
     private ImmutableArray<CommandSnapshot> _commands = [];
     private ImmutableArray<AlarmSnapshot> _alarms = [];
     private DataConnectionSnapshot? _dataConnection;
+    private ImmutableDictionary<string, DataConnectionSnapshot> _deviceConnections = ImmutableDictionary<string, DataConnectionSnapshot>.Empty;
+    private DataConnectionSnapshot? ConnectionFor(string? id) => id is not null && _deviceConnections.TryGetValue(id, out var value) ? value : _dataConnection;
     private Task _watchTask = Task.CompletedTask;
     private long _lastRevision = -1;
     private long _selectionRequest;
@@ -85,6 +87,7 @@ public partial class MainForm : Form
         if (_closing || change.Revision < _lastRevision) return;
         _lastRevision = change.Revision;
         _dataConnection = change.Connection;
+        _deviceConnections = change.DeviceConnections;
         string? selected = SelectedAmrId;
         _devices.Clear();
         foreach (var device in change.Devices) _devices.Add(device.AmrId, device);
@@ -193,7 +196,7 @@ public partial class MainForm : Form
             return;
         }
         detailsLabel.Text = $"{device.AmrId}\n\nX {Number(device.X)} m / Y {Number(device.Y)} m\n속도  {Number(device.SpeedMps)} m/s\n운행  {StateText(device.State)}\n\nBroker  {ConnectionText(device.BrokerConnection)}\n생존  {LivenessText(device.Liveness)}\nHeartbeat  {TimeText(device.LastHeartbeatReceivedAt)}\nTelemetry  {TimeText(device.LastTelemetryReceivedAt)}";
-        if (_dataConnection is { TelemetryIsCurrent: false }) detailsLabel.Text += "\n마지막 수신값 · 현재 위치·운행 미확인";
+        if (ConnectionFor(id) is { TelemetryIsCurrent: false }) detailsLabel.Text += "\n마지막 수신값 · 현재 위치·운행 미확인";
         if (CurrentGridState is { } grid)
         {
             mapCanvas.SetGridState(grid);
@@ -204,6 +207,7 @@ public partial class MainForm : Form
             if (_gridFrame?.Error is not null) detailsLabel.Text += "\n마지막 수신값 · 갱신 오류";
         }
         ShowJourney(device);
+        RenderFleetControls();
     }
 
     private async void AdvanceClicked(object? sender, EventArgs e)
@@ -227,6 +231,21 @@ public partial class MainForm : Form
 
     private async void CompleteSuccessClicked(object? sender, EventArgs e) => await CompleteSelectedAsync(true);
     private async void CompleteFailureClicked(object? sender, EventArgs e) => await CompleteSelectedAsync(false);
+
+    private async void ResetFaultClicked(object? sender, EventArgs e)
+    {
+        if (SelectedAmrId is not string id || _dispatcher is null) return;
+        await RunButtonActionAsync(async token =>
+        {
+            var submission = await _dispatcher.DispatchAsync(new(id, CommandKind.RESET), token);
+            if (submission.Accepted)
+            {
+                OpenSimulation(); // 같은 장비 창에서 최종 ACK/거부 사유 확인
+                if (_simulationWindows.TryGetValue(id, out var window)) window.TrackCommand(submission.CommandId!);
+            }
+            else statusLabel.Text = "RESET 접수 거부: " + submission.Reason;
+        });
+    }
 
     private Task CompleteSelectedAsync(bool success)
     {
@@ -262,8 +281,13 @@ public partial class MainForm : Form
 
     private void UpdateButtons()
     {
+        RenderFleetControls();
         bool ready = !_closing && !_actionBusy && SelectedAmrId is not null;
         if (_openSimulation is not null) _openSimulation.Enabled = ready && _dispatcher is not null;
+        if (_faultReset is not null) _faultReset.Enabled = ready && _dispatcher is not null
+            && ConnectionFor(SelectedAmrId) is { State: DataConnectionState.Connected, TelemetryIsCurrent: true }
+            && _devices.TryGetValue(SelectedAmrId!, out var resetDevice) && resetDevice is { State: AmrState.FAULT, Liveness: LivenessObservation.Alive }
+            && !_commands.Any(x => x.AmrId == SelectedAmrId && x.Kind == CommandKind.RESET && x.Result == CommandResult.Unconfirmed && !x.ResultDeadlineExceeded);
         advanceButton.Enabled = ready && _advanceScenario is not null;
         submitButton.Enabled = ready && _dispatcher is not null;
         bool pending = ready && _completeScenario is not null && _commands.Any(x => x.AmrId == SelectedAmrId && x.Result == CommandResult.Unconfirmed);

@@ -48,6 +48,23 @@ public sealed class MqttDashboardTests
                         Assert.True(destination.Visible);
                         Assert.True(destination.Parent!.ClientRectangle.Contains(destination.Bounds));
                         Assert.Same(destination, destination.Parent.GetChildAtPoint(new(destination.Left + destination.Width / 2, destination.Top + destination.Height / 2)));
+                        var fault = device with { State = AmrState.FAULT, SpeedMps = 0, Liveness = LivenessObservation.Alive, Revision = 4,
+                            Journey = new(new("S", 4, 2), new("G", 8, 2), SimulationPhase.Ready, 4, 0) };
+                        var alarm = new AlarmSnapshot("AMR_001", "DRIVE", "구동 장애", DateTimeOffset.UtcNow, 4)
+                            { Severity = AlarmSeverity.Error, IsActive = true };
+                        var connected = new DataConnectionSnapshot("127.0.0.1:1884", "AMR_001", DataConnectionState.Connected, 0, 5, 5, 0, true);
+                        form.ApplyChange(new(4, AmrChangeKind.DeviceChanged, [fault], [alarm], []) { Connection = connected });
+                        Assert.Contains("AMR_001 · FAULT · 장애", form.SelectedDetails);
+                        simulation.Render(fault, [alarm], [], connected);
+                        Assert.Contains("FAULT", Find<Label>(simulation, "simulationState").Text);
+                        Assert.Equal(Color.Firebrick, Find<Label>(simulation, "simulationState").ForeColor);
+                        Assert.False(Find<Button>(simulation, "simulationStart").Enabled);
+                        Assert.True(Find<Button>(simulation, "simulationReset").Enabled);
+                        simulation.Render(fault with { State = AmrState.IDLE, Revision = 5 }, [alarm], [], connected);
+                        Assert.False(Find<Button>(simulation, "simulationStart").Enabled); // ACTIVE가 남으면 이동 금지
+                        simulation.Render(fault with { State = AmrState.IDLE, Revision = 6 }, [alarm with { IsActive = false }], [], connected);
+                        Assert.True(Find<Button>(simulation, "simulationStart").Enabled);
+                        Assert.False(Find<Button>(simulation, "simulationReset").Enabled);
                         simulation.Close();
                     }
                     form.Close(); Application.DoEvents();
